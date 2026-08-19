@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_allocations" inherit_id="portal.portal_breadcrumbs" priority="52">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_allocations', 'portal_allocation_new', 'portal_allocation_detail', 'portal_allocation_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_allocations' else ''}">
+                <a t-if="page_name != 'portal_allocations'" href="/my/allocations">My Allocations</a>
+                <t t-else="">My Allocations</t>
+            </li>
+            <li t-if="page_name == 'portal_allocation_new'" class="breadcrumb-item active">
+                New Request
+            </li>
+            <li t-if="page_name == 'portal_allocation_detail'" class="breadcrumb-item active">
+                Request Details
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_allocations_entry" inherit_id="portal.portal_my_home" priority="52">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_holidays/static/description/icon.svg'"/>
+                <t t-set="title">My Allocations</t>
+                <t t-set="text">Request extra days allocation and track approval status</t>
+                <t t-set="url" t-value="'/my/allocations'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_allocation_statusbar">
+        <div class="portal-time-off-statusbar mb-4">
+            <t t-set="current_state" t-value="allocation.state"/>
+            <t t-if="allocation.validation_type == 'both'">
+                <div class="d-flex flex-wrap gap-2">
+                    <span t-attf-class="badge rounded-pill #{'text-bg-primary' if current_state == 'confirm' else 'text-bg-light border'}">
+                        To Approve
+                    </span>
+                    <span t-attf-class="badge rounded-pill #{'text-bg-primary' if current_state == 'validate1' else 'text-bg-light border'}">
+                        Second Approval
+                    </span>
+                    <span t-attf-class="badge rounded-pill #{'text-bg-success' if current_state == 'validate' else 'text-bg-light border'}">
+                        Approved
+                    </span>
+                </div>
+            </t>
+            <t t-else="">
+                <div class="d-flex flex-wrap gap-2">
+                    <span t-attf-class="badge rounded-pill #{'text-bg-primary' if current_state == 'confirm' else 'text-bg-light border'}">
+                        To Approve
+                    </span>
+                    <span t-attf-class="badge rounded-pill #{'text-bg-success' if current_state == 'validate' else 'text-bg-light border'}">
+                        Approved
+                    </span>
+                </div>
+            </t>
+            <t t-if="current_state == 'refuse'">
+                <div class="mt-2">
+                    <span t-attf-class="badge rounded-pill #{allocation_state_badges.get(current_state, 'text-bg-secondary')}">
+                        <t t-out="allocation_state_labels.get(current_state, current_state)"/>
+                    </span>
+                </div>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_allocations" name="My Allocations">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My Allocations</t>
+            </t>
+
+            <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
+            <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/allocations/new" class="btn btn-primary">
+                    <i class="fa fa-plus me-1" role="img"/>
+                    <t>New Allocation Request</t>
+                </a>
+            </div>
+
+            <div t-if="not allocations" class="alert alert-info">
+                You have no allocation requests yet.
+            </div>
+
+            <t t-if="allocations">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th>Time Off Type</th>
+                            <th>Validity Period</th>
+                            <th class="text-end">Allocation</th>
+                            <th>Reason</th>
+                            <th class="text-end">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="allocations" t-as="allocation">
+                            <td>
+                                <a t-att-href="'/my/allocations/%s' % allocation.id">
+                                    <span t-out="allocation.holiday_status_id.name"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-field="allocation.date_from"/>
+                                <span class="mx-1">→</span>
+                                <t t-if="allocation.date_to">
+                                    <span t-field="allocation.date_to"/>
+                                </t>
+                                <span t-else="" class="text-muted">No Limit</span>
+                            </td>
+                            <td class="text-end">
+                                <span t-out="allocation.duration_display or '-'"/>
+                            </td>
+                            <td>
+                                <span t-if="allocation.notes" t-out="allocation.notes"/>
+                                <span t-else="" class="text-muted">No reason provided</span>
+                            </td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{allocation_state_badges.get(allocation.state, 'text-bg-secondary')}">
+                                    <t t-out="allocation_state_labels.get(allocation.state, allocation.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_allocation_form" name="Portal Allocation Form">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="portal-time-off-header mb-4">
+                        <h3 class="mb-1">New Allocation Request</h3>
+                        <p class="mb-0 text-muted">
+                            Submit an allocation request for <strong t-out="employee.name"/>.
+                        </p>
+                    </div>
+
+                    <t t-call="attendance_location_portal.portal_allocation_statusbar_new"/>
+
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <form id="portal_allocation_form" method="post" action="/my/allocations/submit">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                        <div class="mb-3">
+                            <label for="holiday_status_id" class="form-label">Time Off Type</label>
+                            <select id="holiday_status_id" name="holiday_status_id" class="form-select" required="required">
+                                <option value="">Select a time off type...</option>
+                                <t t-foreach="allocation_types" t-as="allocation_type">
+                                    <option
+                                        t-att-value="allocation_type['id']"
+                                        t-att-data-request-unit="allocation_type['request_unit']"
+                                        t-att-selected="str(form_values.get('holiday_status_id') or '') == str(allocation_type['id']) and 'selected' or None"
+                                        t-out="allocation_type['name']"
+                                    />
+                                </t>
+                            </select>
+                            <div t-if="not allocation_types" class="form-text text-danger">
+                                No time off types are available for allocation requests. Please contact your HR manager.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Validity Period</label>
+                            <div class="row g-2 align-items-end">
+                                <div class="col-md-5">
+                                    <label for="date_from" class="form-label text-muted small">Start Date</label>
+                                    <input
+                                        type="date"
+                                        id="date_from"
+                                        name="date_from"
+                                        class="form-control"
+                                        required="required"
+                                        t-att-value="form_values.get('date_from') or ''"
+                                    />
+                                </div>
+                                <div class="col-md-2 text-center text-muted pb-2">→</div>
+                                <div class="col-md-5" id="date_to_wrapper">
+                                    <label for="date_to" class="form-label text-muted small">End Date</label>
+                                    <input
+                                        type="date"
+                                        id="date_to"
+                                        name="date_to"
+                                        class="form-control"
+                                        t-att-value="form_values.get('date_to') or ''"
+                                    />
+                                    <div class="form-text text-muted" id="no_limit_hint">Leave empty for no limit</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="allocation_amount" class="form-label">Allocation</label>
+                            <div class="input-group" style="max-width: 220px;">
+                                <input
+                                    type="number"
+                                    id="allocation_amount"
+                                    name="allocation_amount"
+                                    class="form-control"
+                                    min="0.01"
+                                    step="0.01"
+                                    required="required"
+                                    t-att-value="form_values.get('allocation_amount') or '1.00'"
+                                />
+                                <span class="input-group-text" id="allocation_unit_label">Days</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="notes" class="form-label">Reason</label>
+                            <textarea
+                                id="notes"
+                                name="notes"
+                                class="form-control"
+                                rows="4"
+                                placeholder="Add a reason..."
+                            ><t t-out="form_values.get('notes') or ''"/></textarea>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                            <a href="/my/allocations" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_allocation_statusbar_new">
+        <div class="portal-time-off-statusbar mb-4">
+            <div class="d-flex flex-wrap gap-2">
+                <span class="badge rounded-pill text-bg-primary">To Approve</span>
+                <span class="badge rounded-pill text-bg-light border">Approved</span>
+            </div>
+        </div>
+    </template>
+
+    <template id="portal_allocation_detail" name="Portal Allocation Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h3 class="mb-1">Allocation Request</h3>
+                            <p class="mb-0 text-muted" t-out="allocation.name_validity or allocation.name"/>
+                        </div>
+                        <a href="/my/allocations" class="btn btn-outline-secondary btn-sm">Back to list</a>
+                    </div>
+
+                    <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <t t-call="attendance_location_portal.portal_allocation_statusbar"/>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Time Off Type</label>
+                                <div class="fw-semibold" t-out="allocation.holiday_status_id.name"/>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Validity Period</label>
+                                <div class="fw-semibold">
+                                    <span t-field="allocation.date_from"/>
+                                    <span class="mx-1">→</span>
+                                    <t t-if="allocation.date_to">
+                                        <span t-field="allocation.date_to"/>
+                                    </t>
+                                    <span t-else="" class="text-muted">No Limit</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Allocation</label>
+                                <div class="fw-semibold" t-out="allocation.duration_display or '-'"/>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Reason</label>
+                                <div>
+                                    <t t-if="allocation.notes" t-out="allocation.notes"/>
+                                    <span t-else="" class="text-muted">No reason provided</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Status</label>
+                                <div>
+                                    <span t-attf-class="badge rounded-pill #{allocation_state_badges.get(allocation.state, 'text-bg-secondary')}">
+                                        <t t-out="allocation_state_labels.get(allocation.state, allocation.state)"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div t-if="allocation.state == 'confirm'" class="mt-4 pt-3 border-top">
+                        <h5 class="mb-3">Cancel Request</h5>
+                        <form t-att-action="'/my/allocations/%s/cancel' % allocation.id" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <button type="submit" class="btn btn-outline-danger">Cancel Allocation Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_allocation_failed_page" name="Portal Allocation Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-time-off-result">
+                <div class="result-card failed shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-times-circle"/>
+                    </div>
+                    <h3 class="mb-2">Allocation Error</h3>
+                    <p class="text-muted mb-3" t-out="error_message"/>
+                    <a href="/my/allocations" class="btn btn-outline-danger">Back to My Allocations</a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

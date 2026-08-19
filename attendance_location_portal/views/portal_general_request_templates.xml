@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_general_requests" inherit_id="portal.portal_breadcrumbs" priority="53">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_general_requests', 'portal_general_request_new', 'portal_general_request_detail', 'portal_general_request_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_general_requests' else ''}">
+                <a t-if="page_name != 'portal_general_requests'" href="/my/general_requests"><t>My General Requests</t></a>
+                <t t-else=""><t>My General Requests</t></t>
+            </li>
+            <li t-if="page_name == 'portal_general_request_new'" class="breadcrumb-item active">
+                <t>New Request</t>
+            </li>
+            <li t-if="page_name == 'portal_general_request_detail'" class="breadcrumb-item active">
+                <t>Request Details</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_general_requests_entry" inherit_id="portal.portal_my_home" priority="53">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_holidays/static/description/icon.svg'"/>
+                <t t-set="title">My General Requests</t>
+                <t t-set="text">Submit general requests and track approval status</t>
+                <t t-set="url" t-value="'/my/general_requests'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_general_requests" name="My General Requests">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My General Requests</t>
+            </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/general_requests/new" class="btn btn-primary">
+                    <i class="fa fa-plus me-1" role="img"/>
+                    <t>New General Request</t>
+                </a>
+            </div>
+
+            <div t-if="not general_requests" class="alert alert-info">
+                <t>You have no general requests yet.</t>
+            </div>
+
+            <t t-if="general_requests">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Date</t></th>
+                            <th><t>Description</t></th>
+                            <th class="text-end"><t>Status</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="general_requests" t-as="general_request">
+                            <td>
+                                <a t-att-href="'/my/general_requests/%s' % general_request.id">
+                                    <span t-field="general_request.date"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-if="general_request.description" t-out="general_request.description"/>
+                                <span t-else="" class="text-muted"><t>No description provided</t></span>
+                            </td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{request_state_badges.get(general_request.state, 'text-bg-secondary')}">
+                                    <t t-out="request_state_labels.get(general_request.state, general_request.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_general_request_form" name="Portal General Request Form">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="portal-time-off-header mb-4">
+                        <h3 class="mb-1"><t>New General Request</t></h3>
+                        <p class="mb-0 text-muted">
+                            <t>Submit a general request for</t> <strong t-out="employee.name"/>.
+                        </p>
+                    </div>
+
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <form id="portal_general_request_form" method="post" action="/my/general_requests/submit">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                        <div class="mb-4">
+                            <label for="description" class="form-label"><t>Description</t></label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                class="form-control"
+                                rows="5"
+                                required="required"
+                                placeholder="Describe your request..."
+                            ><t t-out="form_values.get('description') or ''"/></textarea>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-primary"><t>Submit Request</t></button>
+                            <a href="/my/general_requests" class="btn btn-outline-secondary"><t>Cancel</t></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_general_request_detail" name="Portal General Request Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h3 class="mb-1"><t>General Request</t></h3>
+                            <p class="mb-0 text-muted" t-out="general_request.name"/>
+                        </div>
+                        <a href="/my/general_requests" class="btn btn-outline-secondary btn-sm"><t>Back to list</t></a>
+                    </div>
+
+                    <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Date</t></label>
+                                <div class="fw-semibold">
+                                    <span t-field="general_request.date"/>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Description</t></label>
+                                <div>
+                                    <t t-if="general_request.description" t-out="general_request.description"/>
+                                    <span t-else="" class="text-muted"><t>No description provided</t></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Status</t></label>
+                                <div>
+                                    <span t-attf-class="badge rounded-pill #{request_state_badges.get(general_request.state, 'text-bg-secondary')}">
+                                        <t t-out="request_state_labels.get(general_request.state, general_request.state)"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_general_request_failed_page" name="Portal General Request Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-time-off-result">
+                <div class="result-card failed shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-times-circle"/>
+                    </div>
+                    <h3 class="mb-2"><t>General Request Error</t></h3>
+                    <p class="text-muted mb-3" t-out="error_message"/>
+                    <a href="/my/general_requests" class="btn btn-outline-danger"><t>Back to My General Requests</t></a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

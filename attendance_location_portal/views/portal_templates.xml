@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_attendance" inherit_id="portal.portal_breadcrumbs" priority="50">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_attendance', 'portal_attendance_success', 'portal_attendance_failed')"
+                class="breadcrumb-item active">
+                Take Attendance
+            </li>
+            <li t-if="page_name == 'portal_attendance_history'"
+                class="breadcrumb-item active">
+                My Attendances
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_attendance_entry" inherit_id="portal.portal_my_home" priority="50">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
+                <t t-set="title">Take Attendance</t>
+                <t t-set="text">Check in and check out from your allowed location</t>
+                <t t-set="url" t-value="'/my/attendance'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+            <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
+                <t t-set="title">My Attendances</t>
+                <t t-set="text">View your check-in and check-out history</t>
+                <t t-set="url" t-value="'/my/attendances'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_attendance_page" name="Portal Attendance Page">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-attendance">
+                <div class="portal-attendance-card shadow-sm">
+                    <div class="portal-attendance-header">
+                        <h3 class="mb-1">Take Attendance</h3>
+                        <p class="mb-0 text-muted">
+                            Welcome <strong t-out="employee.name"/>, use your live location to submit attendance.
+                        </p>
+                    </div>
+
+                    <div class="portal-attendance-body">
+                        <div class="attendance-status mb-3">
+                            <span class="badge rounded-pill bg-info text-dark">
+                                Current status:
+                                <t t-if="attendance_state == 'checked_in'">Checked In</t>
+                                <t t-else="">Checked Out</t>
+                            </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="mb-2">Configured Locations</h6>
+                            <t t-if="locations">
+                                <ul class="list-group list-group-flush border rounded">
+                                    <t t-foreach="locations" t-as="location">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>
+                                                <strong t-out="location.name"/> -
+                                                <span t-out="'%.0f' % location.allowed_range_m"/> m
+                                            </span>
+                                            <a t-if="location.google_maps_url"
+                                               t-att-href="location.google_maps_url"
+                                               class="btn btn-sm btn-outline-primary"
+                                               target="_blank">
+                                                Open Map
+                                            </a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </t>
+                            <t t-else="">
+                                <div class="alert alert-warning mb-0">
+                                    No attendance locations are configured yet.
+                                </div>
+                            </t>
+                        </div>
+
+                        <form
+                            id="portal_attendance_form"
+                            method="post"
+                            action="/my/attendance/submit"
+                            class="mt-3"
+                            data-check-url="/my/attendance/check_location"
+                        >
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" id="attendance_latitude" name="latitude"/>
+                            <input type="hidden" id="attendance_longitude" name="longitude"/>
+
+                            <div id="geo_feedback" class="alert alert-secondary mb-3" role="alert">
+                                Detecting your location...
+                            </div>
+
+                            <div id="geo_out_of_range_block" class="mb-3 d-none">
+                                <h6 class="mb-2">Allowed Locations</h6>
+                                <ul id="geo_allowed_locations" class="list-group list-group-flush border rounded"/>
+                            </div>
+
+                            <div t-if="attendance_state == 'checked_in'" class="mb-3">
+                                <label for="attendance_note" class="form-label">Note (optional)</label>
+                                <textarea
+                                    id="attendance_note"
+                                    name="note"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Add a note for your manager..."
+                                />
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <button id="submit_attendance_btn" type="submit" class="btn btn-primary" disabled="disabled">
+                                    <t t-if="attendance_state == 'checked_in'">Check Out Now</t>
+                                    <t t-else="">Check In Now</t>
+                                </button>
+                                <button id="refresh_geo_btn" type="button" class="btn btn-outline-secondary">
+                                    Refresh Location
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_attendance_success_page" name="Portal Attendance Success">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-attendance-result">
+                <div class="result-card success shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-check-circle"/>
+                    </div>
+                    <h3 class="mb-2">Attendance Submitted Successfully</h3>
+                    <p class="text-muted mb-3">
+                        <strong t-if="action == 'check_in'">Check In</strong>
+                        <strong t-else="">Check Out</strong>
+                        recorded at
+                        <strong t-out="location"/>.
+                    </p>
+                    <a href="/my/attendance" class="btn btn-primary">Back to Take Attendance</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_attendances" name="My Attendances">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My Attendances</t>
+            </t>
+
+            <div t-if="not attendances" class="alert alert-info">
+                You have no attendance records yet.
+            </div>
+
+            <t t-if="attendances">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th class="text-end">Worked Hours</th>
+                            <th>Note</th>
+                            <th class="text-end">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="attendances" t-as="attendance">
+                            <td>
+                                <span t-field="attendance.check_in"/>
+                            </td>
+                            <td>
+                                <span t-if="attendance.check_out" t-field="attendance.check_out"/>
+                                <span t-else="" class="text-muted">—</span>
+                            </td>
+                            <td class="text-end">
+                                <span t-if="attendance.worked_hours" t-out="'%.2f' % attendance.worked_hours"/>
+                                <span t-else="" class="text-muted">—</span>
+                            </td>
+                            <td>
+                                <span t-if="attendance.portal_note" t-out="attendance.portal_note"/>
+                                <span t-else="" class="text-muted">—</span>
+                            </td>
+                            <td class="text-end">
+                                <span t-if="not attendance.check_out" class="badge rounded-pill text-bg-success">Checked In</span>
+                                <span t-else="" class="badge rounded-pill text-bg-secondary">Completed</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_attendance_failed_page" name="Portal Attendance Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-attendance-result">
+                <div class="result-card failed shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-times-circle"/>
+                    </div>
+                    <h3 class="mb-2">Attendance Failed</h3>
+                    <p class="text-muted mb-3" t-out="error_message"/>
+                    <a href="/my/attendance" class="btn btn-outline-danger">Try Again</a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

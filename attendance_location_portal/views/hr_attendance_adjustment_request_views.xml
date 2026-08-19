@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_attendance_adjustment_request_view_tree" model="ir.ui.view">
+        <field name="name">hr.attendance.adjustment.request.view.list</field>
+        <field name="model">hr.attendance.adjustment.request</field>
+        <field name="arch" type="xml">
+            <list string="Attendance Adjustment Requests" decoration-warning="state == 'confirm'" decoration-success="state == 'approve'" decoration-danger="state == 'refuse'">
+                <field name="employee_id"/>
+                <field name="request_type"/>
+                <field name="date"/>
+                <field name="time_minutes"/>
+                <field name="description"/>
+                <field name="state" widget="badge" decoration-warning="state == 'confirm'" decoration-success="state == 'approve'" decoration-danger="state == 'refuse'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_attendance_adjustment_request_view_form" model="ir.ui.view">
+        <field name="name">hr.attendance.adjustment.request.view.form</field>
+        <field name="model">hr.attendance.adjustment.request</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Adjustment Request">
+                <header>
+                    <button name="action_approve" type="object" string="Approve" class="btn-primary"
+                            invisible="not can_approve_refuse"
+                            groups="hr_holidays.group_hr_holidays_manager"/>
+                    <button name="action_refuse" type="object" string="Refuse" class="btn-secondary"
+                            invisible="not can_approve_refuse"
+                            groups="hr_holidays.group_hr_holidays_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="confirm,approve,refuse"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="request_type" readonly="state != 'confirm'"/>
+                            <field name="employee_id" readonly="state != 'confirm'"/>
+                            <field name="date" readonly="state != 'confirm'"/>
+                        </group>
+                        <group>
+                            <field name="time_minutes" readonly="state != 'confirm'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="can_approve_refuse" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" readonly="state != 'confirm'"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_attendance_adjustment_request_view_search" model="ir.ui.view">
+        <field name="name">hr.attendance.adjustment.request.view.search</field>
+        <field name="model">hr.attendance.adjustment.request</field>
+        <field name="arch" type="xml">
+            <search string="Attendance Adjustment Requests">
+                <field name="employee_id"/>
+                <field name="request_type"/>
+                <field name="description"/>
+                <field name="date"/>
+                <filter string="To Approve" name="filter_confirm" domain="[('state', '=', 'confirm')]"/>
+                <filter string="Approved" name="filter_approve" domain="[('state', '=', 'approve')]"/>
+                <filter string="Refused" name="filter_refuse" domain="[('state', '=', 'refuse')]"/>
+                <filter string="Early Departure" name="filter_early_departure" domain="[('request_type', '=', 'early_departure')]"/>
+                <filter string="Late Arrival" name="filter_late_arrival" domain="[('request_type', '=', 'late_arrival')]"/>
+                <group>
+                    <filter string="Employee" name="group_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Type" name="group_type" context="{'group_by': 'request_type'}"/>
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_attendance_adjustment_request_view_search_activities" model="ir.ui.view">
+        <field name="name">hr.attendance.adjustment.request.view.search.activities</field>
+        <field name="model">hr.attendance.adjustment.request</field>
+        <field name="arch" type="xml">
+            <search string="Attendance Adjustment Activities">
+                <field name="employee_id"/>
+                <field name="request_type"/>
+                <field name="description"/>
+                <field name="date"/>
+                <filter string="To Approve" name="filter_confirm" domain="[('state', '=', 'confirm')]"/>
+                <separator/>
+                <filter
+                    string="My Activities"
+                    name="filter_activities_my"
+                    domain="[('activity_user_id', '=', uid)]"
+                />
+                <separator/>
+                <filter
+                    string="Late Activities"
+                    name="activities_overdue"
+                    domain="[('my_activity_date_deadline', '&lt;', 'today')]"
+                />
+                <filter
+                    string="Today Activities"
+                    name="activities_today"
+                    domain="[('my_activity_date_deadline', '=', 'today')]"
+                />
+                <filter
+                    string="Future Activities"
+                    name="activities_upcoming_all"
+                    domain="[('my_activity_date_deadline', '&gt;', 'today')]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hr_attendance_adjustment_my_activities" model="ir.actions.act_window">
+        <field name="name">My Attendance Adjustment Activities</field>
+        <field name="res_model">hr.attendance.adjustment.request</field>
+        <field name="view_mode">list,form,activity</field>
+        <field name="search_view_id" ref="hr_attendance_adjustment_request_view_search_activities"/>
+        <field name="domain">[('activity_ids.active', 'in', [True, False])]</field>
+        <field name="context">{
+            'force_search_count': 1,
+            'search_default_filter_activities_my': 1,
+            'search_default_filter_confirm': 1,
+        }</field>
+    </record>
+
+    <record id="hr_attendance_adjustment_request_action" model="ir.actions.act_window">
+        <field name="name">Attendance Adjustment Requests</field>
+        <field name="res_model">hr.attendance.adjustment.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_filter_confirm': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No attendance adjustment requests yet.
+            </p>
+            <p>
+                Portal employees can submit attendance adjustment requests from their portal account.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_hr_attendance_adjustment_requests"
+        name="Attendance Adjustment Requests"
+        parent="hr_holidays.menu_hr_holidays_management"
+        action="hr_attendance_adjustment_request_action"
+        sequence="21"
+        groups="hr_holidays.group_hr_holidays_responsible"/>
+</odoo>

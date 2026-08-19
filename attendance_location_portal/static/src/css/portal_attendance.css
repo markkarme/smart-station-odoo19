@@ -1,0 +1,47 @@
+.portal-attendance .portal-attendance-card {
+    border-radius: 18px;
+    border: 1px solid #e9ecef;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.portal-attendance .portal-attendance-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #edf3ff 0%, #f5f8ff 60%, #ffffff 100%);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.portal-attendance .portal-attendance-body {
+    padding: 1.5rem;
+}
+
+.portal-attendance-result .result-card {
+    max-width: 680px;
+    margin: 0 auto;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.portal-attendance-result .result-card.success {
+    border-top: 6px solid #198754;
+}
+
+.portal-attendance-result .result-card.failed {
+    border-top: 6px solid #dc3545;
+}
+
+.portal-attendance-result .result-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+}
+
+.portal-attendance-result .result-card.success .result-icon {
+    color: #198754;
+}
+
+.portal-attendance-result .result-card.failed .result-icon {
+    color: #dc3545;
+}

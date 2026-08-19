@@ -1,0 +1,35 @@
+.portal-time-off-card,
+.portal-time-off-result .result-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.portal-time-off-header h3,
+.portal-time-off-card h3 {
+    color: #212529;
+}
+
+.portal-time-off-statusbar .badge {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.85rem;
+}
+
+.portal-time-off-result .result-card {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.portal-time-off-result .result-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.portal-time-off-result .failed .result-icon {
+    color: #dc3545;
+}
+
+.portal-time-off .form-label {
+    font-weight: 600;
+}

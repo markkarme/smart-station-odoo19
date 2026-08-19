@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_employee_form_portal_user_button" model="ir.ui.view">
+        <field name="name">hr.employee.form.portal.user.button</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <button
+                    name="action_create_portal_user"
+                    type="object"
+                    string="Create Portal User"
+                    class="btn-secondary"
+                    invisible="user_id"
+                    groups="hr.group_hr_user"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_employee_form_attendance_locations" model="ir.ui.view">
+        <field name="name">hr.employee.form.attendance.locations</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_location_id']" position="after">
+                <field
+                    name="attendance_location_ids"
+                    widget="many2many_tags"
+                    options="{'no_create_edit': True}"
+                    groups="hr.group_hr_user"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
