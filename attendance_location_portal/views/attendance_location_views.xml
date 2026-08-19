@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_attendance_location_tree" model="ir.ui.view">
+        <field name="name">attendance.location.tree</field>
+        <field name="model">attendance.location</field>
+        <field name="arch" type="xml">
+            <list string="Attendance Locations">
+                <field name="name"/>
+                <field name="google_maps_url"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="allowed_range_m"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_attendance_location_form" model="ir.ui.view">
+        <field name="name">attendance.location.form</field>
+        <field name="model">attendance.location</field>
+        <field name="arch" type="xml">
+            <form string="Attendance Location">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="google_maps_url"/>
+                            <field name="allowed_range_m"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="latitude"/>
+                            <field name="longitude"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group string="Employee Access">
+                        <field name="employee_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="attendance_location_action" model="ir.actions.act_window">
+        <field name="name">Attendance Locations</field>
+        <field name="res_model">attendance.location</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_attendance_location_settings"
+        name="Attendance Locations"
+        parent="hr.menu_human_resources_configuration"
+        action="attendance_location_action"
+        sequence="35"
+        groups="hr_attendance.group_hr_attendance_manager"
+    />
+
+    
+</odoo>

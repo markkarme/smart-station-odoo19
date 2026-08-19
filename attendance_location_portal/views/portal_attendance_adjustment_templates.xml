@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_attendance_adjustments" inherit_id="portal.portal_breadcrumbs" priority="54">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_attendance_adjustments', 'portal_attendance_adjustment_new', 'portal_attendance_adjustment_detail', 'portal_attendance_adjustment_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_attendance_adjustments' else ''}">
+                <a t-if="page_name != 'portal_attendance_adjustments'" href="/my/attendance_adjustments"><t>My Attendance Adjustments</t></a>
+                <t t-else=""><t>My Attendance Adjustments</t></t>
+            </li>
+            <li t-if="page_name == 'portal_attendance_adjustment_new'" class="breadcrumb-item active">
+                <t>New Request</t>
+            </li>
+            <li t-if="page_name == 'portal_attendance_adjustment_detail'" class="breadcrumb-item active">
+                <t>Request Details</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_attendance_adjustments_entry" inherit_id="portal.portal_my_home" priority="54">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
+                <t t-set="title">My Attendance Adjustments</t>
+                <t t-set="text">Request early departure or late arrival adjustments</t>
+                <t t-set="url" t-value="'/my/attendance_adjustments'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_attendance_adjustments" name="My Attendance Adjustments">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My Attendance Adjustments</t>
+            </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/attendance_adjustments/new" class="btn btn-primary">
+                    <i class="fa fa-plus me-1" role="img"/>
+                    <t>New Adjustment Request</t>
+                </a>
+            </div>
+
+            <div t-if="not adjustment_requests" class="alert alert-info">
+                <t>You have no attendance adjustment requests yet.</t>
+            </div>
+
+            <t t-if="adjustment_requests">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Type</t></th>
+                            <th><t>Date</t></th>
+                            <th class="text-end"><t>Time (min)</t></th>
+                            <th><t>Description</t></th>
+                            <th class="text-end"><t>Status</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="adjustment_requests" t-as="adjustment_request">
+                            <td>
+                                <a t-att-href="'/my/attendance_adjustments/%s' % adjustment_request.id">
+                                    <span t-out="request_type_labels.get(adjustment_request.request_type, adjustment_request.request_type)"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-field="adjustment_request.date"/>
+                            </td>
+                            <td class="text-end">
+                                <span t-out="adjustment_request.time_minutes"/>
+                            </td>
+                            <td>
+                                <span t-if="adjustment_request.description" t-out="adjustment_request.description"/>
+                                <span t-else="" class="text-muted"><t>No description provided</t></span>
+                            </td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{request_state_badges.get(adjustment_request.state, 'text-bg-secondary')}">
+                                    <t t-out="request_state_labels.get(adjustment_request.state, adjustment_request.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_attendance_adjustment_form" name="Portal Attendance Adjustment Form">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="portal-time-off-header mb-4">
+                        <h3 class="mb-1"><t>New Attendance Adjustment Request</t></h3>
+                        <p class="mb-0 text-muted">
+                            <t>Submit an adjustment request for</t> <strong t-out="employee.name"/>.
+                        </p>
+                    </div>
+
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <form id="portal_attendance_adjustment_form" method="post" action="/my/attendance_adjustments/submit">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                        <div class="mb-3">
+                            <label for="request_type" class="form-label"><t>Type</t></label>
+                            <select id="request_type" name="request_type" class="form-select" required="required">
+                                <option value=""><t>Select a request type...</t></option>
+                                <option value="early_departure" t-att-selected="str(form_values.get('request_type') or '') == 'early_departure' and 'selected' or None">
+                                    <t>Request for early departure</t>
+                                </option>
+                                <option value="late_arrival" t-att-selected="str(form_values.get('request_type') or '') == 'late_arrival' and 'selected' or None">
+                                    <t>Late arrival request</t>
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="date" class="form-label"><t>Date</t></label>
+                            <input
+                                type="date"
+                                id="date"
+                                name="date"
+                                class="form-control"
+                                required="required"
+                                t-att-value="form_values.get('date') or ''"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="time_minutes" class="form-label"><t>Time (minutes)</t></label>
+                            <input
+                                type="number"
+                                id="time_minutes"
+                                name="time_minutes"
+                                class="form-control"
+                                min="1"
+                                required="required"
+                                t-att-value="form_values.get('time_minutes') or ''"
+                            />
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="description" class="form-label"><t>Description</t></label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                class="form-control"
+                                rows="5"
+                                required="required"
+                                placeholder="Describe your request..."
+                            ><t t-out="form_values.get('description') or ''"/></textarea>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-primary"><t>Submit Request</t></button>
+                            <a href="/my/attendance_adjustments" class="btn btn-outline-secondary"><t>Cancel</t></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_attendance_adjustment_detail" name="Portal Attendance Adjustment Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h3 class="mb-1"><t>Attendance Adjustment Request</t></h3>
+                            <p class="mb-0 text-muted" t-out="adjustment_request.name"/>
+                        </div>
+                        <a href="/my/attendance_adjustments" class="btn btn-outline-secondary btn-sm"><t>Back to list</t></a>
+                    </div>
+
+                    <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Type</t></label>
+                                <div class="fw-semibold" t-out="request_type_labels.get(adjustment_request.request_type, adjustment_request.request_type)"/>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Date</t></label>
+                                <div class="fw-semibold">
+                                    <span t-field="adjustment_request.date"/>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Time (minutes)</t></label>
+                                <div class="fw-semibold" t-out="adjustment_request.time_minutes"/>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Description</t></label>
+                                <div>
+                                    <t t-if="adjustment_request.description" t-out="adjustment_request.description"/>
+                                    <span t-else="" class="text-muted"><t>No description provided</t></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted"><t>Status</t></label>
+                                <div>
+                                    <span t-attf-class="badge rounded-pill #{request_state_badges.get(adjustment_request.state, 'text-bg-secondary')}">
+                                        <t t-out="request_state_labels.get(adjustment_request.state, adjustment_request.state)"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_attendance_adjustment_failed_page" name="Portal Attendance Adjustment Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-time-off-result">
+                <div class="result-card failed shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-times-circle"/>
+                    </div>
+                    <h3 class="mb-2"><t>Attendance Adjustment Error</t></h3>
+                    <p class="text-muted mb-3" t-out="error_message"/>
+                    <a href="/my/attendance_adjustments" class="btn btn-outline-danger"><t>Back to My Attendance Adjustments</t></a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

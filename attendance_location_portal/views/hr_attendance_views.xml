@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_attendance_form_note_page" model="ir.ui.view">
+        <field name="name">hr.attendance.form.note.page</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='in_ip_address']" position="attributes">
+                <attribute name="invisible">in_mode in ('manual', 'automatic') or not device_tracking_enabled</attribute>
+            </xpath>
+            <xpath expr="//field[@name='in_browser']" position="attributes">
+                <attribute name="invisible">in_mode in ('manual', 'automatic') or not device_tracking_enabled</attribute>
+            </xpath>
+            <xpath expr="//field[@name='out_ip_address']" position="attributes">
+                <attribute name="invisible">out_mode in ('manual', 'automatic') or not device_tracking_enabled</attribute>
+            </xpath>
+            <xpath expr="//field[@name='out_browser']" position="attributes">
+                <attribute name="invisible">out_mode in ('manual', 'automatic') or not device_tracking_enabled</attribute>
+            </xpath>
+            <xpath expr="//group[@name='check_out_group']" position="after">
+                <group name="attendance_location_group" invisible="not attendance_location_id">
+                    <field name="attendance_location_id" readonly="1"/>
+                </group>
+                <notebook>
+                    <page string="Note" name="attendance_note_page">
+                        <field
+                            name="portal_note"
+                            nolabel="1"
+                            placeholder="Employee attendance note..."
+                        />
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_attendance_search_activity_filters" model="ir.ui.view">
+        <field name="name">hr.attendance.search.activity.filters</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='check_in_filter']" position="before">
+                <separator invisible="1"/>
+                <filter
+                    invisible="1"
+                    string="My Activities"
+                    name="filter_activities_my"
+                    domain="[('activity_user_id', '=', uid)]"
+                />
+                <separator invisible="1"/>
+                <filter
+                    invisible="1"
+                    string="Late Activities"
+                    name="activities_overdue"
+                    domain="[('my_activity_date_deadline', '&lt;', 'today')]"
+                />
+                <filter
+                    invisible="1"
+                    string="Today Activities"
+                    name="activities_today"
+                    domain="[('my_activity_date_deadline', '=', 'today')]"
+                />
+                <filter
+                    invisible="1"
+                    string="Future Activities"
+                    name="activities_upcoming_all"
+                    domain="[('my_activity_date_deadline', '&gt;', 'today')]"
+                />
+                <separator invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_attendance_my_activities_filter" model="ir.ui.view">
+        <field name="name">hr.attendance.search.myactivities</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="view_hr_attendance_search_activity_filters"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_activities_my']" position="replace">
+                <filter
+                    string="My Activities"
+                    name="filter_activities_my"
+                    domain="[('activity_user_id', '=', uid)]"
+                />
+            </xpath>
+            <xpath expr="//filter[@name='activities_overdue']" position="replace">
+                <filter
+                    string="Late Activities"
+                    name="activities_overdue"
+                    domain="[('my_activity_date_deadline', '&lt;', 'today')]"
+                />
+            </xpath>
+            <xpath expr="//filter[@name='activities_today']" position="replace">
+                <filter
+                    string="Today Activities"
+                    name="activities_today"
+                    domain="[('my_activity_date_deadline', '=', 'today')]"
+                />
+            </xpath>
+            <xpath expr="//filter[@name='activities_upcoming_all']" position="replace">
+                <filter
+                    string="Future Activities"
+                    name="activities_upcoming_all"
+                    domain="[('my_activity_date_deadline', '&gt;', 'today')]"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_hr_attendance_my_activities" model="ir.actions.act_window">
+        <field name="name">My Attendance Activities</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">list,form,activity</field>
+        <field name="domain">[('activity_ids.active', 'in', [True, False])]</field>
+        <field name="search_view_id" ref="view_hr_attendance_my_activities_filter"/>
+        <field name="context">{
+            'force_search_count': 1,
+            'search_default_filter_activities_my': 1,
+        }</field>
+    </record>
+</odoo>

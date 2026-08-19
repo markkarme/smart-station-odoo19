@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_time_off" inherit_id="portal.portal_breadcrumbs" priority="51">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_time_off', 'portal_time_off_new', 'portal_time_off_detail', 'portal_time_off_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_time_off' else ''}">
+                <a t-if="page_name != 'portal_time_off'" href="/my/time_off">My Time Off</a>
+                <t t-else="">My Time Off</t>
+            </li>
+            <li t-if="page_name == 'portal_time_off_new'" class="breadcrumb-item active">
+                New Request
+            </li>
+            <li t-if="page_name == 'portal_time_off_detail'" class="breadcrumb-item active">
+                Request Details
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_time_off_entry" inherit_id="portal.portal_my_home" priority="51">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_holidays/static/description/icon.svg'"/>
+                <t t-set="title">My Time Off</t>
+                <t t-set="text">Request time off and track approval status</t>
+                <t t-set="url" t-value="'/my/time_off'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_time_off_statusbar">
+        <div class="portal-time-off-statusbar mb-4">
+            <t t-set="current_state" t-value="leave.state"/>
+            <t t-if="leave.validation_type == 'both'">
+                <div class="d-flex flex-wrap gap-2">
+                    <span t-attf-class="badge rounded-pill #{'text-bg-primary' if current_state == 'confirm' else 'text-bg-light border'}">
+                        To Approve
+                    </span>
+                    <span t-attf-class="badge rounded-pill #{'text-bg-primary' if current_state == 'validate1' else 'text-bg-light border'}">
+                        Second Approval
+                    </span>
+                    <span t-attf-class="badge rounded-pill #{'text-bg-success' if current_state == 'validate' else 'text-bg-light border'}">
+                        Approved
+                    </span>
+                </div>
+            </t>
+            <t t-else="">
+                <div class="d-flex flex-wrap gap-2">
+                    <span t-attf-class="badge rounded-pill #{'text-bg-primary' if current_state == 'confirm' else 'text-bg-light border'}">
+                        To Approve
+                    </span>
+                    <span t-attf-class="badge rounded-pill #{'text-bg-success' if current_state == 'validate' else 'text-bg-light border'}">
+                        Approved
+                    </span>
+                </div>
+            </t>
+            <t t-if="current_state in ('refuse', 'cancel')">
+                <div class="mt-2">
+                    <span t-attf-class="badge rounded-pill #{leave_state_badges.get(current_state, 'text-bg-secondary')}">
+                        <t t-out="leave_state_labels.get(current_state, current_state)"/>
+                    </span>
+                </div>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_time_off" name="My Time Off">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My Time Off</t>
+            </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/time_off/new" class="btn btn-primary">
+                    <i class="fa fa-plus me-1" role="img"/>
+                    <t>New Time Off Request</t>
+                </a>
+            </div>
+
+            <div t-if="not leaves" class="alert alert-info">
+                You have no time off requests yet.
+            </div>
+
+            <t t-if="leaves">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th>Time Off Type</th>
+                            <th>Dates</th>
+                            <th class="text-end">Duration</th>
+                            <th>Description</th>
+                            <th class="text-end">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="leaves" t-as="leave">
+                            <td>
+                                <a t-att-href="'/my/time_off/%s' % leave.id">
+                                    <span t-out="leave.holiday_status_id.name"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-field="leave.request_date_from"/>
+                                <t t-if="leave.request_date_to and leave.request_date_to != leave.request_date_from">
+                                    - <span t-field="leave.request_date_to"/>
+                                </t>
+                            </td>
+                            <td class="text-end">
+                                <span t-out="leave.duration_display or '-'"/>
+                            </td>
+                            <td>
+                                <span t-if="leave.sudo().private_name" t-out="leave.sudo().private_name"/>
+                                <span t-else="" class="text-muted">No description provided</span>
+                            </td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{leave_state_badges.get(leave.state, 'text-bg-secondary')}">
+                                    <t t-out="leave_state_labels.get(leave.state, leave.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_time_off_form" name="Portal Time Off Form">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="portal-time-off-header mb-4">
+                        <h3 class="mb-1"><t>New Time Off Request</t></h3>
+                        <p class="mb-0 text-muted">
+                            Submit a time off request for <strong t-out="employee.name"/>.
+                        </p>
+                    </div>
+
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <form id="portal_time_off_form" method="post" action="/my/time_off/submit" enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                        <div class="mb-3">
+                            <label for="holiday_status_id" class="form-label">Time Off Type</label>
+                            <select id="holiday_status_id" name="holiday_status_id" class="form-select" required="required">
+                                <option value="">Select a time off type...</option>
+                                <t t-foreach="leave_types" t-as="leave_type">
+                                    <option
+                                        t-att-value="leave_type['id']"
+                                        t-att-data-request-unit="leave_type['request_unit']"
+                                        t-att-data-support-document="leave_type['support_document'] and '1' or '0'"
+                                        t-att-data-requires-allocation="leave_type['requires_allocation'] and '1' or '0'"
+                                        t-att-data-remaining="leave_type['virtual_remaining_leaves']"
+                                        t-att-selected="str(form_values.get('holiday_status_id') or '') == str(leave_type['id']) and 'selected' or None"
+                                        t-out="leave_type['label']"
+                                    />
+                                </t>
+                            </select>
+                            <div t-if="not leave_types" class="form-text text-danger">
+                                No time off types are available. Please contact your HR manager.
+                            </div>
+                            <div id="leave_type_balance" class="form-text d-none"/>
+                        </div>
+
+                        <div class="mb-3" id="date_range_fields">
+                            <label class="form-label">Dates</label>
+                            <div class="row g-2 align-items-end">
+                                <div class="col-md-5">
+                                    <label for="request_date_from" class="form-label text-muted small">From</label>
+                                    <input
+                                        type="date"
+                                        id="request_date_from"
+                                        name="request_date_from"
+                                        class="form-control"
+                                        required="required"
+                                        t-att-value="form_values.get('request_date_from') or ''"
+                                    />
+                                </div>
+                                <div class="col-md-2 text-center text-muted pb-2 d-none" id="date_range_separator">to</div>
+                                <div class="col-md-5" id="request_date_to_wrapper">
+                                    <label for="request_date_to" class="form-label text-muted small">To</label>
+                                    <input
+                                        type="date"
+                                        id="request_date_to"
+                                        name="request_date_to"
+                                        class="form-control"
+                                        required="required"
+                                        t-att-value="form_values.get('request_date_to') or ''"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="half_day_fields" class="mb-3 d-none">
+                            <label class="form-label">Day Period</label>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <select name="request_date_from_period" class="form-select">
+                                        <option value="am">Morning</option>
+                                        <option value="pm">Afternoon</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6" id="half_day_to_period_wrapper">
+                                    <select name="request_date_to_period" class="form-select">
+                                        <option value="am">Morning</option>
+                                        <option value="pm" selected="selected">Afternoon</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="hour_fields" class="mb-3 d-none">
+                            <label class="form-label">Hours</label>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <input type="time" name="request_hour_from" class="form-control" value="08:00"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="time" name="request_hour_to" class="form-control" value="17:00"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Description</label>
+                            <textarea
+                                id="name"
+                                name="name"
+                                class="form-control"
+                                rows="4"
+                                placeholder="No description provided"
+                            ><t t-out="form_values.get('name') or ''"/></textarea>
+                        </div>
+
+                        <div id="attachment_fields" class="mb-4">
+                            <label for="attachments" class="form-label">
+                                <i class="fa fa-paperclip me-1" role="img"/>
+                                <t>Attach File</t>
+                            </label>
+                            <input type="file" id="attachments" name="attachments" class="form-control" multiple="multiple"/>
+                            <div id="attachment_required_hint" class="form-text d-none">
+                                A supporting document is required for this time off type.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="notes" class="form-label">Reasons</label>
+                            <textarea
+                                id="notes"
+                                name="notes"
+                                class="form-control"
+                                rows="3"
+                                placeholder="Optional reason for your request..."
+                            ><t t-out="form_values.get('notes') or ''"/></textarea>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                            <a href="/my/time_off" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_time_off_detail" name="Portal Time Off Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4 portal-time-off">
+                <div class="portal-time-off-card shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h3 class="mb-1">Time Off Request</h3>
+                            <p class="mb-0 text-muted" t-out="leave.display_name"/>
+                        </div>
+                        <a href="/my/time_off" class="btn btn-outline-secondary btn-sm">Back to list</a>
+                    </div>
+
+                    <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
+                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+                    <t t-call="attendance_location_portal.portal_time_off_statusbar"/>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Time Off Type</label>
+                                <div class="fw-semibold" t-out="leave.holiday_status_id.name"/>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Dates</label>
+                                <div class="fw-semibold">
+                                    <span t-field="leave.request_date_from"/>
+                                    <t t-if="leave.request_date_to and leave.request_date_to != leave.request_date_from">
+                                        - <span t-field="leave.request_date_to"/>
+                                    </t>
+                                    <span class="text-muted ms-2">(<t t-out="leave.duration_display or '-'"/>)</span>
+                                </div>
+                            </div>
+
+                            <div t-if="leave.request_unit_half" class="mb-3">
+                                <label class="form-label text-muted">Day Period</label>
+                                <div class="fw-semibold">
+                                    <t t-if="leave.request_date_from_period == 'am'">Morning</t>
+                                    <t t-else="">Afternoon</t>
+                                    <t t-if="leave.request_date_to and leave.request_date_to != leave.request_date_from">
+                                        -
+                                        <t t-if="leave.request_date_to_period == 'am'">Morning</t>
+                                        <t t-else="">Afternoon</t>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <div t-if="leave.request_unit_hours" class="mb-3">
+                                <label class="form-label text-muted">Hours</label>
+                                <div class="fw-semibold">
+                                    <span t-field="leave.request_hour_from" t-options="{'widget': 'float_time'}"/>
+                                    -
+                                    <span t-field="leave.request_hour_to" t-options="{'widget': 'float_time'}"/>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Description</label>
+                                <div>
+                                    <t t-if="leave.sudo().private_name" t-out="leave.sudo().private_name"/>
+                                    <span t-else="" class="text-muted">No description provided</span>
+                                </div>
+                            </div>
+
+                            <div t-if="leave.notes" class="mb-3">
+                                <label class="form-label text-muted">Reasons</label>
+                                <div t-out="leave.notes"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Status</label>
+                                <div>
+                                    <span t-attf-class="badge rounded-pill #{leave_state_badges.get(leave.state, 'text-bg-secondary')}">
+                                        <t t-out="leave_state_labels.get(leave.state, leave.state)"/>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div t-if="leave.supported_attachment_ids" class="mb-3">
+                                <label class="form-label text-muted">Attachments</label>
+                                <ul class="list-group list-group-flush border rounded">
+                                    <li t-foreach="leave.supported_attachment_ids" t-as="attachment" class="list-group-item">
+                                        <a t-att-href="'/web/content/%s?download=true' % attachment.id" t-out="attachment.name"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div t-if="leave.can_cancel" class="mt-4 pt-3 border-top">
+                        <h5 class="mb-3">Cancel Request</h5>
+                        <form t-att-action="'/my/time_off/%s/cancel' % leave.id" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="mb-3">
+                                <label for="cancel_reason" class="form-label">Reason (optional)</label>
+                                <textarea id="cancel_reason" name="cancel_reason" class="form-control" rows="3"/>
+                            </div>
+                            <button type="submit" class="btn btn-outline-danger">Cancel Time Off</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_time_off_failed_page" name="Portal Time Off Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-time-off-result">
+                <div class="result-card failed shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-times-circle"/>
+                    </div>
+                    <h3 class="mb-2">Time Off Error</h3>
+                    <p class="text-muted mb-3" t-out="error_message"/>
+                    <a href="/my/time_off" class="btn btn-outline-danger">Back to My Time Off</a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
