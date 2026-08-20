@@ -1,0 +1,1128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rm_hr_attendance_sheet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-13 09:21+0000\n"
+"PO-Revision-Date: 2026-08-13 09:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.module.module,shortdesc:base.module_rm_hr_attendance_sheet
+msgid "HR Attendance Sheet And Policies"
+msgstr "كشف الحضور وسياسات الموارد البشرية"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.module.module,summary:base.module_rm_hr_attendance_sheet
+msgid ""
+"Managing  Attendance Sheets for Employees\n"
+"        "
+msgstr "إدارة كشوف حضور الموظفين"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.module.module,description:base.module_rm_hr_attendance_sheet
+msgid ""
+"\n"
+"Employees Attendance Sheet Management   \n"
+msgstr "إدارة كشف حضور الموظفين"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__status__ab
+#: model:hr.salary.rule,name:rm_hr_attendance_sheet.hr_salary_rule_att_absence
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_payslip_view_form
+msgid "Absence"
+msgstr "الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_attendance_policy__absence_rule_id
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_attendance_policy_form_view
+msgid "Absence Rule"
+msgstr "قاعدة الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_hr_absence_rule
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_absence_rule
+#: model:ir.model,name:rm_hr_attendance_sheet.model_hr_absence_rule
+msgid "Absence Rules"
+msgstr "قواعد الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_absence_rule_form_view
+msgid "Absence Times"
+msgstr "مرات الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_public_holiday__state__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__ac_sign_in
+msgid "Actual sign in"
+msgstr "حضور فعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__ac_sign_out
+msgid "Actual sign out"
+msgstr "انصراف فعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__act_diff_time
+msgid "Actual Diff Time"
+msgstr "فرق الوقت الفعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__act_late_in
+msgid "Actual Late In"
+msgstr "التأخير الفعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__act_overtime
+msgid "Actual Overtime"
+msgstr "الوقت الإضافي الفعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "ACT/IN"
+msgstr "حضور فعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "ACT/OUT"
+msgstr "انصراف فعلي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__amount
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_overtime_rule__active_after
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_policy_overtime_line__active_after
+msgid "Apply after"
+msgstr "يُطبّق بعد"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_public_holiday_view_form
+msgid "Apply On"
+msgstr "يُطبّق على"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+msgid "Approve Sheets"
+msgstr "اعتماد الكشوف"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet__state__done
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.view_rm_hr_attendance_sheet_filter
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.view_rm_hr_attendance_sheet_filter
+msgid "Approved Sheets"
+msgstr "الكشوف المعتمدة"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_tree_view
+msgid "Attednance Sheets"
+msgstr "كشوف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_line_view_form
+msgid "Attendance"
+msgstr "الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:res.groups.privilege,name:rm_hr_attendance_sheet.privilege_attendance_sheet
+#: model:hr.payroll.structure.type,name:rm_hr_attendance_sheet.structure_type_attendance_sheet
+msgid "Attendance Sheet"
+msgstr "كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.work.entry.type,name:rm_hr_attendance_sheet.work_entry_type_attendance_sheet_absence
+msgid "Attendance Sheet Absence"
+msgstr "غياب كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model,name:rm_hr_attendance_sheet.model_attendance_sheet_batch
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__batch_id
+#: model:ir.sequence,name:rm_hr_attendance_sheet.ir_seq_attendance_sheet_batch
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+msgid "Attendance Sheet Batch"
+msgstr "دفعة كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_attendance_sheet_batch_action
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_attendance_sheet_batch
+msgid "Attendance Sheet Batches"
+msgstr "دفعات كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_attendance_sheet_batch
+msgid "Attendance sheet Batches"
+msgstr "دفعات كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.work.entry.type,name:rm_hr_attendance_sheet.work_entry_type_attendance_sheet_difftime
+msgid "Attendance Sheet Diff Time"
+msgstr "فرق وقت كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.work.entry.type,name:rm_hr_attendance_sheet.work_entry_type_attendance_sheet_late_in
+msgid "Attendance Sheet Late In"
+msgstr "تأخير كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model,name:rm_hr_attendance_sheet.model_attendance_sheet_line
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_line_view_form
+msgid "Attendance Sheet Line"
+msgstr "بند كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model,name:rm_hr_attendance_sheet.model_attendance_sheet_line_change
+msgid "Attendance Sheet Line Change"
+msgstr "تعديل بند كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:res.groups,name:rm_hr_attendance_sheet.group_attendance_sheet_manager
+msgid "Attendance Sheet Manager"
+msgstr "مدير كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.work.entry.type,name:rm_hr_attendance_sheet.work_entry_type_attendance_sheet_overtime
+msgid "Attendance Sheet Overtime"
+msgstr "وقت إضافي لكشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model,name:rm_hr_attendance_sheet.model_hr_attendance_policy
+msgid "Attendance Sheet Policies"
+msgstr "سياسات كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.payroll.structure,name:rm_hr_attendance_sheet.structure_attendance_sheet
+msgid "Attendance Sheet Salary Structure"
+msgstr "هيكل راتب كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_attendance_sheet_setting
+msgid "Attendance Sheet Setting"
+msgstr "إعدادات كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.work.entry.type,name:rm_hr_attendance_sheet.work_entry_type_attendance_sheet_unpaid_leave
+msgid "Attendance Sheet Unpaid Leave"
+msgstr "إجازة غير مدفوعة لكشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:res.groups,name:rm_hr_attendance_sheet.group_attendance_sheet_user
+msgid "Attendance Sheet User"
+msgstr "مستخدم كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:resource.calendar,name:rm_hr_attendance_sheet.resource_calendar_attendance_sheet
+msgid "Attendance Sheet Working Hours"
+msgstr "ساعات عمل كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_attendance_sheet
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.attendance_sheet_menu
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_batch__att_sheet_ids
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__attendance_sheet_ids
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_payslip_view_form
+msgid "Attendance Sheets"
+msgstr "كشوف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_batch__state__att_gen
+msgid "Attendance Sheets Generated"
+msgstr "تم إنشاء كشوف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_batch__state__att_sub
+msgid "Attendance Sheets Submitted"
+msgstr "تم تقديم كشوف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model,name:rm_hr_attendance_sheet.model_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__att_sheet_id
+msgid "Hr Attendance Sheet"
+msgstr "كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_hr_attendance_policy
+msgid "Attendance Policies"
+msgstr "سياسات الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_version__att_policy_id
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__att_policy_id
+msgid "Attendance Policy"
+msgstr "سياسة الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__att_policy_id
+msgid "Attendance Policy "
+msgstr "سياسة الحضور "
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_attendance_rules
+msgid "Attendance Rules"
+msgstr "قواعد الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_attendance_policy_action
+msgid "Attendances Policies"
+msgstr "سياسات الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__line_ids
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Attendances"
+msgstr "الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Attendance Data"
+msgstr "بيانات الحضور"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/att_sheet_batch.py:0
+msgid "Attendance Batch of %s  Department for %s"
+msgstr "دفعة حضور قسم %s لشهر %s"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_version__auto_attendance_sheet
+msgid "Auto Generate Attendance Sheet"
+msgstr "إنشاء كشف الحضور تلقائياً"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_version__attendance_sheet_based
+msgid "Based ON Attendance Sheet"
+msgstr "بناءً على كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__type_select
+msgid "By"
+msgstr "حسب"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.att_data_change_from_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.att_data_change_from_view
+msgid "Change Attendance data"
+msgstr "تعديل بيانات الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_att_data_change
+msgid "Change Attendance Data"
+msgstr "تعديل بيانات الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_batch__state__done
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet__state__confirm
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_hr_attendance_policy
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_overtime_rules
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_late_rules
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_diff_rules
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_hr_absence_rule
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_attendance_sheet
+msgid "Create a new document"
+msgstr "إنشاء مستند جديد"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.actions.act_window,help:rm_hr_attendance_sheet.action_hr_public_holiday
+msgid "Create a new public holiday"
+msgstr "إنشاء عطلة رسمية جديدة"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__date_from
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_batch__date_from
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__date_to
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_batch__date_to
+msgid "Date To"
+msgstr "إلى تاريخ"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Day"
+msgstr "اليوم"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__day
+msgid "Day of Week"
+msgstr "يوم الأسبوع"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__department_id
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_public_holiday__type_select__dep
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+msgid "Department"
+msgstr "القسم"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_batch__department_id
+msgid "Department Name"
+msgstr "اسم القسم"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__dep_ids
+msgid "Departments"
+msgstr "الأقسام"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__diff_time
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line_change__diff_time
+msgid "Diff Time"
+msgstr "فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__diff_hours
+msgid "Diff Hours"
+msgstr "ساعات الفرق"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__diff_no
+msgid "Diff No"
+msgstr "عدد الفروقات"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__diff_id
+msgid "Diff Rule"
+msgstr "قاعدة الفرق"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,name:rm_hr_attendance_sheet.hr_salary_rule_att_diff
+msgid "Difference time"
+msgstr "فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_line_view_form
+msgid "Difference Time"
+msgstr "فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_attendance_policy__diff_rule_id
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_attendance_policy_form_view
+msgid "Difference Time Rule"
+msgstr "قاعدة فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_diff_rules
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_diff_rules
+msgid "Difference Time Rules"
+msgstr "قواعد فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_diff_rule_form_view
+msgid "Difference Time Periods"
+msgstr "فترات فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule__line_ids
+msgid "Difference time Periods"
+msgstr "فترات فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_payslip_view_form
+msgid "Diffrenece Time"
+msgstr "فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet__state__draft
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_batch__state__draft
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Edit attendance values"
+msgstr "تعديل قيم الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__employee_id
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__employee_id
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.view_rm_hr_attendance_sheet_filter
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Employee %s does not have attendance policy"
+msgstr "الموظف %s ليس لديه سياسة حضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__emp_ids
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__fifth
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__fifth
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_absence_rule_line__counter__5
+msgid "Fifth Time"
+msgstr "المرة الخامسة"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__first
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__first
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_absence_rule_line__counter__1
+msgid "First Time"
+msgstr "المرة الأولى"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_late_rule_line__type__fix
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_diff_rule_line__type__fix
+msgid "Fixed"
+msgstr "ثابت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__date_from
+msgid "From"
+msgstr "من"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__4
+msgid "Friday"
+msgstr "الجمعة"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Get Attendances"
+msgstr "جلب الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+msgid "Generate Sheets"
+msgstr "إنشاء الكشوف"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_public_holiday_view_form
+msgid "Holiday Reason"
+msgstr "سبب العطلة"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__status__leave
+msgid "Leave"
+msgstr "إجازة"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,name:rm_hr_attendance_sheet.hr_salary_rule_att_late
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__late_in
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line_change__late_in
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_payslip_view_form
+msgid "Late In"
+msgstr "التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__late_hours
+msgid "Late Hours"
+msgstr "ساعات التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__late_no
+msgid "Late No"
+msgstr "عدد التأخيرات"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_attendance_policy__late_rule_id
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_attendance_policy_form_view
+msgid "Late In Rule"
+msgstr "قاعدة التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_late_rules
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_late_rules
+#: model:ir.model,name:rm_hr_attendance_sheet.model_hr_late_rule
+msgid "Late In Rules"
+msgstr "قواعد التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule__line_ids
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_absence_rule__line_ids
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_late_rule_form_view
+msgid "Late In Periods"
+msgstr "فترات التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__late_id
+msgid "Late Rule"
+msgstr "قاعدة التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_line_view_form
+msgid "Lateness"
+msgstr "التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.cron,cron_name:rm_hr_attendance_sheet.ir_cron_hr_attendance_sheet_monthly_create
+msgid "Monthly Create Attendance Sheet"
+msgstr "إنشاء كشف الحضور الشهري"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__0
+msgid "Monday"
+msgstr "الاثنين"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_attendance_policy__name
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_overtime_rule__name
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule__name
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule__name
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_absence_rule__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_public_holiday__type_select__emp
+msgid "name"
+msgstr "الاسم"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__no_absence
+msgid "No of Absence Days"
+msgstr "عدد أيام الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__no_difftime
+msgid "No of Diff Times"
+msgstr "عدد فروقات الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__no_late
+msgid "No of Lates"
+msgstr "عدد التأخيرات"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__no_overtime
+msgid "No of overtimes"
+msgstr "عدد الأوقات الإضافية"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_payroll.py:0
+msgid "No Approved Attendance Sheet Found For Employee : %s"
+msgstr "لم يتم العثور على كشف حضور معتمد للموظف: %s"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_public_holiday__state__inactive
+msgid "Not Active"
+msgstr "غير نشط"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__note
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line_change__note
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_public_holiday_view_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__5
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__6
+msgid "Sunday"
+msgstr "الأحد"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__3
+msgid "Thursday"
+msgstr "الخميس"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__1
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__day__2
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__overtime
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line_change__overtime
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_line_view_form
+msgid "Overtime"
+msgstr "وقت إضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,name:rm_hr_attendance_sheet.hr_salary_rule_att_overtime
+msgid "overtime"
+msgstr "وقت إضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_payslip_view_form
+msgid "Over Time"
+msgstr "وقت إضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__overtime_hours
+msgid "Overtime Hours"
+msgstr "ساعات الوقت الإضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__overtime_no
+msgid "Overtime No"
+msgstr "عدد الأوقات الإضافية"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_attendance_policy__overtime_rule_ids
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_attendance_policy_form_view
+msgid "Overtime Rules"
+msgstr "قواعد الوقت الإضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_overtime_rules
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_overtime_rules
+msgid "OverTime Rules"
+msgstr "قواعد الوقت الإضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model,name:rm_hr_attendance_sheet.model_hr_overtime_rule
+msgid "Over time Rules"
+msgstr "قواعد الوقت الإضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__payslip_id
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "PaySlip"
+msgstr "قسيمة الراتب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_batch__payslip_batch_id
+msgid "Payslip Batch"
+msgstr "دفعة قسائم الراتب"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_public_holiday_view_form
+msgid "Period"
+msgstr "الفترة"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.leave.type,name:rm_hr_attendance_sheet.holiday_status_per
+msgid "Permission"
+msgstr "إذن"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "PL/IN"
+msgstr "حضور مخطط"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "PL/OUT"
+msgstr "انصراف مخطط"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__pl_sign_in
+msgid "Planned sign in"
+msgstr "حضور مخطط"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__pl_sign_out
+msgid "Planned sign out"
+msgstr "انصراف مخطط"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.att_data_change_from_view
+msgid "Please Add Note For Changing Attendance Data"
+msgstr "يرجى إضافة ملاحظة لتعديل بيانات الحضور"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Please add Attendance Policy to the %s `s contract "
+msgstr "يرجى إضافة سياسة حضور لعقد %s "
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Please add working hours to the %s `s contract "
+msgstr "يرجى إضافة ساعات العمل لعقد %s "
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Please Add Work Entry Type For Attendance Sheet Absence With Code ATTSHAB"
+msgstr "يرجى إضافة نوع قيد عمل لغياب كشف الحضور بالكود ATTSHAB"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Please Add Work Entry Type For Attendance Sheet Diff Time With Code ATTSHDT"
+msgstr "يرجى إضافة نوع قيد عمل لفرق وقت كشف الحضور بالكود ATTSHDT"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Please Add Work Entry Type For Attendance Sheet Late In With Code ATTSHLI"
+msgstr "يرجى إضافة نوع قيد عمل لتأخير كشف الحضور بالكود ATTSHLI"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Please Add Work Entry Type For Attendance Sheet Overtime With Code ATTSHOT"
+msgstr "يرجى إضافة نوع قيد عمل للوقت الإضافي في كشف الحضور بالكود ATTSHOT"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__status__ph
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_overtime_rule__type__ph
+msgid "Public Holiday"
+msgstr "عطلة رسمية"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.actions.act_window,name:rm_hr_attendance_sheet.action_hr_public_holiday
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_hr_public_holiday
+#: model:ir.ui.menu,name:rm_hr_attendance_sheet.menu_action_public_holiday
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_public_holiday_view_form
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_public_holiday_view_tree
+msgid "Public Holidays"
+msgstr "العطل الرسمية"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_late_rule_line__type__rate
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_diff_rule_line__type__rate
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_overtime_rule__rate
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__rate
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__rate
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_absence_rule_line__rate
+msgid "Rate"
+msgstr "المعدل"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Salary Slip"
+msgstr "قسيمة الراتب"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.view_rm_hr_attendance_sheet_filter
+msgid "Search Attendance Sheets"
+msgstr "بحث كشوف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__second
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__second
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_absence_rule_line__counter__2
+msgid "Second Time"
+msgstr "المرة الثانية"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Set to Draft"
+msgstr "تعيين كمسودة"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.view_rm_hr_attendance_sheet_filter
+msgid "Start Month"
+msgstr "شهر البداية"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__state
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_batch__state
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__status
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Submit to Manager"
+msgstr "تقديم للمدير"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_batch_form_view
+msgid "Submit Sheets"
+msgstr "تقديم الكشوف"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__cat_ids
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_public_holiday__type_select__tag
+msgid "Tags"
+msgstr "الوسوم"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_attendance_policy_form_view
+msgid "The Early Out time or leaving during the working time period"
+msgstr "وقت الانصراف المبكر أو المغادرة خلال فترة العمل"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "There Is No Valid Contract For Employee %s"
+msgstr "لا يوجد عقد ساري للموظف %s"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/att_sheet_batch.py:0
+msgid "There is no  Employees In This Department"
+msgstr "لا يوجد موظفون في هذا القسم"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/att_sheet_batch.py:0
+msgid "There is no running contract version for: %s"
+msgstr "لا توجد نسخة عقد سارية لـ: %s"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "There is no active contract for current employee"
+msgstr "لا يوجد عقد نشط للموظف الحالي"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "Payslip Has Been Created Before"
+msgstr "تم إنشاء قسيمة الراتب مسبقاً"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__third
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__third
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_absence_rule_line__counter__3
+msgid "Third Time"
+msgstr "المرة الثالثة"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__fourth
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__fourth
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_absence_rule_line__counter__4
+msgid "Fourth Time"
+msgstr "المرة الرابعة"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__time
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__time
+msgid "Time"
+msgstr "الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_absence_rule_line__counter
+msgid "Times"
+msgstr "المرات"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.view_rm_hr_attendance_sheet_filter
+msgid "To Approve"
+msgstr "للاعتماد"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_public_holiday__date_to
+msgid "To"
+msgstr "إلى"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__tot_absence
+msgid "Total absence Hours"
+msgstr "إجمالي ساعات الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__tot_difftime
+msgid "Total Diff time Hours"
+msgstr "إجمالي ساعات فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__tot_late
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__tot_worked_hour
+msgid "Total Late In"
+msgstr "إجمالي التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet__tot_overtime
+msgid "Total Over Time"
+msgstr "إجمالي الوقت الإضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_overtime_rule__type
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_late_rule_line__type
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_diff_rule_line__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__attendance_sheet_line__status__weekend
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_overtime_rule__type__weekend
+msgid "Week End"
+msgstr "عطلة نهاية الأسبوع"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields.selection,name:rm_hr_attendance_sheet.selection__hr_overtime_rule__type__workday
+msgid "Working Day"
+msgstr "يوم عمل"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.hr_payslip_view_form
+msgid "Working Days"
+msgstr "أيام العمل"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_attendance_sheet_line__worked_hours
+msgid "Worked Hours"
+msgstr "ساعات العمل"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.attendance_sheet_form_view
+msgid "Worked/H"
+msgstr "ساعات العمل"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__worked_days
+msgid "Work Days No"
+msgstr "عدد أيام العمل"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__worked_hours
+msgid "Work Days Hours"
+msgstr "ساعات أيام العمل"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__absent_hours
+msgid "Absent Hours"
+msgstr "ساعات الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,field_description:rm_hr_attendance_sheet.field_hr_payslip__absent_no
+msgid "Absent No"
+msgstr "عدد الغياب"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "working on Public Holiday"
+msgstr "العمل في عطلة رسمية"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "overtime out of work intervals"
+msgstr "وقت إضافي خارج فترات العمل"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid "working in weekend"
+msgstr "العمل في عطلة نهاية الأسبوع"
+
+#. module: rm_hr_attendance_sheet
+#. odoo-python
+#: code:addons/rm_hr_attendance_sheet/models/hr_attendance_sheet.py:0
+msgid ""
+"You Have Already Attendance Sheet For That "
+"Period  Please pick another date !"
+msgstr ""
+"يوجد بالفعل كشف حضور لهذه الفترة. يرجى اختيار تاريخ آخر!"
+
+#. module: rm_hr_attendance_sheet
+#: model_terms:ir.ui.view,arch_db:rm_hr_attendance_sheet.att_data_change_from_view
+msgid "_Apply"
+msgstr "تطبيق"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,help:rm_hr_attendance_sheet.field_hr_overtime_rule__active_after
+msgid "After this time the overtime will be calculated"
+msgstr "بعد هذا الوقت سيتم احتساب الوقت الإضافي"
+
+#. module: rm_hr_attendance_sheet
+#: model:ir.model.fields,help:rm_hr_attendance_sheet.field_attendance_sheet_line__diff_time
+#: model:ir.model.fields,help:rm_hr_attendance_sheet.field_attendance_sheet_line__act_diff_time
+msgid "Diffrence between the working time and attendance time(s) "
+msgstr "الفرق بين وقت العمل ووقت الحضور "
+
+#. module: rm_hr_attendance_sheet
+#: model:report.paperformat,name:rm_hr_attendance_sheet.paperformat_attendance_sheet
+msgid "attendance sheet"
+msgstr "كشف الحضور"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,note:rm_hr_attendance_sheet.hr_salary_rule_att_absence
+msgid "deduction of absence days"
+msgstr "خصم أيام الغياب"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,note:rm_hr_attendance_sheet.hr_salary_rule_att_late
+msgid "deduction of late in"
+msgstr "خصم التأخير"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,note:rm_hr_attendance_sheet.hr_salary_rule_att_diff
+msgid "deduction of Difference time"
+msgstr "خصم فرق الوقت"
+
+#. module: rm_hr_attendance_sheet
+#: model:hr.salary.rule,note:rm_hr_attendance_sheet.hr_salary_rule_att_overtime
+msgid "Over time"
+msgstr "وقت إضافي"

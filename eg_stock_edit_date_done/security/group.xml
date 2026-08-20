@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Do not set privilege_id: Odoo 19 privilege groups are mutually exclusive
+        levels (e.g. Inventory User / Administrator). Extra rights must be
+        standalone groups so they appear as checkboxes on the user form.
+    -->
+    <record id="update_effective_date" model="res.groups">
+        <field name="name">Update Effective Date</field>
+        <field name="comment">Allow editing the effective date on done/cancelled transfers</field>
+        <field name="privilege_id" eval="False"/>
+        <field name="implied_ids" eval="[(4, ref('stock.group_stock_user'))]"/>
+    </record>
+</odoo>

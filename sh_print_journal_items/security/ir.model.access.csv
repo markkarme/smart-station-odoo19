@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sh_print_journal_items.access_journal_detail_excel_extended,access_journal_detail_excel_extended,sh_print_journal_items.model_journal_detail_excel_extended,base.group_user,1,1,1,1

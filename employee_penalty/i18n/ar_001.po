@@ -1,0 +1,473 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* employee_penalty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20251201\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-04 14:30+0000\n"
+"PO-Revision-Date: 2026-03-04 14:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_needaction
+msgid "Action Needed"
+msgstr "يتطلب اتخاذ إجراء"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__amount
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__amount
+msgid "Amount of deduction"
+msgstr "مبلغ الخصم"
+
+#. module: employee_penalty
+#: model_terms:ir.ui.view,arch_db:employee_penalty.view_employee_penalty_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__state__approved
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__4
+msgid "April"
+msgstr "أبريل"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__8
+msgid "August"
+msgstr "أغسطس"
+
+#. module: employee_penalty
+#: model_terms:ir.ui.view,arch_db:employee_penalty.view_employee_penalty_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__create_uid
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__create_date
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__11
+msgid "Decemper"
+msgstr "ديسمبر"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__state__discounted
+msgid "Discounted"
+msgstr "مخصوم"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__display_name
+#: model:ir.model.fields,field_description:employee_penalty.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:employee_penalty.field_hr_payslip_input__display_name
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: employee_penalty
+#: model:ir.ui.menu,name:employee_penalty.employee_penalty_menu
+msgid "Employee Penalties"
+msgstr "مخالفات الموظفين"
+
+#. module: employee_penalty
+#: model:ir.actions.act_window,name:employee_penalty.action_employee_penalty
+#: model_terms:ir.ui.view,arch_db:employee_penalty.view_employee_penalty_form
+msgid "Employee Penalty"
+msgstr "مخالفة الموظف"
+
+#. module: employee_penalty
+#: model:ir.model,name:employee_penalty.model_employee_penalty
+msgid "EmployeePenalty"
+msgstr "مخالفة الموظف"
+
+#. module: employee_penalty
+#: model:ir.ui.menu,name:employee_penalty.menu_penalty_root
+msgid "Employees Deductions"
+msgstr "مخالفات الموظفين"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__2
+msgid "February"
+msgstr "فبراير"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font awesome مثلاً fa-tasks"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__id
+#: model:ir.model.fields,field_description:employee_penalty.field_hr_payslip__id
+#: model:ir.model.fields,field_description:employee_penalty.field_hr_payslip_input__id
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تتطلب اهتمامك."
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__message_has_error
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فهناك رسائل بها خطأ في التسليم."
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__1
+msgid "January"
+msgstr "يناير"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__6
+msgid "June"
+msgstr "يونيو"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__write_uid
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__write_date
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__3
+msgid "March"
+msgstr "مارس"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__5
+msgid "May"
+msgstr "مايو"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__month
+msgid "Month"
+msgstr "الشهر"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__10
+msgid "Octoper"
+msgstr "أكتوبر"
+
+#. module: employee_penalty
+#: model:ir.model,name:employee_penalty.model_hr_payslip
+msgid "Pay Slip"
+msgstr "قسيمة الراتب"
+
+#. module: employee_penalty
+#: model:ir.model,name:employee_penalty.model_hr_payslip_input
+msgid "Payslip Input"
+msgstr "مدخلات قسيمة الراتب"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_hr_payslip_input__penalty_id
+#: model_terms:ir.ui.view,arch_db:employee_penalty.view_employee_penalty_form
+msgid "Penalty"
+msgstr "المخالفة"
+
+#. module: employee_penalty
+#: model:ir.actions.act_window,name:employee_penalty.action_penalty_type
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__penalty_type_id
+#: model:ir.ui.menu,name:employee_penalty.menu_penalty_type
+#: model_terms:ir.ui.view,arch_db:employee_penalty.view_penalty_type_form
+msgid "Penalty Type"
+msgstr "نوع المخالفة"
+
+#. module: employee_penalty
+#: model:ir.model,name:employee_penalty.model_penalty_type
+msgid "PenaltyType"
+msgstr "نوع المخالفة"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: employee_penalty
+#: model:ir.model.fields.selection,name:employee_penalty.selection__employee_penalty__month__9
+msgid "Septemper"
+msgstr "سبتمبر"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق مر بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: employee_penalty
+#. odoo-python
+#: code:addons/employee_penalty/models/employee_penalty.py:0
+msgid "There is deduction for this penalty in payslips."
+msgstr "يوجد استقطاع لهذه المخالفة في قسائم الرواتب."
+
+#. module: employee_penalty
+#: model_terms:ir.actions.act_window,help:employee_penalty.action_employee_penalty
+msgid "There is no examples click here to add new Employee Penalty."
+msgstr "لا توجد أمثلة، انقر هنا لإضافة مخالفة موظف جديد."
+
+#. module: employee_penalty
+#: model_terms:ir.actions.act_window,help:employee_penalty.action_penalty_type
+msgid "There is no examples click here to add new Penalty Type."
+msgstr "لا توجد أمثلة، انقر هنا لإضافة نوع مخالفة جديد."
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_employee_penalty__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__year
+msgid "Year"
+msgstr "السنة"
+
+#. module: employee_penalty
+#. odoo-python
+#: code:addons/employee_penalty/models/employee_penalty.py:0
+msgid "You can not set penalty for date in feature"
+msgstr "لا يمكنك وضع مخالفة لتاريخ في المستقبل"
+
+#. module: employee_penalty
+#. odoo-python
+#: code:addons/employee_penalty/models/employee_penalty.py:0
+msgid "You can only approve a draft record."
+msgstr "يمكنك فقط الموافقة على سجل في حالة المسودة."
+
+#. module: employee_penalty
+#. odoo-python
+#: code:addons/employee_penalty/models/employee_penalty.py:0
+msgid "You can only cancel an approved record."
+msgstr "يمكنك فقط إلغاء سجل تمت الموافقة عليه."
+
+#. module: employee_penalty
+#. odoo-python
+#: code:addons/employee_penalty/models/employee_penalty.py:0
+msgid "You can only discount an approved record."
+msgstr "يمكنك فقط إجراء خصم لسجل تمت الموافقة عليه."
+
+#. module: employee_penalty
+#. odoo-python
+#: code:addons/employee_penalty/models/employee_penalty.py:0
+msgid "You can only reject a draft record."
+msgstr "يمكنك فقط رفض سجل في حالة المسودة."
+
+#. module: employee_penalty
+#: model:ir.model.fields,field_description:employee_penalty.field_employee_penalty__currency_id
+#: model:ir.model.fields,field_description:employee_penalty.field_penalty_type__currency_id
+msgid "currnecy"
+msgstr "العملة"
+
+#. module: employee_penalty
+#: model:hr.payslip.input.type,name:employee_penalty.payslip_input_type_penalty
+msgid "penalty deduction"
+msgstr "استقطاع المخالفة"
+
+#. module: employee_penalty
+#: model:ir.model.fields,help:employee_penalty.field_hr_payslip_input__penalty_id
+msgid "refrence if the input line created by penalty"
+msgstr "مرجع إذا تم إنشاء بند المدخلات بواسطة مخالفة"
+
+#. module: employee_penalty
+#: model:ir.model.constraint,message:employee_penalty.constraint_penalty_type_validate_amount
+msgid "the amount of deduction must be greater than 0"
+msgstr "يجب أن يكون مبلغ الاستقطاع أكبر من 0"
+
+#. module: employee_penalty
+#: model:ir.model.constraint,message:employee_penalty.constraint_penalty_type_unique_name
+msgid "the name of penalty type must be unique"
+msgstr "يجب أن يكون اسم نوع المخالفة فريداً"
