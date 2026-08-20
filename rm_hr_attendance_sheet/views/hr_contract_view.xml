@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="hr_contract_form" model="ir.ui.view">
+            <field name="name">hr.version.view.inherit.attendance.sheet</field>
+            <field name="model">hr.version</field>
+            <field name="inherit_id" ref="hr.hr_version_list_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='structure_type_id']" position="after">
+                    <field name="att_policy_id" required="1"/>
+                    <field name="auto_attendance_sheet" required="0"/>
+                    <field name="attendance_sheet_based" required="0"/>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>
+
+

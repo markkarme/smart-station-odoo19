@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="update_effective_date_view" model="ir.ui.view">
+        <field name="name">update.effective.date.form</field>
+        <field name="model">update.effective.date</field>
+        <field name="arch" type="xml">
+            <form string="Update Effective Date">
+                <group>
+                    <field name="date_done"/>
+                </group>
+                <footer>
+                    <button name="update_date_done"
+                            string="Submit"
+                            type="object"
+                            class="btn-primary"
+                            data-hotkey="q"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"
+                            data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_update_effective_date" model="ir.actions.act_window">
+        <field name="name">Update Effective Date</field>
+        <field name="res_model">update.effective.date</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

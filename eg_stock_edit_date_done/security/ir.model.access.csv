@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_update_effective_date,access.update.effective.date,model_update_effective_date,eg_stock_edit_date_done.update_effective_date,1,1,1,1
+access_update_effective_date_manager,access.update.effective.date.manager,model_update_effective_date,stock.group_stock_manager,1,1,1,1

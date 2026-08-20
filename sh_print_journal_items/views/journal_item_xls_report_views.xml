@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_automatic_entry" model="ir.actions.server">
+        <field name="name">Journal Items Xlsx Report</field>
+        <field name="model_id" ref="account.model_account_move_line" />
+        <field name="binding_model_id" ref="account.model_account_move_line" />
+        <field name="state">code</field>
+        <field name="code">action = records.print_journal_item_xls_report()</field>
+    </record>
+</odoo>

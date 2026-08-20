@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View penalty.type View list -->
+    <record id="view_penalty_type_list" model="ir.ui.view">
+        <field name="name">view.penalty.type.list</field>
+        <field name="model">penalty.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="amount"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View penalty.type form -->
+    <record id="view_penalty_type_form" model="ir.ui.view">
+        <field name="name">view.penalty.type.form</field>
+        <field name="model">penalty.type</field>
+        <field name="arch" type="xml">
+            <form string="Penalty Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1" />
+                            <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action penalty.type -->
+    <record id="action_penalty_type" model="ir.actions.act_window">
+        <field name="name">Penalty Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">penalty.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Penalty Type.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item for penalty.type -->
+    <menuitem 
+        id="menu_penalty_type" 
+        name="Penalty Type" 
+        parent="menu_penalty_root" 
+        action="action_penalty_type" 
+        sequence="10"/>
+
+</odoo>

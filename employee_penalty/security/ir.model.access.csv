@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_penalty_type_manager,penalty_type_manager,model_penalty_type,,1,1,1,1
+access_employee_penalty_manager,employee_penalty_manager,model_employee_penalty,,1,1,1,1

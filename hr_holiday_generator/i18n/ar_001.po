@@ -1,0 +1,409 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_holiday_generator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-13 09:01+0000\n"
+"PO-Revision-Date: 2026-08-13 09:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: hr_holiday_generator
+#: model:ir.module.module,shortdesc:hr_holiday_generator.module_hr_holiday_generator
+msgid "HR Holiday Generator"
+msgstr "مولّد إجازات الموارد البشرية"
+
+#. module: hr_holiday_generator
+#: model:ir.module.module,summary:hr_holiday_generator.module_hr_holiday_generator
+msgid "Generate public holidays based on selected criteria."
+msgstr "إنشاء العطل الرسمية بناءً على معايير محددة."
+
+#. module: hr_holiday_generator
+#: model:ir.module.module,description:hr_holiday_generator.module_hr_holiday_generator
+msgid ""
+"This module allows you to generate public holidays based \n"
+"    on selected criteria such as year, month, or a specific date.It provides a \n"
+"    wizard that communicates with an external API to fetch public holiday data \n"
+"    and create corresponding calendar leaves.You can customize the criteria and \n"
+"    view the generated holidays within the wizard itself."
+msgstr ""
+"يتيح هذا التطبيق إنشاء العطل الرسمية بناءً على\n"
+"    معايير محددة مثل السنة أو الشهر أو تاريخ معيّن. يوفّر\n"
+"    معالجاً يتصل بواجهة برمجية خارجية لجلب بيانات العطل الرسمية\n"
+"    وإنشاء الإجازات المقابلة في التقويم. يمكنك تخصيص المعايير\n"
+"    وعرض العطل المُنشأة داخل المعالج نفسه."
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave_generator__calendar_leave_ids
+msgid "A One2many field to connect tothe model calender leave"
+msgstr "حقل لربط بنود إجازة التقويم"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__holiday_generator_id
+msgid "A Many2one field to connect tothe model hr_holiday_generator"
+msgstr "حقل للربط بنموذج مولّد الإجازات"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_res_config_settings__holiday_api
+msgid "A boolean to show and hide the api key field."
+msgstr "خيار لإظهار أو إخفاء حقل مفتاح واجهة البرمجة."
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_res_config_settings__holiday_api_key
+msgid "Api Key"
+msgstr "مفتاح واجهة البرمجة"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__4
+msgid "April"
+msgstr "أبريل"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__8
+msgid "August"
+msgstr "أغسطس"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.calendar_leave_generator_view_form
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.overlapping_date_view_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.overlapping_date_view_form
+msgid "CONTINUE"
+msgstr "متابعة"
+
+#. module: hr_holiday_generator
+#: model:ir.model,name:hr_holiday_generator.model_calendar_leave
+msgid "Calendar Leave"
+msgstr "إجازة التقويم"
+
+#. module: hr_holiday_generator
+#: model:ir.model,name:hr_holiday_generator.model_calendar_leave_generator
+msgid "Calendar Leave Generator"
+msgstr "مولّد إجازة التقويم"
+
+#. module: hr_holiday_generator
+#. odoo-python
+#: code:addons/hr_holiday_generator/wizard/overlapping_date.py:0
+msgid "Calendar Leaves"
+msgstr "إجازات التقويم"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave_generator__calendar_leave_ids
+msgid "Calender Leave"
+msgstr "إجازة التقويم"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_hr_holiday_generator__calender_leaves_ids
+msgid "Calender leaves"
+msgstr "إجازات التقويم"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__calendar_leave_generator_id
+msgid "Calendar leave generator"
+msgstr "مولّد إجازة التقويم"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.hr_holiday_generator_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_hr_holiday_generator__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__generation_mode__date
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_hr_holiday_generator__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_hr_holiday_generator__generation_mode
+msgid "Date/Month/Year"
+msgstr "تاريخ/شهر/سنة"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__12
+msgid "December"
+msgstr "ديسمبر"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__description
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_holiday_log__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__description
+#: model:ir.model.fields,help:hr_holiday_generator.field_holiday_log__description
+msgid "Description of the public holiday"
+msgstr "وصف العطلة الرسمية"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__end_date
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_holiday_log__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__end_date
+#: model:ir.model.fields,help:hr_holiday_generator.field_holiday_log__end_date
+msgid "End date of the public holiday"
+msgstr "تاريخ انتهاء العطلة الرسمية"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__2
+msgid "February"
+msgstr "فبراير"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__calendar_leave_generator_id
+msgid "For connecting with calendar leave generator"
+msgstr "للربط بمولّد إجازة التقويم"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_overlapping_date__warning
+msgid "For showing the warning messages."
+msgstr "لعرض رسائل التحذير."
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.hr_holiday_generator_view_form
+msgid "Generate"
+msgstr "إنشاء"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.hr_holiday_generator_view_form
+msgid "Generated Holidays"
+msgstr "العطل المُنشأة"
+
+#. module: hr_holiday_generator
+#: model:ir.ui.menu,name:hr_holiday_generator.hr_holiday_generator_menu
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__holiday_generator_id
+msgid "Holiday Generator"
+msgstr "مولّد العطل"
+
+#. module: hr_holiday_generator
+#: model:ir.model,name:hr_holiday_generator.model_holiday_log
+#: model:ir.actions.act_window,name:hr_holiday_generator.holiday_log_action
+#: model:ir.ui.menu,name:hr_holiday_generator.holiday_log_menu
+msgid "Holiday Logs"
+msgstr "سجل العطل"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_res_config_settings__holiday_api
+msgid "Holiday Api"
+msgstr "واجهة برمجة العطل"
+
+#. module: hr_holiday_generator
+#: model:ir.actions.act_window,name:hr_holiday_generator.hr_holiday_generator_action
+#: model:ir.model,name:hr_holiday_generator.model_hr_holiday_generator
+msgid "Hr Holiday Generator"
+msgstr "مولّد إجازات الموارد البشرية"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__1
+msgid "January"
+msgstr "يناير"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__6
+msgid "June"
+msgstr "يونيو"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__generation_mode__month
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_hr_holiday_generator__month
+msgid "Month"
+msgstr "الشهر"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__5
+msgid "May"
+msgstr "مايو"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__3
+msgid "March"
+msgstr "مارس"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__name
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_holiday_log__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__11
+msgid "November"
+msgstr "نوفمبر"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__10
+msgid "October"
+msgstr "أكتوبر"
+
+#. module: hr_holiday_generator
+#. odoo-python
+#: code:addons/hr_holiday_generator/wizard/hr_holiday_generator.py:0
+#: code:addons/hr_holiday_generator/wizard/calendar_leave_generator.py:0
+msgid "Overlapping Dates Warning"
+msgstr "تحذير التواريخ المتداخلة"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_res_config_settings__holiday_api_key
+msgid "Please enter the calendarific API key here."
+msgstr "يرجى إدخال مفتاح Calendarific هنا."
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.res_config_settings_view_form
+msgid "Public Holiday"
+msgstr "عطلة رسمية"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.res_config_settings_view_form
+msgid "Public Holidays"
+msgstr "العطل الرسمية"
+
+#. module: hr_holiday_generator
+#. odoo-python
+#: code:addons/hr_holiday_generator/wizard/hr_holiday_generator.py:0
+#: code:addons/hr_holiday_generator/wizard/calendar_leave_generator.py:0
+msgid ""
+"Public holidays already exist for the following date(s): "
+"%s.\nPlease refer to the logs for detailed "
+"information about the public holidays on these dates.\n\n"
+msgstr ""
+"توجد عطل رسمية بالفعل للتاريخ/التواريخ التالية: "
+"%s.\nيرجى الرجوع إلى السجلات للاطلاع على تفاصيل "
+"العطل الرسمية في هذه التواريخ.\n\n"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.calendar_leave_generator_view_form
+msgid "SAVE"
+msgstr "حفظ"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.hr_holiday_generator_view_form
+msgid "Save"
+msgstr "حفظ"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_hr_holiday_generator__date
+msgid "Select the date you want to generate the public holiday"
+msgstr "حدد التاريخ الذي تريد إنشاء العطلة الرسمية فيه"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_hr_holiday_generator__month
+msgid "Select the month you want to generate the public holiday"
+msgstr "حدد الشهر الذي تريد إنشاء العطلة الرسمية فيه"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_hr_holiday_generator__year
+msgid "Select the year you want to generate the public holiday"
+msgstr "حدد السنة التي تريد إنشاء العطلة الرسمية فيها"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_hr_holiday_generator__country_id
+msgid "Select your country from here"
+msgstr "حدد دولتك من هنا"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_hr_holiday_generator__generation_mode
+msgid "Select date or month or year in which you want to get the public holidays"
+msgstr "حدد التاريخ أو الشهر أو السنة التي تريد جلب العطل الرسمية فيها"
+
+#. module: hr_holiday_generator
+#. odoo-python
+#: code:addons/hr_holiday_generator/wizard/hr_holiday_generator.py:0
+#: code:addons/hr_holiday_generator/wizard/calendar_leave_generator.py:0
+msgid "Select only one holiday per date:\n"
+msgstr "اختر عطلة واحدة فقط لكل تاريخ:\n"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__month__9
+msgid "September"
+msgstr "سبتمبر"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__start_date
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_holiday_log__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__start_date
+#: model:ir.model.fields,help:hr_holiday_generator.field_holiday_log__start_date
+msgid "Start date of the public holiday"
+msgstr "تاريخ بدء العطلة الرسمية"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_hr_holiday_generator__calender_leaves_ids
+msgid "The One2many field to take the values of the model calender_leave"
+msgstr "حقل لعرض قيم إجازات التقويم"
+
+#. module: hr_holiday_generator
+#. odoo-python
+#: code:addons/hr_holiday_generator/wizard/hr_holiday_generator.py:0
+#: code:addons/hr_holiday_generator/wizard/calendar_leave_generator.py:0
+msgid "The following dates have multiple holidays:\n"
+msgstr "التواريخ التالية تحتوي على أكثر من عطلة:\n"
+
+#. module: hr_holiday_generator
+#: model_terms:ir.ui.view,arch_db:hr_holiday_generator.res_config_settings_view_form
+msgid "Time off"
+msgstr "الإجازات"
+
+#. module: hr_holiday_generator
+#. odoo-python
+#: code:addons/hr_holiday_generator/wizard/hr_holiday_generator.py:0
+msgid ""
+"To retrieve the data, kindly provide the API key in the "
+"general settings."
+msgstr ""
+"لجلب البيانات، يرجى إدخال مفتاح واجهة البرمجة في "
+"الإعدادات العامة."
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_calendar_leave__warning
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_overlapping_date__warning
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__warning
+msgid "Warning to show holidays of same dates"
+msgstr "تحذير لإظهار العطل في نفس التواريخ"
+
+#. module: hr_holiday_generator
+#: model:ir.model,name:hr_holiday_generator.model_overlapping_date
+msgid "Wizard to Display Warning"
+msgstr "معالج عرض التحذير"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields.selection,name:hr_holiday_generator.selection__hr_holiday_generator__generation_mode__year
+#: model:ir.model.fields,field_description:hr_holiday_generator.field_hr_holiday_generator__year
+msgid "Year"
+msgstr "السنة"
+
+#. module: hr_holiday_generator
+#: model:ir.model.fields,help:hr_holiday_generator.field_calendar_leave__name
+#: model:ir.model.fields,help:hr_holiday_generator.field_holiday_log__name
+msgid "name of the public holiday"
+msgstr "اسم العطلة الرسمية"

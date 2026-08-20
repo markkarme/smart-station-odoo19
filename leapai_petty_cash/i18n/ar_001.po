@@ -1,0 +1,1324 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* leapai_petty_cash
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260723\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-13 08:25+0000\n"
+"PO-Revision-Date: 2026-08-13 11:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_kanban
+msgid "<i class=\"fa fa-calendar\" title=\"Date\"/>"
+msgstr "<i class=\"fa fa-calendar\" title=\"التاريخ\"/>"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_kanban
+msgid "<i class=\"fa fa-user\" title=\"Employee\"/>"
+msgstr "<i class=\"fa fa-user\" title=\"الموظف\"/>"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "<strong>Approved By</strong><br/>"
+msgstr "<strong>تمت الموافقة بواسطة</strong><br/>"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid ""
+"<strong>Paid By</strong><br/>\n"
+"                                    _____________________"
+msgstr ""
+"<strong>دُفع بواسطة</strong><br/>\n"
+"                                    _____________________"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "<strong>Requested By</strong><br/>"
+msgstr "<strong>طُلب بواسطة</strong><br/>"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "A transaction already exists for this request."
+msgstr "توجد معاملة بالفعل لهذا الطلب."
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Accounting"
+msgstr "المحاسبة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_needaction
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_fund__state__active
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Active Funds"
+msgstr "الصناديق النشطة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_ids
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_exception_decoration
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_state
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_type_icon
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__actual_spent_amount
+msgid "Actual Spent Amount"
+msgstr "المبلغ المصروف فعلياً"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Add notes here..."
+msgstr "أضف ملاحظات هنا..."
+
+#. module: leapai_petty_cash
+#: model:ir.actions.act_window,name:leapai_petty_cash.action_petty_cash_request_all
+msgid "All Petty Cash Requests"
+msgstr "جميع طلبات النثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_all_petty_cash_requests
+msgid "All Requests"
+msgstr "جميع الطلبات"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "All Transactions"
+msgstr "جميع المعاملات"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "All transactions already have a journal entry."
+msgstr "جميع المعاملات لديها قيد يومية بالفعل."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Amount Requested:"
+msgstr "المبلغ المطلوب:"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Amount Spent"
+msgstr "المبلغ المصروف"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__amount
+msgid ""
+"Amount approved by the manager. Set on approval and used when marking as "
+"paid."
+msgstr ""
+"المبلغ المعتمد من المدير. يُحدد عند الموافقة ويُستخدم عند التأشير كمدفوع."
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_form
+msgid "Amounts"
+msgstr "المبالغ"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__analytic_distribution
+msgid "Analytic Distribution"
+msgstr "التوزيع التحليلي"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__analytic_precision
+msgid "Analytic Precision"
+msgstr "دقة التحليل"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__approved_date
+msgid "Approval Date"
+msgstr "تاريخ الموافقة"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Approval Date:"
+msgstr "تاريخ الموافقة:"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_request__state__approved
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Approved"
+msgstr "موافق عليه"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__amount
+msgid "Approved Amount"
+msgstr "المبلغ المعتمد"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__approved_by
+msgid "Approved By"
+msgstr "تمت الموافقة بواسطة"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Approved By:"
+msgstr "تمت الموافقة بواسطة:"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Approved amount must be greater than zero."
+msgstr "يجب أن يكون المبلغ المعتمد أكبر من الصفر."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_attachment_count
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__balance
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__can_edit_approved_amount
+msgid "Can Edit Approved Amount"
+msgstr "يمكن تعديل المبلغ المعتمد"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_reject_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Cannot reset payment because journal entry %s is posted. Reset the journal entry to draft first."
+msgstr "لا يمكن إلغاء الدفع لأن قيد اليومية %s مرحّل. أعد قيد اليومية إلى مسودة أولاً."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__account_id
+msgid "Cash Account"
+msgstr "حساب النقد"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_funds
+msgid "Cash Funds"
+msgstr "الصناديق النقدية"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__journal_id
+msgid "Cash Journal"
+msgstr "دفتر يومية النقد"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__company_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__company_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_config_root
+msgid "Configuration"
+msgstr "التهيئة"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Create Journal Entry"
+msgstr "إنشاء قيد يومية"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_request_my
+msgid "Create a petty cash request to get funds for your expenses."
+msgstr "أنشئ طلب نثريات للحصول على مبالغ لمصاريفك."
+
+#. module: leapai_petty_cash
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_request_all
+msgid "Create a petty cash request to track employee fund usage."
+msgstr "أنشئ طلب نثريات لتتبع استخدام صندوق الموظف."
+
+#. module: leapai_petty_cash
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_fund
+msgid "Create your first Petty Cash Fund"
+msgstr "أنشئ أول صندوق نثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__create_uid
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__create_uid
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__create_uid
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__create_date
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__create_date
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__create_date
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__credit
+msgid "Credit (Out)"
+msgstr "دائن (صادر)"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_search
+msgid "Credits (Out)"
+msgstr "الدائن (صادر)"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__currency_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__currency_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__current_balance
+msgid "Current Balance"
+msgstr "الرصيد الحالي"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__current_journal_account_balance
+msgid "Current Journal Account Balance"
+msgstr "رصيد حساب دفتر اليومية الحالي"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_dashboard
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__date
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__debit
+msgid "Debit (In)"
+msgstr "مدين (وارد)"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_search
+msgid "Debits (In)"
+msgstr "المدين (وارد)"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__account_id
+msgid "Dedicated account for this petty cash fund"
+msgstr "حساب مخصص لصندوق النثريات هذا"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__journal_id
+msgid "Dedicated journal for petty cash transactions"
+msgstr "دفتر يومية مخصص لمعاملات النثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__journal_default_account_id
+msgid "Default Account"
+msgstr "الحساب الافتراضي"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Describe the purpose of this petty cash request..."
+msgstr "صف الغرض من طلب النثريات هذا..."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__amount_difference
+msgid "Difference"
+msgstr "الفرق"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_account_move__display_name
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_dashboard__display_name
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__display_name
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__display_name
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__display_name
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__distribution_analytic_account_ids
+msgid "Distribution Analytic Account"
+msgstr "الحساب التحليلي للتوزيع"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_request__state__draft
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "Draft journal entry created for %d transaction(s)."
+msgstr "تم إنشاء قيد يومية مسودة لـ %d معاملة."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model,name:leapai_petty_cash.model_hr_employee
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__employee_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__employee_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__employee_id
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_search
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Employee:"
+msgstr "الموظف:"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_reject_wizard_form
+msgid "Enter the reason for rejection..."
+msgstr "أدخل سبب الرفض..."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__expected_balance
+msgid "Expected Balance"
+msgstr "الرصيد المتوقع"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_follower_ids
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_partner_ids
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__activity_type_icon
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_search
+msgid "Fund"
+msgstr "الصندوق"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__current_balance
+msgid "Fund Balance"
+msgstr "رصيد الصندوق"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Fund Information"
+msgstr "معلومات الصندوق"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__fund_move_count
+msgid "Fund Journal Entries"
+msgstr "قيود يومية الصندوق"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__name
+msgid "Fund Name"
+msgstr "اسم الصندوق"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Fund Name..."
+msgstr "اسم الصندوق..."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "Fund Setup Complete"
+msgstr "اكتمل إعداد الصندوق"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Fund:"
+msgstr "الصندوق:"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_funds_root
+msgid "Funds"
+msgstr "الصناديق"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__has_message
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_hr_employee__has_petty_cash
+msgid "Has Petty Cash Fund"
+msgstr "لديه صندوق نثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_account_move__id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_hr_employee__id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_dashboard__id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_exception_icon
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__activity_exception_icon
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__message_needaction
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__message_has_error
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__message_has_sms_error
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__message_has_error
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_fund__state__inactive
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_search
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__initial_balance
+msgid "Initial Balance"
+msgstr "الرصيد الافتتاحي"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid ""
+"Insufficient balance in the petty cash fund.\n"
+"Available: %s, Approved: %s"
+msgstr ""
+"رصيد غير كافٍ في صندوق النثريات.\n"
+"المتاح: %s، المعتمد: %s"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__notes
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Internal Notes"
+msgstr "ملاحظات داخلية"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Internal notes..."
+msgstr "ملاحظات داخلية..."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_is_follower
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__move_count
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__move_ids
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Journal Entries"
+msgstr "قيود اليومية"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Journal Entries:"
+msgstr "قيود اليومية:"
+
+#. module: leapai_petty_cash
+#: model:ir.model,name:leapai_petty_cash.model_account_move
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__move_id
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__write_uid
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__write_uid
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__write_uid
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__write_date
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__write_date
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__write_date
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Loading dashboard data..."
+msgstr "جاري تحميل بيانات لوحة التحكم..."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Loading..."
+msgstr "جاري التحميل..."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Manage Funds"
+msgstr "إدارة الصناديق"
+
+#. module: leapai_petty_cash
+#: model:res.groups,name:leapai_petty_cash.petty_cash_manager_group
+msgid "Manager"
+msgstr "مدير"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Mark as Paid"
+msgstr "تأشير كمدفوع"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_has_error
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_ids
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Monitor funds, requests, and transactions at a glance"
+msgstr "راقب الصناديق والطلبات والمعاملات بنظرة سريعة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__my_activity_date_deadline
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: leapai_petty_cash
+#: model:ir.actions.act_window,name:leapai_petty_cash.action_petty_cash_request_my
+msgid "My Petty Cash Requests"
+msgstr "طلبات النثريات الخاصة بي"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_my_petty_cash_requests
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "My Requests"
+msgstr "طلباتي"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "New Request"
+msgstr "طلب جديد"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_calendar_event_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_date_deadline
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_summary
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_type_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "No expense account found. Please configure an expense account."
+msgstr "لم يتم العثور على حساب مصروفات. يرجى تهيئة حساب مصروفات."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid ""
+"No opening account found. Please configure an equity or current liability "
+"account."
+msgstr ""
+"لم يتم العثور على حساب افتتاحي. يرجى تهيئة حساب حقوق ملكية أو التزامات متداولة."
+
+#. module: leapai_petty_cash
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_request_all
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_request_my
+msgid "No petty cash requests yet"
+msgstr "لا توجد طلبات نثريات بعد"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "No requests yet"
+msgstr "لا توجد طلبات بعد"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_transaction
+msgid "No transactions yet"
+msgstr "لا توجد معاملات بعد"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__notes
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_needaction_counter
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_has_error_counter
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__message_needaction_counter
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Only paid requests can be reset to approved."
+msgstr "يمكن إعادة الطلبات المدفوعة فقط إلى حالة موافق عليه."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__message_has_error_counter
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_request__state__paid
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__paid_date
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Payment Date:"
+msgstr "تاريخ الدفع:"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Payment cancelled. Request reset to approved."
+msgstr "تم إلغاء الدفع. أُعيد الطلب إلى موافق عليه."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Payment registered on %s for amount %s."
+msgstr "تم تسجيل الدفع في %s بمبلغ %s."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Pending Approval"
+msgstr "في انتظار الموافقة"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Pending Approvals"
+msgstr "الموافقات المعلقة"
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_root
+#: model:res.groups.privilege,name:leapai_petty_cash.res_groups_privilege_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_hr_employee_form_petty_cash
+msgid "Petty Cash"
+msgstr "النثريات"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.actions.client,name:leapai_petty_cash.action_petty_cash_dashboard
+#: model:ir.model,name:leapai_petty_cash.model_petty_cash_dashboard
+msgid "Petty Cash Dashboard"
+msgstr "لوحة تحكم النثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.model,name:leapai_petty_cash.model_petty_cash_fund
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_account_bank_statement_line__petty_cash_fund_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_account_move__petty_cash_fund_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__fund_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__fund_id
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Petty Cash Fund"
+msgstr "صندوق النثريات"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:leapai_petty_cash.action_petty_cash_fund
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_hr_employee__petty_cash_fund_count
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_hr_employee__petty_cash_fund_ids
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_hr_employee_form_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_list
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_search
+msgid "Petty Cash Funds"
+msgstr "صناديق النثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.actions.report,name:leapai_petty_cash.action_report_petty_cash_request
+#: model:ir.model,name:leapai_petty_cash.model_petty_cash_request
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Petty Cash Request"
+msgstr "طلب صرف نثريات"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_list
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Petty Cash Requests"
+msgstr "طلبات النثريات"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/hr_employee.py:0
+msgid "Petty Cash Setup"
+msgstr "إعداد النثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.model,name:leapai_petty_cash.model_petty_cash_transaction
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_form
+msgid "Petty Cash Transaction"
+msgstr "معاملة نثريات"
+
+#. module: leapai_petty_cash
+#: model:ir.actions.act_window,name:leapai_petty_cash.action_petty_cash_transaction
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_list
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_search
+msgid "Petty Cash Transactions"
+msgstr "معاملات النثريات"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "Petty cash account and journal have been created successfully."
+msgstr "تم إنشاء حساب النثريات ودفتر اليومية بنجاح."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Please complete the fund setup first (create account and journal)."
+msgstr "يرجى إكمال إعداد الصندوق أولاً (إنشاء الحساب ودفتر اليومية)."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "Please set a journal on this petty cash fund first."
+msgstr "يرجى تعيين دفتر يومية لصندوق النثريات هذا أولاً."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid ""
+"Please set the cash account on this fund before creating a journal entry."
+msgstr ""
+"يرجى تعيين حساب النقد لهذا الصندوق قبل إنشاء قيد اليومية."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Purpose"
+msgstr "الغرض"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__reason
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Purpose / Reason"
+msgstr "الغرض / السبب"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Quick Actions"
+msgstr "إجراءات سريعة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__rating_ids
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Recent Requests"
+msgstr "الطلبات الأخيرة"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Recent Transactions"
+msgstr "المعاملات الأخيرة"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Reference:"
+msgstr "المرجع:"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_form
+msgid "References"
+msgstr "المراجع"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: leapai_petty_cash
+#: model:ir.model,name:leapai_petty_cash.model_petty_cash_reject_wizard
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_reject_wizard_form
+msgid "Reject Petty Cash Request"
+msgstr "رفض طلب النثريات"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_reject_wizard_form
+msgid "Reject Request"
+msgstr "رفض الطلب"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_request__state__rejected
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__rejection_reason
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__rejection_reason
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_reject_wizard__request_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_transaction__request_id
+msgid "Request"
+msgstr "الطلب"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Request Date:"
+msgstr "تاريخ الطلب:"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Request Details"
+msgstr "تفاصيل الطلب"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Request Status"
+msgstr "حالة الطلب"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Request approved by %s. Approved amount: %s (requested: %s)."
+msgstr "تمت الموافقة على الطلب بواسطة %s. المبلغ المعتمد: %s (المطلوب: %s)."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/wizard/petty_cash_reject_wizard.py:0
+msgid "Request rejected. Reason: %s"
+msgstr "تم رفض الطلب. السبب: %s"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Request submitted for approval."
+msgstr "تم تقديم الطلب للموافقة."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__requested_amount
+msgid "Requested Amount"
+msgstr "المبلغ المطلوب"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__amount_difference
+msgid "Requested amount minus approved amount."
+msgstr "المبلغ المطلوب ناقص المبلغ المعتمد."
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_request.py:0
+msgid "Requested amount must be greater than zero."
+msgstr "يجب أن يكون المبلغ المطلوب أكبر من الصفر."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__request_count
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__request_ids
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_requests_root
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Requests"
+msgstr "الطلبات"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Reset to Approved"
+msgstr "إعادة إلى موافق عليه"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__activity_user_id
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__message_has_sms_error
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Set Active"
+msgstr "تعيين كنشط"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Set Inactive"
+msgstr "تعيين كغير نشط"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_fund
+msgid ""
+"Set up petty cash funds for employees and manage their cash flow "
+"efficiently."
+msgstr ""
+"قم بإعداد صناديق النثريات للموظفين وإدارة تدفقها النقدي بكفاءة."
+
+#. module: leapai_petty_cash
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_config
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_hr_employee_form_petty_cash
+msgid "Setup Petty Cash Fund"
+msgstr "إعداد صندوق النثريات"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__state
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__state
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_search
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Status Information"
+msgstr "معلومات الحالة"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__activity_state
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.report_petty_cash_request_template
+msgid "Status:"
+msgstr "الحالة:"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_form
+msgid "Submit"
+msgstr "تقديم"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model:ir.model.fields.selection,name:leapai_petty_cash.selection__petty_cash_request__state__submitted
+msgid "Submitted"
+msgstr "مقدم"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "There are no transactions to include in the journal entry."
+msgstr "لا توجد معاملات لإدراجها في قيد اليومية."
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_search
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Total Balance"
+msgstr "إجمالي الرصيد"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_list
+msgid "Total Credit"
+msgstr "إجمالي الدائن"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_list
+msgid "Total Debit"
+msgstr "إجمالي المدين"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_request_list
+msgid "Total Requested Amount"
+msgstr "إجمالي المبلغ المطلوب"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Total Paid"
+msgstr "إجمالي المدفوع"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "Total Requests"
+msgstr "إجمالي الطلبات"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_transaction_form
+msgid "Transaction Details"
+msgstr "تفاصيل المعاملة"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__transaction_count
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__transaction_ids
+#: model:ir.ui.menu,name:leapai_petty_cash.menu_petty_cash_transactions
+#: model_terms:ir.ui.view,arch_db:leapai_petty_cash.view_petty_cash_fund_form
+msgid "Transactions"
+msgstr "المعاملات"
+
+#. module: leapai_petty_cash
+#: model_terms:ir.actions.act_window,help:leapai_petty_cash.action_petty_cash_transaction
+msgid ""
+"Transactions are created automatically when petty cash requests are "
+"approved."
+msgstr ""
+"يتم إنشاء المعاملات تلقائياً عند الموافقة على طلبات النثريات."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__activity_exception_decoration
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء في السجل."
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__unjournalized_transaction_count
+msgid "Unjournalized Transactions"
+msgstr "المعاملات غير المقيّدة"
+
+#. module: leapai_petty_cash
+#: model:res.groups,name:leapai_petty_cash.petty_cash_user_group
+msgid "User"
+msgstr "مستخدم"
+
+#. module: leapai_petty_cash
+#. odoo-javascript
+#: code:addons/leapai_petty_cash/static/src/components/dashboard/dashboard.xml:0
+msgid "View All"
+msgstr "عرض الكل"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_fund__website_message_ids
+#: model:ir.model.fields,field_description:leapai_petty_cash.field_petty_cash_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: leapai_petty_cash
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_fund__website_message_ids
+#: model:ir.model.fields,help:leapai_petty_cash.field_petty_cash_request__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/hr_employee.py:0
+msgid "employee_id"
+msgstr "employee_id"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "fund_id"
+msgstr "fund_id"
+
+#. module: leapai_petty_cash
+#. odoo-python
+#: code:addons/leapai_petty_cash/models/petty_cash_fund.py:0
+msgid "petty_cash_fund_id"
+msgstr "petty_cash_fund_id"
