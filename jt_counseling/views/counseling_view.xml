@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Counseling Form View-->
+        <record id="counseling_form_view" model="ir.ui.view">
+            <field name="name">Counseling Form View</field>
+            <field name="model">student.counseling</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="timer_start" invisible="1"/>
+                        <field name="timer_pause" invisible="1"/>
+                        <field name="timer_stop" invisible="1"/>
+                        <field name="timer_state" invisible="1"/>
+                        <button class="btn-primary" name="action_timer_start" type="object" string="Start" data-hotkey="z" invisible="timer_state != 'not_started'"/>
+                        <button class="btn-secondary" name="action_timer_pause" type="object" string="Pause" data-hotkey="w" invisible="timer_state != 'running'"/>
+                        <button class="btn-secondary" name="action_timer_resume" type="object" string="Resume" data-hotkey="w" invisible="timer_state != 'paused'"/>
+                        <button class="btn-primary o_fsm_stop" name="action_timer_stop" type="object" string="Stop" data-hotkey="z" invisible="timer_state not in ('paused', 'running')"/>
+                        <field name="timer_start" widget="timer_start_field" class="d-flex align-items-center align-self-center me-auto ms-2 h2 py-2" invisible="timer_state == 'stopped'"/>
+                        <field name="timer_state" readonly="1" widget="statusbar" statusbar_visible="not_started,running,paused,stopped"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="student_id" required="1"/>
+                                <field name="faculty_id" required="1"/>
+                                <label for="survey_link"/>
+                                <div class="o_row">
+                                    <field name="survey_link"/>
+                                    <button name="open_link" type="object" string="Open" context="{'id':'1'}" class="btn-info"/>
+                                </div>
+                                <field name="total_time"/>
+                            </group>
+                        </group>
+                        <group string="Notes">
+                            <field name="note" nolabel="1"/>
+                        </group>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+        
+        <!--Counseling Tree View-->
+        <record id="counseling_tree_view" model="ir.ui.view">
+            <field name="name">Counseling Tree View</field>
+            <field name="model">student.counseling</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="student_id"/>
+                    <field name="faculty_id"/>
+                </list>
+            </field>
+        </record> 
+        
+        <!--Counseling search view  -->
+        <record id="counseling_search_view" model="ir.ui.view">
+            <field name="name">Counseling Search View</field>
+            <field name="model">student.counseling</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="student_id"/>
+                    <field name="faculty_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Inherit Survey Form View -->
+        <record id="survey_form_inherit" model="ir.ui.view">
+            <field name="name">survey.form.inherit</field>
+            <field name="model">survey.survey</field>
+            <field name="inherit_id" ref="survey.survey_survey_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//group[1]//field[@name='user_id']" position="after">
+                    <field name="is_counseling"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Survey Template -->
+        <template id="custom_survey_button_retake" inherit_id="survey.survey_button_retake">
+            <xpath expr="//div" position="inside">
+                <p>
+                    <a t-attf-href="/student/counseling" role="button" class="btn btn-primary btn-lg">Return View</a>
+                </p>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

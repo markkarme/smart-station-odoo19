@@ -1,0 +1,566 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-29 19:26+0000\n"
+"PO-Revision-Date: 2021-09-29 19:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "<b>Assignment:</b>"
+msgstr "<b>कार्यभार:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "<b>Date Of Payment:</b>"
+msgstr "<b>भुगतान की तिथि:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "<b>Date of Issue:</b>"
+msgstr "<b>देने की तिथि:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "<b>Date of Return:</b>"
+msgstr "<b>लौटने की तारीख:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Division:</b>"
+msgstr "<b>विभाजन:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>End Date:</b>"
+msgstr "<b>समाप्ति तिथि:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>Exam:</b>"
+msgstr "<b>परीक्षा:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "<b>Issue ID:</b>"
+msgstr "<b>इश्यू आईडी:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "<b>Issued Date:</b>"
+msgstr "<b>जारी करने की तिथि:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "<b>Month:</b>"
+msgstr "<b>माह:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Name:</b>"
+msgstr "<b>नाम:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "<b>Receipt Number</b>"
+msgstr "<b>रसीद संख्या</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Standard:</b>"
+msgstr "<b>कक्षा:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>Start Date:</b>"
+msgstr "<b>आरंभ तिथि:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>Status:</b>"
+msgstr "<b>स्थिति:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "<b>Submission Date:</b>"
+msgstr "<b>प्रस्तुत करने की तिथि:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Year:</b>"
+msgstr "<b>वर्ष:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "<em class=\"font-weight-normal text-muted\">Results for project:</em>"
+msgstr "<em class=\"font-weight-normal text-muted\">परियोजना के लिए परिणाम:</em>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<i class=\"fa fa-download\"/> Download"
+msgstr "<i class=\"fa fa-download\"/> डाउनलोड"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<strong>Fail</strong>"
+msgstr "<strong>विफल</strong>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<strong>Pass</strong>"
+msgstr "<strong>पास</strong>"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "All"
+msgstr "सभी"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Amount"
+msgstr "राशि"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Assignment Details"
+msgstr "असाइनमेंट विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment Type"
+msgstr "असाइनमेंट प्रकार"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Assignments"
+msgstr "असाइनमेंट"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Assignments List"
+msgstr "असाइनमेंट सूची"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Attended Date"
+msgstr "भाग लेने की तिथि"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Author"
+msgstr "लेखक"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Book"
+msgstr "पुस्तक"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Book Limit"
+msgstr "बुक लिमिट"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Category"
+msgstr "श्रेणी"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Current Year"
+msgstr "वर्तमान साल"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Date"
+msgstr "दिनांक"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Date of Return"
+msgstr "लौटने की तारीख"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Day"
+msgstr "दिन"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Description"
+msgstr "विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Division"
+msgstr "विभाजन"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Download"
+msgstr "डाउनलोड"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "Duration"
+msgstr "अवधि"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "Employee"
+msgstr "कर्मचारी"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "End Date"
+msgstr "अंतिम तिथि"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event State"
+msgstr "प्रसंग स्थिति"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Events"
+msgstr "प्रसंग"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Events Details"
+msgstr "प्रसंग विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Exam Details"
+msgstr "परीक्षा विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams"
+msgstr "परीक्षा"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams List"
+msgstr "परीक्षा सूची"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Exams Schedule"
+msgstr "परीक्षा अनुसूची"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Faculty"
+msgstr "शिक्षक"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees"
+msgstr "शुल्क"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Fees Details"
+msgstr "शुल्क विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Fees List"
+msgstr "शुल्क सूची"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees Receipt"
+msgstr "शुल्क रसीद"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "From"
+msgstr "से"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Genres"
+msgstr "शैलियां"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Grade"
+msgstr "ग्रेड"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue Books"
+msgstr "दी गई किताबें"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue List"
+msgstr "दी गई सूची"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Issued Date"
+msgstr "जारी दिनांक"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Language"
+msgstr "भाषा"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Library Details"
+msgstr "पुस्तकालय विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Marks Obtained"
+msgstr "अंक प्राप्त की"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership"
+msgstr "सदस्यता"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership ID"
+msgstr "सदस्यता पहचान"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Min Marks"
+msgstr "न्यूनतम अंक"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Month"
+msgstr "महीना"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Name"
+msgstr "नाम"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Newest"
+msgstr "नवीनतम"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "None"
+msgstr "अभाव"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Note"
+msgstr "ध्यान दें"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Particulars"
+msgstr "विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Percentage:"
+msgstr "प्रतिशत:"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Periods"
+msgstr "अवधि"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Receipt Number"
+msgstr "पत्र संख्या"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Registration Date"
+msgstr "पंजीकरण की तारीख"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Result"
+msgstr "नतीजा"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result:"
+msgstr "नतीजा:"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results"
+msgstr "परिणाम"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results List"
+msgstr "परिणाम सूची"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Scored Marks"
+msgstr "स्कोर किए गए अंक"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Search in All"
+msgstr "सभी में खोजें"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Serial Number"
+msgstr "क्रमिक संख्या"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Standard"
+msgstr "कक्षा"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Start Date"
+msgstr "आरंभ करने की तिथि"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Status"
+msgstr "स्थिति"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Subject Pass/Fail"
+msgstr "विषय पास / असफल"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Subjects"
+msgstr "विषयों"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission Date"
+msgstr "जमा करने की तारीखv"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submissions"
+msgstr "प्रविष्टियों"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "There are no results."
+msgstr "कोई परिणाम नहीं हैं।"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Time"
+msgstr "समय"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Timetable"
+msgstr "समय सारणी"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Timetable Details"
+msgstr "समय सारिणी विवरण"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "To"
+msgstr "प्रति"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Today"
+msgstr "आज"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Total"
+msgstr "कुल"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Total Marks"
+msgstr "कुल मार्क"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Year"
+msgstr "वर्ष"

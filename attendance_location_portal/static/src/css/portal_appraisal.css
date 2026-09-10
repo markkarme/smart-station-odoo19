@@ -1,28 +1,185 @@
-.portal-appraisal-feedback-editor {
+.portal-appraisal-form {
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem 0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.06);
+}
+
+.portal-appraisal-header .btn-primary {
+    min-width: 6.5rem;
+}
+
+.portal-appraisal-statusbar .badge {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.85rem;
+    font-weight: 600;
+}
+
+.portal-appraisal-employee {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.portal-appraisal-employee-select {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 1px solid #ced4da;
+    padding-left: 0.75rem;
+}
+
+.portal-appraisal-avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.portal-appraisal-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #f4f4f4;
+    border: 1px solid #e9ecef;
+    border-radius: 2rem;
+    padding: 0.2rem 0.55rem 0.2rem 0.25rem;
+    font-size: 0.9rem;
+}
+
+.portal-appraisal-chip img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+}
+
+.portal-appraisal-chip .btn-close {
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0.4rem;
+    opacity: 0.65;
+}
+
+.portal-appraisal-tabs {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.portal-appraisal-tabs .nav-link {
+    color: #714b67;
+    font-weight: 600;
+}
+
+.portal-appraisal-tabs .nav-link.active {
+    color: #212529;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.o_appraisal_both_feedback {
     min-height: 20rem;
-    max-height: 40rem;
+    margin: 0 -1.5rem;
+}
+
+.o_appraisal_feedback {
+    flex: 1 1 50%;
+    max-width: 100%;
+    padding: 1rem 1.25rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.o_appraisal_manager_feedback {
+    background-color: #f4f4f4;
+}
+
+.o_appraisal_feedback_title {
+    margin-bottom: 0.75rem;
+}
+
+.o_appraisal_feedback_title h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.portal-appraisal-feedback-editor,
+.portal-appraisal-feedback-readonly {
+    min-height: 30rem;
+    max-height: 42rem;
     overflow: auto;
-    background-color: #fff;
     line-height: 1.5;
+    padding: 0.25rem 0.15rem 1rem;
+}
+
+.portal-appraisal-feedback-editor {
+    background-color: transparent;
 }
 
 .portal-appraisal-feedback-editor:focus {
     outline: none;
-    border-color: #714b67;
-    box-shadow: 0 0 0 0.2rem rgba(113, 75, 103, 0.15);
 }
 
-.portal-appraisal-feedback-editor h2,
-.portal-appraisal-feedback-editor h3 {
-    margin-top: 1rem;
+.o_appraisal_template h2 {
+    font-size: 1.15rem;
+    margin: 1.1rem 0 0.5rem;
+}
+
+.o_appraisal_template h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.9rem 0 0.4rem;
+}
+
+.o_appraisal_template p,
+.o_appraisal_template li {
     margin-bottom: 0.5rem;
 }
 
-.portal-appraisal-feedback-editor p {
-    margin-bottom: 0.75rem;
+.o_appraisal_template em {
+    color: #6c757d;
 }
 
-.portal-appraisal-feedback-readonly {
-    min-height: 8rem;
-    line-height: 1.5;
+.o_appraisal_template table {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.75rem 0;
+}
+
+.o_stars {
+    display: inline-flex;
+    gap: 0.15rem;
+    color: #efb800;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.o_stars i {
+    font-size: 1.05rem;
+}
+
+[contenteditable="true"] .o_stars {
+    cursor: pointer;
+}
+
+.portal-appraisal-blur {
+    filter: blur(0.2rem);
+    opacity: 0.35;
+    user-select: none;
+    pointer-events: none;
+}
+
+.portal-appraisal-overlay {
+    position: absolute;
+    inset: 2.5rem 0.5rem auto;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #6c757d;
+    pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+    .o_appraisal_both_feedback {
+        margin: 0 -1rem;
+    }
+
+    .portal-appraisal-feedback-editor,
+    .portal-appraisal-feedback-readonly {
+        min-height: 18rem;
+        max-height: none;
+    }
 }

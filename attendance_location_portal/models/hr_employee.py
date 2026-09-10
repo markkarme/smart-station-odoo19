@@ -611,10 +611,53 @@ class HrEmployee(models.Model):
 
     def _get_portal_appraisal_manager(self):
         self.ensure_one()
-        manager = self.parent_id
+        manager = self.sudo().parent_id
         if manager and manager != self:
             return manager
         return self.env["hr.employee"]
+
+    def _get_portal_appraisal_employees(self):
+        self.ensure_one()
+        company = self.sudo().company_id
+        return (
+            self.env["hr.employee"]
+            .sudo()
+            .search(
+                [
+                    ("active", "=", True),
+                    "|",
+                    ("company_id", "=", False),
+                    ("company_id", "=", company.id),
+                ],
+                order="name, id",
+            )
+        )
+
+    def _portal_resolve_appraisal_people(self, values):
+        self.ensure_one()
+        employees = self._get_portal_appraisal_employees()
+        subject = values.get("employee_id") or self
+        if isinstance(subject, int):
+            subject = employees.filtered(lambda emp: emp.id == subject)
+        elif subject and subject.exists():
+            subject = employees.filtered(lambda emp: emp.id == subject.id)
+        if not subject:
+            raise UserError(_("Please select an employee to review."))
+
+        manager_ids = values.get("manager_ids") or []
+        if hasattr(manager_ids, "ids"):
+            manager_ids = manager_ids.ids
+        managers = employees.filtered(
+            lambda emp: emp.id in manager_ids and emp.id != subject.id
+        )
+        if not managers:
+            managers = subject._get_portal_appraisal_manager()
+        if self != subject and self in employees and self not in managers:
+            managers |= self
+        managers = managers.filtered(lambda emp: emp.id != subject.id)
+        if not managers:
+            raise UserError(_("Please select at least one appraiser."))
+        return subject, managers
 
     def action_portal_create_appraisal(self, values):
         self.ensure_one()
@@ -629,21 +672,20 @@ class HrEmployee(models.Model):
         except (TypeError, ValueError):
             raise UserError(_("Invalid date format.")) from None
 
-        manager = self._get_portal_appraisal_manager()
-        if not manager:
-            raise UserError(
-                _(
-                    "No manager is configured on your employee record. "
-                    "Please contact your HR department."
-                )
-            )
+        subject, managers = self._portal_resolve_appraisal_people(values)
+
+        template = values.get("appraisal_template_id")
+        if template and not template.exists():
+            template = False
 
         appraisal_vals = {
-            "employee_id": self.id,
+            "employee_id": subject.id,
             "date_close": date_close,
-            "manager_ids": [(6, 0, manager.ids)],
+            "manager_ids": [(6, 0, managers.ids)],
             "state": "1_new",
         }
+        if template:
+            appraisal_vals["appraisal_template_id"] = template.id
 
         try:
             with self.env.cr.savepoint():
@@ -652,6 +694,13 @@ class HrEmployee(models.Model):
                     .with_user(SUPERUSER_ID)
                     .create(appraisal_vals)
                 )
+                write_vals = {}
+                if values.get("employee_feedback"):
+                    write_vals["employee_feedback"] = values["employee_feedback"]
+                if values.get("manager_feedback"):
+                    write_vals["manager_feedback"] = values["manager_feedback"]
+                if write_vals:
+                    appraisal.with_user(SUPERUSER_ID).write(write_vals)
         except ValidationError as error:
             raise UserError(str(error)) from error
 
@@ -659,17 +708,4 @@ class HrEmployee(models.Model):
 
     def action_portal_update_appraisal_feedback(self, appraisal, feedback):
         self.ensure_one()
-        self._portal_ensure_current_user()
-        appraisal = appraisal.sudo()
-        if appraisal.employee_id != self:
-            raise AccessError(_("You can only update your own appraisals."))
-        if appraisal.state not in ("1_new", "2_pending"):
-            raise UserError(_("You can only edit feedback for draft or ongoing appraisals."))
-
-        try:
-            with self.env.cr.savepoint():
-                appraisal.sudo().write({"employee_feedback": feedback or False})
-        except ValidationError as error:
-            raise UserError(str(error)) from error
-
-        return appraisal
+        return appraisal.action_portal_save(self, {"employee_feedback": feedback})

@@ -1,0 +1,370 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_counseling
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 06:23+0000\n"
+"PO-Revision-Date: 2025-07-23 06:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__action_id
+msgid "Action"
+msgstr "Actie"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_needaction
+msgid "Action Needed"
+msgstr "Actie Nodig"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_ids
+msgid "Activities"
+msgstr "Activiteiten"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activiteitsuitzondering Decoratie"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_state
+msgid "Activity State"
+msgstr "Activiteitsstatus"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Pictogram Activiteitstype"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_attachment_count
+msgid "Attachment Count"
+msgstr "Aantal Bijlagen"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__cids
+msgid "Cids"
+msgstr "Cids"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__stopped
+msgid "Completed"
+msgstr "Voltooid"
+
+#. module: jt_counseling
+#: model:ir.ui.menu,name:jt_counseling.student_counseling_menu
+#: model:ir.ui.menu,name:jt_counseling.student_counseling_submenu
+msgid "Counseling"
+msgstr "Begeleiding"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: jt_counseling
+#. odoo-python
+#: code:addons/jt_counseling/models/counseling.py:0
+msgid "Enter Link"
+msgstr "Voer Link In"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__faculty_id
+msgid "Faculty"
+msgstr "Faculteit"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_follower_ids
+msgid "Followers"
+msgstr "Volgers"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Volgers (Partners)"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Font Awesome pictogram, bijv. fa-tasks"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__has_message
+msgid "Has Message"
+msgstr "Heeft Bericht"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_exception_icon
+msgid "Icon"
+msgstr "Pictogram"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Pictogram om een uitzonderingsactiviteit aan te geven."
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Indien aangevinkt, vereisen nieuwe berichten uw aandacht."
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_has_error
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Indien aangevinkt, hebben sommige berichten een bezorgfout."
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_survey_survey__is_counseling
+msgid "Is Counselling"
+msgstr "Is Begeleiding"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_is_follower
+msgid "Is Follower"
+msgstr "Is Volger"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_pause
+msgid "Last Pause Time"
+msgstr "Laatste Pauze Tijd"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__write_uid
+msgid "Last Updated by"
+msgstr "Laatst Bijgewerkt Door"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__write_date
+msgid "Last Updated on"
+msgstr "Laatst Bijgewerkt op"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__menu_id
+msgid "Menu"
+msgstr "Menu"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_has_error
+msgid "Message Delivery error"
+msgstr "Fout bij bezorgen bericht"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_ids
+msgid "Messages"
+msgstr "Berichten"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mijn Activiteit Deadline"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Volgende Kalender Activiteit"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Volgende Activiteit Deadline"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_summary
+msgid "Next Activity Summary"
+msgstr "Samenvatting Volgende Activiteit"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_type_id
+msgid "Next Activity Type"
+msgstr "Volgende Activiteitstype"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__not_started
+msgid "Not Started"
+msgstr "Niet Gestart"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__note
+msgid "Note"
+msgstr "Notitie"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Notes"
+msgstr "Notities"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Aantal Acties"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_has_error_counter
+msgid "Number of errors"
+msgstr "Aantal Fouten"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Aantal berichten die actie vereisen"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Aantal berichten met bezorgfout"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__running
+msgid "On Going"
+msgstr "Bezig"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Open"
+msgstr "Openen"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Pause"
+msgstr "Pauze"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__paused
+msgid "Paused"
+msgstr "Gepauzeerd"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwoordelijke Gebruiker"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Resume"
+msgstr "Hervatten"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.custom_survey_button_retake
+msgid "Return View"
+msgstr "Terug naar Weergave"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS Bezorgfout"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Start"
+msgstr "Start"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status gebaseerd op activiteiten\n"
+"Achterstallig: Vervaldatum is verstreken\n"
+"Vandaag: Activiteit is vandaag\n"
+"Gepland: Toekomstige activiteiten."
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Stop"
+msgstr "Stop"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__student_id
+msgid "Student"
+msgstr "Student"
+
+#. module: jt_counseling
+#: model:ir.actions.act_window,name:jt_counseling.action_student_counseling
+#: model:ir.model,name:jt_counseling.model_student_counseling
+msgid "Student Counseling"
+msgstr "Studentenbegeleiding"
+
+#. module: jt_counseling
+#: model:ir.model,name:jt_counseling.model_survey_survey
+msgid "Survey"
+msgstr "Enquête"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__survey_link
+msgid "Survey Link"
+msgstr "Enquête Link"
+
+#. module: jt_counseling
+#: model:ir.actions.act_window,name:jt_counseling.action_survey_questions
+#: model:ir.ui.menu,name:jt_counseling.survey_questions_submenu
+msgid "Survey Questions"
+msgstr "Enquêtevragen"
+
+#. module: jt_counseling
+#. odoo-python
+#: code:addons/jt_counseling/models/counseling.py:0
+msgid "Survey link is not configured."
+msgstr "Enquête link is niet geconfigureerd."
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_start
+msgid "Timer Start"
+msgstr "Timer Start"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_state
+msgid "Timer State"
+msgstr "Timerstatus"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_stop
+msgid "Timer Stop"
+msgstr "Timer Stop"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__total_time
+msgid "Total Time (in hours)"
+msgstr "Totale Tijd (in uren)"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type uitzonderingsactiviteit op record."
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__website_message_ids
+msgid "Website Messages"
+msgstr "Websiteberichten"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__website_message_ids
+msgid "Website communication history"
+msgstr "Communicatiegeschiedenis van de website"

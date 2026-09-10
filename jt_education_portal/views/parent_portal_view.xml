@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Show Student List to Parent Users -->
+    <template id="jt_education_portal_access_student_list" inherit_id="portal.portal_my_home" priority="40">
+        <!-- <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="request.env.user.is_parent">
+                <div class="o_portal_index_card" style="width:417px;height:100px;border-radius:7px;margin-right:10px;margin-top:30px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                                <img src="/jt_education_base/static/img/portal-studentdetails.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;" />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>My Students</h5>
+                            </div>
+                            <div>
+                                <a href="/my/student_list">View Students</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath> -->
+    </template>
+
+    <template id="portal_parent_student_list" name="My Students">
+        <t t-call="website.layout">
+            <header>
+                <div class="container" style="margin-top: 40px;">
+                    <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                    <span> / </span>
+                    <span>Profile</span>
+                </div>
+            </header>
+            <t t-set="additional_title">My Students</t>
+            <div class="container" style="margin-top: 60px;">
+                <div class="row mb-4">
+                    <div class="col">
+                        <h2 class="mb-4">My Students</h2>
+                        <t t-if="students">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Standard</th>
+                                        <th>Division</th>
+                                        <th>Academic Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="students" t-as="student">
+                                        <tr>
+                                            <td><t t-esc="student.name" /></td>
+                                            <td><t t-esc="student.standard.name" /></td>
+                                            <td><t t-esc="student.div.name" /></td>
+                                            <td><t t-esc="student.curr_year.name" /></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-if="not students">
+                            <p>No students linked to your account.</p>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+    
+
+</odoo>

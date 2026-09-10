@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill="#FBDBD0" d="M12 12h40a2 2 0 012 2v36a2 2 0 01-2 2H12a2 2 0 01-2-2V14a2 2 0 012-2z"/>
+<path fill="#C1DBF6" d="M14 22h36v24H14z"/>
+<path fill="none" stroke="#374874" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 22h36v24H14z"/>
+<path fill="#374874" d="M20 16h4v4h-4zM40 16h4v4h-4z"/>
+<path stroke="#374874" stroke-width="2" d="M12 26h40"/>
+<path fill="#374874" d="M28 32h8v2h-8zM28 38h8v2h-8zM28 44h8v2h-8z"/>
+<text x="22" y="46" fill="white" font-family="Arial" font-size="8">EVENT</text>
+</svg>

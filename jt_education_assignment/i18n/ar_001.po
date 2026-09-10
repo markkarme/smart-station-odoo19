@@ -1,19 +1,22 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* jt_education_assignment
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-08 04:23+0000\n"
-"PO-Revision-Date: 2024-07-08 04:23+0000\n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "<span class=\"o_stat_text\">Submission Count</span>"
+msgstr "<span class=\"o_stat_text\">عدد التسليمات</span>"
 
 #. module: jt_education_assignment
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
@@ -49,11 +52,6 @@ msgstr "توزيع"
 
 #. module: jt_education_assignment
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
-msgid "Allocation Infomation"
-msgstr "معلومات التخصيص"
-
-#. module: jt_education_assignment
-#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
@@ -63,6 +61,7 @@ msgstr "مؤرشف"
 #. module: jt_education_assignment
 #: model:ir.model,name:jt_education_assignment.model_student_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__assignment_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__assignment_submission_id
 #: model:ir.ui.menu,name:jt_education_assignment.config_assignment_menu
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
@@ -91,11 +90,6 @@ msgstr "اسم الواجب"
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_pivot_view
 msgid "Assignment Pivot View"
 msgstr "طريقة العرض المحورية للواجب"
-
-#. module: jt_education_assignment
-#: model:ir.model,name:jt_education_assignment.model_res_partner
-msgid "Assignment Student Class"
-msgstr "جهة الاتصال"
 
 #. module: jt_education_assignment
 #: model:ir.model,name:jt_education_assignment.model_student_assignment_submission
@@ -145,6 +139,7 @@ msgstr "تعيينات"
 #: model:ir.model,name:jt_education_assignment.model_ir_attachment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_ir_attachment__attach_rel
 #: model:ir.model.fields,field_description:jt_education_assignment.field_product_document__attach_rel
+#: model:ir.model.fields,field_description:jt_education_assignment.field_quotation_document__attach_rel
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__attachment
 msgid "Attachment"
 msgstr "مرفق"
@@ -161,15 +156,15 @@ msgid "Attendance"
 msgstr "حضور"
 
 #. module: jt_education_assignment
-#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
-msgid "Basic Information"
-msgstr "معلومات اساسية"
+#: model:ir.model,name:jt_education_assignment.model_res_partner
+msgid "Authors"
+msgstr "المؤلفون"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__cancel
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
 msgid "Cancel"
-msgstr "يلغي"
+msgstr "إلغاء"
 
 #. module: jt_education_assignment
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
@@ -196,15 +191,17 @@ msgstr "الشفرة"
 #: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__create_uid
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__create_uid
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__create_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__create_uid
 msgid "Created by"
-msgstr "انشأ من قبل"
+msgstr "أنشئ بواسطة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__create_date
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__create_date
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__create_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__create_date
 msgid "Created on"
-msgstr "تم إنشاؤها على"
+msgstr "تاريخ الإنشاء"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__description
@@ -214,22 +211,26 @@ msgstr "وصف"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__display_name
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__display_name
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__display_name
 msgid "Display Name"
-msgstr "الاسم المعروض"
+msgstr "اسم العرض"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__division_id
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__division_id
 msgid "Division"
-msgstr "قسم"
+msgstr "الشعبة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__draft
 #: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__draft
 msgid "Draft"
-msgstr "مشروع"
+msgstr "مسودة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__assignment_id
@@ -238,9 +239,10 @@ msgstr "أدخل الطلاب لمشاهدة المهام المعينة لهم.
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__faculty
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__faculty_id
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
 msgid "Faculty"
-msgstr "الأساتذه"
+msgstr "هيئة التدريس"
 
 #. module: jt_education_assignment
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
@@ -265,11 +267,9 @@ msgid "Followers (Partners)"
 msgstr "المتابعون (الشركاء)"
 
 #. module: jt_education_assignment
-#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
-#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
-#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
-msgid "Group By..."
-msgstr "مجموعة من..."
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "General Information"
+msgstr "معلومات عامة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__has_message
@@ -279,8 +279,12 @@ msgstr "لديه رسالة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_ir_attachment__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__id
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__id
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__id
 msgid "ID"
 msgstr "المُعرف"
 
@@ -307,7 +311,7 @@ msgstr "تابع"
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__is_parent
 msgid "Is Parent"
-msgstr "هو الوالدين"
+msgstr "ولي أمر"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__is_student
@@ -324,6 +328,7 @@ msgstr "تاريخ الإصدار"
 #: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__write_uid
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__write_uid
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__write_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__write_uid
 msgid "Last Updated by"
 msgstr "آخر تحديث بواسطة"
 
@@ -331,6 +336,7 @@ msgstr "آخر تحديث بواسطة"
 #: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__write_date
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__write_date
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__write_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__write_date
 msgid "Last Updated on"
 msgstr "آخر تحديث في"
 
@@ -364,12 +370,12 @@ msgstr "شهر"
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
 msgid "Name"
-msgstr "اسم"
+msgstr "الاسم"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__note
 msgid "Note"
-msgstr "ملحوظة"
+msgstr "ملاحظة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_needaction_counter
@@ -427,7 +433,10 @@ msgid "SMS Delivery error"
 msgstr "خطأ في تسليم الرسائل القصيرة"
 
 #. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__marks_scored
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__marks_scored
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__marks_scored
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__marks_scored
 msgid "Scored Marks"
 msgstr "علامات مسجلة"
 
@@ -440,7 +449,7 @@ msgstr "تعيين إلى مسودة"
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__standard_id
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__standard_id
 msgid "Standard"
-msgstr "اساسي"
+msgstr "الصف"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__state
@@ -448,7 +457,7 @@ msgstr "اساسي"
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
 msgid "State"
-msgstr "ولاية"
+msgstr "الحالة"
 
 #. module: jt_education_assignment
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
@@ -456,9 +465,26 @@ msgid "Student"
 msgstr "طالب"
 
 #. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__student_count
+msgid "Student Count"
+msgstr "عدد الطلاب"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_student_submission_line
+msgid "Student Submission Line"
+msgstr "بند تسليم الطالب"
+
+#. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__student_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__student_id
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
 msgid "Students"
 msgstr "تلاميذ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__student_submission_ids
+msgid "Students "
+msgstr "الطلاب"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__subject_id
@@ -472,6 +498,11 @@ msgid "Subjective"
 msgstr "شخصي"
 
 #. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__submission_id
+msgid "Submission"
+msgstr "التسليم"
+
+#. module: jt_education_assignment
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__submission_date
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__submission_date
 #: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
@@ -482,15 +513,18 @@ msgstr "تاريخ التقديم"
 #. module: jt_education_assignment
 #. odoo-python
 #: code:addons/jt_education_assignment/models/assignment.py:0
-#, python-format
 msgid "Submission Date cannot be before Issue Date."
 msgstr "لا يمكن أن يكون تاريخ الإرسال قبل تاريخ الإصدار."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__submission_line_ids
+msgid "Submission Lines"
+msgstr "بنود التسليم"
 
 #. module: jt_education_assignment
 #: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment_submission
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__assignment_submission
 #: model:ir.ui.menu,name:jt_education_assignment.student_assignment_submission_submenu
-#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
 msgid "Submissions"
 msgstr "التقديمات"
 
@@ -528,6 +562,20 @@ msgid "Type"
 msgstr "نوع"
 
 #. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__student_assignment_pdf
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__student_assignment_pdf
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__student_assignment_pdf
+msgid "Upload Assignment"
+msgstr "رفع الواجب"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__student_assignment_pdf_file
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__student_assignment_pdf_file
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_submission_line__student_assignment_pdf_file
+msgid "Upload Assignment "
+msgstr "رفع الواجب "
+
+#. module: jt_education_assignment
 #: model:ir.model,name:jt_education_assignment.model_res_users
 msgid "User"
 msgstr "المستخدم"
@@ -554,7 +602,7 @@ msgstr "أسبوع"
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__curr_year
 #: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__curr_year
 msgid "Year"
-msgstr "عام"
+msgstr "السنة"
 
 #. module: jt_education_assignment
 #: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__attachment

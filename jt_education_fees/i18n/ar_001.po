@@ -1,19 +1,17 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* jt_education_fees
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-11 11:24+0000\n"
-"PO-Revision-Date: 2023-10-11 11:24+0000\n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: jt_education_fees
 #: model:ir.actions.report,print_report_name:jt_education_fees.fee_receipt_report
@@ -42,11 +40,6 @@ msgstr "<br/><span>حدد السنة        </span>"
 
 #. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
-msgid "<span class=\"o_stat_text\">Current Year Due Fees</span>"
-msgstr "<span class=\"o_stat_text\">الرسوم المستحقة للسنة الحالية</span>"
-
-#. module: jt_education_fees
-#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "<span class=\"o_stat_text\">Current Year Paid Fees</span>"
 msgstr "<span class=\"o_stat_text\">رسوم السنة الحالية المدفوعة</span>"
 
@@ -56,15 +49,38 @@ msgid "<span class=\"o_stat_text\">Due Fees</span>"
 msgstr "<span class=\"o_stat_text\">الرسوم المستحقة</span>"
 
 #. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Invoices</span>"
+msgstr "<span class=\"o_stat_text\">الفواتير</span>"
+
+#. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "<span class=\"o_stat_text\">Paid Fees</span>"
 msgstr "<span class=\"o_stat_text\">الرسوم المدفوعة</span>"
 
 #. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Sale Orders</span>"
+msgstr "<span class=\"o_stat_text\">أوامر البيع</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid ""
+"<span class=\"o_stat_value\">\n"
+"                                </span>\n"
+"                                <span class=\"o_stat_text\">Rewards</span>"
+msgstr ""
+"<span class=\"o_stat_value\">\n"
+"                                </span>\n"
+"                                <span class=\"o_stat_text\">المكافآت</span>"
+
+#. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
-msgid "<span states=\"choose\"> Or </span>"
-msgstr "<span states=\"choose\"> أو </span>"
+msgid "<span invisible=\"state != 'choose'\"> Or </span>"
+msgstr "<span invisible=\"state != 'choose'\"> أو </span>"
 
 #. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
@@ -97,6 +113,43 @@ msgid "<strong>Student: </strong>"
 msgstr "<strong>طالب: </strong>"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_needaction
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_needaction
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تمييز نشاط الاستثناء"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_state
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_state
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_account_bank_statement_line__division
+#: model:ir.model.fields,help:jt_education_fees.field_account_move__division
 #: model:ir.model.fields,help:jt_education_fees.field_fees_detail__division
 #: model:ir.model.fields,help:jt_education_fees.field_fees_fees__division
 #: model:ir.model.fields,help:jt_education_fees.field_fees_structure__division
@@ -104,6 +157,8 @@ msgid "Add Division of student"
 msgstr "إضافة شعبة الطالب"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_account_bank_statement_line__standard
+#: model:ir.model.fields,help:jt_education_fees.field_account_move__standard
 #: model:ir.model.fields,help:jt_education_fees.field_fees_detail__standard
 #: model:ir.model.fields,help:jt_education_fees.field_fees_fees__standard
 #: model:ir.model.fields,help:jt_education_fees.field_fees_structure__standard
@@ -111,6 +166,8 @@ msgid "Add Standard of student"
 msgstr "إضافة معيار الطالب"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_account_bank_statement_line__year
+#: model:ir.model.fields,help:jt_education_fees.field_account_move__year
 #: model:ir.model.fields,help:jt_education_fees.field_fees_detail__year
 #: model:ir.model.fields,help:jt_education_fees.field_fees_fees__year
 #: model:ir.model.fields,help:jt_education_fees.field_fees_structure__year
@@ -145,6 +202,7 @@ msgstr "السماح برسوم ما قبل المدرسة"
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__amount
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__fees_amount
 #: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__amount
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
@@ -161,14 +219,21 @@ msgid "April"
 msgstr "أبريل"
 
 #. module: jt_education_fees
-#: model:ir.model,name:jt_education_fees.model_res_partner
-msgid "Assignment Student Class"
-msgstr "جهة الاتصال"
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__08
 msgid "August"
 msgstr "شهر اغسطس"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_res_partner
+msgid "Authors"
+msgstr "المؤلفون"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__cancel
@@ -178,7 +243,7 @@ msgstr "شهر اغسطس"
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
 msgid "Cancel"
-msgstr "يلغي"
+msgstr "إلغاء"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_uid
@@ -190,7 +255,7 @@ msgstr "يلغي"
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_uid
 #: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_uid
 msgid "Created by"
-msgstr "انشأ من قبل"
+msgstr "أنشئ بواسطة"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_date
@@ -202,7 +267,7 @@ msgstr "انشأ من قبل"
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_date
 #: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_date
 msgid "Created on"
-msgstr "تم إنشاؤها على"
+msgstr "تاريخ الإنشاء"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__curr_year
@@ -215,6 +280,14 @@ msgid "December"
 msgstr "ديسمبر"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__product_desc
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_payment_register__display_name
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__display_name
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__display_name
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__display_name
@@ -223,10 +296,16 @@ msgstr "ديسمبر"
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__display_name
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__display_name
 #: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_sale_order__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__display_name
 msgid "Display Name"
-msgstr "الاسم المعروض"
+msgstr "اسم العرض"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_bank_statement_line__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__division
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__division
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__division
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__division
@@ -236,7 +315,7 @@ msgstr "الاسم المعروض"
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "Division"
-msgstr "قسم"
+msgstr "الشعبة"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__report
@@ -313,6 +392,7 @@ msgstr "نوع الرسوم"
 
 #. module: jt_education_fees
 #: model:ir.model,name:jt_education_fees.model_fees_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__fees_id
 #: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__fee
 #: model:ir.ui.menu,name:jt_education_fees.fees_child1_menu
 #: model:ir.ui.menu,name:jt_education_fees.fees_root_menu
@@ -326,7 +406,6 @@ msgstr "مصاريف"
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__fees_detail
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fees_detail
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fees_detail
-#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "Fees Detail"
 msgstr "تفاصيل الرسوم"
 
@@ -346,6 +425,16 @@ msgid "Fees Management"
 msgstr "إدارة الرسوم"
 
 #. module: jt_education_fees
+#: model:res.groups.privilege,name:jt_education_fees.res_groups_privilege_fees_pre_primary
+msgid "Fees Pre-Primary"
+msgstr "رسوم ما قبل الابتدائي"
+
+#. module: jt_education_fees
+#: model:res.groups.privilege,name:jt_education_fees.res_groups_privilege_fees_primary
+msgid "Fees Primary"
+msgstr "رسوم الابتدائي"
+
+#. module: jt_education_fees
 #: model:ir.actions.report,name:jt_education_fees.fee_receipt_report
 msgid "Fees Receipt"
 msgstr "إيصال الرسوم"
@@ -354,6 +443,13 @@ msgstr "إيصال الرسوم"
 #: model:ir.model,name:jt_education_fees.model_export_fees_receipt
 msgid "Fees Receipt XLS Report"
 msgstr "تقرير XLS إيصال الرسوم"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_bank_statement_line__fees_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__fees_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_sale_order__fees_id
+msgid "Fees Ref"
+msgstr "مرجع الرسوم"
 
 #. module: jt_education_fees
 #: model:ir.model,name:jt_education_fees.model_fees_structure
@@ -365,6 +461,7 @@ msgstr "هيكل الرسوم"
 #: model:ir.actions.act_window,name:jt_education_fees.action_fees_type
 #: model:ir.model,name:jt_education_fees.model_fees_type
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__fee_type
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_type
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_type
 #: model:ir.ui.menu,name:jt_education_fees.fees_type_menu
@@ -372,14 +469,42 @@ msgstr "هيكل الرسوم"
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_tree
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_fees_type
 msgid "Fees Type"
 msgstr "نوع الرسوم"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__fees_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__fees_type
+msgid "Fees Types"
+msgstr "أنواع الرسوم"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__name
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__name
 msgid "File Name"
 msgstr "اسم الملف"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__activity_type_icon
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__activity_type_icon
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__formats
@@ -395,6 +520,11 @@ msgid "Generate Fees Entries"
 msgstr "توليد إدخالات الرسوم"
 
 #. module: jt_education_fees
+#: model:ir.actions.server,name:jt_education_fees.ir_actions_server_create_student_so
+msgid "Generate Student SO"
+msgstr "إنشاء أمر بيع للطالب"
+
+#. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
 msgid "Generate Yearly Fees Records"
 msgstr "إنشاء سجلات الرسوم السنوية"
@@ -405,6 +535,15 @@ msgid "Generate fee structure entry"
 msgstr "إنشاء إدخال هيكل الرسوم"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__has_message
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__has_message
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_payment_register__id
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__id
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__id
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__id
@@ -413,13 +552,85 @@ msgstr "إنشاء إدخال هيكل الرسوم"
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__id
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__id
 #: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_sale_order__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__id
 msgid "ID"
 msgstr "المُعرف"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثناء."
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__message_needaction
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__message_needaction
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__message_has_error
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__message_has_error
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__message_has_error
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__inv_ref
+msgid "Invoice Reference"
+msgstr "مرجع الفاتورة"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__invoice
+msgid "Invoiced"
+msgstr "مفوتر"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__invoice_count
+msgid "Invoices Count"
+msgstr "عدد الفواتير"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__is_parent
+msgid "Is Parent"
+msgstr "ولي أمر"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__is_student
+msgid "Is Student"
+msgstr "طالب"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__01
 msgid "January"
 msgstr "كانون الثاني"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__07
@@ -430,18 +641,6 @@ msgstr "تموز"
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__06
 msgid "June"
 msgstr "يونيو"
-
-#. module: jt_education_fees
-#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type____last_update
-#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard____last_update
-msgid "Last Modified on"
-msgstr "آخر تعديل في"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_uid
@@ -478,14 +677,67 @@ msgid "May"
 msgstr "قد"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_has_error
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_has_error
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__month
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__month
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
-#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
 msgid "Month"
 msgstr "شهر"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد نشاطي"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "موعد النشاط التالي"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_summary
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_summary
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__payment_state__not_paid
+msgid "Not Paid"
+msgstr "غير مسدد"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__11
@@ -493,11 +745,50 @@ msgid "November"
 msgstr "شهر نوفمبر"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
+
+#. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__10
 msgid "October"
 msgstr "اكتوبر"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__order_ref
+msgid "Order Reference"
+msgstr "مرجع الأمر"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Other Info"
+msgstr "معلومات أخرى"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__payment_state__paid
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__paid
 msgid "Paid"
 msgstr "مدفوع"
@@ -516,9 +807,19 @@ msgid "Particulars"
 msgstr "تفاصيل"
 
 #. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_account_payment_register
+msgid "Pay"
+msgstr "سداد"
+
+#. module: jt_education_fees
 #: model:ir.model,name:jt_education_fees.model_pay_yearly_fees_wizard
 msgid "Pay BulkFees Yearly"
 msgstr "دفع الرسوم المجمعة سنويًا"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__payment_state
+msgid "Payment Status"
+msgstr "حالة السداد"
 
 #. module: jt_education_fees
 #: model:ir.ui.menu,name:jt_education_fees.fees_child2_menu
@@ -553,6 +854,12 @@ msgid "Print Fees Receipt XLS"
 msgstr "XLS إيصال رسوم الطباعة"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__product_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
 msgid "Receipt No:"
 msgstr "رقم الإيصال:"
@@ -576,6 +883,36 @@ msgstr "المرجعي"
 #: model:ir.actions.act_window,name:jt_education_fees.action_export_fees_receipt_form
 msgid "Reports Excel"
 msgstr "تقارير Excel"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__res_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__res_id
+msgid "Res"
+msgstr "المورد"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة النصية"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_sale_order
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__sale_order_count
+msgid "Sale Orders Count"
+msgstr "عدد أوامر البيع"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__sf
@@ -618,6 +955,8 @@ msgid "Specific Year"
 msgstr "سنة محددة"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_bank_statement_line__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__standard
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__standard
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__standard
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__standard
@@ -630,23 +969,37 @@ msgstr "سنة محددة"
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "Standard"
-msgstr "اساسي"
+msgstr "الصف"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__state
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__state
 msgid "State"
-msgstr "ولاية"
+msgstr "الحالة"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__state
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__state
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
-#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "Status"
 msgstr "حالة"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__activity_state
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__activity_state
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة حسب الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"مخطط: أنشطة مستقبلية."
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__student
@@ -660,9 +1013,19 @@ msgid "Student"
 msgstr "طالب"
 
 #. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.account_invoice_view_form_inherit_studnet_details
+msgid "Student Details"
+msgstr "بيانات الطالب"
+
+#. module: jt_education_fees
 #: model:ir.model,name:jt_education_fees.model_student_standard
 msgid "Student Standard"
 msgstr "معيار الطالب"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__sale
+msgid "To Invoice"
+msgstr "للفوترة"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__draft
@@ -671,6 +1034,7 @@ msgstr "لكي تدفع"
 
 #. module: jt_education_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_fees_type
 msgid "Total"
 msgstr "المجموع"
 
@@ -686,8 +1050,14 @@ msgid "Total Due Fees"
 msgstr "إجمالي الرسوم المستحقة"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__total_fee_type
+msgid "Total Fee"
+msgstr "إجمالي الرسوم"
+
+#. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__total_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_users__total_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__total_fees
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "Total Fees"
@@ -705,17 +1075,58 @@ msgid "Total Fees Paid"
 msgstr "إجمالي الرسوم المدفوعة"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__total_invoice_count
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__total_invoice_count
+msgid "Total Invoices Count"
+msgstr "إجمالي عدد الفواتير"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__total_sale_order_count
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__total_sale_order_count
+msgid "Total Sale Orders Count"
+msgstr "إجمالي عدد أوامر البيع"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء في السجل."
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_res_users
+msgid "User"
+msgstr "المستخدم"
+
+#. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__user_id
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__user_id
 msgid "User Id"
 msgstr "معرف المستخدم"
 
 #. module: jt_education_fees
+#: model:ir.actions.server,name:jt_education_fees.model_sale_order_action_quotation_sent
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
 msgid "Validate"
 msgstr "تحقق"
 
 #. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,help:jt_education_fees.field_fees_detail__website_message_ids
+#: model:ir.model.fields,help:jt_education_fees.field_fees_fees__website_message_ids
+#: model:ir.model.fields,help:jt_education_fees.field_fees_type__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_bank_statement_line__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__year
 #: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__year
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__year
 #: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__year
@@ -729,7 +1140,7 @@ msgstr "تحقق"
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
 #: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
 msgid "Year"
-msgstr "عام"
+msgstr "السنة"
 
 #. module: jt_education_fees
 #: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_due_fees
@@ -746,14 +1157,8 @@ msgstr "إجمالي الرسوم السنوية المدفوعة"
 #. module: jt_education_fees
 #. odoo-python
 #: code:addons/jt_education_fees/models/fees.py:0
-#, python-format
 msgid "You need to add a line before validate."
 msgstr "تحتاج إلى إضافة سطر قبل التحقق من الصحة."
-
-#. module: jt_education_fees
-#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
-msgid "__________________________"
-msgstr "____________"
 
 #. module: jt_education_fees
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__choose
@@ -766,3 +1171,9 @@ msgstr "يختار"
 #: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__get
 msgid "get"
 msgstr "احصل على"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_bank_statement_line__month
+#: model:ir.model.fields,field_description:jt_education_fees.field_account_move__month
+msgid "month"
+msgstr "الشهر"

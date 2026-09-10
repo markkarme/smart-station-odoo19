@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- Counseling Form Action View -->
+    <record id="action_student_counseling" model="ir.actions.act_window">
+        <field name="name">Student Counseling</field>
+        <field name="res_model">student.counseling</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Survey Questions Tree Action View -->
+    <record id="action_survey_questions" model="ir.actions.act_window">
+        <field name="name">Survey Questions</field>
+        <field name="res_model">survey.survey</field>
+        <field name="domain">[('is_counseling', '=', True)]</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+		<menuitem id="student_counseling_menu" parent="jt_education_base.root_menu" name="Counseling" sequence="13"/>
+
+        <menuitem id="student_counseling_submenu" name="Counseling"
+                  parent="student_counseling_menu"
+                  action="action_student_counseling"/>
+
+        <menuitem id="survey_questions_submenu" name="Survey Questions"
+                  parent="student_counseling_menu"
+                  action="action_survey_questions"/>
+
+	</data>
+</odoo>

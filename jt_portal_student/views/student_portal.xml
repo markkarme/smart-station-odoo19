@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="jt_eduction_portal_access" name="Portal My Home : Education"
+              inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="before">
+            <t t-if="request.env.user.is_student" t-set="portal_client_category_enable" t-value="True"/>
+        </xpath>
+        <div id="portal_client_category" position="inside">
+            <t t-if="request.env.user.is_student">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/jt_portal_student/static/img/portal-student1.svg'"/>
+                    <t t-set="title">Application Form</t>
+                    <t t-set="text">Application Status</t>
+                    <t t-set="url" t-value="'/my/student_details'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </t>
+        </div>
+    </template>
+
+    <!-- Template for Student Details -->
+    <template id="portal_student_details" name="Application Status">
+    <t t-call="website.layout">
+        <t t-set="additional_title">Application Status</t>
+        <header>
+            <div class="container" style="margin-top: 40px;">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <a href="/my/home" class="oe_highlight"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <span> / </span>
+            <span>Application Status</span>
+        </div>
+        <a href="/my/home" class="btn btn-outline-secondary">Back</a>
+    </div>
+</div>
+
+
+
+        </header>
+        <div class="oe_structure">
+            <div class="container">
+                <div id="wrap">
+                    <br/>
+                    <div class="row">
+                        <div class="col">
+                            <h2>Application Status</h2>
+                            <br/>
+                            <!-- Name displayed before the table -->
+                            <p><strong>Name: </strong><span t-esc="student_details['name']"/></p>
+                            <a href="/my/student_details/preview_application_form" class="btn btn-primary mt16 mb16">Application Form</a>
+                            <br/>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Standard</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Date of Submission</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="w-100 text-wrap"><span t-esc="student_details['standard']"/></td>
+                                        <td class="w-100 text-wrap"><span t-esc="student_details['email']"/></td>
+                                        <td class="w-100 text-wrap"><span t-esc="student_details['phone']"/></td>
+                                        <td class="w-100 text-wrap"><span t-esc="student_details['date']"/></td>
+                                        <td class="w-100 text-wrap">
+                                            <t t-if="student_details['state'] == 'draft'">Pending</t>
+
+                                            <t t-else=""><span t-esc="student_details['state']"/></t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </t>
+</template>
+
+
+
+</odoo>

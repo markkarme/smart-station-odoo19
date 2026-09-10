@@ -1,0 +1,336 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_portal_student
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 11:01+0000\n"
+"PO-Revision-Date: 2025-07-23 11:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Aadhar Card</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Aadhar-kort</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Address Line 1</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Adresse linje 1</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Address Line 2</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Adresse linje 2</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Caste</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Kaste</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">City</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">By</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Country</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Land</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Current Year</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Nåværende år</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">District</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Distrikt</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Email</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">E-post</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Father Name</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Fars navn</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Marksheet</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Karakterutskrift</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Mobile</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Mobil</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Mother Name</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Mors navn</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Mother Tongue</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Morsmål</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Name</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Navn</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Nationality</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Nasjonalitet</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Place Of Birth</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Fødested</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Province</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Provins</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Religion</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Religion</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">State</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Stat</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Subcaste</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Underkaste</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Surname</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Etternavn</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Village</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Bygd</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">ZIP Code</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Postnummer</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid ""
+"<span> / </span>\n"
+"            <span>Application Status</span>"
+msgstr ""
+"<span> / </span>\n"
+"            <span>Søknadsstatus</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "<span>No photo available</span>"
+msgstr "<span>Ingen bilde tilgjengelig</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "<span>No sign available</span>"
+msgstr "<span>Ingen signatur tilgjengelig</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "<strong>Name: </strong>"
+msgstr "<strong>Navn: </strong>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Address"
+msgstr "Adresse"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Application Form"
+msgstr "Søknadsskjema"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Application Status"
+msgstr "Søknadsstatus"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Back"
+msgstr "Tilbake"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Documents"
+msgstr "Dokumenter"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Email"
+msgstr "E-post"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Other Information"
+msgstr "Annen informasjon"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Pending"
+msgstr "Avventer"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Preview Form"
+msgstr "Forhåndsvis skjema"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Standard"
+msgstr "Standard"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Status"
+msgstr "Status"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Student Information"
+msgstr "Studentinformasjon"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Student Photo"
+msgstr "Studentbilde"

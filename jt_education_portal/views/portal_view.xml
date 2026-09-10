@@ -1,0 +1,2948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <template id="pay_meth_link" inherit_id="portal.portal_layout">
+        <xpath expr="//div[hasclass('o_portal_wrap')]" position="attributes">
+            <attribute name="style">margin-top: 100px !important;
+            </attribute>
+
+        </xpath>
+    </template>
+
+    <template id="jt_eduction_portal_access" name="Portal My Home : Education"
+              inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+
+            <div class="o_portal_category row g-2 mt-3" id="portal_client_category">
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;margin-right:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                             <img src="/jt_education_portal/static/img/portal-book.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Issue Books</h5>
+                            </div>
+                            <div>    
+                                <a href="/my/issue_books_list">Issue Books</a>
+                            </div>
+                            <div>
+                                 <a href="/my/membership_list">Membership</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                                <img src="/jt_education_portal/static/img/portal-exam.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Exam Details</h5>
+                            </div>
+                            <div>    
+                               <a href="/my/exam_list">Exams</a>
+                            </div>
+                            <div>
+                                 <a href="/my/result_list">Results</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+
+            <div class="o_portal_category row g-2 mt-3" id="portal_client_category">
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;margin-right:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                             <img src="/jt_education_portal/static/img/portal-assignment.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Assignment Details</h5>
+                            </div>
+                            <div>    
+                                <a href="/my/assignment_list">Assignments</a>
+                            </div>
+                            <div>
+                                 <a href="/my/submission_list">Submissions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                                <img src="/jt_education_portal/static/img/portal-event.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Events Details</h5>
+                            </div>
+                            <div>    
+                               <a href="/my/event_list">Events</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+
+            <div class="o_portal_category row g-2 mt-3" id="portal_client_category">
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;margin-right:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                             <img src="/jt_education_portal/static/img/portal-timetable.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Timetable Details</h5>
+                            </div>
+                            <div>    
+                                <a href="/my/timetable_list"> Timetable List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                                <img src="/jt_education_portal/static/img/portal-fee.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Fees Details</h5>
+                            </div>
+                            <div>    
+                               <a href="/my/fees_list">Fees</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="o_portal_category row g-2 mt-3" id="portal_client_category">
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;margin-right:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                             <img src="/jt_education_portal/static/img/portal-studentdetails.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Student Details</h5>
+                            </div>
+                            <div>    
+                                <a href="/my/student_list"> Student List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                                <img src="/jt_education_portal/static/img/portal-holiday.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Holiday Details</h5>
+                            </div>
+                            <div>    
+                               <a href="/my/holidays_list">Holidays</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="o_portal_category row g-2 mt-3" id="portal_client_category">
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;margin-right:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                             <img src="/jt_education_portal/static/img/portal-transport.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Transport Details</h5>
+                            </div>
+                            <div>    
+                                <a href="/my/transport_list">Transport</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242) !important; width:415px;height:100px; border-radius:10px;margin-right:10px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                             <img src="/jt_education_portal/static/img/portal-hostel.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Hostel Details</h5>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 150px 150px 110px;">
+                                <div>    
+                                    <a href="/my/hostel_registration_list">Registration</a>
+                                </div>
+                                <div> 
+                                    <a href="/my/hostel_meeting_list">Parents Meeting</a>   
+                                </div>
+                            </div>
+                            <div>
+                                <div>    
+                                    <a href="/my/hostel_complaint_list">Complaint</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+        </xpath>
+    </template> -->
+
+    <template id="jt_eduction_portal_access_profile" name="Portal My Home : Education"
+              inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="before">
+            <t t-if="request.env.user.is_student" t-set="portal_client_category_enable" t-value="True"/>
+        </xpath>
+        <div id="portal_client_category" position="inside">
+            <t t-if="request.env.user.is_student">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/jt_education_portal/static/img/portal-student_profile.svg'"/>
+                    <t t-set="title">My Profile</t>
+                    <t t-set="text">View your student profile</t>
+                    <t t-set="url" t-value="'/my/student_profile'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </t>
+        </div>
+    </template>
+
+
+    <!-- Template for Profile -->
+    <template id="portal_student_profile" name="Profile">
+        <t t-call="website.layout">
+            <header>
+                <div class="container" style="margin-top: 40px;">
+                    <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                    <span> / </span>
+                    <span>Profile</span>
+                </div>
+            </header>
+            <t t-set="additional_title">Profile</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap" style="margin-top: 100px !important;">
+                        <br/>
+                        <div class="row"> 
+                            <div class="col-md-4">
+                                <div t-if="partner">
+                                    <h6><small class="text-muted">Your contact</small></h6>
+                                    <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                        <div class="d-flex justify-content-start align-items-center gap-2">
+                                            <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                        <div>
+                                        <h6 class="mb-0" t-out="partner.name"/>
+                                        <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                        Send message
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="col">
+                                <h2>Student Profile - <i><span t-field="student.name"/></i></h2>
+                                <br/>
+                                <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                    <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                        <th style="border-bottom-width: 2px;">Name</th>
+                                        <th style="border-bottom-width: 2px;">Standard</th>
+                                        <th style="border-bottom-width: 2px;">Division</th>
+                                        <th style="border-bottom-width: 2px;">Academic Year</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <t t-esc="student.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="student.standard.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="student.div.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="student.curr_year.name"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            <div>
+                                <h3>Communication History</h3>
+                                <div id="discussion" data-anchor="true"
+                                    class="d-print-none o_portal_chatter o_not_editable p-0"
+                                    t-att-data-token="token"
+                                    t-att-data-res_model="partner._name"
+                                    t-att-data-pid="pid"
+                                    t-att-data-hash="hash"
+                                    t-att-data-res_id="partner.id"
+                                    t-att-data-pager_step="message_per_page or 10"
+                                    t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                    t-att-data-two_columns="'true' if two_columns else 'false'">
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    <br/>
+                </div>
+               </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Template for issue book List -->
+    <template id="portal_issue_books_list" name="Issue List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Issue List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Issue Books</th>
+                                <th style="text-align:left">Date of Return</th>
+                                <th style="text-align:left">Book</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="issue_books_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.issuebooks_code"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.date_return"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name.name"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for issue books -->
+    <template id="portal_issue_books" name="Issue Books">
+        <t t-call="website.layout">
+            <t t-foreach="issue_books" t-as="issue">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/issue_books_list" class="oe_highlight"><span t-field="issue.issuebooks_code"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Issue Books</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Issue Book - <i><span t-field="issue.issuebooks_code"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Issue Book Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap" id="sale_info_table">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Issue ID:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="issue.issuebooks_code"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Date of Issue:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="issue.datetime_issue"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Date of Return:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="issue.date_return"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="issue.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Issue Book Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Book</th>
+                                            <th style="border-bottom-width: 2px;">Author</th>
+                                            <th style="border-bottom-width: 2px;">Genres</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr t-foreach="issue.issuebookslines_ids" t-as="issueline" style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="issueline.name.name"/></td>
+                                                    <td><t t-esc="issueline.author.name"/></td>
+                                                    <td><t t-esc="issueline.genres"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Language</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr t-foreach="issue.issuebookslines_ids.lang_id" t-as="il" style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="il.lang"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for library membership -->
+    <template id="portal_membership_list" name="Membership">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Membership</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Membership ID</th>
+                                <th style="text-align:left">Start Date</th>
+                                <th style="text-align:left">End Date</th>
+                                <th style="text-align:left">Book Limit</th>
+                                <th style="text-align:left">Status</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="membership_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.memberships_code"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.start_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.end_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.book_limit"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.state"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for Membership -->
+    <template id="portal_membership" name="Membership">
+        <t t-call="website.layout">
+            <t t-foreach="membership" t-as="mem">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/membership_list" class="oe_highlight"><span t-field="mem.memberships_code"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Membership</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Membership - <i><span t-field="mem.memberships_code"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Membership Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap" id="sale_info_table">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Membership ID:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="mem.memberships_code"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Start Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="mem.start_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">End Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="mem.end_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="mem.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Membership Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Book Limit</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="mem.book_limit"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for Transport List-->
+    <template id="portal_transport_list" name="Transport List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Transport</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="border: 1px solid black; text-align:center; background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Academic Year</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="transport_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.transport_id.curr_year.name"/></a></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    
+    <!-- Template for Transport -->
+    <template id="portal_transport" name="Transport">
+        <t t-call="website.layout">
+            <t t-foreach="transport" t-as="tra">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/transport_list" class="oe_highlight"><span t-field="tra.transport_id.curr_year"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Transport</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Transport - <i><span t-field="tra.transport_id.curr_year"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Transport Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap" id="sale_info_table">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Academic Year:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="tra.transport_id.curr_year"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Transport Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Route Name</th>
+                                            <th style="border-bottom-width: 2px;">Stop</th>
+                                            <th style="border-bottom-width: 2px;">Vehicle</th>
+                                            <th style="border-bottom-width: 2px;">Driver Name</th>
+                                            <th style="border-bottom-width: 2px;">Driver Mobile No.</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="tra.transport_id.name"/></td>
+                                                    <td><t t-esc="tra.name"/></td>
+                                                    <td><t t-esc="tra.transport_id.vehicle_id.name"/></td>
+                                                    <td><t t-esc="tra.transport_id.driver_name"/></td>
+                                                    <td><t t-esc="tra.transport_id.driver_mo"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for Hostel Registration List -->
+    <template id="portal_hostel_registration_list" name="Registration List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Registration List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Register Key</th>
+                                <th style="text-align:left">Name</th>
+                                <th style="text-align:left">Room</th>
+                                <th style="text-align:left">Status</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="registration_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.hostel_fee_seq"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.student_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.room_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="reg_state"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Template for Hostel Registration -->
+    <template id="portal_hostel_registration" name="Hostel Registration">
+        <t t-call="website.layout">
+            <t t-foreach="registration" t-as="reg">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/hostel_registration_list" class="oe_highlight"><span t-field="reg.hostel_fee_seq"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Registration</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Hostel Registration - <i><span t-field="reg.hostel_fee_seq"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="reg.student_id.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="reg.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="reg.division"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="reg.curr_year_id"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Hostel Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap" id="sale_info_table">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Building:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="reg.building_id.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Room:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="reg.room_id.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Room Type:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="reg.room_type"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="reg.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Hostel Fees Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Name</th>
+                                            <th style="border-bottom-width: 2px;">Quantity</th>
+                                            <th style="border-bottom-width: 2px;">Amount</th>
+                                            <th style="border-bottom-width: 2px;">Total Fees</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr t-foreach="reg.registration_ids" t-as="reg_line" style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="reg_line.housekeeping_id.name"/></td>
+                                                    <td><t t-esc="reg_line.quantity"/></td>
+                                                    <td><t t-esc="reg_line.amount"/></td>
+                                                    <td><t t-esc="reg_line.total_fees"/></td>
+                                                </tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><b>Total Fees:</b></td>
+                                                    <td><t t-esc="'%.2f'%round(sum(reg.registration_ids.mapped('total_fees')), 2) or 0.0"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <!-- Template for Hostel Complaint List -->
+    <template id="portal_hostel_complaint_list" name="Complaint List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Complaint List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Name</th>
+                                <th style="text-align:left">Date</th>
+                                <th style="text-align:left">Status</th>
+                                <th style="text-align:left">Assign to</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="complaint_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="complaint_state"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.assign_id.name"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Template for Student Complaint -->
+    <template id="portal_hostel_complaint" name="Student Complaint">
+        <t t-call="website.layout">
+            <t t-foreach="complaint" t-as="com">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/hostel_complaint_list" class="oe_highlight"><span t-field="com.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Complaint</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Student Complaint - <i><span t-field="com.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Complaint Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Name:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="com.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="com.date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="com.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Student Complaint Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Assign to</th>
+                                            <th style="border-bottom-width: 2px;">Description</th>
+                                            <th style="border-bottom-width: 2px;">Closing Date</th>
+                                            <th style="border-bottom-width: 2px;">Reason for Cancellation</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="com.assign_id.name"/></td>
+                                                    <td><t t-esc="com.description"/></td>
+                                                    <td><t t-esc="com.closing_date"/></td>
+                                                    <td><t t-esc="com.cancel_reason"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <!-- Template for Hostel Meeting List -->
+    <template id="portal_hostel_meeting_list" name="Meeting List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Meeting List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Name</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="meeting_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Template for Hostel Meeting -->
+    <template id="portal_hostel_meeting" name="Hostel Meeting">
+        <t t-call="website.layout">
+            <t t-foreach="meeting" t-as="meet">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/hostel_meeting_list" class="oe_highlight"><span t-field="meet.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Meeting</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Hostel Meeting - <i><span t-field="meet.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Meeting Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Name:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="meet.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Standard:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="meet.standard"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Division:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="meet.division"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Hostel Meeting Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Start Date</th>
+                                            <th style="border-bottom-width: 2px;">End Date</th>
+                                            <th style="border-bottom-width: 2px;">Agenda</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="meet.start_date"/></td>
+                                                    <td><t t-esc="meet.end_date"/></td>
+                                                    <td><t t-esc="meet.agenda"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <!-- Template for exam List -->
+    <template id="portal_exam_list" name="Exams List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Exams List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Exams</th>
+                                <th style="text-align:left">Start Date</th>
+                                <th style="text-align:left">End Date</th>
+                                <th style="text-align:left">Status</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="exam_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.start_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.end_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.state"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for exam -->
+    <template id="portal_exam" name="Exams">
+        <t t-call="website.layout">
+            <t t-foreach="exam" t-as="exam">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/exam_list" class="oe_highlight"><span t-field="exam.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Exam</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Student Exam - <i><span t-field="exam.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Exam Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Name:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="exam.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Start Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="exam.start_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">End Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="exam.end_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="exam.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Exam Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Subjects</th>
+                                            <th style="border-bottom-width: 2px;">Date</th>
+                                            <th style="border-bottom-width: 2px;">Day</th>
+                                            <th style="border-bottom-width: 2px;">Time</th>
+                                            <th style="border-bottom-width: 2px;">Total Marks</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr t-foreach="exam.subject_line" t-as="subline" style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="subline.subject_id.code"/> - <t t-esc="subline.subject_id.name"/></td>
+                                                    <td><t t-esc="subline.date"/></td>
+                                                    <td><t t-esc="subline.day"/></td>
+                                                    <td><t t-esc="subline.time_from"/> To
+                                                    <t t-esc="subline.time_to"/></td>
+                                                    <td><t t-esc="subline.mark"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for result List -->
+    <template id="portal_result_list" name="Results List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Results List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Results</th>
+                                <th style="text-align:left">Standard</th>
+                                <th style="text-align:left">Division</th>
+                                <th style="text-align:left">Current Year</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="result_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.exam_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.standard.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.division.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.academic_year.name"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for result -->
+    <template id="portal_result" name="Results">
+        <t t-call="website.layout">
+            <t t-foreach="result" t-as="result">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/result_list" class="oe_highlight"><span t-field="result.exam_id.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Result</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Student Result - <i><span t-field="result.exam_id.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Result Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Exam Name:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="result.exam_id.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Standard:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="result.standard.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Division:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="result.division.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Academic Year:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="result.academic_year.name"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Result Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Subjects</th>
+                                            <th style="border-bottom-width: 2px;">Date</th>
+                                            <th style="border-bottom-width: 2px;">Min Marks</th>
+                                            <th style="border-bottom-width: 2px;">Marks Obtained</th>
+                                            <th style="border-bottom-width: 2px;">Total Marks</th>
+                                            <th style="border-bottom-width: 2px;">Subject Pass/Fail</th>
+                                            <th style="border-bottom-width: 2px;">Grade</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr t-foreach="result.subject_line" t-as="rsubline" style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="rsubline.subject_id.code"/> - <t t-esc="rsubline.subject_id.name"/></td>
+                                                    <td><t t-esc="rsubline.date"/></td>
+                                                    <td><t t-esc="rsubline.pass_mark"/></td>
+                                                    <td><t t-esc="rsubline.mark_scored"/></td>
+                                                    <td><t t-esc="rsubline.mark"/></td>
+                                                    <td t-if="rsubline.pass_or_fail == True">
+                                                        <strong>Pass</strong>
+                                                    </td>
+                                                    <td t-if="rsubline.pass_or_fail == False">
+                                                        <strong>Fail</strong>
+                                                    </td>
+                                                    <td><t t-esc="rsubline.grade_id.name"/></td>
+                                                </tr>
+                                                <tr><td style="height: 20px;"></td></tr>
+                                                <tr><td style="height: 20px;"></td></tr>
+                                                <tr>
+                                                    <td style="font-weight: bold;">Total:</td>
+                                                    <td style="font-weight: bold;">Total Mark Scored : <t t-esc="result.total_mark_scored"/></td>
+                                                    <td/>
+                                                    <td style="font-weight: bold;">Total Marks : <t t-esc="result.total_mark"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-weight: bold; font-size: 16px; text-align:left;">Percentage:</th>
+                                                    <td style="font-weight: bold; font-size: 16px;"><t t-esc="result.percentage"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Result:</th>
+                                                    <td style="font-weight: bold;" t-if="result.pass_fail_full == False">
+                                                        <strong>Fail</strong>
+                                                    </td>
+                                                    <td style="font-weight: bold;" t-if="result.pass_fail_full == True">
+                                                        <strong>Pass</strong>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for event -->
+    <template id="portal_event_list" name="Events">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Events</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="border: 1px solid black; text-align:center; background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Events</th>
+                                <th style="text-align:left">Start Date</th>
+                                <th style="text-align:left">End Date</th>
+                                <th style="text-align:left">Category</th>
+                                <th style="text-align:left">Event Stage</th>
+                                <th style="text-align:left">Registration Date</th>
+                                <th style="text-align:left">Attended Date</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="event_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.event_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.event_id.date_begin"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.event_id.date_end"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.event_id.event_type_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.event_id.stage_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.create_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.date_closed"/></a></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for Event -->
+    <template id="portal_event" name="Event">
+        <t t-call="website.layout">
+            <t t-foreach="event" t-as="eve">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/event_list" class="oe_highlight"><span t-field="eve.event_id.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Event</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Event - <i><span t-field="eve.event_id.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Event Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Event Name:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="eve.event_id.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Start Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="eve.event_id.date_begin"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">End Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="eve.event_id.date_end"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="eve.event_id.stage_id"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Event Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Venue</th>
+                                            <th style="border-bottom-width: 2px;">Organizer</th>
+                                            <th style="border-bottom-width: 2px;">Template</th>
+                                            <th style="border-bottom-width: 2px;">Language</th>
+                                            <th style="border-bottom-width: 2px;">Responsible</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="eve.event_id.address_id.name"/></td>
+                                                    <td><t t-esc="eve.event_id.organizer_id.name"/></td>
+                                                    <td><t t-esc="eve.event_id.event_type_id.name"/></td>
+                                                    <td><t t-esc="eve.event_id.lang"/></td>
+                                                    <td><t t-esc="eve.event_id.user_id.name"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for Holidays List -->
+    <template id="portal_holidays_list" name="Holidays List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Holidays List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="border: 1px solid black; text-align:center; background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Year</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="holiday_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value"/></a></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for Holiday -->
+    <template id="portal_holidays" name="Holiday">
+        <t t-call="website.layout">
+            <header>
+                <div class="container" style="margin-top: 40px;">
+                    <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                    <span> / </span>
+                    <a href="/my/holidays_list" class="oe_highlight"><t t-esc="year"/></a>
+                </div>
+            </header>
+            <t t-set="additional_title">Holiday</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap" style="margin-top: 100px !important;">
+                        <br/>
+                        <div class="row"> 
+                            <div class="col-md-4">
+                                <div t-if="partner">
+                                    <h6><small class="text-muted">Your contact</small></h6>
+                                    <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                        <div class="d-flex justify-content-start align-items-center gap-2">
+                                            <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                        <div>
+                                        <h6 class="mb-0" t-out="partner.name"/>
+                                        <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                        Send message
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="col">
+                                <h2>Holiday - <i><t t-esc="year"/></i></h2>
+                                <br/>
+                                <div class="row">
+                                    <div class="col">
+                                <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                <table class="table table-borderless table-sm">
+                                    <tbody style="white-space:nowrap" id="sale_info_table">
+                                        <tr>
+                                            <th class="text-end pb-0">Name:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-end pb-0">Standard:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-end pb-0">Division:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-end pb-0">Academic Year:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                <div> 
+                                </div>
+                                </table>
+                                </div>
+                                    <div class="col">
+                                        <h5 style="border-bottom:1px solid #E9ECEF;">Holiday Information</h5>
+                                        <table class="table table-borderless table-sm">
+                                            <tbody style="white-space:nowrap">
+                                                <tr>
+                                                    <th class="text-end pb-0">Year:</th>
+                                                    <td class="w-100 pb-0 text-wrap"><t t-esc="year"/></td>
+                                                </tr>
+                                            </tbody>
+                                        <div>
+                                    </div>
+                                </table>
+                            </div>
+                            </div>
+                                <h3 style="margin-top:70px;">Holiday Detail</h3>
+                                <br/>
+                                <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                    <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                        <th style="border-bottom-width: 2px;">Name</th>
+                                        <th style="border-bottom-width: 2px;">Start Date</th>
+                                        <th style="border-bottom-width: 2px;">End Date</th>
+                                        <th style="border-bottom-width: 2px;">Type of Holiday</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <tr t-foreach="holidays" t-as="holiday" style="border-top: 2px solid var(--o-border-color);}">
+                                                <td><t t-esc="holiday['name']"/></td>
+                                                <td><t t-esc="holiday['start_date']"/></td>
+                                                <td><t t-esc="holiday['end_date']"/></td>
+                                                <td><t t-esc="holiday['holiday_type']"/></td>
+                                            </tr>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            
+                            <div>
+                                <h3>Communication History</h3>
+                                <div id="discussion" data-anchor="true"
+                                    class="d-print-none o_portal_chatter o_not_editable p-0"
+                                    t-att-data-token="token"
+                                    t-att-data-res_model="partner._name"
+                                    t-att-data-pid="pid"
+                                    t-att-data-hash="hash"
+                                    t-att-data-res_id="partner.id"
+                                    t-att-data-pager_step="message_per_page or 10"
+                                    t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                    t-att-data-two_columns="'true' if two_columns else 'false'">
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    <br/>   
+                </div>
+               </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for fees List -->
+    <template id="portal_fees_list" name="Fees List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Fees List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="border: 1px solid black; text-align:center; background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Receipt Number</th>
+                                <th style="text-align:left">Standard</th>
+                                <th style="text-align:left">Year</th>
+                                <th style="text-align:left">Month</th>
+                                <th style="text-align:left">Status</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="fees_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.standard.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.year.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.month"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.state"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for fees -->
+    <template id="portal_fees" name="Fees">
+        <t t-call="website.layout">
+            <t t-foreach="fees" t-as="fees">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/fees_list" class="oe_highlight"><span t-field="fees.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Fees</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Student Fees - <i><span t-field="fees.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Fees Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Receipt Number:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="fees.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Date of Payment:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="fees.paid_on"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Year:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="fees.year"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="fees.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Fees Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Serial Number</th>
+                                            <th style="border-bottom-width: 2px;">Particulars</th>
+                                            <th style="border-bottom-width: 2px;">Amount</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr t-foreach="fees.fees_detail" t-as="fd" style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="fd_index + 1"/></td>
+                                                    <td><t t-esc="fd.fee_type.name"/></td>
+                                                    <td><t t-esc="fd.amount"/></td>
+                                                </tr>
+                                                <tr><td style="height: 20px;"></td></tr>
+                                                <tr>
+                                                    <td style="font-weight: bold;">Total  :  <t t-esc="fees.amount"/></td>
+                                                    
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Template for Assignment List -->
+    <template id="portal_assignment_list" name="Assignments List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Assignments List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Assignments</th>
+                                <th style="text-align:left">Issued Date</th>
+                                <th style="text-align:left">Submission Date</th>
+                                <th style="text-align:left">Status</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="assignment_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.issued_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.submission_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.state"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for Assignment -->
+    <template id="portal_assignment" name="Assignment">
+        <t t-call="website.layout">
+            <t t-foreach="assignment" t-as="ass">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/assignment_list" class="oe_highlight"><span t-field="ass.name"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Assignment</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Student Assignments - <i><span t-field="ass.name"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Assignment Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Assignment Name:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="ass.name"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Issued Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="ass.issued_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Submission Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="ass.submission_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="ass.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Assignment Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Subjects</th>
+                                            <th style="border-bottom-width: 2px;">Assignment Type</th>
+                                            <th style="border-bottom-width: 2px;">Description</th>
+                                            <th style="border-bottom-width: 2px;">Faculty Obtained</th>
+                                            <th style="border-bottom-width: 2px;">Total Marks</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="ass.subject_id.code"/> - <t t-esc="ass.subject_id.name"/></td>
+                                                    <td><t t-esc="ass.assignment_type.name"/></td>
+                                                    <td><t t-esc="ass.description"/></td>
+                                                    <td><t t-esc="ass.faculty.name"/></td>
+                                                    <td><t t-esc="ass.marks"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <!-- Template for Submission List -->
+    <template id="portal_submission_list" name="Submissions">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Submissions</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="border: 1px solid black; text-align:center; background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Submissions</th>
+                                <th style="text-align:left">Submission Date</th>
+                                <th style="text-align:left">Note</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="submission_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.assignment_id.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.submission_date"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.state"/></a></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Template for Submission -->
+    <template id="portal_submission" name="Submission">
+        <t t-call="website.layout">
+            <t t-foreach="submission" t-as="sub">
+                <header>
+                    <div class="container" style="margin-top: 40px;">
+                        <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                        <span> / </span>
+                        <a href="/my/submission_list" class="oe_highlight"><span t-field="sub.assignment_id"/></a>
+                    </div>
+                </header>
+                <t t-set="additional_title">Submission</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="wrap" style="margin-top: 100px !important;">
+                            <br/>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div t-if="partner">
+                                        <h6><small class="text-muted">Your contact</small></h6>
+                                        <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                                <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                            <div>
+                                            <h6 class="mb-0" t-out="partner.name"/>
+                                            <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                            Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col">
+                                    <h2>Student Submission - <i><span t-field="sub.assignment_id"/></i></h2>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col">
+                                    <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                    <table class="table table-borderless table-sm">
+                                        <tbody style="white-space:nowrap" id="sale_info_table">
+                                            <tr>
+                                                <th class="text-end pb-0">Name:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Standard:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Division:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-end pb-0">Academic Year:</th>
+                                                <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    <div> 
+                                    </div>
+                                    </table>
+                                    </div>
+                                        <div class="col">
+                                            <h5 style="border-bottom:1px solid #E9ECEF;">Submission Information</h5>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody style="white-space:nowrap">
+                                                    <tr>
+                                                        <th class="text-end pb-0">Submission:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="sub.assignment_id"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Submission Date:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="sub.submission_date"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-end pb-0">Status:</th>
+                                                        <td class="w-100 pb-0 text-wrap"><span t-field="sub.state"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            <div>
+                                        </div>
+                                    </table>
+                                </div>
+                                </div>
+                                    <h3 style="margin-top:70px;">Submission Detail</h3>
+                                    <br/>
+                                    <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                        <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                            <th style="border-bottom-width: 2px;">Total Marks</th>
+                                            <th style="border-bottom-width: 2px;">Scored Marks</th>
+                                            <th style="border-bottom-width: 2px;">Note</th>
+                                            <th style="border-bottom-width: 2px;">Description</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr style="border-top: 2px solid var(--o-border-color);}">
+                                                    <td><t t-esc="sub.marks"/></td>
+                                                    <td><t t-esc="sub.marks_scored"/></td>
+                                                    <td><t t-esc="sub.description"/></td>
+                                                    <td><t t-esc="sub.note"/></td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <div>
+                                    <h3>Communication History</h3>
+                                    <div id="discussion" data-anchor="true"
+                                        class="d-print-none o_portal_chatter o_not_editable p-0"
+                                        t-att-data-token="token"
+                                        t-att-data-res_model="partner._name"
+                                        t-att-data-pid="pid"
+                                        t-att-data-hash="hash"
+                                        t-att-data-res_id="partner.id"
+                                        t-att-data-pager_step="message_per_page or 10"
+                                        t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                        t-att-data-two_columns="'true' if two_columns else 'false'">
+                                    </div>
+                                 </div>
+                                </div>
+                            </div>
+                        <br/>
+                    </div>
+                   </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+    <!-- Template for Timetable List -->
+    <template id="portal_timetable_list" name="TimetableList">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="font-size:15px; margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Name</th>
+                                <th style="text-align:left">Standard</th>
+                                <th style="text-align:left">Division</th>
+                                <th style="text-align:left">Academic year</th>                           
+                            </thead>
+                            <tbody> 
+                                 <t t-foreach="timetable_list" t-as="info">
+                                    <tr>
+                                        <td><a t-att-href="info"><t t-esc="info_value.name"/></a></td> <td><a t-att-href="info"><t t-esc="info_value.standard.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.division.name"/></a></td>
+                                        <td><a t-att-href="info"><t t-esc="info_value.curr_year.name"/></a></td>         
+                                    </tr>  
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <!-- Template for Timetable -->
+    <template id="portal_timetable" name="Timetable">
+        <t t-call="website.layout">
+            <header>
+                <div class="container" style="margin-top: 40px;">
+                    <a href="/my/home" class="oe_highlight" ><i class="fa fa-home" aria-hidden="true"></i></a>
+                    <span> / </span>
+                    <a href="/my/timetable_list" class="oe_highlight"><span t-field="timetable.name"/></a>
+                </div>
+            </header>
+            <t t-set="additional_title">Timetable</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap" style="margin-top: 100px !important;">
+                        <br/>
+                        <div class="row"> 
+                            <div class="col-md-4">
+                                <div t-if="partner">
+                                    <h6><small class="text-muted">Your contact</small></h6>
+                                    <div class="o_portal_contact_details d-flex flex-column gap-2">
+                                        <div class="d-flex justify-content-start align-items-center gap-2">
+                                            <img class="o_avatar o_portal_contact_img rounded" t-att-src="image_data_uri(partner.avatar_1024)" alt="Contact"/>
+                                        <div>
+                                        <h6 class="mb-0" t-out="partner.name"/>
+                                        <a href="#discussion" class="d-flex align-items-center gap-2 small fw-bold">
+                                        Send message
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="col">
+                                <h2>Student Timetable - <i><span t-field="timetable.name"/></i></h2>
+                                <br/>
+                                <div class="row">
+                                    <div class="col">
+                                <h5 style="border-bottom:1px solid #E9ECEF;">Student Information</h5>
+                                <table class="table table-borderless table-sm">
+                                    <tbody style="white-space:nowrap" id="sale_info_table">
+                                        <tr>
+                                            <th class="text-end pb-0">Name:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-end pb-0">Standard:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.standard"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-end pb-0">Division:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.div"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-end pb-0">Academic Year:</th>
+                                            <td class="w-100 pb-0 text-wrap"><span t-field="partner.curr_year"/></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                <div> 
+                                </div>
+                                </table>
+                                </div>
+                                    <div class="col">
+                                        <h5 style="border-bottom:1px solid #E9ECEF;">Timetable Information</h5>
+                                        <table class="table table-borderless table-sm">
+                                            <tbody style="white-space:nowrap">
+                                                <tr>
+                                                    <th class="text-end pb-0">Standard:</th>
+                                                    <td class="w-100 pb-0 text-wrap"><span t-field="timetable.standard"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-end pb-0">Division:</th>
+                                                    <td class="w-100 pb-0 text-wrap"><span t-field="timetable.division"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-end pb-0">Academic Year:</th>
+                                                    <td class="w-100 pb-0 text-wrap"><span t-field="timetable.curr_year"/></td>
+                                                </tr>
+                                            </tbody>
+                                        <div>
+                                    </div>
+                                </table>
+                            </div>
+                            </div>
+                                <h3 style="margin-top:70px;">Timetable Detail</h3>
+                                <br/>
+                                <table style="border-collapse: collapse;width: 100%;margin-bottom:100px;">
+                                    <thead style="background-color: #F8F9FA !important;color: #212529;border-color: #CED4DA;">
+                                        <th style="border-bottom-width: 2px;">Time</th>
+                                        <th style="border-bottom-width: 2px;">Monday</th>
+                                        <th style="border-bottom-width: 2px;">Tuesday</th>
+                                        <th style="border-bottom-width: 2px;">Wednesday</th>
+                                        <th style="border-bottom-width: 2px;">Thursday</th>
+                                        <th style="border-bottom-width: 2px;">Friday</th>
+                                        <th style="border-bottom-width: 2px;">Saturday</th>
+                                        <th style="border-bottom-width: 2px;">Sunday</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <tr t-foreach="timetable_data.items()" t-as="week_data" style="border-top: 2px solid var(--o-border-color);}">
+                                                <td>
+                                                    <t t-esc="week_data[0]"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('mon', '')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('tue', '')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('wed', '')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('thu', '')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('fri', '')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('sat', '')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="week_data[1].get('sun', '')"/>
+                                                </td>
+                                            </tr>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            <div>
+                                <h3>Communication History</h3>
+                                <div id="discussion" data-anchor="true"
+                                    class="d-print-none o_portal_chatter o_not_editable p-0"
+                                    t-att-data-token="token"
+                                    t-att-data-res_model="partner._name"
+                                    t-att-data-pid="pid"
+                                    t-att-data-hash="hash"
+                                    t-att-data-res_id="partner.id"
+                                    t-att-data-pager_step="message_per_page or 10"
+                                    t-att-data-allow_composer="'0' if disable_composer else '1'"
+                                    t-att-data-two_columns="'true' if two_columns else 'false'">
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    <br/>
+                </div>
+               </div>
+            </div>
+        </t>
+    </template>
+
+     <template id="jt_eduction_portal_access" name="Portal My Home : Education"
+              inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="request.env.user.is_parent">
+               <div class="o_portal_index_card" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1))!important;width:417px;height:100px;border-radius:7px;margin-right:10px;margin-top:30px;">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="o_portal_icon align-self-start">
+                                <img src="/jt_education_base/static/img/portal-studentdetails.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;" />
+                            </div>
+                        </div>
+                        <div class="col-10" style="padding-left:40px;">
+                            <div class="content" style="padding-top:10px;">
+                                <h5>Student Details</h5>
+                            </div>
+                            <div>
+                                <a href="/my/student_list"> Student List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+    
+
+    <!-- Template for Student List -->
+    <template id="portal_student_list" name="Students List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Students List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Name</th>
+                                <th style="text-align:left">Middle Name</th>
+                                <th style="text-align:left">Last Name</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="student_list" t-as="sl">
+                                    <tr>
+                                        <td><a t-att-href="sl"><t t-esc="sl_value.name"/></a></td>
+                                        <td><a t-att-href="sl"><t t-esc="sl_value.father_name"/></a></td>
+                                        <td><a t-att-href="sl"><t t-esc="sl_value.surname"/></a></td>
+                                    </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for Student Details List -->
+    <template id="portal_student_details_list" name="Students Details List">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap" style="padding-top:20px;">
+                        <u><h3>Student Details</h3></u>
+                        <div class="o_portal_category row g-2 mt-3" id="portal_alert_category">
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-book.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Student Profile</h5>
+                                        </div>
+                                        <div>    
+                                            <a t-att-href="profile">Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-book.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Issue Books</h5>
+                                        </div>
+                                        <div>    
+                                            <a t-att-href="issue_book">Issue Books</a>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="membership">Membership</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="o_portal_category row g-2 mt-3" id="portal_alert_category">
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-exam.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Exam Details</h5>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="exams">Exams</a>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="result">Results</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-assignment.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Assignment Details</h5>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="assignment">Assignments</a>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="submission">Submissions</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="o_portal_category row g-2 mt-3" id="portal_alert_category">
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                        <div class="col-2">
+                                            <div class="o_portal_icon align-self-start">
+                                             <img src="/jt_education_portal/static/img/portal-event.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                            </div>
+                                        </div>
+                                        <div class="col-10" style="padding-left:50px;">
+                                            <div class="content" style="padding-top:10px;">
+                                                <h5>Events Details</h5>
+                                            </div>
+                                            <div>
+                                                <a t-att-href="events">Events</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-timetable.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Timetable Details</h5>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="timetable">Timetable List</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="o_portal_category row g-2 mt-3" id="portal_alert_category">
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-fee.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Fees Details</h5>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="fees">Fees</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-transport.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Holiday Details</h5>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="holidays">Holiday</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="o_portal_category row g-2 mt-3" id="portal_alert_category" style="margin-bottom:50px;">
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;margin-right:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-transport.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Transport Details</h5>
+                                        </div>
+                                        <div>
+                                            <a t-att-href="transport">Transport</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_portal_index_card col-md-6" style="background-color: RGBA(243, 242, 242, var(--bg-opacity, 1)) !important;; width:380px;height:90px; border-radius:10px;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="o_portal_icon align-self-start">
+                                         <img src="/jt_education_portal/static/img/portal-hostel.svg" loading="lazy" style="width:80px;height:80px; padding-top:10px;"  />
+                                        </div>
+                                    </div>
+                                    <div class="col-10" style="padding-left:50px;">
+                                        <div class="content" style="padding-top:10px;">
+                                            <h5>Hostel Details</h5>
+                                        </div>
+                                        <div style="display: grid; grid-template-columns: 150px 150px 110px;">
+                                        <div>    
+                                            <a t-att-href="hostel_registration">Registration</a>
+                                        </div>
+                                        <div> 
+                                            <a t-att-href="hostel_complaint">Complaint</a>  
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>    
+                                            <a t-att-href="hostel_meeting">Parent Meeting</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

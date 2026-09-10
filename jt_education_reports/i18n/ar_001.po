@@ -1,19 +1,17 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* jt_education_reports
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-11 12:05+0000\n"
-"PO-Revision-Date: 2023-10-11 12:05+0000\n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: jt_education_reports
 #: model:ir.actions.report,print_report_name:jt_education_reports.black_experiencecerificate_landscape_report
@@ -186,6 +184,11 @@ msgid "Date of issue of certificate:"
 msgstr "تاريخ اصدار الشهادة:"
 
 #. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: jt_education_reports
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.Blue_icard_back_report
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_classic_back_icard
@@ -230,6 +233,11 @@ msgstr "عودة تقرير البطاقة الخضراء"
 #: model:ir.actions.report,name:jt_education_reports.employee_green_front_icard_report
 msgid "Green Id-Card Report FRONT"
 msgstr "تقرير البطاقة الخضراء أمامي"
+
+#. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__id
+msgid "ID"
+msgstr "المُعرف"
 
 #. module: jt_education_reports
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_report
@@ -300,7 +308,7 @@ msgstr "تقرير بطاقات الهوية المتعددة أمامي"
 #. module: jt_education_reports
 #: model:ir.model.fields,field_description:jt_education_reports.field_res_company__namep
 msgid "Name"
-msgstr "اسم"
+msgstr "الاسم"
 
 #. module: jt_education_reports
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
@@ -321,6 +329,11 @@ msgstr "عودة تقرير بطاقة الهوية باللون الأزرق ا
 #: model:ir.actions.report,name:jt_education_reports.navy_front_icard_report
 msgid "Navy Blue Id-Card Report FRONT"
 msgstr "تقرير بطاقة الهوية باللون الأزرق الداكن أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_front_icard
+msgid "Parent"
+msgstr "ولي الأمر"
 
 #. module: jt_education_reports
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.rescompany_form_view
@@ -553,18 +566,6 @@ msgstr "عودة تقرير بطاقة الهوية الصفراء"
 #: model:ir.actions.report,name:jt_education_reports.yellow_front_icard_report
 msgid "Yellow Id-Card Report FRONT"
 msgstr "تقرير بطاقة الهوية الصفراء أمامي"
-
-#. module: jt_education_reports
-#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
-#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
-#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
-msgid "___________________"
-msgstr "___________________"
-
-#. module: jt_education_reports
-#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
-msgid "__________________________"
-msgstr "___________________"
 
 #. module: jt_education_reports
 #: model_terms:ir.ui.view,arch_db:jt_education_reports.blue_icard_template

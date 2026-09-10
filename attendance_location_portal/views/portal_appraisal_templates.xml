@@ -4,14 +4,14 @@
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
             <li t-if="page_name in ('portal_appraisals', 'portal_appraisal_new', 'portal_appraisal_detail', 'portal_appraisal_failed')"
                 t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_appraisals' else ''}">
-                <a t-if="page_name != 'portal_appraisals'" href="/my/appraisals"><t>My Appraisals</t></a>
-                <t t-else=""><t>My Appraisals</t></t>
+                <a t-if="page_name != 'portal_appraisals'" href="/my/appraisals"><t>Appraisals</t></a>
+                <t t-else=""><t>Appraisals</t></t>
             </li>
             <li t-if="page_name == 'portal_appraisal_new'" class="breadcrumb-item active">
                 <t>New Appraisal</t>
             </li>
             <li t-if="page_name == 'portal_appraisal_detail'" class="breadcrumb-item active">
-                <t>Appraisal Details</t>
+                <t>Appraisal</t>
             </li>
         </xpath>
     </template>
@@ -20,19 +20,19 @@
         <div id="portal_common_category" position="inside">
             <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/hr_appraisal/static/description/icon.png'"/>
-                <t t-set="title">My Appraisals</t>
-                <t t-set="text">Request appraisals and track their status</t>
+                <t t-set="title">Appraisals</t>
+                <t t-set="text">Fill appraisals and track their status</t>
                 <t t-set="url" t-value="'/my/appraisals'"/>
                 <t t-set="config_card" t-value="True"/>
             </t>
         </div>
     </template>
 
-    <template id="portal_my_appraisals" name="My Appraisals">
+    <template id="portal_my_appraisals" name="Appraisals">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
-                <t t-set="title">My Appraisals</t>
+                <t t-set="title">Appraisals</t>
             </t>
 
             <div class="d-flex justify-content-end mb-3">
@@ -50,6 +50,7 @@
                 <t t-call="portal.portal_table">
                     <thead>
                         <tr>
+                            <th><t>Employee</t></th>
                             <th><t>Appraisal Date</t></th>
                             <th><t>Appraisers</t></th>
                             <th class="text-end"><t>Status</t></th>
@@ -59,8 +60,11 @@
                         <tr t-foreach="appraisals" t-as="appraisal">
                             <td>
                                 <a t-att-href="'/my/appraisals/%s' % appraisal.id">
-                                    <span t-field="appraisal.date_close"/>
+                                    <span t-out="appraisal.employee_id.name"/>
                                 </a>
+                            </td>
+                            <td>
+                                <span t-field="appraisal.date_close"/>
                             </td>
                             <td>
                                 <span t-out="', '.join(appraisal.manager_ids.mapped('name')) or '-'"/>
@@ -80,137 +84,301 @@
         </t>
     </template>
 
+    <template id="portal_appraisal_sheet" name="Portal Appraisal Sheet">
+        <div class="portal-appraisal-form o_appraisal_form">
+            <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
+            <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
+
+            <script type="application/json" id="portal_appraisal_employees_json" t-out="employees_json or '[]'"/>
+
+            <form id="portal_appraisal_form" method="post" t-att-action="form_action" class="portal-appraisal-sheet-form">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input t-if="can_edit_employee_feedback" type="hidden" name="employee_feedback" id="employee_feedback_input"/>
+                <input t-if="can_edit_manager_feedback" type="hidden" name="manager_feedback" id="manager_feedback_input"/>
+                <input t-if="show_private_note and state != '3_done'" type="hidden" name="note" id="private_note_input"/>
+
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3 portal-appraisal-header">
+                    <div class="d-flex flex-wrap gap-2">
+                        <button t-if="can_confirm" type="submit" name="portal_action" value="confirm" class="btn btn-primary">
+                            <t>Confirm</t>
+                        </button>
+                        <button t-if="can_edit_employee_feedback or can_edit_manager_feedback or can_edit_date or can_edit_employee or can_edit_appraisers"
+                                type="submit" name="portal_action" value="save"
+                                t-attf-class="btn #{'btn-outline-primary' if can_confirm else 'btn-primary'}">
+                            <t>Save</t>
+                        </button>
+                        <a href="/my/appraisals" class="btn btn-outline-secondary"><t>Cancel</t></a>
+                    </div>
+                    <div class="portal-appraisal-statusbar d-flex flex-wrap gap-2">
+                        <span t-attf-class="badge rounded-pill #{'text-bg-secondary' if state == '1_new' else 'text-bg-light border text-muted'}">
+                            <t>Draft</t>
+                        </span>
+                        <span t-attf-class="badge rounded-pill #{'text-bg-warning' if state == '2_pending' else 'text-bg-light border text-muted'}">
+                            <t>Ongoing</t>
+                        </span>
+                        <span t-attf-class="badge rounded-pill #{'text-bg-success' if state == '3_done' else 'text-bg-light border text-muted'}">
+                            <t>Done</t>
+                        </span>
+                    </div>
+                </div>
+
+                <div t-if="state == '2_pending'" class="alert alert-info py-2" role="alert">
+                    <t t-if="can_edit_employee_feedback">
+                        <t>Fill in the employee's feedback section before</t>
+                        <strong t-out="appraisal.date_close"/>
+                        <t>. Then, share it with appraisers.</t>
+                    </t>
+                    <t t-elif="can_edit_manager_feedback">
+                        <t>Fill in the manager's feedback section before</t>
+                        <strong t-out="appraisal.date_close"/>
+                        <t>. Then, schedule a meeting to discuss it.</t>
+                    </t>
+                </div>
+
+                <div class="oe_title pb-3">
+                    <label for="employee_id" class="form-label text-muted mb-1"><t>Employee to review</t></label>
+                    <h1 class="d-flex align-items-center gap-2 mb-0 portal-appraisal-employee">
+                        <img t-if="subject_employee"
+                             id="portal_employee_avatar"
+                             t-att-src="subject_avatar_src"
+                             class="rounded-circle portal-appraisal-avatar"
+                             t-att-alt="subject_employee.name"/>
+                        <select t-if="can_edit_employee"
+                                id="employee_id"
+                                name="employee_id"
+                                class="form-select form-select-lg portal-appraisal-employee-select"
+                                required="required">
+                            <option value=""><t>e.g. John Doe</t></option>
+                            <t t-foreach="selectable_employees or []" t-as="emp">
+                                <option t-att-value="emp.id"
+                                        t-att-selected="'selected' if subject_employee and subject_employee.id == emp.id else None">
+                                    <t t-out="emp.name"/>
+                                </option>
+                            </t>
+                        </select>
+                        <span t-else="" t-out="subject_employee.name"/>
+                    </h1>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label"><t>Appraisers</t></label>
+                            <t t-if="can_edit_appraisers">
+                                <div id="portal_appraiser_chips" class="d-flex flex-wrap gap-2 mb-2">
+                                    <t t-foreach="managers" t-as="mgr">
+                                        <span class="portal-appraisal-chip" t-att-data-id="mgr.id">
+                                            <img t-att-src="manager_avatar_src.get(mgr.id)" class="rounded-circle" t-att-alt="mgr.name"/>
+                                            <span t-out="mgr.name"/>
+                                            <button type="button" class="btn-close portal-appraiser-remove" aria-label="Remove"/>
+                                            <input type="hidden" name="manager_ids" t-att-value="mgr.id"/>
+                                        </span>
+                                    </t>
+                                </div>
+                                <select id="portal_appraiser_add" class="form-select">
+                                    <option value=""><t>Add an appraiser...</t></option>
+                                    <t t-foreach="selectable_employees or []" t-as="emp">
+                                        <option t-att-value="emp.id"
+                                                t-att-data-name="emp.name"
+                                                t-att-disabled="'disabled' if (subject_employee and emp.id == subject_employee.id) or (emp.id in managers.ids) else None">
+                                            <t t-out="emp.name"/>
+                                        </option>
+                                    </t>
+                                </select>
+                            </t>
+                            <div t-else="" class="d-flex flex-wrap gap-2 align-items-center">
+                                <t t-foreach="managers" t-as="mgr">
+                                    <span class="d-inline-flex align-items-center gap-1 portal-appraisal-chip">
+                                        <img t-att-src="manager_avatar_src.get(mgr.id)"
+                                             class="rounded-circle"
+                                             t-att-alt="mgr.name"/>
+                                        <span t-out="mgr.name"/>
+                                    </span>
+                                </t>
+                                <span t-if="not managers" class="text-muted">-</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date_close" class="form-label"><t>Appraisal Date</t></label>
+                            <input t-if="can_edit_date"
+                                   type="date"
+                                   id="date_close"
+                                   name="date_close"
+                                   class="form-control"
+                                   required="required"
+                                   t-att-value="date_close_value"/>
+                            <div t-else="" class="form-control-plaintext fw-semibold">
+                                <t t-if="appraisal"><span t-field="appraisal.date_close"/></t>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appraisal_template_id" class="form-label"><t>Template</t></label>
+                            <select t-if="can_edit_template"
+                                    id="appraisal_template_id"
+                                    name="appraisal_template_id"
+                                    class="form-select">
+                                <t t-foreach="templates" t-as="template">
+                                    <option t-att-value="template.id"
+                                            t-att-selected="'selected' if selected_template and selected_template.id == template.id else None">
+                                        <t t-out="template.description"/>
+                                    </option>
+                                </t>
+                            </select>
+                            <div t-else="" class="form-control-plaintext fw-semibold">
+                                <t t-out="selected_template.description if selected_template else '-'"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="nav nav-tabs portal-appraisal-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="appraisal-tab-btn" data-bs-toggle="tab" data-bs-target="#appraisal-tab-pane" type="button" role="tab">
+                            <t>Appraisal</t>
+                        </button>
+                    </li>
+                    <li t-if="show_private_note" class="nav-item" role="presentation">
+                        <button class="nav-link" id="private-note-tab-btn" data-bs-toggle="tab" data-bs-target="#private-note-tab-pane" type="button" role="tab">
+                            <t>Private Note</t>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content portal-appraisal-tab-content">
+                    <div class="tab-pane fade show active" id="appraisal-tab-pane" role="tabpanel">
+                        <div class="o_appraisal_both_feedback d-flex flex-column flex-md-row align-items-stretch">
+                            <div class="o_appraisal_feedback portal-appraisal-employee-col">
+                                <div class="o_appraisal_feedback_title d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <h3 class="mb-0"><t>Employee's Feedback</t></h3>
+                                    <div t-if="can_publish_employee" class="form-check form-switch mb-0">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               role="switch"
+                                               id="employee_feedback_published"
+                                               name="employee_feedback_published"
+                                               value="1"
+                                               t-att-checked="'checked' if employee_feedback_published else None"/>
+                                        <label class="form-check-label" for="employee_feedback_published">
+                                            <t t-if="employee_feedback_published">Shared to Appraisers</t>
+                                            <t t-else="">Private</t>
+                                        </label>
+                                    </div>
+                                    <div t-elif="state == '2_pending' and not is_new" class="small">
+                                        <strong t-if="not employee_feedback_published" class="text-info"><t>Private</t></strong>
+                                        <strong t-if="employee_feedback_published" class="text-success"><t>Shared to Appraisers</t></strong>
+                                    </div>
+                                </div>
+                                <div class="o_appraisal_input position-relative">
+                                    <t t-if="can_see_employee_feedback">
+                                        <div t-if="can_edit_employee_feedback"
+                                             id="portal_appraisal_employee_editor"
+                                             class="portal-appraisal-feedback-editor o_appraisal_template"
+                                             contenteditable="true"
+                                             role="textbox"
+                                             aria-multiline="true">
+                                            <t t-out="employee_feedback_html"/>
+                                        </div>
+                                        <div t-else=""
+                                             class="portal-appraisal-feedback-readonly o_appraisal_template">
+                                            <t t-out="employee_feedback_html"/>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="portal-appraisal-feedback-readonly o_appraisal_template portal-appraisal-blur">
+                                            <t t-out="employee_feedback_template_html"/>
+                                        </div>
+                                        <div class="portal-appraisal-overlay">
+                                            <div><t>Self Assessment will show here</t></div>
+                                            <div><t>once published</t></div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="o_appraisal_feedback o_appraisal_manager_feedback portal-appraisal-manager-col">
+                                <div class="o_appraisal_feedback_title d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <h3 class="mb-0"><t>Manager's Feedback</t></h3>
+                                    <div t-if="can_publish_manager" class="form-check form-switch mb-0">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               role="switch"
+                                               id="manager_feedback_published"
+                                               name="manager_feedback_published"
+                                               value="1"
+                                               t-att-checked="'checked' if manager_feedback_published else None"/>
+                                        <label class="form-check-label" for="manager_feedback_published">
+                                            <t t-if="manager_feedback_published">Shared to Employee</t>
+                                            <t t-else="">Private</t>
+                                        </label>
+                                    </div>
+                                    <div t-elif="state == '2_pending' and not is_new and can_see_manager_feedback" class="small">
+                                        <strong t-if="not manager_feedback_published" class="text-info"><t>Private</t></strong>
+                                        <strong t-if="manager_feedback_published" class="text-success"><t>Shared to Employee</t></strong>
+                                    </div>
+                                </div>
+                                <div class="o_appraisal_input position-relative">
+                                    <t t-if="can_see_manager_feedback">
+                                        <div t-if="can_edit_manager_feedback"
+                                             id="portal_appraisal_manager_editor"
+                                             class="portal-appraisal-feedback-editor o_appraisal_template"
+                                             contenteditable="true"
+                                             role="textbox"
+                                             aria-multiline="true">
+                                            <t t-out="manager_feedback_html"/>
+                                        </div>
+                                        <div t-else=""
+                                             id="portal_appraisal_manager_preview"
+                                             class="portal-appraisal-feedback-readonly o_appraisal_template">
+                                            <t t-out="manager_feedback_html"/>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="portal-appraisal-feedback-readonly o_appraisal_template portal-appraisal-blur">
+                                            <t t-out="manager_feedback_template_html"/>
+                                        </div>
+                                        <div class="portal-appraisal-overlay">
+                                            <div><t>Manager Assessment will show here</t></div>
+                                            <div><t>once published</t></div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div t-if="show_private_note" class="tab-pane fade" id="private-note-tab-pane" role="tabpanel">
+                        <div class="p-3">
+                            <div t-if="state != '3_done'"
+                                 id="portal_appraisal_note_editor"
+                                 class="portal-appraisal-feedback-editor border rounded p-3"
+                                 contenteditable="true"
+                                 role="textbox"
+                                 aria-multiline="true">
+                                <t t-out="private_note_html"/>
+                            </div>
+                            <div t-else="" class="portal-appraisal-feedback-readonly border rounded p-3 bg-light">
+                                <t t-out="private_note_html"/>
+                            </div>
+                            <p class="form-text mt-2 mb-0">
+                                <t>Private note (only accessible to people set as managers).</t>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </template>
+
     <template id="portal_appraisal_form" name="Portal Appraisal Form">
         <t t-call="portal.portal_layout">
-            <div class="container py-4 portal-time-off">
-                <div class="portal-time-off-card shadow-sm">
-                    <div class="portal-time-off-header mb-4">
-                        <h3 class="mb-1"><t>New Appraisal</t></h3>
-                        <p class="mb-0 text-muted">
-                            <t>Request a new appraisal for</t> <strong t-out="employee.name"/>.
-                        </p>
-                    </div>
-
-                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
-
-                    <form id="portal_appraisal_form" method="post" action="/my/appraisals/submit">
-                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-
-                        <div class="mb-4">
-                            <label for="date_close" class="form-label"><t>Appraisal Date</t></label>
-                            <input
-                                type="date"
-                                id="date_close"
-                                name="date_close"
-                                class="form-control"
-                                required="required"
-                                t-att-value="form_values.get('date_close') or default_date_close"
-                            />
-                            <div class="form-text">
-                                <t>The expected closing date for this appraisal.</t>
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label"><t>Appraiser</t></label>
-                            <div t-if="manager" class="form-control-plaintext fw-semibold" t-out="manager.name"/>
-                            <div t-else="" class="alert alert-warning mb-0">
-                                <t>No manager is configured on your employee record. Please contact HR before submitting.</t>
-                            </div>
-                        </div>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <button t-if="manager" type="submit" class="btn btn-primary">
-                                <t>Submit Appraisal</t>
-                            </button>
-                            <button t-else="" type="button" class="btn btn-primary" disabled="disabled">
-                                <t>Submit Appraisal</t>
-                            </button>
-                            <a href="/my/appraisals" class="btn btn-outline-secondary"><t>Cancel</t></a>
-                        </div>
-                    </form>
-                </div>
+            <div class="container-fluid py-3 portal-appraisal">
+                <t t-call="attendance_location_portal.portal_appraisal_sheet"/>
             </div>
         </t>
     </template>
 
     <template id="portal_appraisal_detail" name="Portal Appraisal Detail">
         <t t-call="portal.portal_layout">
-            <div class="container py-4 portal-time-off">
-                <div class="portal-time-off-card shadow-sm">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div>
-                            <h3 class="mb-1"><t>Appraisal</t></h3>
-                            <p class="mb-0 text-muted">
-                                <span t-field="appraisal.date_close"/>
-                            </p>
-                        </div>
-                        <a href="/my/appraisals" class="btn btn-outline-secondary btn-sm"><t>Back to list</t></a>
-                    </div>
-
-                    <div t-if="success_message" class="alert alert-success" role="alert" t-out="success_message"/>
-                    <div t-if="error_message" class="alert alert-danger" role="alert" t-out="error_message"/>
-
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label text-muted"><t>Appraisal Date</t></label>
-                                <div class="fw-semibold">
-                                    <span t-field="appraisal.date_close"/>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label text-muted"><t>Appraisers</t></label>
-                                <div>
-                                    <span t-out="', '.join(appraisal.manager_ids.mapped('name')) or '-'"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label text-muted"><t>Status</t></label>
-                                <div>
-                                    <span t-attf-class="badge rounded-pill #{appraisal_state_badges.get(appraisal.state, 'text-bg-secondary')}">
-                                        <t t-out="appraisal_state_labels.get(appraisal.state, appraisal.state)"/>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <h5 class="mb-3"><t>Employee Feedback</t></h5>
-                        <p t-if="can_edit_feedback" class="text-muted small mb-3">
-                            <t>Fill in your self-assessment below. Click directly on the text to edit each section.</t>
-                        </p>
-                        <t t-if="can_edit_feedback">
-                            <form id="portal_appraisal_feedback_form" t-att-action="'/my/appraisals/%s/feedback' % appraisal.id" method="post">
-                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                <input type="hidden" name="employee_feedback" id="employee_feedback_input"/>
-                                <div
-                                    id="portal_appraisal_feedback_editor"
-                                    class="portal-appraisal-feedback-editor o_appraisal_template border rounded p-3 mb-3"
-                                    contenteditable="true"
-                                    role="textbox"
-                                    aria-multiline="true"
-                                >
-                                    <t t-out="appraisal.accessible_employee_feedback or ''"/>
-                                </div>
-                                <button type="submit" class="btn btn-primary"><t>Save Feedback</t></button>
-                            </form>
-                        </t>
-                        <t t-else="">
-                            <div t-if="appraisal.accessible_employee_feedback" class="portal-appraisal-feedback-readonly border rounded p-3 bg-light o_appraisal_template">
-                                <t t-out="appraisal.accessible_employee_feedback"/>
-                            </div>
-                            <div t-else="" class="text-muted">
-                                <t>No feedback provided.</t>
-                            </div>
-                        </t>
-                    </div>
-                </div>
+            <div class="container-fluid py-3 portal-appraisal">
+                <t t-call="attendance_location_portal.portal_appraisal_sheet"/>
             </div>
         </t>
     </template>
@@ -224,7 +392,7 @@
                     </div>
                     <h3 class="mb-2"><t>Appraisal Error</t></h3>
                     <p class="text-muted mb-3" t-out="error_message"/>
-                    <a href="/my/appraisals" class="btn btn-outline-danger"><t>Back to My Appraisals</t></a>
+                    <a href="/my/appraisals" class="btn btn-outline-danger"><t>Back to Appraisals</t></a>
                 </div>
             </div>
         </t>

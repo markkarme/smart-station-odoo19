@@ -1,0 +1,273 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-12 14:28+0000\n"
+"PO-Revision-Date: 2020-10-12 14:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Attended Date"
+msgstr "Fecha de asistencia"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Author"
+msgstr "Autor"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Book"
+msgstr "Libro"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Book Limit"
+msgstr "Límite de libros"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Category"
+msgstr "Categoría"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Date"
+msgstr "Fecha"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Date of Issue"
+msgstr "Fecha de emisión"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Date of Return"
+msgstr "Fecha de regreso"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event State"
+msgstr "Estado del evento"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Events"
+msgstr "Eventos"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Events Details"
+msgstr "Detalles de los eventos"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Exam"
+msgstr "Examen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Exam Details"
+msgstr "Detalles del examen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams"
+msgstr "Exámenes"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams List"
+msgstr "Lista de exámenes"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Fees"
+msgstr "Tarifas"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Fees Details"
+msgstr "Detalles de los honorarios"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Fees List"
+msgstr "Lista de honorarios"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees Type"
+msgstr "Tipo de honorarios"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "From"
+msgstr "De"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Genres"
+msgstr "Géneros"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue Books"
+msgstr "Libros de edición"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Issue ID"
+msgstr "Identificación de la emisión"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue List"
+msgstr "Lista de temas"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Library Details"
+msgstr "Detalles de la biblioteca"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership"
+msgstr "Membresía"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership ID"
+msgstr "Identificación de miembro"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Month"
+msgstr "Mes"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Overall Pass/Fail"
+msgstr "Pasa/No pasa en general"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Paid On"
+msgstr "Pagado en"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Passing Marks"
+msgstr "Marcas de paso"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Receipt Number"
+msgstr "Número de recibo"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Registration Date"
+msgstr "Fecha de registro"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result"
+msgstr "Resultado"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results"
+msgstr "Resultados"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results List"
+msgstr "Lista de resultados"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Scored Marks"
+msgstr "Marcas de puntuación"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Standard"
+msgstr "Estándar"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "State"
+msgstr "Provincia"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Status"
+msgstr "Estado"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Subject Pass/Fail"
+msgstr "Sujeto Pasa/No pasa"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Subjects"
+msgstr "Temas"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "To"
+msgstr "A"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Total Marks"
+msgstr "Marcas totales"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Year"
+msgstr "Año"

@@ -1,19 +1,17 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* jt_education_health
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-23 07:20+0000\n"
-"PO-Revision-Date: 2025-07-23 07:20+0000\n"
+"POT-Creation-Date: 2026-09-10 23:19+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: jt_education_health
 #: model_terms:ir.ui.view,arch_db:jt_education_health.template_health_history_id
@@ -81,6 +79,11 @@ msgid "Any Regular Checkup Required?"
 msgstr "هل هناك حاجة لفحص دوري؟"
 
 #. module: jt_education_health
+#: model:ir.model,name:jt_education_health.model_res_partner
+msgid "Authors"
+msgstr "المؤلفون"
+
+#. module: jt_education_health
 #: model:ir.model.fields.selection,name:jt_education_health.selection__health_health__blood_group__b+
 msgid "B+ve"
 msgstr "B موجب"
@@ -131,7 +134,7 @@ msgstr "توصية الفحص"
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health__create_uid
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health_line__create_uid
 msgid "Created by"
-msgstr "أنشأ بواسطة"
+msgstr "أنشئ بواسطة"
 
 #. module: jt_education_health
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health__create_date
@@ -148,8 +151,19 @@ msgstr "التاريخ"
 #. module: jt_education_health
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health__display_name
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health_line__display_name
+#: model:ir.model.fields,field_description:jt_education_health.field_res_partner__display_name
 msgid "Display Name"
 msgstr "اسم العرض"
+
+#. module: jt_education_health
+#: model:ir.actions.report,name:jt_education_health.report_health_history
+msgid "Education Health History"
+msgstr "السجل الصحي التعليمي"
+
+#. module: jt_education_health
+#: model:ir.actions.report,name:jt_education_health.report_health_register
+msgid "Education Health Register"
+msgstr "سجل الصحة التعليمي"
 
 #. module: jt_education_health
 #. odoo-python
@@ -182,11 +196,6 @@ msgstr "هل يرتدي نظارات؟"
 #: model:ir.model.fields.selection,name:jt_education_health.selection__health_health__type__faculty
 msgid "Faculty"
 msgstr "هيئة التدريس"
-
-#. module: jt_education_health
-#: model_terms:ir.ui.view,arch_db:jt_education_health.view_health_search
-msgid "Group By..."
-msgstr "تجميع حسب..."
 
 #. module: jt_education_health
 #: model:ir.actions.act_window,name:jt_education_health.action_health_view
@@ -244,6 +253,7 @@ msgstr "الطول (سم)"
 #. module: jt_education_health
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health__id
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health_line__id
+#: model:ir.model.fields,field_description:jt_education_health.field_res_partner__id
 msgid "ID"
 msgstr "المعرف"
 
@@ -296,11 +306,6 @@ msgstr "O سالب"
 #: model_terms:ir.ui.view,arch_db:jt_education_health.view_health_form
 msgid "Other Details"
 msgstr "تفاصيل أخرى"
-
-#. module: jt_education_health
-#: model:ir.model,name:jt_education_health.model_res_partner
-msgid "Parent Information"
-msgstr "جهة الاتصال"
 
 #. module: jt_education_health
 #: model:ir.model.fields,field_description:jt_education_health.field_health_health__physical_challenges_note

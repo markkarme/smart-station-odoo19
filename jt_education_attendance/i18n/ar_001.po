@@ -1,34 +1,32 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* jt_education_attendance
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-08 05:02+0000\n"
-"PO-Revision-Date: 2024-07-08 05:02+0000\n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,print_report_name:jt_education_attendance.action_attendance_report
 msgid "\"Attendance Report\""
-msgstr "\"تقرير الحضور\"
+msgstr "\"تقرير الحضور\\"
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,print_report_name:jt_education_attendance.action_summary_attendance_report
 msgid "\"Attendance Summary Report\""
-msgstr "\"تقرير ملخص الحضور\"
+msgstr "\"تقرير ملخص الحضور\\"
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,print_report_name:jt_education_attendance.action_daily_attendance_report
 msgid "\"Daily Attendance Report\""
-msgstr "\"تقرير الحضور اليومي\"
+msgstr "\"تقرير الحضور اليومي\\"
 
 #. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
@@ -105,6 +103,65 @@ msgstr "<b>حاضر:</b>"
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
 msgid "<b>Withdraw:</b>"
 msgstr "<b>انسحاب:</b>"
+
+#. module: jt_education_attendance
+#: model:mail.template,body_html:jt_education_attendance.absent_student_template
+msgid ""
+"<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6;\">\n"
+"                    <div style=\"text-align: center; margin-bottom: 20px;\">\n"
+"                        <h2 style=\"color: #555;\">Attendance Alert</h2>\n"
+"                    </div>\n"
+"                    \n"
+"                    <p>Dear <t t-out=\"ctx.get('parent').name\"/>,</p>\n"
+"\n"
+"                    <p>\n"
+"                        We hope this message finds you well. We want to inform you that the following \n"
+"                        student(s) were marked <strong>absent</strong> today (<t t-out=\"ctx.get('date')\"/>):\n"
+"                    </p>\n"
+"\n"
+"                    <div>\n"
+"                        <t t-foreach=\"ctx.get('absent_students', [])\" t-as=\"absent\">\n"
+"                            <div style=\"margin-bottom: 10px; border-left: 3px solid #dc3545;\">\n"
+"                                <strong>Student:</strong> <t t-out=\"absent.student_id.name\"/><br/>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                    </div>\n"
+"\n"
+"                    <p>If any of these absences were not pre-approved, we encourage you to contact us for clarification.</p>\n"
+"\n"
+"                    <p style=\"margin-top: 30px;\">Best regards,</p>\n"
+"                    <p><strong><t t-out=\"object.faculty_id.name\"/></strong><br/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"font-family: Arial, sans-serif; color: #333; line-height: 1.6;\">\n"
+"                    <div style=\"text-align: center; margin-bottom: 20px;\">\n"
+"                        <h2 style=\"color: #555;\">تنبيه الحضور</h2>\n"
+"                    </div>\n"
+"                    \n"
+"                    <p>عزيزي/عزيزتي <t t-out=\"ctx.get('parent').name\"/>,</p>\n"
+"\n"
+"                    <p>\n"
+"                        نأمل أن تصلك هذه الرسالة وأنت بخير. نود إبلاغك بأن التالي \n"
+"                        من الطلاب تم تسجيلهم <strong>غائباً</strong> اليوم (<t t-out=\"ctx.get('date')\"/>):\n"
+"                    </p>\n"
+"\n"
+"                    <div>\n"
+"                        <t t-foreach=\"ctx.get('غائباً_students', [])\" t-as=\"غائباً\">\n"
+"                            <div style=\"margin-bottom: 10px; border-left: 3px solid #dc3545;\">\n"
+"                                <strong>الطالب:</strong> <t t-out=\"غائباً.student_id.name\"/><br/>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                    </div>\n"
+"\n"
+"                    <p>إذا لم يكن أي من هذه الغيابات موافقاً عليه مسبقاً، يرجى التواصل معنا للتوضيح.</p>\n"
+"\n"
+"                    <p style=\"margin-top: 30px;\">مع أطيب التحيات،</p>\n"
+"                    <p><strong><t t-out=\"object.faculty_id.name\"/></strong><br/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
 
 #. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
@@ -205,6 +262,11 @@ msgid "Absent Reason"
 msgstr "غياب بسبب"
 
 #. module: jt_education_attendance
+#: model:mail.template,name:jt_education_attendance.absent_student_template
+msgid "Absent Student"
+msgstr "طالب غائب"
+
+#. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_reason
 msgid "Absent with Reason"
 msgstr "غائب بسبب"
@@ -215,9 +277,34 @@ msgid "Absent with no Reason"
 msgstr "غائب بدون سبب"
 
 #. module: jt_education_attendance
-#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
-msgid "AddStudentline"
-msgstr "خط إضافة الطالب"
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تمييز نشاط الاستثناء"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
 
 #. module: jt_education_attendance
 #: model:ir.actions.act_window,name:jt_education_attendance.action_attendance
@@ -240,10 +327,10 @@ msgid "Attendance Line"
 msgstr "خط الحضور والانصراف"
 
 #. module: jt_education_attendance
-#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_line_ids
-#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__attendance_line_ids
-msgid "Attendance Lines"
-msgstr "خطوط الحضور والانصراف"
+#. odoo-python
+#: code:addons/jt_education_attendance/models/attendance.py:0
+msgid "Attendance Reminder - Absent Students (%s)"
+msgstr "تذكير الحضور - الطلاب الغائبون (%s)"
 
 #. module: jt_education_attendance
 #: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_wizard
@@ -271,14 +358,13 @@ msgid "Attendance Summary Report"
 msgstr "تقرير ملخص الحضور"
 
 #. module: jt_education_attendance
-#: model:ir.model.constraint,message:jt_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+#: model:ir.model.constraint,message:jt_education_attendance.constraint_attendance_attendance_faculty_standard_date_uniq
 msgid "Attendance for this faculty and standard already exists!"
 msgstr "الحضور لهذه الكلية والمستوى موجود بالفعل!"
 
 #. module: jt_education_attendance
 #. odoo-python
 #: code:addons/jt_education_attendance/models/attendance.py:0
-#, python-format
 msgid "Attendance for this student  already exists!"
 msgstr "الحضور لهذا الطالب موجود بالفعل!"
 
@@ -292,14 +378,14 @@ msgstr "إلغاء"
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_uid
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_uid
 msgid "Created by"
-msgstr "انشأ من قبل"
+msgstr "أنشئ بواسطة"
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_date
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_date
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_date
 msgid "Created on"
-msgstr "تم إنشاؤها على"
+msgstr "تاريخ الإنشاء"
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,name:jt_education_attendance.action_daily_attendance_report
@@ -310,6 +396,11 @@ msgstr "الحضور اليومي"
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
 msgid "Daily Attendance Report"
 msgstr "تقرير الحضور اليومي"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__date
+msgid "Date"
+msgstr "التاريخ"
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__display_name
@@ -323,7 +414,13 @@ msgstr "اسم العرض"
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__division_id
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__division_id
 msgid "Division"
-msgstr "القسم"
+msgstr "الشعبة"
+
+#. module: jt_education_attendance
+#. odoo-python
+#: code:addons/jt_education_attendance/models/attendance.py:0
+msgid "Email template not found. Please check the template configuration."
+msgstr "لم يتم العثور على قالب البريد. يرجى التحقق من إعداد القالب."
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__faculty_id
@@ -334,7 +431,22 @@ msgstr "الأساتذه"
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__faculty_id
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__faculty_id
 msgid "Faculty"
-msgstr "الأستاذ"
+msgstr "هيئة التدريس"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
 
 #. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
@@ -363,11 +475,47 @@ msgid "Generate Summary Report"
 msgstr "إنشاء تقرير ملخص"
 
 #. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__has_absent_students
+msgid "Has Absent Students"
+msgstr "يوجد طلاب غائبون"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__id
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__id
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__id
 msgid "ID"
 msgstr "الهوية"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثناء."
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__message_has_error
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_uid
@@ -391,20 +539,80 @@ msgid "Late"
 msgstr "متأخر"
 
 #. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
 msgid "Month"
 msgstr "الشهر"
 
 #. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد نشاطي"
+
+#. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__name
 msgid "Name"
-msgstr "اسم"
+msgstr "الاسم"
+
+#. module: jt_education_attendance
+#: model:mail.template,subject:jt_education_attendance.absent_student_template
+msgid "New rank: {{ object.student_id.name }}"
+msgstr "ترتيب جديد: {{ object.student_id.name }}"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "موعد النشاط التالي"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
 
 #. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
 msgid "Number"
 msgstr "الرقم"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__present
@@ -414,10 +622,25 @@ msgid "Present"
 msgstr "حاضر"
 
 #. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Reminder"
+msgstr "تذكير"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__roll_no
 #: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__roll_no
 msgid "Roll Number"
-msgstr "رقم اللفة"
+msgstr "رقم الجلوس"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة النصية"
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__selected
@@ -429,12 +652,25 @@ msgstr "اختيار"
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__standard_id
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__standard_id
 msgid "Standard"
-msgstr "المعيار"
+msgstr "الصف"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة حسب الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"مخطط: أنشطة مستقبلية."
 
 #. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
 msgid "Student"
-msgstr "الطالب"
+msgstr "طالب"
 
 #. module: jt_education_attendance
 #: model:ir.model,name:jt_education_attendance.model_attendance_attendance
@@ -480,11 +716,25 @@ msgid "To"
 msgstr "إلى"
 
 #. module: jt_education_attendance
-#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__date
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__date
 #: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__date
 msgid "Today's Date"
 msgstr "تاريخ اليوم"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء في السجل."
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_attendance__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
 
 #. module: jt_education_attendance
 #: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__withdraw
