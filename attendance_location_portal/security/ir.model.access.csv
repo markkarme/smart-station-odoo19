@@ -11,3 +11,4 @@ access_hr_attendance_adjustment_request_user,hr.attendance.adjustment.request.us
 access_hr_attendance_adjustment_request_responsible,hr.attendance.adjustment.request.responsible,model_hr_attendance_adjustment_request,hr_holidays.group_hr_holidays_responsible,1,1,1,0
 access_hr_attendance_adjustment_request_manager,hr.attendance.adjustment.request.manager,model_hr_attendance_adjustment_request,hr_holidays.group_hr_holidays_manager,1,1,1,1
 access_hr_attendance_adjustment_request_portal,hr.attendance.adjustment.request.portal,model_hr_attendance_adjustment_request,base.group_portal,1,0,0,0
+access_hr_appraisal_portal,hr.appraisal.portal,hr_appraisal.model_hr_appraisal,base.group_portal,1,0,0,0

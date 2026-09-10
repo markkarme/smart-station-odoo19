@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="student_teacher_view_action" model="ir.actions.act_window">
+        <field name="name">Teacher</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.management.teacher</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p style="color:green;">
+                Create Teacher Profile
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="student_teacher_menu"
+              name="Teacher"
+              groups="student_management_system.group_teacher_menu"
+              parent="student_management_main_menu_root"
+              action="student_teacher_view_action" sequence="19"/>
+
+    <record id="student_teacher_view_tree" model="ir.ui.view">
+        <field name="name">student.teacher.view.tree</field>
+        <field name="model">student.management.teacher</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" string="Teacher Name"/>
+                <field name="contact_info"/>
+                <field name="specialization"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="student_teacher_form_view" model="ir.ui.view">
+        <field name="name">student.teacher.form.view</field>
+        <field name="model">student.management.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="icon" widget="image"
+                           class="oe_avatar"
+                           options="{'preview_image': 'icon'}"/>
+                    <div class="oe_title">
+                        <label for="name" string="Teacher Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="contact_info"/>
+                            <field name="specialization"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Course">
+                            <field name="course_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="fee"/>
+                                    <field name="duration"/>
+                                    <field name="branch_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_teacher_view_kanban" model="ir.ui.view">
+        <field name="name">school.teacher.view.kanban</field>
+        <field name="model">student.management.teacher</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="icon" widget="image" alt="Teacher" options="{'img_class': 'object-fit-contain'}"/>
+                        </aside>
+                        <main>
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="contact_info"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

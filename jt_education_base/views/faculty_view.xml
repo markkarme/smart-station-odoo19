@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="faculty_form_view" model="ir.ui.view">
+        <field name="name">faculty.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="Faculty">
+                <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'avatar_128'}"/>
+                    <field name="avatar_128" invisible="1"/>
+                    <field name="type" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="commercial_partner_id" invisible="1"/>
+                    <div class="oe_title">
+                        <label for="faculty_id"/>
+                        <h1><field name="faculty_id" readonly="1"/></h1>
+                        <field name="company_type" options="{'horizontal': true}" widget="radio" invisible="1" groups="base.group_no_one"/>
+                        <field name="parent_id"
+                               widget="res_partner_many2one"
+                               placeholder="Company"
+                               domain="[('is_company', '=', True)]"
+                               context="{'default_is_company': True, 'show_vat': True}"
+                               invisible="(is_company and not parent_id) or (company_name and company_name != '')"/>
+                        <field name="company_name" invisible="1"/>
+                        <button name="create_company" type="object" class="oe_edit_only btn-link"
+                                invisible="is_company or company_name == '' or not company_name">
+                            <span class="fa fa-plus-square"/>Create company
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name" default_focus="1" required="type == 'contact'"/>
+                        <field name="father_name"/>
+                        <field name="surname"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="type" invisible="not parent_id" groups="base.group_no_one"/>
+                            <label for="street" string="Address"/>
+                            <div class="o_address_format">
+                                <div invisible="not parent_id or type != 'contact'" class="oe_edit_only"><b>Company Address:</b></div>
+                                <field name="street" placeholder="Street..." class="o_address_street" required="1"
+                                       readonly="type == 'contact' and parent_id"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street" required="1"
+                                       readonly="type == 'contact' and parent_id"/>
+                                <field name="city" placeholder="City" class="o_address_city"
+                                       readonly="type == 'contact' and parent_id" required="1"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True}" required="1"
+                                       readonly="type == 'contact' and parent_id" context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                       readonly="type == 'contact' and parent_id" required="1"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options="{'no_open': True, 'no_create': True}"
+                                       readonly="type == 'contact' and parent_id" required="1"/>
+                            </div>
+                            <field name="work_address"/>
+                            <field name="educaition_level"/>
+                            <field name="occupation"/>
+                            <field name="village" string="Village"/>
+                            <field name="province" string="Province"/>
+                            <field name="district_id" string="District"/>
+                            <field name="state1" string="State"/>
+                            <field name="country1" string="Country"/>
+                        </group>
+                        <group>
+                            <field name="is_faculty" string="Faculty" invisible="1"/>
+                            <field name="job_id" required="1"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="work_phone" widget="phone"/>
+                            <field name="mobile" widget="phone" required="1"/>
+                            <field name="emergency_contact"/>
+                            <field name="howknow_id" string="How Know Our School"/>
+                            <field name="user_ids" invisible="1"/>
+                            <field name="email" widget="email" context="{'gravatar_image': True}" required="user_ids"/>
+                            <field name="join_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Faculty" name="faculty">
+                            <group>
+                                <group>
+                                    <field name="gender" widget="radio" options="{'horizontal': true}" required="1"/>
+                                    <field name="religion"/>
+                                    <field name="caste"/>
+                                    <field name="employee_id"/>
+                                </group>
+                                <group>
+                                    <field name="birthdate" required="1"/>
+                                    <field name="age"/>
+                                    <field name="detailed_age"/>
+                                    <field name="birthPlace"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Educational Details">
+                            <group>
+                                <group>
+                                    <field name="degree" required="1"/>
+                                    <field name="degree_attachment_filename" invisible="1"/>
+                                    <field name="degree_attachment" filename="degree_attachment_filename"/>
+                                </group>
+                                <group>
+                                    <field name="specialization"/>
+                                </group>
+                                <group>
+                                    <field name="college"/>
+                                </group>
+                                <group>
+                                    <field name="board"/>
+                                </group>
+                                <group>
+                                    <field name="qualifying_date" required="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Details of Employment Experience">
+                            <group>
+                                <group>
+                                    <field name="name_of_institute"/>
+                                </group>
+                                <group>
+                                    <field name="designation"/>
+                                </group>
+                                <group>
+                                    <label for="date_from" string="Date"/>
+                                    <div class="o_row">
+                                        <field name="date_from" widget="daterange" options="{'end_date_field': 'date_to'}"/>
+                                        <field name="date_to" invisible="1"/>
+                                    </div>
+                                </group>
+                                <group>
+                                    <field name="basic_last_salary"/>
+                                </group>
+                                <group>
+                                    <field name="duties"/>
+                                </group>
+                                <group>
+                                    <field name="supporting_documents_filename" invisible="1"/>
+                                    <field name="supporting_documents" filename="supporting_documents_filename"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="faculty_tree_view" model="ir.ui.view">
+        <field name="name">faculty.tree.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="job_id"/>
+                <field name="mobile"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="faculty_kanban_view" model="ir.ui.view">
+        <field name="name">faculty.kanban.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="avatar_128"/>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="avatar_128" widget="image" alt="Avatar" options="{'img_class': 'object-fit-contain'}"/>
+                        </aside>
+                        <main>
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="job_id"/>
+                            <field name="degree"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="faculty_search_view" model="ir.ui.view">
+        <field name="name">faculty.search.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Name"/>
+                <field name="div"/>
+                <field name="curr_year"/>
+                <filter string="Faculty" name="faculty" domain="[('is_faculty', '=', True)]"/>
+                <separator/>
+                <group>
+                    <filter name="gender" string="Gender" context="{'group_by': 'gender'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

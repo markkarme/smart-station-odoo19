@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="parents_form_view" model="ir.ui.view">
+        <field name="name">parents.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="Parents">
+                <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'avatar_128'}"/>
+                    <field name="avatar_128" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="commercial_partner_id" invisible="1"/>
+                    <field name="type" invisible="1"/>
+                    <field name="company_type" widget="radio" class="oe_edit_only" options="{'horizontal': true}"/>
+                    <div class="oe_title">
+                        <label for="parents_id"/>
+                        <h1><field name="parents_id" readonly="1"/></h1>
+                        <label for="title"/>
+                        <field name="title"/>
+                        <field name="parent_id"
+                               widget="res_partner_many2one"
+                               placeholder="Company"
+                               domain="[('is_company', '=', True)]"
+                               context="{'default_is_company': True, 'show_vat': True}"
+                               invisible="(is_company and not parent_id) or (company_name and company_name != '')"/>
+                        <field name="company_name" invisible="not company_name or company_name == '' or is_company"/>
+                        <button name="create_company" type="object" class="oe_edit_only btn-link"
+                                invisible="is_company or company_name == '' or not company_name">
+                            <span class="fa fa-plus-square"/> Create company
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" default_focus="1" required="type == 'contact'"/>
+                            <field name="father_name"/>
+                            <field name="surname"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="type" invisible="not parent_id" groups="base.group_no_one"/>
+                            <label for="street" string="Address"/>
+                            <div class="o_address_format">
+                                <div invisible="not parent_id or type != 'contact'" class="oe_edit_only"><b>Company Address:</b></div>
+                                <field name="street" placeholder="Street..." class="o_address_street" required="1"
+                                       readonly="type == 'contact' and parent_id"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street" required="1"
+                                       readonly="type == 'contact' and parent_id"/>
+                                <field name="city" placeholder="City" class="o_address_city"
+                                       readonly="type == 'contact' and parent_id" required="1"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True}" required="1"
+                                       readonly="type == 'contact' and parent_id" context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                       readonly="type == 'contact' and parent_id" required="1"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options="{'no_open': True, 'no_create': True}"
+                                       readonly="type == 'contact' and parent_id" required="1"/>
+                            </div>
+                            <field name="work_address"/>
+                            <field name="educaition_level"/>
+                            <field name="occupation"/>
+                            <field name="village" string="Village"/>
+                            <field name="province" string="Province"/>
+                            <field name="district_id" string="District"/>
+                            <field name="state1" string="State"/>
+                            <field name="country1" string="Country"/>
+                        </group>
+                        <group>
+                            <field name="is_parent" string="Parents" invisible="1"/>
+                            <field name="job_id" required="1"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="work_phone" widget="phone"/>
+                            <field name="mobile" widget="phone" required="1"/>
+                            <field name="emergency_contact"/>
+                            <field name="howknow_id" string="How Know Our School"/>
+                            <field name="user_ids" invisible="1"/>
+                            <field name="email" widget="email" context="{'gravatar_image': True}" required="user_ids"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Students" name="student">
+                            <field name="student_ids" widget="many2many"
+                                   domain="[('father_name', '=', name), ('surname', '=', surname)]"
+                                   options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="standard"/>
+                                    <field name="div"/>
+                                    <field name="roll_no"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="parents_tree_view" model="ir.ui.view">
+        <field name="name">parent.tree.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="title"/>
+                <field name="name"/>
+                <field name="father_name"/>
+                <field name="surname"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="parents_kanban_view" model="ir.ui.view">
+        <field name="name">parent.kanban.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="avatar_128"/>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="avatar_128" widget="image" alt="Avatar" options="{'img_class': 'object-fit-contain'}"/>
+                        </aside>
+                        <main>
+                            <div>
+                                <field name="title"/>
+                                <field name="name" class="fw-bold fs-5"/>
+                            </div>
+                            <field name="father_name"/>
+                            <field name="surname"/>
+                            <field name="mobile"/>
+                            <field name="email"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="parents_search_view" model="ir.ui.view">
+        <field name="name">parent.search.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Name"/>
+                <filter string="Parents" name="parent" domain="[('is_parent', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

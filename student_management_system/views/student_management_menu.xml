@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <menuitem id = "student_management_main_menu_root"
+	web_icon="student_management_system,static/description/icon.png"
+	 name = "Student Management System" />
+    <menuitem  id = "student_management_config_menu" 
+            name = "Configuration"
+            groups="student_management_system.group_config_menu"
+            parent = "student_management_main_menu_root"
+            sequence = '20'
+    />
+    <menuitem  id = "student_student_config_menu" 
+            name = "Student"
+            parent = "student_management_main_menu_root"
+            sequence = '15'
+    />
+
+
+
+ <!-- groups="account.group_account_readonly,account.group_account_invoice,student_management_system.group_admin" -->
+    <menuitem id="base.menu_management"
+                name = "App"
+               groups="student_management_system.group_admin_app_hide"
+        />
+         <!-- groups="student_management_system.group_admin_app_hide" -->
+</odoo>

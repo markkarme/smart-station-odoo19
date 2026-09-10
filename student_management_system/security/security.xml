@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <record id="res_groups_privilege_teacher_menu" model="res.groups.privilege">
+            <field name="name">Teacher Menu</field>
+            <field name="sequence">20</field>
+            <field name="category_id" ref="module_category_student_management"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="group_teacher_menu" model="res.groups">
+            <field name="name">Teacher Menu</field>
+            <field name="privilege_id" ref="res_groups_privilege_teacher_menu"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+
+        <record id="res_groups_privilege_config_menu" model="res.groups.privilege">
+            <field name="name">Configuration Menu</field>
+            <field name="sequence">21</field>
+            <field name="category_id" ref="module_category_student_management"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="group_config_menu" model="res.groups">
+            <field name="name">Configration Menu-SMS</field>
+            <field name="privilege_id" ref="res_groups_privilege_config_menu"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+
+        <record id="res_groups_privilege_group_admin" model="res.groups.privilege">
+            <field name="name">Group Admin</field>
+            <field name="sequence">22</field>
+            <field name="category_id" ref="module_category_student_management"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="group_admin" model="res.groups">
+            <field name="name">Group Admin</field>
+            <field name="privilege_id" ref="res_groups_privilege_group_admin"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+
+        <record id="res_groups_privilege_admin_app_hide" model="res.groups.privilege">
+            <field name="name">App Admin</field>
+            <field name="sequence">23</field>
+            <field name="category_id" ref="module_category_student_management"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="group_admin_app_hide" model="res.groups">
+            <field name="name">App Admin</field>
+            <field name="privilege_id" ref="res_groups_privilege_admin_app_hide"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+
+        <record id="res_groups_privilege_ncc_section" model="res.groups.privilege">
+            <field name="name">NCC Education</field>
+            <field name="sequence">24</field>
+            <field name="category_id" ref="module_category_student_management"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="group_ncc_section_hide" model="res.groups">
+            <field name="name">NCC Education Check_Show</field>
+            <field name="privilege_id" ref="res_groups_privilege_ncc_section"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

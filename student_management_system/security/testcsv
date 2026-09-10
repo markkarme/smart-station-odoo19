@@ -1,0 +1,3 @@
+
+access_student_management_student,access.student.management.student,model_student_management_student,group_admin_app_hide,1,1,1,1
+access_student_management_student_reservation,access.student.management.student.reservation,model_student_management_student,tuition_center_manager_group,1,1,1,0

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="module_category_jt_education_base">
+        <field name="name">Education</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="res_groups_privilege_education_faculty" model="res.groups.privilege">
+        <field name="name">Education Faculty</field>
+        <field name="sequence">20</field>
+        <field name="category_id" ref="module_category_jt_education_base"/>
+        <field name="placeholder">No</field>
+    </record>
+
+    <record id="res_groups_privilege_education_principle" model="res.groups.privilege">
+        <field name="name">Education Principle</field>
+        <field name="sequence">21</field>
+        <field name="category_id" ref="module_category_jt_education_base"/>
+        <field name="placeholder">No</field>
+    </record>
+
+    <record id="res_groups_privilege_education_type" model="res.groups.privilege">
+        <field name="name">Education Type</field>
+        <field name="sequence">22</field>
+        <field name="category_id" ref="module_category_jt_education_base"/>
+        <field name="placeholder">None</field>
+    </record>
+
+    <record id="group_faculty" model="res.groups">
+        <field name="name">Faculty</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_education_faculty"/>
+        <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        <field name="comment">Access student and faculty records.</field>
+    </record>
+
+    <record id="group_principle" model="res.groups">
+        <field name="name">Principle</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_education_principle"/>
+        <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        <field name="comment">Access student management.</field>
+    </record>
+
+    <record id="group_school" model="res.groups">
+        <field name="name">School</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_education_type"/>
+        <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        <field name="comment">Show school-oriented labels and fields.</field>
+    </record>
+
+    <record id="group_college" model="res.groups">
+        <field name="name">College</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_education_type"/>
+        <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        <field name="comment">Show college-oriented labels and fields.</field>
+    </record>
+</odoo>

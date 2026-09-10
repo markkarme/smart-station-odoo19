@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.3.5",
+    "version": "19.0.1.3.7",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -10,7 +10,7 @@ the allowed distance from a configured attendance location.
     """,
     "author": "CUC",
     "license": "LGPL-3",
-    "depends": ["hr_attendance", "hr_holidays", "mail", "portal", "website"],
+    "depends": ["hr_attendance", "hr_holidays", "hr_appraisal", "mail", "portal", "website"],
     "data": [
         
         "data/mail_activity_data.xml",
@@ -27,6 +27,7 @@ the allowed distance from a configured attendance location.
         "views/portal_allocation_templates.xml",
         "views/portal_general_request_templates.xml",
         "views/portal_attendance_adjustment_templates.xml",
+        "views/portal_appraisal_templates.xml",
     ],
     "assets": {
         "web.assets_backend": [
@@ -38,6 +39,8 @@ the allowed distance from a configured attendance location.
             "attendance_location_portal/static/src/css/portal_time_off.css",
             "attendance_location_portal/static/src/js/portal_time_off.js",
             "attendance_location_portal/static/src/js/portal_allocation.js",
+            "attendance_location_portal/static/src/css/portal_appraisal.css",
+            "attendance_location_portal/static/src/js/portal_appraisal.js",
         ],
     },
     "installable": True,

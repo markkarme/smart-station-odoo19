@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="course_schedule_view_action" model="ir.actions.act_window">
+        <field name="name">Schedule Course</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.management.schedule</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="help" type="html">
+            <p style="color:green;">
+                Create Course Schedule
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="student_course_schedule_menu"
+              name="Schedule Course"
+              parent="student_management_config_menu"
+              action="course_schedule_view_action"/>
+
+    <record id="student_course_schedule_view_tree" model="ir.ui.view">
+        <field name="name">student.course.schedule.view.tree</field>
+        <field name="model">student.management.schedule</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" string=" Name"/>
+                <field name="room_id"/>
+                <field name="course_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="student_course_schedule_form_view" model="ir.ui.view">
+        <field name="name">student.course.schedule.form.view</field>
+        <field name="model">student.management.schedule</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="room_id"/>
+                            <field name="course_id"/>
+                        </group>
+                        <group>
+                            <field name="day"/>
+                            <field name="start_time"/>
+                            <field name="end_time"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_schedule_view_kanban" model="ir.ui.view">
+        <field name="name">school.schedule.view.kanban</field>
+        <field name="model">student.management.schedule</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card">
+                        <field name="name" class="fw-bold fs-5"/>
+                        <field name="course_id"/>
+                        <field name="room_id"/>
+                        <field name="day"/>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

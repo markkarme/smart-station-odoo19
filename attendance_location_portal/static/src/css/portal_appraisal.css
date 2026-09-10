@@ -1,0 +1,28 @@
+.portal-appraisal-feedback-editor {
+    min-height: 20rem;
+    max-height: 40rem;
+    overflow: auto;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+.portal-appraisal-feedback-editor:focus {
+    outline: none;
+    border-color: #714b67;
+    box-shadow: 0 0 0 0.2rem rgba(113, 75, 103, 0.15);
+}
+
+.portal-appraisal-feedback-editor h2,
+.portal-appraisal-feedback-editor h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.portal-appraisal-feedback-editor p {
+    margin-bottom: 0.75rem;
+}
+
+.portal-appraisal-feedback-readonly {
+    min-height: 8rem;
+    line-height: 1.5;
+}

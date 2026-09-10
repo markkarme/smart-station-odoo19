@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_student">
+        <field name="name">Students</field>
+        <field name="res_model">res.partner</field>
+        <field name="search_view_id" ref="student_search_view"/>
+        <field name="context">{'is_student': True, 'default_is_student': True}</field>
+        <field name="domain">[('is_student', '=', True)]</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_student_kanban_view">
+        <field name="sequence">1</field>
+        <field name="view_mode">kanban</field>
+        <field name="act_window_id" ref="action_student"/>
+        <field name="view_id" ref="student_kanban_view"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_student_tree_view">
+        <field name="sequence">2</field>
+        <field name="view_mode">list</field>
+        <field name="act_window_id" ref="action_student"/>
+        <field name="view_id" ref="student_tree_view"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_student_view">
+        <field name="sequence">3</field>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="action_student"/>
+        <field name="view_id" ref="student_profile"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_faculty">
+        <field name="name">Faculty</field>
+        <field name="res_model">res.partner</field>
+        <field name="search_view_id" ref="faculty_search_view"/>
+        <field name="context">{'is_faculty': True, 'default_is_faculty': True}</field>
+        <field name="domain">[('is_faculty', '=', True)]</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_faculty_kanban_view">
+        <field name="sequence">1</field>
+        <field name="view_mode">kanban</field>
+        <field name="act_window_id" ref="action_faculty"/>
+        <field name="view_id" ref="faculty_kanban_view"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_faculty_tree_view">
+        <field name="sequence">2</field>
+        <field name="view_mode">list</field>
+        <field name="act_window_id" ref="action_faculty"/>
+        <field name="view_id" ref="faculty_tree_view"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_faculty_form_view">
+        <field name="sequence">3</field>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="action_faculty"/>
+        <field name="view_id" ref="faculty_form_view"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_parent">
+        <field name="name">Parents</field>
+        <field name="res_model">res.partner</field>
+        <field name="search_view_id" ref="parents_search_view"/>
+        <field name="context">{'is_parent': True, 'default_is_parent': True}</field>
+        <field name="domain">[('is_parent', '=', True)]</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_parent_kanban_view">
+        <field name="sequence">1</field>
+        <field name="view_mode">kanban</field>
+        <field name="act_window_id" ref="action_parent"/>
+        <field name="view_id" ref="parents_kanban_view"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_parent_tree_view">
+        <field name="sequence">2</field>
+        <field name="view_mode">list</field>
+        <field name="act_window_id" ref="action_parent"/>
+        <field name="view_id" ref="parents_tree_view"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="action_parent_form_view">
+        <field name="sequence">3</field>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="action_parent"/>
+        <field name="view_id" ref="parents_form_view"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_meetings">
+        <field name="name">Meetings</field>
+        <field name="res_model">student.meeting</field>
+        <field name="view_mode">calendar,kanban,list,form</field>
+        <field name="search_view_id" ref="view_meeting_search"/>
+    </record>
+
+    <record id="action_studentstandard" model="ir.actions.act_window">
+        <field name="name">Student Standard</field>
+        <field name="res_model">student.standard</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_howknow" model="ir.actions.act_window">
+        <field name="name">How Know</field>
+        <field name="res_model">how.know</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_studentdivision" model="ir.actions.act_window">
+        <field name="name">Standard Division</field>
+        <field name="res_model">standard.division</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_yearyear" model="ir.actions.act_window">
+        <field name="name">Admission Year</field>
+        <field name="res_model">year.year</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_admissioninq" model="ir.actions.act_window">
+        <field name="name">Admission Inquiry</field>
+        <field name="res_model">admission.inquiry</field>
+        <field name="view_mode">list,kanban,form</field>
+    </record>
+
+    <record id="action_village" model="ir.actions.act_window">
+        <field name="name">Student Village</field>
+        <field name="res_model">village.village</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_district" model="ir.actions.act_window">
+        <field name="name">Student District</field>
+        <field name="res_model">district.district</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_province" model="ir.actions.act_window">
+        <field name="name">Student Province</field>
+        <field name="res_model">province.province</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_medium" model="ir.actions.act_window">
+        <field name="name">Medium</field>
+        <field name="res_model">medium.medium</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_board" model="ir.actions.act_window">
+        <field name="name">Board</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_education_config_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'module': 'jt_education_base'}</field>
+    </record>
+
+    <menuitem name="Education" id="root_menu"/>
+
+    <menuitem name="Students" id="student_root_menu" parent="root_menu" sequence="1" groups="jt_education_base.group_principle,jt_education_base.group_faculty"/>
+    <menuitem name="Students" id="student_menu" action="action_student" parent="student_root_menu" sequence="1"/>
+    <menuitem name="Reports" id="menu_education_reports" parent="root_menu" sequence="14"/>
+    <menuitem name="Configurations" id="configurations_menu" parent="root_menu" sequence="15"/>
+    <menuitem name="Settings" id="education_settings_menu" action="action_education_config_settings" parent="configurations_menu" sequence="1" groups="base.group_system"/>
+    <menuitem name="Student" id="configurations_stud" parent="configurations_menu" sequence="7"/>
+    <menuitem name="Standard" id="studentstandard_submenu" action="action_studentstandard" parent="configurations_stud"/>
+    <menuitem name="How Know" id="howknow_menu" action="action_howknow" parent="configurations_stud" sequence="1"/>
+    <menuitem name="Division" id="studentdivision_submenu" action="action_studentdivision" parent="configurations_stud"/>
+    <menuitem name="Year" id="yearyear_submenu" action="action_yearyear" parent="configurations_stud"/>
+
+    <menuitem name="Faculties" id="faculty_root_menu" parent="root_menu" sequence="2" groups="jt_education_base.group_faculty"/>
+    <menuitem name="Faculties" id="faculty_menu" action="action_faculty" parent="faculty_root_menu" sequence="1"/>
+
+    <menuitem name="Meetings" id="meetings_root_menu" parent="root_menu" sequence="3"/>
+    <menuitem name="Meetings" id="meetings_menu" action="action_meetings" parent="meetings_root_menu" sequence="1"/>
+
+    <menuitem name="Parents" id="parent_menu" action="action_parent" parent="student_root_menu" sequence="4"/>
+    <menuitem name="Admission Inquiry" id="admission_inq_menu" action="action_admissioninq" parent="student_root_menu" sequence="5"/>
+    <menuitem name="Class Room Transfer" id="menu_student_transfer_wizard" action="action_student_transfer_wizard" parent="student_root_menu" sequence="10"/>
+    <menuitem name="Bulk Transfer / Promote" id="menu_student_update_all_wizard" action="action_student_update_all_wizard" parent="student_root_menu" sequence="11"/>
+
+    <menuitem name="Address" id="configurations_add" parent="configurations_menu" sequence="7"/>
+    <menuitem name="District" id="studentdistrict_submenu" action="action_district" parent="configurations_add"/>
+    <menuitem name="Village" id="studentvillage_submenu" action="action_village" parent="configurations_add"/>
+    <menuitem name="Province" id="studentprovince_submenu" action="action_province" parent="configurations_add"/>
+    <menuitem name="Medium" id="studentmedium_submenu" action="action_medium" parent="configurations_menu"/>
+    <menuitem name="Board" id="studentboard_submenu" action="action_board" parent="configurations_menu"/>
+</odoo>

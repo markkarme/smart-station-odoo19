@@ -608,3 +608,68 @@ class HrEmployee(models.Model):
             raise UserError(str(error)) from error
 
         return adjustment_request
+
+    def _get_portal_appraisal_manager(self):
+        self.ensure_one()
+        manager = self.parent_id
+        if manager and manager != self:
+            return manager
+        return self.env["hr.employee"]
+
+    def action_portal_create_appraisal(self, values):
+        self.ensure_one()
+        self._portal_ensure_current_user()
+
+        date_close = values.get("date_close")
+        if not date_close:
+            raise UserError(_("Please select an appraisal date."))
+
+        try:
+            date_close = fields.Date.to_date(date_close)
+        except (TypeError, ValueError):
+            raise UserError(_("Invalid date format.")) from None
+
+        manager = self._get_portal_appraisal_manager()
+        if not manager:
+            raise UserError(
+                _(
+                    "No manager is configured on your employee record. "
+                    "Please contact your HR department."
+                )
+            )
+
+        appraisal_vals = {
+            "employee_id": self.id,
+            "date_close": date_close,
+            "manager_ids": [(6, 0, manager.ids)],
+            "state": "1_new",
+        }
+
+        try:
+            with self.env.cr.savepoint():
+                appraisal = (
+                    self.env["hr.appraisal"]
+                    .with_user(SUPERUSER_ID)
+                    .create(appraisal_vals)
+                )
+        except ValidationError as error:
+            raise UserError(str(error)) from error
+
+        return appraisal
+
+    def action_portal_update_appraisal_feedback(self, appraisal, feedback):
+        self.ensure_one()
+        self._portal_ensure_current_user()
+        appraisal = appraisal.sudo()
+        if appraisal.employee_id != self:
+            raise AccessError(_("You can only update your own appraisals."))
+        if appraisal.state not in ("1_new", "2_pending"):
+            raise UserError(_("You can only edit feedback for draft or ongoing appraisals."))
+
+        try:
+            with self.env.cr.savepoint():
+                appraisal.sudo().write({"employee_feedback": feedback or False})
+        except ValidationError as error:
+            raise UserError(str(error)) from error
+
+        return appraisal

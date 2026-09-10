@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="student_student_view_action" model="ir.actions.act_window">
+        <field name="name">Student Admission</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.management.student</field>
+        <field name="view_mode">kanban,graph,list,form</field>
+        <field name="help" type="html">
+            <p style="color:green;">
+                Create Student Profile
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="student_studentr_menu"
+              name="Admission"
+              parent="student_student_config_menu"
+              action="student_student_view_action" sequence="18"/>
+
+    <record id="student_student_view_tree" model="ir.ui.view">
+        <field name="name">student.student.view.tree</field>
+        <field name="model">student.management.student</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" string="Student Name"/>
+                <field name="contact_info"/>
+                <field name="course_id"/>
+                <field name="fee" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="where_about_know"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="student_student_form_view" model="ir.ui.view">
+        <field name="name">student.student.form.view</field>
+        <field name="model">student.management.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="set_admission"
+                            type="object" string="Set Admission"
+                            class="btn-primary"
+                            invisible="state == 'invoice' or state == 'certificate'"/>
+                    <button name="set_invoice"
+                            type="object"
+                            string="Invoice"
+                            class="btn-primary"
+                            invisible="state == 'draft' or state == 'invoice' or state == 'certificate'"/>
+                    <button name="set_certificate"
+                            type="object" string="Complete" invisible="state != 'invoice'"
+                            class="btn-primary"/>
+                    <button name="change_course"
+                            type="object" string="Change Course"
+                            invisible="state == 'draft' or state == 'certificate'"
+                            class="btn-danger"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,admission,invoice,certificate"/>
+                </header>
+                <sheet>
+                    <field name="active" invisible="1"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+                            invisible="active"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_invoice" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                            <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                        </button>
+                    </div>
+                    <field name="icon" widget="image"
+                           class="oe_avatar"
+                           options="{'preview_image': 'icon'}"/>
+                    <div class="oe_title">
+                        <label for="name" string="Student Name"/>
+                        <h1>
+                            <field name="name" readonly="state != 'draft'"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence_code"/>
+                            <field name="invoice_status"/>
+                            <field name="last_amount_paid_fee"/>
+                        </group>
+                        <group>
+                            <field name="switch_course" style="color:red;" widget="text"/>
+                            <field name="where_about_know"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Personal Info">
+                            <group>
+                                <field name="contact_info"/>
+                                <field name="mobile" widget="phone"/>
+                                <field name="email" widget="email" context="{'gravatar_image': True}"/>
+                                <field name="gender"/>
+                                <field name="dob"/>
+                                <field name="NRC"/>
+                                <field name="parent"/>
+                                <field name="blood_group"/>
+                                <field name="address"/>
+                            </group>
+                        </page>
+                        <page string="Course Info">
+                            <group>
+                                <field name="course_id"
+                                       readonly="state == 'invoice'"
+                                       options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                                <field name="discount" readonly="state != 'draft'"/>
+                                <field name="discount_amount" readonly="state != 'draft'" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="discount_reason" style="color:green;"/>
+                                <field name="final_fee" string="Net Amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="fee" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="currency_id" options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                                <field name="branch" options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                                <field name="teacher" options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                                <field name="related_teacher_ids" widget="many2many_tags" string="Teacher"
+                                       options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                                <field name="duration" options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                                <field name="room_id" readonly="state != 'draft'"
+                                       options="{'no_open': True,'no_create': True, 'no_create_edit':True}"/>
+                            </group>
+                        </page>
+                        <page string="NCC Course Info" groups="student_management_system.group_ncc_section_hide">
+                            <group>
+                                <group>
+                                    <field name="exam_fee_course" invisible="not is_ncc" style="color:green;"/>
+                                    <field name="exam_fee" style="color:green;" invisible="not is_ncc"/>
+                                    <field name="reg_fee_course" invisible="not is_ncc" style="color:green;"/>
+                                    <field name="reg_fee" style="color:green;" invisible="not is_ncc"/>
+                                </group>
+                                <group>
+                                    <field name="is_ncc"/>
+                                    <button name="action_add_fee" string="Add Fee"
+                                            class="oe_highlight" type="object" invisible="not is_ncc"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Teacher's Schedule">
+                            <group>
+                                <field name="teacher_schedule" widget="text"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_student_view_kanban" model="ir.ui.view">
+        <field name="name">school.student.view.kanban</field>
+        <field name="model">student.management.student</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="active"/>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="icon" widget="image" alt="Student" options="{'img_class': 'object-fit-contain'}"/>
+                        </aside>
+                        <main>
+                            <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="state"
+                                   widget="label_selection"
+                                   options="{'classes': {'draft': 'info', 'invoice':'success','certificate': 'default'}}"/>
+                            <field name="fee" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="course_id"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="invoice_status"/>
+                            <field name="last_amount_paid_fee"/>
+                            <field name="mobile" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="where_about_know"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="student_management_view_search" model="ir.ui.view">
+        <field name="name">student.management.search</field>
+        <field name="model">student.management.student</field>
+        <field name="priority" eval="15"/>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Student Name"/>
+                <field name="course_id" string="Student Course"/>
+                <field name="branch" string="Student Branch"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <filter string="Complete" name="complete" domain="[('state', '=', 'certificate')]"/>
+                <filter string="Current" name="Current" domain="[('state', '=', 'invoice')]"/>
+                <separator/>
+                <group>
+                    <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch'}"/>
+                    <filter string="Course ID" name="group_by_course_id" context="{'group_by': 'course_id'}"/>
+                    <filter string="Teacher" name="group_by_teacher" context="{'group_by': 'teacher'}"/>
+                    <filter string="Room" name="group_by_room_id" context="{'group_by': 'room_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

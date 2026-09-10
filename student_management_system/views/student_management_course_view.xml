@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="student_course_view_action" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.management.course</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p style="color:green;">
+                Create Course
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="student_course_menu"
+              name="Course"
+              parent="student_management_config_menu"
+              action="student_course_view_action"/>
+
+    <record id="student_course_view_tree" model="ir.ui.view">
+        <field name="name">student.course.view.tree</field>
+        <field name="model">student.management.course</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" string="Course Name"/>
+                <field name="fee"/>
+                <field name="duration"/>
+                <field name="branch_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="student_course_form_view" model="ir.ui.view">
+        <field name="name">student.course.form.view</field>
+        <field name="model">student.management.course</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="icon" widget="image"
+                           class="oe_avatar"
+                           options="{'preview_image': 'icon'}"/>
+                    <div class="oe_title">
+                        <label for="name" string="course Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="fee" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="currency_id"/>
+                            <field name="duration"/>
+                        </group>
+                        <group>
+                            <field name="branch_id"/>
+                            <field name="teacher_id" invisible="1"/>
+                            <field name="teacher_id2" string="Teacher" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Schedule">
+                            <field name="schedule_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="day"/>
+                                    <field name="start_time"/>
+                                    <field name="end_time"/>
+                                    <field name="room_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_course_view_kanban" model="ir.ui.view">
+        <field name="name">school.course.view.kanban</field>
+        <field name="model">student.management.course</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="icon" widget="image" alt="Course" options="{'img_class': 'object-fit-contain'}"/>
+                        </aside>
+                        <main>
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="fee"/>
+                            <field name="duration"/>
+                            <field name="branch_id"/>
+                            <field name="teacher_id2" widget="many2many_tags"/>
+                            <field name="teacher_id" invisible="1"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

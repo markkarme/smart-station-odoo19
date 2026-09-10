@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="admission_successfull_template1" model="mail.template">
+            <field name="name">Admission Status</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">Admission confirmation</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object.email }}</field>
+            <field name="use_default_to" eval="False"/>
+            <field name="body_html" type="html">
+                <div>
+                    <p>Your Admission is Confirmed</p>
+                    <p>
+                        You need to visit campus and need to complete further procedure.
+                        Procedure can be filling out forms and fees payment.
+                    </p>
+                    <p>Your outstanding fees: <strong><t t-out="ctx.get('fees') or ''"/></strong></p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
