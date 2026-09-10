@@ -1,0 +1,603 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-11 12:05+0000\n"
+"PO-Revision-Date: 2023-10-11 12:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,print_report_name:jt_education_reports.black_experiencecerificate_landscape_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_backside_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_blue_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_blue_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_classic_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_classic_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_classic_front_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_green_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_green_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_red_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_square_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_white_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.employee_white_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.experiencecerificate_landscape_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.experiencecerificate_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.leavingcerificate_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.multi_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.multi_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.navy_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.navy_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.purple_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.purple_front_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.vertical_backside_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.vertical_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.yellow_back_icard_report
+#: model:ir.actions.report,print_report_name:jt_education_reports.yellow_front_icard_report
+msgid "(object.name)"
+msgstr "(اسم الكائن)"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid ",<strong>Phone: </strong>"
+msgstr ",<strong>هاتف: </strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid ",<strong>Website: </strong>"
+msgstr ",<strong>موقع الكتروني: </strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "<strong>Email: </strong>"
+msgstr "<strong>بريد الالكتروني: </strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "<strong>GR No.:</strong>"
+msgstr "<strong>رقم GR:</strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_report
+msgid "<strong>ID NUMBER: </strong>"
+msgstr "<strong>رقم التعريف: </strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.blue_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_report
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>هاتف:</strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.blue_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_report
+msgid "<strong>Standard:</strong>"
+msgstr "<strong>اساسي:</strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "<strong>UID No.:</strong>"
+msgstr "<strong>رقم التعريف الفريد:</strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.blue_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_report
+msgid "<strong>Valid Till:</strong>"
+msgstr "<strong>صالحة ل:</strong>"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Any other Remark:"
+msgstr "أي ملاحظة أخرى:"
+
+#. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__authorised_signatory_id
+msgid "Authorised Person"
+msgstr "الشخص المرخص"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.black_experiencecerificate_landscape_report
+msgid "Black Experience Certificate(Landscape)"
+msgstr "شهادة التجربة السوداء (المناظر الطبيعية)"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_blue_back_icard_report
+msgid "Blue Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الزرقاء"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_blue_front_icard_report
+msgid "Blue Id-Card Report FRONT"
+msgstr "تقرير البطاقة الزرقاء أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "Certificate of experience"
+msgstr "شهادة خبرة"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_back_icard_report
+msgid "Classic Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الكلاسيكية"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_classic_front_report
+msgid "Classic Id-Card Report FRONT"
+msgstr "تقرير بطاقة الهوية الكلاسيكية أمامي"
+
+#. module: jt_education_reports
+#: model:ir.model,name:jt_education_reports.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.rescompany_form_view
+msgid "Company Stamp"
+msgstr "ختم الشركة"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.rescompany_form_view
+msgid "Customer Signature"
+msgstr "توقيع العميل"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Date of Birth:"
+msgstr "تاريخ الولادة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Date of First Admission in this school:"
+msgstr "تاريخ أول قبول في هذه المدرسة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Date of application for certificate:"
+msgstr "تاريخ طلب الشهادة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Date of issue of certificate:"
+msgstr "تاريخ اصدار الشهادة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.Blue_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_classic_back_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_back_report
+msgid "Email:"
+msgstr "بريد الالكتروني:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.experiencecerificate_landscape_report
+msgid "Experience Certificate(Landscape)"
+msgstr "شهادة الخبرة (المناظر الطبيعية)"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.experiencecerificate_report
+msgid "Experience Certificate(Portrait)"
+msgstr "شهادة الخبرة (عمودي)"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Father's Name:"
+msgstr "اسم الاب:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "General Conduct:"
+msgstr "السلوك العام:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_green_back_icard_report
+msgid "Green Id-Card Report BACK"
+msgstr "عودة تقرير البطاقة الخضراء"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_green_front_icard_report
+msgid "Green Id-Card Report FRONT"
+msgstr "تقرير البطاقة الخضراء أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_report
+msgid "ID NUMBER :"
+msgstr "رقم التعريف:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.blue_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_template
+msgid "ID NUMBER:"
+msgstr "رقم التعريف:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_classic_icard
+msgid "ID No. :"
+msgstr "رقم التعريف :"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
+msgid "If found please return to us immediately"
+msgstr "إذا وجدت يرجى العودة إلينا على الفور"
+
+#. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__function
+msgid "Job Position"
+msgstr "وظيفه"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Last Class Studied by Student:"
+msgstr "آخر صف درسه الطالب:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.leavingcerificate_report
+msgid "Leaving Certificate"
+msgstr "شهادة مغادرة"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_backside_icard_report
+msgid "Light Id-card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الخفيفة"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_icard_report
+msgid "Light Id-card Report FRONT"
+msgstr "تقرير بطاقة الهوية الخفيفة أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Mother's Name:"
+msgstr "اسم الأم:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.multi_back_icard_report
+msgid "Multi Id-Card Report BACK"
+msgstr "عودة تقرير بطاقات الهوية المتعددة"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.multi_front_icard_report
+msgid "Multi Id-Card Report FRONT"
+msgstr "تقرير بطاقات الهوية المتعددة أمامي"
+
+#. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__namep
+msgid "Name"
+msgstr "اسم"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Name of Student:"
+msgstr "اسم الطالب:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Nationality:"
+msgstr "جنسية:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.navy_back_icard_report
+msgid "Navy Blue Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية باللون الأزرق الداكن"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.navy_front_icard_report
+msgid "Navy Blue Id-Card Report FRONT"
+msgstr "تقرير بطاقة الهوية باللون الأزرق الداكن أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.rescompany_form_view
+msgid "Partner Company"
+msgstr "شركة شريكة"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.rescompany_form_view
+msgid "Partner Function"
+msgstr "وظيفة الشريك"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.rescompany_form_view
+msgid "Partner Name"
+msgstr "اسم شريك"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_classic_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_report
+msgid "Phone :"
+msgstr "هاتف :"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.Blue_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_classic_back_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_back_report
+msgid "Phone:"
+msgstr "هاتف:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.purple_back_icard_report
+msgid "Purple Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الأرجواني"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.purple_front_icard_report
+msgid "Purple Id-Card Report FRONT"
+msgstr "تقرير بطاقة الهوية الأرجواني أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_report
+msgid "Qrcode"
+msgstr "رمز الاستجابة السريعة"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Reason for Leaving This School:"
+msgstr "سبب ترك هذه المدرسة:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_classic_back_icard_report
+msgid "Red Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الحمراء"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_red_front_icard_report
+msgid "Red Id-Card Report FRONT"
+msgstr "تقرير بطاقة الهوية الحمراء أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.Blue_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_classic_back_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_back_report
+msgid "Resident Address:"
+msgstr "عنوان الإقامة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Schedule Caste/Schedule Tribe:"
+msgstr "جدول الطوائف / القبيلة المجدولة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.Blue_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_classic_back_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_backside_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_back_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_back_report
+msgid "School Address:"
+msgstr "عنوان المدرسة:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "School Leaving Certificate"
+msgstr "شهادة ترك المدرسة"
+
+#. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__signature
+msgid "Signature"
+msgstr "إمضاء"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_square_back_icard_report
+msgid "Square Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية المربعة"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_classic_front_icard_report
+msgid "Square Id-Card Report FRONT"
+msgstr "بطاقة الهوية المربعة أمامية"
+
+#. module: jt_education_reports
+#: model:ir.model.fields,field_description:jt_education_reports.field_res_company__stamp_image
+msgid "Stamp Image"
+msgstr "صورة الطوابع"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_classic_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_report
+msgid "Standard :"
+msgstr "اساسي :"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_icard_template
+msgid "Standard:"
+msgstr "اساسي:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_front_icard
+msgid "Student"
+msgstr "طالب"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.vertical_backside_icard_report
+msgid "Stylish Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الأنيقة"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.vertical_icard_report
+msgid "Stylish Id-Card Report FRONT"
+msgstr "تقرير بطاقة الهوية الأنيق أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_backside_icard_template
+msgid "This Card is the Property of"
+msgstr "هذه البطاقة ملك لـ"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "This is to certify that"
+msgstr "هذا لتاكيد ان"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "To"
+msgstr "إلى"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Total no. of working days present:"
+msgstr "إجمالي عدد أيام العمل الحالية:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Total no. of working days:"
+msgstr "إجمالي عدد أيام العمل:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_classic_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.yellow_icard_report
+msgid "Valid Till :"
+msgstr "صالحة ل :"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_template
+msgid "Valid Till:"
+msgstr "صالحة ل:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Whether qualified for Promotion to higher class:"
+msgstr "سواء كنت مؤهلاً للترقية إلى فئة أعلى:"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "Whether student was detained in same class if so once/twice:"
+msgstr ""
+"ما إذا كان الطالب قد تم احتجازه في نفس الفصل إذا كان الأمر كذلك مرة / مرتين:"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_white_back_icard_report
+msgid "White Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية البيضاء"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.employee_white_front_icard_report
+msgid "White Id-Card Report FRONT"
+msgstr "تقرير البطاقة البيضاء أمامي"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.yellow_back_icard_report
+msgid "Yellow Id-Card Report BACK"
+msgstr "عودة تقرير بطاقة الهوية الصفراء"
+
+#. module: jt_education_reports
+#: model:ir.actions.report,name:jt_education_reports.yellow_front_icard_report
+msgid "Yellow Id-Card Report FRONT"
+msgstr "تقرير بطاقة الهوية الصفراء أمامي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "___________________"
+msgstr "___________________"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.leavingcertificate_report_template
+msgid "__________________________"
+msgstr "___________________"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.blue_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_front_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.employee_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.green_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.multi_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.navy_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.purple_icard_report
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.red_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.square_classic_icard
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.vertical_icard_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.white_icard_template
+msgid "barcode"
+msgstr "الرمز الشريطي"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "from"
+msgstr "من عند"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "has worked as a"
+msgstr "قد عمل"
+
+#. module: jt_education_reports
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.black_experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_landscape_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_reports.experiencecertificate_report_template
+msgid "with"
+msgstr "مع"

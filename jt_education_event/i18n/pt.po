@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_event
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-22 07:58+0000\n"
+"PO-Revision-Date: 2025-07-22 07:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__partner_id
+msgid "Contact"
+msgstr "Reservado por"
+
+#. module: jt_education_event
+#: model:ir.model,name:jt_education_event.model_event_registration
+msgid "Event Registration"
+msgstr "Inscrição no Evento"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_res_users__is_parent
+msgid "Is Parent"
+msgstr "É pai"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_res_users__is_student
+msgid "Is Student"
+msgstr "É estudante"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_form_view
+msgid "Maximum Students"
+msgstr "Número máximo de alunos"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_tree_view
+msgid "Student Name"
+msgstr "Nome do aluno"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_form_view
+msgid "Students"
+msgstr "Alunos"
+
+#. module: jt_education_event
+#: model:ir.model,name:jt_education_event.model_res_users
+msgid "User"
+msgstr "Utilizador"

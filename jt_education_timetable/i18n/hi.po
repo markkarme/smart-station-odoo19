@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_timetable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-30 07:22+0000\n"
+"PO-Revision-Date: 2021-09-30 07:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__curr_year
+msgid "Academic Year"
+msgstr "शैक्षणिक वर्ष"
+
+#. module: jt_education_timetable
+#: model:ir.ui.menu,name:jt_education_timetable.student_timetable_configuration
+msgid "Configuration"
+msgstr "विन्यास"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__create_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__create_uid
+msgid "Created by"
+msgstr "के द्वारा बनाई गई"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__create_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__create_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__create_date
+msgid "Created on"
+msgstr "को निर्मित"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__date
+msgid "Date"
+msgstr "दिनांक"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__week_day
+msgid "Day"
+msgstr "दिन"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__display_name
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__display_name
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__display_name
+msgid "Display Name"
+msgstr "प्रदर्शित होने वाला नाम"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__division
+msgid "Division"
+msgstr "विभाजन"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__faculty_id
+msgid "Faculty"
+msgstr "शिक्षक"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__4
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Friday"
+msgstr "शुक्रवार"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__time_from
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__time_from
+msgid "From"
+msgstr "से"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__id
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__id
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__id
+msgid "ID"
+msgstr "पहचान"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable____last_update
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line____last_update
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period____last_update
+msgid "Last Modified on"
+msgstr "अंतिम बार संशोधित"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__write_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__write_uid
+msgid "Last Updated by"
+msgstr "पिछली बार अपडेट किया गया"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__write_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__write_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__write_date
+msgid "Last Updated on"
+msgstr "अंतिम बार अद्यतन किया गया"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__0
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Monday"
+msgstr "सोमवार"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__name
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__name
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Name"
+msgstr "नाम"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__period_id
+msgid "Period"
+msgstr "अवधि"
+
+#. module: jt_education_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_timetable_period_form
+msgid "Period Time"
+msgstr "अवधि समय"
+
+#. module: jt_education_timetable
+#: model:ir.actions.act_window,name:jt_education_timetable.action_student_timetable_period
+#: model:ir.ui.menu,name:jt_education_timetable.student_timetable_period_sub_menu
+msgid "Periods"
+msgstr "काल"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__5
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Saturday"
+msgstr "शनिवार"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__standard
+msgid "Standard"
+msgstr "कक्षा"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__student_ids
+msgid "Student"
+msgstr "विद्यार्थी"
+
+#. module: jt_education_timetable
+#: model:ir.model,name:jt_education_timetable.model_student_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Student Timetable"
+msgstr "छात्र समय सारिणी"
+
+#. module: jt_education_timetable
+#: model:ir.model,name:jt_education_timetable.model_student_timetable_line
+msgid "Student Timetable Line"
+msgstr "छात्र समय सारिणी रेखा"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__subject
+msgid "Subjects"
+msgstr "विषयों"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__6
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Sunday"
+msgstr "रविवार"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__3
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Thursday"
+msgstr "गुरूवार"
+
+#. module: jt_education_timetable
+#: model:ir.actions.act_window,name:jt_education_timetable.action_student_time_table
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__timetable_id
+#: model:ir.ui.menu,name:jt_education_timetable.student_time_table_main_menu
+#: model:ir.ui.menu,name:jt_education_timetable.student_time_table_sub_menu
+msgid "Timetable"
+msgstr "समय सारणी"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_fri
+msgid "Timetable Fri"
+msgstr "समय सारिणी शुक्र"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_mon
+msgid "Timetable Mon"
+msgstr "समय सारिणी सोम"
+
+#. module: jt_education_timetable
+#: model:ir.model,name:jt_education_timetable.model_timetable_period
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_timetable_period_form
+msgid "Timetable Period"
+msgstr "समय सारिणी अवधि"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_sat
+msgid "Timetable Sat"
+msgstr "समय सारिणी शनि"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_sun
+msgid "Timetable Sun"
+msgstr "समय सारिणी रवि"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_thur
+msgid "Timetable Thur"
+msgstr "समय सारिणी गुरु"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_tue
+msgid "Timetable Tue"
+msgstr "समय सारिणी मंगल"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_wed
+msgid "Timetable Wed"
+msgstr "समय सारिणी बुध"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__time_till
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__time_to
+msgid "To"
+msgstr "से"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__1
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Tuesday"
+msgstr "मंगलवार"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__2
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Wednesday"
+msgstr "बुधवार"
+
+#. module: jt_education_timetable
+#: model_terms:ir.actions.act_window,help:jt_education_timetable.action_student_timetable_period
+msgid "You have'nt created any Periods yet."
+msgstr "आपने अभी तक कोई भी अवधि नहीं बनाई है।"
+
+#. module: jt_education_timetable
+#: model_terms:ir.actions.act_window,help:jt_education_timetable.action_student_time_table
+msgid "You have'nt created any timetable yet."
+msgstr "आपने अभी तक कोई समय सारिणी नहीं बनाई है।"

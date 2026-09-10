@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_jt_education_fees">
+            <field name="name">Fees Management</field>
+        </record>
+
+        <record id="res_groups_privilege_fees_pre_primary" model="res.groups.privilege">
+            <field name="name">Fees Pre-Primary</field>
+            <field name="sequence">20</field>
+            <field name="category_id" ref="module_category_jt_education_fees"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="psf_group_manager" model="res.groups">
+            <field name="name">Pre-Primary User</field>
+            <field name="privilege_id" ref="res_groups_privilege_fees_pre_primary"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+
+        <record id="res_groups_privilege_fees_primary" model="res.groups.privilege">
+            <field name="name">Fees Primary</field>
+            <field name="sequence">21</field>
+            <field name="category_id" ref="module_category_jt_education_fees"/>
+            <field name="placeholder">No</field>
+        </record>
+        <record id="sf_group_manager" model="res.groups">
+            <field name="name">Primary User</field>
+            <field name="privilege_id" ref="res_groups_privilege_fees_primary"/>
+            <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record model="ir.actions.act_window" id="action_attendance_summary_wizard">
+          <field name="name">Attendance Summary Report</field>
+          <field name="res_model">print.attendance</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+          <field name="view_id" ref="jt_education_attendance.export_attendance_wizard_form"/>
+          <field name="context">{'default_summary_report':1}</field>
+    </record>
+
+	<menuitem id="main_menu_attendance_summary_report" name="Attendance Summary" parent="jt_education_base.menu_education_reports" action="jt_education_attendance.action_attendance_summary_wizard" sequence="2"/>
+</odoo>

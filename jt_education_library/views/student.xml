@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_library" model="ir.ui.view">
+            <field name="name">student information library form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_education_base.student_profile"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']/button[@name='toggle_active']" position="after">
+                    <!-- Smart Button For Issued books -->
+                    <button type="object" class="oe_stat_button" icon="fa-book" name="action_view_issued_books">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="rec_count"/>
+                            </span>
+                            <span class="o_stat_text">Library Books</span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

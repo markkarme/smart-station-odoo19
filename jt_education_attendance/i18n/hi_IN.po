@@ -1,0 +1,499 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-08 05:03+0000\n"
+"PO-Revision-Date: 2024-07-08 05:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_attendance_report
+msgid "\"Attendance Report\""
+msgstr "\"हाजिरी रिपोर्ट\""
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_summary_attendance_report
+msgid "\"Attendance Summary Report\""
+msgstr "\"हाजिरी सारांश रिपोर्ट\""
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_daily_attendance_report
+msgid "\"Daily Attendance Report\""
+msgstr "\"दैनिक हाजिरी रिपोर्ट\""
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&gt;"
+msgstr "&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;/td&gt;"
+msgstr "&lt;/td&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;/th&gt;"
+msgstr "&lt;/th&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;td  class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+msgstr "&lt;td  class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;td class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+msgstr "&lt;td class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid ""
+"&lt;td style=\"background-color:gray;\" class=\"text-center oe_leftfit "
+"oe_rightfit\"&gt;"
+msgstr ""
+"&lt;td style=\"background-color:gray;\" class=\"text-center oe_leftfit "
+"oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;th class=\"text-center\" colspan="
+msgstr "&lt;th class=\"text-center\" colspan="
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Absent With Noreason:</b>"
+msgstr "<b>कारण के बिना गैरहाजिरी:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Absent With Reason:</b>"
+msgstr "<b>कारण सहित गैरहाजिरी:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Late:</b>"
+msgstr "<b>देर से:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Present:</b>"
+msgstr "<b>हाजिर:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Withdraw:</b>"
+msgstr "<b>वापस लिया गया:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong> Withdraw</strong>"
+msgstr "<strong> वापस लिया गया</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Absent with no Reason</strong>"
+msgstr "<strong>कारण के बिना गैरहाजिरी</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Absent</strong>"
+msgstr "<strong>गैरहाजिरी</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Class</strong>"
+msgstr "<strong>कक्षा</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<strong>Date:</strong>"
+msgstr "<strong>तारीख:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Days</strong>"
+msgstr "<strong>दिन</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "<strong>Dep/Emp</strong>"
+msgstr "<strong>विभाग/कर्मचारी</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>From:</strong>"
+msgstr "<strong>से:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Late</strong>"
+msgstr "<strong>देर से</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Present</strong>"
+msgstr "<strong>हाजिर</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<strong>Responsible Teacher:</strong>"
+msgstr "<strong>जिम्मेदार शिक्षक:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "<strong>Sum</strong>"
+msgstr "<strong>योग</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>To:</strong>"
+msgstr "<strong>तक:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Total</strong>"
+msgstr "<strong>कुल</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Withdraw</strong>"
+msgstr "<strong>वापस लिया गया</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Absence No  Reason"
+msgstr "अनुपस्थिति बिना कारण"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Absence Reason"
+msgstr "अनुपस्थिति का कारण"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Absent Noreason"
+msgstr "कारण के बिना अनुपस्थित"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Absent Reason"
+msgstr "कारण सहित अनुपस्थित"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_reason
+msgid "Absent with Reason"
+msgstr "कारण सहित अनुपस्थित"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_noreason
+msgid "Absent with no Reason"
+msgstr "कारण के बिना अनुपस्थित"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "AddStudentline"
+msgstr "छात्र पंक्ति जोड़ें"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance
+#: model:ir.actions.report,name:jt_education_attendance.action_attendance_report
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_id
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_menu
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_report
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Attendance"
+msgstr "उपस्थितिs"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_graph
+msgid "Attendance Graph"
+msgstr "उपस्थिति ग्राफ़"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__attendance_ids
+msgid "Attendance Line"
+msgstr "उपस्थिति पंक्ति"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_line_ids
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__attendance_line_ids
+msgid "Attendance Lines"
+msgstr "उपस्थिति पंक्तियाँ"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_wizard
+#: model:ir.model,name:jt_education_attendance.model_print_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "Attendance Report"
+msgstr "उपस्थिति रिपोर्ट"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_report
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_report_menu
+msgid "Attendance Reporting"
+msgstr "उपस्थिति रिपोर्टिंग"
+
+#. module: jt_education_attendance
+#: model:ir.ui.menu,name:jt_education_attendance.main_menu_attendance_summary_report
+msgid "Attendance Summary"
+msgstr "उपस्थिति सारांश"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_summary_wizard
+#: model:ir.actions.report,name:jt_education_attendance.action_summary_attendance_report
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Attendance Summary Report"
+msgstr "उपस्थिति सारांश रिपोर्ट"
+
+#. module: jt_education_attendance
+#: model:ir.model.constraint,message:jt_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+msgid "Attendance for this faculty and standard already exists!"
+msgstr "इस संकाय के लिए उपस्थिति और इस मानक के लिए पहले से ही मौजूद है!"
+
+#. module: jt_education_attendance
+#. odoo-python
+#: code:addons/jt_education_attendance/models/attendance.py:0
+#, python-format
+msgid "Attendance for this student  already exists!"
+msgstr "इस छात्र के लिए उपस्थिति पहले से ही मौजूद है!"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_uid
+msgid "Created by"
+msgstr "द्वारा बनाई गई"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_date
+msgid "Created on"
+msgstr "को बनाया गया"
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,name:jt_education_attendance.action_daily_attendance_report
+msgid "Daily Attendance"
+msgstr "दैनिक उपस्थिति"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Daily Attendance Report"
+msgstr "दैनिक उपस्थिति रिपोर्ट"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__display_name
+msgid "Display Name"
+msgstr "प्रदर्शित होने वाला नाम"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__division_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__division_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__division_id
+msgid "Division"
+msgstr "विभाग"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__faculty_id
+msgid "Faculties"
+msgstr "शिक्षक"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__faculty_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__faculty_id
+msgid "Faculty"
+msgstr "शिक्षक"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "For Class"
+msgstr "कक्षा के लिए"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "For Division"
+msgstr "विभाग के लिए"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__start_date
+msgid "From"
+msgstr "से"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Generate Report"
+msgstr "रिपोर्ट उत्पन्न करें"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Generate Summary Report"
+msgstr "सारांश रिपोर्ट उत्पन्न करें"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__id
+msgid "ID"
+msgstr "पहचान"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__write_uid
+msgid "Last Updated by"
+msgstr "अंतिम बार अपडेट किया गया उपयोगकर्ता"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__write_date
+msgid "Last Updated on"
+msgstr "अंतिम बार अपडेट किया गया तिथि"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__late
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Late"
+msgstr "देरी"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Month"
+msgstr "महीना"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__name
+msgid "Name"
+msgstr "नाम"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Number"
+msgstr "संख्या"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__present
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Present"
+msgstr "मौजूद"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__roll_no
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__roll_no
+msgid "Roll Number"
+msgstr "रोल नंबर"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__selected
+msgid "Select"
+msgstr "चयन करें"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__standard_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__standard_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__standard_id
+msgid "Standard"
+msgstr "कक्षा"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Student"
+msgstr "छात्र"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_attendance
+msgid "Student Attendance"
+msgstr "छात्र उपस्थिति"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_line
+msgid "Student Attendance Line"
+msgstr "छात्र उपस्थिति पंक्ति"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__name
+msgid "Student List is displayed based on standard and division."
+msgstr "छात्र सूची मानक और विभाजन के आधार पर प्रदर्शित होती है।"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__student_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__student_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__student_id
+msgid "Students"
+msgstr "छात्रों"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__subject_id
+msgid "Subjects"
+msgstr "विषय"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Sum"
+msgstr "योग"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__summary_report
+msgid "Summary"
+msgstr "सारांश"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__end_date
+msgid "To"
+msgstr "तक"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__date
+msgid "Today's Date"
+msgstr "आज की तारीख"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__withdraw
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Withdraw"
+msgstr "वापस लें"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Select All"
+msgstr "सभी को चुनें"

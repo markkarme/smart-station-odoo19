@@ -1,0 +1,577 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_assignment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 11:36+0000\n"
+"PO-Revision-Date: 2021-09-21 11:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Accept"
+msgstr "قبول"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__accept
+msgid "Accepted"
+msgstr "وافقت"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_needaction
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__active
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__allocation_ids
+msgid "Allocated To"
+msgstr "خصص ل"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Allocation"
+msgstr "توزيع"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Allocation Infomation"
+msgstr "معلومات التخصيص"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_student_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__assignment_id
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_tree_view
+msgid "Assignment"
+msgstr "مهمة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__assignment_count
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__assignment_count
+msgid "Assignment Count"
+msgstr "عدد المهام"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_graph_view
+msgid "Assignment Graph View"
+msgstr "عرض الرسم البياني للواجبات"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Assignment Name"
+msgstr "اسم الواجب"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_pivot_view
+msgid "Assignment Pivot View"
+msgstr "طريقة العرض المحورية للواجب"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_res_partner
+msgid "Assignment Student Class"
+msgstr "فئة الطالب الواجب"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_student_assignment_submission
+msgid "Assignment Submission"
+msgstr "تقديم الطلب"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_assignment_type
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__assignment_type
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Assignment Type"
+msgstr "نوع الواجب"
+
+#. module: jt_education_assignment
+#: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment_type
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_congif_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_tree_view
+msgid "Assignment Types"
+msgstr "أنواع التخصيص"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_pivot_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Assignment submission"
+msgstr "تقديم الطلب"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_graph_view
+msgid "Assignment submission Graph View"
+msgstr "عرض الرسم البياني تقديم الواجب"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__allocation_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__allocation_ids
+msgid "Assignment(s)"
+msgstr "تعيينات"
+
+#. module: jt_education_assignment
+#: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment
+#: model:ir.ui.menu,name:jt_education_assignment.root_assignment
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_menu
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_submenu
+msgid "Assignments"
+msgstr "تعيينات"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المهام"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__assignment_type__assign_type__attendance
+msgid "Attendance"
+msgstr "حضور"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Basic Information"
+msgstr "معلومات اساسية"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Change And Resubmit"
+msgstr "التغيير وإعادة الإرسال"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__change
+msgid "Change Req."
+msgstr "تغيير الطلب."
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Change Require"
+msgstr "يتطلب التغيير"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__code
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Code"
+msgstr "الشفرة"
+
+#. module: jt_education_assignment
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_congif
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__create_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__create_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__create_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__create_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__description
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__description
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Description"
+msgstr "وصف"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__division_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__division_id
+msgid "Division"
+msgstr "قسم"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__draft
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__draft
+msgid "Draft"
+msgstr "مشروع"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__assignment_id
+msgid "Enter Students to see assignments assigned to them."
+msgstr "أدخل الطلاب لمشاهدة المهام المعينة لهم."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__faculty
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Faculty"
+msgstr "الأساتذه"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Finish"
+msgstr "ينهي"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__finish
+msgid "Finished"
+msgstr "تم الانتهاء من"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_channel_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Group By..."
+msgstr "مجموعة من..."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_needaction
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_unread
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_needaction
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_has_error
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_has_error
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__issued_date
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Issued Date"
+msgstr "تاريخ الإصدار"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type____last_update
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner____last_update
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment____last_update
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__write_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__write_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__write_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__write_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_main_attachment_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Marks"
+msgstr "ماركس"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_has_error
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Month"
+msgstr "شهر"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__name
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Name"
+msgstr "اسم"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__note
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Note"
+msgstr "ملحوظة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_unread_counter
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Publish"
+msgstr "ينشر"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__publish
+msgid "Published"
+msgstr "نشرت"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Reject"
+msgstr "رفض"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__reject
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Resubmit"
+msgstr "إعادة الإرسال"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__marks_scored
+msgid "Scored Marks"
+msgstr "علامات مسجلة"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Set to Draft"
+msgstr "تعيين إلى مسودة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__standard_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__standard_id
+msgid "Standard"
+msgstr "اساسي"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__state
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__state
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "State"
+msgstr "ولاية"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Student"
+msgstr "طالب"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__student_id
+msgid "Students"
+msgstr "تلاميذ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__subject_id
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Subject"
+msgstr "موضوعات"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__assignment_type__assign_type__sub
+msgid "Subjective"
+msgstr "شخصي"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__submission_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__submission_date
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Submission Date"
+msgstr "تاريخ التقديم"
+
+#. module: jt_education_assignment
+#: code:addons/jt_education_assignment/models/assignment.py:0
+#: code:addons/jupical_edu/addons/jt_education_assignment/models/assignment.py:0
+#, python-format
+msgid "Submission Date cannot be before Issue Date."
+msgstr "لا يمكن أن يكون تاريخ الإرسال قبل تاريخ الإصدار."
+
+#. module: jt_education_assignment
+#: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment_submission
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__assignment_submission
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_submission_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Submissions"
+msgstr "التقديمات"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Submit"
+msgstr "يقدم"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__submit
+msgid "Submitted"
+msgstr "مقدم"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Tag"
+msgstr "بطاقة شعار"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Today"
+msgstr "اليوم"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__marks
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__marks
+msgid "Total Marks"
+msgstr "مجموع علامات"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__assign_type
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_tree_view
+msgid "Type"
+msgstr "نوع"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_unread
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_unread_counter
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__website_message_ids
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Week"
+msgstr "أسبوع"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__curr_year
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__curr_year
+msgid "Year"
+msgstr "عام"

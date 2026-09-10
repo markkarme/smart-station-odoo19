@@ -1,0 +1,499 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-08 05:03+0000\n"
+"PO-Revision-Date: 2024-07-08 05:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_attendance_report
+msgid "\"Attendance Report\""
+msgstr "\"Laporan Kehadiran\""
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_summary_attendance_report
+msgid "\"Attendance Summary Report\""
+msgstr "\"Ringkasan Laporan Kehadiran\""
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_daily_attendance_report
+msgid "\"Daily Attendance Report\""
+msgstr "\"Laporan Kehadiran Harian\""
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&gt;"
+msgstr "&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;/td&gt;"
+msgstr "&lt;/td&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;/th&gt;"
+msgstr "&lt;/th&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;td  class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+msgstr "&lt;td  class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;td class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+msgstr "&lt;td class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid ""
+"&lt;td style=\"background-color:gray;\" class=\"text-center oe_leftfit "
+"oe_rightfit\"&gt;"
+msgstr ""
+"&lt;td style=\"background-color:gray;\" class=\"text-center oe_leftfit "
+"oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;th class=\"text-center\" colspan="
+msgstr "&lt;th class=\"text-center\" colspan="
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Absent With Noreason:</b>"
+msgstr "<b>Absen Tanpa Alasan:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Absent With Reason:</b>"
+msgstr "<b>Absen Dengan Alasan:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Late:</b>"
+msgstr "<b>Terlambat:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Present:</b>"
+msgstr "<b>Hadir:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Withdraw:</b>"
+msgstr "<b>Menarik Diri:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong> Withdraw</strong>"
+msgstr "<strong> Menarik Diri</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Absent with no Reason</strong>"
+msgstr "<strong>Absen tanpa Alasan</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Absent</strong>"
+msgstr "<strong>Absen</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Class</strong>"
+msgstr "<strong>Kelas</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Tanggal:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Days</strong>"
+msgstr "<strong>Hari</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "<strong>Dep/Emp</strong>"
+msgstr "<strong>Dep/Emp</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>From:</strong>"
+msgstr "<strong>Dari:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Late</strong>"
+msgstr "<strong>Terlambat</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Present</strong>"
+msgstr "<strong>Hadir</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<strong>Responsible Teacher:</strong>"
+msgstr "<strong>Guru Bertanggung Jawab:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "<strong>Sum</strong>"
+msgstr "<strong>Jumlah</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>To:</strong>"
+msgstr "<strong>Ke:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Withdraw</strong>"
+msgstr "<strong>Menarik Diri</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Absence No  Reason"
+msgstr "Absen Tanpa Alasan"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Absence Reason"
+msgstr "Absen Dengan Alasan"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Absent Noreason"
+msgstr "Absen Tanpa Alasan"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Absent Reason"
+msgstr "Absen Dengan Alasan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_reason
+msgid "Absent with Reason"
+msgstr "Absen dengan Alasan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_noreason
+msgid "Absent with no Reason"
+msgstr "Absen tanpa Alasan"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "AddStudentline"
+msgstr "Tambahkan Baris Siswa"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance
+#: model:ir.actions.report,name:jt_education_attendance.action_attendance_report
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_id
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_menu
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_report
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Attendance"
+msgstr "Kehadiran"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_graph
+msgid "Attendance Graph"
+msgstr "Grafik Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__attendance_ids
+msgid "Attendance Line"
+msgstr "Baris Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_line_ids
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__attendance_line_ids
+msgid "Attendance Lines"
+msgstr "Baris Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_wizard
+#: model:ir.model,name:jt_education_attendance.model_print_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "Attendance Report"
+msgstr "Laporan Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_report
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_report_menu
+msgid "Attendance Reporting"
+msgstr "Pelaporan Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.ui.menu,name:jt_education_attendance.main_menu_attendance_summary_report
+msgid "Attendance Summary"
+msgstr "Ringkasan Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_summary_wizard
+#: model:ir.actions.report,name:jt_education_attendance.action_summary_attendance_report
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Attendance Summary Report"
+msgstr "Laporan Ringkasan Kehadiran"
+
+#. module: jt_education_attendance
+#: model:ir.model.constraint,message:jt_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+msgid "Attendance for this faculty and standard already exists!"
+msgstr "Kehadiran untuk fakultas dan standar ini sudah ada!"
+
+#. module: jt_education_attendance
+#. odoo-python
+#: code:addons/jt_education_attendance/models/attendance.py:0
+#, python-format
+msgid "Attendance for this student  already exists!"
+msgstr "Kehadiran untuk siswa ini sudah ada!"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Cancel"
+msgstr "Batal"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,name:jt_education_attendance.action_daily_attendance_report
+msgid "Daily Attendance"
+msgstr "Kehadiran Harian"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Daily Attendance Report"
+msgstr "Laporan Kehadiran Harian"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__display_name
+msgid "Display Name"
+msgstr "Nama Tampilan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__division_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__division_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__division_id
+msgid "Division"
+msgstr "Divisi"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__faculty_id
+msgid "Faculties"
+msgstr "Fakultas"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__faculty_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__faculty_id
+msgid "Faculty"
+msgstr "Fakultas"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "For Class"
+msgstr "Untuk Kelas"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "For Division"
+msgstr "Untuk Divisi"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__start_date
+msgid "From"
+msgstr "Dari"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Generate Report"
+msgstr "Buat Laporan"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Generate Summary Report"
+msgstr "Buat Laporan Ringkasan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__write_date
+msgid "Last Updated on"
+msgstr "Terakhir Diperbarui pada"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__late
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Late"
+msgstr "Terlambat"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Month"
+msgstr "Bulan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__name
+msgid "Name"
+msgstr "Nama"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Number"
+msgstr "Nomor"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__present
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Present"
+msgstr "Hadir"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__roll_no
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__roll_no
+msgid "Roll Number"
+msgstr "Nomor Gulungan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__selected
+msgid "Select"
+msgstr "Pilih"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__standard_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__standard_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__standard_id
+msgid "Standard"
+msgstr "Standar"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Student"
+msgstr "Siswa"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_attendance
+msgid "Student Attendance"
+msgstr "Kehadiran Siswa"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_line
+msgid "Student Attendance Line"
+msgstr "Baris Kehadiran Siswa"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__name
+msgid "Student List is displayed based on standard and division."
+msgstr "Daftar siswa ditampilkan berdasarkan standar dan divisi."
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__student_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__student_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__student_id
+msgid "Students"
+msgstr "Siswa"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__subject_id
+msgid "Subjects"
+msgstr "Mata Pelajaran"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Sum"
+msgstr "Jumlah"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__summary_report
+msgid "Summary"
+msgstr "Ringkasan"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__end_date
+msgid "To"
+msgstr "Ke"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__date
+msgid "Today's Date"
+msgstr "Tanggal Hari Ini"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__withdraw
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Withdraw"
+msgstr "Mundur"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Select All"
+msgstr "Pilih Semua"

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="event.act_event_registration_from_event">
+            <field name="name">Students</field>
+        </record>
+        <record model="ir.ui.menu" id="event.menu_action_registration">
+            <field name='name'>Students</field>
+        </record>
+        <record id="student_event_form_view" model="ir.ui.view">
+            <field name="name">Student Event Form View</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form"/>
+            <field name="arch" type="xml">
+            	
+                <xpath expr="//label[@for='seats_limited']" position="attributes">
+                    <attribute name="string">Maximum Students</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

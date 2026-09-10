@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="faculty_timetable_form_view" model="ir.ui.view">
+            <field name="name">Faculty Timetable Form View</field>
+            <field name="model">student.timetable.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="faculty_id"/>
+                                <field name="subject"/>
+                                <field name="week_day"/>
+                                <field name="time_from"/>
+                                <field name="time_till"/>
+                            </group>
+                        </group>
+                    </sheet>
+                     <chatter/>
+                </form>
+            </field>
+        </record>
+        <record id="faculty_timetable_tree_view" model="ir.ui.view">
+            <field name="name">Faculty Timetable Tree View</field>
+            <field name="model">student.timetable.line</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="faculty_id"/>
+                    <field name="subject"/>
+                    <field name="week_day"/>
+                    <field name="time_from"/>
+                    <field name="time_till"/>
+                </list>
+            </field>
+        </record>
+        <!-- <record id="view_faculty_timetable_calendar" model="ir.ui.view">
+            <field name="name">student.timetable.line.calendar</field>
+            <field name="model">student.timetable.line</field>
+            <field name="arch" type="xml">
+                <calendar string="Timetable" date_start="date" color="faculty_id">
+                    <field name="subject"/>
+                    <field name="time_from"/>
+                    <field name="time_till"/>
+                </calendar>
+            </field>
+        </record> -->
+        <record id="view_student_timetable_line_kanban" model="ir.ui.view">
+            <field name="name">student.timetable.line.kanban</field>
+            <field name="model">student.timetable.line</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="faculty_id">
+                    <field name="faculty_id"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="oe_kanban_card">
+                                <div class="o_kanban_details">
+                                    <field name="subject"/>
+                                    <div>
+                                        <field name="week_day"/>
+                                        <br/>
+                                        <br/>
+                                        <span>
+                                            <field name="time_from"/> - <field name="time_till"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_student_timetable_line_search" model="ir.ui.view">
+            <field name="name">student.timetable.line.search</field>
+            <field name="model">student.timetable.line</field>
+            <field name="arch" type="xml">
+                <search string="Timetable Search">
+                    <field name="subject"/>
+                    <field name="week_day"/>
+                    <field name="faculty_id"/>
+                    <field name="date"/>
+
+                    <group>
+                        <filter name="group_by_faculty" string="Faculty" context="{'group_by': 'faculty_id'}"/>
+                        <filter name="group_by_weekday" string="Week Day" context="{'group_by': 'week_day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

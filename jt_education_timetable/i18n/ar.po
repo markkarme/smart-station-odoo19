@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_timetable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-22 14:36+0000\n"
+"PO-Revision-Date: 2021-09-22 14:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__curr_year
+msgid "Academic Year"
+msgstr "السنة الأكاديمية"
+
+#. module: jt_education_timetable
+#: model:ir.ui.menu,name:jt_education_timetable.student_timetable_configuration
+msgid "Configuration"
+msgstr "إعدادات"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__create_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__create_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__create_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__date
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__week_day
+msgid "Day"
+msgstr "يوم"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__display_name
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__display_name
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__division
+msgid "Division"
+msgstr "قسم"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__faculty_id
+msgid "Faculty"
+msgstr "الأساتذه"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__4
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Friday"
+msgstr "جمعة"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__time_from
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__time_from
+msgid "From"
+msgstr "من عند"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__id
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__id
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable____last_update
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line____last_update
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__write_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__write_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__write_date
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__0
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Monday"
+msgstr "الإثنين"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__name
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__name
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Name"
+msgstr "اسم"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__period_id
+msgid "Period"
+msgstr "فترة"
+
+#. module: jt_education_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_timetable_period_form
+msgid "Period Time"
+msgstr "وقت الفترة"
+
+#. module: jt_education_timetable
+#: model:ir.actions.act_window,name:jt_education_timetable.action_student_timetable_period
+#: model:ir.ui.menu,name:jt_education_timetable.student_timetable_period_sub_menu
+msgid "Periods"
+msgstr "فترات"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__5
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__standard
+msgid "Standard"
+msgstr "اساسي"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__student_ids
+msgid "Student"
+msgstr "طالب"
+
+#. module: jt_education_timetable
+#: model:ir.model,name:jt_education_timetable.model_student_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Student Timetable"
+msgstr "جدول الطالب"
+
+#. module: jt_education_timetable
+#: model:ir.model,name:jt_education_timetable.model_student_timetable_line
+msgid "Student Timetable Line"
+msgstr "جدول جدول الطالب"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__subject
+msgid "Subjects"
+msgstr "المواضيع"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__6
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Sunday"
+msgstr "يوم الأحد"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__3
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Thursday"
+msgstr "يوم الخميس"
+
+#. module: jt_education_timetable
+#: model:ir.actions.act_window,name:jt_education_timetable.action_student_time_table
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__timetable_id
+#: model:ir.ui.menu,name:jt_education_timetable.student_time_table_main_menu
+#: model:ir.ui.menu,name:jt_education_timetable.student_time_table_sub_menu
+msgid "Timetable"
+msgstr "الجدول الزمني"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_fri
+msgid "Timetable Fri"
+msgstr "الجدول الزمني يوم الجمعة"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_mon
+msgid "Timetable Mon"
+msgstr "الجدول الزمني الاثنين"
+
+#. module: jt_education_timetable
+#: model:ir.model,name:jt_education_timetable.model_timetable_period
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_timetable_period_form
+msgid "Timetable Period"
+msgstr "فترة الجدول الزمني"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_sat
+msgid "Timetable Sat"
+msgstr "جدول مواعيد السبت"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_sun
+msgid "Timetable Sun"
+msgstr "الجدول الزمني الأحد"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_thur
+msgid "Timetable Thur"
+msgstr "جدول مواعيد الخميس"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_tue
+msgid "Timetable Tue"
+msgstr "الجدول الزمني الثلاثاء"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable__timetable_wed
+msgid "Timetable Wed"
+msgstr "الجدول الزمني الاربعاء"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields,field_description:jt_education_timetable.field_student_timetable_line__time_till
+#: model:ir.model.fields,field_description:jt_education_timetable.field_timetable_period__time_to
+msgid "To"
+msgstr "إلى"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__1
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Tuesday"
+msgstr "يوم الثلاثاء"
+
+#. module: jt_education_timetable
+#: model:ir.model.fields.selection,name:jt_education_timetable.selection__student_timetable_line__week_day__2
+#: model_terms:ir.ui.view,arch_db:jt_education_timetable.student_time_table_form
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+#. module: jt_education_timetable
+#: model_terms:ir.actions.act_window,help:jt_education_timetable.action_student_timetable_period
+msgid "You have'nt created any Periods yet."
+msgstr "لم تقم بإنشاء أي فترات زمنية حتى الآن."
+
+#. module: jt_education_timetable
+#: model_terms:ir.actions.act_window,help:jt_education_timetable.action_student_time_table
+msgid "You have'nt created any timetable yet."
+msgstr "لم تقم بإنشاء أي جدول زمني حتى الآن."

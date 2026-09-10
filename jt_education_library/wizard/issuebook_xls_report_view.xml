@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <!-- Excel Report Download Wizard Form View-->
+     <record id="issuebook_xls_report_view" model="ir.ui.view">
+     <field name="name">Issue Book Xls Report Form View</field>
+     <field name="model">issuebook.xls.report</field>
+     <field name="arch" type="xml">
+        <form string="Excel Report file">
+            <group>
+                <field name="excel_file" readonly="1" filename="file_name"/>
+                <field name="file_name" invisible="1"/>
+            </group>
+            <footer>
+                <button string="Cancel" class="oe_highlight" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+    </record>
+
+    <!-- Excel Report Download Wizard Action View-->
+    <record id="action_issuebook_xls_report_view" model="ir.actions.act_window">
+        <field name="name">Issue Book Details Report</field>
+        <field name="view_id" ref="issuebook_xls_report_view"/>
+        <field name="view_mode">form</field>
+        <field name="res_model">issuebook.xls.report</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+	<template id="report_invoice_document_inhrt" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@t-if='o.invoice_incoterm_id']" position="after">
+            <div>
+                <img t-att-src="image_data_uri(res_company.stamp_image)" style="margin-bottom:-60px;height:200px;width:200px;margin-left:650px;margin-top:20px;"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

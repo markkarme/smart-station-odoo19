@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Generate Fee structure record -->
+    <record id="pay_yearly_fees_wizard_form" model="ir.ui.view">
+        <field name="name">Generate Fees Records</field>
+        <field name="model">pay.yearly.fees.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Yearly Fees Records">
+                <group>
+                    <field name="year" string="Year" required="1"/>
+                    <field name="standard" string="Standard" required="1"/>
+                    <field name="amount" string="Amount" required="1"/>
+                </group>
+                <footer>
+                    <button name="create_entry" string="Generate Fees Entries"
+                        type="object" class="oe_highlight"/>
+                    <span> Or </span>
+                    <button string="Cancel" class="oe_link oe_highlight" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

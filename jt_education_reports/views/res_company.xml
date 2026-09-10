@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="rescompany_form_view" model="ir.ui.view">
+        <field name="name">res_company.form.view</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='company_registry']" position="after">
+                <field name="authorised_signatory_id" string="Partner Company"/>
+                <field name="namep" string="Partner Name"/>
+                <field name="function" string="Partner Function"/>
+            </xpath>
+            <xpath expr="//group[1]" position="after">
+                <notebook>
+                    <page string="Customer Signature" name="customer_signature">
+                        <group>
+                            <field name="signature" widget="signature"/>
+                        </group>
+                    </page>
+                    <page string="Company Stamp" name="company_stamp">
+                        <group>
+                            <field name="stamp_image" widget="image"/>
+                        </group>
+                    </page>
+                </notebook> 
+            </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>

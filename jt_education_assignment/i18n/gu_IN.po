@@ -1,0 +1,562 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_assignment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-08 04:25+0000\n"
+"PO-Revision-Date: 2024-07-08 04:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Accept"
+msgstr "સ્વીકારો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__accept
+msgid "Accepted"
+msgstr "સ્વીકાર્યું"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_needaction
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_needaction
+msgid "Action Needed"
+msgstr "ક્રિયા જરૂરી છે"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__active
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__active
+msgid "Active"
+msgstr "સક્રિય"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__allocation_ids
+msgid "Allocated To"
+msgstr "ને ફાળવેલ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Allocation"
+msgstr "ફાળવણી"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Allocation Infomation"
+msgstr "ફાળવણી માહિતી"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Archived"
+msgstr "આર્કાઇવ કર્યું"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_student_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__assignment_id
+#: model:ir.ui.menu,name:jt_education_assignment.config_assignment_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_tree_view
+msgid "Assignment"
+msgstr "સોંપણી"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__assignment_count
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__assignment_count
+msgid "Assignment Count"
+msgstr "સોંપણી ગણતરી"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_graph_view
+msgid "Assignment Graph View"
+msgstr "સોંપણી ગ્રાફ દૃશ્ય"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Assignment Name"
+msgstr "સોંપણીનું નામ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_pivot_view
+msgid "Assignment Pivot View"
+msgstr "સોંપણી પિવટ વ્યૂ"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_res_partner
+msgid "Assignment Student Class"
+msgstr "સોંપણી વિદ્યાર્થી વર્ગ"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_student_assignment_submission
+msgid "Assignment Submission"
+msgstr "સોંપણી સબમિશન"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_assignment_type
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__assignment_type
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Assignment Type"
+msgstr "સોંપણીનો પ્રકાર"
+
+#. module: jt_education_assignment
+#: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment_type
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_congif_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_tree_view
+msgid "Assignment Types"
+msgstr "સોંપણીના પ્રકારો"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_pivot_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Assignment submission"
+msgstr "સોંપણી સબમિશન"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_graph_view
+msgid "Assignment submission Graph View"
+msgstr "સોંપણી સબમિશન ગ્રાફ વ્યૂ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_partner__allocation_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__allocation_ids
+msgid "Assignment(s)"
+msgstr "સોંપણી (ઓ)"
+
+#. module: jt_education_assignment
+#: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_menu
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_submenu
+msgid "Assignments"
+msgstr "સોંપણીઓ"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_ir_attachment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_ir_attachment__attach_rel
+#: model:ir.model.fields,field_description:jt_education_assignment.field_product_document__attach_rel
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__attachment
+msgid "Attachment"
+msgstr "જોડાણ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_attachment_count
+msgid "Attachment Count"
+msgstr "જોડાણ ગણતરી"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__assignment_type__assign_type__attendance
+msgid "Attendance"
+msgstr "હાજરી"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Basic Information"
+msgstr "મૂળભૂત માહિતી"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Cancel"
+msgstr "રદ કરો"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Change And Resubmit"
+msgstr "બદલો અને ફરીથી સબમિટ કરો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__change
+msgid "Change Req."
+msgstr "જરૂર બદલો"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Change Require"
+msgstr "જરૂર બદલો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__code
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Code"
+msgstr "કોડ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__create_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__create_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવવામાં"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__create_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__create_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__create_date
+msgid "Created on"
+msgstr "પર બનાવેલ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__description
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__description
+msgid "Description"
+msgstr "વર્ણન"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__display_name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__display_name
+msgid "Display Name"
+msgstr "પ્રદર્શન નામ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__division_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__division_id
+msgid "Division"
+msgstr "વિભાગ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__draft
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__draft
+msgid "Draft"
+msgstr "ડ્રાફ્ટ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__assignment_id
+msgid "Enter Students to see assignments assigned to them."
+msgstr "વિદ્યાર્થીઓને સોંપેલ સોંપણીઓ જોવા માટે દાખલ કરો."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__faculty
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Faculty"
+msgstr "ફેકલ્ટી"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Finish"
+msgstr "સમાપ્ત કરો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__finish
+msgid "Finished"
+msgstr "સમાપ્ત"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_follower_ids
+msgid "Followers"
+msgstr "અનુયાયીઓ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "અનુયાયીઓ (ભાગીદારો)"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Group By..."
+msgstr "જૂથ દ્વારા ..."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__has_message
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__has_message
+msgid "Has Message"
+msgstr "સંદેશ છે"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__id
+msgid "ID"
+msgstr "ઓળખ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_needaction
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "જો તપાસવામાં આવે તો, નવા સંદેશાઓ તમારા ધ્યાનની જરૂર છે."
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_has_error
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_has_error
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "જો ચકાસાયેલ હોય, તો કેટલાક સંદેશાઓમાં વિતરણ ભૂલ હોય છે.s"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_is_follower
+msgid "Is Follower"
+msgstr "અનુયાયી છે"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__is_parent
+msgid "Is Parent"
+msgstr "પિતૃ છે"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_res_users__is_student
+msgid "Is Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__issued_date
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Issued Date"
+msgstr "જારી તારીખ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__write_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__write_uid
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__write_uid
+msgid "Last Updated by"
+msgstr "દ્વારા છેલ્લે અપડેટ કરવામાં આવ્યું"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__write_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__write_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે અપડેટ થયેલ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Marks"
+msgstr "ગુણ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_has_error
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_has_error
+msgid "Message Delivery error"
+msgstr "સંદેશ વિતરણ ભૂલ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_ids
+msgid "Messages"
+msgstr "સંદેશાઓ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Month"
+msgstr "માસ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__name
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__name
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Name"
+msgstr "નામ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__note
+msgid "Note"
+msgstr "નૉૅધ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_needaction_counter
+msgid "Number of Actions"
+msgstr "ક્રિયાઓની સંખ્યા"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_has_error_counter
+msgid "Number of errors"
+msgstr "ભૂલોની સંખ્યા"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "સંદેશાઓની સંખ્યા કે જેના માટે ક્રિયા જરૂરી છે"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "ડિલિવરી ભૂલ સાથે સંદેશાઓની સંખ્યા"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Publish"
+msgstr "પ્રકાશિત કરો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment__state__publish
+msgid "Published"
+msgstr "પ્રકાશિત"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Reject"
+msgstr "નકારો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__reject
+msgid "Rejected"
+msgstr "નકાર્યો"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Resubmit"
+msgstr "ફરી સબમિટ કરો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS વિતરણ ભૂલ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__marks_scored
+msgid "Scored Marks"
+msgstr "સ્કોર્ડ માર્ક્સ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Set to Draft"
+msgstr "ડ્રાફ્ટ પર સેટ કરો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__standard_id
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__standard_id
+msgid "Standard"
+msgstr "ધોરણ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__state
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__state
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "State"
+msgstr "સ્થિતિ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__student_id
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__subject_id
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+msgid "Subject"
+msgstr "વિષય"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__assignment_type__assign_type__sub
+msgid "Subjective"
+msgstr "વ્યક્તિલક્ષી"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__submission_date
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__submission_date
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Submission Date"
+msgstr "સબમિશન તારીખ"
+
+#. module: jt_education_assignment
+#. odoo-python
+#: code:addons/jt_education_assignment/models/assignment.py:0
+#, python-format
+msgid "Submission Date cannot be before Issue Date."
+msgstr "સબમિશન તારીખ ઈસ્યુ તારીખ પહેલાની હોઈ શકતી નથી."
+
+#. module: jt_education_assignment
+#: model:ir.actions.act_window,name:jt_education_assignment.action_student_assignment_submission
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__assignment_submission
+#: model:ir.ui.menu,name:jt_education_assignment.student_assignment_submission_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_form_view
+msgid "Submissions"
+msgstr "સબમિશન"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_form_view
+msgid "Submit"
+msgstr "સબમિટ કરો"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields.selection,name:jt_education_assignment.selection__student_assignment_submission__state__submit
+msgid "Submitted"
+msgstr "સબમિટ કર્યું"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_type_search_view
+msgid "Tag"
+msgstr "ટેગ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Today"
+msgstr "આજે"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__marks
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__marks
+msgid "Total Marks"
+msgstr "કુલ ગુણ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_assignment_type__assign_type
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_tree_view
+msgid "Type"
+msgstr "પ્રકાર"
+
+#. module: jt_education_assignment
+#: model:ir.model,name:jt_education_assignment.model_res_users
+msgid "User"
+msgstr "વપરાશકર્તા"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__website_message_ids
+msgid "Website Messages"
+msgstr "વેબસાઇટ સંદેશાઓ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment__website_message_ids
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__website_message_ids
+msgid "Website communication history"
+msgstr "વેબસાઇટ સંચાર ઇતિહાસ"
+
+#. module: jt_education_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_assignment.student_assignment_submission_search_view
+msgid "Week"
+msgstr "અઠવાડિયું"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment__curr_year
+#: model:ir.model.fields,field_description:jt_education_assignment.field_student_assignment_submission__curr_year
+msgid "Year"
+msgstr "વર્ષ"
+
+#. module: jt_education_assignment
+#: model:ir.model.fields,help:jt_education_assignment.field_student_assignment_submission__attachment
+msgid "You can attach the copy of your document"
+msgstr "તમે તમારા દસ્તાવેજની નકલ જોડી શકો છો"

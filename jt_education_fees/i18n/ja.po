@@ -1,0 +1,753 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_fees
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:09+0000\n"
+"PO-Revision-Date: 2021-10-04 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ",<strong>Phone: </strong>"
+msgstr ",<strong>電話：</ strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ",<strong>Website: </strong>"
+msgstr ",<strong>ウェブサイト：</ strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+msgid "<br/><span>Select Standard        </span>"
+msgstr "<br/> <span>標準を選択</ span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "<br/><span>Select Year        </span>"
+msgstr "<br/> <span>年を選択</ span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Current Year Due Fees</span>"
+msgstr "<span class=\"o_stat_text\">今年度の会費</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Current Year Paid Fees</span>"
+msgstr "<span class =\"o_stat_text\">今年の支払い料金</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Due Fees</span>"
+msgstr "<span class=\"o_stat_text\">会費</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Paid Fees</span>"
+msgstr "<span class=\"o_stat_text\">有料料金</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "<span states=\"choose\"> Or </span>"
+msgstr "<spanstates=\"choose\">または</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "<span> Or </span>"
+msgstr "<span>または</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Date of Payment: </strong>"
+msgstr "<strong>支払い日：</strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Division: </strong>"
+msgstr "<strong>部門：</strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Email: </strong>"
+msgstr "<strong>メール：</strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Standard: </strong>"
+msgstr "<strong>標準：</strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Student: </strong>"
+msgstr "<strong>学生：</strong>"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__formats__all_std
+msgid "All Standard"
+msgstr "すべての標準"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__all_year
+msgid "All Year Fees"
+msgstr "通年料金"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ""
+"All above mentioned Amount once paid are non refundable in any case "
+"whatsoever."
+msgstr ""
+"上記のすべての一度支払われた金額は、いかなる場合でも返金不可です "
+"何でも。"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Allow PreSchool Fees"
+msgstr "就学前の料金を許可する"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__amount
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Amount"
+msgstr "額"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__04
+msgid "April"
+msgstr "4月"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_res_partner
+msgid "Assignment Student Class"
+msgstr "宿題学生クラス"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__08
+msgid "August"
+msgstr "8月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_receipt_wizard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Cancel"
+msgstr "キャンセル"
+
+#. module: jt_education_fees
+#: model:ir.ui.menu,name:jt_education_fees.setting_menu
+msgid "Configuration"
+msgstr "構成"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_uid
+msgid "Created by"
+msgstr "によって作成された"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_date
+msgid "Created on"
+msgstr "で作成"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__curr_year
+msgid "Current Year"
+msgstr "今年"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__12
+msgid "December"
+msgstr "12月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__division
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Division"
+msgstr "分割"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__report
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__report
+msgid "Download Report"
+msgstr "レポートのダウンロード"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__excel_file
+msgid "Download Report :- "
+msgstr "レポートのダウンロード：-"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__file_name
+msgid "Excel File"
+msgstr "Excelファイル"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_receipt_wizard
+msgid "Excel Report file"
+msgstr "Excelレポートファイル"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+msgid "Export Due/Paid Fees History"
+msgstr "未払い/支払い済みの料金履歴のエクスポート"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_export_fees_history
+#: model:ir.model,name:jt_education_fees.model_export_due_fees_history_wizard
+#: model:ir.model,name:jt_education_fees.model_export_fees_history_wizard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "Export Fees History"
+msgstr "輸出手数料履歴"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_export_paid_due_fees_history
+msgid "Export Paid/Due Fees History"
+msgstr "有料/期日料金履歴のエクスポート"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__02
+msgid "February"
+msgstr "2月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_ids
+msgid "Fee IDs"
+msgstr "料金ID"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Fee Items"
+msgstr "料金項目"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Fee Receipt"
+msgstr "手数料の領収書"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_structure
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_structure
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fee Structure"
+msgstr "料金体系"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__name
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_form
+msgid "Fee Type"
+msgstr "料金タイプ"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__fee
+#: model:ir.ui.menu,name:jt_education_fees.fees_root_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees"
+msgstr "料金"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fees_detail
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees Detail"
+msgstr "料金の詳細"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees History"
+msgstr "料金履歴"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fees_id
+msgid "Fees ID"
+msgstr "料金ID"
+
+#. module: jt_education_fees
+#: model:ir.module.category,name:jt_education_fees.module_category_jt_education_fees
+msgid "Fees Management"
+msgstr "料金管理"
+
+#. module: jt_education_fees
+#: model:ir.actions.report,name:jt_education_fees.fee_receipt_report
+msgid "Fees Receipt"
+msgstr "手数料の領収書"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_export_fees_receipt
+msgid "Fees Receipt XLS Report"
+msgstr "手数料領収書XLSレポート"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_structure
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees Structure"
+msgstr "料金体系"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_fees_type
+#: model:ir.model,name:jt_education_fees.model_fees_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_type
+#: model:ir.ui.menu,name:jt_education_fees.fees_type_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Fees Type"
+msgstr "料金タイプ"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__name
+msgid "File Name"
+msgstr "ファイル名"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__formats
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__formats
+msgid "Formats"
+msgstr "フォーマット"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Generate Fees Entries"
+msgstr "料金エントリを生成する"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Generate Yearly Fees Records"
+msgstr "年会費記録を生成する"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_generate_fees_structure
+msgid "Generate fee structure entry"
+msgstr "料金体系エントリを生成する"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__01
+msgid "January"
+msgstr "1月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__07
+msgid "July"
+msgstr "7月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__06
+msgid "June"
+msgstr "六月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard____last_update
+msgid "Last Modified on"
+msgstr "最終変更日"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__03
+msgid "March"
+msgstr "行進"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__05
+msgid "May"
+msgstr "5月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__month
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__month
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Month"
+msgstr "月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__11
+msgid "November"
+msgstr "11月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__10
+msgid "October"
+msgstr "10月"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__paid
+msgid "Paid"
+msgstr "有料"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__paid_on
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__paid_on
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Paid On"
+msgstr "支払われた"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Particulars"
+msgstr "詳細"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_pay_yearly_fees_wizard
+msgid "Pay BulkFees Yearly"
+msgstr "毎年BulkFeesを支払う"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__pre_school_fee
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__pre_school_fee
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__psf
+msgid "Pre School Fee"
+msgstr "就学前の料金"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_pre_school_fees
+#: model:ir.ui.menu,name:jt_education_fees.fees_child2_menu
+msgid "Pre School Fees"
+msgstr "就学前の料金"
+
+#. module: jt_education_fees
+#: model:res.groups,name:jt_education_fees.psf_group_manager
+msgid "Pre-Primary School User"
+msgstr "就学前のユーザー"
+
+#. module: jt_education_fees
+#: model:res.groups,name:jt_education_fees.sf_group_manager
+msgid "Primary School User"
+msgstr "小学校のユーザー"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Print Fees Receipt XLS"
+msgstr ""
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Receipt No:"
+msgstr "領収書番号："
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__name
+msgid "Receipt Number"
+msgstr "受付番号"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__name
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Reference"
+msgstr "リファレンス"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_export_fees_receipt_form
+msgid "Reports Excel"
+msgstr "レポートExcel"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__sf
+msgid "School Fee"
+msgstr "学費"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_school_fees
+#: model:ir.ui.menu,name:jt_education_fees.fees_child1_menu
+msgid "School Fees"
+msgstr "授業料"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__09
+msgid "September"
+msgstr "9月"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Serial Number"
+msgstr "シリアルナンバー"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Set to Draft"
+msgstr "ドラフトに設定"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Signature Of Student"
+msgstr "学生の署名"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__formats__spec_std
+msgid "Specific Standard"
+msgstr "特定の基準"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__spec_year
+msgid "Specific Year"
+msgstr "特定の年"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Standard"
+msgstr "標準"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__state
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__state
+msgid "State"
+msgstr "州"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__state
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__state
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Status"
+msgstr "状態"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__student
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__student
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__student
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Student"
+msgstr "学生"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_student_standard
+msgid "Student Standard"
+msgstr "学生基準"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__draft
+msgid "To be paid"
+msgstr "支払われる"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Total"
+msgstr "合計"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+msgid "Total Amount"
+msgstr "合計金額"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__due_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__due_fees
+msgid "Total Due Fees"
+msgstr "合計支払額"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__total_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__total_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Total Fees"
+msgstr "合計料金"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__amount
+msgid "Total Fees Amount"
+msgstr "合計料金額"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__paid_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__paid_fees
+msgid "Total Fees Paid"
+msgstr "支払った合計料金"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__user_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__user_id
+msgid "User Id"
+msgstr "ユーザーID"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Validate"
+msgstr "検証"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__year
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Year"
+msgstr "年"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_due_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__yearly_due_fees
+msgid "Yearly Total Due Fees"
+msgstr "年間合計支払額"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_paid_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__yearly_paid_fees
+msgid "Yearly Total Paid Fees"
+msgstr "年間総支払額"
+
+#. module: jt_education_fees
+#: code:addons/jt_education_fees/models/fees.py:0
+#: code:addons/jupical_edu/addons/jt_education_fees/models/fees.py:0
+#, python-format
+msgid "You need to add a line before validate."
+msgstr "検証する前に行を追加する必要があります。"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "__________________________"
+msgstr "__________________________"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__choose
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__choose
+msgid "choose"
+msgstr "選ぶ"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__get
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__get
+msgid "get"
+msgstr "得る"
+
+#. module: jt_education_fees
+#: model:ir.actions.report,print_report_name:jt_education_fees.fee_receipt_report
+msgid "object.name"
+msgstr "object.name"

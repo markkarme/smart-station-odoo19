@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="student_timetable_period_form" model="ir.ui.view">
+            <field name="name">student.timetable.period.form</field>
+            <field name="model">timetable.period</field>
+            <field name="arch" type="xml">
+                <form string="Timetable Period">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required='1'/>
+                                <label for="time_from" string="Period Time"/>
+                                <div>
+                                    <field name="time_from" widget="float_time" class="oe_inline"/> -
+                                    <field name="time_to" widget="float_time" class="oe_inline"/>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_timetable_period_tree" model="ir.ui.view">
+            <field name="name">student.timetable.period.tree</field>
+            <field name="model">timetable.period</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="time_from" widget="float_time"/>
+                    <field name="time_to" widget="float_time"/>
+                </list>
+            </field>
+        </record>
+
+    </data>
+</odoo>

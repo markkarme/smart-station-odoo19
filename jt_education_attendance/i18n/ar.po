@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-21 12:41+0000\n"
+"PO-Revision-Date: 2021-09-21 12:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absent
+msgid "Absent"
+msgstr "غائب"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_id
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Attendance"
+msgstr "حضور"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__attendance_ids
+msgid "Attendance Line"
+msgstr "خط الحضور والانصراف"
+
+#. module: jt_education_attendance
+#: model:ir.model.constraint,message:jt_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+msgid ""
+"Attendance for this faculty and standard of this date is already exists !"
+msgstr ""
+"الحضور لهذه الكلية ومستوى هذا التاريخ موجود بالفعل!"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__division_id
+msgid "Division"
+msgstr "قسم"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__faculty_id
+msgid "Faculty"
+msgstr "الأساتذه"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance____last_update
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__name
+msgid "Name"
+msgstr "اسم"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__present
+msgid "Present"
+msgstr "الحالي"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__roll_no
+msgid "Roll Number"
+msgstr "رقم اللفة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__standard_id
+msgid "Standard"
+msgstr "اساسي"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__student_id
+msgid "Students"
+msgstr "تلاميذ"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__subject_id
+msgid "Subjects"
+msgstr "المواضيع"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__date
+msgid "Today's Date"
+msgstr "تاريخ اليوم"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_attendance
+msgid "attendance.attendance"
+msgstr "الحضور"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_line
+msgid "attendance.line"
+msgstr "خط الحضور"

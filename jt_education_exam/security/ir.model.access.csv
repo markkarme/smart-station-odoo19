@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_exam,Access student exam,model_student_exam,base.group_user,1,1,1,1
+access_subject_line,Access subject line,model_subject_line,base.group_user,1,1,1,1
+access_student_subject,Access student subject,model_student_subject,base.group_user,1,1,1,1
+access_student_result,Access student result,model_student_result,base.group_user,1,1,1,1
+access_result_subject_line,Access result subject line,model_result_subject_line,base.group_user,1,1,1,1
+access_result_grade,Access result grade,model_result_grade,base.group_user,1,1,1,1
+access_subject_category,Access subject category,model_subject_category,base.group_user,1,1,1,1
+access_subject_category_line,Access subject category line,model_subject_category_line,base.group_user,1,1,1,1
+access_score_summary,Access score summary,model_score_summary,base.group_user,1,1,1,1
+jt_education_exam.access_student_yearly_result,access_student_yearly_result,jt_education_exam.model_student_yearly_result,base.group_user,1,1,1,1

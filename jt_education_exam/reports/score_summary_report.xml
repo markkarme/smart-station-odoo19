@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="score_summary_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="result">
+                    <div class="page">
+                        <div style="padding-top:10px;">
+                            <div>
+                                <p style="align:center;text-align:center;"><span style="font-size:40px;color:black;" t-field="res_company.name"/></p>
+                            </div>
+                            <div style="align:center;text-align:center;">
+                                <p style="align:center;text-align:color:black;font-size:25px;margin-top:20px;">Student Score Summary Report</p>
+                                 <p  style="align:center;text-align:center;color:black;font-size:20px;margin-top:30px;"><strong>For:</strong>
+                                 <span t-esc="result.exam_id.display_name"/>
+                                </p>
+                            </div>
+                            <div class="text-center">
+                                <t t-set="result_list" t-value="result.get_score_summary_data()"/>
+                                <t t-if="len(result_list) > 0">
+                                    <table class="table table-bordered mb32" style="table-layout:auto">
+                                        <thead>
+                                            <tr>
+                                                <th ><strong>Student Name</strong></th>
+
+                                                <t t-foreach="result_list[0].get('subject_line')" t-as="subject_line">
+                                                    <th><strong><t t-esc="subject_line.get('subject_nm')"/></strong></th>
+                                                </t>
+                                                <th><strong>Total</strong></th>
+                                                <th><strong>Avrage</strong></th>
+                                                <th><strong>Grade</strong></th>
+                                                <th><strong>Rank</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="result_list" t-as="resilt_indv">
+                                                <tr>
+                                                    <td style="text-align:left;"><t t-esc="resilt_indv.get('student')"/></td>
+                                                    <t t-foreach="resilt_indv.get('subject_line')" t-as="subject_line">
+                                                        <td style="text-align:right;"><t t-esc=" '%.2f' % subject_line.get('mark_scored')"/></td>
+                                                    </t>
+                                                    <td style="text-align:right;"><t t-esc="'%.2f' % resilt_indv.get('total')"/></td>
+                                                    <td style="text-align:center;"><t t-esc="'%.2f' % resilt_indv.get('pecentage')"/>%</td>
+                                                    <td style="text-align:center;"><t t-esc="resilt_indv.get('grade')"/></td>
+                                                    <td style="text-align:center;"><strong><t t-esc="resilt_indv.get('rank')"/></strong></td>
+                                                </tr>
+                                            </t>
+
+                                        </tbody>
+                                    </table>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <record id="score_report_template_paperformate" model="report.paperformat">
+            <field name="name">score.summary.report.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_score_summary_report" model="ir.actions.report">
+            <field name="name">Score Summary</field>
+            <field name="model">score.summary</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">jt_education_exam.score_summary_report_template</field>
+            <field name="report_file">jt_education_exam.score_summary_report_template</field>
+            <field name="paperformat_id" ref="jt_education_exam.score_report_template_paperformate"/>
+            <field name="print_report_name">"Student Score Summary"</field>
+            <field name="binding_model_id" ref="jt_education_exam.model_score_summary"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

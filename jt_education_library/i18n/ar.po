@@ -1,0 +1,1006 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-22 10:59+0000\n"
+"PO-Revision-Date: 2021-09-22 10:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+msgstr "<i class=\"fa fa-at\" role=\"img\" aria-label=\"بريد الالكتروني\" title=\"بريد الالكتروني\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"رقم مالي\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"موقع الكتروني\" title=\"موقع الكتروني\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"هاتف\" title=\"هاتف\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "<span style=\"font-size:40px;\"/>Student Membership Card"
+msgstr "<span style=\"font-size:40px;\"/>بطاقة عضوية الطالب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "<span>Issue Book Details</span>"
+msgstr "<span>تفاصيل كتاب الإصدار</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "<span>Membership Details</span>"
+msgstr "<span>تفاصيل العضوية</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">Books "
+"Detail</strong>"
+msgstr ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">كتب "
+"التفاصيل</strong>"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__active
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Active"
+msgstr "نشيط"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Add Books"
+msgstr "أضف كتبًا"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Address"
+msgstr "عنوان"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__art
+msgid "Art"
+msgstr "فن"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__author
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__author
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Author"
+msgstr "مؤلف"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__authors_code
+msgid "Author ID"
+msgstr "معرف المؤلف"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__partner_id
+msgid "Author Name"
+msgstr "اسم المؤلف"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_authors
+#: model:ir.ui.menu,name:jt_education_library.author_submenu
+msgid "Authors"
+msgstr "المؤلفون"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_authors_authors
+msgid "Authors Details"
+msgstr "تفاصيل المؤلفين"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Availability"
+msgstr "التوفر"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_kanban_view
+msgid "Avatar"
+msgstr "الصورة الرمزية"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+msgid "AvatarDefault"
+msgstr "الصورة الرمزية"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__biography
+msgid "Biography"
+msgstr "سيرة شخصية"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issuebookslines_image
+msgid "Book Cover Picture"
+msgstr "صورة غلاف الكتاب"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.books_report
+msgid "Book Detail"
+msgstr "تفاصيل الكتاب"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.book_xls_report_submenu
+msgid "Book Details Report"
+msgstr "تقرير تفاصيل الكتاب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book ID"
+msgstr "معرف الكتاب"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__book_ids
+msgid "Book Ids"
+msgstr "معرفات الكتاب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Book Information"
+msgstr "معلومات الكتاب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Book Issue Limit :"
+msgstr "حد اصدار الكتاب:"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__state__issued
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_form_view
+msgid "Book Issued"
+msgstr "صدر الكتاب"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.language_menu
+msgid "Book Language"
+msgstr "لغة الكتاب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Book Limit"
+msgstr "حد الكتاب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__book_ids
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Name"
+msgstr "اسم الكتاب"
+
+#. module: jt_education_library
+#: model:ir.model.constraint,message:jt_education_library.constraint_books_books_name_uniq
+msgid "Book Name Must Be Unique !"
+msgstr "يجب أن يكون اسم الكتاب فريدًا!"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__state__notissued
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_form_view
+msgid "Book Not Issued"
+msgstr "لم يصدر الكتاب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__state
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Status"
+msgstr "حالة الكتاب"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_xls_report
+msgid "Book Xls Report"
+msgstr "تقرير Xls الكتاب"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_books
+#: model:ir.ui.menu,name:jt_education_library.books_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Books"
+msgstr "كتب"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_books_books
+msgid "Books Details"
+msgstr "تفاصيل الكتب"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issue_books
+#: model:ir.model,name:jt_education_library.model_issue_books_lines
+msgid "Books Issued details."
+msgstr "تفاصيل الكتب الصادرة."
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__child
+msgid "Child"
+msgstr "طفل"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__city
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "City"
+msgstr "مدينة"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__comic
+msgid "Comic"
+msgstr "رسوم متحركة"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.configurations_menu
+msgid "Configurations"
+msgstr "التكوينات"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Contact Details"
+msgstr "بيانات المتصل"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__cooking
+msgid "Cooking"
+msgstr "طبخ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__country_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Country"
+msgstr "دولة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__datetime_issue
+msgid "Date & Time Of Issue"
+msgstr "تاريخ ووقت الإصدار"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__date_return
+msgid "Date Of Return"
+msgstr "تاريخ العودة"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date and Time Of Issue"
+msgstr "تاريخ ووقت الإصدار"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date of Return"
+msgstr "تاريخ العودة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__user
+msgid "Default user"
+msgstr "المستخدم الافتراضي"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__division
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__division
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Division"
+msgstr "قسم"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Download"
+msgstr "تحميل"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__excel_file
+msgid "Download Report"
+msgstr "تنزيل التقرير"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__late
+msgid "Due to Late Return"
+msgstr "بسبب العودة المتأخرة"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__lost
+msgid "Due to Lost"
+msgstr "بسبب الضياع"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__edition
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Edition"
+msgstr "الإصدار"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__email
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__emailid
+msgid "Email"
+msgstr "بريد الالكتروني"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__end_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Excel Report file"
+msgstr "ملف تقرير Excel"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__expire
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Expire"
+msgstr "تنقضي"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.membership_expiry_remainder_cron_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.membership_expiry_remainder_cron
+#: model:ir.cron,name:jt_education_library.membership_expiry_remainder_cron
+msgid "Expire Membership"
+msgstr "انتهاء العضوية"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Expiry Date :"
+msgstr "تاريخ انتهاء الصلاحية :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__file_name
+msgid "File Name"
+msgstr "اسم الملف"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_amount
+msgid "Fine Amount"
+msgstr "مبلغ الغرامة"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Amount Detail"
+msgstr "تفاصيل مبلغ الغرامة"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Description"
+msgstr "وصف دقيق"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Details"
+msgstr "التفاصيل الدقيقة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_detail
+msgid "Fine Reason"
+msgstr "سبب جيد"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Generes"
+msgstr "أجيال"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__genres
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__genres
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Genres"
+msgstr "الأنواع"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__historic
+msgid "Historic"
+msgstr "تاريخي"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__horror
+msgid "Horror"
+msgstr "رعب"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__id
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_image
+msgid "Image"
+msgstr "صورة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__is_author
+msgid "Is a Author"
+msgstr "مؤلف"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebook_xls_report_view
+msgid "Issue Book Details Report"
+msgstr "تقرير تفاصيل دفتر الاصدار"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__book_limit
+msgid "Issue Book Limit"
+msgstr "حد دفتر الاصدار"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebookslines_ids
+msgid "Issue Book Lines"
+msgstr "إصدار سطور كتاب"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issuebook_xls_report
+msgid "Issue Book Xls Report"
+msgstr "تقرير كتاب الإصدار Xls"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebooks
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issue_books
+#: model:ir.ui.menu,name:jt_education_library.issuebooks_menu
+msgid "Issue Books"
+msgstr "إصدار كتب"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.issuebooks_report
+msgid "Issue Books Detail"
+msgstr "تفاصيل إصدار الكتب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Books Details"
+msgstr "تفاصيل إصدار الكتب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Date :"
+msgstr "تاريخ الإصدار :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_code
+msgid "Issue ID"
+msgstr "معرف الإصدار"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Issued"
+msgstr "صادر"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_language
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__lang_id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__lang_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Language"
+msgstr "لغة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.root_menu
+msgid "Library"
+msgstr "مكتبة"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_library_memberships
+msgid "Library Membership details."
+msgstr "تفاصيل عضوية المكتبة."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Logo"
+msgstr "شعار"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__state__lost
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Lost"
+msgstr "ضائع"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.report_membership_card
+msgid "Membership Card"
+msgstr "بطاقة عضوية"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Membership Details"
+msgstr "تفاصيل العضوية"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_membership_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.membership_xls_report_submenu
+msgid "Membership Details Report"
+msgstr "تقرير تفاصيل العضوية"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "Membership ID"
+msgstr "معرف العضوية"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Membership ID :"
+msgstr "معرف العضوية :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__state
+msgid "Membership Status"
+msgstr "حالة العضوية"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_membership_xls_report
+msgid "Membership Xls Report"
+msgstr "تقرير Xls العضوية"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.actions.act_window,name:jt_education_library.action_memberships
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__membership_ids
+#: model:ir.ui.menu,name:jt_education_library.memberships_menu
+#, python-format
+msgid "Memberships"
+msgstr "العضويات"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.memberships_report
+msgid "Memberships Detail"
+msgstr "تفاصيل العضويات"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__mobile
+msgid "Mobile"
+msgstr "متحرك"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__motivational
+msgid "Motivational"
+msgstr "تحفيزية"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__mystery
+msgid "Mystery"
+msgstr "أحجية"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Name"
+msgstr "اسم"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Name :"
+msgstr "اسم :"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__new
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "New"
+msgstr "جديد"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books
+msgid "No Of Books"
+msgstr "عدد الكتب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "No. Of Books"
+msgstr "عدد الكتب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Not Issued"
+msgstr "لم يصدر"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Or"
+msgstr "أو"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"Page:\n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  of\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+msgstr ""
+"صفحة:\n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  من\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__phone
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Print Issue Details XLS Report"
+msgstr "طباعة تفاصيل المشكلة تقرير XLS"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__publisher
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Publisher"
+msgstr "الناشر"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Reason"
+msgstr "سبب"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.reports_menu
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Return Date :"
+msgstr "تاريخ العودة :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__roll_no
+msgid "Roll No"
+msgstr "رقم اللفة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__roll_no
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Roll No."
+msgstr "رقم اللفة"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Roll No. :"
+msgstr "رقم اللفة :"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__romance
+msgid "Romance"
+msgstr "رومانسي"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__science
+msgid "Science"
+msgstr "علم"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Search Books"
+msgstr "البحث في الكتب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Search Issue Books"
+msgstr "بحث في كتب القضايا"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Search Memberships"
+msgstr "البحث عن العضويات"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__select_all_books
+msgid "Select All Books"
+msgstr "حدد كل الكتب"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__select_all_membership
+msgid "Select All Memberships"
+msgstr "حدد كافة العضويات"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Sr"
+msgstr "رقم سري"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__standard
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Standard"
+msgstr "اساسي"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Standard :"
+msgstr "اساسي :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__start_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Start Date :"
+msgstr "تاريخ البدء :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__state_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+#, python-format
+msgid "State"
+msgstr "ولاية"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Status"
+msgstr "حالة"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street
+msgid "Street"
+msgstr "شارع"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street 2..."
+msgstr "شارع 2..."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street..."
+msgstr "شارع..."
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street2
+msgid "Street2"
+msgstr "شارع2"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__student_id
+msgid "Student"
+msgstr "طالب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Student :"
+msgstr "طالب :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student ID"
+msgstr "هوية الطالب"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Student Information"
+msgstr "معلومات الطالب"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student Name"
+msgstr "أسم الطالب"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__student_id
+msgid "Students"
+msgstr "تلاميذ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__website
+msgid "Website Link"
+msgstr "رابط الموقع"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_language
+msgid "book.language"
+msgstr "كتاب اللغة"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "e.g. https://www.odoo.com"
+msgstr "على سبيل المثال https://www.odoo.com"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_description
+msgid "fine description"
+msgstr "وصف جيد"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.books_report
+msgid "object.name"
+msgstr "object.name"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.report_membership_card
+msgid "object.student_id.name"
+msgstr "object.student_id.name"

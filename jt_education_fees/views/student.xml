@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_fees" model="ir.ui.view">
+            <field name="name">student information form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_education_base.student_profile"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='image_1920']" position="before">
+                
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" 
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active"
+                                options='{"terminology": "archive"}'/> 
+                        </button>
+                        <!-- Smart Button For Paid Fees -->
+                        <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_fees">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="paid_fees" widget='monetary'/>
+                                </span>
+                                <span class="o_stat_text">Paid Fees</span>
+                            </div>
+                        </button>
+                        <!-- Smart Button For Total Invoices -->
+                        <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_invoice">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="total_invoice_count" widget='monetary'/>
+                                </span>
+                                <span class="o_stat_text">Invoices</span>
+                            </div>
+                        </button>
+                        <!-- Smart Button For Total Sale Orders -->
+                        <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_sale_order">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="total_sale_order_count" widget='monetary'/>
+                                </span>
+                                <span class="o_stat_text">Sale Orders</span>
+                            </div>
+                        </button>
+                        <!-- Smart Button For Due Fees -->
+                        <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_due_fees">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="due_fees" widget='monetary'/>
+                                </span>
+                                <span class="o_stat_text">Due Fees</span>
+                            </div>
+                        </button>
+                        <!-- Smart Button For Current Year Due Fees -->
+                       <!--  <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_yearly_due_fees"
+                         style="width: 195px !important;">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="yearly_due_fees" widget='monetary'/>
+                                </span>
+                                <span class="o_stat_text">Current Year Due Fees</span>
+                            </div>
+                        </button> -->
+                        <!-- Smart Button For Current Year Paid Fees -->
+                        <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_yearly_paid_fees" style="width: 200px !important;">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="yearly_paid_fees" widget='monetary'/>
+                                </span>
+                                <span class="o_stat_text">Current Year Paid Fees</span>
+                            </div>
+                        </button>
+                        <button type="object" class="oe_stat_button" icon="fa-money" name="action_count_student_certi">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                </span>
+                                <span class="o_stat_text">Rewards</span>
+                            </div>
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//page[@name='student_info']" position="after">
+                    <!-- Page for Student Fees Detail -->
+                    <page name="fees_detail" string="Fees History">
+                        <field name="fees_detail" nolabel="1" readonly='1'> 
+                            <list editable="bottom">
+                                <field name="standard"/>
+                                <field name="division"/>
+                                <field name="year"/>
+                                <field name="month"/>
+                                <field name="fee_type"/>
+                                <field name="amount" sum="Total Fees"/>
+                                <field name="state" string="Status"/>
+                            </list>
+                        </field>
+                    </page>
+                    <page name="fee_structure" string="Fee Structure">
+                        <field name="fee_structure" string="Fees Structure" nolabel="1">
+                            <list editable="bottom">
+                                <field name="product_id" domain="[('type','=','service')]"/>
+                                <field name="description"/>
+                                <field name="fee_type"/>
+                                <field name="year" string="Year"/>
+                                <field name="standard" string="Standard"/>
+                                <field name="division" string="Division"/>
+                                <field name="amount" string="Fees"/>
+                            </list>
+                        </field>
+                    </page>
+                 </xpath>
+            </field>
+        </record>
+
+
+
+      <!--   <record id="res_partner_view_tree_inherited" model="ir.ui.view">
+            <field name="name">res partner tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_education_base.res_partner_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='curr_year']" position="after">
+                    <list>
+                        <field name="total_fees" string="Current Year Fees"/>
+                        <field name="yearly_paid_fees" string="Current Year Paid Fees"/>
+                        <field name="yearly_due_fees" string="Current Year Due Fees"/>
+                        <field name="paid_fees" string="Total Paid Fees"/>
+                        <field name="due_fees" string="Total Due Fees"/>
+                    </list>
+                </xpath>
+            </field>
+        </record>
+ -->
+
+    </data>
+</odoo>

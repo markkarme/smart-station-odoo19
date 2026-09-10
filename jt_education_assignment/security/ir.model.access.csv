@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_assingment,Access student assingment,model_student_assignment,base.group_user,1,1,1,1
+access_student_assingment_submission,Access student assingment submission,model_student_assignment_submission,base.group_user,1,1,1,1
+access_assignment_type,Access assingment type,model_assignment_type,base.group_user,1,1,1,1
+access_student_submission_line,Access student submission line,model_student_submission_line,base.group_user,1,1,1,1

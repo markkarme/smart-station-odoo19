@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="student_exam_result_form_view" model="ir.ui.view">
+            <field name="name">Student Exam Result Form View</field>
+            <field name="model">student.result</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_send_result_mail"
+                                string="Send Result Email"
+                                type="object"
+                                class="btn-primary"
+                                icon="fa-envelope"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="student_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="exam_id" domain="[('standard','=',standard),('division','=',division),('curr_year','=',academic_year)]" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}" />
+                            </group>
+                            <group>
+                                <field name="standard"/>
+                                <field name="division"/>
+                                <field name="academic_year"/>
+                                <field name="is_result_annual"/>
+                            </group>
+                        </group>
+                       
+                        <notebook>
+                            <page string="Mark Sheet">
+                                <field name="subject_line">
+                                    <list create="0" delete="0" editable="bottom">
+                                        <field name="subject_id"/>
+                                        <field name="date" required='1' readonly='1'/>
+                                        <field name="mark" sum="Total" readonly='1'/>
+                                        <field name="pass_mark" sum="Total" readonly='1'/>
+                                        <field name="is_present"/>
+                                        <field name="mark_scored" sum="Total" readonly='not is_present'/>
+                                        <field name="grade_id"/>
+                                        <!-- <field name="exam_id" invisible='1'/> -->
+                                        <!-- <field name="student_id" invisible='1'/> -->
+                                        <field name="pass_or_fail" widget="boolean_toggle" readonly="1"/>
+                                        <!-- <field name="result_id" invisible="1"/> -->
+                                    </list>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="total_mark_scored" sum="Scored Total"/>
+                                    <field name="percentage"/>
+                                    <field name="grade_id"/>
+                                    <field name="pass_fail_full" widget="boolean_toggle"/>
+                                </group>
+                                <div class="oe_clear"/>
+                                <group>
+                                     <field name="input_line"  placeholder="Terms &amp; Conditions...." style="width:80%%;"/>
+                                </group>
+                            </page>
+                            <page string="Teachers Comment">
+                               <group>
+                            <group>
+                                <field name="faculty_id" required="1" style="width:50%;"/>
+                                <field name="parent_id" style="width:50%;"/>
+                                <field name="leo_id" style="width:50%;"/>
+                                <field name="english_id" style="width:50%;"/>
+                                <field name="chineses_id" style="width:50%;"/>
+                            </group>
+                             <group>
+                                <field name="parent_description" style="width:50%;"/>
+                                <field name="leo_description" style="width:50%;"/>
+                                <field name="english_description" style="width:50%;"/>
+                                <field name="chineses_description" style="width:50%;"/>
+                            </group>
+                        </group> 
+
+                            </page>
+
+                        </notebook>
+                        
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_exam_result_tree_view" model="ir.ui.view">
+            <field name="name">Student Exam Result Tree View</field>
+            <field name="model">student.result</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="student_id"/>
+                    <field name="standard"/>
+                    <field name="division"/>
+                    <field name="academic_year"/>
+                    <field name="exam_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="student_exam_result_search_view" model="ir.ui.view">
+            <field name="name">Student Exam Result Search View</field>
+            <field name="model">student.result</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="student_id"/>
+                    <field name ='academic_year'/>
+                    <field name="standard"/>
+                    <field name="division"/>
+                    <field name="exam_id"/>
+                    <group>
+                        <filter string="Student" name="student_id" context="{'group_by':'student_id'}"/>
+                        <filter string="Exam" name="exam_id" context="{'group_by':'exam_id'}"/>
+                        <filter string="Academic Year" name="academic_year" context="{'group_by':'academic_year'}"/>
+
+                        <filter string="Standard" name="standard" context="{'group_by':'standard'}"/>
+                        
+                        <filter string="Division" name="division" context="{'group_by':'division'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="result_pivot_view" model="ir.ui.view">
+            <field name="name">Result Pivot view</field>
+            <field name="model">result.subject.line</field>
+            <field name="arch" type="xml">
+            <pivot string="Result" sample="1">
+                <field name="student_id" type="row"/>
+                <field name="subject_id" type="col"/>
+                <field name="mark_scored" type="measure"/>
+
+            </pivot>
+            </field>
+        </record>
+
+        <record id="view_student_yearly_result_tree" model="ir.ui.view">
+            <field name="name">student.yearly.result.tree</field>
+            <field name="model">student.yearly.result</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="student_id"/>
+                    <field name="year"/>
+                    <field name="standard"/>
+                    <field name="average_rank"/>
+                    <field name="stu_percentage"/>
+                    <button name="print_certificate" string="Print Certificate" type="object" class="btn-primary"/>
+                </list>
+            </field>
+        </record>
+        
+        <record id="view_student_yearly_result_form" model="ir.ui.view">
+            <field name="name">student.yearly.result.form</field>
+            <field name="model">student.yearly.result</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="year"/>
+                            <field name="standard"/>
+                            <field name="average_rank"/>
+                            <field name="stu_percentage"/>
+                        </group>
+                        <footer>
+                            <button name="print_certificate" string="Print Certificate" type="object" class="btn-primary"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+
+    </data>
+</odoo>

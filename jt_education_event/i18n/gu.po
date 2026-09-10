@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_event
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-27 19:53+0000\n"
+"PO-Revision-Date: 2021-09-27 19:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_kanban_view
+msgid "<i class=\"fa fa-level-up fa-rotate-90\" title=\"Confirmed\"/>"
+msgstr "<i class=\"fa fa-level-up fa-rotate-90\" title=\"પુષ્ટિ કરી\"/>"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_kanban_view
+msgid "Confirmed"
+msgstr "પુષ્ટિ કરી"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__partner_id
+msgid "Contact"
+msgstr "સંપર્ક"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__display_name
+msgid "Display Name"
+msgstr "પ્રદર્શન નામ"
+
+#. module: jt_education_event
+#: model:ir.model,name:jt_education_event.model_event_registration
+msgid "Event Registration"
+msgstr "ઘટના નોંધણી"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_kanban_view
+msgid "Expected Students"
+msgstr "અપેક્ષિત વિદ્યાર્થીઓ"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__id
+msgid "ID"
+msgstr "ઓળખ"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration____last_update
+msgid "Last Modified on"
+msgstr "છેલ્લે સુધારેલ"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_form_view
+msgid "Maximum Students"
+msgstr "મહત્તમ વિદ્યાર્થીઓ"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_tree_view
+msgid "Student Name"
+msgstr "વિદ્યાર્થીનું નામ"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_form_view
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"

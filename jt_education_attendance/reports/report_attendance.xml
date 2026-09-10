@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+        <template id="attendance_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="result">
+                    <div class="page">
+                        <t t-set="report_data" t-value="result.get_report_data()"/>
+                        <div style="padding-top:10px;">
+                            <div>
+                                <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-field="res_company.name"/></p>
+                            </div>
+                            <div style="align:center;text-align:center;">
+                                <p style="align:center;text-align:color:black;font-size:25px;margin-top:30px;">Attendance Report</p>
+                                <p  style="align:center;text-align:center;black;font-size:20px;">
+                                    For Class
+                                    <span t-esc="result.standard_id.name"/> - 
+                                    <span t-esc="result.division_id.name"/>
+                                </p>
+                                 <p  style="align:center;text-align:center;color:black;font-size:20px;margin-top:30px;"><strong>From:</strong>
+                                 <span t-esc="result.start_date"/>
+                                <strong>To:</strong>
+                                 <span t-esc="result.end_date"/>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>Responsible Teacher:</strong>
+                            <span t-esc="result.faculty_id.name"/>
+                        </div><br/>
+                        <div class="container-justify-content-center text-center">                    
+                            <t t-set="is_present" t-value="0"/>
+                            <t t-set="is_late" t-value="0"/>
+                            <t t-set="is_absence_reason" t-value="0"/>
+                            <t t-set="is_absence_noreason" t-value="0"/>
+                            <t t-set="is_withdraw" t-value="0"/>
+                            <table class="table table-bordered mb32" style="table-layout:auto">
+                                <thead>
+                                    <t t-set="unavailable_dates" t-value="result._get_unavailable_dates()"/>
+                                    <t t-set="all_dates" t-value="result.get_all_date(result.start_date,result.end_date)"/>
+                                    <tr>
+                                        <th>Month</th>
+                                        <t t-foreach="report_data.get('month_name')" t-as="month_name">
+                                            &lt;th class="text-center" colspan=<t t-esc="31"/>&gt;<t t-esc="month_name"/>&lt;/th&gt;
+                                        </t>
+                                        <th/>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <strong>Dep/Emp</strong>
+                                        </td>
+                                        <t t-foreach="all_dates" t-as="all_date">
+                                            <t t-set="all_day" t-value="all_date.strftime('%a')"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
+                                                &lt;td style="background-color:gray;" class="text-center oe_leftfit oe_rightfit"&gt; <t t-esc="all_day"/>&lt;/td&gt;
+                                            </t>
+                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                 &lt;td class="text-center oe_leftfit oe_rightfit"&gt; <t t-esc="all_day"/>&lt;/td&gt;
+                                             </t>
+                                        </t>
+                                        <td class="text-center" rowspan='2'>Sum</td>
+                                    </tr>
+                                    <tr>
+                                        <t t-foreach="all_dates" t-as="all_date">
+                                            <t t-set="all_day" t-value="all_date.strftime('%a')"/>
+                                            <t t-set="date" t-value="all_date.strftime('%d')"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
+                                                &lt;td style="background-color:gray;" class="text-center oe_leftfit oe_rightfit"&gt; <t t-esc="date"/>&lt;/td&gt;
+                                            </t>
+                                       
+                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                             &lt;td  class="text-center oe_leftfit oe_rightfit"&gt; <t t-esc="date"/>&lt;/td&gt;
+                                            </t>
+                                        </t>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="clmn_present" t-value="0"/>
+                                    <t t-foreach="report_data.get('students')" t-as="student">
+                                        <tr>
+                                            <td style="padding-left:2%;text-align:left;"><strong><t t-esc="student.name"/></strong></td>
+                                            <t t-set="count_present_new" t-value="0"/>
+                                            <t t-set="count_absent_new" t-value="0"/>
+                                            <t t-set="subtotal_new" t-value="0"/>
+                                            <t t-foreach="all_dates" t-as="all_date">
+                                                <t t-set="all_day" t-value="all_date.strftime('%a')"/>
+                                                <t t-set="students_present" t-value="report_data.get('attendance_lines').filtered(lambda x:x.student_id.id == student.id and x.date == all_date)"/>
+                                                <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
+                                                    <td style="background-color:gray;">
+                                                        <t if="students_present">
+                                                        <t t-foreach="students_present" t-as="student_present">
+                                                        <t t-if="student_present and student_present.present or student_present.late">
+                                                            <t t-if="student_present.present">
+                                                                <t t-set="is_present" t-value="is_present+1"/>
+                                                            </t>
+                                                            <t t-if="student_present.late">
+                                                                <t t-set="is_late" t-value="is_late+1"/>
+                                                            </t>
+                                                            <span class="fa fa-check"/>
+                                                            <t t-set="count_present_new" t-value="count_present_new+1"/>
+                                                            <t t-set="clmn_present" t-value="clmn_present+1"/>
+                                                            <t t-set="subtotal_new" t-value="subtotal_new+1"/>
+
+
+                                                        </t>
+                                                        <t t-if="student_present and student_present.absence_reason or student_present.absence_noreason or student_present.withdraw">
+                                                             <t t-if="student_present.absence_reason">
+                                                                <t t-set="is_absence_reason" t-value="is_absence_reason+1"/>
+                                                            </t>
+                                                            <t t-if="student_present.absence_noreason">
+                                                                <t t-set="is_absence_noreason" t-value="is_absence_noreason+1"/>
+                                                            </t>
+                                                            <t t-if="student_present.withdraw">
+                                                                <t t-set="is_withdraw" t-value="is_withdraw+1"/>
+                                                            </t>
+                                                            <i class="fa fa-times"></i> 
+
+                                                            <t t-set="count_absent_new" t-value="count_absent_new+1"/>
+                                                            
+                                                        </t>
+                                                    </t>
+                                                 
+                                                    </t></td>
+                                                </t>
+                                                <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                    <td><t if="students_present">
+                                                        <t t-foreach="students_present" t-as="student_present">
+                                                        <t t-if="student_present and student_present.present or student_present.late">
+                                                            <t t-if="student_present.present">
+                                                                <t t-set="is_present" t-value="is_present+1"/>
+                                                            </t>
+                                                            <t t-if="student_present.late">
+                                                                <t t-set="is_late" t-value="is_late+1"/>
+                                                            </t>
+                                                            <span class="fa fa-check"/>
+                                                            <t t-set="count_present_new" t-value="count_present_new+1"/>
+                                                            <t t-set="clmn_present" t-value="clmn_present+1"/>
+                                                            <t t-set="subtotal_new" t-value="subtotal_new+1"/>
+
+
+                                                        </t>
+                                                        <t t-if="student_present and student_present.absence_reason or student_present.absence_noreason or student_present.withdraw">
+                                                             <t t-if="student_present.absence_reason">
+                                                                <t t-set="is_absence_reason" t-value="is_absence_reason+1"/>
+                                                            </t>
+                                                            <t t-if="student_present.absence_noreason">
+                                                                <t t-set="is_absence_noreason" t-value="is_absence_noreason+1"/>
+                                                            </t>
+                                                            <t t-if="student_present.withdraw">
+                                                                <t t-set="is_withdraw" t-value="is_withdraw+1"/>
+                                                            </t>
+                                                            <i class="fa fa-times"></i> 
+
+                                                            <t t-set="count_absent_new" t-value="count_absent_new+1"/>
+                                                            
+                                                        </t>
+                                                    </t>
+                                                 
+                                                    </t></td>
+                                                </t>
+                                            </t>
+                                            <td>
+                                                <strong><t t-esc="subtotal_new"/></strong>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td><strong>Sum</strong></td>
+                                        <t t-set="present_count_sum" t-value="0"/>
+                                        <t t-foreach="all_dates" t-as="all_date">
+                                            <t t-set="all_day" t-value="all_date.strftime('%a')"/>
+                                            <t t-set="students_present" t-value="report_data.get('attendance_lines').filtered(lambda x:x.date == all_date)"/>        
+                                            <t t-set="present_count" t-value="0"/>
+                                            <t t-foreach="students_present" t-as="student_present">
+                                                <t t-if="student_present and student_present.present or student_present.late">
+                                                    <t t-set="present_count" t-value="present_count+1"/>
+                                                    <t t-set="present_count_sum" t-value="present_count_sum+1"/>
+                                                </t>
+                                            </t>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
+                                                <td style="background-color:gray;">
+                                                    <strong><t t-esc="present_count"/></strong>
+                                                </td>
+                                            </t>
+                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                <td>
+                                                    <strong><t t-esc="present_count"/></strong>
+                                                </td>
+                                            </t>
+                                        </t>
+                                        <td>
+                                            <strong><t t-esc="present_count_sum"/></strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-bordered" style="width:35%;">
+                                <tr>
+                                    <td style="padding-left:10%;text-align:left;"><b>Present:</b></td>
+                                    <td><t t-esc="is_present"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:10%;text-align:left;"><b>Absent With Reason:</b></td>
+                                    <td><t t-esc="is_absence_reason"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:10%;text-align:left;"><b>Absent With Noreason:</b></td>
+                                    <td><t t-esc="is_absence_noreason"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:10%;text-align:left;"><b>Late:</b></td>
+                                    <td><t t-esc="is_late"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:10%;text-align:left;"><b>Withdraw:</b></td>
+                                    <td><t t-esc="is_withdraw"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <record id="attendance_report_template_paperformate" model="report.paperformat">
+            <field name="name">student.attendance.report.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_attendance_report" model="ir.actions.report">
+            <field name="name">Attendance</field>
+            <field name="model">print.attendance</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">jt_education_attendance.attendance_report_template</field>
+            <field name="report_file">jt_education_attendance.attendance_report_template</field>
+            <field name="paperformat_id" ref="jt_education_attendance.attendance_report_template_paperformate"/>
+            <field name="print_report_name">"Attendance Report"</field>
+            <field name="binding_model_id" ref="jt_education_attendance.model_print_attendance"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

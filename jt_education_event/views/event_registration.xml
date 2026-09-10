@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="student_event_registration_form_view" model="ir.ui.view">
+            <field name="name">Student Event Registration Form View</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='attendee']" position="attributes">
+                    <attribute name="string">Students</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Student Name</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="student_event_registration_tree_view" model="ir.ui.view">
+            <field name="name">Student Event Registration tree View</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Student Name</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

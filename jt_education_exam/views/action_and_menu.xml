@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- StudentExam Action View -->
+        <record id="action_studentexam" model="ir.actions.act_window">
+            <field name="name">Exam</field>
+            <field name="res_model">student.exam</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+        <!-- StudentSubject Action View -->
+        <record id="action_studentsubject" model="ir.actions.act_window">
+            <field name="name">Subjects</field>
+            <field name="res_model">student.subject</field>
+            <field name="view_mode">list,form,pivot</field>
+        </record>
+
+        <!-- StudentResult Action View -->
+        <record id="action_studentresult" model="ir.actions.act_window">
+            <field name="name">Result</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.result</field>
+            <field name="view_mode">list,form,pivot</field>
+        </record>
+
+        <!-- Resultgrade Action View -->
+        <record id="action_resultgrade" model="ir.actions.act_window">
+            <field name="name">Grade</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">result.grade</field>
+            <field name="view_mode">list,form,pivot</field>
+        </record>
+            <record id="action_resultreport" model="ir.actions.act_window">
+            <field name="name">Result Reports</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">result.subject.line</field>
+            <field name="view_mode">pivot</field>
+        </record>
+
+        <record id="action_subjectcategory" model="ir.actions.act_window">
+            <field name="name">Subject Category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">subject.category</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        
+        <menuitem name="Exam" id="root_exam" parent="jt_education_base.root_menu" sequence="6" groups="jt_education_base.group_principle,jt_education_base.group_faculty"/>
+
+        <menuitem name="Exam" id="studentexam_menu" action="action_studentexam" parent="root_exam" sequence="1"/>
+        
+        <menuitem name="Result" id="studentresult_menu" action="action_studentresult" parent="root_exam" sequence="2"/>
+
+        <menuitem name="Exam" id="configurations_exam" parent="jt_education_base.configurations_menu" sequence="3"/>
+
+        <menuitem name="Subjects" id="studentsubject_submenu" action="action_studentsubject" parent="configurations_exam"/>
+
+        <menuitem name="Subject Category" id="subjectcategory_submenu" action="action_subjectcategory" parent="configurations_exam"/>
+
+        <menuitem name="Grades" id="resultgrade_submenu" action="action_resultgrade" parent="configurations_exam"/>
+
+        <menuitem name="Result Report" id="result_report_pivot" action="action_resultreport" parent="jt_education_base.menu_education_reports" sequence="100"/>
+
+    </data>
+</odoo>

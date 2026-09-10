@@ -1,0 +1,534 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_exam
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:08+0000\n"
+"PO-Revision-Date: 2021-10-04 11:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid ",<strong>Phone: </strong>"
+msgstr "<strong>Telefoon: </strong>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid ",<strong>Website: </strong>"
+msgstr "<strong>Website: </strong>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<b>Division:</b>"
+msgstr "<b>Divisie:</b>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<b>Name:</b>"
+msgstr "<b>Naam:</b>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<b>Standard:</b>"
+msgstr "<b>Standaard:</b>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<b>Year:</b>"
+msgstr "<b>Jaar:</b>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<strong>Email: </strong>"
+msgstr "<strong>E-mail: </strong>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<strong>Fail</strong>"
+msgstr "<strong>Mislukt</strong>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "<strong>Pass</strong>"
+msgstr "<strong>Geslaagd</strong>"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_search_view
+msgid "Academic Year"
+msgstr "Academiejaar"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid ""
+"After closing the exam, you can't do valuation. You can close the exam only "
+"after the completion of valuation process. Do you want to proceed?"
+msgstr "Na het afsluiten van het examen kun je geen taxatie meer doen. U kunt het examen alleen afsluiten "
+"na afronding van het taxatieproces. Wilt u doorgaan?"
+
+#. module: jt_education_exam
+#: model:ir.model.constraint,message:jt_education_exam.constraint_student_subject_code
+msgid "Another Subject already exists with this code!"
+msgstr "Er bestaat al een ander onderwerp met deze code!"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__student_exam__state__cancel
+msgid "Canceled"
+msgstr "Geannuleerd"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__student_exam__state__close
+msgid "Closed"
+msgstr "Gesloten"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__code
+msgid "Code"
+msgstr "Code"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "Completed"
+msgstr "Voltooid"
+
+#. module: jt_education_exam
+#: model:ir.ui.menu,name:jt_education_exam.configurations_menu
+msgid "Configurations"
+msgstr "Configuraties"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__create_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__create_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__create_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__create_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__create_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__create_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__create_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__create_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__create_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__academic_year
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__curr_year
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__academic_year
+msgid "Current Year"
+msgstr "Huidige jaar"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__date
+msgid "Date"
+msgstr "Datum"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__day
+msgid "Day"
+msgstr "Dag"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__display_name
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__display_name
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__display_name
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__display_name
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__display_name
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__division
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__division
+msgid "Div"
+msgstr "div"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__division
+msgid "Division"
+msgstr "Afdeling"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__student_exam__state__draft
+msgid "Draft"
+msgstr "Droogte"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__end_date
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "End Date"
+msgstr "Einddatum"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,help:jt_education_exam.field_student_subject__code
+msgid "Enter the Subject Code"
+msgstr "Voer de onderwerpcode in"
+
+#. module: jt_education_exam
+#: model:ir.actions.act_window,name:jt_education_exam.action_studentexam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__exam_id
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__exam_id
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__exam_id
+#: model:ir.ui.menu,name:jt_education_exam.root_exam
+#: model:ir.ui.menu,name:jt_education_exam.studentexam_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "Exam"
+msgstr "examen"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "Exam Details"
+msgstr "Examendetails"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "Exam Type"
+msgstr "Examentype"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__friday
+msgid "Friday"
+msgstr "vrijdag"
+
+#. module: jt_education_exam
+#: model:ir.model,name:jt_education_exam.model_student_exam
+msgid "Generate Student Exams"
+msgstr "Studentenexamens genereren"
+
+#. module: jt_education_exam
+#: model:ir.model,name:jt_education_exam.model_student_result
+msgid "Generate Student Result"
+msgstr "Studentresultaat genereren"
+
+#. module: jt_education_exam
+#: model:ir.actions.act_window,name:jt_education_exam.action_resultgrade
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__name
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__grade_id
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Grade"
+msgstr "Cijfer"
+
+#. module: jt_education_exam
+#: model:ir.ui.menu,name:jt_education_exam.resultgrade_submenu
+msgid "Grades"
+msgstr "Cijfers"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "Group By"
+msgstr "Groeperen op"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__id
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__id
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__id
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__id
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__id
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__id
+msgid "ID"
+msgstr "ID kaart"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade____last_update
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line____last_update
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam____last_update
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result____last_update
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject____last_update
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line____last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__write_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__write_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__write_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__write_uid
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_grade__write_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__write_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__write_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__write_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__write_date
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__write_date
+msgid "Last Updated on"
+msgstr "Laatst geupdate op"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__mark
+msgid "Mark"
+msgstr "markering"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_form_view
+msgid "Mark Sheet"
+msgstr "Markeer blad"
+
+#. module: jt_education_exam
+#: model:ir.model.fieldsßfield_description:jt_education_exam.field_result_subject_line__mark
+msgid "Marks"
+msgstr "merken"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Marks Obtained"
+msgstr "Punten behaald"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__mark_scored
+msgid "Marks Scored"
+msgstr "Gescoorde punten"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Min Marks"
+msgstr "Min Marks"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__monday
+msgid "Monday"
+msgstr "maandag"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__name
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_subject__name
+msgid "Name"
+msgstr "Naam"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,help:jt_education_exam.field_student_subject__name
+msgid "Name of the Subject"
+msgstr "Naam van het onderwerp"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__student_exam__state__ongoing
+msgid "On Going"
+msgstr "Voortgaande"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "On-going"
+msgstr "Voortgaande"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__pass_or_fail
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__pass_fail_full
+msgid "Pass/Fail"
+msgstr "geslaagd/mislukt"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__pass_mark
+msgid "Passing Marks"
+msgstr "Markeringen halen"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__percentage
+msgid "Percentage"
+msgstr "Percentage"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Percentage:"
+msgstr "Percentage"
+
+#. module: jt_education_exam
+#: model:ir.actions.act_window,name:jt_education_exam.action_studentresult
+#: model:ir.actions.report,name:jt_education_exam.action_result_report
+#: model:ir.ui.menu,name:jt_education_exam.studentresult_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Result"
+msgstr "Resultaat"
+
+#. module: jt_education_exam
+#: model:ir.model,name:jt_education_exam.model_result_grade
+msgid "Result Grade"
+msgstr "Resultaatcijfer:"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__result_id
+msgid "Result Id"
+msgstr "Resultaat-ID"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Result:"
+msgstr "Resultaat:"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__saturday
+msgid "Saturday"
+msgstr "zaterdag"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_form_view
+msgid "Scored Total"
+msgstr "Totaal gescoord"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__standard
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__standard
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__standard
+msgid "Standard"
+msgstr "Standaard"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__start_date
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__state
+msgid "State"
+msgstr "Staat"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__student_id
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__student_ids
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__student_id
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_search_view
+msgid "Student"
+msgstr "Student"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_tree_view
+msgid "Student Exam"
+msgstr "Studenten examen"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "Student List"
+msgstr "Studentenlijst"
+
+#. module: jt_education_exam
+#: model:ir.model,name:jt_education_exam.model_student_subject
+msgid "Student Subject"
+msgstr "Student Onderwerp"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_result_subject_line__subject_id
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__subject_id
+msgid "Subject"
+msgstr "Onderwerp"
+
+#. module: jt_education_exam
+#: model:ir.model,name:jt_education_exam.model_subject_line
+msgid "Subject Line"
+msgstr "Onderwerpregel"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Subject Pass/Fail"
+msgstr "Onderwerp geslaagd/mislukt"
+
+#. module: jt_education_exam
+#: model:ir.actions.act_window,name:jt_education_exam.action_studentsubject
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__subject_line
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__subject_line
+#: model:ir.ui.menu,name:jt_education_exam.studentsubject_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "Subjects"
+msgstr "Onderwerpen"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__sunday
+msgid "Sunday"
+msgstr "zondag"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__thursday
+msgid "Thursday"
+msgstr "donderdag"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__time_from
+msgid "Time From"
+msgstr "Tijd vanaf"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__time_to
+msgid "Time To"
+msgstr "Tijd om"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_result_form_view
+msgid "Total"
+msgstr "Totaal"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__total_mark
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "Total Marks"
+msgstr "Totale cijfers"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__total_mark_scored
+msgid "Total Marks Scored"
+msgstr "Totaal aantal gescoorde punten"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_result__total_pass_mark
+msgid "Total Passing Marks"
+msgstr "Totaal aantal geslaagden"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__tuesday
+msgid "Tuesday"
+msgstr "Dinsdag"
+
+#. module: jt_education_exam
+#: model:ir.model.fields.selection,name:jt_education_exam.selection__subject_line__day__wednesday
+msgid "Wednesday"
+msgstr "woensdag"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.result_report_template
+msgid "__________________________"
+msgstr "__________________________"
+
+#. module: jt_education_exam
+#: model:ir.actions.report,print_report_name:jt_education_exam.action_result_report
+msgid "object.student_id.name"
+msgstr "object.student_id.naam"
+
+#. module: jt_education_exam
+#: model:ir.model,name:jt_education_exam.model_result_subject_line
+msgid "result.subject.line"
+msgstr "resultaat.onderwerp.regel"
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "start_date"
+msgstr "startdatum"

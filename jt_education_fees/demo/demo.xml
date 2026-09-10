@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Demo data for Fees Type -->
+        <record id="fee_type_0" model="fees.type">
+            <field name="name">Main Fee</field>
+        </record>
+
+        <record id="fee_type_1" model="fees.type">
+            <field name="name">Admission Fee</field>
+        </record>
+
+        <record id="fee_type_2" model="fees.type">
+            <field name="name">Monthly Fee</field>
+        </record>
+
+        <record id="fee_type_3" model="fees.type">
+            <field name="name">Term I Fee</field>
+        </record>
+
+        <record id="fee_type_4" model="fees.type">
+            <field name="name">Term II Fee</field>
+        </record>
+
+        <record id="fee_type_5" model="fees.type">
+            <field name="name">Exam Papers Fee (Term I)</field>
+        </record>
+
+        <record id="fee_type_6" model="fees.type">
+            <field name="name">Exam Papers Fee (Term II)</field>
+        </record>
+
+        <record id="fee_type_7" model="fees.type">
+            <field name="name">Activity Fee</field>
+        </record>
+
+        <record id="fee_type_8" model="fees.type">
+            <field name="name">Other Fees</field>
+        </record>
+
+        
+        
+    </data>
+    <data>      
+
+        <record id="be1" model="student.standard">
+            <field name="name">BE</field>
+            <field name="fee">10000000</field>
+        </record>
+        <record id="fee1" model="student.standard">
+            <field name="name">FY - BCA</field>
+            <!-- <field name="fee">11000</field> -->
+        </record>
+        <record id="fee2" model="student.standard">
+            <field name="name">SY - BCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee3" model="student.standard">
+            <field name="name">TY - BCA</field>
+            <field name="fee">11000</field>
+        </record>
+
+        <record id="fee4" model="student.standard">
+            <field name="name">FY - MCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee5" model="student.standard">
+            <field name="name">SY - MCA</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee6" model="student.standard">
+            <field name="name">TY - MCA</field>
+            <field name="fee">11000</field>
+        </record>
+
+        <record id="fee7" model="student.standard">
+            <field name="name">FY - BSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee8" model="student.standard">
+            <field name="name">SY - BSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee9" model="student.standard">
+            <field name="name">TY - BSc.</field>
+            <field name="fee">11000</field>
+        </record>
+
+        <record id="fee10" model="student.standard">
+            <field name="name">FY - MSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee11" model="student.standard">
+            <field name="name">SY - MSc.</field>
+            <field name="fee">11000</field>
+        </record>
+        <record id="fee12" model="student.standard">
+            <field name="name">TY - MSc.</field>
+            <field name="fee">11000</field>
+        </record>
+
+    </data>
+</odoo>

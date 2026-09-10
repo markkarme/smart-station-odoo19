@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>   
+        <template id="issuebooks_report_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <center>
+                                <div style="padding-top:80px;text-align:center;align:center;">
+                                    <h2 class="mt16">
+                                        <span>Issue Book Details</span>
+                                    </h2>
+                                    <div class="row mt32 mb32" id="informations">
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <th>Name</th>
+                                                <th>Standard</th>
+                                                <th>Division</th>
+                                                <th>Roll No.</th>
+                                                <th>Date and Time Of Issue</th>
+                                                <th>Date of Return</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><t t-if="doc.student_id"><span t-field="doc.student_id.name"/></t></td>
+                                                    <td><t t-if="doc.standard"><span t-field="doc.standard"/></t></td>
+                                                    <td><t t-if="doc.division"><span t-field="doc.division"/></t></td>
+                                                    <td><t t-if="doc.roll_no"><span t-field="doc.roll_no"/></t></td>
+                                                    <td><t t-if="doc.datetime_issue"><span t-field="doc.datetime_issue"/></t></td>
+                                                    <td><t t-if="doc.date_return"><span t-field="doc.date_return"/></t></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <table class="table table-striped table-bordered">
+                                        <thead>
+                                            <th id="name">Book ID</th>
+                                            <th id="book_name">Book Name</th>
+                                            <th id="author">Author</th>
+                                            <th id="genres">Generes</th>
+                                            <th id="book_status">Book Status</th>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="doc.issuebookslines_ids" t-as="line">
+                                                <tr>
+                                                    <td><t t-esc="line.name.books_code"/></td>
+                                                    <td><t t-esc="line.name.name"/></td>
+                                                    <td><t t-esc="line.author.name"/></td>
+                                                    <td><t t-esc="line.genres"/></td>
+                                                  <td><t t-esc="doc.state"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>   
+                                </div>
+                            </center>                    
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="issuebooks_report" model="ir.actions.report">
+            <field name="name">Issue Books Detail</field>
+            <field name="model">issue.books</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_library.issuebooks_report_template</field>
+            <field name="report_file">jt_education_library.report_template</field>
+            <field name="binding_model_id" ref="jt_education_library.model_issue_books"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <report 
+        id="issuebooks_report"
+        model="issue.books"
+        string="Issue Books Detail"
+        report_type="qweb-pdf"
+        name="jt_education_library.issuebooks_report_template"
+        file="jt_education_library.report_template"
+        /> -->
+    </data>
+</odoo>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="employee_front_icard">
+                <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <t t-if="o.company_type == 'parent'">
+                            <!-- Your custom div for parent company -->
+                            <div style="width:670px;height:998px;background-image:url('jt_education_reports/static/src/img/format.png')">
+                                <div style="height:10%;color:black;text-align:center;">
+                                    <div style="width:20%;margin_left:20px;">
+                                        <img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:120px;height:90px;margin-top:450px;"/>
+                                    </div>
+                                </div>
+                                
+                                <div style="clear:both;"/>
+                                <div>
+                                    <style type="text/css">
+                                        .wrap {
+                                          -webkit-transform: rotate(-45deg);
+                                          -moz-transform: rotate(-45deg);
+                                          transform: rotate(-45deg);
+                                          float: left;
+                                          border: 10px solid white;
+                                          margin: 150px 0 0 150px;
+                                          overflow: hidden;
+                                          transition: all 0.3s ease .3s;
+                                          border-radius: 0px;
+                                        }
+                                        .morph {
+                                          -webkit-transform: rotate(45deg) scale(1.5);
+                                          -moz-transform: rotate(45deg) scale(1.5);
+                                          transform: rotate(45deg) scale(1.5);
+                                          float: left;
+                                          -webkit-backface-visibility: hidden;
+                                          -moz-backface-visibility: hidden;
+                                          backface-visibility: hidden;
+                                        }
+    
+                                        .wrap:before {
+                                          content: "";
+                                          background: rgba(207, 0, 0, 0.5);
+                                          position: absolute;
+                                          top: 0;
+                                          bottom: 0;
+                                          left: 0;
+                                          right: 0;
+                                          z-index: 1;
+                                          opacity: 0;
+                                          transform: scale(0);
+                                          transition: all 0.3s ease;
+                                        }
+    
+                                        .wrap:hover {
+                                          border-radius: 50%;
+                                        }
+    
+                                        .wrap:hover:before {
+                                          transform: scale(1);
+                                          opacity: 1;
+                                        } 
+                                      
+                                    </style>
+    
+                                    <div class="wrap" style="margin-left:230px;margin-top:100px;">
+                                      <img t-attf-src="data:image/png;base64,{{o.image_1920}}" style="border-radius:25px;height:200px;width:200px;margin-top:5px;" class="morph"/>
+                                    </div>
+                                </div>
+                                            
+                                <div style="text-align:center;">
+                                    <p style="font-size:40px;margin-top:360px;color:black;font-weight:bold;"><span t-field="o.name"/></p>
+                                </div>
+                                <div style="text-align:center;">
+                                    <p style="font-size:26px;margin-top:-25px;color:black;">Parent</p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:45px;margin-left:230px;color:black;"><span t-field="o.stud_id"/></p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:32px;margin-left:230px;color:black;"><span t-field="o.birthdate"/></p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:30px;margin-left:230px;color:black;"><span t-field="o.phone"/></p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:32px;margin-left:230px;color:black;"><span t-field="o.email"/></p>
+                                </div>
+                                <center>
+                                    <img alt="barcode" t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.parents_id, 600, 120)" style="text-align:center;height:40px;width:150px;"/>
+                                </center>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div style="width:670px;height:998px; solid #14877d;background-image:url('jt_education_reports/static/src/img/format.png')">
+                            
+                            <div style="height:10%;color:black;text-align:center;">
+                                <div style="width:20%;margin_left:20px;">
+                                    <img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:120px;height:90px;margin-top:450px;"/>
+                                </div>
+                            </div>
+                            
+                            <div style="clear:both;"/>
+                            <div>
+                                <style type="text/css">
+                                    .wrap {
+                                      -webkit-transform: rotate(-45deg);
+                                      -moz-transform: rotate(-45deg);
+                                      transform: rotate(-45deg);
+                                      float: left;
+                                      border: 10px solid white;
+                                      margin: 150px 0 0 150px;
+                                      overflow: hidden;
+                                      transition: all 0.3s ease .3s;
+                                      border-radius: 0px;
+                                    }
+                                    .morph {
+                                      -webkit-transform: rotate(45deg) scale(1.5);
+                                      -moz-transform: rotate(45deg) scale(1.5);
+                                      transform: rotate(45deg) scale(1.5);
+                                      float: left;
+                                      -webkit-backface-visibility: hidden;
+                                      -moz-backface-visibility: hidden;
+                                      backface-visibility: hidden;
+                                    }
+
+                                    .wrap:before {
+                                      content: "";
+                                      background: rgba(207, 0, 0, 0.5);
+                                      position: absolute;
+                                      top: 0;
+                                      bottom: 0;
+                                      left: 0;
+                                      right: 0;
+                                      z-index: 1;
+                                      opacity: 0;
+                                      transform: scale(0);
+                                      transition: all 0.3s ease;
+                                    }
+
+                                    .wrap:hover {
+                                      border-radius: 50%;
+                                    }
+
+                                    .wrap:hover:before {
+                                      transform: scale(1);
+                                      opacity: 1;
+                                    } 
+                                  
+                                </style>
+
+                                <div class="wrap" style="margin-left:230px;margin-top:100px;">
+                                  <img t-attf-src="data:image/png;base64,{{o.image_1920}}" style="border-radius:25px;height:200px;width:200px;margin-top:5px;" class="morph"/>
+                                </div>
+                            </div>
+                                        
+                                <div style="text-align:center;">
+                                    <p style="font-size:40px;margin-top:360px;color:black;font-weight:bold;"><span t-field="o.name"/></p>
+                                </div>
+                                <div style="text-align:center;">
+                                    <p style="font-size:26px;margin-top:-25px;color:black;">Student</p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:45px;margin-left:230px;color:black;"><span t-field="o.stud_id"/></p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:32px;margin-left:230px;color:black;"><span t-field="o.birthdate"/></p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:30px;margin-left:230px;color:black;"><span t-field="o.phone"/></p>
+                                </div>
+                                <div style="text-align:left;">
+                                    <p style="font-size:30px;margin-top:32px;margin-left:230px;color:black;"><span t-field="o.email"/></p>
+                                </div>
+                                <center>
+                                    <img alt="barcode" t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.stud_id, 600, 120)" style="text-align:center;height:40px;width:150px;"/>
+                                </center>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="employee_classic_front_icard" model="report.paperformat">
+            <field name="name">Employee Classic Front Icard</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">143</field>
+            <field name="page_width">100</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="employee_classic_front_report" model="ir.actions.report">
+            <field name="name">Classic Id-Card Report FRONT</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_reports.employee_front_icard</field>
+            <field name="report_file">jt_education_reports.employee_front_icard</field>
+            <field name="paperformat_id" ref="jt_education_reports.employee_classic_front_icard"/>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+        </record>
+        
+        <!-- <report 
+            id="employee_classic_front_report"
+            model="res.partner"
+            string="Classic Id-Card Report FRONT"
+            report_type="qweb-pdf"
+            name="jt_education_reports.employee_front_icard"
+            file="jt_education_reports.employee_front_icard"
+            print_report_name="object.name"
+            paperformat="jt_education_reports.employee_classic_front_icard"
+        /> -->
+
+    </data>
+</odoo>

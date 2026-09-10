@@ -1,0 +1,1099 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:09+0000\n"
+"PO-Revision-Date: 2021-10-04 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "%s is not available!"
+msgstr "％sは利用できません！"
+
+#. module: jt_education_library
+#: model:mail.template,body_html:jt_education_library.email_template_issuebooks_mail
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear ${object.student_id.name}<br/><br/>\n"
+"\n"
+"                        This is to inform you that you have been issued book(s) from library\n"
+"                        \n"
+"                        on ${object.datetime_issue} which you have to return on ${object.date_return}.\n"
+"\n"
+"                        <br/><br/>\n"
+"                        Best regards,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        親愛なる ${object.student_id.name}<br/><br/>\n"
+"\n"
+"                        これは、図書館から本が発行されたことを通知するためのものです。\n"
+"                        \n"
+"                        オン ${object.datetime_issue} あなたが戻らなければならない ${object.date_return}.\n"
+"\n"
+"                        <br/><br/>\n"
+"                        よろしくお願いします,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+msgstr "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Eメール\" title=\"Eメール\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"会計番号\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Webサイト\" title=\"Webサイト\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"電話\" title=\"電話\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form_library
+msgid "<span class=\"o_stat_text\">Library Books</span>"
+msgstr "<span class=\"o_stat_text\">図書館の本</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "<span style=\"font-size:40px;\"/>Student Membership Card"
+msgstr "<span style=\"font-size：40px;\"/>学生会員カード"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "<span>Issue Book Details</span>"
+msgstr "<span>発行ブックの詳細</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "<span>Membership Details</span>"
+msgstr "<span>メンバーシップの詳細</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">Books "
+"Detail</strong>"
+msgstr ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">本 "
+"詳細</strong>"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__active
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Active"
+msgstr "アクティブ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Add Books"
+msgstr "書籍を追加する"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Address"
+msgstr "住所"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__art
+msgid "Art"
+msgstr "美術"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_res_partner
+msgid "Assignment Student Class"
+msgstr "宿題学生クラス"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__author
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__author
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Author"
+msgstr "著者"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__authors_code
+msgid "Author ID"
+msgstr "著者ID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__partner_id
+msgid "Author Name"
+msgstr "著者名"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_authors
+#: model:ir.ui.menu,name:jt_education_library.author_submenu
+msgid "Authors"
+msgstr "著者"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_authors_authors
+msgid "Authors Details"
+msgstr "著者の詳細"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Availability"
+msgstr "可用性"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_kanban_view
+msgid "Avatar"
+msgstr "アバター"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+msgid "AvatarDefault"
+msgstr "AvatarDefault"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__biography
+msgid "Biography"
+msgstr "バイオグラフィー"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issuebookslines_image
+msgid "Book Cover Picture"
+msgstr "本の表紙の写真"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.books_report
+msgid "Book Detail"
+msgstr "本の詳細"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.book_xls_report_submenu
+msgid "Book Details Report"
+msgstr "書籍詳細レポート"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book ID"
+msgstr "ブックID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__book_ids
+msgid "Book Ids"
+msgstr "ブックID"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Book Information"
+msgstr "書籍情報"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Book Issue Limit :"
+msgstr "書籍の発行制限："
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.language_menu
+msgid "Book Language"
+msgstr "本の言語"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Book Limit"
+msgstr "ブック制限"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__book_ids
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Name"
+msgstr "書籍名"
+
+#. module: jt_education_library
+#: model:ir.model.constraint,message:jt_education_library.constraint_books_books_name_uniq
+msgid "Book Name Must Be Unique !"
+msgstr "書籍名は一意である必要があります！"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Status"
+msgstr "ブックステータス"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_xls_report
+msgid "Book Xls Report"
+msgstr "ブックXLSレポート"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_books
+#: model:ir.ui.menu,name:jt_education_library.books_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Books"
+msgstr "本"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_books_books
+msgid "Books Details"
+msgstr "書籍の詳細"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issue_books
+#: model:ir.model,name:jt_education_library.model_issue_books_lines
+msgid "Books Issued details."
+msgstr "書籍発行の詳細。"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Cancel"
+msgstr "キャンセル"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__child
+msgid "Child"
+msgstr "子供"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__city
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "City"
+msgstr "市"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__comic
+msgid "Comic"
+msgstr "漫画"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.configurations_menu
+msgid "Configurations"
+msgstr "構成"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Contact Details"
+msgstr "連絡先の詳細"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__cooking
+msgid "Cooking"
+msgstr "調理"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__rec_count
+#: model:ir.model.fields,field_description:jt_education_library.field_res_users__rec_count
+msgid "Count"
+msgstr "カウント"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__country_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Country"
+msgstr "国"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_uid
+msgid "Created by"
+msgstr "によって作成された"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_date
+msgid "Created on"
+msgstr "で作成"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__datetime_issue
+msgid "Date & Time Of Issue"
+msgstr "発行日時"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__date_return
+msgid "Date Of Return"
+msgstr "返品日"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date and Time Of Issue"
+msgstr "発行日時"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date of Return"
+msgstr "返品日"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__user
+msgid "Default user"
+msgstr "デフォルトユーザー"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__division
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__division
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Division"
+msgstr "分割"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Download"
+msgstr "ダウンロード"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__excel_file
+msgid "Download Report"
+msgstr "レポートのダウンロード"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__late
+msgid "Due to Late Return"
+msgstr "返品が遅れたため"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__lost
+msgid "Due to Lost"
+msgstr "紛失による"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__edition
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Edition"
+msgstr "版"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__email
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__emailid
+msgid "Email"
+msgstr "Eメール"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__end_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "End Date"
+msgstr "終了日"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Excel Report file"
+msgstr "Excelレポートファイル"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__expire
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Expire"
+msgstr "期限切れ"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.membership_expiry_remainder_cron_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.membership_expiry_remainder_cron
+#: model:ir.cron,name:jt_education_library.membership_expiry_remainder_cron
+msgid "Expire Membership"
+msgstr "メンバーシップの有効期限"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Expiry Date :"
+msgstr "有効期限 ："
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__file_name
+msgid "File Name"
+msgstr "ファイル名"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_amount
+msgid "Fine Amount"
+msgstr "罰金"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Amount Detail"
+msgstr "罰金の詳細"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Description"
+msgstr "細かい説明"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Details"
+msgstr "細かい詳細"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_detail
+msgid "Fine Reason"
+msgstr "細かい理由"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Generes"
+msgstr "属"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__genres
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__genres
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Genres"
+msgstr "ジャンル"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Group By"
+msgstr "グループ化"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__historic
+msgid "Historic"
+msgstr "歴史的"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__horror
+msgid "Horror"
+msgstr "ホラー"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__id
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_image
+msgid "Image"
+msgstr "画像"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__is_author
+msgid "Is a Author"
+msgstr "著者です"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Issue"
+msgstr "問題"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebook_xls_report_view
+msgid "Issue Book Details Report"
+msgstr "発行本詳細レポート"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__book_limit
+msgid "Issue Book Limit"
+msgstr "ブックの制限を発行する"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebookslines_ids
+msgid "Issue Book Lines"
+msgstr "ブックラインの発行"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issuebook_xls_report
+msgid "Issue Book Xls Report"
+msgstr "ブックXLSレポートの発行"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebooks
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issue_books
+#: model:ir.ui.menu,name:jt_education_library.issuebooks_menu
+msgid "Issue Books"
+msgstr "本を発行する"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.issuebooks_report
+msgid "Issue Books Detail"
+msgstr "書籍の詳細を発行する"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Books Details"
+msgstr "書籍の詳細を発行する"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Date :"
+msgstr "発行日 ："
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_code
+msgid "Issue ID"
+msgstr "発行ID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__state
+msgid "Issue Status"
+msgstr "発行ステータス"
+
+#. module: jt_education_library
+#: model:mail.template,subject:jt_education_library.email_template_issuebooks_mail
+msgid "Issue created"
+msgstr "作成された問題"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__issued
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Issued"
+msgstr "発行済み"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__book_id
+#: model:ir.model.fields,field_description:jt_education_library.field_res_users__book_id
+msgid "Issued Books"
+msgstr "発行された本"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_language
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__lang_id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__lang_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Language"
+msgstr "言語"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "最終変更日"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.root_menu
+msgid "Library"
+msgstr "図書館"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_library_memberships
+msgid "Library Membership details."
+msgstr "図書館会員の詳細。"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Logo"
+msgstr "ロゴ"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__lost
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Lost"
+msgstr "失った"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.report_membership_card
+msgid "Membership Card"
+msgstr "メンバーカード"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Membership Details"
+msgstr "メンバーシップの詳細"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_membership_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.membership_xls_report_submenu
+msgid "Membership Details Report"
+msgstr "会員詳細レポート"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "Membership ID"
+msgstr "会員ID"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Membership ID :"
+msgstr "会員ID："
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__state
+msgid "Membership Status"
+msgstr "会員資格"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_membership_xls_report
+msgid "Membership Xls Report"
+msgstr "メンバーシップXLSレポート"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.actions.act_window,name:jt_education_library.action_memberships
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__membership_ids
+#: model:ir.ui.menu,name:jt_education_library.memberships_menu
+#, python-format
+msgid "Memberships"
+msgstr "メンバーシップ"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.memberships_report
+msgid "Memberships Detail"
+msgstr "メンバーシップの詳細"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__mobile
+msgid "Mobile"
+msgstr "モバイル"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__motivational
+msgid "Motivational"
+msgstr "やる気を起こさせる"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__mystery
+msgid "Mystery"
+msgstr "神秘"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Name"
+msgstr "名前"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Name :"
+msgstr "名前 :"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__new
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "New"
+msgstr "新しい"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "No. Of Books"
+msgstr "書籍数"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_available
+msgid "No. Of Books Available"
+msgstr "利用可能な本の数"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_issued
+msgid "No. Of Books Issued"
+msgstr "発行本数"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_lost
+msgid "No. Of Books Lost"
+msgstr "失われた本の数"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Or"
+msgstr "または"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"Page:\n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  of\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+msgstr ""
+"ページ：\ n "
+"\t\t\t\t\t\t\t\t  <span class=\"ページ\"/>\n"
+"\t\t\t\t\t\t\t\t  の\n"
+"\t\t\t\t\t\t\t\t  <span class=\"ページへ\"/>"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__phone
+msgid "Phone"
+msgstr "電話"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Print Issue Details XLS Report"
+msgstr "問題の詳細を印刷するXLSレポート"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__publisher
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Publisher"
+msgstr "出版社"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Reason"
+msgstr "理由"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.reports_menu
+msgid "Reports"
+msgstr "レポート"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Return"
+msgstr "戻る"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Return Date :"
+msgstr "返却日："
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__returned
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Returned"
+msgstr "戻ってきた"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__roll_no
+msgid "Roll No"
+msgstr "ロール番号"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__roll_no
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Roll No."
+msgstr "ロール番号."
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Roll No. :"
+msgstr "ロール番号:"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__romance
+msgid "Romance"
+msgstr "ロマンス"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__science
+msgid "Science"
+msgstr "化学"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Search Books"
+msgstr "書籍を検索"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Search Issue Books"
+msgstr "問題の本を検索する"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Search Memberships"
+msgstr "メンバーシップを検索"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__select_all_books
+msgid "Select All Books"
+msgstr "すべての書籍を選択"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__select_all_membership
+msgid "Select All Memberships"
+msgstr "すべてのメンバーシップを選択"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.ir_cron_issue_mail_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.ir_cron_issue_mail
+#: model:ir.cron,name:jt_education_library.ir_cron_issue_mail
+msgid "Send Mail To Student when issue is created."
+msgstr "問題が作成されたら、生徒にメールを送信します。"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Sr"
+msgstr "シニア"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__standard
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Standard"
+msgstr "標準"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Standard :"
+msgstr "標準 ："
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__start_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Start Date"
+msgstr "開始日"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Start Date :"
+msgstr "開始日 ："
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__state_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+#, python-format
+msgid "State"
+msgstr "州"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Status"
+msgstr "状態"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street
+msgid "Street"
+msgstr "街"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street 2..."
+msgstr "2丁目..."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street..."
+msgstr "街..."
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street2
+msgid "Street2"
+msgstr "2丁目"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__student_id
+msgid "Student"
+msgstr "学生"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Student :"
+msgstr "学生:"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student ID"
+msgstr "学生証"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Student Information"
+msgstr "学生情報"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student Name"
+msgstr "学生の名前"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__student_id
+msgid "Students"
+msgstr "学生"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books
+msgid "Total No. Of Books"
+msgstr "書籍の総数"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__website
+msgid "Website Link"
+msgstr "ウェブサイトへのリンク"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_language
+msgid "book.language"
+msgstr "book.language"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "e.g. https://www.odoo.com"
+msgstr "例えばхттпс：//ввв.одо.цум"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_description
+msgid "fine description"
+msgstr "細かい説明"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.books_report
+msgid "object.name"
+msgstr "object.name"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.report_membership_card
+msgid "object.student_id.name"
+msgstr "object.student_id.name"

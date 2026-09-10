@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        <!-- StudentSubject Form View-->
+        <record id="student_subject_form_view" model="ir.ui.view">
+            <field name="name">Student Subject Form View</field>
+            <field name="model">student.subject</field>
+            <field name="arch" type="xml">
+                <form>
+                	<sheet>
+                		<group>
+                			<group>
+		                		<field name ="code" required='1'/>
+		                		<field name ="name"  required='1'/>
+                                <field name="subject_category_id" required='1'/>
+                                <field name="mark"/>
+                                <field name="pass_mark"/>
+		                	</group>
+		                </group>
+                	</sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--StudentSubject Tree View-->
+        <record id="student_subject_tree_view" model="ir.ui.view">
+            <field name="name">Student Subject Tree View</field>
+            <field name="model">student.subject</field>
+            <field name="arch" type="xml">
+                <list editable="top">
+                    <field name="code" required='1'/>
+                    <field name="name" required='1'/>     
+                    <field name="subject_category_id" required='1'/>
+                    <field name="mark"/>
+                    <field name="pass_mark"/>                          
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>

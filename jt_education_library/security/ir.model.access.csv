@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_books_books,Access books books,model_books_books,base.group_user,1,1,1,1
+access_issue_books,Access issue books,model_issue_books,base.group_user,1,1,1,1
+access_library_memberships,Access library memberships,model_library_memberships,base.group_user,1,1,1,1
+access_books_history,Access Books History,model_books_history,base.group_user,1,1,1,1
+access_authors_authors,Access authors authors,model_authors_authors,base.group_user,1,1,1,1
+access_issue_books_lines,Access issue books lines,model_issue_books_lines,base.group_user,1,1,1,1
+access_book_language,Access Book Language,model_book_language,base.group_user,1,1,1,1
+access_book_xls_report,Access Book Xls Report,model_book_xls_report,base.group_user,1,1,1,1
+access_membership_xls_report,Access Membership Xls Report,model_membership_xls_report,base.group_user,1,1,1,1
+access_issuebook_xls_report,Access Issuebook Xls Report,model_issuebook_xls_report,base.group_user,1,1,1,1
+access_return_book_wizard,Access return book wizard,model_return_book_wizard,base.group_user,1,1,1,1
+access_reissue_book_wizard,Access reissue book wizard,model_reissue_book_wizard,base.group_user,1,1,1,1
+access_lost_book_wizard,Access lost book wizard,model_lost_book_wizard,base.group_user,1,1,1,1

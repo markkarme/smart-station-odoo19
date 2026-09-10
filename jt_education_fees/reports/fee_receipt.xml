@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="fee_receipt_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div style="width:100%;height:100%;padding:0px;">
+                            <div style="height:2000px;width:1414px;">
+                                <center>
+                                    <div style="margin-right:50px;margin-left:50px;">
+                                        <div style="padding-top:10px;">
+                                            <div>
+                                                <p style="align:center;text-align:center;"><img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:180px;height:150px;margin-top:10px;"/></p>
+                                            </div>
+                                            <div>
+                                                <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-field="res_company.name"/></p>
+                                            </div>
+                                            <div>
+                                                <p style="align:center;text-align:center;font-size:22px;">
+                                                    (<span t-field="res_company.street"/>,
+                                                    <span t-field="res_company.street2"/>,
+                                                    <span t-field="res_company.city"/>,
+                                                    <span t-field="res_company.state_id"/>  <span t-field="res_company.zip"/>,
+                                                    <span t-field="res_company.country_id"/>)
+                                                </p>
+                                                <p style="align:center;text-align:center;font-size:22px;">
+                                                    <strong>Email: </strong><span t-field="res_company.email"/>,<strong>Phone: </strong><span t-field="res_company.phone"/>,<strong>Website: </strong><span t-field="res_company.website"/>
+                                                </p>
+                                            </div>
+                                            <div style="align:center;text-align:center;">
+                                                <p style="align:center;text-align:center;text-transform:uppercase;color:black;font-size:35px;font-weight:bold;margin-top:30px;">Fee Receipt</p>
+                                            </div>
+                                            <div style="align:center;text-align:center;">
+                                                <p style="align:center;text-align:center;color:black;font-size:35px;margin-top:30px;">Receipt No: <span t-field="o.name"/></p>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top:0px;" class="row"> 
+                                            <p style="font-size:30px;margin-left:20px;"><strong>Student: </strong><span t-field="o.student.name"/> <span t-field="o.student.father_name"/> <span t-field="o.student.surname"/></p>
+                                            <p style="font-size:30px;margin-left:450px;"><strong>Date of Payment: </strong><span t-field="o.paid_on"/></p>
+                                        </div>
+                                        <div style="margin-top:0px;" class="row"> 
+                                            <p style="font-size:30px;margin-left:20px;"><strong>Standard: </strong><span t-field="o.standard.name"/></p>
+                                            <p style="font-size:30px;margin-left:640px;"><strong>Division: </strong><span t-field="o.division.name"/></p>
+                                        </div>
+                                        <table class="table" style="font-size:30px;margin-top:50px;">
+                                            <tbody align="center" style="border:solid 1px; border-color:black;">
+                                                <th style="border: 1px solid black; text-align:center; color: black;">Serial Number</th>
+                                                <th style="border: 1px solid black; text-align:center; color: black;">Particulars</th>
+                                                <th style="border: 1px solid black; text-align:center; color: black;">Amount</th>
+                                                <tr t-foreach="o.fees_detail" t-as="fd">
+                                                    <td style="border: 1px solid black;"><t t-esc="fd_index + 1"/></td>
+                                                    <td style="border: 1px solid black;"><t t-esc="fd.fee_type.name"/></td>
+                                                    <td style="border: 1px solid black;"><t t-esc="fd.amount"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-weight: bold; font-size: 30px; border: 1px solid black;"></td>
+                                                    <td style="font-weight: bold; font-size: 30px; border: 1px solid black;">Total</td>
+                                                    <td style="font-weight: bold; font-size: 30px; border: 1px solid black;"><t t-esc="o.amount"/></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div t-if="res_company.signature" style="margin-top:100px;align:center;text-align:center;margin-left:0px;">
+                                                <img t-att-src="image_data_uri(res_company.stamp_image)" style="margin-bottom:-60px;height:330px;width:330px;"/><br/>
+                                                <img t-att-src="image_data_uri(res_company.signature)" style="margin-bottom:-60px;max-height: 6cm; max-width: 10cm;"/>
+                                                <p style="font-weight:bold;font-size:30px;">__________________________</p>
+                                                <p style="font-size:25px;"><span t-field="res_company.namep"/></p>
+                                                <p style="font-size:20px;"><span style="font-style:italic" t-field="res_company.function"/></p>
+                                            </div>
+                                            <div t-if="o.student.signature" style="margin-top:350px;align:center;text-align:center;margin-left:550px;">
+                                                <img t-att-src="image_data_uri(o.student.signature)" style="margin-bottom:-35px;max-height: 6cm; max-width: 10cm;"/>
+                                                <p style="font-weight:bold;font-size:30px;">__________________________</p>
+                                                <p style="font-size:25px;"><span t-field="o.student.name"/></p>
+                                                <p style="font-size:20px;">Signature Of Student</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-center" style="font-size:20px;border: 1px solid black;">
+                                            <!-- margin-top:230px; -->
+                                            <p>All above mentioned Amount once paid are non refundable in any case whatsoever.</p>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div> 
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="fee_receipt_template_paperformate" model="report.paperformat">
+            <field name="name">student.fees.receipt.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="fee_receipt_report" model="ir.actions.report">
+            <field name="name">Fees Receipt</field>
+            <field name="model">fees.fees</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_fees.fee_receipt_report_template</field>
+            <field name="report_file">jt_education_fees.fee_receipt_report_template</field>
+            <field name="paperformat_id" ref="jt_education_fees.fee_receipt_template_paperformate"/>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="jt_education_fees.model_fees_fees"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <report 
+            id="fee_receipt_report"
+            model="fees.fees"
+            string="Fees Receipt"
+            report_type="qweb-pdf"
+            name="jt_education_fees.fee_receipt_report_template"
+            file="jt_education_fees.fee_receipt_report_template"
+            print_report_name="object.name"
+            paperformat="jt_education_fees.fee_receipt_template_paperformate"
+        /> -->
+
+    </data>
+</odoo> 
