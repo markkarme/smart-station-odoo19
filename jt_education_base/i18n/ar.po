@@ -1081,6 +1081,7 @@ msgstr "تذكير الرسوم"
 #. module: jt_education_base
 #: model:ir.model.fields.selection,name:jt_education_base.selection__admission_inquiry__sel_gen__female
 #: model:ir.model.fields.selection,name:jt_education_base.selection__res_partner__gender__female
+#: model:ir.model.fields.selection,name:jt_education_base.selection__res_partner__type_of_student__female
 msgid "Female"
 msgstr "أنثى"
 
@@ -1485,6 +1486,7 @@ msgstr "بيانات المغادرة"
 #. module: jt_education_base
 #: model:ir.model.fields.selection,name:jt_education_base.selection__admission_inquiry__sel_gen__male
 #: model:ir.model.fields.selection,name:jt_education_base.selection__res_partner__gender__male
+#: model:ir.model.fields.selection,name:jt_education_base.selection__res_partner__type_of_student__male
 msgid "Male"
 msgstr "ذكر"
 
@@ -2800,3 +2802,114 @@ msgstr "القرية"
 #: model_terms:ir.ui.view,arch_db:jt_education_base.report_student_certi
 msgid "with outstanding performance. With"
 msgstr "بأداء متميز. مع"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__emergency_number
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__emergency_number
+msgid "Emergency Number"
+msgstr "رقم الطوارئ"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__family_ties
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__family_ties
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Family Ties"
+msgstr "صلة القرابة"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__fathers_job
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__fathers_job
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Father's Job"
+msgstr "وظيفة الأب"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__fathers_national_ID_number
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__fathers_national_ID_number
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Father's National ID Number"
+msgstr "الرقم القومي للأب"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__file_registration_number
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__file_registration_number
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "File Registration Number"
+msgstr "رقم ملف التسجيل"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__mothers_job
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__mothers_job
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Mother's Job"
+msgstr "وظيفة الأم"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__mothers_national_ID_number
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__mothers_national_ID_number
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Mother's National ID Number"
+msgstr "الرقم القومي للأم"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__national_iD_number
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__national_iD_number
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "National ID Number"
+msgstr "الرقم القومي"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__telephone_number_3
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__telephone_number_3
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Telephone Number 3"
+msgstr "هاتف 3"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__the_total_marks
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__the_total_marks
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "The Total Marks"
+msgstr "المجموع"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_res_partner__type_of_student
+#: model:ir.model.fields,field_description:jt_education_base.field_res_users__type_of_student
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "Type of Student"
+msgstr "النوع"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "fathers job"
+msgstr "وظيفة الأب"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "fathers national id number"
+msgstr "الرقم القومي للأب"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "file registration number"
+msgstr "رقم تسجيل الملف"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "mothers job"
+msgstr "وظيفة الأم"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "mothers national id number"
+msgstr "الرقم القومي للأم"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "national id number"
+msgstr "الرقم القومي"
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
+msgid "telephone number 3"
+msgstr "التليفون 3"

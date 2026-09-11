@@ -18,7 +18,7 @@ Arabic must already be loaded, or this module will activate the official
 Odoo Arabic language (ar_001). Upgrade this module later to refresh terms.
     """,
     'category': 'Localization',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
     'author': 'Smart Station',
     'depends': ['jt_education_base'],
     'data': [],

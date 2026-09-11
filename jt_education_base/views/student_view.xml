@@ -42,6 +42,8 @@
                             <field name="name" default_focus="1" required="type == 'contact'"/>
                             <field name="surname" required="1"/>
                             <field name="nickname"/>
+                            <field name="national_iD_number" string="National ID Number" placeholder="national id number" />
+                            <field name="type_of_student" string="Type of Student" widget="radio" options="{'horizontal': true}" required="1"/>
                             <field name="type" invisible="not parent_id" groups="base.group_no_one"/>
                             <label for="street" string="Address"/>
                             <div class="o_address_format">
@@ -68,10 +70,16 @@
                         <group>
                             <field name="function" placeholder="e.g. Sales Director" invisible="is_company"/>
                             <field name="father_name" required="1"/>
+                            <field name="fathers_national_ID_number" string="Father's National ID Number" placeholder="fathers national id number" />
+                            <field name="fathers_job" string="Father's Job" placeholder="fathers job" />
                             <field name="mother_name" string="Mother Name" required="1"/>
+                            <field name="mothers_national_ID_number" string="Mother's National ID Number" placeholder="mothers national id number" />
+                            <field name="mothers_job" string="Mother's Job" placeholder="mothers job" />
+                            <field name="family_ties"/>
                             <field name="phone" widget="phone"/>
                             <field name="mobile" widget="phone" required="1"/>
                             <field name="emergency_contact"/>
+                            <field name="telephone_number_3" string="Telephone Number 3" placeholder="telephone number 3" />
                             <field name="user_ids" invisible="1"/>
                             <field name="email" widget="email" context="{'gravatar_image': True}" required="user_ids"/>
                             <field name="website" widget="url" placeholder="e.g. www.odoo.com"/>
@@ -86,6 +94,7 @@
                             <group>
                                 <group string="General Information">
                                     <field name="stud_id" string="Students UID" placeholder="student ID" readonly="1"/>
+                                    <field name="file_registration_number" string="File Registration Number" placeholder="file registration number" />
                                     <field name="curr_year" string="Current Year" required="1"/>
                                     <field name="standard" string="Standard" required="1"/>
                                     <field name="div" string="Division" required="1"/>
@@ -119,6 +128,7 @@
                                     <field name="working_days"/>
                                     <field name="student_rank" readonly="1"/>
                                     <field name="student_result"/>
+                                    <field name="the_total_marks" string="The Total Marks"/>
                                 </group>
                             </group>
                             <group string="Notes">

@@ -144,6 +144,22 @@ class ResPartner(models.Model):
     student_result = fields.Float('Result Percentage')
     meeting_ids = fields.One2many(comodel_name='student.meeting', inverse_name='student_id', string="Meetings")
 
+    file_registration_number = fields.Char(string="File Registration Number")
+    the_total_marks = fields.Integer(string="The Total Marks")
+    national_iD_number = fields.Char(string="National ID Number")
+    type_of_student = fields.Selection(
+        [('male', 'Male'), ('female', 'Female')],
+        string="Type of Student",
+        default='male',
+    )
+    telephone_number_3 = fields.Char(string="Telephone Number 3")
+    family_ties = fields.Char(string="Family Ties")
+    emergency_number = fields.Char(string="Emergency Number")
+    fathers_national_ID_number = fields.Char(string="Father's National ID Number")
+    fathers_job = fields.Char(string="Father's Job")
+    mothers_national_ID_number = fields.Char(string="Mother's National ID Number")
+    mothers_job = fields.Char(string="Mother's Job")
+
     def update_student_ranks(self):
         Result = self.env['student.result'] if 'student.result' in self.env else False
         if Result and hasattr(Result, 'calculate_student_ranks'):
