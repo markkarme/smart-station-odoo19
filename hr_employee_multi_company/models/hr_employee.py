@@ -45,7 +45,6 @@ class HrEmployee(models.Model):
             elif code == 2 and command[1]:
                 result.discard(command[1])
             elif code == 0 and len(command) > 2:
-                # (0, 0, values) create — not expected for res.company
                 pass
         return result
 
@@ -73,6 +72,34 @@ class HrEmployee(models.Model):
             vals.setdefault("company_ids", [(4, vals["company_id"])])
         return vals
 
+    def _sync_linked_user_companies(self):
+        """Mirror employee companies on the linked user and share the contact."""
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            companies = employee.company_ids
+            if not companies:
+                continue
+
+            user_vals = {}
+            if set(user.company_ids.ids) != set(companies.ids):
+                user_vals["company_ids"] = [(6, 0, companies.ids)]
+            main_company = employee.company_id if employee.company_id in companies else companies[0]
+            if user.company_id != main_company:
+                user_vals["company_id"] = main_company.id
+            if user_vals:
+                user.sudo().with_context(no_reset_password=True).write(user_vals)
+
+            # Portal/website activate one company; a shared contact avoids 403s
+            # when the partner was created under another company.
+            partner = user.partner_id
+            if partner and len(companies) > 1 and partner.company_id:
+                partner.sudo().write({"company_id": False})
+            work_contact = employee.work_contact_id
+            if work_contact and len(companies) > 1 and work_contact.company_id:
+                work_contact.sudo().write({"company_id": False})
+
     @api.model_create_multi
     def create(self, vals_list):
         synced_vals_list = [
@@ -85,27 +112,39 @@ class HrEmployee(models.Model):
         )
         for employee in to_fix:
             employee.company_ids = [(4, employee.company_id.id)]
+        employees._sync_linked_user_companies()
         return employees
 
     def write(self, vals):
-        if "company_ids" not in vals and "company_id" not in vals:
+        if "company_ids" not in vals and "company_id" not in vals and "user_id" not in vals:
             return super().write(vals)
 
-        if len(self) == 1:
-            return super().write(
-                self._sync_company_fields(vals, current_company_ids=set(self.company_ids.ids))
-            )
-
-        # Multi-record write: sync per record when company_ids commands are relative
-        if "company_ids" in vals:
-            for employee in self:
-                employee.write(
-                    employee._sync_company_fields(
-                        vals, current_company_ids=set(employee.company_ids.ids)
+        if "company_ids" in vals or "company_id" in vals:
+            if len(self) == 1:
+                res = super().write(
+                    self._sync_company_fields(
+                        vals, current_company_ids=set(self.company_ids.ids)
                     )
                 )
-            return True
-        return super().write(self._sync_company_fields(vals))
+                self._sync_linked_user_companies()
+                return res
+
+            if "company_ids" in vals:
+                for employee in self:
+                    employee.write(
+                        employee._sync_company_fields(
+                            vals, current_company_ids=set(employee.company_ids.ids)
+                        )
+                    )
+                return True
+            res = super().write(self._sync_company_fields(vals))
+            self._sync_linked_user_companies()
+            return res
+
+        res = super().write(vals)
+        if "user_id" in vals:
+            self._sync_linked_user_companies()
+        return res
 
     @api.onchange("company_ids")
     def _onchange_company_ids(self):

@@ -32,11 +32,13 @@ class HrEmployee(models.Model):
 
         partner = self.work_contact_id
         if not partner:
+            company_ids = self.company_ids or self.company_id
             partner = self.env["res.partner"].sudo().create(
                 {
                     "name": self.name,
                     "email": login,
-                    "company_id": self.company_id.id,
+                    # Shared contact avoids portal multi-company 403s
+                    "company_id": False if len(company_ids) > 1 else self.company_id.id,
                 }
             )
             self.work_contact_id = partner.id
@@ -59,9 +61,17 @@ class HrEmployee(models.Model):
 
         portal_group = self.env.ref("base.group_portal")
         public_group = self.env.ref("base.group_public")
+        allowed_companies = self.company_ids or self.company_id
+        main_company = self.company_id if self.company_id in allowed_companies else allowed_companies[:1]
 
         if existing_user:
             user = existing_user
+            user.write(
+                {
+                    "company_id": main_company.id,
+                    "company_ids": [(6, 0, allowed_companies.ids)],
+                }
+            )
         else:
             user = users.with_context(no_reset_password=True)._create_user_from_template(
                 {
@@ -69,8 +79,8 @@ class HrEmployee(models.Model):
                     "email": login,
                     "login": login,
                     "partner_id": partner.id,
-                    "company_id": self.company_id.id,
-                    "company_ids": [(6, 0, [self.company_id.id])],
+                    "company_id": main_company.id,
+                    "company_ids": [(6, 0, allowed_companies.ids)],
                 }
             )
 
