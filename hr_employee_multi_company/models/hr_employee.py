@@ -73,32 +73,40 @@ class HrEmployee(models.Model):
         return vals
 
     def _sync_linked_user_companies(self):
-        """Mirror employee companies on the linked user and share the contact."""
+        """Mirror employee companies on user/contact/resource for multi-company access."""
         for employee in self:
-            user = employee.user_id
-            if not user:
-                continue
             companies = employee.company_ids
             if not companies:
                 continue
 
-            user_vals = {}
-            if set(user.company_ids.ids) != set(companies.ids):
-                user_vals["company_ids"] = [(6, 0, companies.ids)]
-            main_company = employee.company_id if employee.company_id in companies else companies[0]
-            if user.company_id != main_company:
-                user_vals["company_id"] = main_company.id
-            if user_vals:
-                user.sudo().with_context(no_reset_password=True).write(user_vals)
+            user = employee.user_id
+            if user:
+                user_vals = {}
+                if set(user.company_ids.ids) != set(companies.ids):
+                    user_vals["company_ids"] = [(6, 0, companies.ids)]
+                main_company = (
+                    employee.company_id if employee.company_id in companies else companies[0]
+                )
+                if user.company_id != main_company:
+                    user_vals["company_id"] = main_company.id
+                if user_vals:
+                    user.sudo().with_context(no_reset_password=True).write(user_vals)
 
-            # Portal/website activate one company; a shared contact avoids 403s
-            # when the partner was created under another company.
-            partner = user.partner_id
-            if partner and len(companies) > 1 and partner.company_id:
-                partner.sudo().write({"company_id": False})
+                partner = user.partner_id
+                if partner and len(companies) > 1 and partner.company_id:
+                    partner.sudo().write({"company_id": False})
+
             work_contact = employee.work_contact_id
             if work_contact and len(companies) > 1 and work_contact.company_id:
                 work_contact.sudo().write({"company_id": False})
+
+            # resource.resource is company-restricted; a shared resource (company=False)
+            # is required so attendances/employees can be opened in any assigned company.
+            resource = employee.resource_id
+            if resource and len(companies) > 1 and resource.company_id:
+                resource.sudo().write({"company_id": False})
+            elif resource and resource.company_id and resource.company_id not in companies:
+                resource.sudo().write({"company_id": employee.company_id.id})
 
     @api.model_create_multi
     def create(self, vals_list):

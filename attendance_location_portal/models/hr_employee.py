@@ -16,6 +16,25 @@ class HrEmployee(models.Model):
         "If empty, company-wide attendance location rules apply.",
     )
 
+    def _attendance_action_change(self, geo_information=None):
+        """On check-in, save attendance under the location's company."""
+        location = self.env.context.get("portal_attendance_location")
+        if not location or self.attendance_state == "checked_in":
+            return super()._attendance_action_change(geo_information)
+
+        self.ensure_one()
+        vals = {
+            "employee_id": self.id,
+            "check_in": fields.Datetime.now(),
+            "attendance_location_id": location.id,
+            "company_id": location.company_id.id,
+        }
+        if geo_information:
+            vals.update(
+                {("in_%s" % key): geo_information[key] for key in geo_information}
+            )
+        return self.env["hr.attendance"].create(vals)
+
     def action_create_portal_user(self):
         self.ensure_one()
         if self.user_id:
@@ -166,7 +185,9 @@ class HrEmployee(models.Model):
                     }
                 )
 
-        attendance = self.sudo()._attendance_action_change(
+        attendance = self.sudo().with_context(
+            portal_attendance_location=allowed_location,
+        )._attendance_action_change(
             {
                 "latitude": lat,
                 "longitude": lon,
@@ -174,8 +195,14 @@ class HrEmployee(models.Model):
                 "mode": "automatic",
             }
         )
-        if checking_in and attendance:
-            attendance.write({"attendance_location_id": allowed_location.id})
+        if checking_in and attendance and not attendance.attendance_location_id:
+            # Fallback if create path did not receive the location context
+            attendance.write(
+                {
+                    "attendance_location_id": allowed_location.id,
+                    "company_id": allowed_location.company_id.id,
+                }
+            )
         note_text = (note or "").strip()
         if note_text and not checking_in:
             attendance = (

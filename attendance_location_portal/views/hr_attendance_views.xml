@@ -20,6 +20,7 @@
             <xpath expr="//group[@name='check_out_group']" position="after">
                 <group name="attendance_location_group" invisible="not attendance_location_id">
                     <field name="attendance_location_id" readonly="1"/>
+                    <field name="company_id" groups="base.group_multi_company" readonly="1"/>
                 </group>
                 <notebook>
                     <page string="Note" name="attendance_note_page">
