@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_timetable,Access student_timetable,model_student_timetable,base.group_user,1,1,1,1
+access_student_timetable_line,Access student timetable line,model_student_timetable_line,base.group_user,1,1,1,1
+access_timetable_period,Access timetable period,model_timetable_period,base.group_user,1,1,1,1

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="assignment_smart_button" model="ir.ui.view">
+            <field name="name">assignment.smart.buttons</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_education_base.student_profile"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']/button[@name='action_view_issued_books']" position="after">
+                    <button type="object" class="oe_stat_button" icon="fa-newspaper-o" name="get_assignment">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="assignment_count" widget='statinfo'/>
+                            </span>
+                            <!-- <span class="o_stat_text">Assignment</span> -->
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

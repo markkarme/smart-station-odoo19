@@ -1,0 +1,949 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_hostel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-22 10:07+0000\n"
+"PO-Revision-Date: 2025-07-22 10:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "<span class=\"o_stat_text\">Invoices</span>"
+msgstr "<span class=\"o_stat_text\">Faturas</span>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_kanban
+msgid "<strong>Building Name : </strong>"
+msgstr "<strong>Nome do Edifício : </strong>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_kanban
+msgid "<strong>Capacity : </strong>"
+msgstr "<strong>Capacidade : </strong>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_building_kanban
+msgid "<strong>Floor : </strong>"
+msgstr "<strong>Andar : </strong>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_kanban
+msgid "<strong>Room Type : </strong>"
+msgstr "<strong>Tipo de Quarto : </strong>"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_room__room_type__ac
+msgid "Ac"
+msgstr "Ar Condicionado"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__curr_year_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__curr_year_id
+msgid "Academic Year"
+msgstr "Ano Acadêmico"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_needaction
+msgid "Action Needed"
+msgstr "Ação Necessária"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__active
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Active"
+msgstr "Ativo"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_ids
+msgid "Activities"
+msgstr "Atividades"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoração de Exceção de Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_state
+msgid "Activity State"
+msgstr "Estado da Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícone do Tipo de Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__agenda
+msgid "Agenda"
+msgstr "Agenda"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__amount
+msgid "Amount"
+msgstr "Quantia"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__assigned
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "Assigned"
+msgstr "Atribuído"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__assign_id
+msgid "Assigned to"
+msgstr "Atribuído a"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_attachment_count
+msgid "Attachment Count"
+msgstr "Contagem de Anexos"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__room_bed
+msgid "Beds"
+msgstr "Camas"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__building_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__building_id
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_building_menu
+msgid "Building"
+msgstr "Edifício"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__name
+msgid "Building Name"
+msgstr "Nome do Edifício"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.cancel_reason_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_cancel_reason_wizard
+msgid "Cancel Reason"
+msgstr "Motivo do Cancelamento"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__cancelled
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__cancel
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__closing_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__closing_date
+msgid "Closing Date"
+msgstr "Data de Encerramento"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__name
+msgid "Complaint"
+msgstr "Reclamação"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Create Invoice"
+msgstr "Criar Fatura"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__date
+msgid "Date"
+msgstr "Data"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__display_name
+msgid "Display Name"
+msgstr "Nome de Exibição"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__division
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__division
+msgid "Division"
+msgstr "Divisão"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__end_date
+msgid "End Date"
+msgstr "Data de Término"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Fees"
+msgstr "Taxas"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__floor
+msgid "Floor"
+msgstr "Andar"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Parceiros)"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícone Font Awesome, por exemplo fa-tasks"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__has_message
+msgid "Has Message"
+msgstr "Possui Mensagem"
+
+#. module: jt_education_hostel
+#: model:ir.module.category,name:jt_education_hostel.module_category_jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_menu
+msgid "Hostel"
+msgstr "Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_building
+#: model:ir.model,name:jt_education_hostel.model_hostel_building
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_building_pivot
+msgid "Hostel Building"
+msgstr "Prédio do Hostel"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_pivot
+msgid "Hostel Complaints"
+msgstr "Reclamações do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__hostel_data
+msgid "Hostel Data"
+msgstr "Dados do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_details
+msgid "Hostel Details"
+msgstr "Detalhes do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__registration_id
+msgid "Hostel Fee"
+msgstr "Taxa do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_housekeeping
+msgid "Hostel House Keeping Service"
+msgstr "Serviço de Limpeza do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_housekeeping
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_housekeeping_pivot
+msgid "Hostel Housekeeping"
+msgstr "Limpeza do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_bank_statement_line__hostel_payment_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_move__hostel_payment_state
+msgid "Hostel Payment State"
+msgstr "Estado do Pagamento do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_bank_statement_line__hostel_reg_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_move__hostel_reg_id
+msgid "Hostel Reg"
+msgstr "Registro do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_registration
+#: model:ir.model,name:jt_education_hostel.model_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_pivot
+msgid "Hostel Registration"
+msgstr "Registro do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_registration_line
+msgid "Hostel Registration Line"
+msgstr "Linha de Registro do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_room
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_pivot
+msgid "Hostel Room"
+msgstr "Quarto do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_room
+msgid "Hostel Room Management"
+msgstr "Gestão de Quartos do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_student_complaint
+msgid "Hostel Student Complaints"
+msgstr "Reclamações dos Estudantes do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__registration_ids
+msgid "House Keeping"
+msgstr "Limpeza"
+
+#. module: jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_housekeeping_menu
+msgid "Housekeeping"
+msgstr "Limpeza"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_exception_icon
+msgid "Icon"
+msgstr "Ícone"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícone para indicar uma atividade de exceção."
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se marcado, novas mensagens requerem sua atenção."
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se marcado, algumas mensagens apresentam erro de entrega."
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_kanban
+msgid "Image"
+msgstr "Imagem"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__image_1920
+msgid "Image 1920"
+msgstr "Imagem 1920"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__in_progress
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "In Progress"
+msgstr "Em andamento"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__invoice_state
+msgid "Invoice State"
+msgstr "Estado da Fatura"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__invoice_state__invoiced
+msgid "Invoiced"
+msgstr "Faturado"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__invoice_count
+msgid "Invoices Count"
+msgstr "Contagem de Faturas"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__is_capacity_full
+msgid "Is Capacity full?"
+msgstr "Capacidade cheia?"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_is_follower
+msgid "Is Follower"
+msgstr "É Seguidor"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_res_users__is_parent
+msgid "Is Parent"
+msgstr "É pai"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_res_users__is_student
+msgid "Is Student"
+msgstr "É estudante"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_account_move
+msgid "Journal Entry"
+msgstr "Lançamento em Diário"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__link
+msgid "Link"
+msgstr "Link"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_student_complaints
+msgid "Manage Hostel Students Complaints"
+msgstr "Gerenciar Reclamações dos Estudantes do Hostel"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_parent_meeting
+msgid "Meeting with Parents"
+msgstr "Reunião com os Pais"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_has_error
+msgid "Message Delivery error"
+msgstr "Erro na entrega da mensagem"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_ids
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Prazo da Minha Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__housekeeping_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__new
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__new
+msgid "New"
+msgstr "Novo"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo Evento de Calendário de Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Próximo Prazo da Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumo da Próxima Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo da Próxima Atividade"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_room__room_type__non_ac
+msgid "Non Ac"
+msgstr "Sem Ar Condicionado"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__payment_state__not_paid
+msgid "Not Paid"
+msgstr "Não Pago"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__invoice_state__no
+msgid "Nothing to Invoice"
+msgstr "Nada para Faturar"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Ações"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de erros"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensagens que requerem ação"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensagens com erro de entrega"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__payment_state__paid
+msgid "Paid"
+msgstr "Pago"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_parent_meeting
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_parents__meeting_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.meeting_view_pivot
+msgid "Parents Meeting"
+msgstr "Reunião com Pais"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__payment_state__partial
+msgid "Partially Paid"
+msgstr "Pago Parcialmente"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__payment_state
+msgid "Payment State"
+msgstr "Estado do Pagamento"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__quantity
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_cancel_reason
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__cancel_reason
+msgid "Reason for Cancellation"
+msgstr "Motivo do Cancelamento"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__hostel_fee_seq
+msgid "Refrence"
+msgstr "Referência"
+
+#. module: jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_registration_menu
+msgid "Registration"
+msgstr "Registro"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Release"
+msgstr "Liberação"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__release
+msgid "Released"
+msgstr "Liberado"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__resolved
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "Resolved"
+msgstr "Resolvido"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_user_id
+msgid "Responsible User"
+msgstr "Usuário Responsável"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__room_id
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_room_menu
+msgid "Room"
+msgstr "Quarto"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_details
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_details_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_details_form
+msgid "Room Allocation"
+msgstr "Alocação de Quarto"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__capacity
+msgid "Room Capacity"
+msgstr "Capacidade do Quarto"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__name
+msgid "Room No."
+msgstr "Número do Quarto"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__room_type
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__room_type
+msgid "Room Type"
+msgstr "Tipo de Quarto"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__room_ids
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_building_form
+msgid "Rooms"
+msgstr "Quartos"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erro na entrega do SMS"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.cancel_reason_wizard_form
+msgid "Save"
+msgstr "Salvar"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__standard
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__standard
+msgid "Standard"
+msgstr "Padrão"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__start_date
+msgid "Start Date"
+msgstr "Data de Início"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__state
+msgid "Status"
+msgstr "Status"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status baseado nas atividades\n"
+"Vencido: Data limite já passou\n"
+"Hoje: Data da atividade é hoje\n"
+"Planejado: Atividades futuras."
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__student_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__student_id
+msgid "Student"
+msgstr "Estudante"
+
+#. module: jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_student_complaint_menu
+msgid "Student Complaints"
+msgstr "Reclamações dos Estudantes"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__student_ids
+msgid "Students"
+msgstr "Estudantes"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__invoice_state__to_invoice
+msgid "To Invoice"
+msgstr "Para Faturar"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__total_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Total Fees"
+msgstr "Taxas Totais"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo da atividade de exceção no registro."
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_res_users
+#: model:res.groups,name:jt_education_hostel.group_hostel
+msgid "User"
+msgstr "Utilizador"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__website_message_ids
+msgid "Website Messages"
+msgstr "Mensagens do Website"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__website_message_ids
+msgid "Website communication history"
+msgstr "Histórico de comunicação do Website"

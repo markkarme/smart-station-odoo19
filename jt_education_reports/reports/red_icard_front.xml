@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="red_icard_template">
+                <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div style="width:100%;height:100%;">
+                        <div style="width:670px;height:998px;background-image:url('jt_education_reports/static/src/img/red_id_front.png')">
+                            <div style="text-align:right;color:#FF4500;">
+                                <p><span style="font-size:30px;font-weight:bold;" t-field="res_company.name"/></p>
+                            </div>
+                            <div style="clear:both;"/>
+                            <div style="height:40%;">
+                                <div style="margin-left:210px;margin-top:45px;margin-right:8px;">
+                                    <img t-attf-src="data:image/png;base64,{{o.image_1920}}" style="height:250px;width:255px;margin-top:5px;border-radius:150px;"/>
+                                </div>
+                                <div style="text-align:center;">
+                                    <p style="font-size:35px;margin-top:50px;color:black;font-weight:bold;text-transform:uppercase;"><span t-field="o.name"/></p>
+                                </div>
+                            </div>
+                           <div style="height:50%;align:center;">
+                            <center>
+                            <table clas="table table-borderless border border-right-0 border-left-0"  style="align:center;width:50%;height:auto;margin-left:15%;font-size:25px;">
+                                <tr>
+                                    <td style="font-weight:bold;">ID No. :</td>
+                                    <td><span t-field="o.stud_id" /></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:bold;padding-top:10px;">Standard :</td>
+                                    <td><span t-field="o.standard.name"/> - <span t-field="o.div.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:bold;padding-top:10px;">Phone :</td>
+                                    <td><span t-field="o.phone"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:bold;padding-top:10px;">Valid Till :</td>
+                                    <td><span t-field="o.curr_year"/></td>
+                                </tr>
+                            </table>
+                            <div>
+                                <img alt="barcode" t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.stud_id, 600, 120)" style="text-align:center;height:80px;width:450px;border:1px solid;padding:8px;margin-top:60px;"/>
+                            </div>
+                        </center>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_red_employee_icard" model="report.paperformat">
+            <field name="name">Employee Red Front Icard</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">143</field>
+            <field name="page_width">100</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="employee_red_front_icard_report" model="ir.actions.report">
+            <field name="name">Red Id-Card Report FRONT</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_reports.red_icard_template</field>
+            <field name="report_file">jt_education_reports.red_icard_template</field>
+            <field name="paperformat_id" ref="jt_education_reports.paperformat_red_employee_icard"/>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <report 
+            id="employee_red_front_icard_report"
+            model="res.partner"
+            string="Red Id-card Report FRONT"
+            report_type="qweb-pdf"
+            name="jt_education_reports.red_icard_template"
+            file="jt_education_reports.red_icard_template"
+            print_report_name="object.name"
+            paperformat="jt_education_reports.paperformat_red_employee_icard"
+        /> -->
+
+    </data>
+</odoo>

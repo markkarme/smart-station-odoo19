@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- Scheduler for Issue Mail Send to Student-->
+        <record forcecreate="True" id="ir_cron_issue_mail" model="ir.cron">
+            <field name="name">Send Mail To Student when issue is created.</field>
+            <field name="model_id" ref="model_issue_books"/>
+            <field name="state">code</field>
+            <field name="code">model.get_issue_mail_send()</field>
+            <field eval="True" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+        </record>
+    </data>
+</odoo>

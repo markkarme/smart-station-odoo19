@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        <!-- IssueBook Form Action View -->
+        <record id="action_issuebooks" model="ir.actions.act_window">
+            <field name="name">Issue Books</field>
+            <field name="res_model">issue.books</field>
+            <field name="view_mode">list,form,kanban</field>
+        </record>
+
+        <!-- Memberships Form Action View -->
+        <record id="action_memberships" model="ir.actions.act_window">
+            <field name="name">Memberships</field>
+            <field name="res_model">library.memberships</field>
+            <field name="view_mode">list,form,kanban</field>
+        </record>
+
+	    <!-- Books Form Action View -->
+        <record id="action_books" model="ir.actions.act_window">
+            <field name="name">Books</field>
+            <field name="res_model">books.books</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+        <!-- Authors Form Action View -->
+        <record id='action_show_author_details' model="ir.actions.act_window">
+            <field name="name">Author</field>
+            <field name="res_model">res.partner</field>
+            <field name="context">{'default_company_type':'author','default_author_type':'author'}</field>
+            <field name="domain">[('is_author','=',True)]</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_author_kanban_view">
+            <field name="sequence">1</field>
+            <field name="view_mode">kanban</field>
+            <field name="act_window_id" ref="jt_education_library.action_show_author_details"/>
+            <field name="view_id" ref="base.res_partner_kanban_view"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_author_tree_view">
+            <field name="sequence">2</field>
+            <field name="view_mode">list</field>
+            <field name="act_window_id" ref="jt_education_library.action_show_author_details"/>
+            <field name="view_id" ref="base.view_partner_tree"/>
+        </record>
+         <record model="ir.actions.act_window.view" id="action_author_view">
+            <field name="sequence">3</field>
+            <field name="view_mode">form</field>
+            <field name="act_window_id" ref="jt_education_library.action_show_author_details"/>
+            <field name="view_id" ref="jt_education_library.authors_form_view"/>
+        </record>
+
+         <!--Book language Form Action View -->
+        <record id="action_book_language" model="ir.actions.act_window">
+            <field name="name">Language</field>
+            <field name="res_model">book.language</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        
+        <menuitem name="Library" id="root_menu" parent="jt_education_base.root_menu" sequence="8" groups="jt_education_base.group_principle,jt_education_base.group_faculty,jt_education_library.group_library"/>
+
+        <menuitem name="Books" id="books_menu" action="action_books" parent="root_menu" sequence="1"/>
+
+        <menuitem name="Issue Books" id="issuebooks_menu" action="action_issuebooks" parent="root_menu" sequence = "2"/>
+
+        <menuitem name="Memberships" id="memberships_menu" action="action_memberships" parent="root_menu" sequence="3"/>
+
+        <menuitem name="Reports" id="reports_menu" parent="root_menu" sequence="4"/>
+       
+        <menuitem name="Library" id="configurations_menu" parent="jt_education_base.configurations_menu" sequence="5"/>  
+
+        <menuitem name="Authors" id="author_submenu" action="action_show_author_details" parent="configurations_menu"/>
+
+        <!-- <menuitem name="Books" id="books_submenu" action="action_books" parent="configurations_menu"/> -->
+
+        <menuitem name="Book's Languages" id="language_menu" action="action_book_language" parent="configurations_menu"/>
+
+	</data>
+</odoo>

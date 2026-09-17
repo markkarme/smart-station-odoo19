@@ -1,0 +1,33 @@
+<odoo>
+    <record id="reissue_book_wizard_view" model="ir.ui.view">
+        <field name="name">reissue.book.wizard.view</field>
+        <field name="model">reissue.book.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reissue Book Wizard">
+                <field name="state" invisible="1"/>
+                        <field name="book_line_ids">
+                            <list editable="bottom">
+                                <field name="name" string="Book Name"/>
+                                <field name="author" string="Author"/>
+                                <field name="state"/>
+                                <field name="genres" string="Genres"/>
+                                <field name="lang_id" string="Language" widget="many2many_tags"/>
+                                <field name="is_reissued" string="Reissued" widget="boolean"/>
+                                <field name="date_return" string="Return Date"/>
+                            </list>
+                        </field>
+                <footer>
+                    <button name="action_state_partially_returned" string="Reissue" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_reissue_wizard" model="ir.actions.act_window">
+        <field name="name">Reissue</field>
+        <field name="res_model">reissue.book.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="reissue_book_wizard_view"/>
+        <field name="target">new</field>           
+    </record>
+</odoo>

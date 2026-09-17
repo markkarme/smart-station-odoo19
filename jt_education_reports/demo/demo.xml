@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Demo data for res_company -->
+        <record id="image_1" model="res.company">
+            <!-- <field name="name">Stamp</field> -->
+            <field name="stamp_image" type="base64" file="jt_education_reports/static/src/img/paid_stamp.png"/>
+        </record>
+    </data>
+</odoo>

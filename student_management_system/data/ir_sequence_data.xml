@@ -1,0 +1,13 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Define the sequence for student codes -->
+        <record id="seq_student_management_student" model="ir.sequence">
+            <field name="name">Student Management Sequence</field>
+            <field name="code">student.management.student</field>
+            <field name="prefix">STU-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+</odoo>

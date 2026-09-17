@@ -1,0 +1,33 @@
+<odoo>
+    <record id="lost_book_wizard_view" model="ir.ui.view">
+        <field name="name">lost.book.wizard.view</field>
+        <field name="model">lost.book.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Lost Book Wizard">
+                <field name="state" invisible="1"/>
+                        <field name="book_line_ids">
+                            <list editable="bottom">
+                                <field name="name" string="Book Name"/>
+                                <field name="author" string="Author"/>
+                                <field name="state"/>
+                                <field name="genres" string="Genres"/>
+                                <field name="lang_id" string="Language" widget="many2many_tags"/>
+                                <field name="is_book_lost" string="Lost" widget="boolean"/>
+                                <!-- <field name="date_return" string="Return Date"/> -->
+                            </list>
+                        </field>
+                <footer>
+                    <button name="action_state_lost" string="Lost" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_lost_wizard" model="ir.actions.act_window">
+        <field name="name">Lost</field>
+        <field name="res_model">lost.book.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="lost_book_wizard_view"/>
+        <field name="target">new</field>           
+    </record>
+</odoo>

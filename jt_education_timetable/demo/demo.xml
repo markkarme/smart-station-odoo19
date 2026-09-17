@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo data for period -->
+        <record id="period_1" model="timetable.period">
+            <field name="name">Prayer</field>
+            <field name="time_from">07:30</field>
+            <field name="time_to">08:00</field>
+        </record>
+
+        <record id="period_2" model="timetable.period">
+            <field name="name">1</field>
+            <field name="time_from">08:00</field>
+            <field name="time_to">09:00</field>
+        </record>
+
+        <record id="period_3" model="timetable.period">
+            <field name="name">2</field>
+            <field name="time_from">09:00</field>
+            <field name="time_to">10:00</field>
+        </record>
+
+        <record id="period_4" model="timetable.period">
+            <field name="name">Break</field>
+            <field name="time_from">10:00</field>
+            <field name="time_to">11:00</field>
+        </record>
+
+        <record id="period_5" model="timetable.period">
+            <field name="name">3</field>
+            <field name="time_from">11:00</field>
+            <field name="time_to">12:00</field>
+        </record>
+
+        <record id="period_6" model="timetable.period">
+            <field name="name">4</field>
+            <field name="time_from">12:00</field>
+            <field name="time_to">01:00</field>
+        </record>
+
+        <record id="period_7" model="timetable.period">
+            <field name="name">5</field>
+            <field name="time_from">01:00</field>
+            <field name="time_to">02:00</field>
+        </record>
+
+        <record id="period_8" model="timetable.period">
+            <field name="name">Extra</field>
+            <field name="time_from">02:00</field>
+            <field name="time_to">03:00</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,566 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:09+0000\n"
+"PO-Revision-Date: 2021-10-04 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "<b>Assignment:</b>"
+msgstr "<b>Opdracht:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "<b>Date Of Payment:</b>"
+msgstr "<b>Datum van betaling:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "<b>Date of Issue:</b>"
+msgstr "<b>Uitgiftedatum:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "<b>Date of Return:</b>"
+msgstr "<b>Retourdatum:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Division:</b>"
+msgstr "<b>Divisie:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>End Date:</b>"
+msgstr "<b>Einddatum:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>Exam:</b>"
+msgstr "<b>Examen:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "<b>Issue ID:</b>"
+msgstr "<b>Probleem-ID:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "<b>Issued Date:</b>"
+msgstr "<b>Uitgiftedatum:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "<b>Month:</b>"
+msgstr "<b>Maand:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Name:</b>"
+msgstr "<b>Naam:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "<b>Receipt Number</b>"
+msgstr "<b>Ontvangstnummer</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Standard:</b>"
+msgstr "<b>Standaard:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>Start Date:</b>"
+msgstr "<b>Startdatum:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "<b>Status:</b>"
+msgstr "<b>Status:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "<b>Submission Date:</b>"
+msgstr "<b>Inleverdatum:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<b>Year:</b>"
+msgstr "<b>Jaar:</b>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "<em class=\"font-weight-normal text-muted\">Results for project:</em>"
+msgstr "<em class=\"font-weight-normal text-muted\">Resultaten voor project:</em>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<i class=\"fa fa-download\"/> Download"
+msgstr "<i class=\"fa fa-download\"/> Download"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<strong>Fail</strong>"
+msgstr "<strong>Mislukt</strong>"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<strong>Pass</strong>"
+msgstr "<strong>Geslaagd</strong>"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "All"
+msgstr "Alle"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Amount"
+msgstr "Hoeveelheid"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Assignment Details"
+msgstr "Opdrachtdetails"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment Type"
+msgstr "Opdrachttype"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Assignments"
+msgstr "Opdrachten"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Assignments List"
+msgstr "Opdrachtenlijst"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Attended Date"
+msgstr "Bijgewoonde datum"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Author"
+msgstr "Auteur"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Book"
+msgstr "Boek"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Book Limit"
+msgstr "ook Limit"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Category"
+msgstr "Categorie"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Current Year"
+msgstr "Huidige jaar"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Date"
+msgstr "Datum"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Date of Return"
+msgstr "Datum van terugkomst"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Day"
+msgstr "Dag"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Description"
+msgstr "Beschrijving"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Division"
+msgstr "Afdeling"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Download"
+msgstr "Downloaden"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "Duration"
+msgstr "Looptijd"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "Employee"
+msgstr "Medewerker"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "End Date"
+msgstr "Einddatum"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event State"
+msgstr "Gebeurtenisstatus"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Events"
+msgstr "Evenementen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Events Details"
+msgstr "Evenementendetails"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Exam Details"
+msgstr "Examendetails"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams"
+msgstr "examens"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams List"
+msgstr "Examenlijst"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Exams Schedule"
+msgstr "Examenrooster"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Faculty"
+msgstr "Faculteit"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees"
+msgstr "Kosten"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Fees Details"
+msgstr "Kosten Details"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Fees List"
+msgstr "Kostenlijst"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees Receipt"
+msgstr "Betalingsbewijs"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "From"
+msgstr "Van"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Genres"
+msgstr "Genres"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Grade"
+msgstr "Cijfer"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue Books"
+msgstr "Boeken uitgeven"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue List"
+msgstr "Lijst met problemen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Issued Date"
+msgstr "Uitgegeven datum"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Language"
+msgstr "Taal"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Library Details"
+msgstr "Bibliotheekdetails"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Marks Obtained"
+msgstr "Punten behaald"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership"
+msgstr "Lidmaatschap"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership ID"
+msgstr "Lidmaatschaps-ID"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Min Marks"
+msgstr "Min Marks"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Month"
+msgstr "Maand"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Name"
+msgstr "Naam"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Newest"
+msgstr "Nieuwste"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "None"
+msgstr "Geen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Note"
+msgstr "Opmerking"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Particulars"
+msgstr "Bijzonderheden"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Percentage:"
+msgstr "Percentage:"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Periods"
+msgstr "Perioden"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Receipt Number"
+msgstr "Ontvangstnummer:"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Registration Date"
+msgstr "registratie datum"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Result"
+msgstr "Resultaat"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result:"
+msgstr "Resultaat:"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results"
+msgstr "Resultaten"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results List"
+msgstr "Resultatenlijst"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Scored Marks"
+msgstr "Gescoorde punten"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Search in All"
+msgstr "Zoeken in Alles"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Serial Number"
+msgstr "Serienummer"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Standard"
+msgstr "Standaard"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Status"
+msgstr "Toestand"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Subject Pass/Fail"
+msgstr "Onderwerp geslaagd/mislukt"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Subjects"
+msgstr "Onderwerpen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission Date"
+msgstr "Termijn van inzending"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submissions"
+msgstr "Inzendingen"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_my_result_search
+msgid "There are no results."
+msgstr "Er zijn geen resultaten"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Time"
+msgstr "Tijd"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Timetable"
+msgstr "Rooster"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Timetable Details"
+msgstr "Dienstregeling Details"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "To"
+msgstr "Tot"
+
+#. module: jt_education_portal
+#: code:addons/jt_education_portal/controllers/main.py:0
+#: code:addons/jupical_edu/addons/jt_education_portal/controllers/main.py:0
+#, python-format
+msgid "Today"
+msgstr "Vandaag"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Total"
+msgstr "Totaal"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Total Marks"
+msgstr "Totale cijfers"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Year"
+msgstr "Jaar"

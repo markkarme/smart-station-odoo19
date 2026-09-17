@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+         <template id="daily_attendance_report_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="result">
+                    <t t-call="jt_education_exam.external_layout">
+                        <div class="page">
+                            <div>
+                                <div style="align:center;text-align:center;">
+                                    <p style="align:center;text-align:color:black;font-size:25px;margin-top:30px;">Daily Attendance Report</p>
+                                    <p  style="align:center;text-align:center;black;font-size:20px;">
+                                        For Class
+                                        <span t-esc="result.standard_id.name"/> - 
+                                        <span t-esc="result.division_id.name"/>
+                                    </p>
+                                </div>
+                            </div>
+                            <div  class="container text-center">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Responsible Teacher:</strong>
+                                        <span t-esc="result.faculty_id.name"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Date:</strong>
+                                        <span t-esc="result.date"/>
+                                    </div>
+                                </div>
+
+                                <table class="table table-bordered" style="margin-top:50px;">
+                                    <tr style="margin-right:50px;">
+                                        <th style="width: 5%;">Number</th>
+                                        <th>Student</th>
+                                        <th>Present</th>
+                                        <th>Absent Reason</th>
+                                        <th>Absent Noreason</th>
+                                        <th>Late</th>
+                                        <th>Withdraw</th>
+                                    </tr>
+                                    <t t-set="count" t-value='0'/>
+                                    <t t-foreach="result.attendance_ids" t-as="line">
+                                        <tr>
+                                            <t t-set="count" t-value='count+1'/>
+                                            <td>
+                                                <t t-esc="count"/>
+                                            </td>
+                                            <td style="text-align:left;">
+                                                <t t-esc="line.student_id.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-if="line.present">
+                                                    <span class="fa fa-check"/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <t t-if="line.absence_reason">
+                                                    <span class="fa fa-check"/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <t t-if="line.absence_noreason">
+                                                    <span class="fa fa-check"/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <t t-if="line.late">
+                                                    <span class="fa fa-check"/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <t t-if="line.withdraw">
+                                                    <span class="fa fa-check"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </table>
+
+                                <table class="table table-bordered" style="width:35%;">
+                                    <tr>
+                                        <td><b>Present:</b></td>
+                                        <td><t t-esc="len(result.attendance_ids.filtered(lambda x:x.present))"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Absent With Reason:</b></td>
+                                        <td><t t-esc="len(result.attendance_ids.filtered(lambda x:x.absence_reason))"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Absent With Noreason:</b></td>
+                                        <td><t t-esc="len(result.attendance_ids.filtered(lambda x:x.absence_noreason))"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Late:</b></td>
+                                        <td><t t-esc="len(result.attendance_ids.filtered(lambda x:x.late))"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Withdraw:</b></td>
+                                        <td><t t-esc="len(result.attendance_ids.filtered(lambda x:x.withdraw))"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <record id="daily_attendance_paperformate" model="report.paperformat">
+            <field name="name">Daily attendance paperformate</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">60</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+        <record id="action_daily_attendance_report" model="ir.actions.report">
+            <field name="name">Daily Attendance</field>
+            <field name="model">attendance.attendance</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_attendance.daily_attendance_report_template</field>
+            <field name="report_file">jt_education_attendance.daily_attendance_report_template</field>
+            <field name="paperformat_id" ref="jt_education_attendance.daily_attendance_paperformate"/>
+            <field name="print_report_name">"Daily Attendance Report"</field>
+            <field name="binding_model_id" ref="jt_education_attendance.model_attendance_attendance"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

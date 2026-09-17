@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="student_profile_inherit" model="ir.ui.view">
+            <field name="name">student.profile.form.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="jt_education_base.student_profile"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='history_tab']" position="inside">
+                    <field name="student_yearly_result_ids">
+                        <list string="Result Details" editable="bottom" create="1" delete="1" limit="10">
+                            <field name="year" />
+                            <field name="standard" />
+                            <field name="average_rank" />
+                            <field name="stu_percentage" />
+                        </list>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+        <record id="student_yearly_result_form" model="ir.ui.view">
+            <field name="name">student.yearly.result.form</field>
+            <field name="model">student.yearly.result</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="year"/>
+                            <field name="standard"/>
+                            <field name="average_rank"/>
+                            <field name="stu_percentage"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

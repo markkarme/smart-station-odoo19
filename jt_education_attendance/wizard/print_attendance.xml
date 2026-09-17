@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="export_attendance_wizard_form" model="ir.ui.view">
+        <field name="name">Attendance Report</field>
+        <field name="model">print.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="summary_report" invisible="1"/>
+                            <field name="start_date"  required='1'/>
+                            <field name="standard_id" invisible="summary_report" required="not summary_report"/>
+                            <field name="division_id"/>
+                        </group>
+                        <group>
+                            <field name="end_date" required='1'/>
+                            <field name="faculty_id" invisible="summary_report" required="not summary_report"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="generate_attendance_report" string="Generate Report"
+                        type="object" class="oe_highlight" invisible="summary_report"/>
+
+                    <button name="get_attendance_summary_data" string="Generate Summary Report"
+                        type="object" class="oe_highlight" invisible="not summary_report"/>
+                    <button string="Cancel" class="oe_highlight" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_attendance_wizard">
+          <field name="name">Attendance Report</field>
+          <field name="res_model">print.attendance</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+          <field name="view_id" ref="jt_education_attendance.export_attendance_wizard_form"/>
+    </record>
+
+    <menuitem name="Attendance" id="attendance_report" parent="jt_education_base.menu_education_reports" action="jt_education_attendance.action_attendance_wizard" sequence="1"/>
+
+</odoo>

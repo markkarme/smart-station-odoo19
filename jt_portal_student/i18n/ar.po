@@ -1,0 +1,339 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Aadhar Card</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">بطاقة أدهار</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Address Line 1</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">العنوان سطر 1</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Address Line 2</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">سطر العنوان 2</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Caste</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">الطبقة</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">City</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">مدينة</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Country</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">دولة</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Current Year</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">العام الحالي</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">District</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">يصرف</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Email</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">بريد إلكتروني</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Father Name</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">اسم الأب</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Marksheet</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">ورقة العلامات</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Mobile</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">متحرك</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Mother Name</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">اسم الأم</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Mother Tongue</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">اللغة الأم</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Name</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">اسم</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Nationality</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">جنسية</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Place Of Birth</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">مكان الميلاد</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Province</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">مقاطعة</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Religion</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">دِين</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">State</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">ولاية</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Subcaste</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">طبقة فرعية</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Surname</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">اسم العائلة</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">Village</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">قرية</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid ""
+"<span class=\"s_website_form_label_content\">ZIP Code</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">الرمز البريدي</span>\n"
+"                                                        <span class=\"s_website_form_mark\">     *</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid ""
+"<span> / </span>\n"
+"            <span>Application Status</span>"
+msgstr ""
+"<span> / </span>\n"
+"            <span>حالة الطلب</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "<span>No photo available</span>"
+msgstr "<span>لا توجد صورة متاحة</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "<span>No sign available</span>"
+msgstr "<span>لا توجد توقيع متاح</span>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "<strong>Name: </strong>"
+msgstr "<strong>الاسم: </strong>"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Address"
+msgstr "العنوان"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Application Form"
+msgstr "نموذج الطلب"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Application Status"
+msgstr "حالة الطلب"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Back"
+msgstr "عودة"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Contact"
+msgstr "التواصل"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Date of Submission"
+msgstr "تاريخ التقديم"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Documents"
+msgstr "الوثائق"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Other Information"
+msgstr "معلومات أخرى"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Preview Form"
+msgstr "عرض النموذج"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Standard"
+msgstr "الصف"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.portal_student_details
+msgid "Status"
+msgstr "الحالة"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Student Information"
+msgstr "معلومات الطالب"
+
+#. module: jt_portal_student
+#: model_terms:ir.ui.view,arch_db:jt_portal_student.admission_form_preview_page
+msgid "Student Photo"
+msgstr "صورة الطالب"

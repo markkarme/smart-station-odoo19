@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_multi_company" model="ir.ui.view">
+        <field name="name">hr.employee.form.multi.company</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='work_information']//field[@name='company_id']" position="replace">
+                <field
+                    name="company_ids"
+                    widget="many2many_tags"
+                    options="{'no_create': True}"
+                    groups="base.group_multi_company"
+                    domain="[('id', 'in', allowed_company_ids)]"
+                />
+                <field
+                    name="company_id"
+                    string="Main Company"
+                    groups="base.group_multi_company"
+                    domain="[('id', 'in', company_ids)]"
+                    required="1"
+                />
+            </xpath>
+            <xpath expr="//page[@name='work_information']//field[@name='parent_id']" position="attributes">
+                <attribute name="domain">['|', ('company_ids', 'in', allowed_company_ids), ('company_id', 'in', allowed_company_ids)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_tree_multi_company" model="ir.ui.view">
+        <field name="name">hr.employee.list.multi.company</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id'][@groups='base.group_multi_company']" position="after">
+                <field
+                    name="company_ids"
+                    widget="many2many_tags"
+                    groups="base.group_multi_company"
+                    optional="show"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_filter_multi_company" model="ir.ui.view">
+        <field name="name">hr.employee.search.multi.company</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="domain">['|', ('company_ids', 'in', allowed_company_ids), ('company_id', 'in', allowed_company_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='coach_id']" position="attributes">
+                <attribute name="domain">['|', ('company_ids', 'in', allowed_company_ids), ('company_id', 'in', allowed_company_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id'][not(ancestor::searchpanel)]" position="after">
+                <field name="company_ids" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

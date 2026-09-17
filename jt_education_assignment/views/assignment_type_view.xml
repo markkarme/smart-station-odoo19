@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="student_assignment_type_tree_view" model="ir.ui.view">
+            <field name="name">assignment.type.tree</field>
+            <field name="model">assignment.type</field>
+            <field name="arch" type="xml">
+                <list string="Assignment Types">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="assign_type" />
+                </list>
+            </field>
+        </record>
+
+        <record id="student_assignment_type_form_view" model="ir.ui.view">
+            <field name="name">assignment.type.form</field>
+            <field name="model">assignment.type</field>
+            <field name="arch" type="xml">
+                <form string="Assignment Types">
+                    <sheet>
+                        <group col="4">
+                            <field name="name" required="1"/>
+                            <field name="code" />
+                            <field name="assign_type" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_assignment_type_search_view" model="ir.ui.view">
+            <field name="name">assignment.type.search</field>
+            <field name="model">assignment.type</field>
+            <field name="arch" type="xml">
+                <search string="Tag">
+                    <field name="name" />
+                    <field name="code" />
+                    <newline />
+                    <group>
+                        <filter string="Name" domain="[]" name="group_by_assignment_type_name"
+                                context="{'group_by':'name'}" />
+                        <filter string="Code" domain="[]" name="group_by_assignment_type_code"
+                                context="{'group_by':'code'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

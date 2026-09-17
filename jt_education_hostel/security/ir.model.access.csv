@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hostel_room,hostel_room,model_hostel_room,base.group_user,1,1,1,1
+hostel_building,hostel_building,model_hostel_building,base.group_user,1,1,1,1
+hostel_registration,hostel_registration,model_hostel_registration,base.group_user,1,1,1,1
+hostel_registration_line,hostel_registration_line,model_hostel_registration_line,base.group_user,1,1,1,1
+hostel_housekeeping,hostel_housekeeping,model_hostel_housekeeping,base.group_user,1,1,1,1
+hostel_details,hostel_details,model_hostel_details,base.group_user,1,1,1,1
+student_complaints,student_complaints,model_student_complaints,base.group_user,1,1,1,1
+parent_meeting,parent_meeting,model_parent_meeting,base.group_user,1,1,1,1
+cancel_reason,cancel_reason,model_cancel_reason,base.group_user,1,1,1,1
+

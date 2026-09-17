@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+           <!-- Fees Detail form view -->
+        <record id="fees_detail_view_form" model="ir.ui.view">
+            <field name="name">Fees Detail Form View</field>
+            <field name="model">fees.detail</field>
+            <field name="arch" type="xml">
+                <form edit="false" create="false">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Reference"/>
+                            <field name="student" string="Student" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                            <field name="standard" string="Standard"/>
+                            <field name="division" string="Division"/>
+                            <field name="year" string="Year"/>
+                            <field name="month" string="Month"/>
+                            <field name="fee_type" string="Fees Type"/>
+                            <field name="amount" string="Amount"/>
+                            <field name="state" string="Status"/>
+                        </group>
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Fees Detail tree view -->
+        <record id="fees_detail_view_tree" model="ir.ui.view">
+            <field name="name">Fees Detail Tree View</field>
+            <field name="model">fees.detail</field>
+            <field name="arch" type="xml">
+                <list edit="false" create="false">
+
+                    <field name="name" string="Reference"/>
+                    <field name="student" string="Student"/>
+                    <field name="standard" string="Standard"/>
+                    <field name="division" string="Division"/>
+                    <field name="year" string="Year"/>
+                    <field name="month" string="Month"/>
+                    <field name="fee_type" string="Fees Type"/>
+                    <field name="amount" string="Amount" sum="Total Amount"/>
+                    <field name="state" string="Status"/>
+                </list>
+            </field>
+        </record>
+
+               <!-- Fees Type form view -->
+        <record id="fees_type_view_form" model="ir.ui.view">
+            <field name="name">Fees Type Form View</field>
+            <field name="model">fees.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" string="Fee Type"/>
+                            <field name="fees_amount"/>
+                        </group>
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Fees Type tree view -->
+        <record id="fees_type_view_tree" model="ir.ui.view">
+            <field name="name">Fees Type Tree View</field>
+            <field name="model">fees.type</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" string="Fees Type"/>
+                    <field name="fees_amount"/>
+
+                </list>
+            </field>
+        </record>
+
+
+        <!-- inherited student standard view -->
+        <!-- student standard form view -->
+        <record id="view_standard_form_fees" model="ir.ui.view">
+            <field name="name">student standard form</field>
+            <field name="model">student.standard</field>
+            <field name="inherit_id" ref="jt_education_base.standard_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="fee"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- inherited student standard tree view -->
+        <!-- student standard tree view -->
+        <record id="view_standard_tree_fees" model="ir.ui.view">
+            <field name="name">student standard tree view</field>
+            <field name="model">student.standard</field>
+             <field name="inherit_id" ref="jt_education_base.standard_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="fee"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Fees form view -->
+        <record id="fees_view_form" model="ir.ui.view">
+            <field name="name">Fees Form View</field>
+            <field name="model">fees.fees</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_draft" string="Set to Draft" type="object" invisible="state != 'cancel'" class="btn-primary" groups="jt_education_fees.psf_group_manager,jt_education_fees.sf_group_manager"/>
+                        <button name="action_paid" string="Validate" type="object" invisible="state != 'draft'" class="btn-primary" groups="jt_education_fees.psf_group_manager,jt_education_fees.sf_group_manager"/>
+                        <button name="get_fees_receipt_xls_report" string="Print Fees Receipt XLS" type="object"  class="oe_highlight" invisible="state not in ('draft','paid')" groups="jt_education_fees.psf_group_manager,jt_education_fees.sf_group_manager"/>
+                        <button name="action_cancel" string="Cancel" type="object" invisible="state not in ('draft','invoice','sale')" class="btn" groups="jt_education_fees.psf_group_manager,jt_education_fees.sf_group_manager"/>
+                        <field name="state" widget="statusbar" readonly="1" statusbar_visible="draft,invoice,sale,paid" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <!-- Smart Button For Total Sale Orders -->
+                            <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_fees_sale_order">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="sale_order_count" widget='monetary'/>
+                                    </span>
+                                    <span class="o_stat_text">Sale Orders</span>
+                                </div>
+                            </button>
+                            <!-- Smart Button For Total Invoice -->
+                            <button type="object" class="oe_stat_button" icon="fa-money" name="action_view_fees_invoice">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="invoice_count" widget='monetary'/>
+                                    </span>
+                                    <span class="o_stat_text">Invoices</span>
+                                </div>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="pre_school_fee" string="Allow PreSchool Fees" invisible="1"/>
+                                <field name="student" string="Student" required="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                                <field name="name" string="Reference" readonly="1"/>
+                                <field name="paid_on" string="Paid On" readonly="1" invisible="state != 'paid'"/>
+                            </group>
+                            <group>
+                                <field name="standard" string="Standard"/>
+                                <field name="division" string="Division"/>
+                                <field name="year" string="Year"/>
+                                <!-- <field name="month" string="Month"/> -->
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Fee Items" name="fees_items">
+                                <field name="fees_detail">
+                                    <list editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="product_desc"/>
+                                        <field name="fee_type" string="Fees Type"/>
+                                        <field name="amount" string="Amount"/>
+                                    </list>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                        <label for="amount" />
+                                    </div>
+                                    <field name="amount" nolabel="1" class="oe_subtotal_footer_separator"/>
+                                </group>
+                            </page>
+                            <page string="Other Info" name="other_info">
+                                <group>
+                                    <group>
+                                        <field name="order_ref" readonly="1"/>
+                                        <field name="inv_ref" readonly="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Fees tree view -->
+        <record id="fees_view_tree" model="ir.ui.view">
+            <field name="name">Fees Tree View</field>
+            <field name="model">fees.fees</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="pre_school_fee" string="Allow PreSchool Fees" invisible="1"/>
+                    <field name="name" string="Reference" readonly="1"/>
+                    <field name="paid_on" string="Paid On" readonly="1"/>
+                    <field name="student" string="Student"/>
+                    <field name="standard" string="Standard"/>
+                    <field name="division" string="Division"/>
+                    <field name="year" string="Year"/>
+                    <field name="month" string="Month"/>
+                    <field name="amount" sum="Total Fees" string="Amount"/>
+                    <field name="payment_state"
+                           widget="badge"
+                           decoration-danger="payment_state == 'not_paid'"
+                           decoration-success="payment_state == 'paid'"
+                           optional="show"/>
+                    <field name="state"
+                       widget="badge"
+                       decoration-danger="state == 'cancel'"
+                       decoration-warning="state in ('draft','sale')"
+                       decoration-success="state in ('invoice','paid')"
+                       optional="show"/>
+
+                </list>
+            </field>
+        </record>
+
+
+                <!-- Actions -->
+
+        
+        <record model="ir.actions.act_window" id="action_school_fees">
+            <field name="name">School Fees</field>
+            <field name="res_model">fees.fees</field>
+            <field name="context">{'pre_school_fee': False}</field>
+            <field name="domain">[('pre_school_fee', '=', False)]</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_pre_school_fees">
+            <field name="name">Pre School Fees</field>
+            <field name="res_model">fees.fees</field>
+            <field name="context">{'pre_school_fee': True}</field>
+            <field name="domain">[('pre_school_fee', '=', True)]</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_fees_type">
+            <field name="name">Fees Type</field>
+            <field name="res_model">fees.type</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem 
+            name="Fees"
+            id="fees_root_menu"
+            parent="jt_education_base.root_menu" 
+            sequence="7"/>
+
+        <menuitem
+            name="Fees"
+            id="fees_child1_menu"
+            parent="fees_root_menu"
+            action="action_school_fees"
+            sequence="1"
+            groups="sf_group_manager"/>
+
+        <menuitem
+            name="Pre Fees"
+            id="fees_child2_menu"
+            parent="fees_root_menu"
+            action="action_pre_school_fees"
+            sequence="2"
+            groups="psf_group_manager"/>
+
+
+        <menuitem 
+            name="Fees"
+            id="setting_menu"
+            parent="jt_education_base.configurations_menu"
+            sequence="3"
+            groups="psf_group_manager,sf_group_manager"/>
+
+    <!--     <menuitem 
+            name="Fees Structure"
+            id="fees_structure_menu"
+            parent="setting_menu"
+            action="action_fees_type"/> -->
+ 
+
+        <menuitem 
+            name="Fees Type"
+            id="fees_type_menu"
+            parent="setting_menu"
+            action="action_fees_type"/>
+
+
+        <!-- Action to generate fees history report -->
+        <record id="act_export_fees_history" model="ir.actions.act_window">
+            <field name="name">Export Fees History</field>
+            <field name="res_model">export.fees.history.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Action to generate paid/due fees history report -->
+        
+        <record id="act_export_paid_due_fees_history" model="ir.actions.act_window">
+            <field name="name">Export Paid/Due Fees History</field>
+            <field name="res_model">export.due.fees.history.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="target">new</field>
+        </record>
+
+         <!-- Action to generate fees structure entry report -->
+        
+        <record id="act_generate_fees_structure" model="ir.actions.act_window">
+            <field name="name">Generate fee structure entry</field>
+            <field name="res_model">pay.yearly.fees.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

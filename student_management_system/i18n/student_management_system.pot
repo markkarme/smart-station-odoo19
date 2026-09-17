@@ -1,0 +1,1101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* student_management_system
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260723\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-10 23:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__a+
+msgid "A+"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__a-
+msgid "A-"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__ab+
+msgid "AB+"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__ab-
+msgid "AB-"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_needaction
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_needaction
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_needaction
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_needaction
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_needaction
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__active
+msgid "Active"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_exception_decoration
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_exception_decoration
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_exception_decoration
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_exception_decoration
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_exception_decoration
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_state
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_state
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_state
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_state
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_state
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_type_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_type_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_type_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_type_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_type_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Add Fee"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__address
+msgid "Address"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__state__admission
+#: model:ir.ui.menu,name:student_management_system.student_studentr_menu
+msgid "Admission"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_admin_app_hide
+#: model:res.groups.privilege,name:student_management_system.res_groups_privilege_admin_app_hide
+msgid "App Admin"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.school_student_view_kanban
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Archived"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_attachment_count
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_attachment_count
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_attachment_count
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_attachment_count
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_attachment_count
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__b+
+msgid "B+"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__b-
+msgid "B-"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__blood_group
+msgid "Blood Group"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.actions.act_window,name:student_management_system.student_branch_view_action
+#: model:ir.model,name:student_management_system.model_student_management_branch
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__branch_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__branch_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__branch
+#: model:ir.ui.menu,name:student_management_system.student_branch_menu
+#: model_terms:ir.ui.view,arch_db:student_management_system.school_branch_view_kanban
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+msgid "Branch"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__name
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_branch_form_view
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_branch_view_tree
+msgid "Branch Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__branch_id
+msgid "Branch to which this room belongs"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__capacity
+msgid "Capacity"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Change Course"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__state__certificate
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Complete"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_config_menu
+msgid "Configration Menu-SMS"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.ui.menu,name:student_management_system.student_management_config_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups.privilege,name:student_management_system.res_groups_privilege_config_menu
+msgid "Configuration Menu"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__contact_info
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__contact_info
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__contact_info
+msgid "Contact Info"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__course_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__course_id
+#: model:ir.ui.menu,name:student_management_system.student_course_menu
+#: model_terms:ir.ui.view,arch_db:student_management_system.school_course_view_kanban
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_teacher_form_view
+msgid "Course"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__switch_course
+msgid "Course Change  Reason"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__fee
+msgid "Course Fee"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+msgid "Course ID"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Course Info"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model,name:student_management_system.model_student_management_course
+msgid "Course Management"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__name
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_course_view_tree
+msgid "Course Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.actions.act_window,name:student_management_system.student_course_view_action
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__course_ids
+msgid "Courses"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.actions.act_window,help:student_management_system.student_branch_view_action
+msgid "Create Branch"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.actions.act_window,help:student_management_system.student_course_view_action
+msgid "Create Course"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.actions.act_window,help:student_management_system.course_schedule_view_action
+msgid "Create Course Schedule"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.actions.act_window,help:student_management_system.student_room_view_action
+msgid "Create Room"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.actions.act_window,help:student_management_system.student_student_view_action
+msgid "Create Student Profile"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.actions.act_window,help:student_management_system.student_teacher_view_action
+msgid "Create Teacher Profile"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__create_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__create_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__create_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__create_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__create_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__create_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__create_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__create_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__create_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__create_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__currency_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+msgid "Current"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__partner_id
+msgid "Customer"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__dob
+msgid "Date of Birth"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__day
+msgid "Day"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__discount_amount
+msgid "Discount Amount"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__discount_reason
+msgid "Discount Reason"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__discount
+msgid "Discount-%"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__display_name
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__display_name
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__display_name
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__display_name
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__display_name
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__duration
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__duration
+msgid "Duration"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__email
+msgid "Email"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__end_time
+msgid "End Time"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__end_time
+msgid "End time in 24-hour format, e.g., 11.0 for 11:00 AM"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__exam_fee
+msgid "Exam Fee"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__exam_fee_course
+msgid "Exam Fee Course"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__where_about_know__facebook
+msgid "Facebook"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__fee
+msgid "Fee"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__gender__female
+msgid "Female"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__final_fee
+msgid "Final Fee"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_follower_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_follower_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_follower_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_follower_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_follower_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_partner_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_partner_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_partner_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_partner_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_partner_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__activity_type_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__activity_type_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__activity_type_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__activity_type_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__activity_type_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__friday
+msgid "Friday"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__where_about_know__friend
+msgid "From a Friend"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__invoice_status_clone__paid
+msgid "Fully Paid"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__gender
+msgid "Gender"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_admin
+#: model:res.groups.privilege,name:student_management_system.res_groups_privilege_group_admin
+msgid "Group Admin"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__has_message
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__has_message
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__has_message
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__has_message
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__has_message
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__where_about_know
+msgid "How did you hear about us?"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__id
+msgid "ID"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_exception_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_exception_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_exception_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_exception_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_exception_icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__activity_exception_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__activity_exception_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__activity_exception_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__activity_exception_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__activity_exception_icon
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__message_needaction
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__message_needaction
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__message_needaction
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__message_needaction
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__message_needaction
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__message_has_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__message_has_sms_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__message_has_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__message_has_sms_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__message_has_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__message_has_sms_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__message_has_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__message_has_sms_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__message_has_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__message_has_sms_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__message_has_error
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__state__invoice
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Invoice"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__invoice_status
+msgid "Invoice Status"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__invoice_status_clone
+msgid "Invoice Status Clone"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__invoice_count
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Invoices"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_is_follower
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_is_follower
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_is_follower
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_is_follower
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_is_follower
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__is_ncc
+msgid "Is NCC"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__last_amount_paid_fee
+msgid "Last Amount Paid"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__write_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__write_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__write_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__write_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__write_uid
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__write_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__write_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__write_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__write_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__write_date
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__where_about_know__linkedin
+msgid "LinkedIn"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__room_ids
+msgid "List of rooms in this branch"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__location
+msgid "Location"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_has_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_has_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_has_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_has_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_has_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__monday
+msgid "Monday"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__my_activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__my_activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__my_activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__my_activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__my_activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "NCC Course Info"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups.privilege,name:student_management_system.res_groups_privilege_ncc_section
+msgid "NCC Education"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_ncc_section_hide
+msgid "NCC Education Check_Show"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__NRC
+msgid "NRC"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__name
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_course_schedule_view_tree
+msgid "Name"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Net Amount"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_calendar_event_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_calendar_event_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_calendar_event_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_calendar_event_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_calendar_event_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_date_deadline
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_summary
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_summary
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_summary
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_summary
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_summary
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_type_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_type_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_type_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_type_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_type_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_needaction_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_needaction_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_needaction_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_needaction_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_needaction_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_has_error_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_has_error_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_has_error_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_has_error_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_has_error_counter
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__message_needaction_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__message_needaction_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__message_needaction_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__message_needaction_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__message_needaction_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__message_has_error_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__message_has_error_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__message_has_error_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__message_has_error_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__message_has_error_counter
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__o+
+msgid "O+"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__blood_group__o-
+msgid "O-"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__where_about_know__other
+msgid "Other"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__parent
+msgid "Parent Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__invoice_status_clone__partical
+msgid "Partical Paid"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Personal Info"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__mobile
+msgid "Phone"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__icon
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__icon
+msgid "Photo"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__reg_fee
+msgid "Register Fee"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__reg_fee_course
+msgid "Register Fee Course"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__teacher_id2
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__related_teacher_ids
+msgid "Related Teachers"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__activity_user_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__activity_user_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__activity_user_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__activity_user_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__activity_user_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.actions.act_window,name:student_management_system.student_room_view_action
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__room_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__room_id
+#: model:ir.ui.menu,name:student_management_system.student_room_menu
+#: model_terms:ir.ui.view,arch_db:student_management_system.school_room_view_kanban
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+msgid "Room"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model,name:student_management_system.model_student_management_room
+msgid "Room Management"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__name
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_room_form_view
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_room_view_tree
+msgid "Room Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__room_ids
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_branch_form_view
+msgid "Rooms"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__message_has_sms_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__message_has_sms_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__message_has_sms_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__message_has_sms_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__message_has_sms_error
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__saturday
+msgid "Saturday"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_course_form_view
+msgid "Schedule"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.actions.act_window,name:student_management_system.course_schedule_view_action
+#: model:ir.ui.menu,name:student_management_system.student_course_schedule_menu
+msgid "Schedule Course"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model,name:student_management_system.model_student_management_schedule
+msgid "Schedule Management"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__schedule_ids
+msgid "Schedules"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Set Admission"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__specialization
+msgid "Specialization"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__start_time
+msgid "Start Time"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__start_time
+msgid "Start time in 24-hour format, e.g., 9.0 for 9:00 AM"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__activity_state
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__activity_state
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__activity_state
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__activity_state
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__activity_state
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.ui.menu,name:student_management_system.student_student_config_menu
+#: model_terms:ir.ui.view,arch_db:student_management_system.school_student_view_kanban
+msgid "Student"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.actions.act_window,name:student_management_system.student_student_view_action
+msgid "Student Admission"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+msgid "Student Branch"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__sequence_code
+msgid "Student Code"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+msgid "Student Course"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model,name:student_management_system.model_student_management_student
+#: model:ir.module.category,name:student_management_system.module_category_student_management
+msgid "Student Management"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_student_management_admin
+msgid "Student Management Admin"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_student_management_restaurant
+msgid "Student Management Restaurant"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups.privilege,name:student_management_system.res_groups_privilege_student_management_role
+msgid "Student Management Role"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.module.category,description:student_management_system.module_category_student_management
+#: model:ir.ui.menu,name:student_management_system.student_management_main_menu_root
+msgid "Student Management System"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__name
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_view_tree
+msgid "Student Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__state
+msgid "Student State"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__sunday
+msgid "Sunday"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.actions.act_window,name:student_management_system.student_teacher_view_action
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__teacher_id
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__teacher
+#: model:ir.ui.menu,name:student_management_system.student_teacher_menu
+#: model_terms:ir.ui.view,arch_db:student_management_system.school_teacher_view_kanban
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_course_form_view
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_management_view_search
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Teacher"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model,name:student_management_system.model_student_management_teacher
+msgid "Teacher Management"
+msgstr ""
+
+#. module: student_management_system
+#: model:res.groups,name:student_management_system.group_teacher_menu
+#: model:res.groups.privilege,name:student_management_system.res_groups_privilege_teacher_menu
+msgid "Teacher Menu"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__name
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_teacher_form_view
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_teacher_view_tree
+msgid "Teacher Name"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__teacher_schedule
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_student_form_view
+msgid "Teacher's Schedule"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__thursday
+msgid "Thursday"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__where_about_know__tiktok
+msgid "TikTok"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__tuesday
+msgid "Tuesday"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__activity_exception_decoration
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__activity_exception_decoration
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__activity_exception_decoration
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__activity_exception_decoration
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__activity_exception_decoration
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_student__where_about_know__website
+msgid "University Website"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_branch__website_message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_course__website_message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_room__website_message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_schedule__website_message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_student__website_message_ids
+#: model:ir.model.fields,field_description:student_management_system.field_student_management_teacher__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields,help:student_management_system.field_student_management_branch__website_message_ids
+#: model:ir.model.fields,help:student_management_system.field_student_management_course__website_message_ids
+#: model:ir.model.fields,help:student_management_system.field_student_management_room__website_message_ids
+#: model:ir.model.fields,help:student_management_system.field_student_management_schedule__website_message_ids
+#: model:ir.model.fields,help:student_management_system.field_student_management_student__website_message_ids
+#: model:ir.model.fields,help:student_management_system.field_student_management_teacher__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: student_management_system
+#: model:ir.model.fields.selection,name:student_management_system.selection__student_management_schedule__day__wednesday
+msgid "Wednesday"
+msgstr ""
+
+#. module: student_management_system
+#: model_terms:ir.ui.view,arch_db:student_management_system.student_course_form_view
+msgid "course Name"
+msgstr ""

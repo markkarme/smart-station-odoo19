@@ -1,0 +1,370 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_counseling
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 05:17+0000\n"
+"PO-Revision-Date: 2025-07-23 05:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__action_id
+msgid "Action"
+msgstr "ક્રિયા"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_needaction
+msgid "Action Needed"
+msgstr "ક્રિયા આવશ્યક છે"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_ids
+msgid "Activities"
+msgstr "પ્રવૃત્તિઓ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "પ્રવૃત્તિ અપવાદ અલંકરણ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_state
+msgid "Activity State"
+msgstr "પ્રવૃત્તિની સ્થિતિ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "પ્રવૃત્તિ પ્રકાર ચિહ્ન"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_attachment_count
+msgid "Attachment Count"
+msgstr "જોડાણોની સંખ્યા"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__cids
+msgid "Cids"
+msgstr "Cids"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__stopped
+msgid "Completed"
+msgstr "પૂર્ણ થયું"
+
+#. module: jt_counseling
+#: model:ir.ui.menu,name:jt_counseling.student_counseling_menu
+#: model:ir.ui.menu,name:jt_counseling.student_counseling_submenu
+msgid "Counseling"
+msgstr "કાઉન્સેલિંગ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવવામાં આવ્યું"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__create_date
+msgid "Created on"
+msgstr "તારીખે બનાવ્યું"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__display_name
+msgid "Display Name"
+msgstr "પ્રદર્શિત નામ"
+
+#. module: jt_counseling
+#. odoo-python
+#: code:addons/jt_counseling/models/counseling.py:0
+msgid "Enter Link"
+msgstr "લિંક દાખલ કરો"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__faculty_id
+msgid "Faculty"
+msgstr "ફેકલ્ટી"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_follower_ids
+msgid "Followers"
+msgstr "અનુયાયીઓ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "અનુયાયીઓ (ભાગીદારો)"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "ફોન્ટ ઓસમ ચિહ્ન ઉદાહરણ તરીકે: fa-tasks"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__has_message
+msgid "Has Message"
+msgstr "સંદેશો છે"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__id
+msgid "ID"
+msgstr "આઈડી"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_exception_icon
+msgid "Icon"
+msgstr "ચિહ્ન"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "અપવાદ પ્રવૃત્તિ દર્શાવતું ચિહ્ન."
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "જો પસંદ કરેલ હોય, તો નવા સંદેશો માટે તમારું ધ્યાન જરૂરી છે."
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_has_error
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "જો પસંદ કરેલ હોય, તો કેટલાક સંદેશોમાં વિતરણની ભૂલ છે."
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_survey_survey__is_counseling
+msgid "Is Counselling"
+msgstr "કાઉન્સેલિંગ છે"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_is_follower
+msgid "Is Follower"
+msgstr "અનુયાયી છે"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_pause
+msgid "Last Pause Time"
+msgstr "છેલ્લી વિરામ સમય"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__write_uid
+msgid "Last Updated by"
+msgstr "છેલ્લે સુધારનાર"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે સુધારેલ તારીખ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__menu_id
+msgid "Menu"
+msgstr "મેનૂ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_has_error
+msgid "Message Delivery error"
+msgstr "સંદેશ વિતરણમાં ભૂલ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_ids
+msgid "Messages"
+msgstr "સંદેશો"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "મારી પ્રવૃત્તિની અંતિમ તારીખ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "આગામી પ્રવૃત્તિ કેલેન્ડર ઈવેન્ટ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "આગામી પ્રવૃત્તિની અંતિમ તારીખ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_summary
+msgid "Next Activity Summary"
+msgstr "આગામી પ્રવૃત્તિ સારાંશ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_type_id
+msgid "Next Activity Type"
+msgstr "આગામી પ્રવૃત્તિ પ્રકાર"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__not_started
+msgid "Not Started"
+msgstr "શરૂ કરવામાં આવ્યું નથી"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__note
+msgid "Note"
+msgstr " નોંધ"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Notes"
+msgstr " નોંધો"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_needaction_counter
+msgid "Number of Actions"
+msgstr "ક્રિયાઓની સંખ્યા"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_has_error_counter
+msgid "Number of errors"
+msgstr "ભૂલોની સંખ્યા"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "ક્રિયા માટે જરૂરી સંદેશાઓની સંખ્યા"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "વિતરણ ભૂલ સાથે સંદેશાઓની સંખ્યા"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__running
+msgid "On Going"
+msgstr "ચાલું છે"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Open"
+msgstr "ખોલો"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Pause"
+msgstr "અવિરત"
+
+#. module: jt_counseling
+#: model:ir.model.fields.selection,name:jt_counseling.selection__student_counseling__timer_state__paused
+msgid "Paused"
+msgstr "રોકી દીધું"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__activity_user_id
+msgid "Responsible User"
+msgstr "જવાબદાર યુઝર"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Resume"
+msgstr "ફરી શરૂ કરો"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.custom_survey_button_retake
+msgid "Return View"
+msgstr "દૃશ્ય પર પાછા ફરો"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS વિતરણ ભૂલ"
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Start"
+msgstr "શરૂ કરો"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"ગતિવિધિઓ પર આધારિત સ્થિતિ\n"
+"મિયાદપાલતી: મુદત પસાર થઈ ગઈ છે\n"
+"આજ: પ્રવૃત્તિ તારીખ આજની છે\n"
+"યોજાયેલ: ભવિષ્યની પ્રવૃત્તિઓ."
+
+#. module: jt_counseling
+#: model_terms:ir.ui.view,arch_db:jt_counseling.counseling_form_view
+msgid "Stop"
+msgstr "બંધ કરો"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__student_id
+msgid "Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: jt_counseling
+#: model:ir.actions.act_window,name:jt_counseling.action_student_counseling
+#: model:ir.model,name:jt_counseling.model_student_counseling
+msgid "Student Counseling"
+msgstr "વિદ્યાર્થી સલાહકાર સેવા"
+
+#. module: jt_counseling
+#: model:ir.model,name:jt_counseling.model_survey_survey
+msgid "Survey"
+msgstr "સર્વે"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__survey_link
+msgid "Survey Link"
+msgstr "સર્વે લિંક"
+
+#. module: jt_counseling
+#: model:ir.actions.act_window,name:jt_counseling.action_survey_questions
+#: model:ir.ui.menu,name:jt_counseling.survey_questions_submenu
+msgid "Survey Questions"
+msgstr "સર્વે પ્રશ્નો"
+
+#. module: jt_counseling
+#. odoo-python
+#: code:addons/jt_counseling/models/counseling.py:0
+msgid "Survey link is not configured."
+msgstr "સર્વે લિંક રૂપરેખાંકિત નથી."
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_start
+msgid "Timer Start"
+msgstr "ટાઈમર શરૂ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_state
+msgid "Timer State"
+msgstr "ટાઈમર સ્થિતિ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__timer_stop
+msgid "Timer Stop"
+msgstr "ટાઈમર બંધ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__total_time
+msgid "Total Time (in hours)"
+msgstr "કુલ સમય (કલાકોમાં)"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "રેકાર્ડમાં અપવાદ પ્રવૃત્તિનો પ્રકાર."
+
+#. module: jt_counseling
+#: model:ir.model.fields,field_description:jt_counseling.field_student_counseling__website_message_ids
+msgid "Website Messages"
+msgstr "વેબસાઇટ સંદેશાઓ"
+
+#. module: jt_counseling
+#: model:ir.model.fields,help:jt_counseling.field_student_counseling__website_message_ids
+msgid "Website communication history"
+msgstr "વેબસાઇટ સંચાર ઇતિહાસ"

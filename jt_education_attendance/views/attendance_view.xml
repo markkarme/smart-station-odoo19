@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="attendance_form_view" model="ir.ui.view">
+			<field name="name">Attendance Form view</field>
+			<field name="model">attendance.attendance</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="faculty_id" required="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+								<field name="standard_id" required="1"/>
+								<field name="division_id" required="1"/>
+								<field name="has_absent_students" invisible="1"/>
+								
+							</group>
+							<group>
+								<field name="date"/>
+								<field name="subject_id" widget="many2many_tags" required="1"/>
+								<!-- <button string="AddStudentline" name="add_student_line" type="object" class="btn-primary" style="margin-top:20px;"/> -->
+							</group>
+						</group>
+						<notebook>
+                            <page string="Attendance">
+                               <button string="select All" name="select_all_line" invisible="not attendance_ids" type="object" class="btn-primary" style="margin-top:20px;"/>
+                               <button string="Present" name="present_student" invisible="not attendance_ids" type="object" class="btn-primary" style="margin-right:150px;"/>
+                               <button string="Absence Reason" name="absence_reason_student" invisible="not attendance_ids" type="object" class="btn-primary"/>
+                               <button string="Absence No  Reason" name="absence_noreason_student" invisible="not attendance_ids" type="object" class="btn-primary"/>
+                               <button string="Late" name="late_student" invisible="not attendance_ids" type="object" class="btn-primary"/>
+                               <button string="Withdraw" name="withdraw_student" invisible="not attendance_ids" type="object" class="btn-primary" style="margin-left:500px;"/>
+							   <button string="Reminder" name="reminder_absent_student" invisible="not has_absent_students" type="object" class="btn-primary" style="margin-left:500px;"/>
+                                <field name="attendance_ids">
+                                    <list editable="bottom">
+                                    	<field name="attendance_id" invisible='1'/>
+                                    	<field name="selected"/>
+                                    	<field name="standard_id" optional='hide'/>
+                                    	<field name="division_id" optional='hide'/>
+                                    	<field name="faculty_id" optional='hide'/>
+                                    	<field name="student_id"
+										    options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}"
+										    domain="[('is_student', '=', True), ('standard','=',standard_id), ('div','=',division_id)]" required='1'
+										/>
+										<field name="standard_id" required="1"/>
+										<field name="division_id" required="1"/>
+                                        <field name="roll_no"/>
+										<field name="present"/>
+                                        <field name="absence_reason"/>
+                                        <field name="absence_noreason"/>
+										<field name="late"/>
+										<field name="withdraw"/>
+										<field name="date" />
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+					</sheet>
+					<chatter/>
+				</form>
+			</field>
+		</record>
+
+		<record id="attendance_tree_view" model="ir.ui.view">
+			<field name="name">Attendance Tree view</field>
+			<field name="model">attendance.attendance</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="faculty_id"/>
+					<field name="standard_id"/>
+					<field name="division_id"/>
+					<field name="date" readonly="1"/>
+				</list>
+			</field>
+		</record>
+
+ 		<record id="view_attendance_line_graph" model="ir.ui.view">
+		        <field name="name">attendance.line.graph</field>
+		        <field name="model">attendance.line</field>
+		        <field name="arch" type="xml">
+		        	<graph string="Attendance Graph" type="bar">
+                		<field name="student_id"/>
+                		<field name="date"/>
+            		</graph>
+		        </field>
+		</record>
+
+
+		<!-- attendance action view -->
+        <record id="action_attendance" model="ir.actions.act_window">
+            <field name="name">Attendance</field>
+            <field name="res_model">attendance.attendance</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <record id="action_report" model="ir.actions.act_window">
+            <field name="name">Attendance Reporting</field>
+            <field name="res_model">attendance.line</field>
+            <field name="view_mode">graph,form</field>
+        </record>
+
+        <menuitem name="Attendance" id="attendance_menu" action="action_attendance" parent="jt_education_base.student_root_menu" sequence="2"/>
+        <menuitem name="Attendance Reporting" id="attendance_report_menu" action="action_report" parent="jt_education_base.menu_education_reports" sequence="6"/>
+
+	</data>
+</odoo>

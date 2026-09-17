@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout">
+        <t t-if="not result" t-set="result" t-value="doc"/>
+
+        <t t-if="not res_company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="res_company" t-value="company_id"/>
+            </t>
+            <t t-elif="result and 'company_id' in result and result.company_id.sudo()">
+                <t t-set="res_company" t-value="result.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="res_company" t-value="res_company"/>
+            </t>
+        </t>
+
+
+        <div t-attf-class="header o_company_#{res_company.id}_layout" t-att-style="report_header_style">
+            <div class="row">
+                <div class="col-1"/>
+                <div class="col-10">
+                    <p style="align:center;text-align:center;"><img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:100%;height:150px;margin-top:10px;"/></p>
+                </div>
+                <div class="col-1"/>
+            </div>
+          
+            <div class="row"> 
+                    <p style="align:center;text-align:center;"><span style="font-size:15px;color:black;" t-esc="res_company.name"/>
+                    
+                    <br/>
+                  
+                    (
+                    <t t-if="res_company.street">
+                        <span t-esc="res_company.street"/>,
+                    </t>
+                    <t t-if="res_company.street2">
+                        <span t-esc="res_company.street2"/>,
+                    </t>
+                    <t t-if="res_company.city">
+                        <span t-esc="res_company.city"/>,
+                    </t>
+                    <t t-if="res_company.state_id or res_company.zip">
+                        <span t-esc="res_company.state_id.name"/>  <span t-esc="res_company.zip"/>,
+                    </t>
+                    <t t-if="res_company.country_id.name">
+                        <span t-esc="res_company.country_id.name"/>
+                    </t>)
+                    <br/>
+                        <t t-if="res_company.email">
+                            <strong>Email: </strong><span t-esc="res_company.email"/>,
+                        </t>
+                        <t t-if="res_company.phone">
+                            <strong>Phone: </strong><span t-esc="res_company.phone"/>,
+                        </t>
+                        <t t-if="res_company.website">
+                            <strong>Website: </strong><span t-esc="res_company.website"/>
+                        </t>
+                    </p>
+            </div>
+        </div>
+
+        <div t-attf-class="article o_report_layout_standard o_company_#{res_company.id}_layout {{  'o_report_layout_background' if res_company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % res_company.layout_background_image.decode('utf-8') if res_company.layout_background_image and res_company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if res_company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+
+        <div t-attf-class="footer o_standard_footer o_company_#{res_company.id}_layout">
+            <t t-if="result._table=='student_result'">
+                <div class="last-page">
+                    <div class="row">
+                        <div class="col-4">
+                            <div style="margin-top:0px;align:center;text-align:center;margin-right:0px;margin-left:30px;">
+                                <t t-if="res_company.stamp_image">
+                                    <img t-att-src="image_data_uri(res_company.stamp_image)" style="height:70px;width:70px;"/>
+                                </t>
+                                <p style="color:black;font-weight:bold;margin-top:0px;">__________________________</p>
+                                <p style="color:black;font-weight:bold;margin-top:0px;"> <t t-esc="res_company.name"/></p>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div style="margin-top:0px;align:center;text-align:center;margin-right:0px;margin-left:30px;">
+                                <t t-if="res_company.signature">
+                                    <img t-att-src="image_data_uri(res_company.signature)" style="height:70px;width:70px;"/>
+                                </t>
+                                <p style="color:black;font-weight:bold;margin-top:0px;">__________________________</p>
+                                <p style="color:black;font-weight:bold;margin-top:0px;"> Trusty Sign</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div style="margin-top:0px;align:center;text-align:center;margin-right:0px;margin-left:30px;">
+                                <t t-if="result.student_id.signature">
+                                    <img t-att-src="image_data_uri(result.student_id.signature)" style="height:70px;width:70px;"/>
+                                </t>
+                                <p style="color:black;font-weight:bold;margin-top:0px;">__________________________</p>
+                                <p style="color:black;font-weight:bold;margin-top:0px;"> Student Sign</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <t t-if="result._table!='student_result'">
+                <div class="text-center" style="border-top: 1px solid black;">  
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </template>
+
+        
+        <template id="result_report_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="result">
+                    <t t-call="jt_education_exam.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div >
+                            <div class="row text-center" style="padding-top:20px;">
+                                <p style="align:center;text-align:color:black;font-size:25px;text-transform: capitalize;"><strong>Evaluation<br/><t t-esc="result.exam_id.start_date.strftime('%B')"/>-<t t-esc="result.exam_id.start_date.strftime('%Y')"/></strong></p>
+                            </div>
+                            <div class="row" style="padding-top:10px;">
+                                <div class="col-6" style="font-size:25px;">
+                                    <div style="align:left;text-align:left;">
+                                        Name and Surname :    <t t-esc="result.student_id.name"/> <t t-esc="result.student_id.surname"/>
+                                    </div>
+                                    <div style="align:left;text-align:left;padding-top:25px;">
+                                        Nickname :    <t t-esc="result.student_id.nickname"/>
+                                    </div>
+                                    <div style="align:left;text-align:left;padding-top:25px;">
+                                        Class :   <t t-esc="result.standard.name"/>-<t t-esc="result.division.name"/>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="align:right;text-align:right;padding-left:200px;">
+                                        <table class="table table-bordered" style="border:solid 1px; border-color:black;width:450px;">
+                                            <tr>
+                                               <t t-if="result.student_id.health_lines">
+                                                    <td>
+                                                        Blood group
+                                                    </td>
+                                                    <td>
+                                                        <t t-if="result.student_id.health_lines[0].blood_group">
+                                                            <t t-esc="result.student_id.health_lines[0].blood_group"/>
+                                                        </t>
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+                                                    <td>
+                                                        Blood group
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </t>
+                                                 <td rowspan="8">
+                                                    <div style="text-align:center;">
+                                                        <t t-if="result.student_id.image_1920">
+                                                            <img t-att-src="image_data_uri(result.student_id.image_1920)" style="margin-bottom:-60px;height:180px;width:180px;"/>
+                                                        </t>    
+                                                    
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <t t-if="len(result.student_id.health_lines) &gt; 0">   
+                                                <tr>
+                                                    <td>
+                                                        Height
+                                                    </td>
+                                                     <td>
+                                                        <t t-esc="result.student_id.health_lines[0].height"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                           <t t-if="len(result.student_id.health_lines) &gt; 0">   
+                                                <tr>
+                                                    <td>
+                                                        Weight
+                                                    </td>
+                                                     <td>
+                                                        <t t-esc="result.student_id.health_lines[0].weight"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <tr>
+                                                <td>
+                                                    Day Of Study
+                                                </td>
+                                                 <td>
+                                                    <t t-set="day_of_study" t-value="request.env['attendance.attendance'].search_count([('standard_id.id','=',result.standard.id),('division_id.id','=',result.division.id)])"/>
+                                                    <t t-esc="day_of_study"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Attend
+                                                </td>
+                                                <td>
+                                                    <t t-set="attend_day" t-value="request.env['attendance.line'].search_count([('standard_id.id','=',result.standard.id),('division_id.id','=',result.division.id),('student_id.id','=',result.student_id.id),('present','=',True)])"/>
+                                                    <t t-esc="attend_day"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Not attend
+                                                </td>
+                                                 <td>
+                                                    <t t-set="absent_day" t-value="request.env['attendance.line'].search_count(['|','|',('absence_reason','=',True),('withdraw','=',True),('absence_noreason','=',True),('standard_id.id','=',result.standard.id),('division_id.id','=',result.division.id),('student_id.id','=',result.student_id.id)])"/>
+                                                    <t t-esc="absent_day"/>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Late
+                                                </td>
+                                                 <td>
+                                                    <t t-set="late_day" t-value="request.env['attendance.line'].search_count([('standard_id.id','=',result.standard.id),('division_id.id','=',result.division.id),('student_id.id','=',result.student_id.id),('late','=',True)])"/>
+                                                    <t t-esc="late_day"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <t t-set="count_subjectline" t-value='1'/>
+                            <t t-foreach="result.subject_line.mapped('subject_category_id').sorted(lambda x:x.sequence)" t-as="category">
+                                <t t-set="subjects" t-value="result.subject_line.search([('subject_category_id','=', category.id),('result_id','=',result.id)])"/>  
+                                <div class="row"  style="margin-bottom:20px;margin-top:10px;">
+                                <div class="col-12">
+                                    <b style="font-size:25px;">
+                                    <t t-esc="count_subjectline"/>
+                                    <t t-esc="category.name"/></b>
+
+                                    <t t-set="count_subjectline" t-value='count_subjectline+1'/>
+                                    <table class="table table-bordered" style="border:solid 1px; border-color:black;width:1300px;text-align:center;margin-bottom:20px;margin-top:10px;">
+                                    <tr style="height:25px;">
+                                        <td>
+                                            No.
+                                        </td>
+                                        <t t-set="count" t-value='1'/>
+                                        <t t-foreach="len(subjects)" t-as="subject">
+                                            <td>
+                                                <t t-esc="count"/>     
+                                            </td>
+                                            <t t-set="count" t-value='count+1'/>
+                                        </t>                
+                                        <td rowspan="2">
+                                            Total score
+                                        </td>
+                                        <td rowspan="2">
+                                            Final score
+                                        </td>
+                                    </tr>
+                                    <tr style="height:48px;">
+                                        <td style="transform:rotate(269deg);">
+                                           Subject 
+                                        </td>
+                                        <t t-foreach="subjects" t-as="subject">
+                                            <td>
+                                                <t t-esc="subject.subject_id.name"/>      
+                                            </td>
+                                        </t>
+                                    </tr>
+                                    <t t-set="total" t-value='1'/>
+                                    <tr style="height:25px;">
+                                        <td>
+                                            Total score
+                                        </td>
+                                        <t t-foreach="subjects" t-as="subject">
+                                            <td>
+                                                <t t-esc="subject.mark"/>
+                                           </td>
+                                           <t t-set="total" t-value='total+subject.mark'/>
+                                       </t>
+                                        <td>
+                                            <t t-esc="total-1"/>
+                                        </td>
+                                        <td>
+                                            100%
+                                        </td>
+                                    </tr>
+                                    <tr style="height:25px;">
+                                        <td>
+                                            Actual score
+                                        </td>
+                                        <t t-set="a_total" t-value='0'/>
+                                        <t t-foreach="subjects" t-as="subject">
+                                            <td>
+                                                <t t-esc="subject.mark_scored"/>
+                                           </td>
+                                           <t t-set="a_total" t-value='a_total+subject.mark_scored'/>
+                                       </t>
+                                
+                                        <td>
+                                            <t t-esc="a_total"/>
+                                        </td>
+                                        <td>
+                                            <t t-set="final_result" t-value="(a_total*100)/total"/>
+                                            <t t-esc="final_result" t-options='{"widget": "float", "precision": 2}'/>%
+                                        </td>
+                                    </tr>
+                                </table>
+                                </div>
+                            </div>
+                            </t>
+                            <div class="row" style="margin-bottom:20px;margin-top:10px;">
+                                
+                                <div class="row" style="margin-bottom:20px;margin-top:10px;">
+                            <div class="col-12">
+                                <b style="font-size:25px;">Grade Distribution</b>
+                                <table class="table table-bordered" style="text-align:center;border:solid 1px; border-color:black;width:500px;height:150px;margin-left:100px;margin-top:20px;">
+                                    <tr>
+                                        <td>Final Score</td>
+                                        <t t-foreach="result.get_gread_records()" t-as="grade">
+                                            <td>
+                                                <t t-esc="grade.mark_range"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                    <tr>
+                                        <td>Letter Grade</td>
+                                        <t t-foreach="result.get_gread_records()" t-as="grade">
+                                            <td>
+                                                <t t-esc="dict(request.env['result.grade'].fields_get(allfields=['latter_grade'])['latter_grade']['selection']).get(grade.latter_grade)"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                    <tr>
+                                        <td>Grade</td>
+                                        <t t-foreach="result.get_gread_records()" t-as="grade">
+                                            <td>
+                                                <t t-esc="grade.name"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                            </div>
+                            <div style="padding-top:20px;">
+                                <b style="font-size:25px;">
+                                    Suggestion from Teacher</b>
+                                    <table class="table table-bordered" style="border:solid 1px; border-color:black;padding-top:20px;margin-bottom:20px;margin-top:10px;">
+                                        <tr>
+                                            <td>
+                                                No
+                                            </td>
+                                            <td>
+                                                Teacher's Name
+                                            </td>
+                                            <td>
+                                                Signature
+                                            </td>
+                                            <td>
+                                                Teacher's correction and suggestion
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Lao Teacher - <t t-esc="result.leo_id.name"/></td>
+                                            <td>  
+                                            </td>
+                                            <td>
+                                               <t t-esc="result.leo_description"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>English Teacher- <t t-esc="result.english_id.name"/></td>
+                                            <td></td>
+                                            <td>
+                                                <t t-esc="result.english_description"/>
+                                            </td>
+                                        </tr>  
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Chinese Teacher-<t t-esc="result.chineses_id.name"/></td>
+                                            <td></td>
+                                            <td>
+                                                 <t t-esc="result.chineses_description"/>
+                                            </td>
+                                        </tr>  
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Parent- <t t-esc="result.parent_id.name"/></td>
+                                            <td></td>
+                                            <td>
+                                                <t t-esc="result.parent_description"/>
+                                            </td>
+                                        </tr>      
+                                    </table>
+                                </div>
+                            <div class="text-center">
+                                    <t t-esc="result.input_line"/>
+                                </div>      
+                            <!-- <div class="row">
+                                <div class="col-8"/>
+                                <div class="col-4">
+                                    <p style="color:black;font-weight:bold;margin-top:0px;">Director</p>
+                                    <p style="color:black;font-weight:bold;margin-top:0px;">__________________________</p>
+                                </div>
+                            </div> -->
+
+                        </div>
+                            
+                    </div>
+                </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="result_report_template_paperformate" model="report.paperformat">
+            <field name="name">student.result.report.paperformat</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">60</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">60</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="action_result_report" model="ir.actions.report">
+            <field name="name">Result</field>
+            <field name="model">student.result</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_exam.result_report_template</field>
+            <field name="report_file">jt_education_exam.result_report_template</field>
+            <field name="paperformat_id" ref="jt_education_exam.result_report_template_paperformate"/>
+            <field name="print_report_name">(object.student_id.name)</field>
+            <field name="binding_model_id" ref="jt_education_exam.model_student_result"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo> 

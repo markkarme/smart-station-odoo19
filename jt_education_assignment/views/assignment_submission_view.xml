@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="student_assignment_submission_tree_view" model="ir.ui.view">
+			<field name="name">student.assignment.submission.tree</field>
+			<field name="model">student.assignment.submission</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="assignment_id"/>
+					<field name="student_submission_ids" widget="many2many_tags"/>
+					<field name="submission_date"/>
+					<field name="state"/>
+				</list>
+			</field>
+		</record>
+
+		<record id="student_assignment_submission_form_view" model="ir.ui.view">
+			<field name="name">student.assignment.submission.form</field>
+			<field name="model">student.assignment.submission</field>
+			<field name="arch" type="xml">
+				<form>
+					<header groups="base.group_user">
+						<button name="act_submit" invisible="state != 'draft'" type="object"
+								string="Submit" class="oe_highlight"/>
+						<button name="act_accept" invisible="state != 'submit'" type="object"
+								string="Accept" class="oe_highlight"/>
+						<button name="act_change_req" invisible="state != 'submit'" type="object"
+								string="Change Require"/>
+						<button name="act_reject" invisible="state != 'submit'" type="object"
+								string="Reject"/>
+						<button name="act_draft" invisible="state != 'Change'" type="object"
+								string="Change And Resubmit"
+								class="oe_highlight"/>
+						<button name="act_draft" invisible="state != 'reject'" type="object"
+								string="Resubmit"
+								class="oe_highlight"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,submit,accept"/>
+					</header>
+					<sheet>
+						<field name="active" invisible="1"/>
+						<widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+								invisible="active"/>
+							<group>
+							<group>
+								<field name="assignment_id" required="1"
+									   domain="[('state','=','publish')]"/>
+								<field name="marks"/>
+								<field name="submission_date"/>
+								<field name="faculty_id"/>
+							</group>
+						
+							<group>
+								<field name="standard_id" required="1"/>
+								<field name="division_id" required="1"/>
+								<field name="curr_year"/>
+							</group>
+							<!-- <group>
+								<field name="marks_scored"/>
+							</group> -->
+						</group>
+
+						<notebook>
+                            <page string="Students">
+                            	<field name="student_submission_ids">
+                            		<list editable='top' create="0" delete="0">
+                                		<field name="student_id"/>
+                                		<field column_invisible="1" name="student_assignment_pdf_file"/>
+                           				<field filename="student_assignment_pdf_file" name="student_assignment_pdf"/>
+                                		<field name="marks_scored"/>
+                            		</list>
+                            	</field>
+                            </page>
+                        </notebook>
+						<!-- <label for="student_id"/>
+						<field name="student_id" domain="[('standard','=',standard_id),('div','=',division_id),('curr_year','=',curr_year)]" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}">
+							<list>
+                                <field name="name"/>
+                                <field name="standard"/>
+                                <field name="div"/>
+                                <field name="roll_no"/>
+                            </list>
+						</field>
+						<label for="description"/>
+						<field name="description" nolabel="1"/>
+						<label for="note"/>
+						<field name="note" nolabel="1"/> -->
+					</sheet>
+                <chatter/>
+				</form>
+			</field>
+		</record>
+
+		<record id="student_assignment_submission_pivot_view" model="ir.ui.view">
+			<field name="name">student.assignment.submission.pivot</field>
+			<field name="model">student.assignment.submission</field>
+			<field name="arch" type="xml">
+				<pivot string="Assignment submission">
+					<field name="assignment_id" type="col"/>
+					<field name="student_id"/>
+					<field name="submission_date"/>
+					<field name="state" type="row"/>
+				</pivot>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="student_assignment_submission_graph_view">
+			<field name="name">student.assignment.submissiongraph</field>
+			<field name="model">student.assignment.submission</field>
+			<field name="arch" type="xml">
+				<graph string="Assignment submission Graph View" type="pie">
+					<field name="assignment_id"/>
+					<field name="state"/>
+				</graph>
+			</field>
+		</record>
+
+		<record id="student_assignment_submission_search_view" model="ir.ui.view">
+			<field name="name">student.assignment.submission.search</field>
+			<field name="model">student.assignment.submission</field>
+			<field name="arch" type="xml">
+				<search string="Assignment submission">
+					<field name="assignment_id"/>
+					<field name="student_id"/>
+					<field name="description"/>
+					<field name="state"/>
+					<field name="submission_date"/>
+					<field name="note"/>
+					<filter string="Today" name="filter_submission_today"
+							domain="[('submission_date', '&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00')),('submission_date', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+					<filter string="Week" name="filter_submission_week"
+							domain="[('submission_date', '&gt;=',(context_today()+relativedelta(weeks=-1,days=1,weekday=0)).strftime('%Y-%m-%d 00:00:00')),
+									('submission_date', '&lt;', (context_today()+relativedelta(weekday=6)).strftime('%Y-%m-%d 23:59:59'))]"/>
+					<filter string="Month" name="filter_submission_month"
+							domain="[('submission_date', '&lt;=', (datetime.date.today()+relativedelta(day=31)).strftime('%Y-%m-%d')),
+									('submission_date', '&gt;=', (datetime.date.today()-relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+					<filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+					<group>
+						<filter string="Assignment" domain="[]" name="group_by_assignment_id"
+								context="{'group_by':'assignment_id'}"/>
+						<filter string="Student" domain="[]" name="group_by_assignment_student_id"
+								context="{'group_by':'student_id'}"/>
+						<filter string="State" domain="[]" name="group_by_assignment_state"
+								context="{'group_by':'state'}"/>
+						<filter string="Submission Date" domain="[]" name="group_by_assignment_submission"
+								context="{'group_by':'submission_date'}"/>
+						<filter string="Marks" domain="[]" name="group_by_assignment_marks"
+								context="{'group_by':'marks'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+
+	</data>
+</odoo>

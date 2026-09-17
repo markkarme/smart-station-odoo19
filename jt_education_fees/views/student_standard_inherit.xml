@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_fees_type" model="ir.ui.view">
+            <field name="name">Fees Type</field>
+            <field name="model">student.standard</field>
+            <field name="inherit_id" ref="jt_education_base.standard_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                  <!--   <group>
+                        <field name='total_fee_type'/>
+                    </group> -->
+                    <notebook>
+                            <page name="fees_type" string="Fees Type">
+                             <field name="fees_type">
+                                <list editable="bottom">
+                                        <field name="name" required="1"/>
+                                        <field name="fees_amount"  required="1"  sum="Total"/>
+                                    </list>
+                             </field>
+                            </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

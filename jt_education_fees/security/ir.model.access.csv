@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fees_fees_user,access_fees_fees_user,model_fees_fees,base.group_user,1,1,1,1
+access_fees_type_user,access_fees_type_user,model_fees_type,base.group_user,1,1,1,1
+access_fees_detail_user,access_fees_detail_user,model_fees_detail,base.group_user,1,1,1,1
+access_fees_structure,access_fees_structure,model_fees_structure,base.group_user,1,1,1,1
+access_export_due_fees_history_wizard,access_export_due_fees_history_wizard,model_export_due_fees_history_wizard,base.group_user,1,1,1,1
+access_export_fees_history_wizard,access_export_fees_history_wizard,model_export_fees_history_wizard,base.group_user,1,1,1,1
+access_pay_yearly_fees_wizard,access_pay_yearly_fees_wizard,model_pay_yearly_fees_wizard,base.group_user,1,1,1,1
+access_export_fees_receipt,access_export_fees_receipt,model_export_fees_receipt,base.group_user,1,1,1,1

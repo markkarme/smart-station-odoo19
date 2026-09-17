@@ -1,0 +1,9 @@
+<odoo>
+	<template id="report_payment_document_inhrt" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="//div[hasclass('page')]" position="after">
+            <div>
+                <img t-att-src="image_data_uri(res_company.stamp_image)" style="margin-bottom:-60px;height:200px;width:200px;margin-left:650px;margin-top:20px;"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

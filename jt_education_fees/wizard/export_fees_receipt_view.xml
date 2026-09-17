@@ -1,0 +1,27 @@
+<odoo>
+    <!-- Excel Report Download Wizard Form View-->
+     <record id="export_fees_receipt_wizard" model="ir.ui.view">
+     <field name="name">export.fees.receipt.form</field>
+     <field name="model">export.fees.receipt</field>
+     <field name="arch" type="xml">
+     <form string="Excel Report file">
+         <group>
+             <field name="excel_file" readonly="1" filename="file_name"/>
+             <field name="file_name" invisible="1"/>
+         </group>
+         <footer>
+             <button string="Cancel" class="oe_highlight" special="cancel"/>
+        </footer>
+         </form>
+         </field>
+    </record>
+
+     <!-- Excel Report Download Wizard Action View-->
+     <record id="action_export_fees_receipt_form" model="ir.actions.act_window">
+         <field name="name">Reports Excel</field>
+         <field name="view_id" ref="export_fees_receipt_wizard"/>
+         <field name="view_mode">form</field>
+         <field name="res_model">export.fees.receipt</field>
+         <field name="target">new</field>
+     </record>
+</odoo>

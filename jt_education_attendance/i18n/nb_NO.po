@@ -1,0 +1,499 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-08 05:03+0000\n"
+"PO-Revision-Date: 2024-07-08 05:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_attendance_report
+msgid "\"Attendance Report\""
+msgstr "\"Oppmøterapport\""
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_summary_attendance_report
+msgid "\"Attendance Summary Report\""
+msgstr "\"Oppsummering av oppmøte\""
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,print_report_name:jt_education_attendance.action_daily_attendance_report
+msgid "\"Daily Attendance Report\""
+msgstr "\"Daglig oppmøterapport\""
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&gt;"
+msgstr "&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;/td&gt;"
+msgstr "&lt;/td&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;/th&gt;"
+msgstr "&lt;/th&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;td  class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+msgstr "&lt;td  class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;td class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+msgstr "&lt;td class=\"text-center oe_leftfit oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid ""
+"&lt;td style=\"background-color:gray;\" class=\"text-center oe_leftfit "
+"oe_rightfit\"&gt;"
+msgstr ""
+"&lt;td style=\"background-color:gray;\" class=\"text-center oe_leftfit "
+"oe_rightfit\"&gt;"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "&lt;th class=\"text-center\" colspan="
+msgstr "&lt;th class=\"text-center\" colspan="
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Absent With Noreason:</b>"
+msgstr "<b>Fraværende uten grunn:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Absent With Reason:</b>"
+msgstr "<b>Fraværende med grunn:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Late:</b>"
+msgstr "<b>Forsinket:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Present:</b>"
+msgstr "<b>Tilstede:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<b>Withdraw:</b>"
+msgstr "<b>Trukket:</b>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong> Withdraw</strong>"
+msgstr "<strong> Trukket</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Absent with no Reason</strong>"
+msgstr "<strong>Fraværende uten grunn</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Absent</strong>"
+msgstr "<strong>Fraværende</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Class</strong>"
+msgstr "<strong>Klasse</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Dato:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Days</strong>"
+msgstr "<strong>Dager</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "<strong>Dep/Emp</strong>"
+msgstr "<strong>Avd/Ans</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>From:</strong>"
+msgstr "<strong>Fra:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Late</strong>"
+msgstr "<strong>Sen</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Present</strong>"
+msgstr "<strong>Tilstede</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "<strong>Responsible Teacher:</strong>"
+msgstr "<strong>Ansvarlig lærer:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "<strong>Sum</strong>"
+msgstr "<strong>Sum</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>To:</strong>"
+msgstr "<strong>Til:</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Total</strong>"
+msgstr "<strong>Totalt</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "<strong>Withdraw</strong>"
+msgstr "<strong>Utmeldt</strong>"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Absence No  Reason"
+msgstr "Fravær uten grunn"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Absence Reason"
+msgstr "Fravær med grunn"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Absent Noreason"
+msgstr "Fraværende uten grunn"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Absent Reason"
+msgstr "Fraværende med grunn"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_reason
+msgid "Absent with Reason"
+msgstr "Fraværende med grunn"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__absence_noreason
+msgid "Absent with no Reason"
+msgstr "Fraværende uten grunn"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "AddStudentline"
+msgstr "Legg til elevlinje"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance
+#: model:ir.actions.report,name:jt_education_attendance.action_attendance_report
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_id
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_menu
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_report
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Attendance"
+msgstr "Deltakelse"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_graph
+msgid "Attendance Graph"
+msgstr "Oppmøtegraf"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__attendance_ids
+msgid "Attendance Line"
+msgstr "Oppmøtelinje"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__attendance_line_ids
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__attendance_line_ids
+msgid "Attendance Lines"
+msgstr "Oppmøtelinjer"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_wizard
+#: model:ir.model,name:jt_education_attendance.model_print_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+msgid "Attendance Report"
+msgstr "Oppmøterapport"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_report
+#: model:ir.ui.menu,name:jt_education_attendance.attendance_report_menu
+msgid "Attendance Reporting"
+msgstr "Oppmøte rapportering"
+
+#. module: jt_education_attendance
+#: model:ir.ui.menu,name:jt_education_attendance.main_menu_attendance_summary_report
+msgid "Attendance Summary"
+msgstr "Oppmøtesammendrag"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_attendance_summary_wizard
+#: model:ir.actions.report,name:jt_education_attendance.action_summary_attendance_report
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Attendance Summary Report"
+msgstr "Oppmøtesammendragsrapport"
+
+#. module: jt_education_attendance
+#: model:ir.model.constraint,message:jt_education_attendance.constraint_attendance_attendance_code_faculty_id_uniq
+msgid "Attendance for this faculty and standard already exists!"
+msgstr "Oppmøte for dette fakultetet og standarden finnes allerede!"
+
+#. module: jt_education_attendance
+#. odoo-python
+#: code:addons/jt_education_attendance/models/attendance.py:0
+#, python-format
+msgid "Attendance for this student  already exists!"
+msgstr "Oppmøte for denne eleven finnes allerede!"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_uid
+msgid "Created by"
+msgstr "Opprettet av"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__create_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__create_date
+msgid "Created on"
+msgstr "Opprettet den"
+
+#. module: jt_education_attendance
+#: model:ir.actions.report,name:jt_education_attendance.action_daily_attendance_report
+msgid "Daily Attendance"
+msgstr "Daglig oppmøte"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Daily Attendance Report"
+msgstr "Rapport for daglig oppmøte"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__display_name
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__display_name
+msgid "Display Name"
+msgstr "Visningsnavn"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__division_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__division_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__division_id
+msgid "Division"
+msgstr "Inndeling"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__faculty_id
+msgid "Faculties"
+msgstr "Fakulteter"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__faculty_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__faculty_id
+msgid "Faculty"
+msgstr "Fakultet"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "For Class"
+msgstr "For klasse"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "For Divison"
+msgstr "For avdeling"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__start_date
+msgid "From"
+msgstr "Fra"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Generate Report"
+msgstr "Generer rapport"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.export_attendance_wizard_form
+msgid "Generate Summary Report"
+msgstr "Generer sammendragsrapport"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__write_uid
+msgid "Last Updated by"
+msgstr "Sist oppdatert av"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__write_date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__write_date
+msgid "Last Updated on"
+msgstr "Sist oppdatert den"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__late
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Late"
+msgstr "Sen"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Month"
+msgstr "Måned"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__name
+msgid "Name"
+msgstr "Navn"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Number"
+msgstr "Nummer"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__present
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Present"
+msgstr "Tilstede"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__roll_no
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__roll_no
+msgid "Roll Number"
+msgstr "Rull nummer"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__selected
+msgid "Select"
+msgstr "Velg"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__standard_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__standard_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__standard_id
+msgid "Standard"
+msgstr "Standard"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Student"
+msgstr "Student"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_attendance
+msgid "Student Attendance"
+msgstr "Studentoppmøte"
+
+#. module: jt_education_attendance
+#: model:ir.model,name:jt_education_attendance.model_attendance_line
+msgid "Student Attendance Line"
+msgstr "Linje for studentoppmøte"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,help:jt_education_attendance.field_attendance_line__name
+msgid "Student List is displayed based on standard and division."
+msgstr "Studentlisten vises basert på standard og avdeling."
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__student_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__student_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__student_id
+msgid "Students"
+msgstr "Studenter"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__subject_id
+msgid "Subjects"
+msgstr "Emner"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_summary_report_template
+msgid "Sum"
+msgstr "Sum"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__summary_report
+msgid "Summary"
+msgstr "Sammendrag"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__end_date
+msgid "To"
+msgstr "Til"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__date
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__date
+msgid "Today's Date"
+msgstr "Dagens dato"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__withdraw
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.daily_attendance_report_template
+msgid "Withdraw"
+msgstr "Utmeldt"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "select All"
+msgstr "Velg alle"

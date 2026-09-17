@@ -1,0 +1,948 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_hostel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-23 11:37+0000\n"
+"PO-Revision-Date: 2025-07-23 11:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "<span class=\"o_stat_text\">Invoices</span>"
+msgstr "<span class=\"o_stat_text\">બીલ્સ</span>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_kanban
+msgid "<strong>Building Name : </strong>"
+msgstr "<strong>મકાનનું નામ : </strong>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_kanban
+msgid "<strong>Capacity : </strong>"
+msgstr "<strong>સમર્થતા : </strong>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_building_kanban
+msgid "<strong>Floor : </strong>"
+msgstr "<strong>મંજિલ : </strong>"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_kanban
+msgid "<strong>Room Type : </strong>"
+msgstr "<strong>ઓરડાનો પ્રકાર : </strong>"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_room__room_type__ac
+msgid "Ac"
+msgstr "એસી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__curr_year_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__curr_year_id
+msgid "Academic Year"
+msgstr "અкаદેમિક વર્ષ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_needaction
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_needaction
+msgid "Action Needed"
+msgstr "ક્રિયા જરૂરી છે"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__active
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Active"
+msgstr "સક્રિય"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_ids
+msgid "Activities"
+msgstr "પ્રવૃત્તિઓ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_exception_decoration
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "પ્રવૃત્તિ અપવાદ શણગાર"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_state
+msgid "Activity State"
+msgstr "પ્રવૃત્તિ સ્થિતિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_type_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "પ્રવૃત્તિ પ્રકાર ચિહ્ન"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__agenda
+msgid "Agenda"
+msgstr "કાર્યસૂચિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__amount
+msgid "Amount"
+msgstr "રકમ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__assigned
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "Assigned"
+msgstr "સોંપાયેલ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__assign_id
+msgid "Assigned to"
+msgstr "સોંપાયેલ વ્યક્તિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_attachment_count
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_attachment_count
+msgid "Attachment Count"
+msgstr "જોડાણોની સંખ્યા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__room_bed
+msgid "Beds"
+msgstr "પલંગો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__building_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__building_id
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_building_menu
+msgid "Building"
+msgstr "મકાન"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__name
+msgid "Building Name"
+msgstr "મકાનનું નામ"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.cancel_reason_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "Cancel"
+msgstr "રદ કરો"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_cancel_reason_wizard
+msgid "Cancel Reason"
+msgstr "રદ કરવાની નોંધ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__cancelled
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__cancel
+msgid "Cancelled"
+msgstr "રદ થયું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__closing_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__closing_date
+msgid "Closing Date"
+msgstr "બંધ કરવાની તારીખ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__name
+msgid "Complaint"
+msgstr "ફરિયાદ"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Create Invoice"
+msgstr "ઇન્વોઇસ બનાવો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__create_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવાયું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__create_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__create_date
+msgid "Created on"
+msgstr "તારીખે બનાવાયું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__date
+msgid "Date"
+msgstr "તારીખ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__description
+msgid "Description"
+msgstr "વર્ણન"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__display_name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__display_name
+msgid "Display Name"
+msgstr "પ્રદર્શિત નામ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__division
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__division
+msgid "Division"
+msgstr "વિભાગ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__end_date
+msgid "End Date"
+msgstr "અંતિમ તારીખ"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Fees"
+msgstr "ફી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__floor
+msgid "Floor"
+msgstr "માળ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_follower_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_follower_ids
+msgid "Followers"
+msgstr "અનુયાયીઓ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_partner_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "અનુયાયીઓ (સાથીઓ)"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_type_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "ફોન્ટ ઑસમ آئકન જેમ કે fa-tasks"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__has_message
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__has_message
+msgid "Has Message"
+msgstr "સંદેશ છે"
+
+#. module: jt_education_hostel
+#: model:ir.module.category,name:jt_education_hostel.module_category_jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_menu
+msgid "Hostel"
+msgstr "છાત્રાલય"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_building
+#: model:ir.model,name:jt_education_hostel.model_hostel_building
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_building_pivot
+msgid "Hostel Building"
+msgstr "છાત્રાલય બિલ્ડિંગ"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_pivot
+msgid "Hostel Complaints"
+msgstr "છાત્રાલય ફરિયાદો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__hostel_data
+msgid "Hostel Data"
+msgstr "છાત્રાલય ડેટા"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_details
+msgid "Hostel Details"
+msgstr "છાત્રાલય વિગતો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__registration_id
+msgid "Hostel Fee"
+msgstr "છાત્રાલય ફી"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_housekeeping
+msgid "Hostel House Keeping Service"
+msgstr "છાત્રાલય ગૃહ વ્યવસ્થાપન સેવા"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_housekeeping
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_housekeeping_pivot
+msgid "Hostel Housekeeping"
+msgstr "છાત્રાલય ગૃહ વ્યવસ્થાપન"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_bank_statement_line__hostel_payment_state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_move__hostel_payment_state
+msgid "Hostel Payment State"
+msgstr "છાત્રાલય ચુકવણી સ્થિતિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_bank_statement_line__hostel_reg_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_account_move__hostel_reg_id
+msgid "Hostel Reg"
+msgstr "છાત્રાલય નોંધણી"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_registration
+#: model:ir.model,name:jt_education_hostel.model_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_pivot
+msgid "Hostel Registration"
+msgstr "છાત્રાલય નોંધણી"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_registration_line
+msgid "Hostel Registration Line"
+msgstr "છાત્રાલય નોંધણી લાઇન"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_room
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_room_pivot
+msgid "Hostel Room"
+msgstr "છાત્રાલય રૂમ"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_hostel_room
+msgid "Hostel Room Management"
+msgstr "છાત્રાલય રૂમ વ્યવસ્થાપન"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_student_complaint
+msgid "Hostel Student Complaints"
+msgstr "છાત્રાલય વિદ્યાર્થી ફરિયાદો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__registration_ids
+msgid "House Keeping"
+msgstr "ગૃહ વ્યવસ્થાપન"
+
+#. module: jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_housekeeping_menu
+msgid "Housekeeping"
+msgstr "ગૃહ વ્યવસ્થાપન"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__id
+msgid "ID"
+msgstr "આઈડી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_exception_icon
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_exception_icon
+msgid "Icon"
+msgstr "ચિહ્ન"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_exception_icon
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "અપવાદ પ્રવૃત્તિ દર્શાવતું ચિહ્ન."
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_needaction
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "જો પસંદ કરેલ હોય, તો નવા સંદેશાઓ માટે તમારું ધ્યાન જરૂરી છે."
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_has_sms_error
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_has_error
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "જો પસંદ કરેલ હોય, તો કેટલાક સંદેશાઓમાં ડિલિવરી ભૂલ છે."
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_kanban
+msgid "Image"
+msgstr "છબી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__image_1920
+msgid "Image 1920"
+msgstr "છબી 1920"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__in_progress
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "In Progress"
+msgstr "પ્રગતિમાં"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__invoice_state
+msgid "Invoice State"
+msgstr "ઇનવોઇસ સ્થિતિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__invoice_state__invoiced
+msgid "Invoiced"
+msgstr "ઇનવોઇસ કરેલ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__invoice_count
+msgid "Invoices Count"
+msgstr "ઇનવોઇસની સંખ્યા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__is_capacity_full
+msgid "Is Capacity full?"
+msgstr "ક્ષમતા ભરેલી છે?"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_is_follower
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_is_follower
+msgid "Is Follower"
+msgstr "ફોલોઅર છે?"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_res_users__is_parent
+msgid "Is Parent"
+msgstr "માતા-પિતા છે?"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_res_users__is_student
+msgid "Is Student"
+msgstr "વિદ્યાર્થી છે?"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_account_move
+msgid "Journal Entry"
+msgstr "જર્નલ એન્ટ્રી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__write_uid
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__write_uid
+msgid "Last Updated by"
+msgstr "છેલ્લે અપડેટ કરનાર"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__write_date
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે અપડેટ થયેલું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__link
+msgid "Link"
+msgstr "લિંક"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_student_complaints
+msgid "Manage Hostel Students Complaints"
+msgstr "હોસ્ટેલ વિદ્યાર્થી ફરિયાદોનું વ્યવસ્થાપન"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_parent_meeting
+msgid "Meeting with Parents"
+msgstr "માતા-પિતા સાથે બેઠક"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_has_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_has_error
+msgid "Message Delivery error"
+msgstr "સંદેશ પહોંચાડવામાં ભૂલ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_ids
+msgid "Messages"
+msgstr "સંદેશો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__my_activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "મારી પ્રવૃત્તિની છેલ્લી તારીખ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__housekeeping_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__name
+msgid "Name"
+msgstr "નામ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__new
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__new
+msgid "New"
+msgstr "નવું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_calendar_event_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "આગામી પ્રવૃત્તિ પત્રક ઇવેન્ટ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_date_deadline
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "આગામી પ્રવૃત્તિની છેલ્લી તારીખ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_summary
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_summary
+msgid "Next Activity Summary"
+msgstr "આગામી પ્રવૃત્તિનો સારાંશ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_type_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_type_id
+msgid "Next Activity Type"
+msgstr "આગામી પ્રવૃતિનો પ્રકાર"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_room__room_type__non_ac
+msgid "Non Ac"
+msgstr "નોન એસી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__payment_state__not_paid
+msgid "Not Paid"
+msgstr "ચુકવણી થયેલી નથી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__invoice_state__no
+msgid "Nothing to Invoice"
+msgstr "ઇન્વોઇસ માટે કશું નથી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_needaction_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_needaction_counter
+msgid "Number of Actions"
+msgstr "ક્રિયાઓની સંખ્યા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_has_error_counter
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_has_error_counter
+msgid "Number of errors"
+msgstr "ભૂલોની સંખ્યા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_needaction_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "પ્રતિક્રિયા જરૂરી એવા સંદેશાઓની સંખ્યા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__message_has_error_counter
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "ડિલિવરી ભૂલ ધરાવતા સંદેશાઓની સંખ્યા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__payment_state__paid
+msgid "Paid"
+msgstr "ચૂકવાયેલ"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_parent_meeting
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_parents__meeting_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.meeting_view_pivot
+msgid "Parents Meeting"
+msgstr "અભિભાવક મીટિંગ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__payment_state__partial
+msgid "Partially Paid"
+msgstr "આંશિક ચૂકવણી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__payment_state
+msgid "Payment State"
+msgstr "ચુકવણી સ્થિતિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__quantity
+msgid "Quantity"
+msgstr "જથ્થો"
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_cancel_reason
+#: model:ir.model.fields,field_description:jt_education_hostel.field_cancel_reason__name
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__cancel_reason
+msgid "Reason for Cancellation"
+msgstr "રદ કરવાની કારણ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__hostel_fee_seq
+msgid "Refrence"
+msgstr "સંદર્ભ"
+
+#. module: jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_registration_menu
+msgid "Registration"
+msgstr "નોંધણી"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Release"
+msgstr "રિલીઝ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__state__release
+msgid "Released"
+msgstr "મુકત કરવામાં આવ્યું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__student_complaints__state__resolved
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.student_complaint_form
+msgid "Resolved"
+msgstr "ઉકેલાયું"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__activity_user_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__activity_user_id
+msgid "Responsible User"
+msgstr "જવાબદાર યુઝર"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__room_id
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_room_menu
+msgid "Room"
+msgstr "રૂમ"
+
+#. module: jt_education_hostel
+#: model:ir.actions.act_window,name:jt_education_hostel.action_hostel_details
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_details_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_details_form
+msgid "Room Allocation"
+msgstr "રૂમ ફાળવણી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__capacity
+msgid "Room Capacity"
+msgstr "રૂમ ક્ષમતા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__name
+msgid "Room No."
+msgstr "રૂમ નંબર"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__room_type
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__room_type
+msgid "Room Type"
+msgstr "રૂમ પ્રકાર"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__room_ids
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_building_form
+msgid "Rooms"
+msgstr "રૂમ્સ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__message_has_sms_error
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "એસએમએસ ડિલિવરી ભૂલ"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.cancel_reason_wizard_form
+msgid "Save"
+msgstr "સેવ કરો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__standard
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__standard
+msgid "Standard"
+msgstr "ધોરણ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__start_date
+msgid "Start Date"
+msgstr "શરૂઆતની તારીખ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__state
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__state
+msgid "Status"
+msgstr "સ્થિતિ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_state
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"ક્રિયાઓના આધારે સ્થિતિ\n"
+"મૂદત પસાર: નિર્ધારિત તારીખ પસાર થઈ ગઈ છે\n"
+"આજ: આજેની તારીખે યોજના બનાવેલી છે\n"
+"યોજિત: આવનારી કામગીરી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__student_id
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__student_id
+msgid "Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: jt_education_hostel
+#: model:ir.ui.menu,name:jt_education_hostel.hostel_student_complaint_menu
+msgid "Student Complaints"
+msgstr "વિદ્યાર્થી ફરિયાદો"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__student_ids
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields.selection,name:jt_education_hostel.selection__hostel_registration__invoice_state__to_invoice
+msgid "To Invoice"
+msgstr "ચિઠ્ઠી માટે"
+
+#. module: jt_education_hostel
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Total"
+msgstr "કુલ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration_line__total_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_hostel.hostel_registration_form
+msgid "Total Fees"
+msgstr "કુલ ફી"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__activity_exception_decoration
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "અભિલેખિત અપવાદ પ્રવૃત્તિનો પ્રકાર."
+
+#. module: jt_education_hostel
+#: model:ir.model,name:jt_education_hostel.model_res_users
+#: model:res.groups,name:jt_education_hostel.group_hostel
+msgid "User"
+msgstr "વપરાશકર્તા"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_building__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_details__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_housekeeping__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_registration__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_hostel_room__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_parent_meeting__website_message_ids
+#: model:ir.model.fields,field_description:jt_education_hostel.field_student_complaints__website_message_ids
+msgid "Website Messages"
+msgstr "વેબસાઈટ સંદેશાઓ"
+
+#. module: jt_education_hostel
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_building__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_details__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_housekeeping__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_registration__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_hostel_room__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_parent_meeting__website_message_ids
+#: model:ir.model.fields,help:jt_education_hostel.field_student_complaints__website_message_ids
+msgid "Website communication history"
+msgstr "વેબસાઈટ સંચાર ઇતિહાસ"

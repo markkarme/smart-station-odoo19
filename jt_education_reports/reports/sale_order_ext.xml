@@ -1,0 +1,9 @@
+<odoo>
+	<template id="report_sale_document_inhrt" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//p[@t-field='doc.note']" position="after">
+            <div>
+                <img t-att-src="image_data_uri(res_company.stamp_image)" style="margin-bottom:-60px;height:200px;width:200px;margin-left:650px;margin-top:150px;"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <!-- Excel Report Download Wizard Form View-->
+     <record id="book_xls_report_view" model="ir.ui.view">
+     <field name="name">Book Xls Report Form View</field>
+     <field name="model">book.xls.report</field>
+     <field name="arch" type="xml">
+        <form string="Excel Report file">
+            <group>
+                <field name="select_all_books"/>
+                <field name="book_ids" widget = "many2many_tags" required="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}" />
+                <field name="excel_file" readonly="1" filename="file_name"/>
+                <field name="file_name" invisible="1"/>
+            </group>
+            <footer>
+                <button name = "book_xls_report_template" string = "Download" type = "object" class = "oe_highlight"/>
+                Or
+                <button string="Cancel" class="oe_highlight" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+    </record>
+
+    <!-- Excel Report Download Wizard Action View-->
+    <record id="action_book_xls_report_view" model="ir.actions.act_window">
+        <field name="name">Book Details Report</field>
+        <field name="view_id" ref="book_xls_report_view"/>
+        <field name="view_mode">form</field>
+        <field name="res_model">book.xls.report</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Book Details Report" id="book_xls_report_submenu" action="action_book_xls_report_view" parent="reports_menu"/>
+
+</odoo>

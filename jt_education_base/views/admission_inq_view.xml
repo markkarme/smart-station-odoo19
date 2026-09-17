@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="admission_inq_form_view" model="ir.ui.view">
+        <field name="name">admission.inq.form.view</field>
+        <field name="model">admission.inquiry</field>
+        <field name="arch" type="xml">
+            <form string="Admission Inquiry">
+                <header>
+                    <button name="confirm_reservation_inq" string="Confirm" invisible="state != 'draft'" class="oe_highlight" type="object"/>
+                    <button name="cancel_reservation_inq" string="Cancel" invisible="state != 'draft'" class="oe_highlight" type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h1><field name="inquiry_id" readonly="1"/></h1>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="fname" required="1"/>
+                            <field name="mname" required="1"/>
+                            <field name="surname" required="1"/>
+                            <field name="mobile" required="1"/>
+                            <field name="gr_no" required="1"/>
+                            <field name="sel_gen" required="1"/>
+                            <field name="birthdate" required="1"/>
+                            <field name="email" required="1"/>
+                            <field name="phone" required="1"/>
+                            <field name="howknow_id" required="1" options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="add1" required="1"/>
+                            <field name="add2" required="1"/>
+                            <field name="city" required="1"/>
+                            <field name="zip_code" required="1"/>
+                            <field name="state_id" options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}" required="1"/>
+                            <field name="country_id" options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}" required="1"/>
+                            <field name="standard_id" options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}" required="1"/>
+                            <field name="div_id" options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}" required="1"/>
+                            <field name="year_id" options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True, 'no_create': True}" required="1"/>
+                            <field name="doc_attachment_pdf_file" invisible="1"/>
+                            <field name="doc_attachment_pdf" filename="doc_attachment_pdf_file"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="admission_inq_tree_view" model="ir.ui.view">
+        <field name="name">admission.inq.tree.view</field>
+        <field name="model">admission.inquiry</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="standard_id"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+                <field name="state" widget="badge" decoration-success="state == 'confirm'" decoration-danger="state == 'cancel'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="admission_inq_search_view" model="ir.ui.view">
+        <field name="name">admission.inq.search.view</field>
+        <field name="model">admission.inquiry</field>
+        <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="standard_id"/>
+                    <field name="state_id"/>
+                    <field name="country_id"/>
+                    <separator/>
+                    <group>
+                        <filter string="Status" name="status" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+        </field>
+    </record>
+
+    <record id="admission_inq_kanban_view" model="ir.ui.view">
+        <field name="name">admission.inq.kanban.view</field>
+        <field name="model">admission.inquiry</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card">
+                        <field name="name" class="fw-bold fs-5"/>
+                        <div><span class="text-muted">Email:</span> <field name="email"/></div>
+                        <div><span class="text-muted">Phone:</span> <field name="phone"/></div>
+                        <div><span class="text-muted">Standard:</span> <field name="standard_id"/></div>
+                        <div><span class="text-muted">State:</span> <field name="state_id"/></div>
+                        <div><span class="text-muted">Country:</span> <field name="country_id"/></div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

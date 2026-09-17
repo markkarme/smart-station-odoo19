@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Book Language Form View-->
+        <record id="booklang_form_view" model="ir.ui.view">
+            <field name="name">Book Language Form View</field>
+            <field name="model">book.language</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="lang" required='1'/>
+                            </group>
+                        </group>
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+        <!--Book Language Tree View-->
+        <record id="booklang_tree_view" model="ir.ui.view">
+            <field name="name">Book Language Tree View</field>
+            <field name="model">book.language</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="lang"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>

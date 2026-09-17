@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="export_score_summary_wizard_form" model="ir.ui.view">
+        <field name="name">Score Summary</field>
+        <field name="model">score.summary</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="exam_ids" widget="many2many_tags" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}"/>
+                            <!-- <field name="exam_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}" /> -->
+                            <field name="filename" invisible="1"/>
+                            <field name="excel_file" filename="filename" readonly="1" invisible="not excel_file"/>
+                        </group>
+                        <group>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <!-- <button name="generate_score_summary_report" string="Generate PDF Report"
+                        type="object" class="oe_highlight"/> -->
+
+                    <button name="generate_score_summary_report_xls" string="Generate Excel Report"
+                        type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_score_summary_wizard">
+        <field name="name">Score Summary</field>
+        <field name="res_model">score.summary</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="jt_education_exam.export_score_summary_wizard_form"/>
+        <field name="binding_model_id" ref="model_score_summary"/>
+        <field name="binding_type">action</field>
+    </record>
+
+    <menuitem name="Score Static Summary" id="score_summary_report" parent="jt_education_base.menu_education_reports" action="jt_education_exam.action_score_summary_wizard" sequence="-1"/>
+
+</odoo>

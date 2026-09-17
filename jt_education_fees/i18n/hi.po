@@ -1,0 +1,753 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_fees
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-29 10:47+0000\n"
+"PO-Revision-Date: 2021-09-29 10:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ",<strong>Phone: </strong>"
+msgstr ",<strong>फ़ोन: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ",<strong>Website: </strong>"
+msgstr ",<strong>वेबसाइट: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+msgid "<br/><span>Select Standard        </span>"
+msgstr "<br/><span>मानक चुनें        </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "<br/><span>Select Year        </span>"
+msgstr "<br/><span>वर्ष चुनें        </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Current Year Due Fees</span>"
+msgstr "<span class=\"o_stat_text\">चालू वर्ष देय शुल्क</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Current Year Paid Fees</span>"
+msgstr "<span class=\"o_stat_text\">वर्तमान वर्ष भुगतान शुल्क</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Due Fees</span>"
+msgstr "<span class=\"o_stat_text\">देय शुल्क</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Paid Fees</span>"
+msgstr "<span class=\"o_stat_text\">भुगतान शुल्क</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "<span states=\"choose\"> Or </span>"
+msgstr "<span states=\"choose\"> या </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "<span> Or </span>"
+msgstr "<span> या </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Date of Payment: </strong>"
+msgstr "<strong>भुगतान की तिथि: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Division: </strong>"
+msgstr "<strong>विभाजन: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Email: </strong>"
+msgstr "<strong>ईमेल: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Standard: </strong>"
+msgstr "<strong>कक्षा: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Student: </strong>"
+msgstr "<strong>विद्यार्थी: </strong>"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__formats__all_std
+msgid "All Standard"
+msgstr "सभी मानक"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__all_year
+msgid "All Year Fees"
+msgstr "सभी वर्ष शुल्क"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ""
+"All above mentioned Amount once paid are non refundable in any case "
+"whatsoever."
+msgstr ""
+"उपरोक्त सभी राशि एक बार भुगतान करने के बाद किसी भी स्थिति में वापस नहीं की जा सकती"
+"जो कुछ भी।"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Allow PreSchool Fees"
+msgstr "प्रीस्कूल फीस की अनुमति दें"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__amount
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Amount"
+msgstr "रकम"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__04
+msgid "April"
+msgstr "अप्रैल"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_res_partner
+msgid "Assignment Student Class"
+msgstr "असाइनमेंट छात्र वर्ग"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__08
+msgid "August"
+msgstr "अगस्त"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_receipt_wizard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#. module: jt_education_fees
+#: model:ir.ui.menu,name:jt_education_fees.setting_menu
+msgid "Configuration"
+msgstr "विन्यास"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_uid
+msgid "Created by"
+msgstr "के द्वारा बनाई गई"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_date
+msgid "Created on"
+msgstr "को निर्मित"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__curr_year
+msgid "Current Year"
+msgstr "वर्तमान साल"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__12
+msgid "December"
+msgstr "दिसंबर"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__display_name
+msgid "Display Name"
+msgstr "प्रदर्शित होने वाला नाम"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__division
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Division"
+msgstr "विभाजन"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__report
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__report
+msgid "Download Report"
+msgstr "रिपोर्ट डाउनलोड करें"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__excel_file
+msgid "Download Report :- "
+msgstr "रिपोर्ट डाउनलोड करें :- "
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__file_name
+msgid "Excel File"
+msgstr "एक्सेल फाइल"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_receipt_wizard
+msgid "Excel Report file"
+msgstr "एक्सेल रिपोर्ट फ़ाइल"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+msgid "Export Due/Paid Fees History"
+msgstr "निर्यात देय/भुगतान शुल्क इतिहास"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_export_fees_history
+#: model:ir.model,name:jt_education_fees.model_export_due_fees_history_wizard
+#: model:ir.model,name:jt_education_fees.model_export_fees_history_wizard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "Export Fees History"
+msgstr "निर्यात शुल्क इतिहास"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_export_paid_due_fees_history
+msgid "Export Paid/Due Fees History"
+msgstr "निर्यात भुगतान/देय शुल्क इतिहास"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__02
+msgid "February"
+msgstr "फ़रवरी"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_ids
+msgid "Fee IDs"
+msgstr "शुल्क आईडी"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Fee Items"
+msgstr "शुल्क आइटम"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Fee Receipt"
+msgstr "शुल्क रसीद"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_structure
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_structure
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fee Structure"
+msgstr "शुल्क संरचना"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__name
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_form
+msgid "Fee Type"
+msgstr "शुल्क प्रकार"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__fee
+#: model:ir.ui.menu,name:jt_education_fees.fees_root_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees"
+msgstr "शुल्क"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fees_detail
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees Detail"
+msgstr "शुल्क विवरण"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees History"
+msgstr "शुल्क इतिहास"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fees_id
+msgid "Fees ID"
+msgstr "शुल्क आईडी"
+
+#. module: jt_education_fees
+#: model:ir.module.category,name:jt_education_fees.module_category_jt_education_fees
+msgid "Fees Management"
+msgstr "शुल्क प्रबंधन"
+
+#. module: jt_education_fees
+#: model:ir.actions.report,name:jt_education_fees.fee_receipt_report
+msgid "Fees Receipt"
+msgstr "शुल्क रसीद"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_export_fees_receipt
+msgid "Fees Receipt XLS Report"
+msgstr "शुल्क रसीद XLS रिपोर्ट"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_structure
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees Structure"
+msgstr "शुल्क संरचना"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_fees_type
+#: model:ir.model,name:jt_education_fees.model_fees_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_type
+#: model:ir.ui.menu,name:jt_education_fees.fees_type_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Fees Type"
+msgstr "शुल्क प्रकार"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__name
+msgid "File Name"
+msgstr "फ़ाइल का नाम"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__formats
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__formats
+msgid "Formats"
+msgstr "प्रारूप"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Generate Fees Entries"
+msgstr "फीस प्रविष्टियां उत्पन्न करें"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Generate Yearly Fees Records"
+msgstr "वार्षिक शुल्क रिकॉर्ड उत्पन्न करें"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_generate_fees_structure
+msgid "Generate fee structure entry"
+msgstr "शुल्क संरचना प्रविष्टि उत्पन्न करें"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__id
+msgid "ID"
+msgstr "पहचान"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__01
+msgid "January"
+msgstr "जनवरी"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__07
+msgid "July"
+msgstr "जुलाई"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__06
+msgid "June"
+msgstr "जून"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard____last_update
+msgid "Last Modified on"
+msgstr "अंतिम बार संशोधित"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__write_uid
+msgid "Last Updated by"
+msgstr "पिछली बार अपडेट किया गया"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__write_date
+msgid "Last Updated on"
+msgstr "अंतिम बार अद्यतन किया गया"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__03
+msgid "March"
+msgstr "मार्च"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__05
+msgid "May"
+msgstr "मई"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__month
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__month
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Month"
+msgstr "महीना"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__11
+msgid "November"
+msgstr "नवंबर"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__10
+msgid "October"
+msgstr "अक्टूबर"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__paid
+msgid "Paid"
+msgstr "चुकाया हुआ"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__paid_on
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__paid_on
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Paid On"
+msgstr "भुगतान करना"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Particulars"
+msgstr "विवरण"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_pay_yearly_fees_wizard
+msgid "Pay BulkFees Yearly"
+msgstr "सालाना थोक शुल्क का भुगतान करें"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__pre_school_fee
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__pre_school_fee
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__psf
+msgid "Pre School Fee"
+msgstr "प्री स्कूल फीस"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_pre_school_fees
+#: model:ir.ui.menu,name:jt_education_fees.fees_child2_menu
+msgid "Pre School Fees"
+msgstr "प्री स्कूल फीस"
+
+#. module: jt_education_fees
+#: model:res.groups,name:jt_education_fees.psf_group_manager
+msgid "Pre-Primary School User"
+msgstr "प्री-प्राइमरी स्कूल उपयोगकर्ता"
+
+#. module: jt_education_fees
+#: model:res.groups,name:jt_education_fees.sf_group_manager
+msgid "Primary School User"
+msgstr "प्राथमिक विद्यालय उपयोगकर्ता"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Print Fees Receipt XLS"
+msgstr "प्रिंट शुल्क रसीद XLS"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Receipt No:"
+msgstr "रसीद संख्या:"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__name
+msgid "Receipt Number"
+msgstr "रसीद संख्या"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__name
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Reference"
+msgstr "संदर्भ"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_export_fees_receipt_form
+msgid "Reports Excel"
+msgstr "रिपोर्ट एक्सेल"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__sf
+msgid "School Fee"
+msgstr "स्कूल की फीस"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_school_fees
+#: model:ir.ui.menu,name:jt_education_fees.fees_child1_menu
+msgid "School Fees"
+msgstr "स्कूल की फीस"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__09
+msgid "September"
+msgstr "सितंबर"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Serial Number"
+msgstr "क्रमिक संख्या"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Set to Draft"
+msgstr "ड्राफ्ट पर सेट करें"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Signature Of Student"
+msgstr "छात्र के हस्ताक्षर"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__formats__spec_std
+msgid "Specific Standard"
+msgstr "विशिष्ट मानक"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__spec_year
+msgid "Specific Year"
+msgstr "विशिष्ट वर्ष"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Standard"
+msgstr "कक्षा"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__state
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__state
+msgid "State"
+msgstr "स्थिति"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__state
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__state
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Status"
+msgstr "स्थिति"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__student
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__student
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__student
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Student"
+msgstr "छात्र"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_student_standard
+msgid "Student Standard"
+msgstr "छात्र कक्षा"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__draft
+msgid "To be paid"
+msgstr "भुगतान किया जाना है"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Total"
+msgstr "कुल"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+msgid "Total Amount"
+msgstr "कुल राशि"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__due_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__due_fees
+msgid "Total Due Fees"
+msgstr "कुल देय शुल्क"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__total_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__total_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Total Fees"
+msgstr "कुल फीस"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__amount
+msgid "Total Fees Amount"
+msgstr "कुल शुल्क राशि"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__paid_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__paid_fees
+msgid "Total Fees Paid"
+msgstr "भुगतान किया गया कुल शुल्क"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__user_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__user_id
+msgid "User Id"
+msgstr "यूज़र आईडी"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Validate"
+msgstr "मान्य"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__year
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Year"
+msgstr "वर्ष"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_due_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__yearly_due_fees
+msgid "Yearly Total Due Fees"
+msgstr "वार्षिक कुल देय शुल्क"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_paid_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__yearly_paid_fees
+msgid "Yearly Total Paid Fees"
+msgstr "वार्षिक कुल भुगतान शुल्क"
+
+#. module: jt_education_fees
+#: code:addons/jt_education_fees/models/fees.py:0
+#: code:addons/jupical_edu/addons/jt_education_fees/models/fees.py:0
+#, python-format
+msgid "You need to add a line before validate."
+msgstr "मान्य करने से पहले आपको एक पंक्ति जोड़नी होगी।"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "__________________________"
+msgstr ""
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__choose
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__choose
+msgid "choose"
+msgstr "चुनें"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__get
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__get
+msgid "get"
+msgstr "पाना"
+
+#. module: jt_education_fees
+#: model:ir.actions.report,print_report_name:jt_education_fees.fee_receipt_report
+msgid "object.name"
+msgstr ""

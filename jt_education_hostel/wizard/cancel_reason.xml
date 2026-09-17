@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="cancel_reason_wizard_form" model="ir.ui.view">
+        <field name="name">Cancel Reason</field>
+        <field name="model">cancel.reason</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required='1'/>
+                            <field name="closing_date"  required='1'/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="save_reason" string="Save"
+                        type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_highlight" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cancel_reason_wizard">
+          <field name="name">Cancel Reason</field>
+          <field name="res_model">cancel.reason</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+          <field name="view_id" ref="jt_education_hostel.cancel_reason_wizard_form"/>
+    </record>
+
+    </data>
+</odoo>

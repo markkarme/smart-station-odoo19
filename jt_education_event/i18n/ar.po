@@ -1,0 +1,67 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-11 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__partner_id
+msgid "Contact"
+msgstr "محجوز من قِبَل "
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__display_name
+#: model:ir.model.fields,field_description:jt_education_event.field_res_users__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: jt_education_event
+#: model:ir.model,name:jt_education_event.model_event_registration
+msgid "Event Registration"
+msgstr "التسجيل للفعالية "
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_event_registration__id
+#: model:ir.model.fields,field_description:jt_education_event.field_res_users__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_res_users__is_parent
+msgid "Is Parent"
+msgstr "ولي أمر"
+
+#. module: jt_education_event
+#: model:ir.model.fields,field_description:jt_education_event.field_res_users__is_student
+msgid "Is Student"
+msgstr "طالب"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_form_view
+msgid "Maximum Students"
+msgstr "الحد الأقصى لعدد الطلاب"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_tree_view
+msgid "Student Name"
+msgstr "أسم الطالب"
+
+#. module: jt_education_event
+#: model_terms:ir.ui.view,arch_db:jt_education_event.student_event_registration_form_view
+msgid "Students"
+msgstr "تلاميذ"
+
+#. module: jt_education_event
+#: model:ir.model,name:jt_education_event.model_res_users
+msgid "User"
+msgstr "المستخدم"

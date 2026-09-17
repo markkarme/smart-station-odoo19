@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attendance_attendance,Access attendance attendance,model_attendance_attendance,base.group_user,1,1,1,1
+access_attendance_line,Access attendance line,model_attendance_line,base.group_user,1,1,1,1
+access_print_attendance,Access Print Attendance,model_print_attendance,base.group_user,1,1,1,1

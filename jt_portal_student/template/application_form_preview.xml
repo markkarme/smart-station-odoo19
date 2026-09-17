@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="admission_form_preview_page" name="Admission Form">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <div class="container mt-5">
+                        
+                        <section class="form-area pt24 pb24 o_colored_level kt_cons_form_sec mb40" style="background-color: #cee0df; border-radius: 20px;">
+                            <div class="container-fluid">
+                                
+                                    <div class="row flx9">
+                                            <form action="" enctype="multipart/form-data" method="post">
+                                               <h2 class="mb16" style="text-align: center;">Preview Form</h2>
+
+
+                                        <div class="row">
+                                            <div class="stu_inf_head mb8">
+                                                <p class="pre_form_head">Student Information</p>
+                                            </div>
+                                            <div class="status_info_preview">
+                                                
+
+
+                                                <table class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="w-100 text-wrap">
+                                                                <t t-if="state == 'draft'">Pending</t>
+                                                                <t t-else="">
+                                                                    <span t-esc="state"/>
+                                                                </t>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div> 
+
+                                            <div class="row">
+                                                <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required" style="text-align: end;">
+                                                    <t t-if="image_1920">
+                                                        <img t-att-src="'data:image/jpeg;base64,%s' % image_1920" 
+                                                             alt="Student Photo" 
+                                                             class="img-thumbnail" 
+                                                             style="width: 150px; height: 150px;"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span>No photo available</span>
+                                                    </t>
+                                                </div>
+                                            </div>
+
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-3 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content">Name</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control s_website_form_input new_inp_design" readonly="1" type="text" name="name" t-att-value="name" required="1"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-3 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content">Surname</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="surname" t-att-value="surname"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-3 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content">Father Name</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="father_name" t-att-value="father_name"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-3 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label">
+                                                        <span class="s_website_form_label_content">Mother Name</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="mother_name" t-att-value="mother_name"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="stu_inf_head mb8">
+                                                <p class="pre_form_head">Address</p>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Address Line 1</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm"> 
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="street" t-att-value="street"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Address Line 2</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="street2" t-att-value="street2"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Country</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="country" t-att-value="country"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;"> 
+                                                        <span class="s_website_form_label_content">State</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="state_id" t-att-value="state_id"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">City</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="city" t-att-value="city"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">ZIP Code</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="zip" t-att-value="zip_code"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="stu_inf_head mb8">
+                                                <p class="pre_form_head">Contact</p>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Mobile</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="mobile" t-att-value="mobile"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Email</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="email" name="email" t-att-value="email"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="stu_inf_head mb8">
+                                                <p class="pre_form_head">Other Information</p>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Caste</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="caste" t-att-value="caste"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Subcaste</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="subcaste" t-att-value="subcaste"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Nationality</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="nationality" t-att-value="nationality"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Religion</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="religion" t-att-value="religion"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Place Of Birth</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="birthplace" t-att-value="birthplace"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Mother Tongue</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="mother_tongue" t-att-value="mother_tongue"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Village</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="village" t-att-value="village"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Province</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="province" t-att-value="province"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">District</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="district" t-att-value="district"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Current Year</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="curr_year" t-att-value="curr_year"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="stu_inf_head mb8">
+                                                <p class="pre_form_head">Documents</p>
+                                            </div>
+
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Marksheet</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="marksheet_attachment_pdf_file" t-att-value="marksheet_attachment_pdf_file"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-6 s_website_form_custom s_website_form_required" data-type="char">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 160px;">
+                                                        <span class="s_website_form_label_content">Aadhar Card</span>
+                                                        <span class="s_website_form_mark">     *</span>
+                                                    </label>
+                                                    <div class="col-sm">
+                                                        <input class="form-control new_inp_design" readonly="1" type="text" name="adhar_attachment_pdf_file" t-att-value="adhar_attachment_pdf_file"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_custom s_website_form_required" style="text-align: end;">
+                                                <t t-if="signature">
+                                                    <img t-att-src="'data:image/jpeg;base64,%s' % signature" alt="Student Photo" 
+                                                         class="img-thumbnail" style="width: 150px; height: 150px;"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span>No sign available</span>
+                                                </t>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                               <!-- Back and Next Buttons -->
+                                                <div class="row mt-4">
+                                                    <div class="col text-center">
+                                                        <a href="#" class="btn btn-secondary mr-3" onclick="history.go(-1)">
+                                                            Back
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        
+                                        
+                                    </div>
+                                
+                            </div>
+                            </section>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

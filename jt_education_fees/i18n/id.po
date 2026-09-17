@@ -1,0 +1,752 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_fees
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:09+0000\n"
+"PO-Revision-Date: 2021-10-04 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ",<strong>Phone: </strong>"
+msgstr "<strong>Telepon: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ",<strong>Website: </strong>"
+msgstr "<strong>Situs web: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+msgid "<br/><span>Select Standard        </span>"
+msgstr "<br/><span>Pilih Standar        </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "<br/><span>Select Year        </span>"
+msgstr "<br/><span>Pilih Tahun        </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Current Year Due Fees</span>"
+msgstr "<span class=\"o_stat_text\">Biaya Jatuh Tempo Tahun Ini</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Current Year Paid Fees</span>"
+msgstr "<span class=\"o_stat_text\">Biaya Dibayar Tahun Berjalan</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Due Fees</span>"
+msgstr "<span class=\"o_stat_text\">Biaya Jatuh Tempo</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "<span class=\"o_stat_text\">Paid Fees</span>"
+msgstr "<span class=\"o_stat_text\">Biaya Berbayar</span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "<span states=\"choose\"> Or </span>"
+msgstr "<span states=\"choose\"> Atau </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "<span> Or </span>"
+msgstr "<span> Atau </span>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Date of Payment: </strong>"
+msgstr "<strong>Tanggal Pembayaran: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Division: </strong>"
+msgstr "<strong>Divisi: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Email: </strong>"
+msgstr "<strong>Email: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Standard: </strong>"
+msgstr "<strong>Standar: </strong>"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "<strong>Student: </strong>"
+msgstr "<strong>Siswa: </strong>"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__formats__all_std
+msgid "All Standard"
+msgstr "Semua Standar"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__all_year
+msgid "All Year Fees"
+msgstr "Biaya Sepanjang Tahun"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid ""
+"All above mentioned Amount once paid are non refundable in any case "
+"whatsoever."
+msgstr "Semua yang disebutkan di atas Jumlah yang telah dibayarkan tidak dapat dikembalikan dalam hal apa pun "
+"apa pun."
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Allow PreSchool Fees"
+msgstr "Izinkan Biaya Prasekolah"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__amount
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__amount
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Amount"
+msgstr "Jumlah"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__04
+msgid "April"
+msgstr "April"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_res_partner
+msgid "Assignment Student Class"
+msgstr "Kelas Siswa Tugas"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__08
+msgid "August"
+msgstr "Agustus"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_receipt_wizard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Cancel"
+msgstr "Membatalkan"
+
+#. module: jt_education_fees
+#: model:ir.ui.menu,name:jt_education_fees.setting_menu
+msgid "Configuration"
+msgstr "Konfigurasi"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__create_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__curr_year
+msgid "Current Year"
+msgstr "Tahun ini"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__12
+msgid "December"
+msgstr "Desember"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__display_name
+msgid "Display Name"
+msgstr "Nama tampilan"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__division
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__division
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Division"
+msgstr "Divisi"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__report
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__report
+msgid "Download Report"
+msgstr "Unduh Laporan"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__excel_file
+msgid "Download Report :- "
+msgstr "Unduh Laporan :-"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__file_name
+msgid "Excel File"
+msgstr "Berkas Excel"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_receipt_wizard
+msgid "Excel Report file"
+msgstr "File Laporan Excel"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+msgid "Export Due/Paid Fees History"
+msgstr "Riwayat Biaya Terutang/Dibayar Ekspor"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_export_fees_history
+#: model:ir.model,name:jt_education_fees.model_export_due_fees_history_wizard
+#: model:ir.model,name:jt_education_fees.model_export_fees_history_wizard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+msgid "Export Fees History"
+msgstr "Riwayat Biaya Ekspor"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_export_paid_due_fees_history
+msgid "Export Paid/Due Fees History"
+msgstr "Ekspor Dibayar/Biaya Jatuh Tempo"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__02
+msgid "February"
+msgstr "Februari"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_ids
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_ids
+msgid "Fee IDs"
+msgstr "ID biaya"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Fee Items"
+msgstr "Item Biaya"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Fee Receipt"
+msgstr "Penerimaan Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_structure
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_structure
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fee Structure"
+msgstr "Struktur Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__name
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_form
+msgid "Fee Type"
+msgstr "Jenis Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__fee
+#: model:ir.ui.menu,name:jt_education_fees.fees_root_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees"
+msgstr "Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fees_detail
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fees_detail
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees Detail"
+msgstr "Rincian Biaya"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees History"
+msgstr "Sejarah Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fees_id
+msgid "Fees ID"
+msgstr "ID Biaya"
+
+#. module: jt_education_fees
+#: model:ir.module.category,name:jt_education_fees.module_category_jt_education_fees
+msgid "Fees Management"
+msgstr "Manajemen Biaya"
+
+#. module: jt_education_fees
+#: model:ir.actions.report,name:jt_education_fees.fee_receipt_report
+msgid "Fees Receipt"
+msgstr "Penerimaan Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_export_fees_receipt
+msgid "Fees Receipt XLS Report"
+msgstr "Laporan Penerimaan Biaya XLS"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_fees_structure
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Fees Structure"
+msgstr "Struktur Biaya"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_fees_type
+#: model:ir.model,name:jt_education_fees.model_fees_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__fee_type
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__fee_type
+#: model:ir.ui.menu,name:jt_education_fees.fees_type_menu
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_type_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Fees Type"
+msgstr "Jenis Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__name
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__name
+msgid "File Name"
+msgstr "Nama file"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__formats
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__formats
+msgid "Formats"
+msgstr "Format "
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_due_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Generate Fees Entries"
+msgstr "Hasilkan Entri Biaya"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+msgid "Generate Yearly Fees Records"
+msgstr "Hasilkan Catatan Biaya Tahunan"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.act_generate_fees_structure
+msgid "Generate fee structure entry"
+msgstr "Buat entri struktur biaya"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard__id
+msgid "ID"
+msgstr "Indo"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__01
+msgid "January"
+msgstr "Januari"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__07
+msgid "July"
+msgstr "Juli"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__06
+msgid "June"
+msgstr "Juni"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner____last_update
+#: model:ir.model.fields,field_description:jt_education_fees.field_student_standard____last_update
+msgid "Last Modified on"
+msgstr "Terakhir Dimodifikasi pada"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__write_uid
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_receipt__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_type__write_date
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__write_date
+msgid "Last Updated on"
+msgstr "Terakhir diperbarui saat"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__03
+msgid "March"
+msgstr "berbaris"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__05
+msgid "May"
+msgstr "Mungkin"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__month
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__month
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Month"
+msgstr "Bulan"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__11
+msgid "November"
+msgstr "November"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__10
+msgid "October"
+msgstr "Oktober"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__paid
+msgid "Paid"
+msgstr "Dibayar"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__paid_on
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__paid_on
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Paid On"
+msgstr "Dibayarkan pada"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Particulars"
+msgstr "Detail"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_pay_yearly_fees_wizard
+msgid "Pay BulkFees Yearly"
+msgstr "Bayar Biaya Massal Tahunan"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__pre_school_fee
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__pre_school_fee
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__psf
+msgid "Pre School Fee"
+msgstr "Biaya Pra Sekolah"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_pre_school_fees
+#: model:ir.ui.menu,name:jt_education_fees.fees_child2_menu
+msgid "Pre School Fees"
+msgstr "Biaya Pra Sekolah"
+
+#. module: jt_education_fees
+#: model:res.groups,name:jt_education_fees.psf_group_manager
+msgid "Pre-Primary School User"
+msgstr "Pengguna Pra-Sekolah Dasar"
+
+#. module: jt_education_fees
+#: model:res.groups,name:jt_education_fees.sf_group_manager
+msgid "Primary School User"
+msgstr "Pengguna Sekolah Dasar"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Print Fees Receipt XLS"
+msgstr "Tanda Terima Biaya Cetak XLS"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Receipt No:"
+msgstr "Nomor Penerimaan:"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__name
+msgid "Receipt Number"
+msgstr "Nomor Tanda Terima"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__name
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__name
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Reference"
+msgstr "Referensi"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_export_fees_receipt_form
+msgid "Reports Excel"
+msgstr "laporan excel"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__res_partner__fee_type__sf
+msgid "School Fee"
+msgstr "Biaya sekolah"
+
+#. module: jt_education_fees
+#: model:ir.actions.act_window,name:jt_education_fees.action_school_fees
+#: model:ir.ui.menu,name:jt_education_fees.fees_child1_menu
+msgid "School Fees"
+msgstr "Biaya sekolah"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__month__09
+msgid "September"
+msgstr "September"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Serial Number"
+msgstr "Nomor seri"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Set to Draft"
+msgstr "Setel ke Draf"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Signature Of Student"
+msgstr "Tanda Tangan Siswa"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__formats__spec_std
+msgid "Specific Standard"
+msgstr "Standar Spesifik"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__formats__spec_year
+msgid "Specific Year"
+msgstr "Tahun Tertentu"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__standard
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Standard"
+msgstr "Standar"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_due_fees_history_wizard__state
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__state
+msgid "State"
+msgstr "Negara"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__state
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__state
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Status"
+msgstr "Status"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__student
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__student
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__student
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+msgid "Student"
+msgstr "Murid"
+
+#. module: jt_education_fees
+#: model:ir.model,name:jt_education_fees.model_student_standard
+msgid "Student Standard"
+msgstr "Standar Siswa"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__fees_fees__state__draft
+msgid "To be paid"
+msgstr "Untuk dibayar"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+msgid "Total Amount"
+msgstr "Jumlah total"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__due_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__due_fees
+msgid "Total Due Fees"
+msgstr "Total Biaya Jatuh Tempo"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__total_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__total_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Total Fees"
+msgstr "Total Biaya"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__amount
+msgid "Total Fees Amount"
+msgstr "Jumlah Biaya Total"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__paid_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__paid_fees
+msgid "Total Fees Paid"
+msgstr "Total Biaya yang Dibayar"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__user_id
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__user_id
+msgid "User Id"
+msgstr "Identitas pengguna"
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+msgid "Validate"
+msgstr "Mengesahkan"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_export_fees_history_wizard__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_detail__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_fees__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_fees_structure__year
+#: model:ir.model.fields,field_description:jt_education_fees.field_pay_yearly_fees_wizard__year
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.export_fees_history_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_detail_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fees_view_tree
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.pay_yearly_fees_wizard_form
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.view_partner_form_fees
+msgid "Year"
+msgstr "Tahun"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_due_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__yearly_due_fees
+msgid "Yearly Total Due Fees"
+msgstr "Total Biaya Jatuh Tempo Tahunan"
+
+#. module: jt_education_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_partner__yearly_paid_fees
+#: model:ir.model.fields,field_description:jt_education_fees.field_res_users__yearly_paid_fees
+msgid "Yearly Total Paid Fees"
+msgstr "Total Biaya yang Dibayar Tahunan"
+
+#. module: jt_education_fees
+#: code:addons/jt_education_fees/models/fees.py:0
+#: code:addons/jupical_edu/addons/jt_education_fees/models/fees.py:0
+#, python-format
+msgid "You need to add a line before validate."
+msgstr "Anda perlu menambahkan baris sebelum memvalidasi."
+
+#. module: jt_education_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_fees.fee_receipt_report_template
+msgid "__________________________"
+msgstr "_____________"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__choose
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__choose
+msgid "choose"
+msgstr "memilih"
+
+#. module: jt_education_fees
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_due_fees_history_wizard__state__get
+#: model:ir.model.fields.selection,name:jt_education_fees.selection__export_fees_history_wizard__state__get
+msgid "get"
+msgstr "Dapatkan"
+
+#. module: jt_education_fees
+#: model:ir.actions.report,print_report_name:jt_education_fees.fee_receipt_report
+msgid "object.name"
+msgstr "objek.nama"

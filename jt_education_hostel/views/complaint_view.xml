@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="student_complaint_form" model="ir.ui.view">
+            <field name="name">Hostel Student Complaints</field>
+            <field name="model">student.complaints</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="complaint_assigned" string="Assigned" type="object" invisible="state not in ('new')" class="oe_highlight"/>
+                        <button name="complaint_in_progress" string="In Progress" type="object" invisible="state not in ('assigned')" class="oe_highlight"/>
+                        <button name="complaint_resolved" string="Resolved" type="object" invisible="state not in ('in_progress')" class="oe_highlight"/>
+                        <button name="complaint_cancelled" string="Cancel" type="object" invisible="state not in ('resolved','new','in_progress','assigned')" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,assigned,in_progress,resolved"></field>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"  required='1'></field>
+                                <field name="student_id" required='1'/>
+                                <field name="description"  required='1'></field>
+                                <field name="assign_id"  required='1'></field>
+                                <!-- <field name="state" readonly='0'></field> -->
+                            </group>
+                            <group>
+                                <field name="date" required='1'></field>
+                                <field name="closing_date"></field>
+                                <field name="cancel_reason" readonly='1'></field>
+                            </group>
+                        </group>
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_complaint_tree" model="ir.ui.view">
+            <field name="name">Hostel Student Complaints</field>
+            <field name="model">student.complaints</field>
+            <field name="arch" type="xml">
+                <list> 
+                    <field name="name"></field>
+                    <field name="student_id"></field>
+                    <field name="date"></field>
+                    <field name="state"></field>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="student_complaint_kanban" model="ir.ui.view">
+            <field name="name">Hostel Student Complaints</field>
+            <field name="model">student.complaints</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"></field>
+                    <field name="student_id"></field>
+                    <field name="date"></field>
+                    <field name="state"></field>
+                    <templates>
+                        <t t-name="card">
+                            <div t-attf-class="oe_kanban_global_click oe_kanban_card">
+                                <div class="oe_kanban_content flex-grow-1">
+                                    <div class="oe_kanban_details">
+                                        <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_subtitle">
+                                    <field name="student_id"/>
+                                </div>
+                                <div class="o_kanban_record_subtitle">
+                                    <field name="date"/>
+                                </div>
+                                <div class="o_kanban_record_subtitle">
+                                    <field name="state"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="student_complaint_pivot" model="ir.ui.view">
+            <field name="name">Hostel Student Complaints Pivot</field>
+            <field name="model">student.complaints</field>
+            <field name="arch" type="xml">
+                <pivot string="Hostel Complaints">
+                    <field name="name" type="col"></field>
+                    <field name="student_id" type="row"></field>
+                    <field name="date"></field>
+                    <field name="state"></field>
+                </pivot>
+            </field>
+        </record>
+
+        
+        <record model="ir.actions.act_window" id="action_student_complaint">
+            <field name="name">Hostel Student Complaints</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.complaints</field>
+            <field name="view_mode">list,form,pivot,kanban</field>
+        </record>
+
+        <menuitem id="hostel_student_complaint_menu" name="Student Complaints" 
+            parent="hostel_menu" action="action_student_complaint"/>
+    </data>
+</odoo>

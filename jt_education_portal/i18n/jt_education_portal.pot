@@ -1,0 +1,1232 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260723\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 23:18+0000\n"
+"PO-Revision-Date: 2026-09-10 23:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "<b>Total Fees:</b>"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "<small class=\"text-muted\">Your contact</small>"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "<span> / </span>"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+msgid ""
+"<span> / </span>\n"
+"                    <span>Profile</span>"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<strong>Fail</strong>"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "<strong>Pass</strong>"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport_list
+msgid "Academic Year"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Academic Year:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable_list
+msgid "Academic year"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+msgid "Agenda"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Amount"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint_list
+msgid "Assign to"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Assignment Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment Name:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Assignment Type"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Assignments"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Assignments List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+msgid "Attended Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Author"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Book"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership_list
+msgid "Book Limit"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Building:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+msgid "Category"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+msgid "Closing Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Communication History"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Complaint"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+msgid "Complaint Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint_list
+msgid "Complaint List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Contact"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Current Year"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Date of Issue:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Date of Payment:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Date of Return"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Date of Return:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+msgid "Date:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Day"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Description"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable_list
+msgid "Division"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Division:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Driver Mobile No."
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Driver Name"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership_list
+msgid "End Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "End Date:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Event Name:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+msgid "Event Stage"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Events"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Events Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Exam"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Exam Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Exam Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Exam Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Exam Name:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Exams"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+msgid "Exams List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Faculty Obtained"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Fees"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Fees Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Fees Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Fees List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Friday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Genres"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Grade"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Holiday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+msgid "Holiday -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+msgid "Holiday Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Holiday Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+msgid "Holiday Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays_list
+msgid "Holidays List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Hostel Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Hostel Fees Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Hostel Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+msgid "Hostel Meeting -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+msgid "Hostel Meeting Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Hostel Registration -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Issue Book -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Issue Book Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Issue Book Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Issue Books"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Issue ID:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books_list
+msgid "Issue List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+msgid "Issued Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Issued Date:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+msgid "Language"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_list
+msgid "Last Name"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Marks Obtained"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+msgid "Meeting"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+msgid "Meeting Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting_list
+msgid "Meeting List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Membership"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership_list
+msgid "Membership ID"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership ID:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Membership Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_list
+msgid "Middle Name"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Min Marks"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Monday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Month"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access_profile
+msgid "My Profile"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+msgid "My Students"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable_list
+msgid "Name"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Name:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+msgid "No students linked to your account."
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission_list
+msgid "Note"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Organizer"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Parent Meeting"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Particulars"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Percentage:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+msgid "Profile"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Quantity"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+msgid "Reason for Cancellation"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+msgid "Receipt Number"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Receipt Number:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration_list
+msgid "Register Key"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Registration"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+msgid "Registration Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration_list
+msgid "Registration List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Responsible"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Result:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Results"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+msgid "Results List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration_list
+msgid "Room"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Room Type:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Room:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Route Name"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Saturday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Scored Marks"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Send message"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Serial Number"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_parent_student_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable_list
+msgid "Standard"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Standard:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership_list
+msgid "Start Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+msgid "Start Date:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership_list
+msgid "Status"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Status:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Stop"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+msgid "Student Assignments -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+msgid "Student Complaint -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+msgid "Student Complaint Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Student Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "Student Exam -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Student Fees -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_complaint
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_meeting
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_issue_books
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_membership
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Student Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access
+msgid "Student List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Student Profile"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_profile
+msgid "Student Profile -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Student Result -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Student Submission -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Student Timetable -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_list
+msgid "Students List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Subject Pass/Fail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Subjects"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission_list
+msgid "Submission Date"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission Date:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Submission:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission_list
+msgid "Submissions"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Sunday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Template"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Thursday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Time"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Timetable"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Timetable Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Timetable Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Timetable Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Timetable List"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+msgid "To"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+msgid "Total  :"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_hostel_registration
+msgid "Total Fees"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Total Mark Scored :"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_assignment
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_submission
+msgid "Total Marks"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Total Marks :"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_result
+msgid "Total:"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport_list
+msgid "Transport"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Transport -"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Transport Detail"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_student_details_list
+msgid "Transport Details"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Transport Information"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Tuesday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+msgid "Type of Holiday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_transport
+msgid "Vehicle"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_event
+msgid "Venue"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.jt_eduction_portal_access_profile
+msgid "View your student profile"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_timetable
+msgid "Wednesday"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees_list
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays_list
+msgid "Year"
+msgstr ""
+
+#. module: jt_education_portal
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_fees
+#: model_terms:ir.ui.view,arch_db:jt_education_portal.portal_holidays
+msgid "Year:"
+msgstr ""

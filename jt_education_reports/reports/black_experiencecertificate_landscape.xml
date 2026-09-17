@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="black_experiencecertificate_landscape_report_template">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div style="width:100%;height:100%;padding:0px;">
+                            <div style="height:1414px;width:2000px;background-image:url('jt_education_reports/static/src/img/black_expcertificate_landscape.png')">
+                                <center>
+                                    <div>
+                                        <div style="align:center;padding-top:90px;text-align:center;margin-right:30px;margin-left:30px;">
+                                            <img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="background-color:#f4d988;width:200px;height:200px;padding:5px;margin-left:0px;"/>
+                                            <p style="margin-top:20px;text-transform:uppercase;color:#f4d988;font-size:80px;">Certificate of experience</p>
+                                        </div>
+                                        <div style="margin-top:50px;align:center;text-align:center;margin-right:30px;margin-left:30px;">
+                                            <p style="color:#af772a;font-size:50px;text-transform:uppercase;">This is to certify that</p>
+                                        </div>
+                                        <div style="margin-top:10px;align:center;text-align:center;margin-right:30px;margin-left:30px;">
+                                            <p style="font-weight:bold;text-transform:uppercase;color:#f4d988;font-size:80px;"><span t-field="o.name"/></p>
+                                        </div>
+                                        <div style="margin-top:10px;align:center;text-align:center;margin-right:120px;margin-left:120px;">
+                                            <p style="color:#af772a;font-size:50px;">has worked as a <span style="text-transform:uppercase;" t-field="o.job_id"/> with <span style="text-transform:uppercase;" t-field="res_company.name"/> from <span t-field="o.join_date"/> To <span t-field="o.end_date"/>.</p>
+                                        </div>
+                                        <div t-if="res_company.signature" style="margin-top:120px;align:center;text-align:center;margin-right:30px;margin-left:30px;">
+                                            <img t-att-src="image_data_uri(res_company.signature)" style="margin-bottom:-50px;max-height: 12cm; max-width: 16cm;"/>
+                                            <p style="color:#f4d988;font-weight:bold;font-size:80px;margin-top:-70px;">___________________</p>
+                                            <p style="font-size:50px;color:#af772a;margin-top:-25px;"><span t-field="res_company.namep"/></p>
+                                            <p style="font-size:40px;color:#af772a;"><span style="font-style:italic" t-field="res_company.function"/></p>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div> 
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="black_experiencecertificate_landscape_template_paperformate" model="report.paperformat">
+            <field name="name">Employee Black Experience Certificate</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="black_experiencecerificate_landscape_report" model="ir.actions.report">
+            <field name="name">Black Experience Certificate(Landscape)</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_reports.black_experiencecertificate_landscape_report_template</field>
+            <field name="report_file">jt_education_reports.black_experiencecertificate_landscape_report_template</field>
+            <field name="paperformat_id" ref="jt_education_reports.black_experiencecertificate_landscape_template_paperformate"/>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <report 
+            id="black_experiencecerificate_landscape_report"
+            model="res.partner"
+            string="Black Experience Certificate(Landscape)"
+            report_type="qweb-pdf"
+            name="jt_education_reports.black_experiencecertificate_landscape_report_template"
+            file="jt_education_reports.black_experiencecertificate_landscape_report_template"
+            print_report_name="object.name"
+            paperformat="jt_education_reports.black_experiencecertificate_landscape_template_paperformate"
+        /> -->
+
+    </data>
+</odoo> 

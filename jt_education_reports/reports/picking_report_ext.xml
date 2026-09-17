@@ -1,0 +1,9 @@
+<odoo>
+	<template id="report_picking_document_inhrt" inherit_id="stock.report_picking">
+        <xpath expr="//div[hasclass('page')]" position="after">
+            <div>
+                <img t-att-src="image_data_uri(res_company.stamp_image)" style="margin-bottom:-60px;height:200px;width:200px;margin-left:650px;margin-top:220px;"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

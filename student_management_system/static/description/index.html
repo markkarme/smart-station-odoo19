@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Tech Solution - Odoo Student Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+        .feature-card {
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            border-bottom: 3px solid #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-primary mb-3">Odoo Student Management System</h1>
+            <p class="lead mb-4">A comprehensive solution for educational institutions by GT Tech Solution</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="mb-4">
+                        Streamline your educational operations with our complete student management solution featuring branch management, course administration, scheduling, and financial integration.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="mailto:info@gttsolution.com" class="btn btn-primary btn-lg px-4">Email Us</a>
+                        <a href="#" class="btn btn-outline-primary btn-lg px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Highlights</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="feature-card bg-white shadow-sm">
+                        <h4>Multi-Branch Management</h4>
+                        <p>Easily manage multiple campuses or branches from a single system with centralized control.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card bg-white shadow-sm">
+                        <h4>Automated Scheduling</h4>
+                        <p>Intelligent room and resource scheduling to optimize your institution's operations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card bg-white shadow-sm">
+                        <h4>Course Management</h4>
+                        <p>Complete control over courses, curricula, and teacher assignments with easy tracking.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card bg-white shadow-sm">
+                        <h4>Financial Integration</h4>
+                        <p>Seamless integration with accounting for automatic invoice generation and payment tracking.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card bg-white shadow-sm">
+                        <h4>Student Portal</h4>
+                        <p>Self-service portal for students to access schedules, grades, and account information.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card bg-white shadow-sm">
+                        <h4>Reporting & Analytics</h4>
+                        <p>Comprehensive reporting tools for student performance, attendance, and financial tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Tabs -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">System Features</h2>
+            
+            <ul class="nav nav-tabs justify-content-center mb-4" id="featuresTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab">Student Management</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="academic-tab" data-bs-toggle="tab" data-bs-target="#academic" type="button" role="tab">Academic Tools</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="financial-tab" data-bs-toggle="tab" data-bs-target="#financial" type="button" role="tab">Financial Features</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="featuresTabContent">
+                <div class="tab-pane fade show active" id="student" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Comprehensive Student Profiles</h4>
+                            <ul>
+                                <li>Detailed student records with academic history</li>
+                                <li>Document management for certificates and transcripts</li>
+                                <li>Contact information and emergency contacts</li>
+                                <li>Attendance tracking and reporting</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Admission Process</h4>
+                            <ul>
+                                <li>Online application forms</li>
+                                <li>Application tracking and status updates</li>
+                                <li>Document verification workflow</li>
+                                <li>Automated communication with applicants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="academic" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Course Management</h4>
+                            <ul>
+                                <li>Create and manage courses with prerequisites</li>
+                                <li>Track course enrollment and capacity</li>
+                                <li>Assign instructors and teaching assistants</li>
+                                <li>Manage course materials and resources</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Gradebook</h4>
+                            <ul>
+                                <li>Customizable grading scales and rubrics</li>
+                                <li>Assignment and exam grade tracking</li>
+                                <li>Grade calculation based on weighted components</li>
+                                <li>Progress reports and transcripts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="financial" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Tuition Management</h4>
+                            <ul>
+                                <li>Automated fee calculation based on courses</li>
+                                <li>Payment plans and installment options</li>
+                                <li>Scholarship and discount management</li>
+                                <li>Receipt generation and tracking</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Financial Reporting</h4>
+                            <ul>
+                                <li>Revenue reports by program or department</li>
+                                <li>Outstanding balances tracking</li>
+                                <li>Payment history and audit trails</li>
+                                <li>Integration with accounting systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="service-icon text-primary">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h4>System Implementation</h4>
+                        <p>Complete setup and configuration of your student management system tailored to your institution's needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="service-icon text-primary">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <h4>Staff Training</h4>
+                        <p>Comprehensive training programs for administrators, faculty, and staff to ensure effective system utilization.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="service-icon text-primary">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h4>Custom Development</h4>
+                        <p>Tailored solutions to extend system functionality for your specific institutional requirements.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="service-icon text-primary">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                        <h4>Data Migration</h4>
+                        <p>Seamless transfer of existing student and institutional data from legacy systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="service-icon text-primary">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4>Ongoing Support</h4>
+                        <p>Dedicated support team available to assist with any questions or technical issues.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 bg-white rounded shadow-sm h-100">
+                        <div class="service-icon text-primary">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4>System Optimization</h4>
+                        <p>Regular reviews and updates to ensure your system continues to meet evolving needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            What types of educational institutions is this system suitable for?
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our Student Management System is adaptable for K-12 schools, colleges, universities, vocational training centers, and other educational organizations of various sizes.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Can the system handle multiple campuses or locations?
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our system includes robust multi-branch management capabilities, allowing centralized administration with location-specific customization.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Is training included with implementation?
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we provide comprehensive training for administrators and staff as part of our implementation package, with additional training options available.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            How does the system handle student financials?
+                        </button>
+                    </h3>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The system automatically generates invoices based on course enrollment, tracks payments, manages payment plans, and integrates with accounting systems for comprehensive financial management.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                            What kind of support do you offer after implementation?
+                        </button>
+                    </h3>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We offer multiple support options including email support, phone support, and remote assistance. Our standard package includes business-hour support with 24/7 options available.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Ready to Transform Your Institution's Management?</h2>
+                    <p class="lead mb-5">Contact GT Tech Solution today to learn how our Odoo Student Management System can streamline your operations and enhance your educational services.</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                        <a href="mailto:info@gttsolution.com" class="btn btn-light btn-lg px-4">Email Us</a>
+                        <a href="tel:+1234567890" class="btn btn-outline-light btn-lg px-4">Call Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>GT Tech Solution</h5>
+                    <p>Providing innovative educational technology solutions to institutions worldwide.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">Features</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <address>
+                        <strong>GT Tech Solution</strong><br>
+                        Email: info@gttsolution.com<br>
+                        Phone: +1 (234) 567-8900
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 GT Tech Solution. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

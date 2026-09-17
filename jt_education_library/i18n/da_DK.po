@@ -1,0 +1,1099 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-04 11:09+0000\n"
+"PO-Revision-Date: 2021-10-04 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "%s is not available!"
+msgstr "%s er ikke tilgængelig!"
+
+#. module: jt_education_library
+#: model:mail.template,body_html:jt_education_library.email_template_issuebooks_mail
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear ${object.student_id.name}<br/><br/>\n"
+"\n"
+"                        This is to inform you that you have been issued book(s) from library\n"
+"                        \n"
+"                        on ${object.datetime_issue} which you have to return on ${object.date_return}.\n"
+"\n"
+"                        <br/><br/>\n"
+"                        Best regards,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Kære ${object.student_id.name}<br/><br/>\n"
+"\n"
+"                        Dette er for at informere dig om, at du har fået udleveret bøger fra biblioteket\n"
+"                        \n"
+"                        på ${object.datetime_issue} som du skal returnere til ${object.date_return}.\n"
+"\n"
+"                        <br/><br/>\n"
+"                        Med venlig hilsen,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+msgstr "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form_library
+msgid "<span class=\"o_stat_text\">Library Books</span>"
+msgstr "<span class=\"o_stat_text\">Biblioteksbøger</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "<span style=\"font-size:40px;\"/>Student Membership Card"
+msgstr "<span style=\"font-size:40px;\"/>Elevmedlemskort"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "<span>Issue Book Details</span>"
+msgstr "<span> Oplysninger om bogbog </span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "<span>Membership Details</span>"
+msgstr "<span> Medlemsoplysninger </span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">Books "
+"Detail</strong>"
+msgstr "<strong style=\"color:#3d2012;text-align:center;font-size:20px;\"> Bøger "
+"Detaljer </strong>"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__active
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Add Books"
+msgstr "Tilføj bøger"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__art
+msgid "Art"
+msgstr "Kunst"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_res_partner
+msgid "Assignment Student Class"
+msgstr "Opgave Elevklasse"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__author
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__author
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Author"
+msgstr "Forfatter"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__authors_code
+msgid "Author ID"
+msgstr "Forfatter -ID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__partner_id
+msgid "Author Name"
+msgstr "Forfatterens navn"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_authors
+#: model:ir.ui.menu,name:jt_education_library.author_submenu
+msgid "Authors"
+msgstr "Forfattere"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_authors_authors
+msgid "Authors Details"
+msgstr "Forfattere detaljer"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Availability"
+msgstr "Tilgængelighed"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_kanban_view
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+msgid "AvatarDefault"
+msgstr "AvatarDefault"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__biography
+msgid "Biography"
+msgstr "Biografi"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issuebookslines_image
+msgid "Book Cover Picture"
+msgstr "Bogomslag billede"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.books_report
+msgid "Book Detail"
+msgstr "Bogdetaljer"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.book_xls_report_submenu
+msgid "Book Details Report"
+msgstr "Bogoplysningsrapport"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book ID"
+msgstr "Bog -ID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__book_ids
+msgid "Book Ids"
+msgstr "Bog -id'er"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Book Information"
+msgstr "Boginformation"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Book Issue Limit :"
+msgstr "Bogudstedelsesgrænse:"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.language_menu
+msgid "Book Language"
+msgstr "Bogsprog"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Book Limit"
+msgstr "Boggrænse"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__book_ids
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Name"
+msgstr "Bognavn"
+
+#. module: jt_education_library
+#: model:ir.model.constraint,message:jt_education_library.constraint_books_books_name_uniq
+msgid "Book Name Must Be Unique !"
+msgstr "Bognavn skal være unikt!"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Status"
+msgstr "Bogstatus"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_xls_report
+msgid "Book Xls Report"
+msgstr "Bog Xls -rapport"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_books
+#: model:ir.ui.menu,name:jt_education_library.books_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Books"
+msgstr "Bøger"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_books_books
+msgid "Books Details"
+msgstr "Bøger Detaljer"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issue_books
+#: model:ir.model,name:jt_education_library.model_issue_books_lines
+msgid "Books Issued details."
+msgstr "Bøger Udgivet detaljer."
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Cancel"
+msgstr "Afbestille"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__child
+msgid "Child"
+msgstr "Barn"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__city
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "City"
+msgstr "By"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__comic
+msgid "Comic"
+msgstr "Tegneserie"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.configurations_menu
+msgid "Configurations"
+msgstr "Konfigurationer"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Contact Details"
+msgstr "Kontaktoplysninger"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__cooking
+msgid "Cooking"
+msgstr "Madlavning"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__rec_count
+#: model:ir.model.fields,field_description:jt_education_library.field_res_users__rec_count
+msgid "Count"
+msgstr "Tælle"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__country_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Country"
+msgstr "Land"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_uid
+msgid "Created by"
+msgstr "Lavet af"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_date
+msgid "Created on"
+msgstr "Oprettet den"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__datetime_issue
+msgid "Date & Time Of Issue"
+msgstr "Dato og tidspunkt for udstedelse"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__date_return
+msgid "Date Of Return"
+msgstr "Returdato"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date and Time Of Issue"
+msgstr "Dato og klokkeslæt for udstedelse"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date of Return"
+msgstr "Dato for retur"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__user
+msgid "Default user"
+msgstr "Standardbruger"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Vis navn"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__division
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__division
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Division"
+msgstr "Division"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Download"
+msgstr "Hent"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__excel_file
+msgid "Download Report"
+msgstr "Download rapport"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__late
+msgid "Due to Late Return"
+msgstr "På grund af forsinkelse"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__lost
+msgid "Due to Lost"
+msgstr "På grund af tabt"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__edition
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Edition"
+msgstr "Udgave"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__email
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__emailid
+msgid "Email"
+msgstr "E -mail"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__end_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "End Date"
+msgstr "Slutdato"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Excel Report file"
+msgstr "Excel -rapportfil"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__expire
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Expire"
+msgstr "Udløbe"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.membership_expiry_remainder_cron_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.membership_expiry_remainder_cron
+#: model:ir.cron,name:jt_education_library.membership_expiry_remainder_cron
+msgid "Expire Membership"
+msgstr "Udløb medlemskab"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Expiry Date :"
+msgstr "Udløbsdato :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__file_name
+msgid "File Name"
+msgstr "Filnavn"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_amount
+msgid "Fine Amount"
+msgstr "Fint beløb"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Amount Detail"
+msgstr "Fin mængde detaljer"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Description"
+msgstr "Fin beskrivelse"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Details"
+msgstr "Fine detaljer"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_detail
+msgid "Fine Reason"
+msgstr "Fin grund"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Generes"
+msgstr "Genererer"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__genres
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__genres
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Genres"
+msgstr "Genrer"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Group By"
+msgstr "Gruppér efter"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__historic
+msgid "Historic"
+msgstr "Historisk"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__horror
+msgid "Horror"
+msgstr "Rædsel"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__id
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_image
+msgid "Image"
+msgstr "Billede"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__is_author
+msgid "Is a Author"
+msgstr "Er forfatter"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Issue"
+msgstr "Problem"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebook_xls_report_view
+msgid "Issue Book Details Report"
+msgstr "Udgave Bogoplysningsrapport"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__book_limit
+msgid "Issue Book Limit"
+msgstr "Udsted boggrænse"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebookslines_ids
+msgid "Issue Book Lines"
+msgstr "Udgive boglinjer"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issuebook_xls_report
+msgid "Issue Book Xls Report"
+msgstr "Udgavebog Xls -rapport"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebooks
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issue_books
+#: model:ir.ui.menu,name:jt_education_library.issuebooks_menu
+msgid "Issue Books"
+msgstr "Udgiv bøger"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.issuebooks_report
+msgid "Issue Books Detail"
+msgstr "Udgiv bøger detaljer"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Books Details"
+msgstr "Udgiv bøger detaljer"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Date :"
+msgstr "Udstedelsesdato :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_code
+msgid "Issue ID"
+msgstr "Problem -id"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__state
+msgid "Issue Status"
+msgstr "Problemstatus"
+
+#. module: jt_education_library
+#: model:mail.template,subject:jt_education_library.email_template_issuebooks_mail
+msgid "Issue created"
+msgstr "Problem oprettet"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__issued
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Issued"
+msgstr "Udstedt"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__book_id
+#: model:ir.model.fields,field_description:jt_education_library.field_res_users__book_id
+msgid "Issued Books"
+msgstr "Udgivet bøger"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_language
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__lang_id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__lang_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Language"
+msgstr "Sprog"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Sidst ændret den"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_uid
+msgid "Last Updated by"
+msgstr "Sidst opdateret af"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_date
+msgid "Last Updated on"
+msgstr "Sidst opdateret den"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.root_menu
+msgid "Library"
+msgstr "Bibliotek"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_library_memberships
+msgid "Library Membership details."
+msgstr "Biblioteksmedlemskabsoplysninger."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Logo"
+msgstr "Logo"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__lost
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Lost"
+msgstr "Faret vild"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.report_membership_card
+msgid "Membership Card"
+msgstr "Medlemskort"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Membership Details"
+msgstr "Medlemsoplysninger"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_membership_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.membership_xls_report_submenu
+msgid "Membership Details Report"
+msgstr "Rapport om medlemsoplysninger"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "Membership ID"
+msgstr "Medlems -id"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Membership ID :"
+msgstr "Medlems -id:"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__state
+msgid "Membership Status"
+msgstr "Medlemsstatus"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_membership_xls_report
+msgid "Membership Xls Report"
+msgstr "Medlemskab Xls -rapport"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.actions.act_window,name:jt_education_library.action_memberships
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__membership_ids
+#: model:ir.ui.menu,name:jt_education_library.memberships_menu
+#, python-format
+msgid "Memberships"
+msgstr "Medlemskaber"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.memberships_report
+msgid "Memberships Detail"
+msgstr "Medlemsdetaljer"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__mobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__motivational
+msgid "Motivational"
+msgstr "Motiverende"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__mystery
+msgid "Mystery"
+msgstr "Mysterium"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Name"
+msgstr "Navn"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Name :"
+msgstr "Navn:"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__new
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "New"
+msgstr "Ny"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "No. Of Books"
+msgstr "Antal bøger"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_available
+msgid "No. Of Books Available"
+msgstr "Antal bøger til rådighed"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_issued
+msgid "No. Of Books Issued"
+msgstr "Antal bøger udgivet"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_lost
+msgid "No. Of Books Lost"
+msgstr "Antal tabte bøger"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Or"
+msgstr "Eller"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"Page:\n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  of\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+msgstr ""
+"Side: \ n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  of\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__phone
+msgid "Phone"
+msgstr "telefon"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Print Issue Details XLS Report"
+msgstr "Udskriv problemoplysninger XLS -rapport"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__publisher
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Publisher"
+msgstr "Forlægger"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Reason"
+msgstr "Grund"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.reports_menu
+msgid "Reports"
+msgstr "Rapporter"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Return"
+msgstr "Vend tilbage"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Return Date :"
+msgstr "Retur dato"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__returned
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Returned"
+msgstr "Vendt tilbage"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__roll_no
+msgid "Roll No"
+msgstr "Rulle nr"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__roll_no
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Roll No."
+msgstr "Rulle nr."
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Roll No. :"
+msgstr "Rulle nr."
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__romance
+msgid "Romance"
+msgstr "Romantik"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__science
+msgid "Science"
+msgstr "Videnskab"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Search Books"
+msgstr "Søg i bøger"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Search Issue Books"
+msgstr "Søg udgivelsesbøger"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Search Memberships"
+msgstr "Søg medlemskaber"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__select_all_books
+msgid "Select All Books"
+msgstr "Vælg Alle bøger"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__select_all_membership
+msgid "Select All Memberships"
+msgstr "Vælg Alle medlemskaber"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.ir_cron_issue_mail_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.ir_cron_issue_mail
+#: model:ir.cron,name:jt_education_library.ir_cron_issue_mail
+msgid "Send Mail To Student when issue is created."
+msgstr "Send mail til studerende, når der oprettes et problem."
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Sr"
+msgstr "Sr"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__standard
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Standard"
+msgstr "Standard"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Standard :"
+msgstr "Standard:"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__start_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Start Date"
+msgstr "Start dato"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Start Date :"
+msgstr "Start dato :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__state_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+#, python-format
+msgid "State"
+msgstr "Stat"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Status"
+msgstr "Status"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street
+msgid "Street"
+msgstr "Gade"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street 2..."
+msgstr "Gade 2 ..."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street..."
+msgstr "Gade..."
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street2
+msgid "Street2"
+msgstr "Gade 2"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__student_id
+msgid "Student"
+msgstr "Studerende"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Student :"
+msgstr "Studerende:"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student ID"
+msgstr "studiekort"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Student Information"
+msgstr "Elevinformation"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student Name"
+msgstr "Elevnavn"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__student_id
+msgid "Students"
+msgstr "Studerende"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books
+msgid "Total No. Of Books"
+msgstr "Samlet antal bøger"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__website
+msgid "Website Link"
+msgstr "Link til websted"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_language
+msgid "book.language"
+msgstr "bog. sprog"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "e.g. https://www.odoo.com"
+msgstr "f.eks. ттпс: //ввв.одо.цум"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_description
+msgid "fine description"
+msgstr "fin beskrivelse"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.books_report
+msgid "object.name"
+msgstr "objekt.navn"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.report_membership_card
+msgid "object.student_id.name"
+msgstr "object.student_id.name"

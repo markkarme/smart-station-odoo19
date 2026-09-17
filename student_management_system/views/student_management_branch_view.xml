@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="student_branch_view_action" model="ir.actions.act_window">
+        <field name="name">Branch</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.management.branch</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p style="color:green;">
+                Create Branch
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="student_branch_menu"
+              name="Branch"
+              parent="student_management_config_menu"
+              action="student_branch_view_action"/>
+
+    <record id="student_branch_view_tree" model="ir.ui.view">
+        <field name="name">student.branch.view.tree</field>
+        <field name="model">student.management.branch</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" string="Branch Name"/>
+                <field name="location"/>
+                <field name="contact_info"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="student_branch_form_view" model="ir.ui.view">
+        <field name="name">student.branch.form.view</field>
+        <field name="model">student.management.branch</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="icon" widget="image"
+                           class="oe_avatar"
+                           options="{'preview_image': 'icon'}"/>
+                    <div class="oe_title">
+                        <label for="name" string="Branch Name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="location"/>
+                            <field name="contact_info"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Rooms">
+                            <field name="room_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="capacity"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_branch_view_kanban" model="ir.ui.view">
+        <field name="name">school.branch.view.kanban</field>
+        <field name="model">student.management.branch</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="icon" widget="image" alt="Branch" options="{'img_class': 'object-fit-contain'}"/>
+                        </aside>
+                        <main>
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="location"/>
+                            <field name="contact_info"/>
+                            <field name="room_ids" widget="many2many_tags"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

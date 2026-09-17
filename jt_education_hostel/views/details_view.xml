@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hostel_details_form" model="ir.ui.view">
+            <field name="name">Room Allocation</field>
+            <field name="model">hostel.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="curr_year_id" required='1'></field>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Room Allocation">
+                                <field name="hostel_data" widget="html" readonly="1" options="{'safe': True}"></field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hostel_details">
+            <field name="name">Room Allocation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hostel.details</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <menuitem id="hostel_details_menu" name="Room Allocation" 
+            parent="hostel_menu" action="action_hostel_details"/>
+
+    </data>
+</odoo>

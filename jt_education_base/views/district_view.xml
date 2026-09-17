@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="student_district_form_view" model="ir.ui.view">
+        <field name="name">Student District Form View</field>
+        <field name="model">district.district</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="state"/>
+                            <field name="country"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_district_tree_view" model="ir.ui.view">
+        <field name="name">Student District Tree View</field>
+        <field name="model">district.district</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_student_district" model="ir.actions.act_window">
+        <field name="name">Student District</field>
+        <field name="res_model">district.district</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

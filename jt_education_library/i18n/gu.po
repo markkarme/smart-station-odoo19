@@ -1,0 +1,1099 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_education_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-27 21:25+0000\n"
+"PO-Revision-Date: 2021-09-27 21:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "%s is not available!"
+msgstr "%s ઉપલબ્ધ નથી!"
+
+#. module: jt_education_library
+#: model:mail.template,body_html:jt_education_library.email_template_issuebooks_mail
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear ${object.student_id.name}<br/><br/>\n"
+"\n"
+"                        This is to inform you that you have been issued book(s) from library\n"
+"                        \n"
+"                        on ${object.datetime_issue} which you have to return on ${object.date_return}.\n"
+"\n"
+"                        <br/><br/>\n"
+"                        Best regards,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        પ્રિય ${object.student_id.name}<br/><br/>\n"
+"\n"
+"                        આ તમને જણાવવા માટે છે કે તમને પુસ્તકાલયમાંથી પુસ્તક આપવામાં આવ્યા છે\n"
+"                        \n"
+"                        ઉપર ${object.datetime_issue} જેના પર તમારે પરત ફરવું પડશે ${object.date_return}.\n"
+"\n"
+"                        <br/><br/>\n"
+"                        શ્રેષ્ઠ શુભેચ્છા,\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-at\" role=\"img\" aria-label=\"Email\" title=\"Email\"/>"
+msgstr "<i class=\"fa fa-at\" role=\"img\" aria-label=\"ઇમેઇલ\" title=\"ઇમેઇલ\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Fiscal number\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"રાજકોષીય સંખ્યા\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"Website\" title=\"Website\"/>"
+msgstr "<i class=\"fa fa-globe\" role=\"img\" aria-label=\"વેબસાઇટ\" title=\"વેબસાઇટ\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Phone\" title=\"Phone\"/>"
+msgstr "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"ફોન\" title=\"ફોન\"/>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form_library
+msgid "<span class=\"o_stat_text\">Library Books</span>"
+msgstr "<span class=\"o_stat_text\">પુસ્તકાલય પુસ્તકો</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "<span style=\"font-size:40px;\"/>Student Membership Card"
+msgstr "<span style=\"font-size:40px;\"/>વિદ્યાર્થી સભ્યપદ કાર્ડ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "<span>Issue Book Details</span>"
+msgstr "<span>ઇશ્યૂ બુકની વિગતો</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "<span>Membership Details</span>"
+msgstr "<span>સભ્યપદની વિગતો</span>"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">Books "
+"Detail</strong>"
+msgstr ""
+"<strong style=\"color:#3d2012;text-align:center;font-size:20px;\">પુસ્તકો "
+"વિગતવાર</strong>"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__active
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Active"
+msgstr "સક્રિય"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Add Books"
+msgstr "પુસ્તકો ઉમેરો"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Address"
+msgstr "સરનામું"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__art
+msgid "Art"
+msgstr "કલા"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_res_partner
+msgid "Assignment Student Class"
+msgstr "સોંપણી વિદ્યાર્થી વર્ગ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__author
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__author
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Author"
+msgstr "લેખક"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__authors_code
+msgid "Author ID"
+msgstr "લેખકની ઓળખ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__partner_id
+msgid "Author Name"
+msgstr "લેખકનું નામ"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_authors
+#: model:ir.ui.menu,name:jt_education_library.author_submenu
+msgid "Authors"
+msgstr "લેખકો"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_authors_authors
+msgid "Authors Details"
+msgstr "લેખકોની વિગતો"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Availability"
+msgstr "ઉપલબ્ધતા"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_kanban_view
+msgid "Avatar"
+msgstr "અવતાર"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_kanban_view
+msgid "AvatarDefault"
+msgstr "અવતાર ડિફોલ્ટ"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__biography
+msgid "Biography"
+msgstr "જીવનચરિત્ર"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_image
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issuebookslines_image
+msgid "Book Cover Picture"
+msgstr "પુસ્તક કવર પિક્ચર"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.books_report
+msgid "Book Detail"
+msgstr "બુક ડિટેલ"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.book_xls_report_submenu
+msgid "Book Details Report"
+msgstr "પુસ્તક વિગતો અહેવાલ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__books_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book ID"
+msgstr "બુક આઈડી"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__book_ids
+msgid "Book Ids"
+msgstr "બુક આઈડી"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Book Information"
+msgstr "પુસ્તકની માહિતી"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Book Issue Limit :"
+msgstr "પુસ્તક ઇશ્યૂ મર્યાદા :"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.language_menu
+msgid "Book Language"
+msgstr "પુસ્તક ભાષા"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Book Limit"
+msgstr "પુસ્તક મર્યાદા"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__book_ids
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Name"
+msgstr "પુસ્તકનું નામ"
+
+#. module: jt_education_library
+#: model:ir.model.constraint,message:jt_education_library.constraint_books_books_name_uniq
+msgid "Book Name Must Be Unique !"
+msgstr "પુસ્તકનું નામ અનન્ય હોવું જોઈએ!"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Book Status"
+msgstr "પુસ્તક સ્થિતિ"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_xls_report
+msgid "Book Xls Report"
+msgstr "પુસ્તકો Xls રિપોર્ટ"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_books
+#: model:ir.ui.menu,name:jt_education_library.books_submenu
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Books"
+msgstr "પુસ્તકો"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_books_books
+msgid "Books Details"
+msgstr "પુસ્તકોની વિગતો"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issue_books
+#: model:ir.model,name:jt_education_library.model_issue_books_lines
+msgid "Books Issued details."
+msgstr "પુસ્તકો જારી વિગતો."
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__cancel
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Cancel"
+msgstr "રદ કરો"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__child
+msgid "Child"
+msgstr "બાળક"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__city
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "City"
+msgstr "શહેર"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__comic
+msgid "Comic"
+msgstr "હાસ્ય"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.configurations_menu
+msgid "Configurations"
+msgstr "રૂપરેખાંકનો"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Contact Details"
+msgstr "સંપર્ક વિગતો"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__cooking
+msgid "Cooking"
+msgstr "રસોઈ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__rec_count
+#: model:ir.model.fields,field_description:jt_education_library.field_res_users__rec_count
+msgid "Count"
+msgstr "ગણતરી"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__country_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Country"
+msgstr "દેશ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_uid
+msgid "Created by"
+msgstr "દ્વારા બનાવવામાં"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__create_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__create_date
+msgid "Created on"
+msgstr "પર બનાવેલ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__datetime_issue
+msgid "Date & Time Of Issue"
+msgstr "ઇશ્યૂની તારીખ અને સમય"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__date_return
+msgid "Date Of Return"
+msgstr "પરત કરવાની તારીખ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date and Time Of Issue"
+msgstr "ઇશ્યૂની તારીખ અને સમય"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Date of Return"
+msgstr "પરત ફરવાની તારીખ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__user
+msgid "Default user"
+msgstr "મૂળભૂત વપરાશકર્તા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__display_name
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__display_name
+msgid "Display Name"
+msgstr "પ્રદર્શન નામ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__division
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__division
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Division"
+msgstr "વિભાગ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Download"
+msgstr "ડાઉનલોડ કરો"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__excel_file
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__excel_file
+msgid "Download Report"
+msgstr "રિપોર્ટ ડાઉનલોડ કરો"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__late
+msgid "Due to Late Return"
+msgstr "લેટ રિટર્નના કારણે"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__fine_detail__lost
+msgid "Due to Lost"
+msgstr "ખોવાને કારણે"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__edition
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Edition"
+msgstr "આવૃત્તિ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__email
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__emailid
+msgid "Email"
+msgstr "ઇમેઇલ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__end_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "End Date"
+msgstr "અંતિમ તારીખ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Excel Report file"
+msgstr "એક્સેલ રિપોર્ટ ફાઇલ"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__expire
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Expire"
+msgstr "સમાપ્ત"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.membership_expiry_remainder_cron_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.membership_expiry_remainder_cron
+#: model:ir.cron,name:jt_education_library.membership_expiry_remainder_cron
+msgid "Expire Membership"
+msgstr "સભ્યપદ સમાપ્ત કરો"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Expiry Date :"
+msgstr "સમાપ્તિ તારીખ :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__file_name
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__file_name
+msgid "File Name"
+msgstr "ફાઈલનું નામ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_amount
+msgid "Fine Amount"
+msgstr "દંડ રકમ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Amount Detail"
+msgstr "દંડ રકમની વિગત"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Description"
+msgstr "દંડ વર્ણન"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Fine Details"
+msgstr "દંડ વિગતો"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_detail
+msgid "Fine Reason"
+msgstr "દંડ કારણ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#, python-format
+msgid "Generes"
+msgstr "શૈલીઓ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__genres
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__genres
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Genres"
+msgstr "શૈલીઓ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Group By"
+msgstr "દ્વારા જૂથ"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__historic
+msgid "Historic"
+msgstr "તિહાસિક"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__horror
+msgid "Horror"
+msgstr "ભય"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__id
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__id
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__id
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__id
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__id
+msgid "ID"
+msgstr "ઓળખ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_image
+msgid "Image"
+msgstr "છબી"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__is_author
+msgid "Is a Author"
+msgstr "લેખક છે"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Issue"
+msgstr "આપવું"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebook_xls_report_view
+msgid "Issue Book Details Report"
+msgstr "ઇશ્યૂ બુક ડિટેલ્સ રિપોર્ટ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__book_limit
+msgid "Issue Book Limit"
+msgstr "ઇશ્યૂ બુક લિમિટ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebookslines_ids
+msgid "Issue Book Lines"
+msgstr "ઇશ્યૂ બુક લાઇન્સ"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_issuebook_xls_report
+msgid "Issue Book Xls Report"
+msgstr "ઇશ્યૂ બુક Xls રિપોર્ટ"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_issuebooks
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__issue_books
+#: model:ir.ui.menu,name:jt_education_library.issuebooks_menu
+msgid "Issue Books"
+msgstr "પુસ્તકો આપો"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.issuebooks_report
+msgid "Issue Books Detail"
+msgstr "આપેલ પુસ્તકોની વિગત"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Books Details"
+msgstr "આપેલ પુસ્તકોની વિગતો"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Issue Date :"
+msgstr "આપેલ તારીખ :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__issuebooks_code
+msgid "Issue ID"
+msgstr "આપેલ આઈડી"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__state
+msgid "Issue Status"
+msgstr "ઇશ્યૂની સ્થિતિ"
+
+#. module: jt_education_library
+#: model:mail.template,subject:jt_education_library.email_template_issuebooks_mail
+msgid "Issue created"
+msgstr "ઇશ્યૂ બનાવ્યું"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__issued
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Issued"
+msgstr "આપેલ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner__book_id
+#: model:ir.model.fields,field_description:jt_education_library.field_res_users__book_id
+msgid "Issued Books"
+msgstr "આપેલા પુસ્તકો"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_book_language
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__lang_id
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__lang_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Language"
+msgstr "ભાષા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report____last_update
+#: model:ir.model.fields,field_description:jt_education_library.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "છેલ્લે સુધારેલ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_uid
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_uid
+msgid "Last Updated by"
+msgstr "દ્વારા છેલ્લે અપડેટ કરવામાં આવ્યું"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books_lines__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_issuebook_xls_report__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__write_date
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__write_date
+msgid "Last Updated on"
+msgstr "છેલ્લે અપડેટ થયેલ"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.root_menu
+msgid "Library"
+msgstr "પુસ્તકાલય"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_library_memberships
+msgid "Library Membership details."
+msgstr "પુસ્તકાલય સભ્યપદ વિગતો."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "Logo"
+msgstr "લોગો"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__lost
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Lost"
+msgstr "ખોવાયેલું"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.report_membership_card
+msgid "Membership Card"
+msgstr "સભ્યપદ કાર્ડ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Membership Details"
+msgstr "સભ્યપદની વિગતો"
+
+#. module: jt_education_library
+#: model:ir.actions.act_window,name:jt_education_library.action_membership_xls_report_view
+#: model:ir.ui.menu,name:jt_education_library.membership_xls_report_submenu
+msgid "Membership Details Report"
+msgstr "સભ્યપદ વિગતો રિપોર્ટ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__memberships_code
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+msgid "Membership ID"
+msgstr "સભ્યપદ ઓળખ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Membership ID :"
+msgstr "સભ્યપદ ઓળખ :"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__state
+msgid "Membership Status"
+msgstr "સભ્યપદ સ્થિતિ"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_membership_xls_report
+msgid "Membership Xls Report"
+msgstr "સભ્યપદ Xls રિપોર્ટ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.actions.act_window,name:jt_education_library.action_memberships
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__membership_ids
+#: model:ir.ui.menu,name:jt_education_library.memberships_menu
+#, python-format
+msgid "Memberships"
+msgstr "સભ્યપદ"
+
+#. module: jt_education_library
+#: model:ir.actions.report,name:jt_education_library.memberships_report
+msgid "Memberships Detail"
+msgstr "સભ્યપદ વિગત"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__mobile
+msgid "Mobile"
+msgstr "મોબાઇલ"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__motivational
+msgid "Motivational"
+msgstr "પ્રેરક"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__mystery
+msgid "Mystery"
+msgstr "રહસ્ય"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__name
+#: model:ir.model.fields,field_description:jt_education_library.field_book_language__name
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__name
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Name"
+msgstr "નામ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Name :"
+msgstr "નામ :"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__library_memberships__state__new
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "New"
+msgstr "નવું"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid "No. Of Books"
+msgstr "પુસ્તકોની સંખ્યા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_available
+msgid "No. Of Books Available"
+msgstr "ઉપલબ્ધ પુસ્તકોની સંખ્યા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_issued
+msgid "No. Of Books Issued"
+msgstr "આપેલ પુસ્તકોની સંખ્યા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books_lost
+msgid "No. Of Books Lost"
+msgstr "ખોવાયેલા પુસ્તકોની સંખ્યા"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.book_xls_report_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_xls_report_view
+msgid "Or"
+msgstr "અથવા"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_report_template
+msgid ""
+"Page:\n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  of\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+msgstr ""
+"પાનું:\n"
+"\t\t\t\t\t\t\t\t  <span class=\"page\"/>\n"
+"\t\t\t\t\t\t\t\t  નું\n"
+"\t\t\t\t\t\t\t\t  <span class=\"topage\"/>"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__phone
+msgid "Phone"
+msgstr "ફોન"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Print Issue Details XLS Report"
+msgstr "ઇશ્યૂ વિગતો XLS રિપોર્ટ છાપો"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__publisher
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Publisher"
+msgstr "પ્રકાશક"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Reason"
+msgstr "કારણ"
+
+#. module: jt_education_library
+#: model:ir.ui.menu,name:jt_education_library.reports_menu
+msgid "Reports"
+msgstr "રિપોર્ટ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Return"
+msgstr "પરત"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Return Date :"
+msgstr "પરત કરવાની તારીખ :"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__issue_books__state__returned
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Returned"
+msgstr "પરત ફર્યા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__roll_no
+msgid "Roll No"
+msgstr "રોલ નં"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__roll_no
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+msgid "Roll No."
+msgstr "રોલ નં."
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Roll No. :"
+msgstr "રોલ નં. :"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__romance
+msgid "Romance"
+msgstr "રોમાંસ"
+
+#. module: jt_education_library
+#: model:ir.model.fields.selection,name:jt_education_library.selection__books_books__genres__science
+msgid "Science"
+msgstr "વિજ્ઞાન"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.books_search_view
+msgid "Search Books"
+msgstr "પુસ્તકો શોધો"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+msgid "Search Issue Books"
+msgstr "આપેલ પુસ્તકો શોધો"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Search Memberships"
+msgstr "સભ્યપદ શોધો"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_book_xls_report__select_all_books
+msgid "Select All Books"
+msgstr "બધા પુસ્તકો પસંદ કરો"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_membership_xls_report__select_all_membership
+msgid "Select All Memberships"
+msgstr "તમામ સભ્યપદ પસંદ કરો"
+
+#. module: jt_education_library
+#: model:ir.actions.server,name:jt_education_library.ir_cron_issue_mail_ir_actions_server
+#: model:ir.cron,cron_name:jt_education_library.ir_cron_issue_mail
+#: model:ir.cron,name:jt_education_library.ir_cron_issue_mail
+msgid "Send Mail To Student when issue is created."
+msgstr "જ્યારે પુસ્તક આપવામાં આવે ત્યારે વિદ્યાર્થીને મેઇલ મોકલો."
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#, python-format
+msgid "Sr"
+msgstr "અનુક્રમ નંબર"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__standard
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__standard
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Standard"
+msgstr "ધોરણ"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Standard :"
+msgstr "ધોરણ :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__start_date
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Start Date"
+msgstr "પ્રારંભ તારીખ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.membership_card_template
+msgid "Start Date :"
+msgstr "પ્રારંભ તારીખ :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__state_id
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+#, python-format
+msgid "State"
+msgstr "સ્થિતિ"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_search_view
+msgid "Status"
+msgstr "સ્થિતિ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street
+msgid "Street"
+msgstr "શેરી"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street 2..."
+msgstr "શેરી 2..."
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "Street..."
+msgstr "શેરી..."
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__street2
+msgid "Street2"
+msgstr "શેરી2"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_library_memberships__student_id
+msgid "Student"
+msgstr "વિદ્યાર્થી"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/models/issuebooks.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/models/issuebooks.py:0
+#, python-format
+msgid "Student :"
+msgstr "વિદ્યાર્થી :"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebooks_search_view
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student ID"
+msgstr "વિદ્યાર્થી આઈડી"
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.issuebook_form_view
+msgid "Student Information"
+msgstr "વિદ્યાર્થી માહિતી"
+
+#. module: jt_education_library
+#: code:addons/jt_education_library/wizard/membership_xls_report.py:0
+#: code:addons/jupical_edu/addons/jt_education_library/wizard/membership_xls_report.py:0
+#: model_terms:ir.ui.view,arch_db:jt_education_library.memberships_report_template
+#, python-format
+msgid "Student Name"
+msgstr "વિદ્યાર્થીનું નામ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__student_id
+msgid "Students"
+msgstr "વિદ્યાર્થીઓ"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_books_books__no_of_books
+msgid "Total No. Of Books"
+msgstr "પુસ્તકોની કુલ સંખ્યા"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_authors_authors__website
+msgid "Website Link"
+msgstr "વેબસાઇટ લિંક"
+
+#. module: jt_education_library
+#: model:ir.model,name:jt_education_library.model_book_language
+msgid "book.language"
+msgstr ""
+
+#. module: jt_education_library
+#: model_terms:ir.ui.view,arch_db:jt_education_library.view_partner_form
+msgid "e.g. https://www.odoo.com"
+msgstr "દા.ત. https://www.odoo.com"
+
+#. module: jt_education_library
+#: model:ir.model.fields,field_description:jt_education_library.field_issue_books__fine_description
+msgid "fine description"
+msgstr "દંડ વર્ણન"
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.books_report
+msgid "object.name"
+msgstr ""
+
+#. module: jt_education_library
+#: model:ir.actions.report,print_report_name:jt_education_library.report_membership_card
+msgid "object.student_id.name"
+msgstr ""

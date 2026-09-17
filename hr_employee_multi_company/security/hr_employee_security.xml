@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Make employees visible in every company they belong to -->
+    <record id="hr.hr_employee_comp_rule" model="ir.rule">
+        <field name="domain_force">['|', '|', '|',
+            ('company_ids', 'in', company_ids),
+            ('parent_id.user_id', '=', user.id),
+            ('id', '=', user.employee_id.parent_id.id),
+            ('user_id', '=', user.id)
+        ]</field>
+    </record>
+
+    <record id="hr.hr_employee_public_comp_rule" model="ir.rule">
+        <field name="domain_force">['|', '|', '|',
+            ('company_ids', 'in', company_ids),
+            ('parent_id.user_id', '=', user.id),
+            ('id', '=', user.employee_id.parent_id.id),
+            ('user_id', '=', user.id)
+        ]</field>
+    </record>
+</odoo>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="navy_icard_back_report">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div style="width:100%;height:100%;">
+                            <div style="padding:10px;width:670px;height:998px;background-image:url('jt_education_reports/static/src/img/id_navy_back.png')">
+                                <div style="height:40%;text-align:center;">
+                                    <div style="text-align:center;">
+                                        <p style="margin-left:5px;margin-top:35px;"><span style="font-weight:bold;font-size:23px;color:black;" t-field="res_company.name"/></p>
+                                    </div>
+                                    <div style="text-align:center;margin-top:40px;">
+                                        <img t-attf-src="data:image/png;base64,{{res_company.logo}}" style="width:110px;height:80px;"/>
+                                    </div>
+                                </div>
+                                
+                                <!-- body -->
+                                <div style="height:50%;text-align:center;margin-top:-160px;">
+                                    <center>
+                                        <table style="font-size:23px;margin-top:0px;margin-left:160px">
+                                            <tr>
+                                                <td valign="center">Resident Address: </td>
+                                                <td>
+                                                    <span t-field="o.street"/><br/>
+                                                    <span t-field="o.street2"/><br/>
+                                                    <span t-field="o.city"/><br/>
+                                                    <span t-field="o.state_id"/>  
+                                                    <span t-field="o.zip"/><br/>
+                                                </td>
+                                            </tr><br/>
+                                            <tr>
+                                                <td valign="center">School Address: </td>
+                                                <td>
+                                                    <span t-field="res_company.street"/><br/>
+                                                    <span t-field="res_company.street2"/><br/>
+                                                    <span t-field="res_company.city"/><br/>
+                                                    <span t-field="res_company.state_id"/>  <span t-field="res_company.zip"/><br/>
+                                                    <span t-field="res_company.country_id"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top:30px;">Email:</td>
+                                                <td><span t-field="res_company.email"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top:30px;">Phone:</td>
+                                                <td><span t-field="res_company.phone"/></td>
+                                            </tr>
+                                        </table>
+                                    </center>
+                                </div>
+                                <div style="text-align:center;font-size:20px;margin-top:120px;color:black;">
+                                    <span t-field="res_company.website"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="navy_back_idcard" model="report.paperformat">
+            <field name="name">Employee Navy Back Icard</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">143</field>
+            <field name="page_width">100</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">40</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="navy_back_icard_report" model="ir.actions.report">
+            <field name="name">Navy Blue Id-Card Report BACK</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">jt_education_reports.navy_icard_back_report</field>
+            <field name="report_file">jt_education_reports.navy_icard_back_report</field>
+            <field name="paperformat_id" ref="jt_education_reports.navy_back_idcard"/>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <report 
+            id="navy_back_icard_report"
+            model="res.partner"
+            string=" Navy Blue Id-Card Report BACK"
+            report_type="qweb-pdf"
+            name="jt_education_reports.navy_icard_back_report"
+            file="jt_education_reports.navy_icard_back_report"
+            print_report_name="object.name"
+            paperformat="jt_education_reports.navy_back_idcard"
+        /> -->
+
+    </data>
+</odoo>

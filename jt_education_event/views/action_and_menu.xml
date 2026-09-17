@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem name="Events" id="event.event_main_menu" parent="jt_education_base.root_menu" sequence="5" groups="jt_education_base.group_principle,jt_education_base.group_faculty"/>
+	</data>
+</odoo>
