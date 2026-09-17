@@ -131,10 +131,19 @@ class AttendanceLocation(models.Model):
         return radius_m * c
 
     @api.model
+    def _employee_company_ids(self, employee):
+        """Companies the employee can take attendance for (multi-company aware)."""
+        companies = getattr(employee, "company_ids", False) or employee.company_id
+        return companies.ids if companies else employee.company_id.ids
+
+    @api.model
     def _candidate_domain(self, employee):
+        # Use all employee companies, not only main company_id — otherwise
+        # portal only shows locations from the main company (e.g. "das") and
+        # hides ones from other assigned companies (e.g. "123").
         domain = [
             ("active", "=", True),
-            ("company_id", "=", employee.company_id.id),
+            ("company_id", "in", self._employee_company_ids(employee)),
         ]
         if employee.attendance_location_ids:
             domain.append(("id", "in", employee.attendance_location_ids.ids))

@@ -1,21 +1,23 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.3.9",
+    "version": "19.0.1.5.1",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
 Configure attendance locations with Google Maps links and allowed range in meters.
 Employees can check in and check out from the portal only when they are inside
 the allowed distance from a configured attendance location.
+
+Attendance company is always taken from the check-in location company.
     """,
     "author": "CUC",
     "license": "LGPL-3",
     "depends": ["hr_attendance", "hr_holidays", "hr_appraisal", "mail", "portal", "website"],
     "data": [
-        
         "data/mail_activity_data.xml",
         "security/hr_general_request_security.xml",
         "security/hr_attendance_adjustment_request_security.xml",
+        "security/hr_attendance_security.xml",
         "security/ir.model.access.csv",
         "views/hr_general_request_views.xml",
         "views/hr_attendance_adjustment_request_views.xml",

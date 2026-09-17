@@ -54,9 +54,23 @@
             <xpath expr="//field[@name='coach_id']" position="attributes">
                 <attribute name="domain">['|', ('company_ids', 'in', allowed_company_ids), ('company_id', 'in', allowed_company_ids)]</attribute>
             </xpath>
-            <xpath expr="//field[@name='company_id'][not(ancestor::searchpanel)]" position="after">
-                <field name="company_ids" groups="base.group_multi_company"/>
-            </xpath>
+            <!-- Do not put company_ids in searchpanel: category only supports many2one/selection -->
         </field>
+    </record>
+
+    <!-- Employees menu: include anyone assigned via company_ids -->
+    <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+        <field name="domain">['|', ('company_id', 'in', allowed_company_ids), ('company_ids', 'in', allowed_company_ids)]</field>
+        <field name="context">{'chat_icon': True}</field>
+    </record>
+
+    <record id="hr.action_hr_employee_all_activities" model="ir.actions.act_window">
+        <field name="domain">['|', ('company_id', 'in', allowed_company_ids), ('company_ids', 'in', allowed_company_ids), ('activity_ids', '!=', False)]</field>
+        <field name="context">{'chat_icon': True}</field>
+    </record>
+
+    <record id="hr.hr_employee_public_action" model="ir.actions.act_window">
+        <field name="domain">['|', ('company_id', 'in', allowed_company_ids), ('company_ids', 'in', allowed_company_ids)]</field>
+        <field name="context">{'chat_icon': True}</field>
     </record>
 </odoo>
