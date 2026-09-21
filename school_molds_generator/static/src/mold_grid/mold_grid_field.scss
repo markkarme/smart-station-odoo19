@@ -1,0 +1,145 @@
+.o_form_view.o_school_mold_form .o_form_sheet {
+    max-width: 100% !important;
+    width: 100%;
+}
+
+.o_school_mold_grid {
+    width: 100%;
+    direction: rtl;
+}
+
+.o_school_mold_toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.o_school_mold_zoom_controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-inline-start: auto;
+}
+
+.o_school_mold_zoom_controls .btn-light {
+    min-width: 52px;
+}
+
+.o_school_mold_scroll {
+    overflow: auto;
+    max-height: 70vh;
+    border: 1px solid #9e9e9e;
+    background: #fff;
+}
+
+.o_school_mold_zoom_wrap {
+    min-width: 100%;
+}
+
+.o_school_mold_table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 10px;
+
+    th,
+    td {
+        border: 1px solid #8f8f8f;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0 1px;
+        min-width: 0;
+        height: 22px;
+        overflow: hidden;
+    }
+
+    .o_school_mold_action {
+        width: 22px;
+        background: #f7f7f7;
+    }
+
+    .o_school_mold_col_serial,
+    .o_school_mold_col_seat_number,
+    .o_school_mold_col_pin_number,
+    .o_school_mold_col_class {
+        width: 4.2%;
+    }
+
+    .o_school_mold_col_name {
+        width: 10%;
+    }
+}
+
+.o_school_mold_header th {
+    height: auto;
+    min-height: 34px;
+    font-weight: 700;
+    padding: 3px 1px;
+}
+
+.o_school_mold_header_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+}
+
+.o_school_mold_header_inner span {
+    display: block;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-size: 10px;
+    line-height: 1.15;
+    text-align: center;
+}
+
+.o_school_mold_max th {
+    height: 20px;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.o_school_mold_input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    height: 20px;
+    outline: none;
+    font-size: 10px;
+    min-width: 0;
+}
+
+.o_school_mold_col_name .o_school_mold_input {
+    text-align: right;
+    padding-inline: 3px;
+}
+
+.o_school_mold_grid.o_school_mold_expanded {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: #fff;
+    padding: 12px;
+    direction: rtl;
+
+    .o_school_mold_scroll {
+        max-height: calc(100vh - 52px);
+    }
+
+    .o_school_mold_table {
+        font-size: 11px;
+    }
+
+    .o_school_mold_header_inner span,
+    .o_school_mold_input {
+        font-size: 11px;
+    }
+}
+
+body.o_school_mold_fullscreen {
+    overflow: hidden;
+}

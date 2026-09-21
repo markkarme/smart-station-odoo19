@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tiny date picker popup only -->
+    <record id="view_hr_attendance_absent_wizard_form" model="ir.ui.view">
+        <field name="name">hr.attendance.absent.wizard.form</field>
+        <field name="model">hr.attendance.absent.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Select Period">
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="action_compute"
+                            string="Show Absent Employees"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_attendance_absent_wizard" model="ir.actions.act_window">
+        <field name="name">Select Period</field>
+        <field name="res_model">hr.attendance.absent.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_hr_attendance_absent_wizard_form"/>
+    </record>
+
+    <!-- Empty list: no New, button always visible even with 0 rows -->
+    <record id="view_hr_attendance_absent_report_list" model="ir.ui.view">
+        <field name="name">hr.attendance.absent.report.list</field>
+        <field name="model">hr.attendance.absent.report</field>
+        <field name="arch" type="xml">
+            <list string="Absent Employees" create="false" delete="false">
+                <header>
+                    <button name="%(action_hr_attendance_absent_wizard)d"
+                            string="Show Absent Employees"
+                            type="action"
+                            display="always"
+                            class="btn-primary"/>
+                </header>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="date" column_invisible="0"/>
+                <field name="employee_id"/>
+                <field name="status"
+                       decoration-danger="status == 'absent'"
+                       decoration-warning="status == 'on_leave'"
+                       decoration-success="status == 'worked_time_off'"
+                       decoration-info="status in ('weekend', 'public_holiday')"
+                       widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_hr_attendance_absent_report_search" model="ir.ui.view">
+        <field name="name">hr.attendance.absent.report.search</field>
+        <field name="model">hr.attendance.absent.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <filter name="absent" string="Absent" domain="[('status', '=', 'absent')]"/>
+                <filter name="on_leave" string="On Leave" domain="[('status', '=', 'on_leave')]"/>
+                <filter name="worked_time_off" string="Worked Time Off" domain="[('status', '=', 'worked_time_off')]"/>
+                <filter name="weekend" string="Weekend" domain="[('status', '=', 'weekend')]"/>
+                <filter name="public_holiday" string="Public Holiday" domain="[('status', '=', 'public_holiday')]"/>
+                <group>
+                    <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
+                    <filter name="group_status" string="Status" context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Main menu: empty list until a date is selected -->
+    <record id="action_hr_attendance_absent_report" model="ir.actions.act_window">
+        <field name="name">Absent Employees</field>
+        <field name="res_model">hr.attendance.absent.report</field>
+        <field name="view_mode">list</field>
+        <field name="domain">[('id', '=', False)]</field>
+        <field name="context">{'create': False, 'delete': False}</field>
+    </record>
+
+    <menuitem
+        id="menu_hr_attendance_absent_report"
+        name="Absent Employees"
+        parent="hr_attendance.menu_hr_attendance_reporting"
+        action="action_hr_attendance_absent_report"
+        sequence="20"
+        groups="hr_attendance.group_hr_attendance_manager,hr_attendance.group_hr_attendance_officer"/>
+
+</odoo>

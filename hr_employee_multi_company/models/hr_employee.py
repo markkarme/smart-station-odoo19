@@ -100,13 +100,15 @@ class HrEmployee(models.Model):
             if work_contact and len(companies) > 1 and work_contact.company_id:
                 work_contact.sudo().write({"company_id": False})
 
-            # resource.resource is company-restricted; a shared resource (company=False)
-            # is required so attendances/employees can be opened in any assigned company.
+            # Never clear resource.company_id: hr.employee.company_id is related to
+            # resource_id.company_id and required. Keep the resource on the main company;
+            # multi-company visibility is handled via company_ids + record rules.
             resource = employee.resource_id
-            if resource and len(companies) > 1 and resource.company_id:
-                resource.sudo().write({"company_id": False})
-            elif resource and resource.company_id and resource.company_id not in companies:
-                resource.sudo().write({"company_id": employee.company_id.id})
+            main_company = (
+                employee.company_id if employee.company_id in companies else companies[0]
+            )
+            if resource and resource.company_id != main_company:
+                resource.sudo().write({"company_id": main_company.id})
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -157,7 +159,7 @@ class HrEmployee(models.Model):
     @api.onchange("company_ids")
     def _onchange_company_ids(self):
         if not self.company_ids:
-            self.company_id = False
+            # company_id is required (related to resource); never clear it in the UI.
             return
         if self.company_id not in self.company_ids:
             self.company_id = self.company_ids[0]
