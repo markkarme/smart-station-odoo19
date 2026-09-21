@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="school_molds_generator.MoldGridField">
+        <div class="o_school_mold_grid" t-att-class="{ 'o_school_mold_expanded': state.expanded }" dir="rtl">
+            <div class="o_school_mold_toolbar">
+                <button type="button" class="btn btn-sm btn-primary" t-on-click="addRow">
+                    إضافة صف
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" t-on-click="toggleExpanded">
+                    <t t-esc="expandLabel"/>
+                </button>
+                <div class="o_school_mold_zoom_controls">
+                    <button type="button" class="btn btn-sm btn-secondary" t-att-disabled="!canZoomOut" t-on-click="zoomOut" title="تصغير">−</button>
+                    <button type="button" class="btn btn-sm btn-light" t-on-click="resetZoom" title="إعادة 100%">
+                        <t t-esc="zoomLabel"/>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-secondary" t-att-disabled="!canZoomIn" t-on-click="zoomIn" title="تكبير">+</button>
+                </div>
+            </div>
+            <div class="o_school_mold_scroll">
+                <div class="o_school_mold_zoom_wrap" t-att-style="zoomWrapStyle">
+                <table class="o_school_mold_table">
+                    <thead>
+                        <tr class="o_school_mold_header">
+                            <th class="o_school_mold_action"/>
+                            <t t-foreach="state.columns" t-as="column" t-key="column.key">
+                                <th t-att-class="'o_school_mold_col_' + column.colType" t-att-style="'background:' + column.color" t-att-title="column.name">
+                                    <div class="o_school_mold_header_inner">
+                                        <span t-esc="column.name"/>
+                                    </div>
+                                </th>
+                            </t>
+                        </tr>
+                        <tr class="o_school_mold_max">
+                            <th class="o_school_mold_action"/>
+                            <t t-foreach="state.columns" t-as="column" t-key="column.key + '_max'">
+                                <th t-att-style="'background:' + column.color">
+                                    <t t-if="!isIdentity(column)" t-esc="column.maxValue || ''"/>
+                                </th>
+                            </t>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="state.rows" t-as="row" t-key="row.id">
+                            <td class="o_school_mold_action">
+                                <button type="button" class="btn btn-link text-danger p-0" t-on-click="() => this.removeRow(row)" title="حذف">
+                                    ✕
+                                </button>
+                            </td>
+                            <t t-foreach="state.columns" t-as="column" t-key="row.id + '_' + column.key">
+                                <td t-att-class="'o_school_mold_col_' + column.colType" t-att-style="'background:' + column.color">
+                                    <t t-if="column.colType === 'name'">
+                                        <input type="text"
+                                               class="o_school_mold_input"
+                                               t-att-value="row.studentName"
+                                               t-on-change="(ev) => this.onNameChange(row, ev)"/>
+                                    </t>
+                                    <t t-elif="isReadonly(column)">
+                                        <span t-esc="row.cells[column.key]"/>
+                                    </t>
+                                    <t t-else="">
+                                        <input type="text"
+                                               class="o_school_mold_input"
+                                               inputmode="decimal"
+                                               t-att-value="row.cells[column.key]"
+                                               t-on-change="(ev) => this.onScoreChange(row, column, ev)"/>
+                                    </t>
+                                </td>
+                            </t>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

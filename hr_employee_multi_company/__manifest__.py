@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "HR Employee Multi Company",
-    "version": "19.0.1.4.2",
+    "version": "19.0.1.4.3",
     "category": "Human Resources",
     "summary": "Allow one employee to belong to multiple companies",
     "description": """
@@ -24,4 +24,5 @@ companies, and activates companies on the portal/website frontend.
     "post_init_hook": "post_init_hook",
     "installable": True,
     "application": False,
+    
 }

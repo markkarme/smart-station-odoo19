@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_attendance_absent_wizard_manager,hr.attendance.absent.wizard.manager,model_hr_attendance_absent_wizard,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_hr_attendance_absent_wizard_officer,hr.attendance.absent.wizard.officer,model_hr_attendance_absent_wizard,hr_attendance.group_hr_attendance_officer,1,1,1,1
+access_hr_attendance_absent_report_manager,hr.attendance.absent.report.manager,model_hr_attendance_absent_report,hr_attendance.group_hr_attendance_manager,1,1,1,1
+access_hr_attendance_absent_report_officer,hr.attendance.absent.report.officer,model_hr_attendance_absent_report,hr_attendance.group_hr_attendance_officer,1,1,1,1

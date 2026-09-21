@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="school_mold_view_list" model="ir.ui.view">
+        <field name="name">school.mold.list</field>
+        <field name="model">school.mold</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="year_id"/>
+                <field name="standard_id"/>
+                <field name="division_id"/>
+                <field name="term"/>
+                <field name="line_count"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-success="state == 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="school_mold_view_form" model="ir.ui.view">
+        <field name="name">school.mold.form</field>
+        <field name="model">school.mold</field>
+        <field name="arch" type="xml">
+            <form string="School Mold" class="o_school_mold_form">
+                <header>
+                    <button name="action_load_students" type="object" string="Load Students" class="btn-primary"/>
+                    <button name="action_add_empty_rows" type="object" string="Add 10 Rows"/>
+                    <button name="action_recompute_totals" type="object" string="Recompute Totals"/>
+                    <button name="action_download_xlsx" type="object" string="Download Excel" class="btn-secondary" icon="fa-download"/>
+                    <button name="action_reset_columns" type="object" string="Reset Columns" confirm="Reset columns to the default Excel layout?"/>
+                    <button name="action_mark_done" type="object" string="Mark Done" invisible="state == 'done'"/>
+                    <button name="action_reset_draft" type="object" string="Reset to Draft" invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Mold name"/></h1>
+                    </div>
+                    <group>
+                        
+                        <group>
+                            <field name="term"/>
+
+                            <field name="date"/>
+                            <field name="note"/>
+                            <field name="line_count" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="term_types"/>
+                            <!-- <field name="year_id"/>
+                            <field name="standard_id"/>
+                            <field name="division_id"/> -->
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Sheet" name="sheet">
+                            <field name="column_payload" invisible="1"/>
+                            <field name="line_ids" widget="school_mold_grid" nolabel="1" mode="list">
+                                <list editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="student_id"/>
+                                    <field name="student_name"/>
+                                    <field name="values_json"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Columns" name="columns">
+                            <field name="column_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="group_name"/>
+                                    <field name="name"/>
+                                    <field name="col_type"/>
+                                    <field name="max_value"/>
+                                    <field name="color" widget="color"/>
+                                    <field name="key"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_mold_view_search" model="ir.ui.view">
+        <field name="name">school.mold.search</field>
+        <field name="model">school.mold</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="standard_id"/>
+                <field name="year_id"/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="done" string="Done" domain="[('state', '=', 'done')]"/>
+                <group>
+                    <filter name="group_standard" string="Standard" context="{'group_by': 'standard_id'}"/>
+                    <filter name="group_year" string="Year" context="{'group_by': 'year_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_school_mold" model="ir.actions.act_window">
+        <field name="name">School Molds</field>
+        <field name="res_model">school.mold</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="school_mold_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a school mold</p>
+            <p>Fill the sheet like Excel, then download it.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_school_mold"
+              name="School Molds"
+              parent="jt_education_base.student_root_menu"
+              action="action_school_mold"
+              sequence="12"/>
+</odoo>

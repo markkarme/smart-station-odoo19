@@ -1,0 +1,223 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: school_molds_generator
+#: model:ir.module.module,shortdesc:base.module_school_molds_generator
+msgid "School Molds Generator"
+msgstr "مولد قوالب المدرسة"
+
+#. module: school_molds_generator
+#: model:ir.module.module,summary:base.module_school_molds_generator
+msgid "Fill school molds in an Excel-like view and download the sheet."
+msgstr "تعبئة قوالب المدرسة في واجهة تشبه إكسل ثم تنزيل الملف."
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_school_mold
+#: model:ir.ui.menu,name:school_molds_generator.menu_school_mold
+msgid "School Molds"
+msgstr "قوالب المدرسة"
+
+#. module: school_molds_generator
+#: model:ir.model,name:school_molds_generator.model_school_mold
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "School Mold"
+msgstr "قالب المدرسة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__year_id
+msgid "Academic Year"
+msgstr "السنة الدراسية"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__standard_id
+msgid "Standard"
+msgstr "الصف"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__division_id
+msgid "Division"
+msgstr "الشعبة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__term
+msgid "Term"
+msgstr "الفصل"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__first
+msgid "First Term"
+msgstr "الفصل الأول"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__second
+msgid "Second Term"
+msgstr "الفصل الثاني"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__final
+msgid "Final"
+msgstr "النهائي"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__column_ids
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Columns"
+msgstr "الأعمدة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__line_ids
+msgid "Rows"
+msgstr "الصفوف"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Sheet"
+msgstr "الورقة"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Load Students"
+msgstr "تحميل الطلاب"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Add 10 Rows"
+msgstr "إضافة 10 صفوف"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Recompute Totals"
+msgstr "إعادة حساب المجاميع"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Download Excel"
+msgstr "تنزيل إكسل"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Reset Columns"
+msgstr "استعادة الأعمدة"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Mark Done"
+msgstr "تم"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__state__draft
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__state__done
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Done"
+msgstr "تم"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__group_name
+msgid "Group Name"
+msgstr "المجموعة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__max_value
+msgid "Max Value"
+msgstr "الدرجة العظمى"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__col_type
+msgid "Col Type"
+msgstr "نوع العمود"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__serial
+msgid "Serial"
+msgstr "مسلسل"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__score
+msgid "Score"
+msgstr "درجة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__subtotal
+msgid "Subject Total"
+msgstr "مجموع المادة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__total
+msgid "Total"
+msgstr "المجموع"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__grand_total
+msgid "Grand Total"
+msgstr "المجموع الكلي"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__student_id
+msgid "Student"
+msgstr "الطالب"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__student_name
+msgid "Student Name"
+msgstr "اسم الطالب"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Select a standard first."
+msgstr "اختر الصف أولاً."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No students found for this standard."
+msgstr "لا يوجد طلاب في هذا الصف."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Add columns before downloading the mold."
+msgstr "أضف الأعمدة قبل تنزيل القالب."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "New Mold"
+msgstr "قالب جديد"
