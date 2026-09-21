@@ -24,4 +24,5 @@ companies, and activates companies on the portal/website frontend.
     "post_init_hook": "post_init_hook",
     "installable": True,
     "application": False,
+    
 }
