@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "HR Employee Multi Company",
-    "version": "19.0.1.4.3",
+    "version": "19.0.1.4.4",
     "category": "Human Resources",
     "summary": "Allow one employee to belong to multiple companies",
     "description": """
@@ -11,12 +11,12 @@ Adds a Companies (many2many) field on hr.employee and keeps company_id
 as the primary company for compatibility with standard HR flows.
 Employees become visible in every company they are assigned to.
 
-Also syncs linked users' allowed companies, shares contacts/resources across
-companies, and activates companies on the portal/website frontend.
+Also syncs linked users, and allows reading employee resources while
+working in any company the employee belongs to (needed for Attendances).
     """,
     "author": "Smart Station",
     "license": "LGPL-3",
-    "depends": ["hr", "website"],
+    "depends": ["hr", "website", "resource"],
     "data": [
         "security/hr_employee_security.xml",
         "views/hr_employee_views.xml",
@@ -24,5 +24,4 @@ companies, and activates companies on the portal/website frontend.
     "post_init_hook": "post_init_hook",
     "installable": True,
     "application": False,
-    
 }
