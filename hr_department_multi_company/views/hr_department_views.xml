@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_department_form_multi_company" model="ir.ui.view">
+        <field name="name">hr.department.form.multi.company</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//field[@name='company_id'][@groups='base.group_multi_company']" position="replace">
+                <field
+                    name="company_ids"
+                    widget="many2many_tags"
+                    options="{'no_create': True}"
+                    groups="base.group_multi_company"
+                    domain="[('id', 'in', allowed_company_ids)]"
+                    placeholder="Visible to all"
+                />
+                <field
+                    name="company_id"
+                    string="Main Company"
+                    groups="base.group_multi_company"
+                    options="{'no_create': True}"
+                    domain="[('id', 'in', company_ids)]"
+                    placeholder="Visible to all"
+                />
+            </xpath>
+            <xpath expr="//sheet//field[@name='parent_id']" position="attributes">
+                <attribute name="domain">['|', '|', ('company_ids', 'in', allowed_company_ids), ('company_id', 'in', allowed_company_ids), ('company_id', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_department_tree_multi_company" model="ir.ui.view">
+        <field name="name">hr.department.list.multi.company</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id'][@groups='base.group_multi_company']" position="after">
+                <field
+                    name="company_ids"
+                    widget="many2many_tags"
+                    groups="base.group_multi_company"
+                    optional="show"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_department_kanban_multi_company" model="ir.ui.view">
+        <field name="name">hr.department.kanban.multi.company</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.hr_department_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='card']//field[@name='company_id']" position="replace">
+                <field name="company_ids" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_department_filter_multi_company" model="ir.ui.view">
+        <field name="name">hr.department.search.multi.company</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='manager_id']" position="after">
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_ids" groups="base.group_multi_company"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
