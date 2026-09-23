@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "HR Employee Multi Company",
-    "version": "19.0.1.4.4",
+    "version": "19.0.1.4.5",
     "category": "Human Resources",
     "summary": "Allow one employee to belong to multiple companies",
     "description": """
