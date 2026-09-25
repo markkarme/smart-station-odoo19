@@ -6,10 +6,11 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="year_id"/>
+                <field name="mold_kind" optional="hide"/>
+                <!-- <field name="year_id" />
                 <field name="standard_id"/>
-                <field name="division_id"/>
-                <field name="term"/>
+                <field name="division_id"/> -->
+                <field name="term" optional="show"/>
                 <field name="line_count"/>
                 <field name="state" widget="badge"
                        decoration-info="state == 'draft'"
@@ -24,11 +25,13 @@
         <field name="arch" type="xml">
             <form string="School Mold" class="o_school_mold_form">
                 <header>
-                    <button name="action_load_students" type="object" string="Load Students" class="btn-primary"/>
+                    <!-- <button name="action_load_students" type="object" string="Load Students" class="btn-primary"/> -->
                     <button name="action_add_empty_rows" type="object" string="Add 10 Rows"/>
-                    <button name="action_recompute_totals" type="object" string="Recompute Totals"/>
+                    <button name="action_recompute_totals" type="object" string="Recompute Totals"
+                            invisible="mold_kind in ('health_insurance', 'form_27')"/>
                     <button name="action_download_xlsx" type="object" string="Download Excel" class="btn-secondary" icon="fa-download"/>
-                    <button name="action_reset_columns" type="object" string="Reset Columns" confirm="Reset columns to the default Excel layout?"/>
+                    <button name="action_reset_columns" type="object" string="Reset Columns"
+                            confirm="Reset columns to the template for this report?"/>
                     <button name="action_mark_done" type="object" string="Mark Done" invisible="state == 'done'"/>
                     <button name="action_reset_draft" type="object" string="Reset to Draft" invisible="state == 'draft'"/>
                     <field name="state" widget="statusbar"/>
@@ -39,19 +42,22 @@
                         <h1><field name="name" placeholder="Mold name"/></h1>
                     </div>
                     <group>
-                        
                         <group>
-                            <field name="term"/>
-
+                            <field name="mold_kind" invisible="1"/>
+                            <field name="term" invisible="mold_kind in ('health_insurance', 'form_27')"/>
+                            <!-- <field name="year_id"/>
+                            <field name="standard_id"/>
+                            <field name="division_id"/> -->
                             <field name="date"/>
                             <field name="note"/>
                             <field name="line_count" readonly="1"/>
                         </group>
                         <group>
-                            <field name="term_types"/>
-                            <!-- <field name="year_id"/>
-                            <field name="standard_id"/>
-                            <field name="division_id"/> -->
+                            <field name="term_types" invisible="mold_kind in ('health_insurance', 'form_27')"/>
+                            <field name="craft" invisible="mold_kind != 'form_27'"/>
+                            <field name="batch_label" invisible="mold_kind != 'form_27'"/>
+                            <field name="region" invisible="mold_kind != 'form_27'"/>
+                            <field name="center" invisible="mold_kind != 'form_27'"/>
                         </group>
                     </group>
                     <notebook>
@@ -74,6 +80,7 @@
                                     <field name="name"/>
                                     <field name="col_type"/>
                                     <field name="max_value"/>
+                                    <field name="include_in_grand_total"/>
                                     <field name="color" widget="color"/>
                                     <field name="key"/>
                                 </list>
@@ -108,10 +115,47 @@
         <field name="name">School Molds</field>
         <field name="res_model">school.mold</field>
         <field name="view_mode">list,form</field>
+        <field name="domain">[('mold_kind', '=', 'grades')]</field>
+        <field name="context">{'default_mold_kind': 'grades'}</field>
         <field name="search_view_id" ref="school_mold_view_search"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Create a school mold</p>
             <p>Fill the sheet like Excel, then download it.</p>
+        </field>
+    </record>
+
+    <record id="action_health_insurance_report" model="ir.actions.act_window">
+        <field name="name">Health Insurance Sheet</field>
+        <field name="res_model">school.mold</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('mold_kind', '=', 'health_insurance')]</field>
+        <field name="context">{
+            'default_mold_kind': 'health_insurance',
+            'default_name': 'تقرير التأمين الصحي',
+        }</field>
+        <field name="search_view_id" ref="school_mold_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a Health Insurance sheet</p>
+            <p>Fill names, insurance numbers, national IDs and mobiles, then download Excel.</p>
+        </field>
+    </record>
+
+    <record id="action_form_27_report" model="ir.actions.act_window">
+        <field name="name">Form 27 report</field>
+        <field name="res_model">school.mold</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('mold_kind', '=', 'form_27')]</field>
+        <field name="context">{
+            'default_mold_kind': 'form_27',
+            'default_name': 'نموذج 27',
+            'default_region': 'شمال الصعيد',
+            'default_center': 'محطه سمارت المنيا الجديده',
+            'default_batch_label': '2025 / 2026',
+        }</field>
+        <field name="search_view_id" ref="school_mold_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a Form 27 report</p>
+            <p>Fill student enrollment data for الصف الأول, then download Excel.</p>
         </field>
     </record>
 
@@ -120,4 +164,16 @@
               parent="jt_education_base.student_root_menu"
               action="action_school_mold"
               sequence="12"/>
+
+    <menuitem id="menu_health_insurance_report"
+              name="Health Insurance Sheet"
+              parent="jt_education_base.student_root_menu"
+              action="action_health_insurance_report"
+              sequence="13"/>
+
+    <menuitem id="menu_form_27_report"
+              name="Form 27 report"
+              parent="jt_education_base.student_root_menu"
+              action="action_form_27_report"
+              sequence="14"/>
 </odoo>

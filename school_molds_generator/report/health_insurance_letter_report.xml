@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_health_insurance_letter" model="report.paperformat">
+        <field name="name">Health Insurance Letter A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">12</field>
+        <field name="margin_bottom">12</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <template id="report_health_insurance_letter">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article page" dir="rtl" lang="ar">
+                    <style type="text/css">
+                        <t t-out="o.get_arabic_font_face_css()"/>
+                        .article, .page, .o_report_layout_standard, .o_report_layout_boxed {
+                            border: none !important;
+                            box-shadow: none !important;
+                        }
+                        .o_health_insurance_letter,
+                        .o_health_insurance_letter * {
+                            font-family: 'ReportArabic', 'DejaVu Sans', sans-serif !important;
+                            color: #000;
+                            border: none !important;
+                            box-shadow: none !important;
+                            outline: none !important;
+                        }
+                        .o_health_insurance_letter {
+                            direction: rtl;
+                        }
+                        .o_hi_header {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-bottom: 8px;
+                        }
+                        .o_hi_header_text {
+                            float: right;
+                            width: 34%;
+                            text-align: right;
+                            font-size: 13px;
+                            line-height: 1.55;
+                            font-weight: bold;
+                        }
+                        .o_hi_header_logo {
+                            float: right;
+                            width: 22%;
+                            text-align: center;
+                            padding-top: 4px;
+                        }
+                        .o_hi_header_logo img {
+                            max-height: 80px;
+                            max-width: 120px;
+                        }
+                        .o_hi_signatures {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-top: 60px;
+                            font-size: 15px;
+                            font-weight: bold;
+                        }
+                        .o_hi_sig {
+                            float: right;
+                            width: 50%;
+                            text-align: center;
+                        }
+                    </style>
+
+                    <div class="o_health_insurance_letter" style="direction: rtl;">
+
+                        <!-- Header without tables -->
+                        <div class="o_hi_header">
+                            <div class="o_hi_header_text">
+                                <div>جمهورية مصر العربية</div>
+                                <div>وزارة الصناعة</div>
+                                <div>مصلحة الكفاية الإنتاجية</div>
+                                <div><t t-esc="o.region or 'منطقة شمال الصعيد'"/></div>
+                                <div><t t-esc="o.station or 'محطة سمارت'"/></div>
+                            </div>
+                            <div class="o_hi_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('ministry_of_industry.png')"/>
+                            </div>
+                            <div class="o_hi_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('pvtd_image.png')" style="max-height: 70px; max-width: 140px;"/>
+                            </div>
+                            <div class="o_hi_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('smart-logo.png')" style="max-height: 70px; max-width: 140px;"/>
+                            </div>
+                        </div>
+
+                        <div style="clear: both; height: 48px;"></div>
+
+                        <div style="text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 28px;">
+                            السيد وكيل مديرية التأمين الصحي
+                        </div>
+
+                        <div style="text-align: center; font-size: 16px; margin-bottom: 36px;">
+                            تحيه طيبه وبعد
+                        </div>
+
+                        <div style="text-align: center; font-size: 16px; line-height: 2.2;">
+                            <div>
+                                الرجاء من سيادتكم توقيع الكشف الطبي على الطالب/
+                                <span style="font-weight: bold; text-decoration: underline; padding: 0 6px;">
+                                    <t t-esc="o.student_name"/>
+                                </span>
+                            </div>
+                            <div>
+                                والذي يحمل بطاقه تأمين صحي رقم/
+                                <span style="font-weight: bold; text-decoration: underline; padding: 0 6px;">
+                                    <t t-esc="o.insurance_number"/>
+                                </span>
+                            </div>
+                            <div>وإفادتنا بالنتيجه</div>
+                        </div>
+
+                        <div style="text-align: center; font-size: 16px; margin-top: 40px; margin-bottom: 70px;">
+                            ولكم جزيل الشكر
+                        </div>
+
+                        <!-- Signatures without tables -->
+                        <div class="o_hi_signatures">
+                            <div class="o_hi_sig">شئون طلاب</div>
+                            <div class="o_hi_sig">مدير المدرسة</div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_health_insurance_letter" model="ir.actions.report">
+        <field name="name">Health Insurance report</field>
+        <field name="model">health.insurance.letter</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_molds_generator.report_health_insurance_letter</field>
+        <field name="report_file">school_molds_generator.report_health_insurance_letter</field>
+        <field name="print_report_name">'تقرير التأمين الصحي - %s' % (object.student_name or '')</field>
+        <field name="paperformat_id" ref="paperformat_health_insurance_letter"/>
+    </record>
+</odoo>

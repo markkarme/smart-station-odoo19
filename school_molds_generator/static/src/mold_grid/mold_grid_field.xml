@@ -23,7 +23,7 @@
                     <thead>
                         <tr class="o_school_mold_header">
                             <th class="o_school_mold_action"/>
-                            <t t-foreach="state.columns" t-as="column" t-key="column.key">
+                            <t t-foreach="state.columns" t-as="column" t-key="column.uid">
                                 <th t-att-class="'o_school_mold_col_' + column.colType" t-att-style="'background:' + column.color" t-att-title="column.name">
                                     <div class="o_school_mold_header_inner">
                                         <span t-esc="column.name"/>
@@ -31,9 +31,9 @@
                                 </th>
                             </t>
                         </tr>
-                        <tr class="o_school_mold_max">
+                        <tr class="o_school_mold_max" t-if="showMaxRow">
                             <th class="o_school_mold_action"/>
-                            <t t-foreach="state.columns" t-as="column" t-key="column.key + '_max'">
+                            <t t-foreach="state.columns" t-as="column" t-key="column.uid + '_max'">
                                 <th t-att-style="'background:' + column.color">
                                     <t t-if="!isIdentity(column)" t-esc="column.maxValue || ''"/>
                                 </th>
@@ -47,7 +47,7 @@
                                     ✕
                                 </button>
                             </td>
-                            <t t-foreach="state.columns" t-as="column" t-key="row.id + '_' + column.key">
+                            <t t-foreach="state.columns" t-as="column" t-key="row.id + '_' + column.uid">
                                 <td t-att-class="'o_school_mold_col_' + column.colType" t-att-style="'background:' + column.color">
                                     <t t-if="column.colType === 'name'">
                                         <input type="text"
@@ -61,7 +61,7 @@
                                     <t t-else="">
                                         <input type="text"
                                                class="o_school_mold_input"
-                                               inputmode="decimal"
+                                               t-att-inputmode="isIdentity(column) ? 'text' : 'decimal'"
                                                t-att-value="row.cells[column.key]"
                                                t-on-change="(ev) => this.onScoreChange(row, column, ev)"/>
                                     </t>

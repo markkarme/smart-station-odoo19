@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_health_insurance_letter_form" model="ir.ui.view">
+        <field name="name">health.insurance.letter.form</field>
+        <field name="model">health.insurance.letter</field>
+        <field name="arch" type="xml">
+            <form string="Health Insurance report">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>تقرير التأمين الصحي</h1>
+                        <p class="text-muted">طلب توقيع الكشف الطبي على الطالب</p>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="student_name"/>
+                            <field name="insurance_number" placeholder="رقم بطاقة التأمين الصحي"/>
+                        </group>
+                        <group>
+                            <field name="region"/>
+                            <field name="station"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_print_pdf" type="object" string="Download PDF" class="btn-primary" icon="fa-file-pdf-o"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_health_insurance_letter" model="ir.actions.act_window">
+        <field name="name">Health Insurance report</field>
+        <field name="res_model">health.insurance.letter</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_health_insurance_letter_form"/>
+    </record>
+
+    <menuitem id="menu_health_insurance_letter"
+              name="Health Insurance report"
+              parent="jt_education_base.student_root_menu"
+              action="action_health_insurance_letter"
+              sequence="15"/>
+</odoo>
