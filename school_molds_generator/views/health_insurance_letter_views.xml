@@ -12,7 +12,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="student_id"/>
+                            <!-- <field name="student_id"/> -->
                             <field name="student_name"/>
                             <field name="insurance_number" placeholder="رقم بطاقة التأمين الصحي"/>
                         </group>

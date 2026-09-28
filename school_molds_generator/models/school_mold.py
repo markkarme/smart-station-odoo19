@@ -23,6 +23,20 @@ ROW_COUNT_BY_KIND = {
     'form_27': FORM_27_ROW_COUNT,
 }
 
+# Specializations available for all grades
+BASE_TERM_TYPE_KEYS = (
+    'industrial_electricity',
+    'computer',
+    'industrial_electronics',
+    'office_equipment',
+)
+# Only for الصف الاول
+FIRST_TERM_ONLY_TYPE_KEYS = (
+    'graphics',
+    'programming',
+    'artificial_intelligence',
+)
+
 
 class SchoolMold(models.Model):
     _name = 'school.mold'
@@ -48,16 +62,23 @@ class SchoolMold(models.Model):
         help='Batch years shown on Form 27 subtitle',
     )
     term = fields.Selection([
-        ('first', 'First Term'),
-        ('second', 'Second Term'),
-        ('third', 'Third Term'),
+        ('first', 'الصف الاول'),
+        ('second', 'الصف الثاني'),
+        ('third', 'الصف الثالث'),
     ], string='Term', default='first')
     term_types = fields.Selection([
         ('industrial_electricity', 'كهرباء صناعية'),
         ('computer', 'حاسب الي'),
         ('industrial_electronics', 'الكترونيات صناعية'),
         ('office_equipment', 'اجهزه مكتبية'),
+        ('graphics', 'جرافيكس'),
+        ('programming', 'برمجة'),
+        ('artificial_intelligence', 'ذكاء صناعي'),
     ], string='Specialization', default='industrial_electricity')
+    allowed_term_types = fields.Json(
+        compute='_compute_allowed_term_types',
+        help='Specialization keys allowed for the selected grade (used by the form dropdown).',
+    )
     date = fields.Date(default=fields.Date.context_today)
     note = fields.Char()
     column_ids = fields.One2many('school.mold.column', 'mold_id', string='Columns', copy=True)
@@ -75,6 +96,14 @@ class SchoolMold(models.Model):
     def _compute_line_count(self):
         for mold in self:
             mold.line_count = len(mold.line_ids)
+
+    @api.depends('term')
+    def _compute_allowed_term_types(self):
+        for mold in self:
+            keys = list(BASE_TERM_TYPE_KEYS)
+            if (mold.term or 'first') == 'first':
+                keys.extend(FIRST_TERM_ONLY_TYPE_KEYS)
+            mold.allowed_term_types = keys
 
     @api.depends(
         'column_ids',
@@ -259,6 +288,12 @@ class SchoolMold(models.Model):
     @api.onchange('term', 'term_types', 'mold_kind')
     def _onchange_term_or_type(self):
         """Swap the sheet layout when term/specialization changes (new records)."""
+        # جرافيكس / برمجة / ذكاء صناعي are only for الصف الاول
+        if (
+            (self.term or 'first') != 'first'
+            and self.term_types in FIRST_TERM_ONLY_TYPE_KEYS
+        ):
+            self.term_types = 'industrial_electricity'
         if self._origin.id:
             return {
                 'warning': {
@@ -639,6 +674,27 @@ class SchoolMold(models.Model):
             sheet.set_column(col_index, col_index, widths.get(column.key, 12))
 
         last_col = len(columns) - 1
+
+        # Logo banner (rows 0–3). RTL visual: right=Ministry, center=PVTD, left=SMART
+        logo_offset = 4
+        for row in range(logo_offset):
+            sheet.set_row(row, 22)
+        logo_specs = [
+            ('ministry_of_industry.png', 0, {
+                'x_scale': 0.55, 'y_scale': 0.55, 'x_offset': 8, 'y_offset': 4,
+            }),
+            ('pvtd_image.png', max(last_col // 2, 1), {
+                'x_scale': 0.55, 'y_scale': 0.55, 'x_offset': 10, 'y_offset': 4,
+            }),
+            ('smart-logo.png', last_col, {
+                'x_scale': 0.7, 'y_scale': 0.7, 'x_offset': 4, 'y_offset': 8,
+            }),
+        ]
+        for filename, col, options in logo_specs:
+            path = self._asset_path(filename)
+            if os.path.isfile(path):
+                sheet.insert_image(0, col, path, options)
+
         # Institutional block (right side in RTL = low column indices)
         org_lines = [
             'مصلحة الكفاية الإنتاجية و التدريب المهني',
@@ -648,26 +704,34 @@ class SchoolMold(models.Model):
             'المركز | %s' % (self.center or 'محطه سمارت المنيا الجديده'),
         ]
         for row_index, text in enumerate(org_lines):
-            sheet.set_row(row_index, 18)
-            sheet.merge_range(row_index, 0, row_index, min(3, last_col), text, org_fmt)
+            sheet.set_row(logo_offset + row_index, 18)
+            sheet.merge_range(
+                logo_offset + row_index, 0,
+                logo_offset + row_index, min(3, last_col),
+                text, org_fmt,
+            )
 
         # Center title block
         batch = self.batch_label or (self.year_id.name if self.year_id else '2025 / 2026')
-        sheet.merge_range(1, max(4, last_col // 3), 1, last_col, 'نموذج 27', title_fmt)
+        title_col = max(4, last_col // 3)
         sheet.merge_range(
-            3, max(4, last_col // 3), 3, last_col,
+            logo_offset + 1, title_col, logo_offset + 1, last_col,
+            'نموذج 27', title_fmt,
+        )
+        sheet.merge_range(
+            logo_offset + 3, title_col, logo_offset + 3, last_col,
             'كشف أسماء الطلاب المقيدون بالصف الأول دفعة %s' % batch,
             subtitle_fmt,
         )
         sheet.merge_range(
-            5, max(4, last_col // 3), 5, last_col,
+            logo_offset + 5, title_col, logo_offset + 5, last_col,
             'الحرفه : %s' % (self.craft or ''),
             craft_fmt,
         )
 
-        header_row = 8
-        sub_header_row = 9
-        data_start = 10
+        header_row = logo_offset + 8
+        sub_header_row = logo_offset + 9
+        data_start = logo_offset + 10
         sheet.set_row(header_row, 22)
         sheet.set_row(sub_header_row, 18)
 

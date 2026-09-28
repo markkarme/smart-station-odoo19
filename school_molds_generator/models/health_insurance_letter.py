@@ -16,8 +16,8 @@ class HealthInsuranceLetter(models.TransientModel):
         string='Student',
         domain=[('is_student', '=', True)],
     )
-    student_name = fields.Char(string='اسم الطالب', required=True)
-    insurance_number = fields.Char(string='رقم بطاقة التأمين الصحي', required=True)
+    student_name = fields.Char(string='اسم الطالب')
+    insurance_number = fields.Char(string='رقم بطاقة التأمين الصحي')
     region = fields.Char(string='المنطقة', default='منطقة شمال الصعيد')
     station = fields.Char(string='المحطة', default='محطة سمارت')
 

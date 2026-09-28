@@ -3,7 +3,7 @@
     'name': "School Molds Generator",
     'summary': "Fill school molds in an Excel-like view and download the sheet.",
     'category': 'Education',
-    'version': '19.0.1.0.24',
+    'version': '19.0.1.0.27',
     'author': 'Smart Station',
     'depends': ['jt_education_base'],
     'data': [
