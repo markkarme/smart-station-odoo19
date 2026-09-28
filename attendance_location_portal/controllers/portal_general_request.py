@@ -6,6 +6,8 @@ from odoo.exceptions import AccessError, UserError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
 
+from .portal_common import PortalHrMixin
+
 _logger = logging.getLogger(__name__)
 
 GENERAL_REQUEST_STATE_BADGES = {
@@ -23,16 +25,12 @@ def _get_general_request_state_labels(env):
     }
 
 
-class PortalGeneralRequestController(http.Controller):
-    def _get_user_employee(self):
-        employee = request.env.user.employee_id
-        if not employee:
-            employee = request.env.user.employee_ids[:1]
-        return employee
-
+class PortalGeneralRequestController(PortalHrMixin, http.Controller):
     def _get_employee_general_request(self, employee, request_id):
         general_request = request.env["hr.general.request"].sudo().browse(request_id)
-        if not general_request.exists() or general_request.employee_id != employee:
+        if not general_request.exists() or not self._portal_can_access_employee_record(
+            employee, general_request.employee_id
+        ):
             raise AccessError(_("This general request does not exist or is not accessible."))
         return general_request
 
@@ -42,7 +40,15 @@ class PortalGeneralRequestController(http.Controller):
         auth="user",
         website=True,
     )
-    def portal_my_general_requests(self, page=1, **kwargs):
+    def portal_my_general_requests(
+        self,
+        page=1,
+        sortby=None,
+        filterby=None,
+        search=None,
+        search_in="all",
+        **kwargs,
+    ):
         employee = self._get_user_employee()
         if not employee:
             return request.render(
@@ -56,19 +62,98 @@ class PortalGeneralRequestController(http.Controller):
                 },
             )
 
+        is_portal_hr_admin = self._is_portal_hr_admin()
         request_model = request.env["hr.general.request"].sudo()
-        domain = [("employee_id", "=", employee.id)]
+        domain = self._portal_employee_domain(employee)
+
+        searchbar_filters = {
+            "all": {"label": _("All"), "domain": [], "sequence": 10},
+            "confirm": {
+                "label": _("To Approve"),
+                "domain": [("state", "=", "confirm")],
+                "sequence": 20,
+            },
+            "approve": {
+                "label": _("Approved"),
+                "domain": [("state", "=", "approve")],
+                "sequence": 30,
+            },
+            "refuse": {
+                "label": _("Refused"),
+                "domain": [("state", "=", "refuse")],
+                "sequence": 40,
+            },
+        }
+
+        search_inputs = {
+            "all": {
+                "input": "all",
+                "label": _("Search in All"),
+                "sequence": 10,
+                "domain": lambda value: self._portal_or_domain(
+                    [
+                        [("employee_id.name", "ilike", value)] if is_portal_hr_admin else [],
+                        [("description", "ilike", value)],
+                        [("name", "ilike", value)],
+                    ]
+                ),
+            },
+            "description": {
+                "input": "description",
+                "label": _("Search in Description"),
+                "sequence": 20,
+                "domain": lambda value: [("description", "ilike", value)],
+            },
+        }
+        if is_portal_hr_admin:
+            search_inputs["employee"] = {
+                "input": "employee",
+                "label": _("Search in Employee"),
+                "sequence": 15,
+                "domain": lambda value: [("employee_id.name", "ilike", value)],
+            }
+
+        searchbar_sortings = {
+            "date": {"label": _("Newest"), "order": "create_date desc"},
+            "request_date": {"label": _("Request Date"), "order": "date desc, id desc"},
+        }
+        if is_portal_hr_admin:
+            searchbar_sortings["employee"] = {
+                "label": _("Employee"),
+                "order": "employee_id, create_date desc",
+            }
+
+        searchbar = self._portal_apply_searchbar(
+            domain,
+            searchbar_filters=searchbar_filters,
+            searchbar_inputs=search_inputs,
+            searchbar_sortings=searchbar_sortings,
+            filterby=filterby,
+            search=search,
+            search_in=search_in,
+            sortby=sortby,
+            default_filterby="all",
+            default_search_in="all",
+            default_sortby="date",
+        )
+        domain = searchbar["domain"]
         request_count = request_model.search_count(domain)
         pager = portal_pager(
             url="/my/general_requests",
+            url_args={
+                "sortby": searchbar["sortby"],
+                "filterby": searchbar["filterby"],
+                "search": searchbar["search"],
+                "search_in": searchbar["search_in"],
+            },
             total=request_count,
             page=page,
-            step=20,
+            step=self._items_per_page,
         )
         general_requests = request_model.search(
             domain,
-            order="create_date desc",
-            limit=20,
+            order=searchbar["order"],
+            limit=self._items_per_page,
             offset=pager["offset"],
         )
         values = {
@@ -78,6 +163,15 @@ class PortalGeneralRequestController(http.Controller):
             "pager": pager,
             "request_state_labels": _get_general_request_state_labels(request.env),
             "request_state_badges": GENERAL_REQUEST_STATE_BADGES,
+            "is_portal_hr_admin": is_portal_hr_admin,
+            "default_url": "/my/general_requests",
+            "searchbar_filters": searchbar["searchbar_filters"],
+            "filterby": searchbar["filterby"],
+            "searchbar_inputs": searchbar["searchbar_inputs"],
+            "search_in": searchbar["search_in"],
+            "search": searchbar["search"],
+            "searchbar_sortings": searchbar["searchbar_sortings"],
+            "sortby": searchbar["sortby"],
         }
         return request.render("attendance_location_portal.portal_my_general_requests", values)
 
@@ -101,6 +195,7 @@ class PortalGeneralRequestController(http.Controller):
             "employee": employee,
             "error_message": kwargs.get("error"),
             "form_values": kwargs,
+            "is_portal_hr_admin": self._is_portal_hr_admin(),
         }
         return request.render("attendance_location_portal.portal_general_request_form", values)
 
@@ -175,5 +270,6 @@ class PortalGeneralRequestController(http.Controller):
             "request_state_badges": GENERAL_REQUEST_STATE_BADGES,
             "success_message": kwargs.get("success"),
             "error_message": kwargs.get("error"),
+            "is_portal_hr_admin": self._is_portal_hr_admin(),
         }
         return request.render("attendance_location_portal.portal_general_request_detail", values)

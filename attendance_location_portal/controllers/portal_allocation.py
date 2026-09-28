@@ -6,6 +6,8 @@ from odoo.exceptions import AccessError, UserError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
 
+from .portal_common import PortalHrMixin
+
 _logger = logging.getLogger(__name__)
 
 ALLOCATION_STATE_BADGES = {
@@ -25,16 +27,12 @@ def _get_allocation_state_labels():
     }
 
 
-class PortalAllocationController(http.Controller):
-    def _get_user_employee(self):
-        employee = request.env.user.employee_id
-        if not employee:
-            employee = request.env.user.employee_ids[:1]
-        return employee
-
+class PortalAllocationController(PortalHrMixin, http.Controller):
     def _get_employee_allocation(self, employee, allocation_id):
         allocation = request.env["hr.leave.allocation"].sudo().browse(allocation_id)
-        if not allocation.exists() or allocation.employee_id != employee:
+        if not allocation.exists() or not self._portal_can_access_employee_record(
+            employee, allocation.employee_id
+        ):
             raise AccessError(_("This allocation request does not exist or is not accessible."))
         return allocation
 
@@ -83,8 +81,9 @@ class PortalAllocationController(http.Controller):
                 },
             )
 
+        is_portal_hr_admin = self._is_portal_hr_admin()
         allocation_model = request.env["hr.leave.allocation"].sudo()
-        domain = [("employee_id", "=", employee.id)]
+        domain = self._portal_employee_domain(employee)
         allocation_count = allocation_model.search_count(domain)
         pager = portal_pager(
             url="/my/allocations",
@@ -107,6 +106,7 @@ class PortalAllocationController(http.Controller):
             "allocation_state_badges": ALLOCATION_STATE_BADGES,
             "success_message": kwargs.get("success"),
             "error_message": kwargs.get("error"),
+            "is_portal_hr_admin": is_portal_hr_admin,
         }
         return request.render("attendance_location_portal.portal_my_allocations", values)
 
@@ -212,6 +212,11 @@ class PortalAllocationController(http.Controller):
             "allocation_state_badges": ALLOCATION_STATE_BADGES,
             "success_message": kwargs.get("success"),
             "error_message": kwargs.get("error"),
+            "is_portal_hr_admin": self._is_portal_hr_admin(),
+            "can_cancel_allocation": (
+                allocation.employee_id == employee
+                and allocation.state in ("confirm", "refuse")
+            ),
         }
         return request.render("attendance_location_portal.portal_allocation_detail", values)
 
@@ -231,6 +236,8 @@ class PortalAllocationController(http.Controller):
 
         try:
             allocation = self._get_employee_allocation(employee, allocation_id)
+            if allocation.employee_id != employee:
+                raise AccessError(_("You can only cancel your own allocation requests."))
             employee.action_portal_cancel_allocation(allocation)
             params = urlencode({"success": _("Allocation request cancelled successfully.")})
             return request.redirect("/my/allocations?%s" % params)

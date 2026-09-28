@@ -4,74 +4,46 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0\n"
+"Project-Id-Version: Odoo Server 19.0+e-20260908\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-10 12:00+0000\n"
-"PO-Revision-Date: 2026-07-15 01:15+0000\n"
+"POT-Creation-Date: 2026-09-28 08:09+0000\n"
+"PO-Revision-Date: 2026-09-28 08:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
-msgid "Take Attendance"
-msgstr "تسجيل الحضور"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "\tfrom %(date_from)s to %(date_to)s - %(state)s"
+msgstr "\tمن %(date_from)s إلى %(date_to)s - %(state)s"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
-msgid "Check in and check out from your allowed location"
-msgstr "سجّل حضورك وانصرافك من موقعك المسموح به"
+#: model:res.groups,comment:attendance_location_portal.group_portal_hr_admin
+msgid ""
+"\n"
+"            Portal admin users can view all attendance records, general requests,\n"
+"            time off requests, allocations, and attendance adjustments.\n"
+"        "
+msgstr ""
+"يمكن لمسؤولي البوابة عرض جميع سجلات الحضور والطلبات العامة وطلبات الإجازة "
+"والمخصصات وتعديلات الحضور."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
-msgid "My Attendances"
-msgstr "سجل حضوري"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "%(employee)s - %(date)s"
+msgstr "%(employee)s - %(date)s"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
-msgid "View your check-in and check-out history"
-msgstr "عرض سجل تسجيل الحضور والانصراف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
-msgid "My Time Off"
-msgstr "إجازاتي"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
-msgid "Request time off and track approval status"
-msgstr "قدّم طلب إجازة وتابع حالة الموافقة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_allocations_entry
-msgid "My Allocations"
-msgstr "مخصصاتي"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_allocations_entry
-msgid "Request extra days allocation and track approval status"
-msgstr "اطلب مخصص أيام إضافية وتابع حالة الموافقة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Take Attendance"
-msgstr "تسجيل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "My Attendances"
-msgstr "سجل حضوري"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Welcome"
-msgstr "مرحباً"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "%(type)s - %(employee)s - %(date)s"
+msgstr "%(type)s - %(employee)s - %(date)s"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
@@ -79,11 +51,480 @@ msgid ", use your live location to submit attendance."
 msgstr "، استخدم موقعك الحالي لتسجيل الحضور."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Current status:"
-msgstr "الحالة الحالية:"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid ". Then, schedule a meeting to discuss it."
+msgstr ". ثم حدد موعداً للاجتماع لمناقشتها."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid ". Then, share it with appraisers."
+msgstr ". ثم شاركها مع المقيّمين."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "<option value=\"\">Select a time off type...</option>"
+msgstr "<option value=\"\">اختر نوع الإجازة...</option>"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid ""
+"<select name=\"request_date_from_period\" class=\"form-select\">\n"
+"                                        <option value=\"am\">Morning</option>\n"
+"                                        <option value=\"pm\">Afternoon</option>\n"
+"                                    </select>"
+msgstr ""
+"<select name=\"request_date_from_period\" class=\"form-select\">\n"
+"                                        <option value=\"am\">صباحاً</option>\n"
+"                                        <option value=\"pm\">مساءً</option>\n"
+"                                    </select>"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid ""
+"<select name=\"request_date_to_period\" class=\"form-select\">\n"
+"                                        <option value=\"am\">Morning</option>\n"
+"                                        <option value=\"pm\" selected=\"selected\">Afternoon</option>\n"
+"                                    </select>"
+msgstr ""
+"<select name=\"request_date_to_period\" class=\"form-select\">\n"
+"                                        <option value=\"am\">صباحاً</option>\n"
+"                                        <option value=\"pm\" selected=\"selected\">مساءً</option>\n"
+"                                    </select>"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar_new
+msgid ""
+"<span class=\"badge rounded-pill text-bg-primary\">To Approve</span>\n"
+"                <span class=\"badge rounded-pill text-bg-light border\">Approved</span>"
+msgstr ""
+"<span class=\"badge rounded-pill text-bg-primary\">بانتظار الموافقة</span>\n"
+"                <span class=\"badge rounded-pill text-bg-light border\">موافق عليه</span>"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+msgid "<span class=\"input-group-text\" id=\"allocation_unit_label\">Days</span>"
+msgstr "<span class=\"input-group-text\" id=\"allocation_unit_label\">أيام</span>"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "<span class=\"mx-1\">→</span>"
+msgstr "<span class=\"mx-1\">←</span>"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "A supporting document is required for %(leave_type)s."
+msgstr "مطلوب مستند داعم لـ %(leave_type)s."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "A supporting document is required for this time off type."
+msgstr "مستند داعم مطلوب لهذا النوع من الإجازة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid ""
+"A user with login %(login)s already exists as an internal user. Use another "
+"email for this employee."
+msgstr ""
+"يوجد مستخدم داخلي بنفس بيانات الدخول %(login)s. استخدم بريداً إلكترونياً آخر"
+" لهذا الموظف."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_ids
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_ids
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_exception_decoration
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_state
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_state
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_type_icon
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_type_icon
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Add a note for your manager..."
+msgstr "أضف ملاحظة لمديرك..."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+msgid "Add a reason..."
+msgstr "أضف سبباً..."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Add an appraiser..."
+msgstr "أضف مقيّماً..."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Afternoon"
+msgstr "مساءً"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "All"
+msgstr "الكل"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_allocations_entry
+msgid "All Allocations"
+msgstr "كل المخصصات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_adjustments_entry
+msgid "All Attendance Adjustments"
+msgstr "كل تعديلات الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
+msgid "All Attendances"
+msgstr "كل سجلات الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_general_requests_entry
+msgid "All General Requests"
+msgstr "كل الطلبات العامة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+msgid "All Time Off"
+msgstr "كل الإجازات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "Allocation"
+msgstr "المخصص"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_failed_page
+msgid "Allocation Error"
+msgstr "خطأ في المخصص"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+msgid "Allocation Request"
+msgstr "طلب مخصص"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Allocation request cancelled successfully."
+msgstr "تم إلغاء طلب المخصص بنجاح."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__attendance_location_ids
+msgid "Allowed Attendance Locations"
+msgstr "مواقع الحضور المسموح بها"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__employee_ids
+msgid "Allowed Employees"
+msgstr "الموظفون المسموح لهم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Allowed Locations"
+msgstr "المواقع المسموحة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__allowed_range_m
+msgid "Allowed Range (m)"
+msgstr "المدى المسموح (م)"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_appraisals
+msgid "Appraisal"
+msgstr "التقييم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+msgid "Appraisal Date"
+msgstr "تاريخ التقييم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_failed_page
+msgid "Appraisal Error"
+msgstr "خطأ في التقييم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_appraisals_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_appraisals
+msgid "Appraisals"
+msgstr "التقييمات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+msgid "Appraisers"
+msgstr "المقيّمون"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__approve
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__approve
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
+msgid "Approved"
+msgstr "موافق عليه"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Attach File"
+msgstr "إرفاق ملف"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_attachment_count
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_hr_attendance
+msgid "Attendance"
+msgstr "الحاضرين"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
+msgid "Attendance Adjustment Activities"
+msgstr "أنشطة تعديل الحضور"
+
+#. module: attendance_location_portal
+#: model:mail.activity.type,name:attendance_location_portal.mail_act_attendance_adjustment_approval
+msgid "Attendance Adjustment Approval"
+msgstr "موافقة على تعديل الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_failed_page
+msgid "Attendance Adjustment Error"
+msgstr "خطأ في تعديل الحضور"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+#: model:ir.model,name:attendance_location_portal.model_hr_attendance_adjustment_request
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+msgid "Attendance Adjustment Request"
+msgstr "طلب تعديل الحضور"
+
+#. module: attendance_location_portal
+#: model:ir.actions.act_window,name:attendance_location_portal.hr_attendance_adjustment_request_action
+#: model:ir.ui.menu,name:attendance_location_portal.menu_hr_attendance_adjustment_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_tree
+msgid "Attendance Adjustment Requests"
+msgstr "طلبات تعديل الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_failed_page
+msgid "Attendance Failed"
+msgstr "فشل تسجيل الحضور"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_attendance_location
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__attendance_location_id
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_attendance_location_form
+msgid "Attendance Location"
+msgstr "موقع الحضور"
+
+#. module: attendance_location_portal
+#: model:ir.actions.act_window,name:attendance_location_portal.attendance_location_action
+#: model:ir.ui.menu,name:attendance_location_portal.menu_attendance_location_settings
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_attendance_location_tree
+msgid "Attendance Locations"
+msgstr "مواقع الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "Attendance Submitted Successfully"
+msgstr "تم تسجيل الحضور بنجاح"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "Attendance note from %s"
+msgstr "ملاحظة حضور من %s"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Attendance request failed."
+msgstr "فشل طلب تسجيل الحضور."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance__in_mode__automatic
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance__out_mode__automatic
+msgid "Automatic"
+msgstr "تلقائي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_failed_page
+msgid "Back to Appraisals"
+msgstr "العودة إلى التقييمات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_failed_page
+msgid "Back to My Allocations"
+msgstr "العودة إلى مخصصاتي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_failed_page
+msgid "Back to My Attendance Adjustments"
+msgstr "العودة إلى تعديلات حضوري"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_failed_page
+msgid "Back to My General Requests"
+msgstr "العودة إلى طلباتي العامة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_failed_page
+msgid "Back to My Time Off"
+msgstr "العودة إلى إجازاتي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "Back to Take Attendance"
+msgstr "العودة إلى تسجيل الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Back to list"
+msgstr "العودة إلى القائمة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__can_approve_refuse
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__can_approve_refuse
+msgid "Can Approve Refuse"
+msgstr "يمكن الموافقة/الرفض"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+msgid "Cancel Allocation Request"
+msgstr "إلغاء طلب المخصص"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Cancel Request"
+msgstr "إلغاء الطلب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Cancel Time Off"
+msgstr "إلغاء الإجازة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Check In"
+msgstr "حضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Check In Now"
+msgstr "تسجيل الحضور الآن"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Check Out"
+msgstr "انصراف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Check Out Now"
+msgstr "تسجيل الانصراف الآن"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
+msgid "Check in and check out from your allowed location"
+msgstr "سجّل حضورك وانصرافك من موقعك المسموح به"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 msgid "Checked In"
@@ -95,19 +536,110 @@ msgid "Checked Out"
 msgstr "مسجّل انصراف"
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__company_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__company_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__company_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance__company_id
+msgid "Company of the attendance location used for check-in."
+msgstr "شركة موقع الحضور المستخدم لتسجيل الدخول."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
 msgid "Configured Locations"
 msgstr "المواقع المُعدّة"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Open Map"
-msgstr "فتح الخريطة"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_employee_form_portal_user_button
+msgid "Create Portal Admin User"
+msgstr "إنشاء مستخدم بوابة مسؤول"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_employee_form_portal_user_button
+msgid "Create Portal User"
+msgstr "إنشاء مستخدم بوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__create_uid
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__create_uid
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__create_date
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__create_date
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "No attendance locations are configured yet."
-msgstr "لم يتم إعداد مواقع حضور بعد."
+msgid "Current status:"
+msgstr "الحالة الحالية:"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__date
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__date
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Dates"
+msgstr "التواريخ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Day Period"
+msgstr "فترة اليوم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+msgid "Describe your request..."
+msgstr "صف طلبك..."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__description
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__description
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Description"
+msgstr "الوصف"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
@@ -115,399 +647,98 @@ msgid "Detecting your location..."
 msgstr "جاري تحديد موقعك..."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Allowed Locations"
-msgstr "المواقع المسموحة"
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_appraisal__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave_allocation__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Note (optional)"
-msgstr "ملاحظة (اختياري)"
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Done"
+msgstr "منتهي"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Add a note for your manager..."
-msgstr "أضف ملاحظة لمديرك..."
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Draft"
+msgstr "مسودة"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Check Out Now"
-msgstr "تسجيل الانصراف الآن"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Check In Now"
-msgstr "تسجيل الحضور الآن"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Refresh Location"
-msgstr "تحديث الموقع"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "Attendance Submitted Successfully"
-msgstr "تم تسجيل الحضور بنجاح"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "Check In"
-msgstr "حضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "Check Out"
-msgstr "انصراف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "recorded at"
-msgstr "تم التسجيل في"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "Back to Take Attendance"
-msgstr "العودة إلى تسجيل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "You have no attendance records yet."
-msgstr "لا توجد سجلات حضور بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Check In"
-msgstr "تسجيل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Check Out"
-msgstr "تسجيل الانصراف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Worked Hours"
-msgstr "ساعات العمل"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Note"
-msgstr "ملاحظة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Status"
-msgstr "الحالة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Completed"
-msgstr "مكتمل"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_failed_page
-msgid "Attendance Failed"
-msgstr "فشل تسجيل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_failed_page
-msgid "Try Again"
-msgstr "حاول مرة أخرى"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-msgid "My Time Off"
-msgstr "إجازاتي"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
-msgid "New Request"
-msgstr "طلب جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_allocations
-msgid "Request Details"
-msgstr "تفاصيل الطلب"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar_new
-msgid "To Approve"
-msgstr "في انتظار الموافقة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar_new
-msgid "Approved"
-msgstr "موافق عليه"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
-msgid "Second Approval"
-msgstr "الموافقة الثانية"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-msgid "New Time Off Request"
-msgstr "طلب إجازة جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-msgid "You have no time off requests yet."
-msgstr "لا توجد طلبات إجازة بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Time Off Type"
-msgstr "نوع الإجازة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Dates"
-msgstr "التواريخ"
-
-#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
 msgid "Duration"
 msgstr "المدة"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+msgid "Early Departure"
+msgstr "انصراف مبكر"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model:ir.model,name:attendance_location_portal.model_hr_employee
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__employee_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__employee_id
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_attendance_location_form
+msgid "Employee Access"
+msgstr "وصول الموظف"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_hr_appraisal
+msgid "Employee Appraisal"
+msgstr "تقييم الموظف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_form_note_page
+msgid "Employee attendance note..."
+msgstr "ملاحظة حضور الموظف..."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "Employee not found."
+msgstr "لم يتم العثور على الموظف."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Employee to review"
+msgstr "الموظف المراد تقييمه"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Employee's Feedback"
+msgstr "ملاحظات الموظف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Description"
-msgstr "الوصف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "No description provided"
-msgstr "لم يتم تقديم وصف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "New Time Off Request"
-msgstr "طلب إجازة جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "Submit a time off request for"
-msgstr "قدّم طلب إجازة لـ"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Select a time off type..."
-msgstr "اختر نوع الإجازة..."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "No time off types are available. Please contact your HR manager."
-msgstr "لا توجد أنواع إجازات متاحة. يرجى التواصل مع مدير الموارد البشرية."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "From"
-msgstr "من"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "To"
-msgstr "إلى"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Day Period"
-msgstr "فترة اليوم"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Morning"
-msgstr "صباحاً"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Afternoon"
-msgstr "مساءً"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Hours"
-msgstr "ساعات"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "No description provided"
-msgstr "لم يتم تقديم وصف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "Attach File"
-msgstr "إرفاق ملف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "A supporting document is required for this time off type."
-msgstr "مستند داعم مطلوب لهذا النوع من الإجازة."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Reasons"
-msgstr "الأسباب"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-msgid "Optional reason for your request..."
-msgstr "سبب اختياري لطلبك..."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Submit Request"
-msgstr "إرسال الطلب"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Cancel"
-msgstr "إلغاء"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Time Off Request"
-msgstr "طلب إجازة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Back to list"
-msgstr "العودة إلى القائمة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Attachments"
-msgstr "المرفقات"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Cancel Request"
-msgstr "إلغاء الطلب"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Reason (optional)"
-msgstr "السبب (اختياري)"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
-msgid "Cancel Time Off"
-msgstr "إلغاء الإجازة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_failed_page
-msgid "Time Off Error"
-msgstr "خطأ في الإجازة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_failed_page
-msgid "Back to My Time Off"
-msgstr "العودة إلى إجازاتي"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-msgid "My Allocations"
-msgstr "مخصصاتي"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-msgid "New Allocation Request"
-msgstr "طلب مخصص جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
-msgid "Status"
-msgstr "الحالة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-msgid "You have no allocation requests yet."
-msgstr "لا توجد طلبات مخصص بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Validity Period"
-msgstr "فترة الصلاحية"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Allocation"
-msgstr "المخصص"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Reason"
-msgstr "السبب"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "No Limit"
-msgstr "بدون حد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "No reason provided"
-msgstr "لم يتم تقديم سبب"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "New Allocation Request"
-msgstr "طلب مخصص جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Submit an allocation request for"
-msgstr "قدّم طلب مخصص لـ"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "No time off types are available for allocation requests. Please contact your HR manager."
-msgstr "لا توجد أنواع إجازات متاحة لطلبات المخصص. يرجى التواصل مع مدير الموارد البشرية."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Start Date"
-msgstr "تاريخ البداية"
+msgid "Employee:"
+msgstr "الموظف:"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
@@ -515,245 +746,648 @@ msgid "End Date"
 msgstr "تاريخ النهاية"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Leave empty for no limit"
-msgstr "اتركه فارغاً لعدم تحديد حد"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_appraisals_entry
+msgid "Fill appraisals and track their status"
+msgstr "أكمل التقييمات وتابع حالتها"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Days"
-msgstr "أيام"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Fill in the employee's feedback section before"
+msgstr "املأ قسم ملاحظات الموظف قبل"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
-msgid "Add a reason..."
-msgstr "أضف سبباً..."
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Fill in the manager's feedback section before"
+msgstr "املأ قسم ملاحظات المدير قبل"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Allocation Request"
-msgstr "طلب مخصص"
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_follower_ids
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
-msgid "Cancel Allocation Request"
-msgstr "إلغاء طلب المخصص"
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_partner_ids
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_failed_page
-msgid "Allocation Error"
-msgstr "خطأ في المخصص"
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance__activity_type_icon
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__activity_type_icon
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_failed_page
-msgid "Back to My Allocations"
-msgstr "العودة إلى مخصصاتي"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "From"
+msgstr "من"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "To Approve"
-msgstr "في انتظار الموافقة"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Second Approval"
-msgstr "الموافقة الثانية"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Approved"
-msgstr "موافق عليه"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_my_activities_filter
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_search_activity_filters
+msgid "Future Activities"
+msgstr "الأنشطة المستقبلية"
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Refused"
-msgstr "مرفوض"
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+#: model:ir.model,name:attendance_location_portal.model_hr_general_request
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+msgid "General Request"
+msgstr "طلب عام"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Cancelled"
-msgstr "ملغى"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
+msgid "General Request Activities"
+msgstr "أنشطة الطلبات العامة"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "This time off request does not exist or is not accessible."
-msgstr "طلب الإجازة هذا غير موجود أو غير متاح."
+#: model:mail.activity.type,name:attendance_location_portal.mail_act_general_request_approval
+msgid "General Request Approval"
+msgstr "موافقة على طلب عام"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "This allocation request does not exist or is not accessible."
-msgstr "طلب المخصص هذا غير موجود أو غير متاح."
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_failed_page
+msgid "General Request Error"
+msgstr "خطأ في الطلب العام"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "Your account is not linked to an employee record. Please contact your administrator."
-msgstr "حسابك غير مرتبط بسجل موظف. يرجى التواصل مع المسؤول."
+#: model:ir.actions.act_window,name:attendance_location_portal.hr_general_request_action
+#: model:ir.ui.menu,name:attendance_location_portal.menu_hr_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_tree
+msgid "General Requests"
+msgstr "الطلبات العامة"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "No employee is linked to your user."
-msgstr "لا يوجد موظف مرتبط بحسابك."
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__google_maps_url
+msgid "Google Maps URL"
+msgstr "رابط خرائط Google"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Unexpected error while submitting time off. Please try again."
-msgstr "حدث خطأ غير متوقع أثناء إرسال طلب الإجازة. يرجى المحاولة مرة أخرى."
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__has_message
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Unexpected error while submitting allocation. Please try again."
-msgstr "حدث خطأ غير متوقع أثناء إرسال طلب المخصص. يرجى المحاولة مرة أخرى."
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Hours"
+msgstr "ساعات"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "This time off request is not accessible."
-msgstr "طلب الإجازة هذا غير متاح."
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_appraisal__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave_allocation__id
+msgid "ID"
+msgstr "المُعرف"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "This allocation request is not accessible."
-msgstr "طلب المخصص هذا غير متاح."
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_exception_icon
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_exception_icon
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Time off request cancelled successfully."
-msgstr "تم إلغاء طلب الإجازة بنجاح."
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance__activity_exception_icon
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__activity_exception_icon
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Allocation request cancelled successfully."
-msgstr "تم إلغاء طلب المخصص بنجاح."
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Unexpected error while cancelling time off. Please try again."
-msgstr "حدث خطأ غير متوقع أثناء إلغاء الإجازة. يرجى المحاولة مرة أخرى."
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_error
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_sms_error
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__message_has_error
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Unexpected error while cancelling allocation. Please try again."
-msgstr "حدث خطأ غير متوقع أثناء إلغاء المخصص. يرجى المحاولة مرة أخرى."
+#: model:ir.model.fields,help:attendance_location_portal.field_attendance_location__employee_ids
+msgid "If empty, this location is valid for all employees."
+msgstr "إذا كان فارغاً، يكون هذا الموقع صالحاً لجميع الموظفين."
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "Invalid GPS coordinates received from your device."
-msgstr "إحداثيات GPS غير صالحة من جهازك."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "Unexpected error while recording attendance. Please try again."
-msgstr "حدث خطأ غير متوقع أثناء تسجيل الحضور. يرجى المحاولة مرة أخرى."
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__attendance_location_ids
+msgid ""
+"If set, the employee can check in/out only from these locations. If empty, "
+"company-wide attendance location rules apply."
+msgstr ""
+"إذا تم التعيين، يمكن للموظف تسجيل الحضور/الانصراف من هذه المواقع فقط. إذا "
+"كان فارغاً، تُطبَّق قواعد مواقع الحضور على مستوى الشركة."
 
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "Unknown"
-msgstr "غير معروف"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "Attendance request failed."
-msgstr "فشل طلب تسجيل الحضور."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Your location could not be detected. Please enable GPS."
-msgstr "تعذر تحديد موقعك. يرجى تفعيل GPS."
-
-#. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "Invalid GPS coordinates received from your device."
 msgstr "إحداثيات GPS غير صالحة من جهازك."
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "You can only manage your own employee records."
-msgstr "يمكنك إدارة سجلات الموظف الخاصة بك فقط."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Please select a time off type."
-msgstr "يرجى اختيار نوع الإجازة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "The selected time off type is not available."
-msgstr "نوع الإجازة المحدد غير متاح."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "The selected time off type is not available for you."
-msgstr "نوع الإجازة المحدد غير متاح لك."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Please select a start date."
-msgstr "يرجى اختيار تاريخ البداية."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Please select a validity start date."
-msgstr "يرجى اختيار تاريخ بداية الصلاحية."
-
-#. module: attendance_location_portal
-#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_appraisal.py:0
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "Invalid date format."
 msgstr "صيغة التاريخ غير صالحة."
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_is_follower
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__write_uid
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__write_uid
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__write_date
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__write_date
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_my_activities_filter
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_search_activity_filters
+msgid "Late Activities"
+msgstr "الأنشطة المتأخرة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+msgid "Late Arrival"
+msgstr "تأخر في الحضور"
+
+#. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "The end date must be on or after the start date."
-msgstr "يجب أن يكون تاريخ النهاية في أو بعد تاريخ البداية."
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__request_type__late_arrival
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+msgid "Late arrival request"
+msgstr "طلب تأخر في الحضور"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/attendance_location.py:0
+msgid "Latitude must be between -90 and 90."
+msgstr "يجب أن يكون خط العرض بين -90 و 90."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+msgid "Leave empty for no limit"
+msgstr "اتركه فارغاً لعدم تحديد حد"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/attendance_location.py:0
+msgid "Longitude must be between -180 and 180."
+msgstr "يجب أن يكون خط الطول بين -180 و 180."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Manager Assessment will show here"
+msgstr "سيظهر تقييم المدير هنا"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Manager's Feedback"
+msgstr "ملاحظات المدير"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_error
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_ids
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__in_mode
+msgid "Mode"
+msgstr "الوضع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Morning"
+msgstr "صباحاً"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_my_activities_filter
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_search_activity_filters
+msgid "My Activities"
+msgstr "أنشطتي"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__my_activity_date_deadline
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__my_activity_date_deadline
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد نشاطي النهائي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_allocations_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_allocations
+msgid "My Allocations"
+msgstr "مخصصاتي"
+
+#. module: attendance_location_portal
+#: model:ir.actions.act_window,name:attendance_location_portal.action_hr_attendance_my_activities
+msgid "My Attendance Activities"
+msgstr "أنشطة حضوري"
+
+#. module: attendance_location_portal
+#: model:ir.actions.act_window,name:attendance_location_portal.action_hr_attendance_adjustment_my_activities
+msgid "My Attendance Adjustment Activities"
+msgstr "أنشطة تعديل حضوري"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_adjustments_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance_adjustments
+msgid "My Attendance Adjustments"
+msgstr "تعديلات حضوري"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance
+msgid "My Attendances"
+msgstr "سجل حضوري"
+
+#. module: attendance_location_portal
+#: model:ir.actions.act_window,name:attendance_location_portal.action_hr_general_request_my_activities
+msgid "My General Request Activities"
+msgstr "أنشطة طلباتي العامة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_general_requests_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_general_requests
+msgid "My General Requests"
+msgstr "طلباتي العامة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+msgid "My Time Off"
+msgstr "إجازاتي"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+msgid "New Adjustment Request"
+msgstr "طلب تعديل جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "New Allocation Request"
+msgstr "طلب مخصص جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_appraisals
+msgid "New Appraisal"
+msgstr "تقييم جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+msgid "New Attendance Adjustment Request"
+msgstr "طلب تعديل حضور جديد"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "New Attendance Adjustment Request from %(employee)s"
+msgstr "طلب تعديل حضور جديد من %(employee)s"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+msgid "New General Request"
+msgstr "طلب عام جديد"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "New General Request from %(employee)s"
+msgstr "طلب عام جديد من %(employee)s"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
+msgid "New Request"
+msgstr "طلب جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "New Time Off Request"
+msgstr "طلب إجازة جديد"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Newest"
+msgstr "الأحدث"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_calendar_event_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_calendar_event_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_date_deadline
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_date_deadline
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_summary
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_summary
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_type_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_type_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "No Limit"
+msgstr "بدون حد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "No allocation requests found."
+msgstr "لا توجد طلبات مخصصات."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+msgid "No attendance adjustment requests found."
+msgstr "لا توجد طلبات تعديل حضور."
+
+#. module: attendance_location_portal
+#: model_terms:ir.actions.act_window,help:attendance_location_portal.hr_attendance_adjustment_request_action
+msgid "No attendance adjustment requests yet."
+msgstr "لا توجد طلبات تعديل حضور بعد."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/attendance_location.py:0
+msgid "No attendance location is configured for you."
+msgstr "لم يتم إعداد موقع حضور لك."
 
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "The validity end date must be on or after the start date."
-msgstr "يجب أن يكون تاريخ نهاية الصلاحية في أو بعد تاريخ البداية."
+msgid ""
+"No attendance location is configured for your employee. Please contact your "
+"HR manager."
+msgstr "لم يتم إعداد موقع حضور لموظفك. يرجى التواصل مع مدير الموارد البشرية."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "No attendance locations are configured yet."
+msgstr "لم يتم إعداد مواقع حضور بعد."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "No attendance records found."
+msgstr "لا توجد سجلات حضور."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "No description provided"
+msgstr "لم يتم تقديم وصف"
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Please provide both start and end hours."
-msgstr "يرجى تحديد ساعات البداية والنهاية."
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "No employee is linked to your user."
+msgstr "لا يوجد موظف مرتبط بحسابك."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+msgid "No general requests found."
+msgstr "لا توجد طلبات عامة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.actions.act_window,help:attendance_location_portal.hr_general_request_action
+msgid "No general requests yet."
+msgstr "لا توجد طلبات عامة بعد."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "No reason provided"
+msgstr "لم يتم تقديم سبب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+msgid "No time off requests found."
+msgstr "لا توجد طلبات إجازة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+msgid ""
+"No time off types are available for allocation requests. Please contact your"
+" HR manager."
+msgstr ""
+"لا توجد أنواع إجازات متاحة لطلبات المخصص. يرجى التواصل مع مدير الموارد "
+"البشرية."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "No time off types are available. Please contact your HR manager."
+msgstr "لا توجد أنواع إجازات متاحة. يرجى التواصل مع مدير الموارد البشرية."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__portal_note
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_form_note_page
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Note (optional)"
+msgstr "ملاحظة (اختياري)"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction_counter
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_error_counter
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction_counter
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_error_counter
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Oldest"
+msgstr "الأقدم"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Ongoing"
+msgstr "جارٍ"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid ""
+"Only Time Off Administrators can approve attendance adjustment requests."
+msgstr "يمكن لمسؤولي الإجازات فقط الموافقة على طلبات تعديل الحضور."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Only Time Off Administrators can approve general requests."
+msgstr "يمكن لمسؤولي الإجازات فقط الموافقة على الطلبات العامة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid ""
+"Only Time Off Administrators can refuse attendance adjustment requests."
+msgstr "يمكن لمسؤولي الإجازات فقط رفض طلبات تعديل الحضور."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Only Time Off Administrators can refuse general requests."
+msgstr "يمكن لمسؤولي الإجازات فقط رفض الطلبات العامة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_appraisal.py:0
+msgid "Only an appraiser can confirm this appraisal."
+msgstr "يمكن للمقيّم فقط تأكيد هذا التقييم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_appraisal.py:0
+msgid "Only draft appraisals can be confirmed."
+msgstr "يمكن تأكيد التقييمات في حالة المسودة فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Only requests pending approval can be approved."
+msgstr "يمكن الموافقة فقط على الطلبات قيد الانتظار."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Only requests pending approval can be refused."
+msgstr "يمكن الرفض فقط للطلبات قيد الانتظار."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Open Map"
+msgstr "فتح الخريطة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Optional reason for your request..."
+msgstr "سبب اختياري لطلبك..."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__out_mode
+msgid "Out Mode"
+msgstr "الوضع في الخارج"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -764,504 +1398,8 @@ msgstr "يرجى إدخال قيمة مخصص صالحة."
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "The allocation must be greater than zero."
-msgstr "يجب أن يكون المخصص أكبر من صفر."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "You can only cancel your own time off requests."
-msgstr "يمكنك إلغاء طلبات إجازتك فقط."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "This time off request cannot be cancelled."
-msgstr "لا يمكن إلغاء طلب الإجازة هذا."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "You can only cancel your own allocation requests."
-msgstr "يمكنك إلغاء طلبات المخصص الخاصة بك فقط."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "This allocation request cannot be cancelled."
-msgstr "لا يمكن إلغاء طلب المخصص هذا."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/attendance_location.py:0
-msgid "No attendance location is configured for you."
-msgstr "لم يتم إعداد موقع حضور لك."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/attendance_location.py:0
-msgid "You are out of location range."
-msgstr "أنت خارج نطاق الموقع المسموح."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/attendance_location.py:0
-msgid "You are within allowed range at %(location)s."
-msgstr "أنت ضمن النطاق المسموح في %(location)s."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/attendance_location.py:0
-msgid "You are within range of %(location)s. You can submit attendance now."
-msgstr "أنت ضمن نطاق %(location)s. يمكنك تسجيل الحضور الآن."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "No attendance location is configured for your employee. Please contact your HR manager."
-msgstr "لم يتم إعداد موقع حضور لموظفك. يرجى التواصل مع مدير الموارد البشرية."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid ""
-"You are outside the allowed attendance range.\n"
-"Nearest location: %(name)s\n"
-"Your distance: %(distance).2f KM\n"
-"Allowed range: %(allowed).2f KM"
-msgstr ""
-"أنت خارج نطاق الحضور المسموح.\n"
-"أقرب موقع: %(name)s\n"
-"مسافتك: %(distance).2f كم\n"
-"النطاق المسموح: %(allowed).2f كم"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid ""
-"You must check out from the same location where you checked in.\n"
-"Check-in location: %(check_in)s\n"
-"Your current location: %(current)s"
-msgstr ""
-"يجب تسجيل الانصراف من نفس موقع تسجيل الحضور.\n"
-"موقع تسجيل الحضور: %(check_in)s\n"
-"موقعك الحالي: %(current)s"
-
-#. module: attendance_location_portal
-#: model:ir.model,name:attendance_location_portal.model_hr_general_request
-msgid "General Request"
-msgstr "طلب عام"
-
-#. module: attendance_location_portal
-#: model:ir.model,name:attendance_location_portal.model_hr_attendance_adjustment_request
-msgid "Attendance Adjustment Request"
-msgstr "طلب تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__employee_id
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__employee_id
-msgid "Employee"
-msgstr "الموظف"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__date
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__date
-msgid "Date"
-msgstr "التاريخ"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__description
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__description
-msgid "Description"
-msgstr "الوصف"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__state
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__state
-msgid "Status"
-msgstr "الحالة"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__request_type
-msgid "Type"
-msgstr "النوع"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__time_minutes
-msgid "Time (minutes)"
-msgstr "الوقت (بالدقائق)"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__confirm
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__confirm
-msgid "To Approve"
-msgstr "بانتظار الموافقة"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__approve
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__approve
-msgid "Approved"
-msgstr "موافق عليه"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__refuse
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__refuse
-msgid "Refused"
-msgstr "مرفوض"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__request_type__early_departure
-msgid "Request for early departure"
-msgstr "طلب انصراف مبكر"
-
-#. module: attendance_location_portal
-#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__request_type__late_arrival
-msgid "Late arrival request"
-msgstr "طلب تأخر في الحضور"
-
-#. module: attendance_location_portal
-#: model:mail.activity.type,name:attendance_location_portal.mail_act_general_request_approval
-msgid "General Request Approval"
-msgstr "موافقة على طلب عام"
-
-#. module: attendance_location_portal
-#: model:mail.activity.type,name:attendance_location_portal.mail_act_attendance_adjustment_approval
-msgid "Attendance Adjustment Approval"
-msgstr "موافقة على تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model:ir.actions.act_window,name:attendance_location_portal.hr_general_request_action
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_tree
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
-msgid "General Requests"
-msgstr "الطلبات العامة"
-
-#. module: attendance_location_portal
-#: model:ir.actions.act_window,name:attendance_location_portal.hr_attendance_adjustment_request_action
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_tree
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-msgid "Attendance Adjustment Requests"
-msgstr "طلبات تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model:ir.actions.act_window,name:attendance_location_portal.action_hr_general_request_my_activities
-msgid "My General Request Activities"
-msgstr "أنشطة طلباتي العامة"
-
-#. module: attendance_location_portal
-#: model:ir.actions.act_window,name:attendance_location_portal.action_hr_attendance_adjustment_my_activities
-msgid "My Attendance Adjustment Activities"
-msgstr "أنشطة تعديل حضوري"
-
-#. module: attendance_location_portal
-#: model:ir.ui.menu,name:attendance_location_portal.menu_hr_general_requests
-msgid "General Requests"
-msgstr "الطلبات العامة"
-
-#. module: attendance_location_portal
-#: model:ir.ui.menu,name:attendance_location_portal.menu_hr_attendance_adjustment_requests
-msgid "Attendance Adjustment Requests"
-msgstr "طلبات تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
-msgid "General Request"
-msgstr "طلب عام"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
-msgid "Attendance Adjustment Request"
-msgstr "طلب تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
-msgid "Approve"
-msgstr "موافقة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
-msgid "Refuse"
-msgstr "رفض"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
-msgid "My Activities"
-msgstr "أنشطتي"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
-msgid "General Request Activities"
-msgstr "أنشطة الطلبات العامة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
-msgid "Attendance Adjustment Activities"
-msgstr "أنشطة تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_views.xml
-msgid "Late Activities"
-msgstr "الأنشطة المتأخرة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
-msgid "Today Activities"
-msgstr "أنشطة اليوم"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
-msgid "Future Activities"
-msgstr "الأنشطة المستقبلية"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-msgid "Early Departure"
-msgstr "انصراف مبكر"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
-msgid "Late Arrival"
-msgstr "تأخر في الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_action
-msgid "No general requests yet."
-msgstr "لا توجد طلبات عامة بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_action
-msgid "Portal employees can submit general requests from their portal account."
-msgstr "يمكن للموظفين تقديم طلبات عامة من حسابهم على البوابة."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_action
-msgid "No attendance adjustment requests yet."
-msgstr "لا توجد طلبات تعديل حضور بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_action
-msgid "Portal employees can submit attendance adjustment requests from their portal account."
-msgstr "يمكن للموظفين تقديم طلبات تعديل الحضور من حسابهم على البوابة."
-
-#. module: attendance_location_portal
-#: model:ir.rule,name:attendance_location_portal.hr_general_request_rule_portal
-msgid "Portal User: own general requests only"
-msgstr "مستخدم البوابة: طلباته العامة فقط"
-
-#. module: attendance_location_portal
-#: model:ir.rule,name:attendance_location_portal.hr_general_request_rule_company
-msgid "General Request: multi-company"
-msgstr "الطلب العام: متعدد الشركات"
-
-#. module: attendance_location_portal
-#: model:ir.rule,name:attendance_location_portal.hr_attendance_adjustment_request_rule_portal
-msgid "Portal User: own attendance adjustment requests only"
-msgstr "مستخدم البوابة: طلبات تعديل حضوره فقط"
-
-#. module: attendance_location_portal
-#: model:ir.rule,name:attendance_location_portal.hr_attendance_adjustment_request_rule_company
-msgid "Attendance Adjustment Request: multi-company"
-msgstr "طلب تعديل الحضور: متعدد الشركات"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_general_requests_entry
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_general_requests
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-msgid "My General Requests"
-msgstr "طلباتي العامة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_general_requests_entry
-msgid "Submit general requests and track approval status"
-msgstr "قدّم طلبات عامة وتابع حالة الموافقة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
-msgid "New General Request"
-msgstr "طلب عام جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-msgid "You have no general requests yet."
-msgstr "لا توجد لديك طلبات عامة بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
-msgid "Submit a general request for"
-msgstr "تقديم طلب عام لـ"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-msgid "Describe your request..."
-msgstr "صف طلبك..."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_failed_page
-msgid "General Request Error"
-msgstr "خطأ في الطلب العام"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_failed_page
-msgid "Back to My General Requests"
-msgstr "العودة إلى طلباتي العامة"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_adjustments_entry
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance_adjustments
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-msgid "My Attendance Adjustments"
-msgstr "تعديلات حضوري"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_adjustments_entry
-msgid "Request early departure or late arrival adjustments"
-msgstr "اطلب تعديلات الانصراف المبكر أو التأخر في الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-msgid "New Adjustment Request"
-msgstr "طلب تعديل جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-msgid "You have no attendance adjustment requests yet."
-msgstr "لا توجد لديك طلبات تعديل حضور بعد."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-msgid "Time (min)"
-msgstr "الوقت (دقيقة)"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-msgid "New Attendance Adjustment Request"
-msgstr "طلب تعديل حضور جديد"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-msgid "Submit an adjustment request for"
-msgstr "تقديم طلب تعديل لـ"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-msgid "Select a request type..."
-msgstr "اختر نوع الطلب..."
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_failed_page
-msgid "Attendance Adjustment Error"
-msgstr "خطأ في تعديل الحضور"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_failed_page
-msgid "Back to My Attendance Adjustments"
-msgstr "العودة إلى تعديلات حضوري"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "%(employee)s - %(date)s"
-msgstr "%(employee)s - %(date)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "New General Request from %(employee)s"
-msgstr "طلب عام جديد من %(employee)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Only Time Off Administrators can approve general requests."
-msgstr "يمكن لمسؤولي الإجازات فقط الموافقة على الطلبات العامة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Only requests pending approval can be approved."
-msgstr "يمكن الموافقة فقط على الطلبات قيد الانتظار."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Your general request has been approved."
-msgstr "تمت الموافقة على طلبك العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Only Time Off Administrators can refuse general requests."
-msgstr "يمكن لمسؤولي الإجازات فقط رفض الطلبات العامة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Only requests pending approval can be refused."
-msgstr "يمكن الرفض فقط للطلبات قيد الانتظار."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Your general request has been refused."
-msgstr "تم رفض طلبك العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "%(type)s - %(employee)s - %(date)s"
-msgstr "%(type)s - %(employee)s - %(date)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "New Attendance Adjustment Request from %(employee)s"
-msgstr "طلب تعديل حضور جديد من %(employee)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Only Time Off Administrators can approve attendance adjustment requests."
-msgstr "يمكن لمسؤولي الإجازات فقط الموافقة على طلبات تعديل الحضور."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Your attendance adjustment request has been approved."
-msgstr "تمت الموافقة على طلب تعديل حضورك."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Only Time Off Administrators can refuse attendance adjustment requests."
-msgstr "يمكن لمسؤولي الإجازات فقط رفض طلبات تعديل الحضور."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Your attendance adjustment request has been refused."
-msgstr "تم رفض طلب تعديل حضورك."
+msgid "Please enter a valid time in minutes."
+msgstr "يرجى إدخال وقت صالح بالدقائق."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1272,8 +1410,8 @@ msgstr "يرجى تقديم وصف لطلبك."
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Please select a valid request type."
-msgstr "يرجى اختيار نوع طلب صالح."
+msgid "Please provide both start and end hours."
+msgstr "يرجى تحديد ساعات البداية والنهاية."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1284,14 +1422,494 @@ msgstr "يرجى اختيار تاريخ."
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Please enter a valid time in minutes."
-msgstr "يرجى إدخال وقت صالح بالدقائق."
+msgid "Please select a start date."
+msgstr "يرجى اختيار تاريخ البداية."
 
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
-msgid "Time in minutes must be greater than zero."
-msgstr "يجب أن يكون الوقت بالدقائق أكبر من صفر."
+msgid "Please select a time off type."
+msgstr "يرجى اختيار نوع الإجازة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Please select a valid request type."
+msgstr "يرجى اختيار نوع طلب صالح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Please select a validity start date."
+msgstr "يرجى اختيار تاريخ بداية الصلاحية."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Please select an appraisal date."
+msgstr "يرجى اختيار تاريخ التقييم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Please select an employee to review."
+msgstr "يرجى اختيار الموظف المراد تقييمه."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Please select at least one appraiser."
+msgstr "يرجى اختيار مقيّم واحد على الأقل."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid ""
+"Please set a valid Work Email on the employee first. It will be used as the "
+"portal user login."
+msgstr ""
+"يرجى تعيين بريد عمل صالح للموظف أولاً. سيُستخدم كاسم دخول لمستخدم البوابة."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_hr_admin
+#: model:res.groups,name:attendance_location_portal.group_portal_hr_admin
+msgid "Portal Admin"
+msgstr "مسؤول البوابة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Portal Admin User"
+msgstr "مستخدم بوابة مسؤول"
+
+#. module: attendance_location_portal
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_hr
+msgid "Portal HR"
+msgstr "الموارد البشرية للبوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_appraisal__portal_state_label
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__portal_state_label
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__portal_state_label
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave__portal_state_label
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave_allocation__portal_state_label
+msgid "Portal State Label"
+msgstr "تسمية حالة البوابة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Portal User"
+msgstr "مستخدم البوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_hr_admin
+msgid ""
+"Portal admin users can view all attendance, general requests, time off, "
+"allocations, and attendance adjustments in the portal."
+msgstr ""
+"يمكن لمسؤولي البوابة عرض كل الحضور والطلبات العامة والإجازات والمخصصات "
+"وتعديلات الحضور في البوابة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.actions.act_window,help:attendance_location_portal.hr_attendance_adjustment_request_action
+msgid ""
+"Portal employees can submit attendance adjustment requests from their portal"
+" account."
+msgstr "يمكن للموظفين تقديم طلبات تعديل الحضور من حسابهم على البوابة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.actions.act_window,help:attendance_location_portal.hr_general_request_action
+msgid ""
+"Portal employees can submit general requests from their portal account."
+msgstr "يمكن للموظفين تقديم طلبات عامة من حسابهم على البوابة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Private"
+msgstr "خاص"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Private Note"
+msgstr "ملاحظة خاصة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Private note (only accessible to people set as managers)."
+msgstr "ملاحظة خاصة (متاحة فقط للأشخاص المعيّنين كمديرين)."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "Reason"
+msgstr "السبب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Reason (optional)"
+msgstr "السبب (اختياري)"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Reasons"
+msgstr "الأسباب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Refresh Location"
+msgstr "تحديث الموقع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__refuse
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__refuse
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Remove"
+msgstr "إزالة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
+msgid "Request Details"
+msgstr "تفاصيل الطلب"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__request_type_label
+msgid "Request Type Label"
+msgstr "تسمية نوع الطلب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_adjustments_entry
+msgid "Request early departure or late arrival adjustments"
+msgstr "اطلب تعديلات الانصراف المبكر أو التأخر في الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_allocations_entry
+msgid "Request extra days allocation and track approval status"
+msgstr "اطلب مخصص أيام إضافية وتابع حالة الموافقة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__request_type__early_departure
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+msgid "Request for early departure"
+msgstr "طلب انصراف مبكر"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
+msgid "Request time off and track approval status"
+msgstr "قدّم طلب إجازة وتابع حالة الموافقة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_user_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_user_id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_sms_error
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Save"
+msgstr "حفظ"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Search in All"
+msgstr "البحث في الكل"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Search in Description"
+msgstr "البحث في الوصف"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Search in Employee"
+msgstr "البحث في الموظف"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Search in Location"
+msgstr "البحث في الموقع"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Search in Note"
+msgstr "البحث في الملاحظة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Search in Time Off Type"
+msgstr "البحث في نوع الإجازة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
+msgid "Second Approval"
+msgstr "الموافقة الثانية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+msgid "Select a request type..."
+msgstr "اختر نوع الطلب..."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Self Assessment will show here"
+msgstr "سيظهر التقييم الذاتي هنا"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Shared to Appraisers"
+msgstr "مشارك مع المقيّمين"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Shared to Employee"
+msgstr "مشارك مع الموظف"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__state
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__state
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Status"
+msgstr "الحالة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance__activity_state
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__activity_state
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز الموعد النهائي\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Submit Request"
+msgstr "إرسال الطلب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+msgid "Submit a general request for"
+msgstr "تقديم طلب عام لـ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Submit a time off request for"
+msgstr "قدّم طلب إجازة لـ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+msgid "Submit an adjustment request for"
+msgstr "تقديم طلب تعديل لـ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+msgid "Submit an allocation request for"
+msgstr "قدّم طلب مخصص لـ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_general_requests_entry
+msgid "Submit general requests and track approval status"
+msgstr "قدّم طلبات عامة وتابع حالة الموافقة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance
+msgid "Take Attendance"
+msgstr "تسجيل الحضور"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "Template"
+msgstr "قالب"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "Template not found."
+msgstr "لم يتم العثور على القالب."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "The allocation must be greater than zero."
+msgstr "يجب أن يكون المخصص أكبر من صفر."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "The appraisal has been confirmed."
+msgstr "تم تأكيد التقييم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "The end date must be on or after the start date."
+msgstr "يجب أن يكون تاريخ النهاية في أو بعد تاريخ البداية."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "The selected time off type is not available for you."
+msgstr "نوع الإجازة المحدد غير متاح لك."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "The selected time off type is not available."
+msgstr "نوع الإجازة المحدد غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "The validity end date must be on or after the start date."
+msgstr "يجب أن يكون تاريخ نهاية الصلاحية في أو بعد تاريخ البداية."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "This Week"
+msgstr "هذا الأسبوع"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "This allocation request cannot be cancelled."
+msgstr "لا يمكن إلغاء طلب المخصص هذا."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "This allocation request does not exist or is not accessible."
+msgstr "طلب المخصص هذا غير موجود أو غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "This allocation request is not accessible."
+msgstr "طلب المخصص هذا غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+#: code:addons/attendance_location_portal/models/hr_appraisal.py:0
+msgid "This appraisal does not exist or is not accessible."
+msgstr "هذا التقييم غير موجود أو غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_appraisal.py:0
+msgid "This appraisal is done and can no longer be edited."
+msgstr "هذا التقييم منتهٍ ولا يمكن تعديله بعد الآن."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "This appraisal is not accessible."
+msgstr "هذا التقييم غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+msgid ""
+"This attendance adjustment request does not exist or is not accessible."
+msgstr "طلب تعديل الحضور هذا غير موجود أو غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+msgid "This attendance adjustment request is not accessible."
+msgstr "طلب تعديل الحضور هذا غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "This employee already has a linked user."
+msgstr "هذا الموظف مرتبط بمستخدم بالفعل."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1307,99 +1925,454 @@ msgstr "هذا الطلب العام غير متاح."
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
-#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
-msgid "Unexpected error while submitting your request. Please try again."
-msgstr "حدث خطأ غير متوقع أثناء إرسال طلبك. يرجى المحاولة مرة أخرى."
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "This time off request cannot be cancelled."
+msgstr "لا يمكن إلغاء طلب الإجازة هذا."
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
-msgid "This attendance adjustment request does not exist or is not accessible."
-msgstr "طلب تعديل الحضور هذا غير موجود أو غير متاح."
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "This time off request does not exist or is not accessible."
+msgstr "طلب الإجازة هذا غير موجود أو غير متاح."
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
-msgid "This attendance adjustment request is not accessible."
-msgstr "طلب تعديل الحضور هذا غير متاح."
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "This time off request is not accessible."
+msgstr "طلب الإجازة هذا غير متاح."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+msgid "Time (min)"
+msgstr "الوقت (دقيقة)"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__time_minutes
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+msgid "Time (minutes)"
+msgstr "الوقت (بالدقائق)"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_hr_leave_allocation
+msgid "Time Off Allocation"
+msgstr "مخصص الإجازات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_failed_page
+msgid "Time Off Error"
+msgstr "خطأ في الإجازة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+msgid "Time Off Request"
+msgstr "طلب إجازة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "Time Off Type"
+msgstr "نوع الإجازة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Time in minutes must be greater than zero."
+msgstr "يجب أن يكون الوقت بالدقائق أكبر من صفر."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Time off request cancelled successfully."
+msgstr "تم إلغاء طلب الإجازة بنجاح."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "To"
+msgstr "إلى"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__confirm
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__confirm
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
+msgid "To Approve"
+msgstr "بانتظار الموافقة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_my_activities_filter
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_search_activity_filters
+msgid "Today Activities"
+msgstr "أنشطة اليوم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_failed_page
+msgid "Try Again"
+msgstr "حاول مرة أخرى"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__request_type
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
 msgid "Type"
 msgstr "النوع"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance__activity_exception_decoration
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__activity_exception_decoration
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء في السجل."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Unexpected error while cancelling allocation. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء إلغاء المخصص. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Unexpected error while cancelling time off. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء إلغاء الإجازة. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Unexpected error while recording attendance. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء تسجيل الحضور. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "Unexpected error while saving your appraisal. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء حفظ التقييم. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Unexpected error while submitting allocation. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء إرسال طلب المخصص. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Unexpected error while submitting time off. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء إرسال طلب الإجازة. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "Unexpected error while submitting your appraisal. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء إرسال التقييم. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "Unexpected error while submitting your request. Please try again."
+msgstr "حدث خطأ غير متوقع أثناء إرسال طلبك. يرجى المحاولة مرة أخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "Unknown"
+msgstr "غير معروف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "Validity Period"
+msgstr "فترة الصلاحية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_allocations_entry
+msgid "View all employees allocation requests and approval status"
+msgstr "عرض طلبات المخصصات لجميع الموظفين وحالة الموافقة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_adjustments_entry
+msgid "View all employees attendance adjustment requests"
+msgstr "عرض طلبات تعديل الحضور لجميع الموظفين"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
+msgid "View all employees check-in and check-out history"
+msgstr "عرض سجل الحضور والانصراف لجميع الموظفين"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_general_requests_entry
+msgid "View all employees general requests and approval status"
+msgstr "عرض الطلبات العامة لجميع الموظفين وحالة الموافقة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
+msgid "View all employees time off requests and approval status"
+msgstr "عرض طلبات الإجازة لجميع الموظفين وحالة الموافقة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
+msgid "View your check-in and check-out history"
+msgstr "عرض سجل تسجيل الحضور والانصراف"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__website_message_ids
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__website_message_ids
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_general_request__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "Welcome"
+msgstr "مرحباً"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Worked Hours"
+msgstr "ساعات العمل"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/attendance_location.py:0
+msgid "You are out of location range."
+msgstr "أنت خارج نطاق الموقع المسموح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid ""
+"You are outside the allowed attendance range.\n"
+"Nearest location: %(name)s\n"
+"Your distance: %(distance).2f m\n"
+"Allowed range: %(allowed).2f m"
+msgstr ""
+"أنت خارج نطاق الحضور المسموح.\n"
+"أقرب موقع: %(name)s\n"
+"مسافتك: %(distance).2f م\n"
+"المدى المسموح: %(allowed).2f م"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/attendance_location.py:0
+msgid "You are within range of %(location)s. You can submit attendance now."
+msgstr "أنت ضمن نطاق %(location)s. يمكنك تسجيل الحضور الآن."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "You can only cancel your own allocation requests."
+msgstr "يمكنك إلغاء طلبات المخصص الخاصة بك فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "You can only cancel your own time off requests."
+msgstr "يمكنك إلغاء طلبات إجازتك فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "You can only manage your own employee records."
+msgstr "يمكنك إدارة سجلات الموظف الخاصة بك فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_appraisal.py:0
+msgid "You cannot change the appraisers of this appraisal."
+msgstr "لا يمكنك تغيير مقيّمي هذا التقييم."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
+msgid "You have no allocation requests yet."
+msgstr "لا توجد طلبات مخصص بعد."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
+msgid "You have no appraisals yet."
+msgstr "ليس لديك تقييمات بعد."
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+msgid "You have no attendance adjustment requests yet."
+msgstr "لا توجد لديك طلبات تعديل حضور بعد."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "You have no attendance records yet."
+msgstr "لا توجد سجلات حضور بعد."
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
-msgid "Date"
-msgstr "التاريخ"
+msgid "You have no general requests yet."
+msgstr "لا توجد لديك طلبات عامة بعد."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
-msgid "Description"
-msgstr "الوصف"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+msgid "You have no time off requests yet."
+msgstr "لا توجد طلبات إجازة بعد."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
-msgid "Time (minutes)"
-msgstr "الوقت (بالدقائق)"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid ""
+"You must check out from the same location where you checked in.\n"
+"Check-in location: %(check_in)s\n"
+"Your current location: %(current)s"
+msgstr ""
+"يجب تسجيل الانصراف من نفس موقع تسجيل الحضور.\n"
+"موقع تسجيل الحضور: %(check_in)s\n"
+"موقعك الحالي: %(current)s"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
-msgid "Submit Request"
-msgstr "إرسال الطلب"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid ""
+"You've already booked time off which overlaps with this period:\n"
+"%s"
+msgstr ""
+"لديك بالفعل إجازة تتداخل مع هذه الفترة:\n"
+"%s"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
-msgid "Cancel"
-msgstr "إلغاء"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Your %(leave_type)s planned on %(date)s has been accepted"
+msgstr "تمت الموافقة على %(leave_type)s المخطط في %(date)s"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_attendance_adjustments
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_general_requests
-msgid "New Request"
-msgstr "طلب جديد"
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid ""
+"Your account is not linked to an employee record. Please contact your "
+"administrator."
+msgstr "حسابك غير مرتبط بسجل موظف. يرجى التواصل مع المسؤول."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-msgid "Request for early departure"
-msgstr "طلب انصراف مبكر"
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "Your appraisal has been saved."
+msgstr "تم حفظ تقييمك."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
-msgid "Late arrival request"
-msgstr "طلب تأخر في الحضور"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Your attendance adjustment request has been approved."
+msgstr "تمت الموافقة على طلب تعديل حضورك."
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
-msgid "Status"
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Your attendance adjustment request has been refused."
+msgstr "تم رفض طلب تعديل حضورك."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Your general request has been approved."
+msgstr "تمت الموافقة على طلبك العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Your general request has been refused."
+msgstr "تم رفض طلبك العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Your location could not be detected. Please enable GPS."
+msgstr "تعذر تحديد موقعك. يرجى تفعيل GPS."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "check_in"
+msgstr "تسجيل الحضور"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "check_out"
+msgstr "تسجيل الانصراف"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
+msgid "date_close"
+msgstr "تاريخ الإغلاق"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "e.g. John Doe"
+msgstr "مثال: أحمد علي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "m"
+msgstr "م"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+msgid "once published"
+msgstr "بعد النشر"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "recorded at"
+msgstr "تم التسجيل في"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "state"
 msgstr "الحالة"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
-msgid "No description provided"
-msgstr "لم يتم تقديم وصف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
-msgid "Back to list"
-msgstr "العودة إلى القائمة"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+msgid "to"
+msgstr "إلى"
