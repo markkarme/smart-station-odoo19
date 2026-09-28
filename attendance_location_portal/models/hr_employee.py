@@ -15,6 +15,41 @@ class HrEmployee(models.Model):
         help="If set, the employee can check in/out only from these locations. "
         "If empty, company-wide attendance location rules apply.",
     )
+    is_portal_hr_admin = fields.Boolean(
+        string="Portal Admin",
+        compute="_compute_is_portal_hr_admin",
+        inverse="_inverse_is_portal_hr_admin",
+        help="Portal admin users can view all attendance, general requests, "
+        "time off, allocations, and attendance adjustments in the portal.",
+    )
+
+    def _get_portal_hr_admin_group(self):
+        return self.env.ref(
+            "attendance_location_portal.group_portal_hr_admin",
+            raise_if_not_found=False,
+        )
+
+    def _compute_is_portal_hr_admin(self):
+        admin_group = self._get_portal_hr_admin_group()
+        for employee in self:
+            employee.is_portal_hr_admin = bool(
+                admin_group
+                and employee.user_id
+                and admin_group in employee.user_id.group_ids
+            )
+
+    def _inverse_is_portal_hr_admin(self):
+        admin_group = self._get_portal_hr_admin_group()
+        if not admin_group:
+            return
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            if employee.is_portal_hr_admin:
+                user.sudo().write({"group_ids": [(4, admin_group.id)]})
+            else:
+                user.sudo().write({"group_ids": [(3, admin_group.id)]})
 
     def _attendance_action_change(self, geo_information=None):
         """On check-in, save attendance under the location's company."""
@@ -36,6 +71,12 @@ class HrEmployee(models.Model):
         return self.env["hr.attendance"].create(vals)
 
     def action_create_portal_user(self):
+        return self._create_portal_user(as_admin=False)
+
+    def action_create_portal_admin_user(self):
+        return self._create_portal_user(as_admin=True)
+
+    def _create_portal_user(self, as_admin=False):
         self.ensure_one()
         if self.user_id:
             raise UserError(_("This employee already has a linked user."))
@@ -80,6 +121,7 @@ class HrEmployee(models.Model):
 
         portal_group = self.env.ref("base.group_portal")
         public_group = self.env.ref("base.group_public")
+        admin_group = self._get_portal_hr_admin_group()
         allowed_companies = self.company_ids or self.company_id
         main_company = self.company_id if self.company_id in allowed_companies else allowed_companies[:1]
 
@@ -103,16 +145,22 @@ class HrEmployee(models.Model):
                 }
             )
 
+        group_commands = [(4, portal_group.id), (3, public_group.id)]
+        if as_admin and admin_group:
+            group_commands.append((4, admin_group.id))
+        elif admin_group:
+            group_commands.append((3, admin_group.id))
+
         user.write(
             {
                 "active": True,
-                "group_ids": [(4, portal_group.id), (3, public_group.id)],
+                "group_ids": group_commands,
             }
         )
         self.user_id = user.id
         return {
             "type": "ir.actions.act_window",
-            "name": _("Portal User"),
+            "name": _("Portal Admin User") if as_admin else _("Portal User"),
             "res_model": "res.users",
             "view_mode": "form",
             "res_id": user.id,

@@ -20,8 +20,14 @@
         <div id="portal_common_category" position="inside">
             <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
-                <t t-set="title">My Attendance Adjustments</t>
-                <t t-set="text">Request early departure or late arrival adjustments</t>
+                <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_hr_admin')">
+                    <t t-set="title">All Attendance Adjustments</t>
+                    <t t-set="text">View all employees attendance adjustment requests</t>
+                </t>
+                <t t-else="">
+                    <t t-set="title">My Attendance Adjustments</t>
+                    <t t-set="text">Request early departure or late arrival adjustments</t>
+                </t>
                 <t t-set="url" t-value="'/my/attendance_adjustments'"/>
                 <t t-set="config_card" t-value="True"/>
             </t>
@@ -32,7 +38,10 @@
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
-                <t t-set="title">My Attendance Adjustments</t>
+                <t t-set="title">All Attendance Adjustments</t>
+                <t t-if="not is_portal_hr_admin">
+                    <t t-set="title">My Attendance Adjustments</t>
+                </t>
             </t>
 
             <div class="d-flex justify-content-end mb-3">
@@ -43,13 +52,15 @@
             </div>
 
             <div t-if="not adjustment_requests" class="alert alert-info">
-                <t>You have no attendance adjustment requests yet.</t>
+                <t t-if="is_portal_hr_admin">No attendance adjustment requests found.</t>
+                <t t-else="">You have no attendance adjustment requests yet.</t>
             </div>
 
             <t t-if="adjustment_requests">
                 <t t-call="portal.portal_table">
                     <thead>
                         <tr>
+                            <th t-if="is_portal_hr_admin"><t>Employee</t></th>
                             <th><t>Type</t></th>
                             <th><t>Date</t></th>
                             <th class="text-end"><t>Time (min)</t></th>
@@ -59,6 +70,9 @@
                     </thead>
                     <tbody>
                         <tr t-foreach="adjustment_requests" t-as="adjustment_request">
+                            <td t-if="is_portal_hr_admin">
+                                <span t-out="adjustment_request.employee_id.name"/>
+                            </td>
                             <td>
                                 <a t-att-href="'/my/attendance_adjustments/%s' % adjustment_request.id">
                                     <span t-out="request_type_labels.get(adjustment_request.request_type, adjustment_request.request_type)"/>

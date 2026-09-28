@@ -14,6 +14,14 @@
                     invisible="user_id"
                     groups="hr.group_hr_user"
                 />
+                <button
+                    name="action_create_portal_admin_user"
+                    type="object"
+                    string="Create Portal Admin User"
+                    class="btn-secondary"
+                    invisible="user_id"
+                    groups="hr.group_hr_user"
+                />
             </xpath>
         </field>
     </record>
@@ -28,6 +36,11 @@
                     name="attendance_location_ids"
                     widget="many2many_tags"
                     options="{'no_create_edit': True}"
+                    groups="hr.group_hr_user"
+                />
+                <field
+                    name="is_portal_hr_admin"
+                    invisible="not user_id"
                     groups="hr.group_hr_user"
                 />
             </xpath>

@@ -6,6 +6,8 @@ from odoo.exceptions import AccessError, UserError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
 
+from .portal_common import PortalHrMixin
+
 _logger = logging.getLogger(__name__)
 
 ADJUSTMENT_REQUEST_STATE_BADGES = {
@@ -30,16 +32,12 @@ def _get_adjustment_request_type_labels(env):
     }
 
 
-class PortalAttendanceAdjustmentController(http.Controller):
-    def _get_user_employee(self):
-        employee = request.env.user.employee_id
-        if not employee:
-            employee = request.env.user.employee_ids[:1]
-        return employee
-
+class PortalAttendanceAdjustmentController(PortalHrMixin, http.Controller):
     def _get_employee_adjustment_request(self, employee, request_id):
         adjustment_request = request.env["hr.attendance.adjustment.request"].sudo().browse(request_id)
-        if not adjustment_request.exists() or adjustment_request.employee_id != employee:
+        if not adjustment_request.exists() or not self._portal_can_access_employee_record(
+            employee, adjustment_request.employee_id
+        ):
             raise AccessError(_("This attendance adjustment request does not exist or is not accessible."))
         return adjustment_request
 
@@ -63,8 +61,9 @@ class PortalAttendanceAdjustmentController(http.Controller):
                 },
             )
 
+        is_portal_hr_admin = self._is_portal_hr_admin()
         request_model = request.env["hr.attendance.adjustment.request"].sudo()
-        domain = [("employee_id", "=", employee.id)]
+        domain = self._portal_employee_domain(employee)
         request_count = request_model.search_count(domain)
         pager = portal_pager(
             url="/my/attendance_adjustments",
@@ -86,6 +85,7 @@ class PortalAttendanceAdjustmentController(http.Controller):
             "request_state_labels": _get_adjustment_request_state_labels(request.env),
             "request_state_badges": ADJUSTMENT_REQUEST_STATE_BADGES,
             "request_type_labels": _get_adjustment_request_type_labels(request.env),
+            "is_portal_hr_admin": is_portal_hr_admin,
         }
         return request.render("attendance_location_portal.portal_my_attendance_adjustments", values)
 
@@ -192,5 +192,6 @@ class PortalAttendanceAdjustmentController(http.Controller):
             "request_type_labels": _get_adjustment_request_type_labels(request.env),
             "success_message": kwargs.get("success"),
             "error_message": kwargs.get("error"),
+            "is_portal_hr_admin": self._is_portal_hr_admin(),
         }
         return request.render("attendance_location_portal.portal_attendance_adjustment_detail", values)

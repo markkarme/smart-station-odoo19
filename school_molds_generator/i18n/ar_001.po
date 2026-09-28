@@ -25,6 +25,18 @@ msgid "School Molds"
 msgstr "قوالب المدرسة"
 
 #. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_report
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_report
+msgid "Health Insurance Sheet"
+msgstr "نموذج التأمين الصحي"
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_form_27_report
+#: model:ir.ui.menu,name:school_molds_generator.menu_form_27_report
+msgid "Form 27 report"
+msgstr "تقرير النموذج 27"
+
+#. module: school_molds_generator
 #: model:ir.model,name:school_molds_generator.model_school_mold
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
 msgid "School Mold"
@@ -54,6 +66,11 @@ msgstr "الشعبة"
 #: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__term
 msgid "Term"
 msgstr "الفصل"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__term_types
+msgid "Specialization"
+msgstr "التخصص"
 
 #. module: school_molds_generator
 #: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__first
@@ -221,3 +238,49 @@ msgstr "أضف الأعمدة قبل تنزيل القالب."
 #: code:addons/school_molds_generator/models/school_mold.py:0
 msgid "New Mold"
 msgstr "قالب جديد"
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_letter
+#: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_letter
+#: model:ir.model,name:school_molds_generator.model_health_insurance_letter
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_letter
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
+msgid "Health Insurance report"
+msgstr "جواب التأمين الصحي"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
+msgid "Download PDF"
+msgstr "تحميل PDF"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
+msgid "cancel"
+msgstr "إلغاء"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__student_id
+msgid "الطالب"
+msgstr "الطالب"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__student_name
+msgid "اسم الطالب"
+msgstr "اسم الطالب"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__insurance_number
+msgid "رقم بطاقة التأمين الصحي"
+msgstr "رقم بطاقة التأمين الصحي"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__region
+msgid "المنطقة"
+msgstr "المنطقة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__station
+msgid "المحطة"
+msgstr "المحطة"
+
+

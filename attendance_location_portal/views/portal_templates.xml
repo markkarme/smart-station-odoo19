@@ -15,6 +15,7 @@
 
     <template id="portal_my_home_attendance_entry" inherit_id="portal.portal_my_home" priority="50">
         <div id="portal_common_category" position="inside">
+            <t t-set="is_portal_hr_admin" t-value="request.env.user.has_group('attendance_location_portal.group_portal_hr_admin')"/>
             <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
                 <t t-set="title">Take Attendance</t>
@@ -24,8 +25,14 @@
             </t>
             <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
-                <t t-set="title">My Attendances</t>
-                <t t-set="text">View your check-in and check-out history</t>
+                <t t-if="is_portal_hr_admin">
+                    <t t-set="title">All Attendances</t>
+                    <t t-set="text">View all employees check-in and check-out history</t>
+                </t>
+                <t t-else="">
+                    <t t-set="title">My Attendances</t>
+                    <t t-set="text">View your check-in and check-out history</t>
+                </t>
                 <t t-set="url" t-value="'/my/attendances'"/>
                 <t t-set="config_card" t-value="True"/>
             </t>
@@ -150,17 +157,22 @@
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
-                <t t-set="title">My Attendances</t>
+                <t t-set="title">All Attendances</t>
+                <t t-if="not is_portal_hr_admin">
+                    <t t-set="title">My Attendances</t>
+                </t>
             </t>
 
             <div t-if="not attendances" class="alert alert-info">
-                You have no attendance records yet.
+                <t t-if="is_portal_hr_admin">No attendance records found.</t>
+                <t t-else="">You have no attendance records yet.</t>
             </div>
 
             <t t-if="attendances">
                 <t t-call="portal.portal_table">
                     <thead>
                         <tr>
+                            <th t-if="is_portal_hr_admin">Employee</th>
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th class="text-end">Worked Hours</th>
@@ -170,6 +182,9 @@
                     </thead>
                     <tbody>
                         <tr t-foreach="attendances" t-as="attendance">
+                            <td t-if="is_portal_hr_admin">
+                                <span t-out="attendance.employee_id.name"/>
+                            </td>
                             <td>
                                 <span t-field="attendance.check_in"/>
                             </td>

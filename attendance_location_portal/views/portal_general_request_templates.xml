@@ -20,8 +20,14 @@
         <div id="portal_common_category" position="inside">
             <t t-if="request.env.user.sudo().employee_ids" t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/hr_holidays/static/description/icon.svg'"/>
-                <t t-set="title">My General Requests</t>
-                <t t-set="text">Submit general requests and track approval status</t>
+                <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_hr_admin')">
+                    <t t-set="title">All General Requests</t>
+                    <t t-set="text">View all employees general requests and approval status</t>
+                </t>
+                <t t-else="">
+                    <t t-set="title">My General Requests</t>
+                    <t t-set="text">Submit general requests and track approval status</t>
+                </t>
                 <t t-set="url" t-value="'/my/general_requests'"/>
                 <t t-set="config_card" t-value="True"/>
             </t>
@@ -32,7 +38,10 @@
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
-                <t t-set="title">My General Requests</t>
+                <t t-set="title">All General Requests</t>
+                <t t-if="not is_portal_hr_admin">
+                    <t t-set="title">My General Requests</t>
+                </t>
             </t>
 
             <div class="d-flex justify-content-end mb-3">
@@ -43,13 +52,15 @@
             </div>
 
             <div t-if="not general_requests" class="alert alert-info">
-                <t>You have no general requests yet.</t>
+                <t t-if="is_portal_hr_admin">No general requests found.</t>
+                <t t-else="">You have no general requests yet.</t>
             </div>
 
             <t t-if="general_requests">
                 <t t-call="portal.portal_table">
                     <thead>
                         <tr>
+                            <th t-if="is_portal_hr_admin"><t>Employee</t></th>
                             <th><t>Date</t></th>
                             <th><t>Description</t></th>
                             <th class="text-end"><t>Status</t></th>
@@ -57,6 +68,9 @@
                     </thead>
                     <tbody>
                         <tr t-foreach="general_requests" t-as="general_request">
+                            <td t-if="is_portal_hr_admin">
+                                <span t-out="general_request.employee_id.name"/>
+                            </td>
                             <td>
                                 <a t-att-href="'/my/general_requests/%s' % general_request.id">
                                     <span t-field="general_request.date"/>
@@ -127,6 +141,9 @@
                         <div>
                             <h3 class="mb-1"><t>General Request</t></h3>
                             <p class="mb-0 text-muted" t-out="general_request.name"/>
+                            <p t-if="is_portal_hr_admin" class="mb-0 text-muted">
+                                <t>Employee:</t> <strong t-out="general_request.employee_id.name"/>
+                            </p>
                         </div>
                         <a href="/my/general_requests" class="btn btn-outline-secondary btn-sm"><t>Back to list</t></a>
                     </div>

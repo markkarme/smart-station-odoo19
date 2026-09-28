@@ -76,33 +76,48 @@ export class SchoolMoldGridField extends Component {
 
     _readColumns(record) {
         const payload = record.data.column_payload;
+        let columns = [];
         if (Array.isArray(payload) && payload.length) {
-            return payload.map((col) => ({
+            columns = payload.map((col, index) => ({
+                uid: `${col.id || col.sequence || index}_${col.key}`,
                 key: col.key,
                 name: col.name,
                 groupName: col.group_name || "",
                 colType: col.col_type,
                 color: col.color || "#FFFFFF",
                 maxValue: col.max_value,
+                includeInGrandTotal: col.include_in_grand_total !== false,
             }));
+        } else {
+            const columnList = record.data.column_ids;
+            if (!columnList) {
+                return [];
+            }
+            columns = columnList.records
+                .slice()
+                .sort((a, b) => (a.data.sequence || 0) - (b.data.sequence || 0))
+                .map((col, index) => ({
+                    uid: `${col.id || index}_${col.data.key}`,
+                    id: col.id,
+                    key: col.data.key,
+                    name: col.data.name,
+                    groupName: col.data.group_name || "",
+                    colType: col.data.col_type,
+                    color: col.data.color || "#FFFFFF",
+                    maxValue: col.data.max_value,
+                    includeInGrandTotal: col.data.include_in_grand_total !== false,
+                    record: col,
+                }));
         }
-        const columns = record.data.column_ids;
-        if (!columns) {
-            return [];
-        }
-        return columns.records
-            .slice()
-            .sort((a, b) => (a.data.sequence || 0) - (b.data.sequence || 0))
-            .map((col) => ({
-                id: col.id,
-                key: col.data.key,
-                name: col.data.name,
-                groupName: col.data.group_name || "",
-                colType: col.data.col_type,
-                color: col.data.color || "#FFFFFF",
-                maxValue: col.data.max_value,
-                record: col,
-            }));
+        // Keep first occurrence per key (guards against duplicated default/onchange columns).
+        const seen = new Set();
+        return columns.filter((col) => {
+            if (seen.has(col.key)) {
+                return false;
+            }
+            seen.add(col.key);
+            return true;
+        });
     }
 
     _readRows(record) {
@@ -172,7 +187,7 @@ export class SchoolMoldGridField extends Component {
         }
         if (column.colType === "grand_total") {
             const subtotal = columns
-                .filter((col) => col.colType === "subtotal")
+                .filter((col) => col.colType === "subtotal" && col.includeInGrandTotal !== false)
                 .reduce((sum, col) => sum + (this._toNumber(this._computedValue(col, values, columns)) || 0), 0);
             const summary = this._toNumber(
                 this._computedValue({ colType: "total" }, values, columns)
@@ -205,7 +220,11 @@ export class SchoolMoldGridField extends Component {
     }
 
     isIdentity(column) {
-        return ["serial", "seat_number", "pin_number", "name", "class"].includes(column.colType);
+        return ["serial", "seat_number", "pin_number", "name", "class", "text"].includes(column.colType);
+    }
+
+    get showMaxRow() {
+        return this.state.columns.some((column) => !this.isIdentity(column));
     }
 
     isReadonly(column) {
@@ -221,6 +240,8 @@ export class SchoolMoldGridField extends Component {
         const values = { ...(row.record.data.values_json || {}) };
         if (raw === "") {
             delete values[column.key];
+        } else if (this.isIdentity(column)) {
+            values[column.key] = raw;
         } else {
             const number = this._toNumber(raw);
             values[column.key] = number === null ? raw : number;

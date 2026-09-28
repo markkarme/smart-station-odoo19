@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.5.1",
+    "version": "19.0.1.6.2",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -9,12 +9,17 @@ Employees can check in and check out from the portal only when they are inside
 the allowed distance from a configured attendance location.
 
 Attendance company is always taken from the check-in location company.
+
+Portal users:
+- Portal User: own attendance, requests, and time off only
+- Portal Admin: can view all attendance, general requests, and time off
     """,
     "author": "CUC",
     "license": "LGPL-3",
     "depends": ["hr_attendance", "hr_holidays", "hr_appraisal", "mail", "portal", "website"],
     "data": [
         "data/mail_activity_data.xml",
+        "security/portal_security.xml",
         "security/hr_general_request_security.xml",
         "security/hr_attendance_adjustment_request_security.xml",
         "security/hr_attendance_security.xml",
