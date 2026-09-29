@@ -176,6 +176,7 @@
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th class="text-end">Worked Hours</th>
+                            <th t-out="location_label">Location</th>
                             <th>Note</th>
                             <th class="text-end">Status</th>
                         </tr>
@@ -194,6 +195,10 @@
                             </td>
                             <td class="text-end">
                                 <span t-if="attendance.worked_hours" t-out="'%.2f' % attendance.worked_hours"/>
+                                <span t-else="" class="text-muted">—</span>
+                            </td>
+                            <td>
+                                <span t-if="attendance.attendance_location_id" t-out="attendance.attendance_location_id.name"/>
                                 <span t-else="" class="text-muted">—</span>
                             </td>
                             <td>

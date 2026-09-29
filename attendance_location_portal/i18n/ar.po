@@ -2376,3 +2376,11 @@ msgstr "الحالة"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "to"
 msgstr "إلى"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_search_activity_filters
+msgid "Location"
+msgstr "الموقع"

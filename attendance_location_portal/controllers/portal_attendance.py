@@ -233,8 +233,8 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
                 "sequence": 20,
                 "domain": lambda value: [("portal_note", "ilike", value)],
             },
-            "location": {
-                "input": "location",
+            "attendance_location_id": {
+                "input": "attendance_location_id",
                 "label": _("Search in Location"),
                 "sequence": 30,
                 "domain": lambda value: [("attendance_location_id.name", "ilike", value)],
@@ -306,6 +306,7 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             "search": searchbar["search"],
             "searchbar_sortings": searchbar["searchbar_sortings"],
             "sortby": searchbar["sortby"],
+            "location_label": _("Location"),
         }
         return request.render(
             "attendance_location_portal.portal_my_attendances",
