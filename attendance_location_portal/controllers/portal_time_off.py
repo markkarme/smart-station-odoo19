@@ -34,7 +34,7 @@ class PortalTimeOffController(PortalHrMixin, http.Controller):
     def _get_employee_leave(self, employee, leave_id):
         leave = request.env["hr.leave"].sudo().browse(leave_id)
         if not leave.exists() or not self._portal_can_access_employee_record(
-            employee, leave.employee_id
+            employee, leave.employee_id, leave.company_id
         ):
             raise AccessError(_("This time off request does not exist or is not accessible."))
         return leave

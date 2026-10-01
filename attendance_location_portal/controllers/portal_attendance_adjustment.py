@@ -36,7 +36,7 @@ class PortalAttendanceAdjustmentController(PortalHrMixin, http.Controller):
     def _get_employee_adjustment_request(self, employee, request_id):
         adjustment_request = request.env["hr.attendance.adjustment.request"].sudo().browse(request_id)
         if not adjustment_request.exists() or not self._portal_can_access_employee_record(
-            employee, adjustment_request.employee_id
+            employee, adjustment_request.employee_id, adjustment_request.company_id
         ):
             raise AccessError(_("This attendance adjustment request does not exist or is not accessible."))
         return adjustment_request
