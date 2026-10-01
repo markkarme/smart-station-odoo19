@@ -47,6 +47,7 @@
                 <field name="date_to"/>
                 <field name="date" column_invisible="0"/>
                 <field name="employee_id"/>
+                <field name="company_id" optional="show" groups="base.group_multi_company"/>
                 <field name="status"
                        decoration-danger="status == 'absent'"
                        decoration-warning="status == 'on_leave'"
