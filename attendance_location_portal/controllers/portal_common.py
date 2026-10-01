@@ -22,14 +22,35 @@ class PortalHrMixin:
             "attendance_location_portal.group_portal_hr_admin"
         )
 
-    def _portal_employee_domain(self, employee, field="employee_id"):
-        """Own records for normal portal users; all records for portal admins."""
-        if self._is_portal_hr_admin():
-            return []
-        return [(field, "=", employee.id)]
+    def _portal_user_company_ids(self):
+        """Companies allowed for the current portal user."""
+        return request.env.user.company_ids.ids
 
-    def _portal_can_access_employee_record(self, employee, record_employee):
-        return self._is_portal_hr_admin() or record_employee == employee
+    def _portal_employee_domain(self, employee, field="employee_id", company_field="company_id"):
+        """Own records for normal portal users; company-scoped for portal admins."""
+        if not self._is_portal_hr_admin():
+            return [(field, "=", employee.id)]
+        company_ids = self._portal_user_company_ids()
+        if not company_ids:
+            return [(field, "=", employee.id)]
+        return [
+            "|",
+            (company_field, "=", False),
+            (company_field, "in", company_ids),
+        ]
+
+    def _portal_can_access_employee_record(self, employee, record_employee, record_company=None):
+        """Allow own records, or portal-admin records within the user's companies."""
+        if not self._is_portal_hr_admin():
+            return record_employee == employee
+        company_ids = set(self._portal_user_company_ids())
+        if not company_ids:
+            return record_employee == employee
+        if record_company is not None:
+            return not record_company or record_company.id in company_ids
+        record_employee = record_employee.sudo()
+        emp_companies = record_employee.company_ids or record_employee.company_id
+        return bool(company_ids.intersection(emp_companies.ids))
 
     def _portal_sorted_searchbar(self, values):
         return OrderedDict(

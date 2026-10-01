@@ -306,7 +306,6 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             "search": searchbar["search"],
             "searchbar_sortings": searchbar["searchbar_sortings"],
             "sortby": searchbar["sortby"],
-            "location_label": _("Location"),
         }
         return request.render(
             "attendance_location_portal.portal_my_attendances",

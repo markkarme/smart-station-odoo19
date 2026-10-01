@@ -12,8 +12,8 @@
         <field name="privilege_id" ref="privilege_portal_hr"/>
         <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
         <field name="comment">
-            Portal admin users can view all attendance records, general requests,
-            time off requests, allocations, and attendance adjustments.
+            Portal admin users can view attendance, general requests, time off,
+            allocations, and attendance adjustments for their allowed companies only.
         </field>
     </record>
 </odoo>

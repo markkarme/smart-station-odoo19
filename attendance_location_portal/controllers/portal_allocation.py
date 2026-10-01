@@ -31,7 +31,7 @@ class PortalAllocationController(PortalHrMixin, http.Controller):
     def _get_employee_allocation(self, employee, allocation_id):
         allocation = request.env["hr.leave.allocation"].sudo().browse(allocation_id)
         if not allocation.exists() or not self._portal_can_access_employee_record(
-            employee, allocation.employee_id
+            employee, allocation.employee_id, allocation.employee_company_id
         ):
             raise AccessError(_("This allocation request does not exist or is not accessible."))
         return allocation
@@ -83,7 +83,7 @@ class PortalAllocationController(PortalHrMixin, http.Controller):
 
         is_portal_hr_admin = self._is_portal_hr_admin()
         allocation_model = request.env["hr.leave.allocation"].sudo()
-        domain = self._portal_employee_domain(employee)
+        domain = self._portal_employee_domain(employee, company_field="employee_company_id")
         allocation_count = allocation_model.search_count(domain)
         pager = portal_pager(
             url="/my/allocations",

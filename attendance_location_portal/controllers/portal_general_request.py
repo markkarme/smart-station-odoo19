@@ -29,7 +29,7 @@ class PortalGeneralRequestController(PortalHrMixin, http.Controller):
     def _get_employee_general_request(self, employee, request_id):
         general_request = request.env["hr.general.request"].sudo().browse(request_id)
         if not general_request.exists() or not self._portal_can_access_employee_record(
-            employee, general_request.employee_id
+            employee, general_request.employee_id, general_request.company_id
         ):
             raise AccessError(_("This general request does not exist or is not accessible."))
         return general_request

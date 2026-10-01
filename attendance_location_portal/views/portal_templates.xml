@@ -176,7 +176,7 @@
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th class="text-end">Worked Hours</th>
-                            <th t-out="location_label">Location</th>
+                            <th>Location</th>
                             <th>Note</th>
                             <th class="text-end">Status</th>
                         </tr>

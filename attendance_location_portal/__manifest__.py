@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.6.2",
+    "version": "19.0.1.6.4",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -12,7 +12,7 @@ Attendance company is always taken from the check-in location company.
 
 Portal users:
 - Portal User: own attendance, requests, and time off only
-- Portal Admin: can view all attendance, general requests, and time off
+- Portal Admin: can view attendance, general requests, and time off for their allowed companies only
     """,
     "author": "CUC",
     "license": "LGPL-3",
