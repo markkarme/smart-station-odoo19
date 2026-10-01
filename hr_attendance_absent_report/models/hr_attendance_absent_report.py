@@ -14,6 +14,13 @@ class HrAttendanceAbsentReport(models.Model):
     date_from = fields.Date(string="Date From", required=True, index=True)
     date_to = fields.Date(string="Date To", required=True, index=True)
     employee_id = fields.Many2one("hr.employee", string="Employee", required=True, index=True)
+    company_id = fields.Many2one(
+        "res.company",
+        string="Company",
+        related="employee_id.company_id",
+        store=True,
+        index=True,
+    )
     status = fields.Selection(
         [
             ("absent", "Absent"),
@@ -92,33 +99,43 @@ class HrAttendanceAbsentWizard(models.TransientModel):
                 return True
         return False
 
-    def action_compute(self):
+    def _get_employee_domain(self, company_ids=None):
+        domain = [("active", "=", True), ("name", "not in", ["Administrator", "Admin"])]
+        if company_ids:
+            domain += [
+                "|",
+                ("company_id", "in", company_ids),
+                ("company_ids", "in", company_ids),
+            ]
+        return domain
+
+    def action_compute(self, company_ids=None):
         self.ensure_one()
         report = self.env["hr.attendance.absent.report"]
-        report.search(
-            [
-                ("date_from", "=", self.date_from),
-                ("date_to", "=", self.date_to),
-            ]
-        ).unlink()
+        employee_domain = self._get_employee_domain(company_ids=company_ids)
+        unlink_domain = [
+            ("date_from", "=", self.date_from),
+            ("date_to", "=", self.date_to),
+        ]
+        if company_ids:
+            unlink_domain.append(("company_id", "in", company_ids))
+        report.search(unlink_domain).unlink()
 
-        all_employees = self.env["hr.employee"].search(
-            [("active", "=", True), ("name", "not in", ["Administrator", "Admin"])]
-        )
+        all_employees = self.env["hr.employee"].search(employee_domain)
         period_start = datetime.combine(self.date_from, time.min)
         period_end = datetime.combine(self.date_to, time.max)
 
-        attendances = self.env["hr.attendance"].search(
-            [
-                "|",
-                "&",
-                ("check_in", ">=", period_start),
-                ("check_in", "<=", period_end),
-                "&",
-                ("check_out", ">=", period_start),
-                ("check_out", "<=", period_end),
-            ]
-        )
+        attendance_domain = [
+            ("employee_id", "in", all_employees.ids),
+            "|",
+            "&",
+            ("check_in", ">=", period_start),
+            ("check_in", "<=", period_end),
+            "&",
+            ("check_out", ">=", period_start),
+            ("check_out", "<=", period_end),
+        ]
+        attendances = self.env["hr.attendance"].search(attendance_domain)
         present_by_date = {}
         for attendance in attendances:
             if attendance.check_in:
@@ -130,13 +147,13 @@ class HrAttendanceAbsentWizard(models.TransientModel):
                 if self.date_from <= check_out_date <= self.date_to:
                     present_by_date.setdefault(check_out_date, set()).add(attendance.employee_id.id)
 
-        leaves = self.env["hr.leave"].search(
-            [
-                ("state", "=", "validate"),
-                ("date_from", "<=", period_end),
-                ("date_to", ">=", period_start),
-            ]
-        )
+        leave_domain = [
+            ("state", "=", "validate"),
+            ("date_from", "<=", period_end),
+            ("date_to", ">=", period_start),
+            ("employee_id", "in", all_employees.ids),
+        ]
+        leaves = self.env["hr.leave"].search(leave_domain)
         public_holidays = self.env["resource.calendar.leaves"].search(
             [
                 ("resource_id", "=", False),
@@ -158,7 +175,9 @@ class HrAttendanceAbsentWizard(models.TransientModel):
                 leave.employee_id.id for leave in day_leaves if leave.employee_id and self._is_worked_time_leave(leave)
             }
             on_leave_ids = {
-                leave.employee_id.id for leave in day_leaves if leave.employee_id and leave.employee_id.id not in worked_time_off_ids
+                leave.employee_id.id
+                for leave in day_leaves
+                if leave.employee_id and leave.employee_id.id not in worked_time_off_ids
             }
             for emp in all_employees:
                 if emp.id in present_ids:
@@ -194,7 +213,8 @@ class HrAttendanceAbsentWizard(models.TransientModel):
             "domain": [
                 ("date_from", "=", self.date_from),
                 ("date_to", "=", self.date_to),
-            ],
+            ]
+            + ([("company_id", "in", company_ids)] if company_ids else []),
             "context": {"create": False, "delete": False},
             "target": "current",
         }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_absent" inherit_id="portal.portal_breadcrumbs" priority="55">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_absent_employees', 'portal_absent_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_absent_employees' else ''}">
+                <a t-if="page_name != 'portal_absent_employees'" href="/my/absent_employees"><t>Absent Employees</t></a>
+                <t t-else="">Absent Employees</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_absent_entry" inherit_id="portal.portal_my_home" priority="55">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_hr_admin')"
+               t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_attendance/static/description/icon.svg'"/>
+                <t t-set="title">Absent Employees</t>
+                <t t-set="text">View absent, leave, weekend and holiday employees for your companies</t>
+                <t t-set="url" t-value="'/my/absent_employees'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_absent_employees" name="Absent Employees">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <div class="container mb-3">
+                <form action="/my/absent_employees/compute" method="post" class="row g-2 align-items-end">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="col-md-3">
+                        <label class="form-label" for="date_from"><t>Date From</t></label>
+                        <input type="date" class="form-control" id="date_from" name="date_from"
+                               t-att-value="date_from"/>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="date_to"><t>Date To</t></label>
+                        <input type="date" class="form-control" id="date_to" name="date_to"
+                               t-att-value="date_to"/>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary"><t>Show Absent Employees</t></button>
+                    </div>
+                </form>
+            </div>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Absent Employees</t>
+            </t>
+
+            <div t-if="not lines" class="alert alert-info">
+                <t>No absent employee records found for the selected period.</t>
+            </div>
+
+            <t t-if="lines">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Date</t></th>
+                            <th><t>Employee</t></th>
+                            <th><t>Company</t></th>
+                            <th class="text-end"><t>Status</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="lines" t-as="line">
+                            <td>
+                                <span t-field="line.date"/>
+                            </td>
+                            <td>
+                                <span t-out="line.employee_id.name"/>
+                            </td>
+                            <td>
+                                <span t-if="line.company_id" t-out="line.company_id.name"/>
+                                <span t-else="" class="text-muted">—</span>
+                            </td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{status_badges.get(line.status, 'text-bg-secondary')}"
+                                      t-out="status_labels.get(line.status, line.status)"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_absent_failed_page" name="Absent Employees Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-danger">
+                    <h4 class="alert-heading"><t>Absent Employees</t></h4>
+                    <p class="mb-3" t-out="error_message"/>
+                    <a href="/my/absent_employees" class="btn btn-outline-danger"><t>Back</t></a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
