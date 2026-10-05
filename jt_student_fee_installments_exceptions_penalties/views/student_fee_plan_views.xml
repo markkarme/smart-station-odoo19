@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_fee_plan_form_penalties" model="ir.ui.view">
+        <field name="name">student.fee.plan.form.penalties.exceptions</field>
+        <field name="model">student.fee.plan</field>
+        <field name="inherit_id" ref="jt_student_fee_installments.view_student_fee_plan_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_open_exception_wizard"
+                        string="Exception"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="state == 'closed'"/>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box_exceptions">
+                    <button name="action_view_exceptions"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-exclamation-triangle">
+                        <field name="exception_count" widget="statinfo" string="Exceptions"/>
+                    </button>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='uniform_paid']" position="after">
+                <field name="total_late_penalties"/>
+                <field name="penalty_price_per_week"/>
+                <field name="installment_start_date"/>
+                <field name="installment_interval_months"/>
+            </xpath>
+
+            <xpath expr="//field[@name='basic_installment_ids']/list/field[@name='amount_due']" position="before">
+                <field name="due_date" string="تاريخ الاستحقاق" readonly="is_paid"/>
+            </xpath>
+            <xpath expr="//field[@name='basic_installment_ids']/list/field[@name='is_paid']" position="before">
+                <field name="weeks_late" string="أسابيع التأخير"/>
+                <field name="penalty_amount" string="الغرامة" sum="Penalties"/>
+                <field name="amount_with_penalty" string="المستحق + الغرامة" optional="show" sum="Total"/>
+                <field name="amount_due_original" optional="hide"/>
+                <field name="penalty_waived" optional="hide"/>
+            </xpath>
+
+            <xpath expr="//field[@name='bus_installment_ids']/list/field[@name='amount_due']" position="before">
+                <field name="due_date" string="تاريخ الاستحقاق" readonly="is_paid"/>
+            </xpath>
+            <xpath expr="//field[@name='bus_installment_ids']/list/field[@name='is_paid']" position="before">
+                <field name="weeks_late" string="أسابيع التأخير"/>
+                <field name="penalty_amount" string="الغرامة" sum="Penalties"/>
+                <field name="amount_with_penalty" string="المستحق + الغرامة" optional="show" sum="Total"/>
+                <field name="amount_due_original" optional="hide"/>
+                <field name="penalty_waived" optional="hide"/>
+            </xpath>
+
+            <xpath expr="//page[@name='notes']" position="before">
+                <page string="Exceptions" name="exceptions">
+                    <field name="exception_ids" readonly="1">
+                        <list>
+                            <field name="name"/>
+                            <field name="exception_type"/>
+                            <field name="fee_type"/>
+                            <field name="new_installment_count"/>
+                            <field name="discount_type"/>
+                            <field name="discount_value"/>
+                            <field name="user_id"/>
+                            <field name="create_date"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Installment list: due date + penalty columns -->
+    <record id="view_student_fee_installment_list_penalties" model="ir.ui.view">
+        <field name="name">student.fee.installment.list.penalties</field>
+        <field name="model">student.fee.installment</field>
+        <field name="inherit_id" ref="jt_student_fee_installments.view_student_fee_installment_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_due']" position="before">
+                <field name="due_date" readonly="is_paid"/>
+            </xpath>
+            <xpath expr="//field[@name='amount_paid']" position="after">
+                <field name="weeks_late"/>
+                <field name="penalty_amount" sum="Penalties"/>
+                <field name="amount_with_penalty" sum="Total with Penalty" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

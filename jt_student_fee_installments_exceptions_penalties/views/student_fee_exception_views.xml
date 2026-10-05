@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_fee_exception_list" model="ir.ui.view">
+        <field name="name">student.fee.exception.list</field>
+        <field name="model">student.fee.exception</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="student_id"/>
+                <field name="year_id"/>
+                <field name="exception_type"/>
+                <field name="fee_type" optional="show"/>
+                <field name="new_installment_count" optional="show"/>
+                <field name="discount_type" optional="show"/>
+                <field name="discount_value" optional="show"/>
+                <field name="user_id"/>
+                <field name="create_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_student_fee_exception_form" model="ir.ui.view">
+        <field name="name">student.fee.exception.form</field>
+        <field name="model">student.fee.exception</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="plan_id"/>
+                            <field name="student_id"/>
+                            <field name="exception_type"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="fee_type"
+                                     invisible="exception_type != 'increase_installments'"/>
+                            <field name="new_installment_count"
+                                     invisible="exception_type != 'increase_installments'"/>
+                            <field name="discount_type"
+                                     invisible="exception_type != 'discount'"/>
+                            <field name="discount_value"
+                                     invisible="exception_type != 'discount'"/>
+                            <field name="document" filename="document_filename"/>
+                            <field name="document_filename" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Affected Installments"
+                           invisible="exception_type != 'discount'">
+                        <field name="installment_ids" nolabel="1">
+                            <list>
+                                <field name="name"/>
+                                <field name="fee_type"/>
+                                <field name="amount_due"/>
+                                <field name="amount_due_original"/>
+                            </list>
+                        </field>
+                    </group>
+                    <group>
+                        <field name="reason"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_student_fee_exception" model="ir.actions.act_window">
+        <field name="name">Fee Exceptions</field>
+        <field name="res_model">student.fee.exception</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_student_fee_exception"
+              name="Exceptions"
+              parent="jt_student_fee_installments.menu_fee_installments_root"
+              action="action_student_fee_exception"
+              sequence="5"/>
+</odoo>

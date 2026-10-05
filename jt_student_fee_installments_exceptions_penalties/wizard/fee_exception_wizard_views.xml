@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_fee_exception_wizard_form" model="ir.ui.view">
+        <field name="name">student.fee.exception.wizard.form</field>
+        <field name="model">student.fee.exception.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Fee Exception">
+                <group>
+                    <field name="plan_id" readonly="1"/>
+                    <field name="student_id"/>
+                    <field name="exception_type" widget="radio"/>
+                </group>
+
+                <group string="Increase Installments"
+                       invisible="exception_type != 'increase_installments'">
+                    <field name="fee_type" required="exception_type == 'increase_installments'"/>
+                    <field name="current_installment_count"/>
+                    <field name="new_installment_count"
+                             required="exception_type == 'increase_installments'"/>
+                </group>
+
+                <group string="Discount"
+                       invisible="exception_type != 'discount'">
+                    <field name="discount_type" required="exception_type == 'discount'"/>
+                    <field name="discount_value" required="exception_type == 'discount'"/>
+                    <field name="installment_ids"
+                             widget="many2many_tags"
+                             options="{'no_create': True}"
+                             required="exception_type == 'discount'"/>
+                </group>
+
+                <group string="Document &amp; Reason">
+                    <field name="document" filename="document_filename" required="1"/>
+                    <field name="document_filename" invisible="1"/>
+                    <field name="reason"/>
+                </group>
+
+                <footer>
+                    <button name="action_confirm"
+                            string="Apply Exception"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
