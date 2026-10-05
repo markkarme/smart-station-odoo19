@@ -1,0 +1,635 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_student_fee_installments_exceptions_penalties
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 23:35+0000\n"
+"PO-Revision-Date: 2026-10-05 23:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic
+"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__year_id
+msgid "Academic Year"
+msgstr "العام الدراسي"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__installment_ids
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_form
+msgid "Affected Installments"
+msgstr "الأقساط المتأثرة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__amount_due_original
+msgid "Amount before any discount exception."
+msgstr "المبلغ قبل أي استثناء خصم."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__penalty_price_per_week
+msgid "Amount charged for each week after the installment due date."
+msgstr "المبلغ المحتسب لكل أسبوع بعد تاريخ استحقاق القسط."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__amount_with_penalty
+msgid "Amount due + late penalty."
+msgstr "المبلغ المستحق + غرامة التأخير."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__state__done
+msgid "Applied"
+msgstr "مطبّق"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "Apply Exception"
+msgstr "تطبيق الاستثناء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__fee_type
+msgid "Apply On"
+msgstr "تطبيق على"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "Cannot set fewer installments than already paid lines."
+msgstr "لا يمكن تعيين أقساط أقل من البنود المدفوعة بالفعل."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__create_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__create_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__current_installment_count
+msgid "Current Installments"
+msgstr "الأقساط الحالية"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__exception_type__discount
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "Discount"
+msgstr "خصم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__exception_type__discount
+msgid "Discount / خصم"
+msgstr "خصم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__discount_type
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__discount_type
+msgid "Discount Type"
+msgstr "نوع الخصم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__discount_value
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__discount_value
+msgid "Discount Value"
+msgstr "قيمة الخصم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "Discount value must be greater than zero."
+msgstr "يجب أن تكون قيمة الخصم أكبر من صفر."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "Document & Reason"
+msgstr "المستند والسبب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__document_filename
+msgid "Document Filename"
+msgstr "اسم ملف المستند"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__due_date
+msgid "Due Date / تاريخ الاستحقاق"
+msgstr "تاريخ الاستحقاق"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__installment_start_date
+msgid "Due date of installment #1. Later installments use the interval below."
+msgstr "تاريخ استحقاق القسط رقم 1. الأقساط التالية تستخدم الفترة أدناه."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_exception.py:0
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "Exception"
+msgstr "استثناء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__exception_count
+msgid "Exception Count"
+msgstr "عدد الاستثناءات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__exception_type
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__exception_type
+msgid "Exception Type"
+msgstr "نوع الاستثناء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid ""
+"Exception applied: %(dtype)s discount %(value)s on %(count)s unpaid "
+"installment(s)."
+msgstr "تم تطبيق الاستثناء: خصم %(dtype)s بقيمة %(value)s على %(count)s قسط غير مدفوع."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "Exception applied: increase %(fee)s installments to %(count)s."
+msgstr "تم تطبيق الاستثناء: زيادة أقساط %(fee)s إلى %(count)s."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__exception_ids
+#: model:ir.ui.menu,name:jt_student_fee_installments_exceptions_penalties.menu_student_fee_exception
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "Exceptions"
+msgstr "الاستثناءات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "Fee Exception"
+msgstr "استثناء رسوم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.actions.act_window,name:jt_student_fee_installments_exceptions_penalties.action_student_fee_exception
+msgid "Fee Exceptions"
+msgstr "استثناءات الرسوم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__plan_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__plan_id
+msgid "Fee Plan"
+msgstr "خطة الرسوم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__document_filename
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__installment_start_date
+msgid "First Due Date"
+msgstr "أول تاريخ استحقاق"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__discount_type__fixed
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__discount_type__fixed
+msgid "Fixed Amount / مبلغ ثابت"
+msgstr "مبلغ ثابت"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__installment_interval_months
+msgid "Gap between installment due dates (e.g. 1 = monthly)."
+msgstr "الفترة بين تواريخ استحقاق الأقساط (مثلاً 1 = شهرياً)."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "عند التفعيل، الرسائل الجديدة تتطلب انتباهك."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_has_error
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "عند التفعيل، بعض الرسائل بها خطأ في التسليم."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "Increase Installments"
+msgstr "زيادة عدد الأقساط"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__exception_type__increase_installments
+msgid "Increase Number of Installments"
+msgstr "زيادة عدد الأقساط"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__exception_type__increase_installments
+msgid "Increase Number of Installments / زيادة عدد الأقساط"
+msgstr "زيادة عدد الأقساط"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__fee_type
+msgid "Installment Type"
+msgstr "نوع القسط"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__due_date
+msgid ""
+"Installment due date. Late weeks are counted after this date. Readonly once "
+"paid."
+msgstr "تاريخ استحقاق القسط. تُحسب أسابيع التأخير بعد هذا التاريخ. للقراءة فقط بعد السداد."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "Invalid discount type."
+msgstr "نوع خصم غير صالح."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "Invalid exception type."
+msgstr "نوع استثناء غير صالح."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "Invalid installment type."
+msgstr "نوع قسط غير صالح."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__write_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__write_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__penalty_amount
+msgid "Late Penalty / غرامة التأخير"
+msgstr "غرامة التأخير"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__installment_interval_months
+msgid "Months Between Due Dates"
+msgstr "الشهور بين تواريخ الاستحقاق"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_exception.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__new_installment_count
+msgid "New Installment Count"
+msgstr "عدد الأقساط الجديد"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__new_installment_count
+msgid "New Number of Installments"
+msgstr "عدد الأقساط الجديد"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid ""
+"New count (%(new)s) cannot be lower than the current number of installments "
+"(%(cur)s). Use a higher number to increase installments."
+msgstr "لا يمكن أن يكون العدد الجديد (%(new)s) أقل من عدد الأقساط الحالي (%(cur)s). استخدم عدداً أكبر لزيادة الأقساط."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "New installment count is the same as the current count."
+msgstr "عدد الأقساط الجديد مطابق للعدد الحالي."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "New installment count must be at least 1."
+msgstr "يجب أن يكون عدد الأقساط الجديد 1 على الأقل."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "New installment count must be greater than the current count (%s)."
+msgstr "يجب أن يكون عدد الأقساط الجديد أكبر من العدد الحالي (%s)."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__amount_due_original
+msgid "Original Amount Due"
+msgstr "المبلغ المستحق الأصلي"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_installment_list_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "Penalties"
+msgstr "الغرامات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__penalty_waived
+msgid "Penalty Waived"
+msgstr "تم إعفاء الغرامة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__penalty_price_per_week
+msgid "Penalty per Week / غرامة الأسبوع"
+msgstr "غرامة الأسبوع"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__discount_type__percent
+msgid "Percentage"
+msgstr "نسبة مئوية"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__discount_type__percent
+msgid "Percentage / نسبة مئوية"
+msgstr "نسبة مئوية"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "Percentage discount cannot exceed 100%."
+msgstr "لا يمكن أن تتجاوز نسبة الخصم 100٪."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "Please select basic or bus installments."
+msgstr "يرجى اختيار أقساط المصاريف أو الباصات."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "Please select the discount type."
+msgstr "يرجى اختيار نوع الخصم."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "Please select the unpaid installment line(s) for the discount."
+msgstr "يرجى اختيار بنود الأقساط غير المدفوعة للخصم."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/wizard/fee_exception_wizard.py:0
+msgid "Please upload a supporting document."
+msgstr "يرجى رفع مستند داعم."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__reason
+msgid "Reason / ملاحظات"
+msgstr "ملاحظات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__user_id
+msgid "Requested By"
+msgstr "طُلب بواسطة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ تسليم الرسالة النصية"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "Select at least one unpaid installment."
+msgstr "حدد قسطاً غير مدفوع واحداً على الأقل."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__student_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__student_id
+msgid "Student / اسم الطالب"
+msgstr "اسم الطالب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model,name:jt_student_fee_installments_exceptions_penalties.model_student_fee_exception
+msgid "Student Fee Exception"
+msgstr "استثناء رسوم الطالب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model,name:jt_student_fee_installments_exceptions_penalties.model_student_fee_exception_wizard
+msgid "Student Fee Exception Wizard"
+msgstr "معالج استثناء رسوم الطالب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model,name:jt_student_fee_installments_exceptions_penalties.model_student_fee_installment
+msgid "Student Fee Installment"
+msgstr "قسط رسوم الطالب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model,name:jt_student_fee_installments_exceptions_penalties.model_student_fee_plan
+msgid "Student Fee Plan"
+msgstr "خطة رسوم الطالب"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__document
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__document
+msgid "Supporting Document"
+msgstr "المستند الداعم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__total_late_penalties
+msgid "Total Late Penalties / اجمالي غرامات التأخير"
+msgstr "اجمالي غرامات التأخير"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__amount_with_penalty
+msgid "Total to Collect"
+msgstr "الإجمالي المطلوب تحصيله"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_installment_list_penalties
+msgid "Total with Penalty"
+msgstr "الإجمالي مع الغرامة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__installment_ids
+msgid "Unpaid Installments"
+msgstr "الأقساط غير المدفوعة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,help:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_installment__weeks_late
+msgid "Weeks Late"
+msgstr "أسابيع التأخير"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_installment.py:0
+msgid ""
+"You cannot change the due date (تاريخ الاستحقاق) on a paid installment."
+msgstr "لا يمكن تغيير تاريخ الاستحقاق على قسط مدفوع."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "You cannot create an exception on a closed fee plan."
+msgstr "لا يمكن إنشاء استثناء على خطة رسوم مغلقة."
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#. odoo-python
+#: code:addons/jt_student_fee_installments_exceptions_penalties/models/student_fee_plan.py:0
+msgid "plan_id"
+msgstr "الخطة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "أسابيع التأخير"
+msgstr "أسابيع التأخير"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__fee_type__bus
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__fee_type__bus
+msgid "أقساط الباصات"
+msgstr "أقساط الباصات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__fee_type__basic
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__fee_type__basic
+msgid "أقساط المصاريف الأساسية"
+msgstr "أقساط المصاريف الأساسية"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "الغرامة"
+msgstr "الغرامة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "المستحق + الغرامة"
+msgstr "المستحق + الغرامة"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "تاريخ الاستحقاق"
+msgstr "تاريخ الاستحقاق"

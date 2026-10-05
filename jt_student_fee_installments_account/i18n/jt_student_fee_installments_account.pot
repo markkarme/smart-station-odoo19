@@ -1,0 +1,299 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_student_fee_installments_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 23:35+0000\n"
+"PO-Revision-Date: 2026-10-05 23:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/student_fee_other.py:0
+msgid "%(fee)s — %(student)s (%(year)s)"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/student_fee_installment.py:0
+msgid "%(label)s — %(student)s (%(year)s)"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "An invoice already exists for %(name)s (%(invoice)s)."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_res_config_settings__fee_product_basic_id
+msgid "Basic Fee Product"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_res_config_settings__fee_product_books_id
+msgid "Books Fee Product"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_res_config_settings__fee_product_bus_id
+msgid "Bus Fee Product"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.actions.server,name:jt_student_fee_installments_account.action_server_create_invoice_installment
+#: model:ir.actions.server,name:jt_student_fee_installments_account.action_server_create_invoice_other
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_installment_form_account
+msgid "Create Invoice"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "Create an invoice first."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_move__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_payment_register__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_accounting_mixin__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_installment__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_other__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_plan__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.res_config_settings_view_form_student_fees
+msgid "Fee Income Products"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_bank_statement_line__student_fee_installment_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_move__student_fee_installment_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_installment_form_account
+msgid "Fee Installment"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_move__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_payment_register__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_res_config_settings__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_accounting_mixin__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_installment__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_other__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_plan__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_accounting_mixin__invoice_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_installment__invoice_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_other__invoice_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_plan_form_account
+msgid "Invoice"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_plan_form_account
+msgid "Invoice Basic Installments"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_plan_form_account
+msgid "Invoice Bus Installments"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_plan__invoice_count
+msgid "Invoice Count"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_accounting_mixin__invoice_payment_state
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_installment__invoice_payment_state
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_other__invoice_payment_state
+msgid "Invoice Payment Status"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_accounting_mixin__invoice_state
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_installment__invoice_state
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_student_fee_other__invoice_state
+msgid "Invoice Status"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "Invoice amount must be greater than zero."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+#: code:addons/jt_student_fee_installments_account/models/student_fee_plan.py:0
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_plan_form_account
+msgid "Invoices"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/student_fee_plan.py:0
+msgid "No basic installments ready to invoice."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/student_fee_plan.py:0
+msgid "No bus installments ready to invoice."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "No invoice linked."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid ""
+"No product configured for fee category \"%s\". Set it under Settings → "
+"Student Fee Accounting."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_plan_form_account
+msgid "Open"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_installment_form_account
+msgid "Open Invoice"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_bank_statement_line__student_fee_other_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_move__student_fee_other_id
+msgid "Other Fee"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_account_payment_register
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_plan_form_account
+msgid "Pay"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "Post the invoice before registering a payment."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.res_config_settings_view_form_student_fees
+msgid "Products used when creating invoices from installments and other fees."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.view_student_fee_installment_form_account
+msgid "Register Payment"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "Student Fee"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_account.res_config_settings_view_form_student_fees
+msgid "Student Fee Accounting"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_student_fee_accounting_mixin
+msgid "Student Fee Accounting Mixin"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_student_fee_installment
+msgid "Student Fee Installment"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_student_fee_plan
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_bank_statement_line__student_fee_plan_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_account_move__student_fee_plan_id
+msgid "Student Fee Plan"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:product.template,name:jt_student_fee_installments_account.product_fee_basic_product_template
+msgid "Student Fee — Basic / مصاريف أساسية"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:product.template,name:jt_student_fee_installments_account.product_fee_books_product_template
+msgid "Student Fee — Books / كتب"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:product.template,name:jt_student_fee_installments_account.product_fee_bus_product_template
+msgid "Student Fee — Bus / باصات"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:product.template,name:jt_student_fee_installments_account.product_fee_uniform_product_template
+msgid "Student Fee — Uniform / يونيفورم"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model,name:jt_student_fee_installments_account.model_student_fee_other
+msgid "Student Other Fee"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "Student is required to create an invoice."
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#: model:ir.model.fields,field_description:jt_student_fee_installments_account.field_res_config_settings__fee_product_uniform_id
+msgid "Uniform Fee Product"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/fee_accounting_mixin.py:0
+msgid "id"
+msgstr ""
+
+#. module: jt_student_fee_installments_account
+#. odoo-python
+#: code:addons/jt_student_fee_installments_account/models/student_fee_plan.py:0
+msgid "student_fee_plan_id"
+msgstr ""

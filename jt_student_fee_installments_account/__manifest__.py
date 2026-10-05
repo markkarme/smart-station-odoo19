@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Student Fee Installments Accounting',
-    'version': '19.0.1.0.2',
+    'version': '19.0.1.0.3',
     'category': 'Education/Accounting',
     'summary': 'Create customer invoices and payments from student fee installments',
     'description': """

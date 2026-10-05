@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Student Fee Exceptions & Penalties',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
     'category': 'Education',
     'summary': 'Late payment weekly penalties and fee exceptions (more installments / discount)',
     'description': """
