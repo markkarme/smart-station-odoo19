@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function model="account.journal" name="_smart_station_configure_paid_journals"/>
+</odoo>
