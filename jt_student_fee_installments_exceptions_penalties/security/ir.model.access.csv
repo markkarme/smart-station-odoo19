@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_fee_exception_user,student.fee.exception.user,model_student_fee_exception,jt_student_fee_installments.group_fee_installment_user,1,1,1,0
+access_student_fee_exception_manager,student.fee.exception.manager,model_student_fee_exception,jt_student_fee_installments.group_fee_installment_manager,1,1,1,1
+access_student_fee_exception_wizard_user,student.fee.exception.wizard.user,model_student_fee_exception_wizard,jt_student_fee_installments.group_fee_installment_user,1,1,1,1

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="product_fee_basic" model="product.product">
+        <field name="name">Student Fee — Basic / مصاريف أساسية</field>
+        <field name="type">service</field>
+        <field name="list_price">0.0</field>
+        <field name="sale_ok" eval="True"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="categ_id" ref="product.product_category_services"/>
+    </record>
+
+    <record id="product_fee_bus" model="product.product">
+        <field name="name">Student Fee — Bus / باصات</field>
+        <field name="type">service</field>
+        <field name="list_price">0.0</field>
+        <field name="sale_ok" eval="True"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="categ_id" ref="product.product_category_services"/>
+    </record>
+
+    <record id="product_fee_books" model="product.product">
+        <field name="name">Student Fee — Books / كتب</field>
+        <field name="type">service</field>
+        <field name="list_price">0.0</field>
+        <field name="sale_ok" eval="True"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="categ_id" ref="product.product_category_services"/>
+    </record>
+
+    <record id="product_fee_uniform" model="product.product">
+        <field name="name">Student Fee — Uniform / يونيفورم</field>
+        <field name="type">service</field>
+        <field name="list_price">0.0</field>
+        <field name="sale_ok" eval="True"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="categ_id" ref="product.product_category_services"/>
+    </record>
+</odoo>

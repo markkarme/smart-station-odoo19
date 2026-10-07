@@ -3,3 +3,5 @@ access_school_mold_user,school.mold.user,model_school_mold,base.group_user,1,1,1
 access_school_mold_column_user,school.mold.column.user,model_school_mold_column,base.group_user,1,1,1,1
 access_school_mold_line_user,school.mold.line.user,model_school_mold_line,base.group_user,1,1,1,1
 access_health_insurance_letter_user,health.insurance.letter.user,model_health_insurance_letter,base.group_user,1,1,1,1
+access_proof_registration_letter_user,proof.registration.letter.user,model_proof_registration_letter,base.group_user,1,1,1,1
+access_health_insurance_enrollment_proof_user,health.insurance.enrollment.proof.user,model_health_insurance_enrollment_proof,base.group_user,1,1,1,1

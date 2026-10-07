@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_fee_plan_user,student.fee.plan.user,model_student_fee_plan,group_fee_installment_user,1,1,1,0
+access_student_fee_plan_manager,student.fee.plan.manager,model_student_fee_plan,group_fee_installment_manager,1,1,1,1
+access_student_fee_installment_user,student.fee.installment.user,model_student_fee_installment,group_fee_installment_user,1,1,1,0
+access_student_fee_installment_manager,student.fee.installment.manager,model_student_fee_installment,group_fee_installment_manager,1,1,1,1
+access_student_fee_other_user,student.fee.other.user,model_student_fee_other,group_fee_installment_user,1,1,1,0
+access_student_fee_other_manager,student.fee.other.manager,model_student_fee_other,group_fee_installment_manager,1,1,1,1
+access_generate_fee_plans_wizard_user,generate.fee.plans.wizard.user,model_generate_fee_plans_wizard,group_fee_installment_user,1,1,1,1

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Installment list: accounting columns + invoice actions -->
+    <record id="view_student_fee_installment_list_account" model="ir.ui.view">
+        <field name="name">student.fee.installment.list.account</field>
+        <field name="model">student.fee.installment</field>
+        <field name="inherit_id" ref="jt_student_fee_installments.view_student_fee_installment_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="multi_edit">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='is_paid']" position="after">
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_payment_state" optional="show" widget="badge"
+                         decoration-success="invoice_payment_state in ('paid', 'in_payment')"
+                         decoration-warning="invoice_payment_state in ('not_paid', 'partial')"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_student_fee_installment_form_account" model="ir.ui.view">
+        <field name="name">student.fee.installment.form.account</field>
+        <field name="model">student.fee.installment</field>
+        <field name="arch" type="xml">
+            <form string="Fee Installment">
+                <header>
+                    <button name="action_create_invoice"
+                            string="Create Invoice"
+                            type="object"
+                            class="btn-primary"
+                            invisible="invoice_id and invoice_state != 'cancel'"/>
+                    <button name="action_register_payment"
+                            string="Register Payment"
+                            type="object"
+                            invisible="not invoice_id or invoice_payment_state in ('paid', 'in_payment')"/>
+                    <button name="action_open_invoice"
+                            string="Open Invoice"
+                            type="object"
+                            invisible="not invoice_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="plan_id"/>
+                            <field name="student_id"/>
+                            <field name="year_id"/>
+                            <field name="fee_type"/>
+                            <field name="number"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="amount_due"/>
+                            <field name="amount_paid"/>
+                            <field name="receipt_number"/>
+                            <field name="payment_date"/>
+                            <field name="is_paid"/>
+                            <field name="invoice_id"/>
+                            <field name="invoice_state"/>
+                            <field name="invoice_payment_state"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_fee_other_list_account" model="ir.ui.view">
+        <field name="name">student.fee.other.list.account</field>
+        <field name="model">student.fee.other</field>
+        <field name="inherit_id" ref="jt_student_fee_installments.view_student_fee_other_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_date']" position="after">
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_payment_state" optional="show" widget="badge"
+                         decoration-success="invoice_payment_state in ('paid', 'in_payment')"
+                         decoration-warning="invoice_payment_state in ('not_paid', 'partial')"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Server actions: Create Invoice from list -->
+    <record id="action_server_create_invoice_installment" model="ir.actions.server">
+        <field name="name">Create Invoice</field>
+        <field name="model_id" ref="jt_student_fee_installments.model_student_fee_installment"/>
+        <field name="binding_model_id" ref="jt_student_fee_installments.model_student_fee_installment"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+action = records.action_create_invoice()
+        </field>
+    </record>
+
+    <record id="action_server_create_invoice_other" model="ir.actions.server">
+        <field name="name">Create Invoice</field>
+        <field name="model_id" ref="jt_student_fee_installments.model_student_fee_other"/>
+        <field name="binding_model_id" ref="jt_student_fee_installments.model_student_fee_other"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+action = records.action_create_invoice()
+        </field>
+    </record>
+</odoo>

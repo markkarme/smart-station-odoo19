@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_proof_registration_letter" model="report.paperformat">
+        <field name="name">Proof of Registration A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">12</field>
+        <field name="margin_bottom">12</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <template id="report_proof_registration_letter">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article page" dir="rtl" lang="ar">
+                    <style type="text/css">
+                        <t t-out="o.get_arabic_font_face_css()"/>
+                        .article, .page, .o_report_layout_standard, .o_report_layout_boxed {
+                            border: none !important;
+                            box-shadow: none !important;
+                        }
+                        .o_proof_registration,
+                        .o_proof_registration * {
+                            font-family: 'ReportArabic', 'DejaVu Sans', sans-serif !important;
+                            color: #000;
+                            border: none !important;
+                            box-shadow: none !important;
+                            outline: none !important;
+                        }
+                        .o_proof_registration {
+                            direction: rtl;
+                        }
+                        .o_pr_header {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-bottom: 8px;
+                        }
+                        .o_pr_header_text {
+                            float: right;
+                            width: 34%;
+                            text-align: right;
+                            font-size: 13px;
+                            line-height: 1.55;
+                            font-weight: bold;
+                        }
+                        .o_pr_header_logo {
+                            float: right;
+                            width: 22%;
+                            text-align: center;
+                            padding-top: 4px;
+                        }
+                        .o_pr_header_logo img {
+                            max-height: 80px;
+                            max-width: 120px;
+                        }
+                        .o_pr_fill {
+                            font-weight: bold;
+                            text-decoration: underline;
+                            padding: 0 8px;
+                        }
+                        .o_pr_signatures {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-top: 70px;
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                        .o_pr_sig {
+                            float: right;
+                            width: 50%;
+                            text-align: center;
+                            line-height: 1.8;
+                        }
+                    </style>
+
+                    <div class="o_proof_registration" style="direction: rtl;">
+                        <div class="o_pr_header">
+                            <div class="o_pr_header_text">
+                                <div>جمهورية مصر العربية</div>
+                                <div>وزارة الصناعة</div>
+                                <div>مصلحة الكفاية الإنتاجية</div>
+                                <div><t t-esc="o.region or 'منطقة شمال الصعيد'"/></div>
+                                <div><t t-esc="o.station or 'محطة سمارت'"/></div>
+                            </div>
+                            <div class="o_pr_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('ministry_of_industry.png')"/>
+                            </div>
+                            <div class="o_pr_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('pvtd_image.png')" style="max-height: 70px; max-width: 140px;"/>
+                            </div>
+                            <div class="o_pr_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('smart-logo.png')" style="max-height: 70px; max-width: 140px;"/>
+                            </div>
+                        </div>
+
+                        <div style="clear: both; height: 36px;"></div>
+
+                        <div style="text-align: center; margin-bottom: 42px;">
+                            <span style="display: inline-block; font-size: 26px; font-weight: bold; color: #8B1A1A; background: #F6D5D5; border-bottom: 3px solid #1F4E79; padding: 2px 18px;">
+                                اثبات قيد / افادة
+                            </span>
+                        </div>
+
+                        <div style="text-align: center; font-size: 16px; line-height: 2.5;">
+                            <div style="margin-bottom: 18px;">
+                                إلي /
+                                <span class="o_pr_fill">
+                                    <t t-esc="o.addressee or '................................................'"/>
+                                </span>
+                            </div>
+                            <div style="margin-bottom: 18px;">
+                                تشهد
+                                <t t-esc="o.station or 'محطة سمارت'"/>
+                                بان الطالب /ة
+                                <span class="o_pr_fill">
+                                    <t t-esc="o.student_name or '................................................'"/>
+                                </span>
+                            </div>
+                            <div style="margin-bottom: 22px;">وبياناته كالتالي :</div>
+                            <div style="margin-bottom: 22px;">
+                                الصف :
+                                <span class="o_pr_fill">
+                                    <t t-esc="o.class_name or '................'"/>
+                                </span>
+                                التخصص :
+                                <span class="o_pr_fill">
+                                    <t t-esc="o.specialization or '................'"/>
+                                </span>
+                                رقم القومي :
+                                <span class="o_pr_fill">
+                                    <t t-esc="o.national_id or '................'"/>
+                                </span>
+                            </div>
+                            <div style="margin-bottom: 28px;">
+                                مقيد لدينا بالسجلات عن العام الدراسي
+                                <span class="o_pr_fill">
+                                    <t t-esc="o.academic_year or '........../..........'"/>
+                                </span>
+                                م
+                            </div>
+                            <div style="margin-bottom: 36px; line-height: 2.1;">
+                                وقد أعطيت له هذه الافادة بناء علي طلبه دون أدني مسئوليه علي
+                                <t t-esc="o.station or 'محطة سمارت'"/>
+                                .
+                            </div>
+                            <div>وهذا للعلم واتخاذ اللازم</div>
+                            <div style="margin-bottom: 10px;">وتفضلوا بقبول وافر الاحترام</div>
+                        </div>
+
+                        <div class="o_pr_signatures">
+                            <div class="o_pr_sig">مسئول شئون الطلاب</div>
+                            <div class="o_pr_sig">
+                                <div>يعتمد،،،</div>
+                                <div>
+                                    مدير
+                                    <t t-esc="o.station or 'محطة سمارت'"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_proof_registration_letter" model="ir.actions.report">
+        <field name="name">Proof of Registration</field>
+        <field name="model">proof.registration.letter</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_molds_generator.report_proof_registration_letter</field>
+        <field name="report_file">school_molds_generator.report_proof_registration_letter</field>
+        <field name="print_report_name">'اثبات قيد - %s' % (object.student_name or '')</field>
+        <field name="paperformat_id" ref="paperformat_proof_registration_letter"/>
+    </record>
+</odoo>

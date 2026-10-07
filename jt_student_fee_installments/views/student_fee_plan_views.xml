@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_fee_plan_list" model="ir.ui.view">
+        <field name="name">student.fee.plan.list</field>
+        <field name="model">student.fee.plan</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="student_id"/>
+                <field name="year_id"/>
+                <field name="standard_id" optional="show"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="basic_total_due" sum="Basic Due"/>
+                <field name="bus_total_due" sum="Bus Due"/>
+                <field name="total_due" sum="Total Due"/>
+                <field name="total_paid" sum="Total Paid"/>
+                <field name="remaining" sum="Remaining"/>
+                <field name="state"
+                         widget="badge"
+                         decoration-info="state == 'draft'"
+                         decoration-success="state == 'open'"
+                         decoration-muted="state == 'closed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_student_fee_plan_form" model="ir.ui.view">
+        <field name="name">student.fee.plan.form</field>
+        <field name="model">student.fee.plan</field>
+        <field name="arch" type="xml">
+            <form string="Student Fees">
+                <header>
+                    <!-- <button name="action_generate_installments"
+                            string="Generate / Refresh Installments"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'closed'"/> -->
+                    <button name="action_open"
+                            string="Open"
+                            type="object"
+                            invisible="state == 'open'"/>
+                    <button name="action_close"
+                            string="Close"
+                            type="object"
+                            invisible="state == 'closed'"/>
+                    <button name="action_draft"
+                            string="Reset to Draft"
+                            type="object"
+                            invisible="state == 'draft'"
+                            groups="jt_student_fee_installments.group_fee_installment_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Student">
+                            <field name="student_id" readonly="state == 'closed'"/>
+                            <field name="year_id" readonly="state == 'closed'"/>
+                            <field name="standard_id" readonly="state == 'closed'"/>
+                            <field name="division_id" readonly="state == 'closed'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group string="Summary / الملخص" name="summary">
+                            <field name="total_due"/>
+                            <field name="total_paid"/>
+                            <field name="remaining"/>
+                            <field name="books_paid"/>
+                            <field name="uniform_paid"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <!-- Page 1: Basic expense installments -->
+                        <page string="أقساط المصاريف الأساسية" name="basic_installments">
+                            <group>
+                                <group>
+                                    <field name="basic_installment_count"
+                                             readonly="1"/>
+                                    <field name="basic_total_due"
+                                             readonly="state == 'closed'"/>
+                                </group>
+                                <group>
+                                    <field name="basic_paid"/>
+                                    <field name="basic_remaining"/>
+                                </group>
+                            </group>
+                            <separator string="Installments — set count above, then Generate / or save to create lines"/>
+                            <field name="basic_installment_ids" readonly="state == 'closed'">
+                                <list editable="bottom" create="0" delete="0">
+                                    <field name="number" string="#" readonly="1"/>
+                                    <field name="name" string="القسط" readonly="1"/>
+                                    <field name="amount_due" string="المستحق"/>
+                                    <field name="amount_paid" string="المبلغ"/>
+                                    <field name="receipt_number" string="رقم الإيصال"/>
+                                    <field name="payment_date" string="التاريخ"/>
+                                    <field name="is_paid" string="Paid"/>
+                                    <field name="note" optional="hide"/>
+                                    <field name="fee_type" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <!-- Page 2: Bus installments -->
+                        <page string="أقساط الباصات" name="bus_installments">
+                            <group>
+                                <group>
+                                    <field name="bus_installment_count"
+                                             readonly="1"/>
+                                    <field name="bus_total_due"
+                                             readonly="state == 'closed'"/>
+                                </group>
+                                <group>
+                                    <field name="bus_paid"/>
+                                    <field name="bus_remaining"/>
+                                </group>
+                            </group>
+                            <separator string="Bus Installments"/>
+                            <field name="bus_installment_ids" readonly="state == 'closed'">
+                                <list editable="bottom" create="0" delete="0">
+                                    <field name="number" string="#" readonly="1"/>
+                                    <field name="name" string="القسط" readonly="1"/>
+                                    <field name="amount_due" string="المستحق"/>
+                                    <field name="amount_paid" string="المبلغ"/>
+                                    <field name="receipt_number" string="رقم الإيصال"/>
+                                    <field name="payment_date" string="التاريخ"/>
+                                    <field name="is_paid" string="Paid"/>
+                                    <field name="note" optional="hide"/>
+                                    <field name="fee_type" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <!-- Page 3: Books -->
+                        <page string="الكتب" name="books">
+                            <field name="books_fee_ids" readonly="state == 'closed'">
+                                <list editable="bottom">
+                                    <field name="amount" string="المبلغ" sum="Total"/>
+                                    <field name="receipt_number" string="رقم الإيصال"/>
+                                    <field name="payment_date" string="التاريخ"/>
+                                    <field name="note" optional="show"/>
+                                    <field name="fee_type" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <!-- Page 4: Uniform -->
+                        <page string="اليونيفورم" name="uniform">
+                            <field name="uniform_fee_ids" readonly="state == 'closed'">
+                                <list editable="bottom">
+                                    <field name="amount" string="المبلغ" sum="Total"/>
+                                    <field name="receipt_number" string="رقم الإيصال"/>
+                                    <field name="payment_date" string="التاريخ"/>
+                                    <field name="note" optional="show"/>
+                                    <field name="fee_type" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Notes" name="notes">
+                            <field name="note" placeholder="Internal notes..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_fee_plan_search" model="ir.ui.view">
+        <field name="name">student.fee.plan.search</field>
+        <field name="model">student.fee.plan</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="student_id"/>
+                <field name="year_id"/>
+                <field name="standard_id"/>
+                <filter string="Open" name="open" domain="[('state', '=', 'open')]"/>
+                <filter string="With Remaining" name="remaining" domain="[('remaining', '&gt;', 0)]"/>
+                <group>
+                    <filter string="Academic Year" name="groupby_year" context="{'group_by': 'year_id'}"/>
+                    <filter string="Standard" name="groupby_standard" context="{'group_by': 'standard_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_student_fee_plan" model="ir.actions.act_window">
+        <field name="name">Student Fees</field>
+        <field name="res_model">student.fee.plan</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a fee plan for a student
+            </p>
+            <p>
+                Choose how many installments for basic fees and bus fees,
+                then track payments (amount, receipt, date) plus books and uniform.
+            </p>
+        </field>
+    </record>
+
+    <!-- Fee Plans smart button on student form -->
+    <record id="view_partner_form_fee_plans" model="ir.ui.view">
+        <field name="name">res.partner.form.fee.plans.smart.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="jt_education_base.student_profile"/>
+        <field name="priority" eval="20"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/field[@name='image_1920']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_fee_plans"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-calendar-check-o"
+                            invisible="not is_student">
+                        <div class="o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="fee_plan_count"/>
+                            </span>
+                            <span class="o_stat_text">Fee Plans</span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

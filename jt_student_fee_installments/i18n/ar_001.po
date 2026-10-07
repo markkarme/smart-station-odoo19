@@ -1,0 +1,833 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_student_fee_installments
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-05 23:35+0000\n"
+"PO-Revision-Date: 2026-10-05 23:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic
+"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_partner_form_fee_plans
+msgid "<span class=\"o_stat_text\">Fee Plans</span>"
+msgstr "<span class=\"o_stat_text\">خطط الرسوم</span>"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__year_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__year_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__year_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__year_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_search
+msgid "Academic Year"
+msgstr "العام الدراسي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__installment_ids
+msgid "All Installments"
+msgstr "كل الأقساط"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__other_fee_ids
+msgid "All Other Fees"
+msgstr "كل الرسوم الأخرى"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__amount
+msgid "Amount / المبلغ"
+msgstr "المبلغ"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__amount_due
+msgid "Amount Due / المستحق"
+msgstr "المستحق"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__amount_paid
+msgid "Amount Paid / المبلغ"
+msgstr "المبلغ"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_other.py:0
+msgid "Amount cannot be negative."
+msgstr "لا يمكن أن يكون المبلغ سالباً."
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "Amounts cannot be negative."
+msgstr "لا يمكن أن تكون المبالغ سالبة."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_list
+msgid "Basic Due"
+msgstr "مستحق أساسي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__basic_installment_count
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_installment_ids
+msgid "Basic Installments"
+msgstr "أقساط المصاريف الأساسية"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_paid
+msgid "Basic Paid"
+msgstr "المدفوع (أساسي)"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_remaining
+msgid "Basic Remaining"
+msgstr "المتبقي (أساسي)"
+
+#. module: jt_student_fee_installments
+#: model:ir.ui.menu,name:jt_student_fee_installments.menu_student_fee_other
+msgid "Books & Uniform"
+msgstr "الكتب واليونيفورم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__books_paid
+msgid "Books Paid"
+msgstr "المدفوع للكتب"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_list
+msgid "Bus Due"
+msgstr "مستحق باص"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__bus_installment_count
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__bus_installment_ids
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Bus Installments"
+msgstr "أقساط الباصات"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__bus_paid
+msgid "Bus Paid"
+msgstr "المدفوع (باص)"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__bus_remaining
+msgid "Bus Remaining"
+msgstr "المتبقي (باص)"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_generate_fee_plans_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.actions.act_window,help:jt_student_fee_installments.action_student_fee_plan
+msgid ""
+"Choose how many installments for basic fees and bus fees,\n"
+"                then track payments (amount, receipt, date) plus books and uniform."
+msgstr "حدد عدد أقساط المصاريف الأساسية والباصات، ثم تابع المدفوعات (المبلغ والإيصال والتاريخ) بالإضافة إلى الكتب واليونيفورم."
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_plan__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.actions.act_window,help:jt_student_fee_installments.action_student_fee_plan
+msgid "Create a fee plan for a student"
+msgstr "إنشاء خطة رسوم لطالب"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/wizard/generate_fee_plans_wizard.py:0
+msgid "Created %(created)s plan(s), updated %(updated)s existing plan(s)."
+msgstr "تم إنشاء %(created)s خطة، وتحديث %(updated)s خطة موجودة."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__create_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__create_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__create_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__create_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__create_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__currency_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__currency_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__payment_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__payment_date
+msgid "Date / التاريخ"
+msgstr "التاريخ"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__default_basic_total_due
+msgid "Default Basic Total Dues"
+msgstr "إجمالي المصاريف الأساسية الافتراضي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__default_bus_total_due
+msgid "Default Bus Total Dues"
+msgstr "إجمالي الباصات الافتراضي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_res_partner__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__display_name
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__division_id
+msgid "Division"
+msgstr "الفصل"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_plan__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_installment_list
+msgid "Due"
+msgstr "مستحق"
+
+#. module: jt_student_fee_installments
+#: model:ir.model,name:jt_student_fee_installments.model_res_partner
+msgid "Faculty Information"
+msgstr "بيانات عضو هيئة التدريس"
+
+#. module: jt_student_fee_installments
+#: model:res.groups.privilege,name:jt_student_fee_installments.privilege_fee_installments
+msgid "Fee Installments"
+msgstr "أقساط الرسوم"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_plan.py:0
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__plan_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__plan_id
+msgid "Fee Plan"
+msgstr "خطة الرسوم"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/wizard/generate_fee_plans_wizard.py:0
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_res_partner__fee_plan_ids
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_res_users__fee_plan_ids
+#: model:ir.ui.menu,name:jt_student_fee_installments.menu_student_fee_plan
+msgid "Fee Plans"
+msgstr "خطط الرسوم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__fee_type
+msgid "Fee Type"
+msgstr "نوع الرسم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_generate_fee_plans_wizard_form
+msgid "Generate"
+msgstr "إنشاء"
+
+#. module: jt_student_fee_installments
+#: model:ir.actions.act_window,name:jt_student_fee_installments.action_generate_fee_plans_wizard
+#: model:ir.ui.menu,name:jt_student_fee_installments.menu_generate_fee_plans
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_generate_fee_plans_wizard_form
+msgid "Generate Fee Plans"
+msgstr "إنشاء خطط الرسوم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model,name:jt_student_fee_installments.model_generate_fee_plans_wizard
+msgid "Generate Student Fee Plans"
+msgstr "إنشاء خطط رسوم الطلاب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_res_partner__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للدلالة على نشاط استثناء."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "عند التفعيل، الرسائل الجديدة تتطلب انتباهك."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__message_has_error
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "عند التفعيل، بعض الرسائل بها خطأ في التسليم."
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "Installment %s"
+msgstr "القسط %s"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__number
+msgid "Installment No"
+msgstr "رقم القسط"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__fee_type
+msgid "Installment Type"
+msgstr "نوع القسط"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_plan.py:0
+msgid "Installment count cannot be negative."
+msgstr "لا يمكن أن يكون عدد الأقساط سالباً."
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "Installment number must be at least 1."
+msgstr "يجب أن يكون رقم القسط 1 على الأقل."
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/res_partner.py:0
+#: model:ir.actions.act_window,name:jt_student_fee_installments.action_student_fee_installment
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_res_partner__fee_plan_count
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_res_users__fee_plan_count
+#: model:ir.ui.menu,name:jt_student_fee_installments.menu_student_fee_installment
+msgid "Installments"
+msgstr "الأقساط"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid ""
+"Installments — set count above, then Generate / or save to create lines"
+msgstr "الأقساط — حدد العدد أعلاه ثم احفظ لإنشاء البنود"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Internal notes..."
+msgstr "ملاحظات داخلية..."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__name
+msgid "Label"
+msgstr "التسمية"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__write_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__write_uid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__write_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__write_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__write_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: jt_student_fee_installments
+#: model:res.groups,name:jt_student_fee_installments.group_fee_installment_manager
+msgid "Manager"
+msgstr "مدير"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسالة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد نشاطي النهائي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+#: code:addons/jt_student_fee_installments/models/student_fee_other.py:0
+#: code:addons/jt_student_fee_installments/models/student_fee_plan.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/wizard/generate_fee_plans_wizard.py:0
+msgid "No students found for the selected year/standard."
+msgstr "لم يتم العثور على طلاب للعام/الصف المحدد."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__note
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__note
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_installment_count
+msgid "Number of Basic Installments / عدد أقساط المصاريف"
+msgstr "عدد أقساط المصاريف"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__bus_installment_count
+msgid "Number of Bus Installments / عدد أقساط الباصات"
+msgstr "عدد أقساط الباصات"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_plan__state__open
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_search
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: jt_student_fee_installments
+#: model:ir.actions.act_window,name:jt_student_fee_installments.action_student_fee_other
+msgid "Other Fees"
+msgstr "رسوم أخرى"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__is_paid
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__is_paid
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_installment_list
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__receipt_number
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__receipt_number
+msgid "Receipt No / رقم الإيصال"
+msgstr "رقم الإيصال"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_list
+msgid "Remaining"
+msgstr "المتبقي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__remaining
+msgid "Remaining / المتبقي"
+msgstr "المتبقي"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ تسليم الرسالة النصية"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__standard_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_search
+msgid "Standard"
+msgstr "الصف"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__standard_id
+msgid "Standard (optional filter)"
+msgstr "الصف (تصفية اختيارية)"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_plan.py:0
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Student"
+msgstr "الطالب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_installment__student_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_other__student_id
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__student_id
+msgid "Student / اسم الطالب"
+msgstr "اسم الطالب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model,name:jt_student_fee_installments.model_student_fee_installment
+msgid "Student Fee Installment"
+msgstr "قسط رسوم الطالب"
+
+#. module: jt_student_fee_installments
+#: model:ir.module.category,name:jt_student_fee_installments.module_category_student_fee_installments
+msgid "Student Fee Installments"
+msgstr "أقساط رسوم الطلاب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model,name:jt_student_fee_installments.model_student_fee_plan
+msgid "Student Fee Plan"
+msgstr "خطة رسوم الطالب"
+
+#. module: jt_student_fee_installments
+#: model:ir.actions.act_window,name:jt_student_fee_installments.action_student_fee_plan
+#: model:ir.ui.menu,name:jt_student_fee_installments.menu_fee_installments_root
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Student Fees"
+msgstr "رسوم الطلاب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model,name:jt_student_fee_installments.model_student_fee_other
+msgid "Student Other Fee"
+msgstr "رسوم أخرى للطالب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__student_count
+msgid "Students Found"
+msgstr "الطلاب الموجودون"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Summary / الملخص"
+msgstr "الملخص"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_other_list
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_total_due
+msgid "Total Basic Dues / اجمالي المصاريف الأساسية"
+msgstr "اجمالي المصاريف الأساسية"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__bus_total_due
+msgid "Total Bus Dues / اجمالي الباصات"
+msgstr "اجمالي الباصات"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_list
+msgid "Total Due"
+msgstr "إجمالي المستحق"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__total_due
+msgid "Total Dues / اجمالي المستحقات"
+msgstr "اجمالي المستحقات"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_list
+msgid "Total Paid"
+msgstr "إجمالي السداد"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__total_paid
+msgid "Total Paid / اجمالي السداد"
+msgstr "اجمالي السداد"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_plan.py:0
+msgid "Total dues cannot be negative."
+msgstr "لا يمكن أن يكون إجمالي المستحقات سالباً."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء على السجل."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__uniform_paid
+msgid "Uniform Paid"
+msgstr "المدفوع لليونيفورم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__overwrite_due
+msgid "Update totals / counts on existing plans"
+msgstr "تحديث الإجماليات / الأعداد في الخطط الموجودة"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_generate_fee_plans_wizard__default_basic_total_due
+msgid "Used when the student standard has no fee amount."
+msgstr "يُستخدم عندما لا يكون للصف مبلغ رسوم."
+
+#. module: jt_student_fee_installments
+#: model:res.groups,name:jt_student_fee_installments.group_fee_installment_user
+msgid "User"
+msgstr "مستخدم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_search
+msgid "With Remaining"
+msgstr "بها متبقي"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_plan.py:0
+msgid "Year"
+msgstr "العام"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/res_partner.py:0
+msgid "student_id"
+msgstr "الطالب"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_installment__fee_type__bus
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "أقساط الباصات"
+msgstr "أقساط الباصات"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_installment__fee_type__basic
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "أقساط المصاريف الأساسية"
+msgstr "أقساط المصاريف الأساسية"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "التاريخ"
+msgstr "التاريخ"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "القسط"
+msgstr "القسط"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "القسط %s — باصات"
+msgstr "القسط %s — باصات"
+
+#. module: jt_student_fee_installments
+#. odoo-python
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "القسط %s — مصاريف أساسية"
+msgstr "القسط %s — مصاريف أساسية"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__books_fee_ids
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_other__fee_type__books
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "الكتب"
+msgstr "الكتب"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "المبلغ"
+msgstr "المبلغ"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "المستحق"
+msgstr "المستحق"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__uniform_fee_ids
+#: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_other__fee_type__uniform
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "اليونيفورم"
+msgstr "اليونيفورم"
+
+#. module: jt_student_fee_installments
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "رقم الإيصال"
+msgstr "رقم الإيصال"

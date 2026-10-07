@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_fee_plan_form_account" model="ir.ui.view">
+        <field name="name">student.fee.plan.form.account</field>
+        <field name="model">student.fee.plan</field>
+        <field name="inherit_id" ref="jt_student_fee_installments.view_student_fee_plan_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_create_invoices_unpaid_basic"
+                        string="Invoice Basic Installments"
+                        type="object"
+                        invisible="state == 'closed'"/>
+                <button name="action_create_invoices_unpaid_bus"
+                        string="Invoice Bus Installments"
+                        type="object"
+                        invisible="state == 'closed'"/>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_invoices"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o">
+                        <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                    </button>
+                </div>
+            </xpath>
+
+            <!-- Basic installment lines: invoice columns + row buttons -->
+            <xpath expr="//field[@name='basic_installment_ids']/list/field[@name='is_paid']" position="after">
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_state" column_invisible="1"/>
+                <field name="invoice_payment_state" optional="show" widget="badge"
+                         decoration-success="invoice_payment_state in ('paid', 'in_payment')"
+                         decoration-warning="invoice_payment_state in ('not_paid', 'partial')"/>
+                <button name="action_create_invoice"
+                        type="object"
+                        string="Invoice"
+                        icon="fa-file-text-o"
+                        invisible="invoice_id and invoice_state != 'cancel'"/>
+                <button name="action_register_payment"
+                        type="object"
+                        string="Pay"
+                        icon="fa-money"
+                        invisible="not invoice_id or invoice_payment_state in ('paid', 'in_payment')"/>
+                <button name="action_open_invoice"
+                        type="object"
+                        string="Open"
+                        icon="fa-external-link"
+                        invisible="not invoice_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='bus_installment_ids']/list/field[@name='is_paid']" position="after">
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_state" column_invisible="1"/>
+                <field name="invoice_payment_state" optional="show" widget="badge"
+                         decoration-success="invoice_payment_state in ('paid', 'in_payment')"
+                         decoration-warning="invoice_payment_state in ('not_paid', 'partial')"/>
+                <button name="action_create_invoice"
+                        type="object"
+                        string="Invoice"
+                        icon="fa-file-text-o"
+                        invisible="invoice_id and invoice_state != 'cancel'"/>
+                <button name="action_register_payment"
+                        type="object"
+                        string="Pay"
+                        icon="fa-money"
+                        invisible="not invoice_id or invoice_payment_state in ('paid', 'in_payment')"/>
+                <button name="action_open_invoice"
+                        type="object"
+                        string="Open"
+                        icon="fa-external-link"
+                        invisible="not invoice_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='books_fee_ids']/list/field[@name='payment_date']" position="after">
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_state" column_invisible="1"/>
+                <field name="invoice_payment_state" optional="show" widget="badge"
+                         decoration-success="invoice_payment_state in ('paid', 'in_payment')"
+                         decoration-warning="invoice_payment_state in ('not_paid', 'partial')"/>
+                <button name="action_create_invoice"
+                        type="object"
+                        string="Invoice"
+                        icon="fa-file-text-o"
+                        invisible="invoice_id and invoice_state != 'cancel'"/>
+                <button name="action_register_payment"
+                        type="object"
+                        string="Pay"
+                        icon="fa-money"
+                        invisible="not invoice_id or invoice_payment_state in ('paid', 'in_payment')"/>
+                <button name="action_open_invoice"
+                        type="object"
+                        string="Open"
+                        icon="fa-external-link"
+                        invisible="not invoice_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='uniform_fee_ids']/list/field[@name='payment_date']" position="after">
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_state" column_invisible="1"/>
+                <field name="invoice_payment_state" optional="show" widget="badge"
+                         decoration-success="invoice_payment_state in ('paid', 'in_payment')"
+                         decoration-warning="invoice_payment_state in ('not_paid', 'partial')"/>
+                <button name="action_create_invoice"
+                        type="object"
+                        string="Invoice"
+                        icon="fa-file-text-o"
+                        invisible="invoice_id and invoice_state != 'cancel'"/>
+                <button name="action_register_payment"
+                        type="object"
+                        string="Pay"
+                        icon="fa-money"
+                        invisible="not invoice_id or invoice_payment_state in ('paid', 'in_payment')"/>
+                <button name="action_open_invoice"
+                        type="object"
+                        string="Open"
+                        icon="fa-external-link"
+                        invisible="not invoice_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

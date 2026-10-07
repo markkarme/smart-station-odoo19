@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_fee_installments_root"
+              name="Student Fees"
+              parent="jt_education_base.root_menu"
+              sequence="8"
+              groups="jt_student_fee_installments.group_fee_installment_user"/>
+
+    <menuitem id="menu_student_fee_plan"
+              name="Fee Plans"
+              parent="menu_fee_installments_root"
+              action="action_student_fee_plan"
+              sequence="1"/>
+
+    <menuitem id="menu_student_fee_installment"
+              name="Installments"
+              parent="menu_fee_installments_root"
+              action="action_student_fee_installment"
+              sequence="2"/>
+
+    <menuitem id="menu_student_fee_other"
+              name="Books &amp; Uniform"
+              parent="menu_fee_installments_root"
+              action="action_student_fee_other"
+              sequence="3"/>
+
+    <menuitem id="menu_generate_fee_plans"
+              name="Generate Fee Plans"
+              parent="menu_fee_installments_root"
+              action="action_generate_fee_plans_wizard"
+              sequence="10"
+              groups="jt_student_fee_installments.group_fee_installment_manager"/>
+</odoo>
