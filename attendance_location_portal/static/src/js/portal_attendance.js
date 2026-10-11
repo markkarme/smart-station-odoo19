@@ -16,6 +16,31 @@
         var longitudeInput = document.getElementById("attendance_longitude");
         var submitBtn = document.getElementById("submit_attendance_btn");
         var refreshBtn = document.getElementById("refresh_geo_btn");
+        var actionInputs = form.querySelectorAll('input[name="attendance_action"]');
+        var locationAllowed = false;
+        var buttonTextByAction = {
+            check_in: "تسجيل الحضور",
+            check_out: "تسجيل انصراف",
+        };
+        var defaultButtonText = "تسجيل";
+
+        var hasSelectedAction = function () {
+            return !!form.querySelector('input[name="attendance_action"]:checked');
+        };
+
+        var getSelectedAction = function () {
+            var selectedInput = form.querySelector('input[name="attendance_action"]:checked');
+            return selectedInput ? selectedInput.value : null;
+        };
+
+        var updateSubmitText = function () {
+            var selectedAction = getSelectedAction();
+            submitBtn.textContent = buttonTextByAction[selectedAction] || defaultButtonText;
+        };
+
+        var updateSubmitState = function () {
+            submitBtn.disabled = !(locationAllowed && hasSelectedAction());
+        };
 
         var setFeedback = function (message, type) {
             feedback.textContent = message;
@@ -47,8 +72,6 @@
         };
 
         var checkLocationRange = function (latitude, longitude) {
-            // Do not infer lang from the first path segment: "/my/..." would become
-            // "/my/my/attendance/check_location". website=True + frontend_lang handle i18n.
             var url = (form.getAttribute("data-check-url") || "/my/attendance/check_location")
                 + "?latitude=" + encodeURIComponent(latitude)
                 + "&longitude=" + encodeURIComponent(longitude);
@@ -65,36 +88,40 @@
                     longitudeInput.value = longitude;
 
                     if (data.allowed) {
-                        submitBtn.disabled = false;
+                        locationAllowed = true;
                         hideLocationsList();
                         setFeedback(data.message, "alert-success");
+                        updateSubmitState();
                         return;
                     }
 
-                    submitBtn.disabled = true;
+                    locationAllowed = false;
                     var message = data.message || "You are out of location range.";
                     if (data.nearest_location && data.nearest_distance_m !== false) {
-                        message += " Nearest location: "
+                        message += " أقرب موقع مسموح: "
                             + data.nearest_location
                             + " ("
                             + data.nearest_distance_m
-                            + " m away).";
+                            + " م).";
                     }
                     setFeedback(message, "alert-danger");
                     showLocationsList(data.location_names || []);
+                    updateSubmitState();
                 })
                 .catch(function () {
-                    submitBtn.disabled = true;
+                    locationAllowed = false;
                     hideLocationsList();
                     setFeedback(
                         "Could not verify your location range. Please try again.",
                         "alert-danger"
                     );
+                    updateSubmitState();
                 });
         };
 
         var detectLocation = function () {
-            submitBtn.disabled = true;
+            locationAllowed = false;
+            updateSubmitState();
             hideLocationsList();
             setFeedback("Detecting your location...", "alert-secondary");
             if (!navigator.geolocation) {
@@ -126,6 +153,14 @@
         };
 
         refreshBtn.addEventListener("click", detectLocation);
+        actionInputs.forEach(function (input) {
+            input.addEventListener("change", function () {
+                updateSubmitText();
+                updateSubmitState();
+            });
+        });
+        updateSubmitText();
+        updateSubmitState();
         detectLocation();
     }
 

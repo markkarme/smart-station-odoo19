@@ -97,6 +97,37 @@
                             <input type="hidden" id="attendance_latitude" name="latitude"/>
                             <input type="hidden" id="attendance_longitude" name="longitude"/>
 
+                            <div class="mb-3">
+                                <label class="form-label">نوع الحركة</label>
+                                <div class="attendance-action-options d-flex flex-wrap gap-3">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="attendance_action"
+                                            id="attendance_action_check_in"
+                                            value="check_in"
+                                            required="required"
+                                        />
+                                        <label class="form-check-label" for="attendance_action_check_in">
+                                            تسجيل حضور
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="attendance_action"
+                                            id="attendance_action_check_out"
+                                            value="check_out"
+                                        />
+                                        <label class="form-check-label" for="attendance_action_check_out">
+                                            تسجيل انصراف
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div id="geo_feedback" class="alert alert-secondary mb-3" role="alert">
                                 Detecting your location...
                             </div>
@@ -106,24 +137,23 @@
                                 <ul id="geo_allowed_locations" class="list-group list-group-flush border rounded"/>
                             </div>
 
-                            <div t-if="attendance_state == 'checked_in'" class="mb-3">
-                                <label for="attendance_note" class="form-label">Note (optional)</label>
+                            <div class="mb-3">
+                                <label for="attendance_note" class="form-label">ملاحظة (اختياري)</label>
                                 <textarea
                                     id="attendance_note"
                                     name="note"
                                     class="form-control"
                                     rows="3"
-                                    placeholder="Add a note for your manager..."
+                                    placeholder="ملاحظة اختيارية (تستخدم عند تسجيل الانصراف)..."
                                 />
                             </div>
 
                             <div class="d-flex flex-wrap gap-2">
                                 <button id="submit_attendance_btn" type="submit" class="btn btn-primary" disabled="disabled">
-                                    <t t-if="attendance_state == 'checked_in'">Check Out Now</t>
-                                    <t t-else="">Check In Now</t>
+                                    تسجيل
                                 </button>
                                 <button id="refresh_geo_btn" type="button" class="btn btn-outline-secondary">
-                                    Refresh Location
+                                    تحديث الموقع
                                 </button>
                             </div>
                         </form>
@@ -140,14 +170,43 @@
                     <div class="result-icon">
                         <span class="fa fa-check-circle"/>
                     </div>
-                    <h3 class="mb-2">Attendance Submitted Successfully</h3>
+                    <h3 class="mb-2">تم تسجيل الحضور بنجاح</h3>
                     <p class="text-muted mb-3">
-                        <strong t-if="action == 'check_in'">Check In</strong>
-                        <strong t-else="">Check Out</strong>
-                        recorded at
+                        <strong t-if="action == 'check_in'">حضور</strong>
+                        <strong t-else="">انصراف</strong>
+                        تم التسجيل في
                         <strong t-out="location"/>.
                     </p>
-                    <a href="/my/attendance" class="btn btn-primary">Back to Take Attendance</a>
+                    <div t-if="warning_message" class="alert alert-warning text-start mb-3" role="alert">
+                        <span t-out="warning_message"/>
+                    </div>
+                    <a href="/my/attendance" class="btn btn-primary">العودة إلى تسجيل الحضور</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_attendance_duplicate_checkin_page" name="Portal Attendance Duplicate Check In">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5 portal-attendance-result">
+                <div class="result-card failed shadow-sm">
+                    <div class="result-icon">
+                        <span class="fa fa-exclamation-triangle"/>
+                    </div>
+                    <h3 class="mb-2">رسالة تحقق</h3>
+                    <p class="text-muted mb-3" t-out="warning_message"/>
+                    <div class="d-flex flex-wrap gap-2">
+                        <form method="post" action="/my/attendance/submit" class="m-0">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="force_check_in" value="1"/>
+                            <input type="hidden" name="latitude" t-att-value="post_values.get('latitude')"/>
+                            <input type="hidden" name="longitude" t-att-value="post_values.get('longitude')"/>
+                            <input type="hidden" name="attendance_action" t-att-value="post_values.get('attendance_action')"/>
+                            <input type="hidden" name="note" t-att-value="post_values.get('note')"/>
+                            <button type="submit" class="btn btn-primary">متابعة</button>
+                        </form>
+                        <a href="/my/attendance" class="btn btn-outline-secondary">العودة إلى صفحة الحضور</a>
+                    </div>
                 </div>
             </div>
         </t>

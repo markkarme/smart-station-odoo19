@@ -1,3 +1,6 @@
+import pytz
+from pytz import utc
+
 from odoo import SUPERUSER_ID, _, fields, models
 from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.tools import email_normalize, format_date
@@ -22,6 +25,30 @@ class HrEmployee(models.Model):
         help="Portal admin users can view all attendance, general requests, "
         "time off, allocations, and attendance adjustments in the portal.",
     )
+
+    def _compute_hours_last_month(self):
+        """Tolerate checkout-first portal records with empty check_in."""
+        now_utc = pytz.utc.localize(fields.Datetime.now())
+        for timezone, employees in self.grouped("tz").items():
+            now_tz = now_utc.astimezone(pytz.timezone(timezone or "UTC"))
+            start_tz = now_tz.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+            start_naive = start_tz.astimezone(pytz.utc).replace(tzinfo=None)
+            end_naive = now_tz.astimezone(pytz.utc).replace(tzinfo=None)
+
+            for employee in employees:
+                current_month_attendances = employee.attendance_ids.filtered(
+                    lambda att: att.check_in
+                    and att.check_in >= start_naive
+                    and att.check_out
+                    and att.check_out <= end_naive
+                )
+                hours = sum(att.worked_hours or 0 for att in current_month_attendances)
+                overtime_hours = sum(
+                    att.validated_overtime_hours or 0 for att in current_month_attendances
+                )
+                employee.hours_last_month = round(hours, 2)
+                employee.hours_last_month_display = "%g" % employee.hours_last_month
+                employee.hours_last_month_overtime = round(overtime_hours, 2)
 
     def _get_portal_hr_admin_group(self):
         return self.env.ref(
@@ -196,7 +223,64 @@ class HrEmployee(models.Model):
             }
         )
 
-    def action_portal_attendance_change(self, latitude, longitude, note=None):
+    def _portal_attendance_local_date(self, dt=None):
+        """Same calendar day as hr.attendance.date (employee/_get_tz), not user tz."""
+        self.ensure_one()
+        dt = fields.Datetime.to_datetime(dt or fields.Datetime.now())
+        tz = pytz.timezone(self._get_tz() or "UTC")
+        return utc.localize(dt).astimezone(tz).date()
+
+    def _get_portal_day_attendance(self, action):
+        """Find the attendance row that same-day check-in/out should update.
+
+        Prefer an open check-in for checkout. Prefer rows that already have
+        check_in when matching on date (NULL check_in sorts first in DESC).
+        """
+        self.ensure_one()
+        attendance_model = self.env["hr.attendance"].sudo()
+        today = self._portal_attendance_local_date()
+
+        if action == "check_out":
+            open_attendance = attendance_model.search(
+                [
+                    ("employee_id", "=", self.id),
+                    ("check_in", "!=", False),
+                    ("check_out", "=", False),
+                ],
+                order="check_in desc",
+                limit=1,
+            )
+            if open_attendance:
+                return open_attendance
+
+        with_check_in = attendance_model.search(
+            [
+                ("employee_id", "=", self.id),
+                ("date", "=", today),
+                ("check_in", "!=", False),
+            ],
+            order="check_in desc",
+            limit=1,
+        )
+        if with_check_in:
+            return with_check_in
+
+        return attendance_model.search(
+            [
+                ("employee_id", "=", self.id),
+                ("date", "=", today),
+            ],
+            order="id desc",
+            limit=1,
+        )
+
+    def action_portal_attendance_change(
+        self,
+        latitude,
+        longitude,
+        attendance_action=None,
+        note=None,
+    ):
         self.ensure_one()
         if latitude is None or longitude is None:
             raise UserError(_("Your location could not be detected. Please enable GPS."))
@@ -206,15 +290,15 @@ class HrEmployee(models.Model):
         except (TypeError, ValueError):
             raise UserError(_("Invalid GPS coordinates received from your device."))
         allowed_location = self._validate_attendance_location(lat, lon)
-        checking_in = self.attendance_state != "checked_in"
-        if not checking_in:
-            open_attendance = (
-                self.env["hr.attendance"]
-                .sudo()
-                .search(
-                    [("employee_id", "=", self.id), ("check_out", "=", False)],
-                    limit=1,
-                )
+        action = (attendance_action or "").strip()
+        if action not in ("check_in", "check_out"):
+            raise UserError(_("Please choose whether this is check in or check out."))
+
+        today_attendance = self._get_portal_day_attendance(action)
+
+        if action == "check_out":
+            open_attendance = today_attendance.filtered(
+                lambda att: att.check_in and not att.check_out
             )
             if (
                 open_attendance
@@ -233,45 +317,83 @@ class HrEmployee(models.Model):
                     }
                 )
 
-        attendance = self.sudo().with_context(
-            portal_attendance_location=allowed_location,
-        )._attendance_action_change(
-            {
-                "latitude": lat,
-                "longitude": lon,
-                "location": allowed_location.name,
-                "mode": "automatic",
-            }
+        if not self.company_id.attendance_device_tracking:
+            self.company_id.sudo().write({"attendance_device_tracking": True})
+
+        attendance_model = self.env["hr.attendance"].sudo().with_context(
+            skip_attendance_validity_notification=True
         )
-        if checking_in and attendance and not attendance.attendance_location_id:
-            # Fallback if create path did not receive the location context
-            attendance.write(
-                {
-                    "attendance_location_id": allowed_location.id,
-                    "company_id": allowed_location.company_id.id,
-                }
-            )
+        portal_attendance = lambda recordset: recordset.with_context(
+            skip_attendance_validity_notification=True
+        )
         note_text = (note or "").strip()
-        if note_text and not checking_in:
-            attendance = (
-                self.env["hr.attendance"]
-                .sudo()
-                .search(
-                    [
-                        ("employee_id", "=", self.id),
-                        ("check_out", "!=", False),
-                    ],
-                    order="check_out desc",
-                    limit=1,
-                )
+        now = fields.Datetime.now()
+
+        if action == "check_in":
+            in_vals = {
+                "employee_id": self.id,
+                "check_in": now,
+                "in_mode": "automatic",
+                "in_latitude": lat,
+                "in_longitude": lon,
+                "in_location": allowed_location.name,
+                "attendance_location_id": allowed_location.id,
+                "company_id": allowed_location.company_id.id,
+                "portal_action_type": "check_in",
+                "portal_checkout_without_checkin": False,
+            }
+            if today_attendance:
+                portal_attendance(today_attendance).write(in_vals)
+                attendance = today_attendance
+            else:
+                attendance = attendance_model.create(in_vals)
+        else:
+            out_vals = {
+                "employee_id": self.id,
+                "check_out": now,
+                "out_mode": "automatic",
+                "out_latitude": lat,
+                "out_longitude": lon,
+                "out_location": allowed_location.name,
+                "attendance_location_id": allowed_location.id,
+                "company_id": allowed_location.company_id.id,
+                "portal_action_type": "check_out",
+            }
+            if note_text:
+                out_vals["portal_note"] = note_text
+            if today_attendance:
+                # Only keep checkout-without-checkin when the day row has no check-in.
+                if not today_attendance.check_in:
+                    out_vals["portal_checkout_without_checkin"] = True
+                    out_vals["check_in"] = False
+                else:
+                    out_vals["portal_checkout_without_checkin"] = False
+                portal_attendance(today_attendance).write(out_vals)
+                attendance = today_attendance
+            else:
+                out_vals["portal_checkout_without_checkin"] = True
+                out_vals["check_in"] = False
+                attendance = attendance_model.create(out_vals)
+
+        warnings = attendance.with_context(
+            lang=self.env.lang
+        )._collect_attendance_validity_warnings()
+        # When portal shows "checked in without prior check-out", notify HR Responsible.
+        if action == "check_in" and not attendance.check_out:
+            attendance.with_context(
+                lang=self.env.lang
+            )._schedule_missing_checkout_hr_activity()
+        if warnings:
+            attendance.message_post(
+                body="\n".join(warnings),
+                message_type="comment",
+                subtype_xmlid="mail.mt_note",
             )
-            if attendance:
-                attendance.write({"portal_note": note_text})
 
         return {
             "location_name": allowed_location.name,
-            "action": "check_in" if checking_in else "check_out",
-            "state": self.attendance_state,
+            "action": action,
+            "warnings": warnings,
         }
 
     def _portal_ensure_current_user(self):
