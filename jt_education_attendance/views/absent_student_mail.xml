@@ -4,24 +4,26 @@
         <record id="absent_student_template" model="mail.template">
             <field name="name">Absent Student</field>
             <field name="model_id" ref="jt_education_attendance.model_attendance_attendance"/>
-            <field name="subject">New rank: {{ object.student_id.name }}</field>
+            <field name="subject">Attendance Reminder - Absent Students ({{ object.date }})</field>
             <field name="email_to"></field>
-            <field name="partner_to">{{ object.student_id.id }}</field>
-            <field name="body_html" type="html">  
+            <field name="body_html" type="html">
                 <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+                    <t t-set="parent" t-value="ctx.get('parent')"/>
+                    <t t-set="absent_students" t-value="ctx.get('absent_students') or []"/>
                     <div style="text-align: center; margin-bottom: 20px;">
                         <h2 style="color: #555;">Attendance Alert</h2>
                     </div>
-                    
-                    <p>Dear <t t-out="ctx.get('parent').name"/>,</p>
+
+                    <p>Dear <t t-out="parent.name if parent else 'Parent'"/>,</p>
 
                     <p>
-                        We hope this message finds you well. We want to inform you that the following 
-                        student(s) were marked <strong>absent</strong> today (<t t-out="ctx.get('date')"/>):
+                        We hope this message finds you well. We want to inform you that the following
+                        student(s) were marked <strong>absent</strong> today
+                        (<t t-out="ctx.get('date') or object.date"/>):
                     </p>
 
                     <div>
-                        <t t-foreach="ctx.get('absent_students', [])" t-as="absent">
+                        <t t-foreach="absent_students" t-as="absent">
                             <div style="margin-bottom: 10px; border-left: 3px solid #dc3545;">
                                 <strong>Student:</strong> <t t-out="absent.student_id.name"/><br/>
                             </div>
@@ -31,8 +33,7 @@
                     <p>If any of these absences were not pre-approved, we encourage you to contact us for clarification.</p>
 
                     <p style="margin-top: 30px;">Best regards,</p>
-                    <p><strong><t t-out="object.faculty_id.name"/></strong><br/>
-                    </p>
+                    <p><strong><t t-out="object.faculty_id.name or ''"/></strong><br/></p>
                 </div>
             </field>
         </record>
