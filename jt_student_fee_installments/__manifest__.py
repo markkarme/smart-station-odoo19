@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Student Fee Installments',
-    'version': '19.0.1.1.5',
+    'version': '19.0.1.1.9',
     'category': 'Education',
     'summary': 'Per-student fee plans with configurable basic/bus installments plus books and uniform',
     'description': """
@@ -26,6 +26,7 @@ Depends only on jt_education_base (not jt_education_fees).
         'security/security.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
+        'data/mail_template_fee_reminder.xml',
         'wizard/generate_fee_plans_wizard_views.xml',
         'views/student_fee_payment_views.xml',
         'views/student_fee_plan_views.xml',

@@ -5,7 +5,8 @@
         <field name="model">student.fee.installment</field>
         <field name="arch" type="xml">
             <list>
-                <field name="student_id"/>
+                <field name="student_id"
+                         context="{'form_view_ref': 'jt_education_base.student_profile'}"/>
                 <field name="year_id"/>
                 <field name="fee_type"/>
                 <field name="number"/>
@@ -24,7 +25,8 @@
         <field name="model">student.fee.other</field>
         <field name="arch" type="xml">
             <list>
-                <field name="student_id"/>
+                <field name="student_id"
+                         context="{'form_view_ref': 'jt_education_base.student_profile'}"/>
                 <field name="year_id"/>
                 <field name="fee_type"/>
                 <field name="amount" sum="Total"/>
