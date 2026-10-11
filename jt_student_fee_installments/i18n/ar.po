@@ -111,7 +111,7 @@ msgstr "مستحق أساسي"
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__basic_installment_count
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_installment_ids
 msgid "Basic Installments"
-msgstr "أقساط المصاريف الأساسية"
+msgstr "أقساط المصاريف الدراسية"
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_paid
@@ -165,7 +165,7 @@ msgstr "إلغاء"
 msgid ""
 "Choose how many installments for basic fees and bus fees,\n"
 "                then track payments (amount, receipt, date) plus books and uniform."
-msgstr "حدد عدد أقساط المصاريف الأساسية والباصات، ثم تابع المدفوعات (المبلغ والإيصال والتاريخ) بالإضافة إلى الكتب واليونيفورم."
+msgstr "حدد عدد أقساط المصاريف الدراسية والباصات، ثم تابع المدفوعات (المبلغ والإيصال والتاريخ) بالإضافة إلى الكتب واليونيفورم."
 
 #. module: jt_student_fee_installments
 #: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
@@ -225,7 +225,7 @@ msgstr "التاريخ"
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__default_basic_total_due
 msgid "Default Basic Total Dues"
-msgstr "إجمالي المصاريف الأساسية الافتراضي"
+msgstr "إجمالي المصاريف الدراسية الافتراضي"
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_generate_fee_plans_wizard__default_bus_total_due
@@ -242,9 +242,28 @@ msgid "Display Name"
 msgstr "الاسم المعروض"
 
 #. module: jt_student_fee_installments
-#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__division_id
-msgid "Division"
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__class_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Class"
 msgstr "الفصل"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__division_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "Division"
+msgstr "القسم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__class_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "الفصل"
+msgstr "الفصل"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__division_id
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
+msgid "القسم"
+msgstr "القسم"
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_plan__state__draft
@@ -683,8 +702,8 @@ msgstr "الإجمالي"
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_total_due
-msgid "Total Basic Dues / اجمالي المصاريف الأساسية"
-msgstr "اجمالي المصاريف الأساسية"
+msgid "Total Basic Dues / اجمالي المصاريف الدراسية"
+msgstr "اجمالي المصاريف الدراسية"
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__bus_total_due
@@ -778,8 +797,8 @@ msgstr "أقساط الباصات"
 #. module: jt_student_fee_installments
 #: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_installment__fee_type__basic
 #: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
-msgid "أقساط المصاريف الأساسية"
-msgstr "أقساط المصاريف الأساسية"
+msgid "أقساط المصاريف الدراسية"
+msgstr "أقساط المصاريف الدراسية"
 
 #. module: jt_student_fee_installments
 #: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
@@ -802,6 +821,16 @@ msgstr "القسط %s — باصات"
 #: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
 msgid "القسط %s — مصاريف أساسية"
 msgstr "القسط %s — مصاريف أساسية"
+
+#. module: jt_student_fee_installments
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "القسط %s — مصاريف الدراسية"
+msgstr "القسط %s — مصاريف الدراسية"
+
+#. module: jt_student_fee_installments
+#: code:addons/jt_student_fee_installments/models/student_fee_installment.py:0
+msgid "المقدم - مصاريف دراسية"
+msgstr "المقدم - مصاريف دراسية"
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__books_fee_ids

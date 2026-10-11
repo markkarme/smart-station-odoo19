@@ -74,6 +74,11 @@ class StudentFeeAccountingMixin(models.AbstractModel):
             ))
         return product
 
+    def _fee_accounting_product(self):
+        """Product used on the invoice line (override to use a line-level product)."""
+        self.ensure_one()
+        return self._get_fee_product(self._fee_accounting_category())
+
     def _prepare_fee_invoice_vals(self):
         self.ensure_one()
         partner = self._fee_accounting_partner()
@@ -82,7 +87,7 @@ class StudentFeeAccountingMixin(models.AbstractModel):
         amount = self._fee_accounting_amount()
         if amount <= 0:
             raise UserError(_('Invoice amount must be greater than zero.'))
-        product = self._get_fee_product(self._fee_accounting_category())
+        product = self._fee_accounting_product()
         company = self.plan_id.company_id if self.plan_id else self.env.company
         return {
             'move_type': 'out_invoice',

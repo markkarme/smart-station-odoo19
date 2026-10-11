@@ -186,6 +186,21 @@ class StudentFeePlan(models.Model):
             raise UserError(_('Invalid discount type.'))
         return True
 
+    def action_apply_change_due_date(self, installment_ids, new_due_date):
+        """Change due date on selected unpaid installments (exception path)."""
+        self.ensure_one()
+        if not new_due_date:
+            raise UserError(_('يرجى تحديد موعد الاستحقاق الجديد.'))
+        lines = self.env['student.fee.installment'].browse(installment_ids).filtered(
+            lambda l: l.plan_id == self and not l.is_paid
+        )
+        if not lines:
+            raise UserError(_('يرجى اختيار قسط واحد على الأقل غير مسدد.'))
+        lines.with_context(allow_due_date_exception=True).write({
+            'due_date': new_due_date,
+        })
+        return True
+
     def _assign_missing_due_dates(self):
         for plan in self:
             for line in plan.installment_ids.filtered(lambda l: not l.due_date):

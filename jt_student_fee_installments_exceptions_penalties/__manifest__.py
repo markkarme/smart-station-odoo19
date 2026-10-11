@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Student Fee Exceptions & Penalties',
-    'version': '19.0.1.0.1',
+    'version': '19.0.1.0.3',
     'category': 'Education',
-    'summary': 'Late payment weekly penalties and fee exceptions (more installments / discount)',
+    'summary': 'Late payment weekly penalties and fee exceptions (more installments / discount / due date)',
     'description': """
 Student Fee Installments — Exceptions & Penalties
 =================================================
 
 * Due date (تاريخ الاستحقاق) on each installment
+* Due date readonly when plan is open (change via exception)
 * Late penalty = weeks after due date × price per week (default 50)
 * Total late penalties on the fee plan and per line
 * Exception wizard:
   - Increase number of installments (basic or bus) + document
   - Discount on unpaid lines (fixed or %) + document
+  - Change due date (تعديل موعد الاستحقاق) + document
     """,
     'author': 'Appivio',
     'license': 'LGPL-3',

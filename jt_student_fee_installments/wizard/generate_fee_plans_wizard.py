@@ -7,26 +7,41 @@ class GenerateFeePlansWizard(models.TransientModel):
     _name = 'generate.fee.plans.wizard'
     _description = 'Generate Student Fee Plans'
 
-    year_id = fields.Many2one('year.year', string='Academic Year', required=True)
-    standard_id = fields.Many2one('student.standard', string='Standard (optional filter)')
+    year_id = fields.Many2one('year.year', string='العام الدراسي', required=True)
+    standard_id = fields.Many2one(
+        'student.standard',
+        string='الصف (تصفية اختيارية)',
+    )
     basic_installment_count = fields.Integer(
-        string='Basic Installments',
+        string='أقساط المصاريف الدراسية',
         default=3,
     )
     bus_installment_count = fields.Integer(
-        string='Bus Installments',
+        string='أقساط الباصات',
         default=2,
     )
     default_basic_total_due = fields.Float(
-        string='Default Basic Total Dues',
+        string='إجمالي المصاريف الدراسية الافتراضي',
         help='Used when the student standard has no fee amount.',
     )
-    default_bus_total_due = fields.Float(string='Default Bus Total Dues')
+    bus_category_id = fields.Many2one(
+        'bus.category',
+        string='فئة الباص',
+        help='Default bus when the student has no bus assigned. Price fills bus total.',
+    )
+    default_bus_total_due = fields.Float(string='إجمالي الباصات الافتراضي')
+    default_books_amount = fields.Float(
+        string='سعر الكتب',
+        help='Creates a books fee line on each generated / updated plan.',
+    )
     overwrite_due = fields.Boolean(
-        string='Update totals / counts on existing plans',
+        string='تحديث الإجماليات / الأعداد في الخطط الموجودة',
         default=False,
     )
-    student_count = fields.Integer(string='Students Found', compute='_compute_student_count')
+    student_count = fields.Integer(
+        string='الطلاب الموجودون',
+        compute='_compute_student_count',
+    )
 
     @api.depends('year_id', 'standard_id')
     def _compute_student_count(self):
@@ -44,6 +59,42 @@ class GenerateFeePlansWizard(models.TransientModel):
         if self.standard_id and self.standard_id.fee:
             self.default_basic_total_due = self.standard_id.fee
 
+    @api.onchange('bus_category_id')
+    def _onchange_bus_category_id(self):
+        if self.bus_category_id:
+            self.default_bus_total_due = self.bus_category_id.price or 0.0
+
+    def _resolve_bus(self, student):
+        """Student bus first, else wizard bus category."""
+        self.ensure_one()
+        bus = student.bus_category_id or self.bus_category_id
+        if bus:
+            return bus, bus.price or 0.0
+        return self.env['bus.category'], self.default_bus_total_due or 0.0
+
+    def _ensure_books_line(self, plan, amount):
+        """Create or update a single unpaid books line with the given amount."""
+        if not amount:
+            return
+        Other = self.env['student.fee.other']
+        line = Other.search([
+            ('plan_id', '=', plan.id),
+            ('fee_type', '=', 'books'),
+        ], limit=1)
+        vals = {
+            'amount': amount,
+            'payment_date': False,
+        }
+        if line:
+            if self.overwrite_due or not line.amount:
+                line.write(vals)
+        else:
+            Other.create({
+                'plan_id': plan.id,
+                'fee_type': 'books',
+                **vals,
+            })
+
     def action_generate(self):
         self.ensure_one()
         domain = [
@@ -60,6 +111,8 @@ class GenerateFeePlansWizard(models.TransientModel):
         Plan = self.env['student.fee.plan']
         created = 0
         updated = 0
+        books_amount = self.default_books_amount or 0.0
+
         for student in students:
             plan = Plan.search([
                 ('student_id', '=', student.id),
@@ -70,31 +123,37 @@ class GenerateFeePlansWizard(models.TransientModel):
                 if student.standard and student.standard.fee
                 else self.default_basic_total_due
             )
+            bus, bus_due = self._resolve_bus(student)
             vals = {
                 'standard_id': student.standard.id,
                 'division_id': student.div.id,
+                'class_id': student.class_id.id,
+                'bus_category_id': bus.id if bus else False,
                 'basic_installment_count': self.basic_installment_count,
                 'bus_installment_count': self.bus_installment_count,
                 'basic_total_due': basic_due or 0.0,
-                'bus_total_due': self.default_bus_total_due or 0.0,
+                'bus_total_due': bus_due,
                 'state': 'open',
             }
             if plan:
                 if self.overwrite_due:
                     plan.write(vals)
-                    updated += 1
                 else:
                     plan.write({
                         'standard_id': student.standard.id,
                         'division_id': student.div.id,
+                        'class_id': student.class_id.id,
+                        'bus_category_id': bus.id if bus else plan.bus_category_id.id,
                     })
-                    updated += 1
+                self._ensure_books_line(plan, books_amount)
+                updated += 1
             else:
-                Plan.create({
+                plan = Plan.create({
                     'student_id': student.id,
                     'year_id': self.year_id.id,
                     **vals,
                 })
+                self._ensure_books_line(plan, books_amount)
                 created += 1
 
         return {

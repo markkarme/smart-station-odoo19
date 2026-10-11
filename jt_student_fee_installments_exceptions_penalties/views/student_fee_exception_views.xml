@@ -13,6 +13,7 @@
                 <field name="new_installment_count" optional="show"/>
                 <field name="discount_type" optional="show"/>
                 <field name="discount_value" optional="show"/>
+                <field name="new_due_date" optional="show"/>
                 <field name="user_id"/>
                 <field name="create_date"/>
             </list>
@@ -42,16 +43,19 @@
                                      invisible="exception_type != 'discount'"/>
                             <field name="discount_value"
                                      invisible="exception_type != 'discount'"/>
+                            <field name="new_due_date"
+                                     invisible="exception_type != 'change_due_date'"/>
                             <field name="document" filename="document_filename"/>
                             <field name="document_filename" invisible="1"/>
                         </group>
                     </group>
-                    <group string="Affected Installments"
-                           invisible="exception_type != 'discount'">
+                    <group string="الأقساط المتأثرة"
+                           invisible="exception_type not in ('discount', 'change_due_date')">
                         <field name="installment_ids" nolabel="1">
                             <list>
                                 <field name="name"/>
                                 <field name="fee_type"/>
+                                <field name="due_date"/>
                                 <field name="amount_due"/>
                                 <field name="amount_due_original"/>
                             </list>
@@ -67,13 +71,13 @@
     </record>
 
     <record id="action_student_fee_exception" model="ir.actions.act_window">
-        <field name="name">Fee Exceptions</field>
+        <field name="name">استثناءات الرسوم</field>
         <field name="res_model">student.fee.exception</field>
         <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="menu_student_fee_exception"
-              name="Exceptions"
+              name="الاستثناءات"
               parent="jt_student_fee_installments.menu_fee_installments_root"
               action="action_student_fee_exception"
               sequence="5"/>

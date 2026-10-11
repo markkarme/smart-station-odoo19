@@ -7,6 +7,11 @@ from odoo.tools.misc import format_date, formatLang
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    bus_category_id = fields.Many2one(
+        'bus.category',
+        string='الباص',
+        help='Bus category assigned to this student.',
+    )
     fee_plan_ids = fields.One2many(
         'student.fee.plan',
         'student_id',
@@ -143,7 +148,10 @@ class ResPartner(models.Model):
             'default_year_id': self.curr_year.id if self.curr_year else False,
             'default_standard_id': self.standard.id if self.standard else False,
             'default_division_id': self.div.id if self.div else False,
+            'default_class_id': self.class_id.id if self.class_id else False,
+            'default_bus_category_id': self.bus_category_id.id if self.bus_category_id else False,
             'default_basic_total_due': self.standard.fee if self.standard else 0.0,
+            'default_bus_total_due': self.bus_category_id.price if self.bus_category_id else 0.0,
             'default_state': 'open',
         }
         plans = self.env['student.fee.plan'].search([

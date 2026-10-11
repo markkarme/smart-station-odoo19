@@ -49,7 +49,14 @@ class StudentFeePlan(models.Model):
         ondelete='restrict',
     )
     standard_id = fields.Many2one('student.standard', string='Standard', tracking=True)
-    division_id = fields.Many2one('standard.division', string='Division')
+    division_id = fields.Many2one('standard.division', string='القسم')
+    class_id = fields.Many2one('student.class', string='الفصل')
+    bus_category_id = fields.Many2one(
+        'bus.category',
+        string='الباص',
+        tracking=True,
+        help='Bus category; price fills Total Bus Dues.',
+    )
     state = fields.Selection(
         [
             ('draft', 'Draft'),
@@ -69,7 +76,7 @@ class StudentFeePlan(models.Model):
         tracking=True,
     )
     basic_total_due = fields.Monetary(
-        string='Total Basic Dues / اجمالي المصاريف الأساسية',
+        string='Total Basic Dues / اجمالي المصاريف الدراسية',
         currency_field='currency_id',
         tracking=True,
     )
@@ -246,8 +253,17 @@ class StudentFeePlan(models.Model):
         self.year_id = self.student_id.curr_year
         self.standard_id = self.student_id.standard
         self.division_id = self.student_id.div
+        self.class_id = self.student_id.class_id
+        self.bus_category_id = self.student_id.bus_category_id
         if self.student_id.standard and self.student_id.standard.fee and not self.basic_total_due:
             self.basic_total_due = self.student_id.standard.fee
+        if self.bus_category_id:
+            self.bus_total_due = self.bus_category_id.price
+
+    @api.onchange('bus_category_id')
+    def _onchange_bus_category_id(self):
+        if self.bus_category_id:
+            self.bus_total_due = self.bus_category_id.price
 
     def _split_amount(self, total, count):
         """Split total across count installments (last line gets remainder)."""
@@ -321,17 +337,32 @@ class StudentFeePlan(models.Model):
                     student.name or _('Student'),
                     year.name or _('Year'),
                 )
-            if not vals.get('standard_id') and vals.get('student_id'):
+            if vals.get('student_id'):
                 student = self.env['res.partner'].browse(vals['student_id'])
                 vals.setdefault('standard_id', student.standard.id or False)
                 vals.setdefault('division_id', student.div.id or False)
+                vals.setdefault('class_id', student.class_id.id or False)
+                vals.setdefault(
+                    'bus_category_id',
+                    student.bus_category_id.id or False,
+                )
                 if not vals.get('basic_total_due') and student.standard:
                     vals['basic_total_due'] = student.standard.fee or 0.0
+                if not vals.get('bus_total_due') and student.bus_category_id:
+                    vals['bus_total_due'] = student.bus_category_id.price or 0.0
+            elif vals.get('bus_category_id') and not vals.get('bus_total_due'):
+                bus = self.env['bus.category'].browse(vals['bus_category_id'])
+                vals['bus_total_due'] = bus.price or 0.0
         plans = super().create(vals_list)
         plans.action_generate_installments()
         return plans
 
     def write(self, vals):
+        vals = dict(vals)
+        if vals.get('bus_category_id') and 'bus_total_due' not in vals:
+            bus = self.env['bus.category'].browse(vals['bus_category_id'])
+            if bus:
+                vals['bus_total_due'] = bus.price or 0.0
         res = super().write(vals)
         if self.env.context.get('skip_installment_sync'):
             return res

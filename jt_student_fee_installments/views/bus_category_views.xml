@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bus_category_list" model="ir.ui.view">
+        <field name="name">bus.category.list</field>
+        <field name="model">bus.category</field>
+        <field name="arch" type="xml">
+            <list editable="top">
+                <field name="name"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="price"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_bus_category_form" model="ir.ui.view">
+        <field name="name">bus.category.form</field>
+        <field name="model">bus.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="price"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bus_category" model="ir.actions.act_window">
+        <field name="name">فئات الباصات</field>
+        <field name="res_model">bus.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Education → Configurations → Student → Bus -->
+    <menuitem id="menu_bus_category"
+              name="الباصات"
+              parent="jt_education_base.configurations_stud"
+              action="action_bus_category"
+              sequence="15"/>
+</odoo>
