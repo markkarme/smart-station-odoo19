@@ -6,6 +6,19 @@ class StudentFeeOther(models.Model):
     _name = 'student.fee.other'
     _inherit = ['student.fee.other', 'student.fee.accounting.mixin']
 
+    product_id = fields.Many2one(
+        'product.product',
+        string='المنتج',
+        domain="[('sale_ok', '=', True)]",
+        help='Select a product to fill the amount from its sales price.',
+    )
+
+    @api.onchange('product_id')
+    def _onchange_product_id(self):
+        for line in self:
+            if line.product_id:
+                line.amount = line.product_id.lst_price
+
     def _fee_accounting_category(self):
         self.ensure_one()
         return self.fee_type
@@ -14,8 +27,23 @@ class StudentFeeOther(models.Model):
         self.ensure_one()
         return self.amount or 0.0
 
+    def _fee_accounting_product(self):
+        self.ensure_one()
+        if self.product_id:
+            return self.product_id
+        return super()._fee_accounting_product()
+
     def _fee_accounting_description(self):
         self.ensure_one()
+        if self.product_id:
+            student = self.student_id.name or ''
+            year = self.year_id.name or ''
+            return _(
+                '%(product)s — %(student)s (%(year)s)',
+                product=self.product_id.display_name,
+                student=student,
+                year=year,
+            )
         labels = dict(self._fields['fee_type'].selection)
         student = self.student_id.name or ''
         year = self.year_id.name or ''

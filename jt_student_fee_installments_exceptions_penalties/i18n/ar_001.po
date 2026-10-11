@@ -219,7 +219,7 @@ msgstr "اسم الملف"
 #. module: jt_student_fee_installments_exceptions_penalties
 #: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_plan__installment_start_date
 msgid "First Due Date"
-msgstr "أول تاريخ استحقاق"
+msgstr "الحد الاقصي لدفع القسط"
 
 #. module: jt_student_fee_installments_exceptions_penalties
 #: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__discount_type__fixed
@@ -616,8 +616,8 @@ msgstr "أقساط الباصات"
 #. module: jt_student_fee_installments_exceptions_penalties
 #: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__fee_type__basic
 #: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__fee_type__basic
-msgid "أقساط المصاريف الأساسية"
-msgstr "أقساط المصاريف الأساسية"
+msgid "أقساط المصاريف الدراسية"
+msgstr "أقساط المصاريف الدراسية"
 
 #. module: jt_student_fee_installments_exceptions_penalties
 #: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
@@ -633,3 +633,45 @@ msgstr "المستحق + الغرامة"
 #: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
 msgid "تاريخ الاستحقاق"
 msgstr "تاريخ الاستحقاق"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__exception_type__change_due_date
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__exception_type__change_due_date
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "تعديل موعد الاستحقاق"
+msgstr "تعديل موعد الاستحقاق"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception__new_due_date
+#: model:ir.model.fields,field_description:jt_student_fee_installments_exceptions_penalties.field_student_fee_exception_wizard__new_due_date
+msgid "موعد الاستحقاق الجديد"
+msgstr "موعد الاستحقاق الجديد"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__exception_type__increase_installments
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__exception_type__increase_installments
+msgid "زيادة عدد الأقساط"
+msgstr "زيادة عدد الأقساط"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__exception_type__discount
+#: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__exception_type__discount
+msgid "خصم"
+msgstr "خصم"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "استثناء"
+msgstr "استثناء"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model:ir.actions.act_window,name:jt_student_fee_installments_exceptions_penalties.action_student_fee_exception
+#: model:ir.ui.menu,name:jt_student_fee_installments_exceptions_penalties.menu_student_fee_exception
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_plan_form_penalties
+msgid "الاستثناءات"
+msgstr "الاستثناءات"
+
+#. module: jt_student_fee_installments_exceptions_penalties
+#: model_terms:ir.ui.view,arch_db:jt_student_fee_installments_exceptions_penalties.view_student_fee_exception_wizard_form
+msgid "تطبيق الاستثناء"
+msgstr "تطبيق الاستثناء"

@@ -670,7 +670,7 @@ msgstr ""
 
 #. module: jt_student_fee_installments
 #: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__basic_total_due
-msgid "Total Basic Dues / اجمالي المصاريف الأساسية"
+msgid "Total Basic Dues / اجمالي المصاريف الدراسية"
 msgstr ""
 
 #. module: jt_student_fee_installments
@@ -765,7 +765,7 @@ msgstr ""
 #. module: jt_student_fee_installments
 #: model:ir.model.fields.selection,name:jt_student_fee_installments.selection__student_fee_installment__fee_type__basic
 #: model_terms:ir.ui.view,arch_db:jt_student_fee_installments.view_student_fee_plan_form
-msgid "أقساط المصاريف الأساسية"
+msgid "أقساط المصاريف الدراسية"
 msgstr ""
 
 #. module: jt_student_fee_installments

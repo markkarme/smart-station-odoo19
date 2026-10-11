@@ -44,39 +44,71 @@ class PrintAttendance(models.TransientModel):
 
 
     def get_report_data(self):
-        domain =[]
-        if self.division_id and self.standard_id :
-            domain = [('is_student', '=', True), ('div','=',self.division_id.id), ('standard','=',self.standard_id.id)]
-        elif self.division_id and not self.standard_id :
-            domain = [('is_student', '=', True),('div','=',self.division_id.id)]
-        elif not self.division_id and self.standard_id:
-            domain = [('is_student', '=', True),('standard','=',self.standard_id.id)]
+        """Build report datasets from attendance sheets.
+
+        Students are often stored under branch companies while the UI company is
+        the school HQ. Partner company rules then hide them and the report
+        becomes empty. Load lines/students with sudo so sheet data is visible.
+        """
+        self.ensure_one()
+        Line = self.env['attendance.line'].sudo()
+        Partner = self.env['res.partner'].sudo()
+        Standard = self.env['student.standard'].sudo()
+
+        att_domain = [
+            ('attendance_id.date', '>=', self.start_date),
+            ('attendance_id.date', '<=', self.end_date),
+        ]
+        if self.division_id:
+            att_domain.append(('attendance_id.division_id', '=', self.division_id.id))
+        if self.standard_id:
+            att_domain.append(('attendance_id.standard_id', '=', self.standard_id.id))
+        if self.faculty_id and not self.summary_report:
+            att_domain.append(('attendance_id.faculty_id', '=', self.faculty_id.id))
+
+        attendance_lines = Line.search(att_domain, order='date, student_id')
+        attendance_lines_new = attendance_lines
+
+        # Prefer students who appear on sheets; fall back to enrollment domain
+        students = attendance_lines.mapped('student_id')
+        if not students:
+            student_domain = [('is_student', '=', True)]
+            if self.division_id:
+                student_domain.append(('div', '=', self.division_id.id))
+            if self.standard_id:
+                student_domain.append(('standard', '=', self.standard_id.id))
+            students = Partner.search(student_domain, order='name')
         else:
-            domain = [('is_student', '=', True)]
-        students = self.env['res.partner'].search(domain)
-        faculties = self.faculty_id
-        attendance_lines = self.env['attendance.line'].search([('student_id','in',students.ids),('attendance_id.date','>=',self.start_date),('attendance_id.date','<',self.end_date)])
-        attendance_lines_new = self.env['attendance.line'].search([('student_id','in',students.ids),('attendance_id.date','>=',self.start_date),('attendance_id.date','<=',self.end_date)])
-        standards = self.env['student.standard'].search([])
-        month_name_list = OrderedDict(((self.start_date + timedelta(_)).strftime(r"%B-%Y"), None) for _ in range((self.end_date - self.start_date).days)).keys()       
-        data = {'attendance_lines':attendance_lines,
-                'month_name':list(month_name_list),
-                'students': students,
-                'faculties':faculties,
-                'standards':standards,
-                'attendance_lines_new':attendance_lines_new,
-                }
-        return data
+            students = students.sorted(key=lambda s: s.name or '')
 
+        if self.summary_report:
+            standards = attendance_lines_new.mapped('standard_id')
+            if not standards and self.standard_id:
+                standards = self.standard_id
+            elif not standards:
+                standards = Standard.search([])
+        else:
+            standards = Standard.search([])
 
-    def get_all_date(self,start_date,end_date):
+        day_count = (self.end_date - self.start_date).days + 1
+        month_name_list = OrderedDict(
+            ((self.start_date + timedelta(days=_)).strftime(r"%B-%Y"), None) for _ in range(day_count)
+        ).keys()
+        return {
+            'attendance_lines': attendance_lines,
+            'month_name': list(month_name_list),
+            'students': students,
+            'faculties': self.faculty_id,
+            'standards': standards,
+            'attendance_lines_new': attendance_lines_new,
+        }
+
+    def get_all_date(self, start_date, end_date):
         date_list = []
-        if start_date == end_date:
-            date_list.append(start_date)
-        else:
-            while start_date != end_date:
-                date_list.append(start_date)
-                start_date += timedelta(days=1)
+        current = start_date
+        while current <= end_date:
+            date_list.append(current)
+            current += timedelta(days=1)
         return date_list
 
 

@@ -6,3 +6,6 @@ access_student_fee_installment_manager,student.fee.installment.manager,model_stu
 access_student_fee_other_user,student.fee.other.user,model_student_fee_other,group_fee_installment_user,1,1,1,0
 access_student_fee_other_manager,student.fee.other.manager,model_student_fee_other,group_fee_installment_manager,1,1,1,1
 access_generate_fee_plans_wizard_user,generate.fee.plans.wizard.user,model_generate_fee_plans_wizard,group_fee_installment_user,1,1,1,1
+access_bus_category_user,bus.category.user,model_bus_category,group_fee_installment_user,1,0,0,0
+access_bus_category_manager,bus.category.manager,model_bus_category,group_fee_installment_manager,1,1,1,1
+access_bus_category_base_user,bus.category.base.user,model_bus_category,base.group_user,1,0,0,0

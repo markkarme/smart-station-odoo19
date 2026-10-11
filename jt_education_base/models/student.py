@@ -66,7 +66,8 @@ class ResPartner(models.Model):
         [('miss', 'Miss'), ('mrs', 'Mrs'), ('mr', 'Mr')],
         string="Title",
     )
-    standard = fields.Many2one('student.standard', 'Standard', help="Add Standard of student")
+    class_id = fields.Many2one('student.class', string='الفصل', help="إضافة فصل الطالب")
+    standard = fields.Many2one('student.standard', string='الصف', help="إضافة صف الطالب")
     div = fields.Many2one('standard.division', help="Add Division of student")
     curr_year = fields.Many2one('year.year', 'Current Year', help="Add current year of student")
     stud_id = fields.Char('Student ID', copy=False, help="Student ID")
@@ -437,6 +438,14 @@ class StudentStandard(models.Model):
     def _compute_available_seats(self):
         for standard in self:
             standard.vacant_seates = standard.capacity - standard.occupied_seats
+
+
+class StudentClass(models.Model):
+    _name = 'student.class'
+    _description = 'فصل الطالب'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
+    name = fields.Char(string='الفصل', required=True)
 
 
 class HowKnow(models.Model):

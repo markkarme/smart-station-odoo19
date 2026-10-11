@@ -32,7 +32,7 @@ class StudentFeeInstallment(models.Model):
     )
     fee_type = fields.Selection(
         [
-            ('basic', 'أقساط المصاريف الأساسية'),
+            ('basic', 'أقساط المصاريف الدراسية'),
             ('bus', 'أقساط الباصات'),
         ],
         string='Installment Type',
@@ -69,12 +69,21 @@ class StudentFeeInstallment(models.Model):
     @api.depends('fee_type', 'number')
     def _compute_name(self):
         labels = {
-            'basic': _('القسط %s — مصاريف أساسية'),
+            'basic': _('القسط %s — مصاريف الدراسية'),
             'bus': _('القسط %s — باصات'),
         }
         for line in self:
+            if line.fee_type == 'basic' and line.number == 1:
+                line.name = _('المقدم - مصاريف دراسية')
+                continue
+            # Basic #1 is المقدم; later basic lines are numbered from 1
+            display_number = (
+                (line.number or 0) - 1
+                if line.fee_type == 'basic'
+                else (line.number or 0)
+            )
             template = labels.get(line.fee_type, _('Installment %s'))
-            line.name = template % (line.number or 0)
+            line.name = template % display_number
 
     @api.depends('amount_paid', 'amount_due')
     def _compute_is_paid(self):

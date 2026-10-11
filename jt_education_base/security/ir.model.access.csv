@@ -1,6 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_standard_division,Access standard division,model_standard_division,base.group_user,1,1,1,1
 access_student_standard,Access student standard,model_student_standard,base.group_user,1,1,1,1
+access_student_class,Access student class,model_student_class,base.group_user,1,1,1,1
 access_year_year,Access year year,model_year_year,base.group_user,1,1,1,1
 access_how_know,Access How Know,model_how_know,base.group_user,1,1,1,1
 access_admission_inquiry,Access admission inquiry,model_admission_inquiry,base.group_user,1,1,1,1

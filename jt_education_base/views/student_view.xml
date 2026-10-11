@@ -96,7 +96,8 @@
                                     <field name="stud_id" string="Students UID" placeholder="student ID" readonly="1"/>
                                     <field name="file_registration_number" string="File Registration Number" placeholder="file registration number" />
                                     <field name="curr_year" string="Current Year" required="1"/>
-                                    <field name="standard" string="Standard" required="1"/>
+                                    <field name="class_id" string="الفصل"/>
+                                    <field name="standard" string="الصف" required="1"/>
                                     <field name="div" string="Division" required="1"/>
                                     <field name="gr_no" string="GR No." placeholder="student general register number" required="1"/>
                                     <label for="roll_no"/>

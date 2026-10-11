@@ -615,7 +615,7 @@ msgstr ""
 #. module: jt_student_fee_installments_exceptions_penalties
 #: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception__fee_type__basic
 #: model:ir.model.fields.selection,name:jt_student_fee_installments_exceptions_penalties.selection__student_fee_exception_wizard__fee_type__basic
-msgid "أقساط المصاريف الأساسية"
+msgid "أقساط المصاريف الدراسية"
 msgstr ""
 
 #. module: jt_student_fee_installments_exceptions_penalties

@@ -2381,6 +2381,18 @@ msgid "Student Standard"
 msgstr "معيار الطالب"
 
 #. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_student_class__name
+#: model:ir.ui.menu,name:jt_education_base.studentclass_submenu
+msgid "Class"
+msgstr "الفصل"
+
+#. module: jt_education_base
+#: model:ir.actions.act_window,name:jt_education_base.action_studentclass
+#: model:ir.model,name:jt_education_base.model_student_class
+msgid "Student Class"
+msgstr "فصل الطالب"
+
+#. module: jt_education_base
 #: model:ir.model,name:jt_education_base.model_student_transfer_wizard
 msgid "Student Transfer Wizard"
 msgstr "معالج نقل الطلاب"

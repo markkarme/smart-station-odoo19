@@ -5,21 +5,22 @@ from odoo.exceptions import UserError, ValidationError
 
 class StudentFeeExceptionWizard(models.TransientModel):
     _name = 'student.fee.exception.wizard'
-    _description = 'Student Fee Exception Wizard'
+    _description = 'معالج استثناء رسوم الطلاب'
 
     plan_id = fields.Many2one(
         'student.fee.plan',
-        string='Fee Plan',
+        string='خطة الرسوم',
         required=True,
         ondelete='cascade',
     )
     student_id = fields.Many2one(related='plan_id.student_id', readonly=True)
     exception_type = fields.Selection(
         [
-            ('increase_installments', 'Increase Number of Installments / زيادة عدد الأقساط'),
-            ('discount', 'Discount / خصم'),
+            ('increase_installments', 'زيادة عدد الأقساط'),
+            ('discount', 'خصم'),
+            ('change_due_date', 'تعديل موعد الاستحقاق'),
         ],
-        string='Exception Type',
+        string='نوع الاستثناء',
         required=True,
         default='increase_installments',
     )
@@ -27,40 +28,43 @@ class StudentFeeExceptionWizard(models.TransientModel):
     # Increase installments
     fee_type = fields.Selection(
         [
-            ('basic', 'أقساط المصاريف الأساسية'),
+            ('basic', 'أقساط المصاريف الدراسية'),
             ('bus', 'أقساط الباصات'),
         ],
-        string='Apply On',
+        string='التطبيق على',
         default='basic',
     )
     current_installment_count = fields.Integer(
-        string='Current Installments',
+        string='عدد الأقساط الحالي',
         compute='_compute_current_installment_count',
     )
-    new_installment_count = fields.Integer(string='New Number of Installments')
+    new_installment_count = fields.Integer(string='عدد الأقساط الجديد')
 
     # Discount
     discount_type = fields.Selection(
         [
-            ('fixed', 'Fixed Amount / مبلغ ثابت'),
-            ('percent', 'Percentage / نسبة مئوية'),
+            ('fixed', 'مبلغ ثابت'),
+            ('percent', 'نسبة مئوية'),
         ],
-        string='Discount Type',
+        string='نوع الخصم',
         default='fixed',
     )
-    discount_value = fields.Float(string='Discount Value')
+    discount_value = fields.Float(string='قيمة الخصم')
     installment_ids = fields.Many2many(
         'student.fee.installment',
         'student_fee_exception_wizard_installment_rel',
         'wizard_id',
         'installment_id',
-        string='Unpaid Installments',
+        string='الأقساط غير المسددة',
         domain="[('plan_id', '=', plan_id), ('is_paid', '=', False)]",
     )
 
-    document = fields.Binary(string='Supporting Document', required=True)
-    document_filename = fields.Char(string='Filename')
-    reason = fields.Text(string='Reason / ملاحظات')
+    # Change due date
+    new_due_date = fields.Date(string='موعد الاستحقاق الجديد')
+
+    document = fields.Binary(string='المستند الداعم', required=True)
+    document_filename = fields.Char(string='اسم الملف')
+    reason = fields.Text(string='ملاحظات')
 
     @api.depends('plan_id', 'fee_type')
     def _compute_current_installment_count(self):
@@ -81,6 +85,7 @@ class StudentFeeExceptionWizard(models.TransientModel):
     @api.onchange('exception_type')
     def _onchange_exception_type(self):
         self.installment_ids = False
+        self.new_due_date = False
         if self.exception_type == 'increase_installments':
             self.discount_value = 0.0
             self._onchange_fee_type()
@@ -88,17 +93,17 @@ class StudentFeeExceptionWizard(models.TransientModel):
     def action_confirm(self):
         self.ensure_one()
         if not self.document:
-            raise UserError(_('Please upload a supporting document.'))
+            raise UserError(_('يرجى رفع مستند داعم.'))
 
         plan = self.plan_id
         Exception = self.env['student.fee.exception']
 
         if self.exception_type == 'increase_installments':
             if not self.fee_type:
-                raise UserError(_('Please select basic or bus installments.'))
+                raise UserError(_('يرجى اختيار أقساط المصاريف أو الباصات.'))
             if self.new_installment_count <= self.current_installment_count:
                 raise ValidationError(_(
-                    'New installment count must be greater than the current count (%s).',
+                    'يجب أن يكون عدد الأقساط الجديد أكبر من العدد الحالي (%s).',
                     self.current_installment_count,
                 ))
             plan.action_apply_increase_installments(self.fee_type, self.new_installment_count)
@@ -112,16 +117,16 @@ class StudentFeeExceptionWizard(models.TransientModel):
                 'reason': self.reason,
             })
             plan.message_post(body=_(
-                'Exception applied: increase %(fee)s installments to %(count)s.',
+                'تم تطبيق استثناء: زيادة %(fee)s إلى %(count)s قسط.',
                 fee=dict(self._fields['fee_type'].selection).get(self.fee_type),
                 count=self.new_installment_count,
             ))
 
         elif self.exception_type == 'discount':
             if not self.installment_ids:
-                raise UserError(_('Please select the unpaid installment line(s) for the discount.'))
+                raise UserError(_('يرجى اختيار الأقساط غير المسددة لتطبيق الخصم.'))
             if not self.discount_type:
-                raise UserError(_('Please select the discount type.'))
+                raise UserError(_('يرجى اختيار نوع الخصم.'))
             plan.action_apply_discount(
                 self.installment_ids.ids,
                 self.discount_type,
@@ -138,12 +143,38 @@ class StudentFeeExceptionWizard(models.TransientModel):
                 'reason': self.reason,
             })
             plan.message_post(body=_(
-                'Exception applied: %(dtype)s discount %(value)s on %(count)s unpaid installment(s).',
+                'تم تطبيق استثناء: خصم %(dtype)s بقيمة %(value)s على %(count)s قسط غير مسدد.',
                 dtype=dict(self._fields['discount_type'].selection).get(self.discount_type),
                 value=self.discount_value,
                 count=len(self.installment_ids),
             ))
+
+        elif self.exception_type == 'change_due_date':
+            if not self.installment_ids:
+                raise UserError(_(
+                    'يرجى اختيار الأقساط لتعديل موعد الاستحقاق.'
+                ))
+            if not self.new_due_date:
+                raise UserError(_('يرجى تحديد موعد الاستحقاق الجديد.'))
+            plan.action_apply_change_due_date(
+                self.installment_ids.ids,
+                self.new_due_date,
+            )
+            Exception.create({
+                'plan_id': plan.id,
+                'exception_type': 'change_due_date',
+                'new_due_date': self.new_due_date,
+                'installment_ids': [(6, 0, self.installment_ids.ids)],
+                'document': self.document,
+                'document_filename': self.document_filename,
+                'reason': self.reason,
+            })
+            plan.message_post(body=_(
+                'تم تطبيق استثناء: تعديل موعد الاستحقاق إلى %(date)s على %(count)s قسط.',
+                date=self.new_due_date,
+                count=len(self.installment_ids),
+            ))
         else:
-            raise UserError(_('Invalid exception type.'))
+            raise UserError(_('نوع الاستثناء غير صالح.'))
 
         return {'type': 'ir.actions.act_window_close'}

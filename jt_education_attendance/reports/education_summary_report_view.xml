@@ -69,10 +69,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-foreach="report_data.get('standards')" t-as="class">
+                                    <t t-foreach="report_data.get('standards')" t-as="std">
+                                        <t t-set="std_id" t-value="std.id"/>
                                         <tr>
                                             <td style="padding-left:2%;text-align:left;width: 15%;">
-                                                <strong><t t-esc="class.name"/></strong>
+                                                <strong><t t-esc="std.name"/></strong>
                                             </td>
                                             <t t-set="colspan_len" t-value="len(all_dates)+1"/>
                                             <td t-att-colspan='colspan_len'/>
@@ -80,149 +81,109 @@
 
                                         <t t-set="total_row_present" t-value="0"/>
                                         <tr>
-                                            <t t-set="count_present" t-value="0"/>
                                             <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Present</strong></td>
                                             <t t-foreach="all_dates" t-as="all_date">
                                                 <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                                <t t-set="present_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.date == all_date)"/>
-                                                <t t-foreach="present_date" t-as="present_attendance">
-                                                    <t t-if="present_attendance.division_id.id == result.division_id.id and present_attendance.standard_id.id == class.id and present_attendance.present">
-                                                        <t t-set="count_present" t-value="count_present+1"/>
-                                                        <t t-set="total_row_present" t-value="total_row_present+1"/>
-                                                    </t>  
-                                                </t>
+                                                <t t-set="present_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.standard_id.id == std_id and x.present)"/>
+                                                <t t-set="count_present" t-value="len(present_date)"/>
+                                                <t t-set="total_row_present" t-value="total_row_present + count_present"/>
                                                 <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                     <td style="background-color:gray;">
                                                         <t t-esc="count_present"/>
-                                                        <t t-set="count_present" t-value="0"/>
-                                                    </td>      
+                                                    </td>
                                                 </t>
-                                               
-                                                <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                <t t-else="">
                                                     <td>
                                                         <t t-esc="count_present"/>
-                                                        <t t-set="count_present" t-value="0"/>
-                                                    </td>                                             
+                                                    </td>
                                                 </t>
-                                            </t>                                        
+                                            </t>
                                             <td><t t-esc="total_row_present"/></td>
                                         </tr>
 
-
                                         <t t-set="total_row_absent" t-value="0"/>
                                         <tr>
-                                            <t t-set="count_absent" t-value="0"/>
                                             <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Absent</strong></td>
                                             <t t-foreach="all_dates" t-as="all_date">
                                                 <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                                <t t-set="absent_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                                <t t-foreach="absent_date" t-as="absent_attendance">
-                                                    <t t-if="absent_attendance.division_id.id == result.division_id.id and present_attendance.standard_id.id == class.id and absent_attendance.absence_reason">
-                                                        <t t-set="count_absent" t-value="count_absent+1"/>
-                                                        <t t-set="total_row_absent" t-value="total_row_absent+1"/>
-                                                    </t>  
-                                                </t>
+                                                <t t-set="absent_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.standard_id.id == std_id and x.absence_reason)"/>
+                                                <t t-set="count_absent" t-value="len(absent_date)"/>
+                                                <t t-set="total_row_absent" t-value="total_row_absent + count_absent"/>
                                                 <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                     <td style="background-color:gray;">
                                                         <t t-esc="count_absent"/>
-                                                        <t t-set="count_absent" t-value="0"/>
-                                                    </td>      
+                                                    </td>
                                                 </t>
-                                                <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                <t t-else="">
                                                     <td>
                                                         <t t-esc="count_absent"/>
-                                                        <t t-set="count_absent" t-value="0"/>
-                                                    </td> 
+                                                    </td>
                                                 </t>
                                             </t>
                                             <td><t t-esc="total_row_absent"/></td>
                                         </tr>
 
-
                                         <t t-set="total_row_absent_no" t-value="0"/>
                                         <tr>
-                                            <t t-set="count_absent_no" t-value="0"/>
                                             <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Absent with no Reason</strong></td>
                                             <t t-foreach="all_dates" t-as="all_date">
                                                 <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                                <t t-set="absent_nores_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                                <t t-foreach="absent_nores_date" t-as="absent_nores_attendance">
-                                                    <t t-if="absent_nores_attendance.division_id.id == result.division_id.id and present_attendance.standard_id.id == class.id and absent_nores_attendance.absence_noreason">
-                                                        <t t-set="count_absent_no" t-value="count_absent_no+1"/>
-                                                        <t t-set="total_row_absent_no" t-value="total_row_absent_no+1"/>
-                                                    </t>  
-                                                </t>
+                                                <t t-set="absent_nores_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.standard_id.id == std_id and x.absence_noreason)"/>
+                                                <t t-set="count_absent_no" t-value="len(absent_nores_date)"/>
+                                                <t t-set="total_row_absent_no" t-value="total_row_absent_no + count_absent_no"/>
                                                 <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                     <td style="background-color:gray;">
                                                         <t t-esc="count_absent_no"/>
-                                                        <t t-set="count_absent_no" t-value="0"/>
-                                                    </td> 
-                                                </t>     
-                                                <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
                                                     <td>
                                                         <t t-esc="count_absent_no"/>
-                                                        <t t-set="count_absent_no" t-value="0"/>
-                                                    </td>                                        
+                                                    </td>
                                                 </t>
                                             </t>
                                             <td><t t-esc="total_row_absent_no"/></td>
                                         </tr>
 
-
                                         <t t-set="total_row_late" t-value="0"/>
                                         <tr>
-                                            <t t-set="count_late" t-value="0"/>
                                             <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Late</strong></td>
                                             <t t-foreach="all_dates" t-as="all_date">
                                                 <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                                <t t-set="late_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                                <t t-foreach="late_date" t-as="late_attendance">
-                                                    <t t-if="late_attendance.division_id.id == result.division_id.id and present_attendance.standard_id.id == class.id and late_attendance.late">
-                                                        <t t-set="count_late" t-value="count_late+1"/>
-                                                        <t t-set="total_row_late" t-value="total_row_late+1"/>
-                                                    </t>  
-                                                </t>
-                                                <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">                                 
+                                                <t t-set="late_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.standard_id.id == std_id and x.late)"/>
+                                                <t t-set="count_late" t-value="len(late_date)"/>
+                                                <t t-set="total_row_late" t-value="total_row_late + count_late"/>
+                                                <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                     <td style="background-color:gray;">
                                                         <t t-esc="count_late"/>
-                                                        <t t-set="count_late" t-value="0"/>
-                                                    </td> 
-                                                </t>     
-                                                <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
                                                     <td>
                                                         <t t-esc="count_late"/>
-                                                        <t t-set="count_late" t-value="0"/>
                                                     </td>
                                                 </t>
                                             </t>
                                             <td><t t-esc="total_row_late"/></td>
                                         </tr>
 
-
                                         <t t-set="total_row_withdraw" t-value="0"/>
                                         <tr>
-                                            <t t-set="count_withdraw" t-value="0"/>
                                             <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Withdraw</strong></td>
                                             <t t-foreach="all_dates" t-as="all_date">
                                                 <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                                <t t-set="withdraw_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                                <t t-foreach="withdraw_date" t-as="withdraw_attendance">
-                                                    <t t-if="withdraw_attendance.division_id.id == result.division_id.id and present_attendance.standard_id.id == class.id and withdraw_attendance.withdraw">
-                                                        <t t-set="count_withdraw" t-value="count_withdraw+1"/>
-                                                        <t t-set="total_row_withdraw" t-value="total_row_withdraw+1"/>
-                                                    </t>  
-                                                </t>
-                                                <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">      
+                                                <t t-set="withdraw_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.standard_id.id == std_id and x.withdraw)"/>
+                                                <t t-set="count_withdraw" t-value="len(withdraw_date)"/>
+                                                <t t-set="total_row_withdraw" t-value="total_row_withdraw + count_withdraw"/>
+                                                <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                     <td style="background-color:gray;">
                                                         <t t-esc="count_withdraw"/>
-                                                        <t t-set="count_withdraw" t-value="0"/>
-                                                    </td>    
-                                                </t>  
-                                                <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
                                                     <td>
                                                         <t t-esc="count_withdraw"/>
-                                                        <t t-set="count_withdraw" t-value="0"/>
-                                                    </td> 
+                                                    </td>
                                                 </t>
                                             </t>
                                             <td><t t-esc="total_row_withdraw"/></td>
@@ -243,141 +204,104 @@
 
                                         <t t-foreach="all_dates" t-as="all_date">
                                             <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                            <t t-set="ttl_present_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                            <t t-foreach="ttl_present_date" t-as="tt_present_rec">
-                                                <t t-if="tt_present_rec.present">
-                                                    <t t-set="total_col_present" t-value="total_col_present+1"/>
-                                                    <t t-set="ttl_row_present" t-value="ttl_row_present+1"/>
-                                                </t>
-                                            </t>
-                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">      
+                                            <t t-set="ttl_present_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.present)"/>
+                                            <t t-set="total_col_present" t-value="len(ttl_present_date)"/>
+                                            <t t-set="ttl_row_present" t-value="ttl_row_present + total_col_present"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                 <td style="background-color:gray;">
                                                     <t t-esc="total_col_present"/>
-                                                    <t t-set="total_col_present" t-value="0"/>
                                                 </td>
                                             </t>
-                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">      
+                                            <t t-else="">
                                                 <td>
                                                     <t t-esc="total_col_present"/>
-                                                    <t t-set="total_col_present" t-value="0"/>
                                                 </td>
                                             </t>
                                         </t>
                                         <td><t t-esc="ttl_row_present"/></td>
                                     </tr>
 
-
-                                    <t t-set="total_col_absent" t-value="0"/>
                                     <t t-set="ttl_row_absent" t-value="0"/>
                                     <tr>
                                         <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Absent</strong></td>
                                         <t t-foreach="all_dates" t-as="all_date">
                                             <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                            <t t-set="ttl_absent_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                            <t t-foreach="ttl_absent_date" t-as="tt_absent_rec">
-                                                <t t-if="tt_absent_rec.absence_reason or tt_absent_rec.absence_noreason">
-                                                    <t t-set="total_col_absent" t-value="total_col_absent+1"/>
-                                                    <t t-set="ttl_row_absent" t-value="ttl_row_absent+1"/>
-                                                </t>
-                                            </t>
-                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">      
+                                            <t t-set="ttl_absent_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and (x.absence_reason or x.absence_noreason))"/>
+                                            <t t-set="total_col_absent" t-value="len(ttl_absent_date)"/>
+                                            <t t-set="ttl_row_absent" t-value="ttl_row_absent + total_col_absent"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                 <td style="background-color:gray;">
                                                     <t t-esc="total_col_absent"/>
-                                                    <t t-set="total_col_absent" t-value="0"/>
                                                 </td>
                                             </t>
-                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">      
+                                            <t t-else="">
                                                 <td>
                                                     <t t-esc="total_col_absent"/>
-                                                    <t t-set="total_col_absent" t-value="0"/>
                                                 </td>
                                             </t>
                                         </t>
                                         <td><t t-esc="ttl_row_absent"/></td>
                                     </tr>
-                                    <t t-set="total_col_absent_nores" t-value="0"/>
                                     <t t-set="ttl_row_absent_nores" t-value="0"/>
                                     <tr>
                                         <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Absent with no Reason</strong></td>
-                                       <t t-foreach="all_dates" t-as="all_date">
+                                        <t t-foreach="all_dates" t-as="all_date">
                                             <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                            <t t-set="ttl_absent_nores_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                            <t t-foreach="ttl_absent_nores_date" t-as="tt_absent_nores_rec">
-                                                <t t-if="tt_absent_nores_rec.absence_noreason">
-                                                    <t t-set="total_col_absent_nores" t-value="total_col_absent_nores+1"/>
-                                                    <t t-set="ttl_row_absent_nores" t-value="ttl_row_absent_nores+1"/>
-                                                </t>
-                                            </t>
-                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">      
+                                            <t t-set="ttl_absent_nores_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.absence_noreason)"/>
+                                            <t t-set="total_col_absent_nores" t-value="len(ttl_absent_nores_date)"/>
+                                            <t t-set="ttl_row_absent_nores" t-value="ttl_row_absent_nores + total_col_absent_nores"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                 <td style="background-color:gray;">
                                                     <t t-esc="total_col_absent_nores"/>
-                                                    <t t-set="total_col_absent_nores" t-value="0"/>
                                                 </td>
                                             </t>
-                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">      
+                                            <t t-else="">
                                                 <td>
                                                     <t t-esc="total_col_absent_nores"/>
-                                                    <t t-set="total_col_absent_nores" t-value="0"/>
                                                 </td>
                                             </t>
                                         </t>
                                         <td><t t-esc="ttl_row_absent_nores"/></td>
                                     </tr>
 
-
-                                    <t t-set="total_col_late" t-value="0"/>
                                     <t t-set="ttl_row_late" t-value="0"/>
                                     <tr>
                                         <td style="padding-left:4%;text-align:left;width: 15%;"><strong>Late</strong></td>
                                         <t t-foreach="all_dates" t-as="all_date">
                                             <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                            <t t-set="ttl_late_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                            <t t-foreach="ttl_late_date" t-as="tt_late_rec">
-                                                <t t-if="tt_late_rec.late">
-                                                    <t t-set="total_col_late" t-value="total_col_late+1"/>
-                                                    <t t-set="ttl_row_late" t-value="ttl_row_late+1"/>
-                                                </t>
-                                            </t>
-                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">      
+                                            <t t-set="ttl_late_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.late)"/>
+                                            <t t-set="total_col_late" t-value="len(ttl_late_date)"/>
+                                            <t t-set="ttl_row_late" t-value="ttl_row_late + total_col_late"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                 <td style="background-color:gray;">
                                                     <t t-esc="total_col_late"/>
-                                                    <t t-set="total_col_late" t-value="0"/>
                                                 </td>
                                             </t>
-                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">      
+                                            <t t-else="">
                                                 <td>
                                                     <t t-esc="total_col_late"/>
-                                                    <t t-set="total_col_late" t-value="0"/>
                                                 </td>
                                             </t>
                                         </t>
                                         <td><t t-esc="ttl_row_late"/></td>
                                     </tr>
 
-
-                                    <t t-set="total_col_withdraw" t-value="0"/>
                                     <t t-set="ttl_row_withdraw" t-value="0"/>
                                     <tr>
                                         <td style="padding-left:4%;text-align:left;width: 15%;"><strong> Withdraw</strong></td>
                                         <t t-foreach="all_dates" t-as="all_date">
                                             <t t-set="all_day" t-value="all_date.strftime('%a')"/>
-                                            <t t-set="ttl_withdraw_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x:x.attendance_id.date == all_date)"/>
-                                            <t t-foreach="ttl_withdraw_date" t-as="tt_withdraw_rec">
-                                                <t t-if="tt_withdraw_rec.withdraw">
-                                                    <t t-set="total_col_withdraw" t-value="total_col_withdraw+1"/>
-                                                    <t t-set="ttl_row_withdraw" t-value="ttl_row_withdraw+1"/>
-                                                </t>
-                                            </t>
-                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">      
+                                            <t t-set="ttl_withdraw_date" t-value="report_data.get('attendance_lines_new').filtered(lambda x: x.date == all_date and x.withdraw)"/>
+                                            <t t-set="total_col_withdraw" t-value="len(ttl_withdraw_date)"/>
+                                            <t t-set="ttl_row_withdraw" t-value="ttl_row_withdraw + total_col_withdraw"/>
+                                            <t t-if="all_day in unavailable_dates[1] or all_date in unavailable_dates[0]">
                                                 <td style="background-color:gray;">
                                                     <t t-esc="total_col_withdraw"/>
-                                                    <t t-set="total_col_withdraw" t-value="0"/>
                                                 </td>
                                             </t>
-                                            <t t-if="all_day not in unavailable_dates[1] and all_date not in unavailable_dates[0]">      
+                                            <t t-else="">
                                                 <td>
                                                     <t t-esc="total_col_withdraw"/>
-                                                    <t t-set="total_col_withdraw" t-value="0"/>
                                                 </td>
                                             </t>
                                         </t>

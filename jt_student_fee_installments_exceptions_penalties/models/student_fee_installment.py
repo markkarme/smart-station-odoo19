@@ -11,7 +11,12 @@ class StudentFeeInstallment(models.Model):
     due_date = fields.Date(
         string='Due Date / تاريخ الاستحقاق',
         index=True,
-        help='Installment due date. Late weeks are counted after this date. Readonly once paid.',
+        help='Installment due date. Late weeks are counted after this date. '
+             'Readonly when paid or when the fee plan is open (change via exception).',
+    )
+    plan_state = fields.Selection(
+        related='plan_id.state',
+        string='Plan Status',
     )
     amount_due_original = fields.Monetary(
         string='Original Amount Due',
@@ -82,10 +87,16 @@ class StudentFeeInstallment(models.Model):
         return super().create(vals_list)
 
     def write(self, vals):
-        if 'due_date' in vals and any(line.is_paid for line in self):
-            raise UserError(_(
-                'You cannot change the due date (تاريخ الاستحقاق) on a paid installment.'
-            ))
+        if 'due_date' in vals and not self.env.context.get('allow_due_date_exception'):
+            if any(line.is_paid for line in self):
+                raise UserError(_(
+                    'لا يمكن تعديل تاريخ الاستحقاق على قسط تم سداده.'
+                ))
+            if any(line.plan_id.state == 'open' for line in self):
+                raise UserError(_(
+                    'تاريخ الاستحقاق للقراءة فقط عندما تكون خطة الرسوم مفتوحة. '
+                    'استخدم استثناء ← تعديل موعد الاستحقاق لتغييره.'
+                ))
         if 'amount_due' in vals and 'amount_due_original' not in vals:
             to_init = self.filtered(lambda l: not l.amount_due_original)
             if to_init and vals.get('amount_due'):

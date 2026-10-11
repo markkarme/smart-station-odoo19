@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="student_class_form_view" model="ir.ui.view">
+        <field name="name">Student Class Form View</field>
+        <field name="model">student.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_class_tree_view" model="ir.ui.view">
+        <field name="name">Student Class Tree View</field>
+        <field name="model">student.class</field>
+        <field name="arch" type="xml">
+            <list editable="top">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+</odoo>

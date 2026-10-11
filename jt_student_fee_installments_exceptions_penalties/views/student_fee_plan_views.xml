@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//header" position="inside">
                 <button name="action_open_exception_wizard"
-                        string="Exception"
+                        string="استثناء"
                         type="object"
                         class="btn-secondary"
                         invisible="state == 'closed'"/>
@@ -19,7 +19,7 @@
                             type="object"
                             class="oe_stat_button"
                             icon="fa-exclamation-triangle">
-                        <field name="exception_count" widget="statinfo" string="Exceptions"/>
+                        <field name="exception_count" widget="statinfo" string="الاستثناءات"/>
                     </button>
                 </div>
             </xpath>
@@ -32,7 +32,9 @@
             </xpath>
 
             <xpath expr="//field[@name='basic_installment_ids']/list/field[@name='amount_due']" position="before">
-                <field name="due_date" string="تاريخ الاستحقاق" readonly="is_paid"/>
+                <field name="plan_state" column_invisible="1"/>
+                <field name="due_date" string="تاريخ الاستحقاق"
+                         readonly="is_paid or plan_state == 'open'"/>
             </xpath>
             <xpath expr="//field[@name='basic_installment_ids']/list/field[@name='is_paid']" position="before">
                 <field name="weeks_late" string="أسابيع التأخير"/>
@@ -43,7 +45,9 @@
             </xpath>
 
             <xpath expr="//field[@name='bus_installment_ids']/list/field[@name='amount_due']" position="before">
-                <field name="due_date" string="تاريخ الاستحقاق" readonly="is_paid"/>
+                <field name="plan_state" column_invisible="1"/>
+                <field name="due_date" string="تاريخ الاستحقاق"
+                         readonly="is_paid or plan_state == 'open'"/>
             </xpath>
             <xpath expr="//field[@name='bus_installment_ids']/list/field[@name='is_paid']" position="before">
                 <field name="weeks_late" string="أسابيع التأخير"/>
@@ -54,7 +58,7 @@
             </xpath>
 
             <xpath expr="//page[@name='notes']" position="before">
-                <page string="Exceptions" name="exceptions">
+                <page string="الاستثناءات" name="exceptions">
                     <field name="exception_ids" readonly="1">
                         <list>
                             <field name="name"/>
@@ -63,6 +67,7 @@
                             <field name="new_installment_count"/>
                             <field name="discount_type"/>
                             <field name="discount_value"/>
+                            <field name="new_due_date" optional="show"/>
                             <field name="user_id"/>
                             <field name="create_date"/>
                         </list>
@@ -79,7 +84,8 @@
         <field name="inherit_id" ref="jt_student_fee_installments.view_student_fee_installment_list"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='amount_due']" position="before">
-                <field name="due_date" readonly="is_paid"/>
+                <field name="plan_state" column_invisible="1"/>
+                <field name="due_date" readonly="is_paid or plan_state == 'open'"/>
             </xpath>
             <xpath expr="//field[@name='amount_paid']" position="after">
                 <field name="weeks_late"/>

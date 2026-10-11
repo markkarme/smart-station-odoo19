@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="mail_template_fee_installment_reminder" model="mail.template">
+            <field name="name">تذكير أقساط الرسوم</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="subject">تذكير بالرسوم</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object.email }}</field>
+            <field name="lang">{{ object.lang or 'ar_001' }}</field>
+            <field name="use_default_to" eval="False"/>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px; direction: rtl; text-align: right;" dir="rtl">
+                    <p>تفاصيل الرسوم</p>
+                    <p><strong>الأقساط المستحقة التالية:</strong></p>
+                    <p>يرجى سداد الأقساط التالية في تاريخ الاستحقاق.</p>
+                    <t t-if="ctx.get('next_installments')">
+                        <ul>
+                            <t t-foreach="ctx.get('next_installments')" t-as="inst">
+                                <li>
+                                    <t t-out="inst.get('name') or ''"/>:
+                                    <strong><t t-out="inst.get('amount_display') or ''"/></strong>
+                                    <t t-if="inst.get('due_date_display')">
+                                        — تاريخ الاستحقاق: <t t-out="inst.get('due_date_display')"/>
+                                    </t>
+                                </li>
+                            </t>
+                        </ul>
+                    </t>
+                    <t t-else="">
+                        <p>رسومك المستحقة: <strong><t t-out="ctx.get('fees') or ''"/></strong></p>
+                    </t>
+                    <p>شكراً لك.</p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
