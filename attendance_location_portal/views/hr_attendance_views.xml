@@ -5,6 +5,9 @@
         <field name="model">hr.attendance</field>
         <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//group[@name='check_in_group']" position="attributes">
+                <attribute name="invisible">portal_checkout_without_checkin</attribute>
+            </xpath>
             <xpath expr="//field[@name='in_ip_address']" position="attributes">
                 <attribute name="invisible">in_mode in ('manual', 'automatic') or not device_tracking_enabled</attribute>
             </xpath>

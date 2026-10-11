@@ -1,10 +1,36 @@
+from datetime import timedelta
+
+from pytz import timezone, utc
+
 from odoo import _, api, fields, models
-from odoo.tools import email_normalize
+from odoo.tools import email_normalize, format_datetime
 
 
 class HrAttendance(models.Model):
     _inherit = ["hr.attendance", "mail.activity.mixin"]
 
+    check_in = fields.Datetime(
+        string="Check In",
+        required=False,
+        default=False,
+        tracking=True,
+        index=True,
+    )
+    portal_checkout_without_checkin = fields.Boolean(
+        string="Portal Checkout Without Checkin",
+        readonly=True,
+        copy=False,
+    )
+    portal_action_type = fields.Selection(
+        [
+            ("check_in", "Check In"),
+            ("check_out", "Check Out"),
+        ],
+        string="Portal Attendance Action",
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
     portal_note = fields.Text(string="Note", tracking=True)
     attendance_location_id = fields.Many2one(
         "attendance.location",
@@ -48,18 +74,255 @@ class HrAttendance(models.Model):
                 return employee.company_id.id
         return self.env.company.id
 
+    @api.depends("check_in", "check_out", "employee_id")
+    def _compute_date(self):
+        """Use check_out when check_in is empty (portal checkout-first rows)."""
+        for attendance in self:
+            dt = attendance.check_in or attendance.check_out
+            if not attendance.employee_id or not dt:
+                attendance.date = fields.Date.context_today(attendance)
+                continue
+            tz = timezone(attendance.employee_id._get_tz())
+            attendance.date = utc.localize(fields.Datetime.to_datetime(dt)).astimezone(tz).date()
+
+    @api.constrains("check_in", "check_out")
+    def _check_validity_check_in_check_out(self):
+        # Soft validation: warnings are handled after create/write.
+        return
+
+    @api.constrains("check_in", "check_out", "employee_id")
+    def _check_validity(self):
+        # Soft validation: warnings are handled after create/write.
+        return
+
+    def _collect_attendance_validity_warnings(self):
+        self.ensure_one()
+        attendance = self
+        warnings = []
+
+        if (
+            attendance.check_in
+            and attendance.check_out
+            and attendance.check_out < attendance.check_in
+        ):
+            warnings.append(
+                _(
+                    'تحذير: وقت "تسجيل الخروج" قبل وقت "تسجيل الحضور". '
+                    "يرجى مراجعة سجل الحضور."
+                )
+            )
+
+        if not attendance.check_in or not attendance.employee_id:
+            return warnings
+
+        last_attendance_before_check_in = self.env["hr.attendance"].search(
+            [
+                ("employee_id", "=", attendance.employee_id.id),
+                ("check_in", "<=", attendance.check_in),
+                ("id", "!=", attendance.id),
+            ],
+            order="check_in desc",
+            limit=1,
+        )
+        if (
+            last_attendance_before_check_in
+            and last_attendance_before_check_in.check_out
+            and last_attendance_before_check_in.check_out > attendance.check_in
+        ):
+            warnings.append(
+                _(
+                    "تحذير: %(empl_name)s مسجّل حضوره مسبقاً في %(datetime)s. "
+                    "يرجى التحقق من سجلات الحضور المتداخلة.",
+                    empl_name=attendance.employee_id.name,
+                    datetime=format_datetime(
+                        self.env, attendance.check_in, dt_format=False
+                    ),
+                )
+            )
+
+        if not attendance.check_out:
+            open_attendance = attendance._get_prior_open_attendance()
+            if open_attendance:
+                warnings.append(
+                    _(
+                        "تحذير: لم يسجّل %(empl_name)s انصرافه منذ %(datetime)s. "
+                        "يرجى التحقق من سجلات الحضور المفتوحة.",
+                        empl_name=attendance.employee_id.name,
+                        datetime=format_datetime(
+                            self.env, open_attendance.check_in, dt_format=False
+                        ),
+                    )
+                )
+        else:
+            last_attendance_before_check_out = self.env["hr.attendance"].search(
+                [
+                    ("employee_id", "=", attendance.employee_id.id),
+                    ("check_in", "<", attendance.check_out),
+                    ("id", "!=", attendance.id),
+                ],
+                order="check_in desc",
+                limit=1,
+            )
+            if (
+                last_attendance_before_check_out
+                and last_attendance_before_check_in != last_attendance_before_check_out
+            ):
+                warnings.append(
+                    _(
+                        "تحذير: %(empl_name)s مسجّل حضوره مسبقاً في %(datetime)s. "
+                        "يرجى التحقق من سجلات الحضور المتداخلة.",
+                        empl_name=attendance.employee_id.name,
+                        datetime=format_datetime(
+                            self.env,
+                            last_attendance_before_check_out.check_in,
+                            dt_format=False,
+                        ),
+                    )
+                )
+
+        return warnings
+
+    def _get_prior_open_attendance(self):
+        """Previous open check-in (no check-out) for the same employee."""
+        self.ensure_one()
+        if not self.employee_id:
+            return self.env["hr.attendance"]
+        return self.env["hr.attendance"].search(
+            [
+                ("employee_id", "=", self.employee_id.id),
+                ("check_out", "=", False),
+                ("check_in", "!=", False),
+                ("id", "!=", self.id),
+            ],
+            order="check_in desc",
+            limit=1,
+        )
+
+    def _schedule_missing_checkout_hr_activity(self):
+        """Notify HR Responsible about an open attendance without check-out.
+
+        Activity is created on the open (empty check-out) record so opening it
+        takes HR directly to that attendance line.
+        """
+        self.ensure_one()
+        open_attendance = self._get_prior_open_attendance()
+        if not open_attendance:
+            return open_attendance
+
+        employee = open_attendance.employee_id.sudo()
+        responsible = employee.hr_responsible_id
+        if not responsible:
+            return open_attendance
+
+        check_in_display = format_datetime(
+            self.env, open_attendance.check_in, dt_format=False
+        )
+        summary = _("حضور بدون انصراف: %s") % employee.name
+        note = _(
+            "الموظف %(employee)s سجّل حضوراً جديداً دون إغلاق سجل الحضور السابق "
+            "(بدون انصراف) منذ %(datetime)s.\n"
+            "يرجى فتح سجل الحضور وإكمال وقت الانصراف."
+        ) % {
+            "employee": employee.name,
+            "datetime": check_in_display,
+        }
+
+        existing_activity = self.env["mail.activity"].sudo().search(
+            [
+                ("res_model", "=", "hr.attendance"),
+                ("res_id", "=", open_attendance.id),
+                ("user_id", "=", responsible.id),
+                ("summary", "=", summary),
+            ],
+            limit=1,
+        )
+        if existing_activity:
+            existing_activity.write({"note": note})
+            return open_attendance
+
+        open_attendance.sudo().activity_schedule(
+            "mail.mail_activity_data_todo",
+            user_id=responsible.id,
+            summary=summary,
+            note=note,
+        )
+        return open_attendance
+
+    def _notify_attendance_validity_warnings(self):
+        if self.env.context.get("skip_attendance_validity_notification"):
+            return []
+        all_warnings = []
+        for attendance in self:
+            warnings = attendance._collect_attendance_validity_warnings()
+            if not warnings:
+                continue
+            message = "\n".join(warnings)
+            all_warnings.extend(warnings)
+            attendance.message_post(
+                body=message,
+                message_type="comment",
+                subtype_xmlid="mail.mt_note",
+            )
+            if self.env.user.has_group("base.group_user"):
+                self.env.user._bus_send(
+                    "simple_notification",
+                    {
+                        "type": "warning",
+                        "title": _("تحذير الحضور"),
+                        "message": message,
+                    },
+                )
+        return all_warnings
+
+    @api.depends("check_in", "check_out", "worked_hours", "out_mode")
+    def _compute_color(self):
+        stale_checkin_limit = fields.Datetime.now() - timedelta(days=1)
+        for attendance in self:
+            if attendance.check_out:
+                attendance.color = (
+                    1
+                    if attendance.worked_hours > 16
+                    or attendance.out_mode == "technical"
+                    else 0
+                )
+            elif not attendance.check_in:
+                attendance.color = 0
+            else:
+                attendance.color = 1 if attendance.check_in < stale_checkin_limit else 10
+
+    def _get_overtimes_to_update_domain(self):
+        attendances_with_check_in = self.filtered("check_in")
+        if not attendances_with_check_in:
+            return [("id", "=", 0)]
+        return super(
+            HrAttendance, attendances_with_check_in
+        )._get_overtimes_to_update_domain()
+
+    def _update_overtime(self, attendance_domain=None):
+        return super(HrAttendance, self.filtered("check_in"))._update_overtime(
+            attendance_domain=attendance_domain
+        )
+
+    def _create_work_entries(self):
+        # Enterprise hr_work_entry_attendance crashes on min(check_in) when
+        # portal checkout-first rows leave check_in empty (False).
+        valid = self.filtered(lambda attendance: attendance.check_in and attendance.check_out)
+        if not valid:
+            return
+        return super(HrAttendance, valid)._create_work_entries()
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
             vals["company_id"] = self._company_from_vals(vals)
         records = super().create(vals_list)
+        records._notify_attendance_validity_warnings()
         records.filtered(
             lambda record: record.portal_note and record.check_out
         )._schedule_manager_note_activity()
         return records
 
     def write(self, vals):
-        # If location is set/changed, force company = location company
         if vals.get("attendance_location_id"):
             location = (
                 self.env["attendance.location"]
@@ -69,11 +332,44 @@ class HrAttendance(models.Model):
             if location.company_id:
                 vals = dict(vals, company_id=location.company_id.id)
 
+        if "check_in" in vals and "portal_checkout_without_checkin" not in vals:
+            vals = dict(vals, portal_checkout_without_checkin=False)
+
         note_updated = "portal_note" in vals and vals.get("portal_note")
         previous_notes = (
             {record.id: record.portal_note for record in self} if note_updated else {}
         )
-        result = super().write(vals)
+
+        # Enterprise write builds min(check_in) for open attendances being closed.
+        # Split checkout-only rows so that path never sees False check_in values.
+        checkout_only = self.env["hr.attendance"]
+        if vals.get("check_out") and not vals.get("check_in"):
+            checkout_only = self.filtered(
+                lambda attendance: not attendance.check_out and not attendance.check_in
+            )
+        others = self - checkout_only
+        result = True
+        if others:
+            result = super(HrAttendance, others).write(vals)
+        if checkout_only:
+            work_entry_cls = next(
+                (
+                    cls
+                    for cls in type(checkout_only).__mro__
+                    if cls.__module__.endswith(
+                        "hr_work_entry_attendance.models.hr_attendance"
+                    )
+                ),
+                None,
+            )
+            if work_entry_cls:
+                # Skip enterprise write (needs real check_in timestamps).
+                result = super(work_entry_cls, checkout_only).write(vals)
+            else:
+                result = super(HrAttendance, checkout_only).write(vals)
+
+        if {"check_in", "check_out", "employee_id"} & set(vals.keys()):
+            self._notify_attendance_validity_warnings()
         if note_updated:
             self.filtered(
                 lambda record: record.portal_note

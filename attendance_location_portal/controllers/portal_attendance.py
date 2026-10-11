@@ -1,7 +1,7 @@
 from urllib.parse import urlencode
 import logging
 
-from odoo import _, http
+from odoo import _, fields, http
 from odoo.exceptions import UserError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
@@ -90,25 +90,85 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             params = urlencode({"reason": _("No employee is linked to your user.")})
             return request.redirect("/my/attendance/failed?%s" % params)
 
+        attendance_action = (post.get("attendance_action") or "").strip()
+        force_check_in = (post.get("force_check_in") or "").strip() in (
+            "1",
+            "true",
+            "True",
+        )
+        if attendance_action == "check_in" and not force_check_in:
+            today = employee._portal_attendance_local_date()
+            has_check_in_today = request.env["hr.attendance"].sudo().search_count(
+                [
+                    ("employee_id", "=", employee.id),
+                    ("date", "=", today),
+                    ("check_in", "!=", False),
+                ]
+            )
+            if has_check_in_today:
+                values = {
+                    "page_name": "portal_attendance_duplicate_checkin",
+                    "employee": employee,
+                    "warning_message": _(
+                        "لقد قمت بتسجيل الحضور اليوم بالفعل. هل تريد متابعة تسجيل حضور جديد؟"
+                    ),
+                    "post_values": {
+                        "latitude": post.get("latitude") or "",
+                        "longitude": post.get("longitude") or "",
+                        "attendance_action": attendance_action,
+                        "note": post.get("note") or "",
+                    },
+                }
+                return request.render(
+                    "attendance_location_portal.portal_attendance_duplicate_checkin_page",
+                    values,
+                )
+
         try:
             latitude = post.get("latitude")
             longitude = post.get("longitude")
             note = post.get("note")
-            result = employee.sudo().action_portal_attendance_change(
-                latitude, longitude, note=note
+            result = employee.sudo().with_context(
+                lang=request.env.lang
+            ).action_portal_attendance_change(
+                latitude,
+                longitude,
+                attendance_action=attendance_action,
+                note=note,
             )
-            params = urlencode(
-                {
-                    "action": result["action"],
-                    "location": result["location_name"],
-                }
-            )
-            return request.redirect("/my/attendance/success?%s" % params)
+            params = {
+                "action": result["action"],
+                "location": result["location_name"],
+            }
+            if result.get("warnings"):
+                params["warning"] = "\n".join(result["warnings"])
+            return request.redirect("/my/attendance/success?%s" % urlencode(params))
         except UserError as error:
             params = urlencode({"reason": str(error)})
             return request.redirect("/my/attendance/failed?%s" % params)
         except Exception as error:
             _logger.exception("Portal attendance submit failed: %s", error)
+            action = (post.get("attendance_action") or "").strip()
+            if action not in ("check_in", "check_out"):
+                action = "check_in"
+            today = employee._portal_attendance_local_date()
+            today_attendance = request.env["hr.attendance"].sudo().search(
+                [
+                    ("employee_id", "=", employee.id),
+                    ("date", "=", today),
+                ],
+                order="write_date desc, id desc",
+                limit=1,
+            )
+            if today_attendance:
+                params = urlencode(
+                    {
+                        "action": action,
+                        "location": today_attendance.attendance_location_id.name
+                        or _("Unknown"),
+                    }
+                )
+                return request.redirect("/my/attendance/success?%s" % params)
             params = urlencode(
                 {
                     "reason": _(
@@ -124,6 +184,7 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             "page_name": "portal_attendance_success",
             "action": kwargs.get("action") or "check_in",
             "location": kwargs.get("location") or _("Unknown"),
+            "warning_message": kwargs.get("warning"),
         }
         return request.render(
             "attendance_location_portal.portal_attendance_success_page",
