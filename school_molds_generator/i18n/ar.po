@@ -288,3 +288,12 @@ msgstr "اثبات قيد / افادة"
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_enrollment_proof_form
 msgid "Health Insurance Enrollment Proof 2"
 msgstr "اثبات اشتراك التأمين الصحي 2"
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_response
+#: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_response
+#: model:ir.model,name:school_molds_generator.model_health_insurance_response
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_response
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_response_form
+msgid "Health Insurance Response"
+msgstr "جواب التأمين الصحي"
