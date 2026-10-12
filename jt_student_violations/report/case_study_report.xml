@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_student_case_study" model="report.paperformat">
+        <field name="name">دراسة حالة A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="action_report_student_case_study" model="ir.actions.report">
+        <field name="name">تقرير دراسة الحالة</field>
+        <field name="model">student.case.study</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">jt_student_violations.report_student_case_study</field>
+        <field name="report_file">jt_student_violations.report_student_case_study</field>
+        <field name="print_report_name">'Case_Study_%s' % (object.name or object.student_id.name or object.id)</field>
+        <field name="binding_model_id" ref="model_student_case_study"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_student_case_study"/>
+    </record>
+
+    <!-- Shared logos header: SMART | PVTD | Ministry -->
+    <template id="report_case_study_logos">
+        <div class="o_cs_logos">
+            <!-- float:right in RTL: first = right side -->
+            <div class="o_cs_logo">
+                <img t-att-src="o.get_asset_data_uri('ministry_of_industry.png')" alt="Ministry"/>
+            </div>
+            <div class="o_cs_logo">
+                <img t-att-src="o.get_asset_data_uri('pvtd_image.png')" alt="PVTD"/>
+            </div>
+            <div class="o_cs_logo">
+                <img t-att-src="o.get_asset_data_uri('smart-logo.png')" alt="SMART"/>
+            </div>
+        </div>
+        <div style="clear: both;"/>
+    </template>
+
+    <template id="report_student_case_study">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article page" dir="rtl" lang="ar">
+                    <style type="text/css">
+                        <t t-out="o.get_arabic_font_face_css()"/>
+                        .o_cs, .o_cs * {
+                            font-family: 'ReportArabic', 'DejaVu Sans', sans-serif !important;
+                            color: #000;
+                        }
+                        .o_cs { direction: rtl; font-size: 16px; line-height: 1.7; }
+                        .o_cs_header { text-align: center; margin-bottom: 12px; }
+                        .o_cs_header h2 { margin: 10px 0 6px; font-size: 24px; clear: both; }
+                        .o_cs_logos {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-bottom: 10px;
+                        }
+                        .o_cs_logo {
+                            float: right;
+                            width: 33.33%;
+                            text-align: center;
+                            padding-top: 2px;
+                        }
+                        .o_cs_logo img {
+                            max-height: 80px;
+                            max-width: 150px;
+                        }
+                        .o_cs_section { margin: 14px 0 10px; font-weight: bold; font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 3px; }
+                        .o_cs_q { margin: 8px 0 3px; font-weight: bold; font-size: 16px; }
+                        .o_cs_a { min-height: 22px; border-bottom: 1px dotted #666; padding: 3px 4px; margin-bottom: 8px; white-space: pre-wrap; font-size: 16px; }
+                        .o_cs_row { width: 100%; overflow: hidden; margin-bottom: 6px; }
+                        .o_cs_col { float: right; width: 48%; }
+                        .o_cs_table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 15px; }
+                        .o_cs_table th, .o_cs_table td { border: 1px solid #333; padding: 6px 8px; text-align: center; }
+                        .o_cs_check { margin: 4px 0; font-size: 16px; }
+                        .o_cs_mark { display: inline-block; width: 14px; height: 14px; border: 1px solid #000; margin-left: 8px; text-align: center; line-height: 14px; font-size: 12px; }
+                        .o_cs_page_break { page-break-before: always; }
+                        .o_cs_warning { font-weight: bold; text-align: center; margin: 10px 0; text-decoration: underline; font-size: 17px; }
+                    </style>
+
+                    <div class="o_cs">
+                        <!-- PAGE 1 -->
+                        <div class="o_cs_header">
+                            <t t-call="jt_student_violations.report_case_study_logos"/>
+                            <h2>دراسة حالة إكلينيكية</h2>
+                        </div>
+
+                        <div class="o_cs_section">بيانات ديموجرافية</div>
+                        <div class="o_cs_row">
+                            <div class="o_cs_col">
+                                <div class="o_cs_q">الاسم:</div>
+                                <div class="o_cs_a"><t t-esc="o.name or o.student_id.name or ''"/></div>
+                            </div>
+                            <div class="o_cs_col">
+                                <div class="o_cs_q">الجنس:</div>
+                                <div class="o_cs_a"><t t-esc="o.get_selection_label('gender')"/></div>
+                            </div>
+                        </div>
+                        <div class="o_cs_row">
+                            <div class="o_cs_col">
+                                <div class="o_cs_q">تاريخ الميلاد:</div>
+                                <div class="o_cs_a"><t t-esc="o.birthdate or ''"/></div>
+                            </div>
+                            <div class="o_cs_col">
+                                <div class="o_cs_q">الجنسية:</div>
+                                <div class="o_cs_a"><t t-esc="o.nationality or ''"/></div>
+                            </div>
+                        </div>
+                        <div class="o_cs_q">الحالة الاجتماعية:</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('marital_status')"/></div>
+                        <div class="o_cs_q">أين تعيش؟</div>
+                        <div class="o_cs_a"><t t-esc="o.residence or ''"/></div>
+                        <div class="o_cs_q">مع من تعيش؟</div>
+                        <div class="o_cs_a"><t t-esc="o.live_with or ''"/></div>
+                        <div class="o_cs_q">سبب الإحالة:</div>
+                        <div class="o_cs_a"><t t-esc="o.referral_reason or ''"/></div>
+
+                        <div class="o_cs_section">التكوين الأسري</div>
+                        <table class="o_cs_table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>العمر</th>
+                                    <th>التعليم - المؤهل الدراسي</th>
+                                    <th>الوظيفة</th>
+                                    <th>المستوى الاقتصادي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.family_member_ids" t-as="line">
+                                    <td><t t-esc="line.get_selection_label('relation_type')"/></td>
+                                    <td><t t-esc="line.age or ''"/></td>
+                                    <td><t t-esc="line.education or ''"/></td>
+                                    <td><t t-esc="line.job or ''"/></td>
+                                    <td><t t-esc="line.get_selection_label('economic_level')"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="o_cs_q">هل لديك أخوات؟ <t t-esc="o.get_selection_label('has_siblings')"/> — كم عددهم؟ <t t-esc="o.siblings_count or ''"/> — ما ترتيبك بينهم؟ <t t-esc="o.sibling_order or ''"/></div>
+
+                        <!-- PAGE 2 -->
+                        <div class="o_cs_page_break"/>
+                        <div class="o_cs_header">
+                            <t t-call="jt_student_violations.report_case_study_logos"/>
+                            <h2>تاريخ الطفولة والمراهقة</h2>
+                        </div>
+                        <div class="o_cs_q">مع من نشأت؟</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('grew_up_with')"/></div>
+                        <div class="o_cs_q">هل كانت هناك مشاكل صحية أثناء ولادتك؟</div>
+                        <div class="o_cs_a"><t t-esc="o.birth_health_problems or ''"/></div>
+                        <div class="o_cs_q">هل أصبت بأي أمراض أو إصابات أو حوادث أثناء طفولتك؟</div>
+                        <div class="o_cs_a"><t t-esc="o.childhood_illnesses or ''"/></div>
+                        <div class="o_cs_q">ما المستوى الاقتصادي للأسرة أثناء ولادتك؟</div>
+                        <div class="o_cs_a"><t t-esc="o.family_economic_at_birth or ''"/></div>
+                        <div class="o_cs_q">صف كيف كانت العلاقات داخل الأسرة بشكل عام؟</div>
+                        <div class="o_cs_a"><t t-esc="o.family_relationships_general or ''"/></div>
+                        <div class="o_cs_q">كيف كانت علاقتك بكل من:</div>
+                        <div class="o_cs_a">والدتك: <t t-esc="o.relation_mother or ''"/></div>
+                        <div class="o_cs_a">والدك: <t t-esc="o.relation_father or ''"/></div>
+                        <div class="o_cs_a">أخوتك: <t t-esc="o.relation_siblings or ''"/></div>
+                        <div class="o_cs_q">هل سبق وعانيت من أي عنف:</div>
+                        <div class="o_cs_a"><t t-esc="', '.join(o.get_violence_labels())"/></div>
+                        <div class="o_cs_q">صف ذلك:</div>
+                        <div class="o_cs_a"><t t-esc="o.violence_description or ''"/></div>
+                        <div class="o_cs_q">هل تعاني من أي مرض صحي؟</div>
+                        <div class="o_cs_a"><t t-esc="o.current_health_disease or ''"/></div>
+                        <div class="o_cs_q">هل سبق وزرت طبيب أو معالج نفسي من قبل؟</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('visited_psychiatrist')"/></div>
+                        <div class="o_cs_q">ما هي الشكوى النفسية التي تعاني منها؟</div>
+                        <div class="o_cs_a"><t t-esc="o.psychological_complaint or ''"/></div>
+
+                        <!-- PAGE 3 -->
+                        <div class="o_cs_page_break"/>
+                        <div class="o_cs_header">
+                            <t t-call="jt_student_violations.report_case_study_logos"/>
+                        </div>
+                        <div class="o_cs_q">هل تتلقى علاج لهذه الشكوى؟</div>
+                        <div class="o_cs_a"><t t-esc="o.receiving_treatment or ''"/></div>
+                        <div class="o_cs_q">هل توجد أمراض وراثية في العائلة؟</div>
+                        <div class="o_cs_a"><t t-esc="o.hereditary_diseases or ''"/></div>
+                        <div class="o_cs_section">الاهتمامات والميول</div>
+                        <div class="o_cs_q">هل تعمل؟</div>
+                        <div class="o_cs_a"><t t-esc="o.do_you_work or ''"/></div>
+                        <div class="o_cs_q">هل تمارس لعبة رياضية محددة؟</div>
+                        <div class="o_cs_a"><t t-esc="o.practice_sport or ''"/></div>
+                        <div class="o_cs_q">هل تمارس أي من الأنشطة الفنية؟</div>
+                        <div class="o_cs_a"><t t-esc="o.artistic_activities or ''"/></div>
+                        <div class="o_cs_q">هل لديك أي مهارة؟</div>
+                        <div class="o_cs_a"><t t-esc="o.any_skill or ''"/></div>
+                        <div class="o_cs_q">هل لديك عادة روتينية محددة؟</div>
+                        <div class="o_cs_a"><t t-esc="o.routine_habit or ''"/></div>
+                        <div class="o_cs_q">حدث في فترة زمنية من عمرك لم تكن قادر على الذهاب إلى المدرسة؟ لماذا؟</div>
+                        <div class="o_cs_a"><t t-esc="o.school_absence_period or ''"/></div>
+                        <div class="o_cs_section">هل تعاني من أي من هذه الأعراض في الوقت الحالي؟</div>
+                        <t t-set="symptoms" t-value="[
+                            ('symptom_nervousness', 'عصبية'),
+                            ('symptom_anxiety', 'قلق'),
+                            ('symptom_decreased_interest', 'انخفاض بالاهتمام بمعظم الأنشطة'),
+                            ('symptom_lack_energy', 'نقص في الطاقة'),
+                            ('symptom_appetite', 'مشاكل في الشهية (عدم الشهية / شهية مفرطة)'),
+                            ('symptom_weight', '(انخفاض / زيادة) في الوزن'),
+                            ('symptom_sleep', '(أرق / نوم زائد)'),
+                            ('symptom_thoughts', 'أفكار (غير عادية / غير عقلانية)'),
+                            ('symptom_concentration', 'مشاكل في التركيز وانشغال ذهني بأمور كثيرة'),
+                            ('symptom_memory', 'نسيان ومشاكل في الذاكرة'),
+                            ('symptom_motor', 'نشاط حركي (زائد / كسل)'),
+                            ('symptom_depressive', 'مزاج إكتئابي'),
+                            ('symptom_isolation', 'انعزال من الأصدقاء والعائلة'),
+                            ('symptom_worthlessness', 'الشعور بعدم الأهمية وفقدان الأمل'),
+                        ]"/>
+                        <div t-foreach="symptoms" t-as="sym">
+                            <div class="o_cs_check">
+                                <span class="o_cs_mark"><t t-if="o[sym[0]]">✓</t></span>
+                                <t t-esc="sym[1]"/>
+                            </div>
+                        </div>
+
+                        <!-- PAGE 4 -->
+                        <div class="o_cs_page_break"/>
+                        <div class="o_cs_header">
+                            <t t-call="jt_student_violations.report_case_study_logos"/>
+                        </div>
+                        <div class="o_cs_q">هل هناك شيء حدث أو تغير في حياتك أدى إلى ظهور أي من هذه الأعراض؟</div>
+                        <div class="o_cs_a"><t t-esc="o.life_changes_symptoms or ''"/></div>
+                        <div class="o_cs_q">ما الفترة التي شعرت أنها أسوأ وقت مررت به؟</div>
+                        <div class="o_cs_a"><t t-esc="o.worst_period or ''"/></div>
+                        <div class="o_cs_q">هل سبق وأن فكرت أو حاولت الانتحار أو إيذاء نفسك؟ ماذا حدث؟</div>
+                        <div class="o_cs_a"><t t-esc="o.self_harm_history or ''"/></div>
+                        <div class="o_cs_q">هل حاولت إيذاء أحد من قبل؟ من؟ لماذا؟</div>
+                        <div class="o_cs_a"><t t-esc="o.harm_others_history or ''"/></div>
+                        <div class="o_cs_q">هل تناولت أي عقاقير مخدرة أو حبوب أو كحوليات أو أدوية للاكتئاب أو لأي مرض نفسي آخر؟</div>
+                        <div class="o_cs_a"><t t-esc="o.substance_medication_history or ''"/></div>
+                        <div class="o_cs_q">هل لديك أي خطط مستقبلية؟</div>
+                        <div class="o_cs_a"><t t-esc="o.future_plans or ''"/></div>
+
+                        <!-- PAGE 5 -->
+                        <div class="o_cs_page_break"/>
+                        <div class="o_cs_header">
+                            <t t-call="jt_student_violations.report_case_study_logos"/>
+                            <div class="o_cs_warning">هذا الجزء خاص بالأخصائي النفسي فقط / لا يجب إطلاع الحالة عليه ....</div>
+                        </div>
+                        <div class="o_cs_section">الملاحظات السلوكية</div>
+                        <div class="o_cs_q">المظهر العام (النظافة - الأناقة):</div>
+                        <div class="o_cs_a"><t t-esc="o.general_appearance or ''"/></div>
+                        <div class="o_cs_q">الابتسامة:</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('smile_type')"/></div>
+                        <div class="o_cs_q">وضعية الجلوس:</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('sitting_posture')"/></div>
+                        <div class="o_cs_q">التواصل البصري ومستوى الانتباه:</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('eye_contact')"/></div>
+                        <div class="o_cs_q">مستوى الحركة والنشاط:</div>
+                        <div class="o_cs_a"><t t-esc="o.movement_activity_level or ''"/></div>
+                        <div class="o_cs_q">ترابط الأفكار والكلمات:</div>
+                        <div class="o_cs_a"><t t-esc="o.thought_coherence or ''"/></div>
+                        <div class="o_cs_q">نبرة الصوت:</div>
+                        <div class="o_cs_a"><t t-esc="o.get_selection_label('voice_tone')"/></div>
+                        <div class="o_cs_q">الحالة المزاجية والانفعالية:</div>
+                        <div class="o_cs_a"><t t-esc="o.mood_emotional_state or ''"/></div>
+                        <div class="o_cs_q">الحركات اللاإرادية:</div>
+                        <div class="o_cs_a"><t t-esc="o.involuntary_movements or ''"/></div>
+                        <div class="o_cs_q">الإصابات والعاهات الجسدية:</div>
+                        <div class="o_cs_a"><t t-esc="o.physical_injuries or ''"/></div>
+                        <div class="o_cs_q">ملاحظات سلوكية:</div>
+                        <div class="o_cs_a"><t t-esc="o.behavioral_notes or ''"/></div>
+                        <div class="o_cs_q">مؤشرات الاكتئاب أو القلق:</div>
+                        <div class="o_cs_a"><t t-esc="o.depression_anxiety_indicators or ''"/></div>
+                        <div class="o_cs_q">التشخيص المبدئي:</div>
+                        <div class="o_cs_a"><t t-esc="o.initial_diagnosis or ''"/></div>
+                        <div class="o_cs_q">الأهداف العلاجية:</div>
+                        <div class="o_cs_a"><t t-esc="o.therapeutic_goals or ''"/></div>
+                        <div class="o_cs_q">الخطة العلاجية:</div>
+                        <div class="o_cs_a"><t t-esc="o.treatment_plan or ''"/></div>
+                        <div class="o_cs_q">التوصيات:</div>
+                        <div class="o_cs_a"><t t-esc="o.recommendations or ''"/></div>
+                        <div style="margin-top: 30px; text-align: left;">
+                            <strong>الأخصائي النفسي:</strong>
+                            <t t-esc="o.psychologist_id.name or ''"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

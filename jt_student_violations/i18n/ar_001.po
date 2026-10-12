@@ -1,0 +1,950 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-13 00:00+0000\n"
+"PO-Revision-Date: 2026-10-13 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__suspend_15_days
+msgid "15-day suspension"
+msgstr "فصل لمدة 15 يوم"
+
+#. module: jt_student_violations
+#: model_terms:ir.actions.act_window,help:jt_student_violations.action_student_violation
+msgid "Track behavioral problems and the action taken regarding the student."
+msgstr "تتبع المشكلات السلوكية والإجراء المتخذ مع الطالب."
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__action_taken
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Action Taken"
+msgstr "الإجراء المتخذ مع الطالب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__bar_activities
+msgid "Barring participation in activities"
+msgstr "عدم الاشتراك في الأنشطة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__bullying
+msgid "Bullying and inappropriate language"
+msgstr "التنمر والألفاظ غير اللائقة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__call_guardian
+msgid "Calling the guardian"
+msgstr "استدعاء ولي الأمر"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__case_study
+msgid "Case study"
+msgstr "دراسة حالة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__caution
+msgid "Caution"
+msgstr "تحذير"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__cheating
+msgid "Cheating in exams"
+msgstr "الغش في الاختبارات"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__class_id
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Class"
+msgstr "الفصل"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__company_id
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: jt_student_violations
+#: model_terms:ir.actions.act_window,help:jt_student_violations.action_student_violation
+msgid "Create a student violation record"
+msgstr "إنشاء سجل مخالفة للطالب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__date
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__deny_entry_same_day
+msgid "Denying school entry for the same day"
+msgstr "عدم دخول المدرسة في نفس اليوم"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__disrespect_staff
+msgid "Disrespecting the teaching staff"
+msgstr "إساءة الأدب مع هيئة التدريس"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__div_id
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Division"
+msgstr "الشعبة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__class_permission
+msgid "Entering or leaving the classroom without permission"
+msgstr "الدخول أو الخروج من الفصل بدون استئذان"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__truancy
+msgid "Escaping from school"
+msgstr "الهروب من المدرسة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__expulsion
+msgid "Expulsion"
+msgstr "فصل"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__father_name
+msgid "Father Name"
+msgstr "اسم الأب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__fighting
+msgid "Fighting or harming a classmate"
+msgstr "المشاجرة أو إيذاء زميله"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__filming
+msgid "Filming or posting videos from inside the station"
+msgstr "تصوير أو نشر مقاطع من داخل المحطة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__lower_behavior_grades
+msgid "Lowering behavior grades"
+msgstr "خفض درجات السلوك"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__lower_teacher_grades
+msgid "Lowering grades by the teacher"
+msgstr "خفض درجات من جانب المعلم"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__bus_misbehavior
+msgid "Misbehavior inside the bus"
+msgstr "السلوكيات الخاطئة داخل الباص"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__late_morning
+msgid "Morning lateness for school"
+msgstr "التأخر الصباحي عن موعد المدرسة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__uniform
+msgid "Not adhering to the school uniform"
+msgstr "عدم الالتزام بالزي المدرسي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__no_books
+msgid "Not bringing books and school supplies"
+msgstr "عدم إحضار الكتب والأدوات المدرسية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__mobile
+msgid "Not handing over the mobile to the designated supervisor"
+msgstr "عدم تسليم الموبايل للمشرف المختص"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__notes
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_form
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__drugs_weapons
+msgid "Possession of drugs and weapons"
+msgstr "حيازة المخدرات والسلاح"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__description
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_form
+msgid "Problem Description"
+msgstr "وصف المشكلة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__smoking
+msgid "Smoking"
+msgstr "التدخين"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__standard_id
+msgid "Standard"
+msgstr "الصف"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__student_id
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Student"
+msgstr "الطالب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__stud_id
+msgid "Student ID"
+msgstr "رقم الطالب"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_form
+msgid "Student Information"
+msgstr "بيانات الطالب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: jt_student_violations
+#: model:ir.model,name:jt_student_violations.model_student_violation
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_form
+#: code:addons/jt_student_violations/models/student_violation.py:0
+msgid "Student Violation"
+msgstr "مخالفة الطالب"
+
+#. module: jt_student_violations
+#: model:ir.actions.act_window,name:jt_student_violations.action_student_violation
+#: model:ir.ui.menu,name:jt_student_violations.menu_student_violations_root
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Student Violations"
+msgstr "مخالفات الطلاب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__surname
+msgid "Surname"
+msgstr "اللقب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__suspend_pending
+msgid "Suspending the student until a suitable action is taken"
+msgstr "إيقاف الطالب لحين اتخاذ إجراء مناسب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__theft
+msgid "Theft"
+msgstr "السرقة"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__violation_type__vandalism
+msgid "Vandalism of property"
+msgstr "تخريب الممتلكات"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__verbal_warning
+msgid "Verbal warning"
+msgstr "تنبيه شفوي"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_search
+msgid "Violation"
+msgstr "المخالفة"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_form
+msgid "Violation Details"
+msgstr "تفاصيل المخالفة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_res_partner__violation_count
+#: model:ir.model.fields,field_description:jt_student_violations.field_res_partner__violation_ids
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_violation__violation_type
+#: model:ir.ui.menu,name:jt_student_violations.menu_student_violation
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_partner_form_student_violations
+msgid "Violations"
+msgstr "المخالفات"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__warning
+msgid "Warning"
+msgstr "إنذار"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_violation_form
+msgid "Write a detailed description of the problem here"
+msgstr "بنكتب هنا وصف المشكلة بالتفصيل"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_violation__action_taken__written_pledge
+msgid "Written pledge"
+msgstr "تعهد كتابي"
+
+#. module: jt_student_violations
+#: model:ir.rule,name:jt_student_violations.student_violation_company_rule
+msgid "Student Violation: multi-company"
+msgstr "مخالفة الطالب: متعدد الشركات"
+
+#. module: jt_student_violations
+#: model:ir.model,name:jt_student_violations.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: jt_student_violations
+#: model:ir.actions.act_window,name:jt_student_violations.action_student_case_study
+#: model:ir.model.fields,field_description:jt_student_violations.field_res_partner__case_study_count
+#: model:ir.model.fields,field_description:jt_student_violations.field_res_partner__case_study_ids
+#: model:ir.ui.menu,name:jt_student_violations.menu_student_case_study
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_partner_form_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_search
+msgid "Case Studies"
+msgstr "دراسات الحالة"
+
+#. module: jt_student_violations
+#: model:ir.actions.report,name:jt_student_violations.action_report_student_case_study
+#: model:ir.model,name:jt_student_violations.model_student_case_study
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__case_study_id
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Case Study"
+msgstr "دراسة حالة"
+
+#. module: jt_student_violations
+#: model:ir.model,name:jt_student_violations.model_student_case_study_family
+msgid "Case Study Family Member"
+msgstr "فرد من التكوين الأسري"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Print Case Study"
+msgstr "طباعة دراسة الحالة"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Demographic Data"
+msgstr "بيانات ديموجرافية"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Childhood and Adolescence"
+msgstr "تاريخ الطفولة والمراهقة"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Interests and Symptoms"
+msgstr "الاهتمامات والأعراض"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Additional Questions"
+msgstr "أسئلة إضافية"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Psychologist Assessment"
+msgstr "تقييم الأخصائي النفسي"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "This part is for the psychologist only / the subject should not be allowed to see it."
+msgstr "هذا الجزء خاص بالأخصائي النفسي فقط / لا يجب إطلاع الحالة عليه ...."
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Family Composition"
+msgstr "التكوين الأسري"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Reason for referral"
+msgstr "سبب الإحالة"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Interests and Inclinations"
+msgstr "الاهتمامات والميول"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Do you suffer from any of these symptoms currently?"
+msgstr "هل تعاني من أي من هذه الأعراض في الوقت الحالي؟"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Have you ever suffered from any violence?"
+msgstr "هل سبق وعانيت من أي عنف؟"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Behavioral Observations"
+msgstr "الملاحظات السلوكية"
+
+#. module: jt_student_violations
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_form
+msgid "Relationship with"
+msgstr "كيف كانت علاقتك بكل من"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__name
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__gender
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__birthdate
+msgid "Date of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__nationality
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__marital_status
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__marital_status__single
+msgid "Single"
+msgstr "عزباء"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__marital_status__engaged
+msgid "Engaged"
+msgstr "مخطوبة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__marital_status__married
+msgid "Married"
+msgstr "متزوجة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__residence
+msgid "Where do you live?"
+msgstr "أين تعيش؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__live_with
+msgid "With whom do you live?"
+msgstr "مع من تعيش؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__referral_reason
+msgid "Reason for referral"
+msgstr "سبب الإحالة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__has_siblings
+msgid "Do you have siblings?"
+msgstr "هل لديك أخوات؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__siblings_count
+msgid "How many?"
+msgstr "كم عددهم؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__sibling_order
+msgid "What is your order among them?"
+msgstr "ما ترتيبك بينهم؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__has_siblings__yes
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__visited_psychiatrist__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__has_siblings__no
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__visited_psychiatrist__no
+msgid "No"
+msgstr "لا"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__relation_type
+msgid "Relation"
+msgstr "الصلة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study_family__relation_type__father
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__grew_up_with__father
+msgid "Father"
+msgstr "الأب"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study_family__relation_type__mother
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__grew_up_with__mother
+msgid "Mother"
+msgstr "الأم"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study_family__relation_type__other
+msgid "Others"
+msgstr "آخرون"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__age
+msgid "Age"
+msgstr "العمر"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__education
+msgid "Education / Qualification"
+msgstr "التعليم - المؤهل الدراسي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__job
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study_family__economic_level
+msgid "Economic Level"
+msgstr "المستوى الاقتصادي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study_family__economic_level__high
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__voice_tone__high
+msgid "High"
+msgstr "عالي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study_family__economic_level__medium
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__voice_tone__medium
+msgid "Medium"
+msgstr "متوسط"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study_family__economic_level__low
+msgid "Low"
+msgstr "منخفض"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__grew_up_with
+msgid "With whom did you grow up?"
+msgstr "مع من نشأت؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__grew_up_with__both
+msgid "Both"
+msgstr "كلاهما"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__grew_up_with__others
+msgid "Others"
+msgstr "آخرون"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__birth_health_problems
+msgid "Health problems during birth"
+msgstr "هل كانت هناك مشاكل صحية أثناء ولادتك؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__childhood_illnesses
+msgid "Childhood illnesses, injuries or accidents"
+msgstr "هل أصبت بأي أمراض أو إصابات أو حوادث أثناء طفولتك؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__family_economic_at_birth
+msgid "Family economic level at birth"
+msgstr "ما المستوى الاقتصادي للأسرة أثناء ولادتك؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__family_relationships_general
+msgid "Family relationships in general"
+msgstr "صف كيف كانت العلاقات داخل الأسرة بشكل عام؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__relation_mother
+msgid "Relationship with mother"
+msgstr "علاقتك بوالدتك"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__relation_father
+msgid "Relationship with father"
+msgstr "علاقتك بوالدك"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__relation_siblings
+msgid "Relationship with siblings"
+msgstr "علاقتك بأخوتك"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__violence_emotional
+msgid "Emotional violence"
+msgstr "عنف إنفعالي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__violence_physical
+msgid "Physical violence"
+msgstr "عنف جسدي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__violence_sexual
+msgid "Sexual violence"
+msgstr "عنف جنسي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__violence_neglect
+msgid "Neglect"
+msgstr "إهمال"
+
+#. module: jt_student_violations
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Emotional"
+msgstr "إنفعالي"
+
+#. module: jt_student_violations
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Physical"
+msgstr "جسدي"
+
+#. module: jt_student_violations
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Sexual"
+msgstr "جنسي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__violence_description
+msgid "Describe the violence"
+msgstr "صف ذلك"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__current_health_disease
+msgid "Current health disease"
+msgstr "هل تعاني من أي مرض صحي؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__visited_psychiatrist
+msgid "Visited a doctor or psychiatrist before?"
+msgstr "هل سبق وزرت طبيب أو معالج نفسي من قبل؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__psychological_complaint
+msgid "Psychological complaint"
+msgstr "ما هي الشكوى النفسية التي تعاني منها؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__receiving_treatment
+msgid "Receiving treatment for this complaint?"
+msgstr "هل تتلقى علاج لهذه الشكوى؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__hereditary_diseases
+msgid "Hereditary diseases in the family?"
+msgstr "هل توجد أمراض وراثية في العائلة؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__do_you_work
+msgid "Do you work?"
+msgstr "هل تعمل؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__practice_sport
+msgid "Do you practice a specific sport?"
+msgstr "هل تمارس لعبة رياضية محددة؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__artistic_activities
+msgid "Do you practice any artistic activities?"
+msgstr "هل تمارس أي من الأنشطة الفنية؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__any_skill
+msgid "Do you have any skill?"
+msgstr "هل لديك أي مهارة؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__routine_habit
+msgid "Do you have a specific routine?"
+msgstr "هل لديك عادة روتينية محددة؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__school_absence_period
+msgid "Period unable to go to school and why"
+msgstr "حدث في فترة زمنية من عمرك لم تكن قادر على الذهاب إلى المدرسة؟ لماذا؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_nervousness
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Nervousness"
+msgstr "عصبية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_anxiety
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Anxiety"
+msgstr "قلق"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_decreased_interest
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Decreased interest in most activities"
+msgstr "انخفاض بالاهتمام بمعظم الأنشطة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_lack_energy
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Lack of energy"
+msgstr "نقص في الطاقة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_appetite
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Appetite problems"
+msgstr "مشاكل في الشهية (عدم الشهية / شهية مفرطة)"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_weight
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Weight decrease / increase"
+msgstr "(انخفاض / زيادة) في الوزن"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_sleep
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Insomnia / excessive sleep"
+msgstr "(أرق / نوم زائد)"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_thoughts
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Unusual / irrational thoughts"
+msgstr "أفكار (غير عادية / غير عقلانية)"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_concentration
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Concentration problems"
+msgstr "مشاكل في التركيز وانشغال ذهني بأمور كثيرة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_memory
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Forgetfulness and memory problems"
+msgstr "نسيان ومشاكل في الذاكرة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_motor
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Motor activity excessive / lethargic"
+msgstr "نشاط حركي (زائد / كسل)"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_depressive
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Depressive mood"
+msgstr "مزاج إكتئابي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_isolation
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Isolation from friends and family"
+msgstr "انعزال من الأصدقاء والعائلة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__symptom_worthlessness
+#: code:addons/jt_student_violations/models/case_study.py:0
+msgid "Feeling worthless and losing hope"
+msgstr "الشعور بعدم الأهمية وفقدان الأمل"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__life_changes_symptoms
+msgid "Life changes that led to symptoms"
+msgstr "هل هناك شيء حدث أو تغير في حياتك أدى إلى ظهور أي من هذه الأعراض؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__worst_period
+msgid "Worst period you went through"
+msgstr "ما الفترة التي شعرت أنها أسوأ وقت مررت به؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__self_harm_history
+msgid "Self-harm or suicide thoughts / attempts"
+msgstr "هل سبق وأن فكرت أو حاولت الانتحار أو إيذاء نفسك؟ ماذا حدث؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__harm_others_history
+msgid "Tried to harm someone before"
+msgstr "هل حاولت إيذاء أحد من قبل؟ من؟ لماذا؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__substance_medication_history
+msgid "Drugs, alcohol or psychiatric medication"
+msgstr "هل تناولت أي عقاقير مخدرة أو حبوب أو كحوليات أو أدوية للاكتئاب أو لأي مرض نفسي آخر؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__future_plans
+msgid "Future plans"
+msgstr "هل لديك أي خطط مستقبلية؟"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__general_appearance
+msgid "General appearance"
+msgstr "المظهر العام"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__smile_type
+msgid "Smile"
+msgstr "الابتسامة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__smile_type__spontaneous
+msgid "Spontaneous"
+msgstr "تلقائية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__smile_type__artificial
+msgid "Artificial"
+msgstr "مصطنعة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__smile_type__rigid
+msgid "Rigid"
+msgstr "جامدة"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__sitting_posture
+msgid "Sitting posture"
+msgstr "وضعية الجلوس"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__sitting_posture__relaxed
+msgid "Relaxed"
+msgstr "مسترخي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__sitting_posture__alert
+msgid "Alert"
+msgstr "متحفز"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__sitting_posture__withdrawn
+msgid "Withdrawn"
+msgstr "متقوقع"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__eye_contact
+msgid "Eye contact and attention"
+msgstr "التواصل البصري ومستوى الانتباه"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__eye_contact__good
+msgid "Good"
+msgstr "جيد"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__eye_contact__not_good
+msgid "Not good"
+msgstr "غير جيد"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__movement_activity_level
+msgid "Movement and activity level"
+msgstr "مستوى الحركة والنشاط"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__thought_coherence
+msgid "Coherence of ideas and words"
+msgstr "ترابط الأفكار والكلمات"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__voice_tone
+msgid "Tone of voice"
+msgstr "نبرة الصوت"
+
+#. module: jt_student_violations
+#: model:ir.model.fields.selection,name:jt_student_violations.selection__student_case_study__voice_tone__quiet
+msgid "Quiet"
+msgstr "هادئ"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__mood_emotional_state
+msgid "Mood and emotional state"
+msgstr "الحالة المزاجية والانفعالية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__involuntary_movements
+msgid "Involuntary movements"
+msgstr "الحركات اللاإرادية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__physical_injuries
+msgid "Injuries and physical disabilities"
+msgstr "الإصابات والعاهات الجسدية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__behavioral_notes
+msgid "Behavioral notes"
+msgstr "ملاحظات سلوكية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__depression_anxiety_indicators
+msgid "Indicators of depression or anxiety"
+msgstr "مؤشرات الاكتئاب أو القلق"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__initial_diagnosis
+msgid "Initial diagnosis"
+msgstr "التشخيص المبدئي"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__therapeutic_goals
+msgid "Therapeutic goals"
+msgstr "الأهداف العلاجية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__treatment_plan
+msgid "Treatment plan"
+msgstr "الخطة العلاجية"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__recommendations
+msgid "Recommendations"
+msgstr "التوصيات"
+
+#. module: jt_student_violations
+#: model:ir.model.fields,field_description:jt_student_violations.field_student_case_study__psychologist_id
+#: model_terms:ir.ui.view,arch_db:jt_student_violations.view_student_case_study_search
+msgid "Psychologist"
+msgstr "الأخصائي النفسي"
+
+#. module: jt_student_violations
+#: model:ir.rule,name:jt_student_violations.student_case_study_company_rule
+msgid "Case Study: multi-company"
+msgstr "دراسة الحالة: متعدد الشركات"
+
+#. module: jt_student_violations
+#: model:ir.rule,name:jt_student_violations.student_case_study_family_company_rule
+msgid "Case Study Family: multi-company"
+msgstr "التكوين الأسري لدراسة الحالة: متعدد الشركات"
+
+#. module: jt_student_violations
+#: model_terms:ir.actions.act_window,help:jt_student_violations.action_student_case_study
+msgid "Create a clinical case study"
+msgstr "إنشاء دراسة حالة إكلينيكية"

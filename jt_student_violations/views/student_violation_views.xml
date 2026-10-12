@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_violation_list" model="ir.ui.view">
+        <field name="name">student.violation.list</field>
+        <field name="model">student.violation</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="student_id"/>
+                <field name="stud_id"/>
+                <field name="class_id"/>
+                <field name="div_id"/>
+                <field name="violation_type"/>
+                <field name="action_taken"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_student_violation_form" model="ir.ui.view">
+        <field name="name">student.violation.form</field>
+        <field name="model">student.violation</field>
+        <field name="arch" type="xml">
+            <form string="مخالفة الطالب">
+                <sheet>
+                    <group>
+                        <group string="بيانات الطالب">
+                            <field name="student_id"/>
+                            <field name="stud_id"/>
+                            <field name="father_name"/>
+                            <field name="surname"/>
+                            <field name="standard_id"/>
+                            <field name="class_id"/>
+                            <field name="div_id"/>
+                        </group>
+                        <group string="تفاصيل المخالفة">
+                            <field name="date"/>
+                            <field name="violation_type"/>
+                            <field name="action_taken"/>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <group string="وصف المشكلة">
+                        <field name="description" nolabel="1" placeholder="بنكتب هنا وصف المشكلة بالتفصيل"/>
+                    </group>
+                    <group string="الملاحظات">
+                        <field name="notes" nolabel="1" placeholder="الملاحظات"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_violation_search" model="ir.ui.view">
+        <field name="name">student.violation.search</field>
+        <field name="model">student.violation</field>
+        <field name="arch" type="xml">
+            <search string="مخالفات الطلاب">
+                <field name="student_id"/>
+                <field name="stud_id"/>
+                <field name="class_id"/>
+                <field name="div_id"/>
+                <field name="violation_type"/>
+                <field name="action_taken"/>
+                <field name="date"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <filter string="اليوم" name="today" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <group>
+                    <filter string="الطالب" name="group_student" context="{'group_by': 'student_id'}"/>
+                    <filter string="المخالفة" name="group_violation" context="{'group_by': 'violation_type'}"/>
+                    <filter string="الإجراء المتخذ" name="group_action" context="{'group_by': 'action_taken'}"/>
+                    <filter string="الفصل" name="group_class" context="{'group_by': 'class_id'}"/>
+                    <filter string="الشعبة" name="group_div" context="{'group_by': 'div_id'}"/>
+                    <filter string="التاريخ" name="group_date" context="{'group_by': 'date'}"/>
+                    <filter string="الشركة" name="group_company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_student_violations" model="ir.ui.view">
+        <field name="name">res.partner.form.student.violations.smart.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="jt_education_base.student_profile"/>
+        <field name="priority" eval="30"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/field[@name='image_1920']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_student_violations"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-exclamation-triangle"
+                            invisible="not is_student">
+                        <div class="o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="violation_count"/>
+                            </span>
+                            <span class="o_stat_text">المخالفات</span>
+                        </div>
+                    </button>
+                    <button name="action_view_student_case_studies"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-heartbeat"
+                            invisible="not is_student">
+                        <div class="o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="case_study_count"/>
+                            </span>
+                            <span class="o_stat_text">دراسات الحالة</span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

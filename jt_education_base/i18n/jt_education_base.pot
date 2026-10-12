@@ -2870,3 +2870,18 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
 msgid "telephone number 3"
 msgstr ""
+
+#. module: jt_education_base
+#: model:ir.model.fields,help:jt_education_base.field_student_standard__company_ids
+msgid "If empty, this standard is visible for all companies. If set, it is only visible for the selected companies."
+msgstr ""
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.standard_form_view
+msgid "Visible to all companies"
+msgstr ""
+
+#. module: jt_education_base
+#: model:ir.rule,name:jt_education_base.student_standard_company_rule
+msgid "Student Standard multi-company"
+msgstr ""

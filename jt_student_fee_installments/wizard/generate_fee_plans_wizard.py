@@ -56,8 +56,12 @@ class GenerateFeePlansWizard(models.TransientModel):
 
     @api.onchange('standard_id')
     def _onchange_standard_id(self):
-        if self.standard_id and self.standard_id.fee:
-            self.default_basic_total_due = self.standard_id.fee
+        if self.standard_id:
+            self.default_basic_total_due = (
+                self.standard_id.get_basic_fee_total()
+                if hasattr(self.standard_id, 'get_basic_fee_total')
+                else (self.standard_id.fee or 0.0)
+            )
 
     @api.onchange('bus_category_id')
     def _onchange_bus_category_id(self):
@@ -118,11 +122,14 @@ class GenerateFeePlansWizard(models.TransientModel):
                 ('student_id', '=', student.id),
                 ('year_id', '=', self.year_id.id),
             ], limit=1)
-            basic_due = (
-                student.standard.fee
-                if student.standard and student.standard.fee
-                else self.default_basic_total_due
-            )
+            if student.standard:
+                basic_due = (
+                    student.standard.get_basic_fee_total()
+                    if hasattr(student.standard, 'get_basic_fee_total')
+                    else (student.standard.fee or 0.0)
+                )
+            else:
+                basic_due = self.default_basic_total_due
             bus, bus_due = self._resolve_bus(student)
             vals = {
                 'standard_id': student.standard.id,

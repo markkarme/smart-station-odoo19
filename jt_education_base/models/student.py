@@ -423,9 +423,90 @@ class StudentStandard(models.Model):
         string='Currency',
         default=lambda self: self.env.company.currency_id,
     )
-    fee = fields.Monetary(string='Fee', currency_field='currency_id')
+    fee = fields.Monetary(
+        string='Fee',
+        currency_field='currency_id',
+        help='Total tuition fee. Down payment and installments must not exceed this amount.',
+    )
+    down_payment = fields.Monetary(
+        string='المقدم',
+        currency_field='currency_id',
+        help='Used as basic fee installment #1 (المقدم) on student fee plans.',
+    )
+    first_installment = fields.Monetary(
+        string='القسط الأول',
+        currency_field='currency_id',
+        help='Used as basic fee installment #2 (القسط 1) on student fee plans.',
+    )
+    second_installment = fields.Monetary(
+        string='القسط الثاني',
+        currency_field='currency_id',
+        help='Used as basic fee installment #3 (القسط 2) on student fee plans.',
+    )
     student_ids = fields.One2many('res.partner', 'standard', string="Students", domain=[('is_student', '=', True)])
     app_close_date = fields.Date("Application Close Date")
+    company_ids = fields.Many2many(
+        'res.company',
+        'student_standard_res_company_rel',
+        'standard_id',
+        'company_id',
+        string='الشركات',
+        domain="[('id', 'in', allowed_company_ids)]",
+        help="If empty, this standard is visible for all companies. "
+             "If set, it is only visible for the selected companies.",
+    )
+
+    def _installment_amounts_total(self):
+        self.ensure_one()
+        return (
+            (self.down_payment or 0.0)
+            + (self.first_installment or 0.0)
+            + (self.second_installment or 0.0)
+        )
+
+    @api.constrains('fee', 'down_payment', 'first_installment', 'second_installment')
+    def _check_installments_not_over_fee(self):
+        for standard in self:
+            installments_total = standard._installment_amounts_total()
+            fee_total = standard.fee or 0.0
+            if installments_total > fee_total + 0.00001:
+                raise ValidationError(
+                    _(
+                        'مجموع المقدم والقسط الأول والقسط الثاني (%(installments)s) '
+                        'لا يمكن أن يكون أكبر من الرسوم (%(fee)s).',
+                        installments=installments_total,
+                        fee=fee_total,
+                    )
+                )
+
+    def get_basic_fee_total(self):
+        """Total tuition is always the Fee field."""
+        self.ensure_one()
+        return self.fee or 0.0
+
+    def get_basic_installment_amounts(self, count=3):
+        """Amounts for basic fee lines (down payment, 1st, 2nd, …)."""
+        self.ensure_one()
+        count = max(int(count or 0), 0)
+        if count <= 0:
+            return []
+        configured = [
+            self.down_payment or 0.0,
+            self.first_installment or 0.0,
+            self.second_installment or 0.0,
+        ]
+        if any(configured):
+            amounts = list(configured)
+            if len(amounts) < count:
+                amounts.extend([0.0] * (count - len(amounts)))
+            return amounts[:count]
+        total = self.fee or 0.0
+        if count == 1:
+            return [total]
+        base = round(total / count, 2)
+        amounts = [base] * count
+        amounts[-1] = round(total - base * (count - 1), 2)
+        return amounts
 
     def _compute_occupied_seats(self):
         for standard in self:
