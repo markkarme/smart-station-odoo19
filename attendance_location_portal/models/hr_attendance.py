@@ -210,8 +210,8 @@ class HrAttendance(models.Model):
             return open_attendance
 
         employee = open_attendance.employee_id.sudo()
-        responsible = employee.hr_responsible_id
-        if not responsible:
+        responsible_users = employee.hr_responsible_ids or employee.hr_responsible_id
+        if not responsible_users:
             return open_attendance
 
         check_in_display = format_datetime(
@@ -227,25 +227,26 @@ class HrAttendance(models.Model):
             "datetime": check_in_display,
         }
 
-        existing_activity = self.env["mail.activity"].sudo().search(
-            [
-                ("res_model", "=", "hr.attendance"),
-                ("res_id", "=", open_attendance.id),
-                ("user_id", "=", responsible.id),
-                ("summary", "=", summary),
-            ],
-            limit=1,
-        )
-        if existing_activity:
-            existing_activity.write({"note": note})
-            return open_attendance
+        for responsible in responsible_users:
+            existing_activity = self.env["mail.activity"].sudo().search(
+                [
+                    ("res_model", "=", "hr.attendance"),
+                    ("res_id", "=", open_attendance.id),
+                    ("user_id", "=", responsible.id),
+                    ("summary", "=", summary),
+                ],
+                limit=1,
+            )
+            if existing_activity:
+                existing_activity.write({"note": note})
+                continue
 
-        open_attendance.sudo().activity_schedule(
-            "mail.mail_activity_data_todo",
-            user_id=responsible.id,
-            summary=summary,
-            note=note,
-        )
+            open_attendance.sudo().activity_schedule(
+                "mail.mail_activity_data_todo",
+                user_id=responsible.id,
+                summary=summary,
+                note=note,
+            )
         return open_attendance
 
     def _notify_attendance_validity_warnings(self):

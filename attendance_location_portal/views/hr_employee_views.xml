@@ -46,4 +46,21 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_hr_employee_form_multi_approvers" model="ir.ui.view">
+        <field name="name">hr.employee.form.multi.approvers</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="priority" eval="999"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='managers']" position="replace">
+                <group name="managers" string="Approvers">
+                    <field name="hr_responsible_ids" widget="many2many_tags"/>
+                    <field name="expense_manager_ids" widget="many2many_tags"/>
+                    <field name="leave_manager_ids" widget="many2many_tags"/>
+                    <field name="attendance_manager_ids" widget="many2many_tags"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
 </odoo>

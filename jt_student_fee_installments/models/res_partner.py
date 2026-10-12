@@ -152,7 +152,7 @@ class ResPartner(models.Model):
             'default_bus_category_id': self.bus_category_id.id if self.bus_category_id else False,
             'default_basic_total_due': self.standard.fee if self.standard else 0.0,
             'default_bus_total_due': self.bus_category_id.price if self.bus_category_id else 0.0,
-            'default_state': 'open',
+            'default_state': 'draft',
         }
         plans = self.env['student.fee.plan'].search([
             ('student_id', '=', self.id),

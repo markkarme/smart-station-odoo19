@@ -74,9 +74,6 @@
                         invisible="not invoice_id"/>
             </xpath>
 
-            <xpath expr="//field[@name='books_fee_ids']/list/field[@name='amount']" position="before">
-                <field name="product_id" string="المنتج"/>
-            </xpath>
             <xpath expr="//field[@name='books_fee_ids']/list/field[@name='payment_date']" position="after">
                 <field name="invoice_id" optional="show"/>
                 <field name="invoice_state" column_invisible="1"/>

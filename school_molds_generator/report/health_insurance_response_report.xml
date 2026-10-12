@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_health_insurance_response" model="report.paperformat">
+        <field name="name">Health Insurance Response A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">8</field>
+        <field name="margin_bottom">8</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <template id="report_health_insurance_response">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article page" dir="rtl" lang="ar">
+                    <style type="text/css">
+                        <t t-out="o.get_arabic_font_face_css()"/>
+                        .article, .page, .o_report_layout_standard, .o_report_layout_boxed {
+                            border: none !important;
+                            box-shadow: none !important;
+                        }
+                        .o_health_response,
+                        .o_health_response * {
+                            font-family: 'ReportArabic', 'DejaVu Sans', sans-serif !important;
+                            color: #000;
+                            border: none !important;
+                            box-shadow: none !important;
+                            outline: none !important;
+                        }
+                        .o_health_response {
+                            direction: rtl;
+                        }
+                        .o_hr_copy {
+                            direction: rtl;
+                        }
+                        .o_hr_header {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-bottom: 4px;
+                        }
+                        .o_hr_header_text {
+                            float: right;
+                            width: 34%;
+                            text-align: right;
+                            font-size: 11px;
+                            line-height: 1.45;
+                            font-weight: bold;
+                        }
+                        .o_hr_header_logo {
+                            float: right;
+                            width: 22%;
+                            text-align: center;
+                            padding-top: 2px;
+                        }
+                        .o_hr_header_logo img {
+                            max-height: 58px;
+                            max-width: 100px;
+                        }
+                        .o_hr_signatures {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-top: 22px;
+                            font-size: 15px;
+                            font-weight: bold;
+                        }
+                        .o_hr_sig {
+                            float: right;
+                            width: 50%;
+                            text-align: center;
+                        }
+                        .o_hr_cut {
+                            clear: both;
+                            border-top: 2px dotted #000;
+                            margin: 16px 0 14px;
+                        }
+                    </style>
+
+                    <div class="o_health_response" style="direction: rtl;">
+                        <t t-foreach="[1, 2]" t-as="copy_no">
+                            <div class="o_hr_copy">
+                                <div class="o_hr_header">
+                                    <div class="o_hr_header_text">
+                                        <div>جمهورية مصر العربية</div>
+                                        <div>وزارة الصناعة</div>
+                                        <div>مصلحة الكفاية الإنتاجية</div>
+                                        <div><t t-esc="o.region or 'منطقة شمال الصعيد'"/></div>
+                                        <div><t t-esc="o.station or 'محطة سمارت'"/></div>
+                                    </div>
+                                    <div class="o_hr_header_logo">
+                                        <img t-att-src="o.get_asset_data_uri('ministry_of_industry.png')"/>
+                                    </div>
+                                    <div class="o_hr_header_logo">
+                                        <img t-att-src="o.get_asset_data_uri('pvtd_image.png')" style="max-height: 52px; max-width: 120px;"/>
+                                    </div>
+                                    <div class="o_hr_header_logo">
+                                        <img t-att-src="o.get_asset_data_uri('smart-logo.png')" style="max-height: 52px; max-width: 120px;"/>
+                                    </div>
+                                </div>
+
+                                <div style="clear: both; height: 18px;"></div>
+
+                                <div style="text-align: center; font-size: 16px; font-weight: bold; line-height: 1.7;">
+                                    <div>السيد وكيل مديرية التأمين الصحي</div>
+                                    <div>تحيه طيبه وبعد</div>
+                                </div>
+
+                                <div style="text-align: right; font-size: 15px; font-weight: bold; line-height: 1.85; margin-top: 16px; padding-right: 8px;">
+                                    <div>
+                                        الرجاء من سيادتكم توقيع الكشف الطبي على الطالب/
+                                        <span style="text-decoration: underline; padding: 0 4px;">
+                                            <t t-esc="o.student_name or ''"/>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        والذى يحمل بطاقه تأمين صحي رقم/
+                                        <span style="text-decoration: underline; padding: 0 4px;">
+                                            <t t-esc="o.insurance_number or ''"/>
+                                        </span>
+                                    </div>
+                                    <div>وإفادتنا بالنتيجه</div>
+                                </div>
+
+                                <div style="text-align: center; font-size: 16px; font-weight: bold; margin-top: 18px;">
+                                    "ولكم جزيل الشكر"
+                                </div>
+
+                                <div class="o_hr_signatures">
+                                    <div class="o_hr_sig">شئون طلاب</div>
+                                    <div class="o_hr_sig">مدير المدرسة</div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div t-if="copy_no == 1" class="o_hr_cut"></div>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_health_insurance_response" model="ir.actions.report">
+        <field name="name">Health Insurance Response</field>
+        <field name="model">health.insurance.response</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_molds_generator.report_health_insurance_response</field>
+        <field name="report_file">school_molds_generator.report_health_insurance_response</field>
+        <field name="print_report_name">'جواب التأمين الصحي - %s' % (object.student_name or '')</field>
+        <field name="paperformat_id" ref="paperformat_health_insurance_response"/>
+    </record>
+</odoo>

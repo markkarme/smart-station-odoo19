@@ -84,9 +84,11 @@ class HrGeneralRequest(models.Model):
             return False
         return user.has_group("base.group_portal") and not user.has_group("base.group_user")
 
-    def _get_manager_user(self):
+    def _get_manager_users(self):
         self.ensure_one()
         employee = self.employee_id
+        if employee.leave_manager_ids:
+            return employee.leave_manager_ids
         if employee.leave_manager_id:
             return employee.leave_manager_id
         manager = employee.parent_id
@@ -119,8 +121,8 @@ class HrGeneralRequest(models.Model):
 
         for request in self:
             if request.state == "confirm":
-                manager_user = request.sudo()._get_manager_user()
-                if not manager_user:
+                manager_users = request.sudo()._get_manager_users()
+                if not manager_users:
                     continue
                 date_deadline = request.date or today
                 if date_deadline < today:
@@ -129,23 +131,32 @@ class HrGeneralRequest(models.Model):
                     lambda activity: activity.automated
                     and activity.activity_type_id == activity_type
                 )
-                if existing:
-                    existing.write({"date_deadline": date_deadline})
-                    continue
-                activity_vals.append(
-                    {
-                        "activity_type_id": activity_type.id,
-                        "automated": True,
-                        "date_deadline": date_deadline,
-                        "note": _(
-                            "New General Request from %(employee)s",
-                            employee=request.employee_id.name,
-                        ),
-                        "user_id": manager_user.id,
-                        "res_id": request.id,
-                        "res_model_id": model_id,
-                    }
+                stale_activities = existing.filtered(
+                    lambda activity: activity.user_id not in manager_users
                 )
+                if stale_activities:
+                    stale_activities.unlink()
+
+                current_activities = existing - stale_activities
+                if current_activities:
+                    current_activities.write({"date_deadline": date_deadline})
+
+                users_with_activity = current_activities.mapped("user_id")
+                for manager_user in manager_users - users_with_activity:
+                    activity_vals.append(
+                        {
+                            "activity_type_id": activity_type.id,
+                            "automated": True,
+                            "date_deadline": date_deadline,
+                            "note": _(
+                                "New General Request from %(employee)s",
+                                employee=request.employee_id.name,
+                            ),
+                            "user_id": manager_user.id,
+                            "res_id": request.id,
+                            "res_model_id": model_id,
+                        }
+                    )
             elif request.state == "approve":
                 to_do |= request
             elif request.state == "refuse":

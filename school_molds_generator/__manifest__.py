@@ -3,18 +3,21 @@
     'name': "School Molds Generator",
     'summary': "Fill school molds in an Excel-like view and download the sheet.",
     'category': 'Education',
-    'version': '19.0.1.0.29',
+    'version': '19.0.1.0.32',
     'author': 'Smart Station',
     'depends': ['jt_education_base'],
     'data': [
         'security/ir.model.access.csv',
+        'security/school_mold_security.xml',
         'views/school_mold_views.xml',
         'views/health_insurance_letter_views.xml',
         'views/proof_registration_letter_views.xml',
         'views/health_insurance_enrollment_proof_views.xml',
+        'views/health_insurance_response_views.xml',
         'report/health_insurance_letter_report.xml',
         'report/proof_registration_letter_report.xml',
         'report/health_insurance_enrollment_proof_report.xml',
+        'report/health_insurance_response_report.xml',
     ],
     'assets': {
         'web.assets_backend': [

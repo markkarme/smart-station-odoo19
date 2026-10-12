@@ -246,7 +246,7 @@ msgstr "قالب جديد"
 #: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_letter
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
 msgid "Health Insurance report"
-msgstr "جواب التأمين الصحي"
+msgstr "مخاطبه التأمين الصحي"
 
 #. module: school_molds_generator
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
@@ -300,5 +300,25 @@ msgstr "اثبات قيد / افادة"
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_enrollment_proof_form
 msgid "Health Insurance Enrollment Proof 2"
 msgstr "اثبات اشتراك التأمين الصحي 2"
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_response
+#: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_response
+#: model:ir.model,name:school_molds_generator.model_health_insurance_response
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_response
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_response_form
+msgid "Health Insurance Response"
+msgstr "جواب التأمين الصحي"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__company_id
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: school_molds_generator
+#: model:ir.rule,name:school_molds_generator.school_mold_company_rule
+msgid "School Mold: multi-company"
+msgstr "قالب المدرسة: متعدد الشركات"
 
 

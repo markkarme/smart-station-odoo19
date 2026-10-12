@@ -311,6 +311,11 @@ msgid "Approved"
 msgstr ""
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_employee_form_multi_approvers
+msgid "Approvers"
+msgstr ""
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "Attach File"
 msgstr ""
@@ -361,6 +366,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_tree
 msgid "Attendance Adjustment Requests"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__attendance_manager_ids
+msgid "Attendance Approvers"
 msgstr ""
 
 #. module: attendance_location_portal
@@ -731,6 +741,11 @@ msgid "End Date"
 msgstr ""
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__expense_manager_ids
+msgid "Expense Approvers"
+msgstr ""
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_appraisals_entry
 msgid "Fill appraisals and track their status"
 msgstr ""
@@ -812,6 +827,11 @@ msgstr ""
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__google_maps_url
 msgid "Google Maps URL"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__hr_responsible_ids
+msgid "HR Responsibles"
 msgstr ""
 
 #. module: attendance_location_portal
@@ -1116,6 +1136,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "New Time Off Request"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "New Time Off request from %(employee)s"
 msgstr ""
 
 #. module: attendance_location_portal
@@ -1938,8 +1964,23 @@ msgid "Time Off Allocation"
 msgstr ""
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__leave_manager_ids
+msgid "Time Off Approvers"
+msgstr ""
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_failed_page
 msgid "Time Off Error"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.rule,name:attendance_location_portal.hr_leave_multi_approver_read_rule
+msgid "Time Off Multi Approver Read"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.rule,name:attendance_location_portal.hr_leave_multi_approver_write_rule
+msgid "Time Off Multi Approver Write"
 msgstr ""
 
 #. module: attendance_location_portal
@@ -2341,3 +2382,4 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "to"
 msgstr ""
+
