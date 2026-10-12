@@ -231,10 +231,4 @@
             </p>
         </field>
     </record>
-
-    <menuitem id="menu_student_case_study"
-              name="دراسات الحالة"
-              parent="menu_student_violations_root"
-              action="action_student_case_study"
-              sequence="2"/>
 </odoo>
