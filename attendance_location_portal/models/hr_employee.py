@@ -1,7 +1,7 @@
 import pytz
 from pytz import utc
 
-from odoo import SUPERUSER_ID, _, fields, models
+from odoo import SUPERUSER_ID, _, api, fields, models
 from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.tools import email_normalize, format_date
 
@@ -9,6 +9,38 @@ from odoo.tools import email_normalize, format_date
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
 
+    hr_responsible_ids = fields.Many2many(
+        "res.users",
+        "hr_employee_hr_responsible_rel",
+        "employee_id",
+        "user_id",
+        string="HR Responsibles",
+        groups="hr.group_hr_user",
+    )
+    leave_manager_ids = fields.Many2many(
+        "res.users",
+        "hr_employee_leave_manager_rel",
+        "employee_id",
+        "user_id",
+        string="Time Off Approvers",
+        groups="hr.group_hr_user",
+    )
+    attendance_manager_ids = fields.Many2many(
+        "res.users",
+        "hr_employee_attendance_manager_rel",
+        "employee_id",
+        "user_id",
+        string="Attendance Approvers",
+        groups="hr.group_hr_user",
+    )
+    expense_manager_ids = fields.Many2many(
+        "res.users",
+        "hr_employee_expense_manager_rel",
+        "employee_id",
+        "user_id",
+        string="Expense Approvers",
+        groups="hr.group_hr_user",
+    )
     attendance_location_ids = fields.Many2many(
         "attendance.location",
         "attendance_location_employee_rel",
@@ -25,6 +57,44 @@ class HrEmployee(models.Model):
         help="Portal admin users can view all attendance, general requests, "
         "time off, allocations, and attendance adjustments in the portal.",
     )
+
+    def _sync_approver_fields(self, vals):
+        if self.env.context.get("skip_approver_sync"):
+            return
+        mapping = (
+            ("hr_responsible_id", "hr_responsible_ids"),
+            ("leave_manager_id", "leave_manager_ids"),
+            ("attendance_manager_id", "attendance_manager_ids"),
+            ("expense_manager_id", "expense_manager_ids"),
+        )
+        for employee in self:
+            update_vals = {}
+            for single_field, multi_field in mapping:
+                if single_field not in employee._fields or multi_field not in employee._fields:
+                    continue
+                single_updated = single_field in vals
+                multi_updated = multi_field in vals
+                if multi_updated and not single_updated:
+                    update_vals[single_field] = employee[multi_field][:1].id or False
+                elif single_updated and not multi_updated:
+                    update_vals[multi_field] = [(6, 0, employee[single_field].ids)]
+            if update_vals:
+                super(
+                    HrEmployee,
+                    employee.with_context(skip_approver_sync=True),
+                ).write(update_vals)
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        records = super().create(vals_list)
+        for employee, vals in zip(records, vals_list):
+            employee._sync_approver_fields(vals)
+        return records
+
+    def write(self, vals):
+        result = super().write(vals)
+        self._sync_approver_fields(vals)
+        return result
 
     def _compute_hours_last_month(self):
         """Tolerate checkout-first portal records with empty check_in."""

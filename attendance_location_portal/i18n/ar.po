@@ -326,6 +326,11 @@ msgid "Approved"
 msgstr "موافق عليه"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_employee_form_multi_approvers
+msgid "Approvers"
+msgstr "المعتمدون"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "Attach File"
 msgstr "إرفاق ملف"
@@ -377,6 +382,11 @@ msgstr "طلب تعديل الحضور"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_tree
 msgid "Attendance Adjustment Requests"
 msgstr "طلبات تعديل الحضور"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__attendance_manager_ids
+msgid "Attendance Approvers"
+msgstr "معتمدو الحضور"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_failed_page
@@ -746,6 +756,11 @@ msgid "End Date"
 msgstr "تاريخ النهاية"
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__expense_manager_ids
+msgid "Expense Approvers"
+msgstr "معتمدو المصروفات"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_appraisals_entry
 msgid "Fill appraisals and track their status"
 msgstr "أكمل التقييمات وتابع حالتها"
@@ -828,6 +843,11 @@ msgstr "الطلبات العامة"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__google_maps_url
 msgid "Google Maps URL"
 msgstr "رابط خرائط Google"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__hr_responsible_ids
+msgid "HR Responsibles"
+msgstr "مسؤولو الموارد البشرية"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__has_message
@@ -965,6 +985,11 @@ msgstr "يجب أن يكون خط العرض بين -90 و 90."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
 msgid "Leave empty for no limit"
 msgstr "اتركه فارغاً لعدم تحديد حد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Location"
+msgstr "الموقع"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__longitude
@@ -1134,6 +1159,12 @@ msgstr "طلب جديد"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "New Time Off Request"
 msgstr "طلب إجازة جديد"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "New Time Off request from %(employee)s"
+msgstr "طلب إجازة جديد من %(employee)s"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1964,9 +1995,24 @@ msgid "Time Off Allocation"
 msgstr "مخصص الإجازات"
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__leave_manager_ids
+msgid "Time Off Approvers"
+msgstr "معتمدو الإجازات"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_failed_page
 msgid "Time Off Error"
 msgstr "خطأ في الإجازة"
+
+#. module: attendance_location_portal
+#: model:ir.rule,name:attendance_location_portal.hr_leave_multi_approver_read_rule
+msgid "Time Off Multi Approver Read"
+msgstr "قراءة إجازة للمعتمدين المتعددين"
+
+#. module: attendance_location_portal
+#: model:ir.rule,name:attendance_location_portal.hr_leave_multi_approver_write_rule
+msgid "Time Off Multi Approver Write"
+msgstr "كتابة إجازة للمعتمدين المتعددين"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
@@ -2377,7 +2423,3 @@ msgstr "الحالة"
 msgid "to"
 msgstr "إلى"
 
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Location"
-msgstr "الموقع"

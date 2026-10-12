@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.7.4",
+    "version": "19.0.1.7.5",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -23,9 +23,11 @@ Portal users:
         "security/hr_general_request_security.xml",
         "security/hr_attendance_adjustment_request_security.xml",
         "security/hr_attendance_security.xml",
+        "security/hr_leave_multi_approver_security.xml",
         "security/ir.model.access.csv",
         "views/hr_general_request_views.xml",
         "views/hr_attendance_adjustment_request_views.xml",
+        "views/hr_leave_views.xml",
         "views/attendance_location_views.xml",
         "views/hr_employee_views.xml",
         "views/hr_attendance_views.xml",

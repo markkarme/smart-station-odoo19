@@ -6,3 +6,4 @@ from . import hr_employee
 from . import hr_general_request
 from . import hr_leave
 from . import hr_leave_allocation
+from . import mail_activity

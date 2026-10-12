@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_leave_search_multi_approvers" model="ir.ui.view">
+        <field name="name">hr.leave.search.multi.approvers</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='waiting_for_me']" position="attributes">
+                <attribute name="domain">[
+                    ('state', 'in', ['confirm']),
+                    '|',
+                        ('employee_id.leave_manager_ids', 'in', [uid]),
+                    '|',
+                        ('employee_id.user_id', '!=', uid),
+                        '&amp;',
+                            ('employee_id.user_id', '=', uid),
+                            ('employee_id.leave_manager_id', '=', uid)
+                ]</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='waiting_for_me_manager']" position="attributes">
+                <attribute name="domain">[
+                    ('state', 'in', ['confirm', 'validate1']),
+                    '|',
+                        ('employee_id.leave_manager_ids', 'in', [uid]),
+                    '|',
+                        ('employee_id.leave_manager_id', '=', uid),
+                        ('employee_id.user_id', '!=', uid)
+                ]</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
