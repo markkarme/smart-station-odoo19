@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
                 <field name="mold_kind" optional="hide"/>
                 <!-- <field name="year_id" />
                 <field name="standard_id"/>
@@ -48,6 +49,7 @@
                             <!-- <field name="year_id"/>
                             <field name="standard_id"/>
                             <field name="division_id"/> -->
+                            <field name="company_id" groups="base.group_multi_company"/>
                             <field name="date"/>
                             <field name="note"/>
                             <field name="line_count" readonly="1"/>
@@ -103,11 +105,13 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
                 <field name="standard_id"/>
                 <field name="year_id"/>
                 <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
                 <filter name="done" string="Done" domain="[('state', '=', 'done')]"/>
                 <group>
+                    <filter name="group_company" string="Company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
                     <filter name="group_standard" string="Standard" context="{'group_by': 'standard_id'}"/>
                     <filter name="group_year" string="Year" context="{'group_by': 'year_id'}"/>
                 </group>
