@@ -297,3 +297,14 @@ msgstr "اثبات اشتراك التأمين الصحي 2"
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_response_form
 msgid "Health Insurance Response"
 msgstr "جواب التأمين الصحي"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__company_id
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: school_molds_generator
+#: model:ir.rule,name:school_molds_generator.school_mold_company_rule
+msgid "School Mold: multi-company"
+msgstr "قالب المدرسة: متعدد الشركات"

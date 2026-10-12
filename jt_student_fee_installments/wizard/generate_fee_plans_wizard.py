@@ -133,7 +133,7 @@ class GenerateFeePlansWizard(models.TransientModel):
                 'bus_installment_count': self.bus_installment_count,
                 'basic_total_due': basic_due or 0.0,
                 'bus_total_due': bus_due,
-                'state': 'open',
+                'state': 'draft',
             }
             if plan:
                 if self.overwrite_due:
