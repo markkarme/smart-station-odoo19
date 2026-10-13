@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.7.5",
+    "version": "19.0.1.7.9",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """

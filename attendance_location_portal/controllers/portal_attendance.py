@@ -202,6 +202,111 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             values,
         )
 
+    def _format_worked_hours(self, hours):
+        total_minutes = int(round(float(hours or 0.0) * 60))
+        sign = "-" if total_minutes < 0 else ""
+        total_minutes = abs(total_minutes)
+        return "%s%d:%02d" % (sign, total_minutes // 60, total_minutes % 60)
+
+    def _portal_attendance_url(self, **params):
+        cleaned = {
+            key: value
+            for key, value in params.items()
+            if value not in (None, "", False)
+        }
+        query = urlencode(cleaned)
+        return "/my/attendances%s" % (("?%s" % query) if query else "")
+
+    def _portal_attendance_groupby(self, is_portal_hr_admin, groupby):
+        if not is_portal_hr_admin:
+            return "none", None
+        options = {
+            "company": {"label": _("Company"), "sequence": 10},
+            "employee": {"label": _("Employee"), "sequence": 20},
+            "none": {"label": _("None"), "sequence": 30},
+        }
+        if groupby not in options:
+            groupby = "company"
+        return groupby, self._portal_sorted_searchbar(options)
+
+    def _portal_attendance_groups(self, attendance_model, domain, groupby, url_params):
+        field_name = "company_id" if groupby == "company" else "employee_id"
+        rows = attendance_model._read_group(
+            domain,
+            groupby=[field_name],
+            aggregates=["__count", "worked_hours:sum"],
+            order=field_name,
+        )
+        groups = []
+        for record, count, hours in rows:
+            if record:
+                name = record.display_name
+                record_id = record.id
+            else:
+                name = _("No Company") if groupby == "company" else _("No Employee")
+                record_id = "false"
+            filter_key = "company_id" if groupby == "company" else "employee_id"
+            groups.append(
+                {
+                    "name": name,
+                    "count": count,
+                    "hours": self._format_worked_hours(hours),
+                    "url": self._portal_attendance_url(
+                        groupby="none",
+                        **url_params,
+                        **{filter_key: record_id},
+                    ),
+                }
+            )
+        return groups
+
+    def _portal_attendance_group_context(self, groupby, company_id, employee_id, url_params):
+        """Flat list opened from a company or employee group."""
+        if groupby != "none":
+            return [], None
+        if company_id:
+            if str(company_id) == "false":
+                return [("company_id", "=", False)], {
+                    "label": _("Company"),
+                    "name": _("No Company"),
+                    "back_url": self._portal_attendance_url(groupby="company", **url_params),
+                }
+            if str(company_id).isdigit():
+                company = request.env["res.company"].sudo().browse(int(company_id)).exists()
+                allowed_company_ids = set(self._portal_user_company_ids())
+                if not company or company.id not in allowed_company_ids:
+                    return [("company_id", "=", 0)], None
+                return [("company_id", "=", company.id)], {
+                    "label": _("Company"),
+                    "name": company.display_name,
+                    "back_url": self._portal_attendance_url(groupby="company", **url_params),
+                }
+        if employee_id:
+            if str(employee_id) == "false":
+                return [("employee_id", "=", False)], {
+                    "label": _("Employee"),
+                    "name": _("No Employee"),
+                    "back_url": self._portal_attendance_url(groupby="employee", **url_params),
+                }
+            if str(employee_id).isdigit():
+                employee = request.env["hr.employee"].sudo().browse(int(employee_id)).exists()
+                if not employee:
+                    return [("employee_id", "=", 0)], None
+                context = None
+                if self._portal_can_access_employee_record(
+                    self._get_user_employee(),
+                    employee,
+                ):
+                    context = {
+                        "label": _("Employee"),
+                        "name": employee.display_name,
+                        "back_url": self._portal_attendance_url(
+                            groupby="employee", **url_params
+                        ),
+                    }
+                return [("employee_id", "=", employee.id)], context
+        return [], None
+
     @http.route(
         ["/my/attendances", "/my/attendances/page/<int:page>"],
         type="http",
@@ -215,6 +320,9 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
         filterby=None,
         search=None,
         search_in="all",
+        groupby=None,
+        company_id=None,
+        employee_id=None,
         **kwargs,
     ):
         employee = self._get_user_employee()
@@ -283,6 +391,7 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
                 "domain": lambda value: self._portal_or_domain(
                     [
                         [("employee_id.name", "ilike", value)] if is_portal_hr_admin else [],
+                        [("company_id.name", "ilike", value)] if is_portal_hr_admin else [],
                         [("portal_note", "ilike", value)],
                         [("attendance_location_id.name", "ilike", value)],
                     ]
@@ -334,29 +443,72 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             default_sortby="date",
         )
         domain = searchbar["domain"]
-        attendance_count = attendance_model.search_count(domain)
-        pager = portal_pager(
-            url="/my/attendances",
-            url_args={
-                "sortby": searchbar["sortby"],
-                "filterby": searchbar["filterby"],
-                "search": searchbar["search"],
-                "search_in": searchbar["search_in"],
-            },
-            total=attendance_count,
-            page=page,
-            step=self._items_per_page,
+        groupby, searchbar_groupby = self._portal_attendance_groupby(
+            is_portal_hr_admin, groupby
         )
-        attendances = attendance_model.search(
-            domain,
-            order=searchbar["order"],
-            limit=self._items_per_page,
-            offset=pager["offset"],
-        )
+        url_params = {
+            "sortby": searchbar["sortby"],
+            "filterby": searchbar["filterby"] if searchbar["filterby"] != "all" else None,
+            "search": searchbar["search"] or None,
+            "search_in": searchbar["search_in"] if searchbar["search"] else None,
+        }
+        pager_args = {
+            "sortby": searchbar["sortby"],
+            "filterby": searchbar["filterby"],
+            "search": searchbar["search"],
+            "search_in": searchbar["search_in"],
+            "groupby": groupby,
+        }
+        attendance_groups = False
+        attendance_group_context = None
+        if groupby != "none":
+            all_groups = self._portal_attendance_groups(
+                attendance_model, domain, groupby, url_params
+            )
+            pager = portal_pager(
+                url="/my/attendances",
+                url_args=pager_args,
+                total=len(all_groups),
+                page=page,
+                step=self._items_per_page,
+            )
+            attendance_groups = all_groups[
+                pager["offset"] : pager["offset"] + self._items_per_page
+            ]
+            attendances = attendance_model.browse()
+        else:
+            extra_domain, attendance_group_context = (
+                self._portal_attendance_group_context(
+                    groupby, company_id, employee_id, url_params
+                )
+                if is_portal_hr_admin
+                else ([], None)
+            )
+            domain = list(domain) + list(extra_domain)
+            if company_id:
+                pager_args["company_id"] = company_id
+            if employee_id:
+                pager_args["employee_id"] = employee_id
+            attendance_count = attendance_model.search_count(domain)
+            pager = portal_pager(
+                url="/my/attendances",
+                url_args=pager_args,
+                total=attendance_count,
+                page=page,
+                step=self._items_per_page,
+            )
+            attendances = attendance_model.search(
+                domain,
+                order=searchbar["order"],
+                limit=self._items_per_page,
+                offset=pager["offset"],
+            )
         values = {
             "page_name": "portal_attendance_history",
             "employee": employee,
             "attendances": attendances,
+            "attendance_groups": attendance_groups,
+            "attendance_group_context": attendance_group_context,
             "pager": pager,
             "is_portal_hr_admin": is_portal_hr_admin,
             "default_url": "/my/attendances",
@@ -367,6 +519,8 @@ class PortalAttendanceController(PortalHrMixin, http.Controller):
             "search": searchbar["search"],
             "searchbar_sortings": searchbar["searchbar_sortings"],
             "sortby": searchbar["sortby"],
+            "searchbar_groupby": searchbar_groupby,
+            "groupby": groupby,
         }
         return request.render(
             "attendance_location_portal.portal_my_attendances",

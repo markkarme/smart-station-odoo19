@@ -613,6 +613,7 @@ msgstr "الحالة الحالية:"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
 msgid "Date"
 msgstr "التاريخ"
@@ -2422,4 +2423,27 @@ msgstr "الحالة"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "to"
 msgstr "إلى"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "None"
+msgstr "بدون"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "No Company"
+msgstr "بدون شركة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "No Employee"
+msgstr "بدون موظف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Back to groups"
+msgstr "العودة إلى التجميع"
 
