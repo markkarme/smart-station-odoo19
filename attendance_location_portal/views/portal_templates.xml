@@ -272,6 +272,7 @@
                     <thead>
                         <tr>
                             <th t-if="is_portal_hr_admin">Employee</th>
+                            <th class="d-md-none">Date</th>
                             <th>Check In</th>
                             <th>Check Out</th>
                             <th class="text-end">Worked Hours</th>
@@ -285,11 +286,18 @@
                             <td t-if="is_portal_hr_admin">
                                 <span t-out="attendance.employee_id.name"/>
                             </td>
-                            <td>
-                                <span t-field="attendance.check_in"/>
+                            <td class="d-md-none text-nowrap">
+                                <span t-field="attendance.date"/>
                             </td>
                             <td>
-                                <span t-if="attendance.check_out" t-field="attendance.check_out"/>
+                                <span class="d-none d-md-inline" t-field="attendance.check_in"/>
+                                <span class="d-md-none" t-field="attendance.check_in" t-options="{'widget': 'datetime', 'time_only': True, 'hide_seconds': True}"/>
+                            </td>
+                            <td>
+                                <t t-if="attendance.check_out">
+                                    <span class="d-none d-md-inline" t-field="attendance.check_out"/>
+                                    <span class="d-md-none" t-field="attendance.check_out" t-options="{'widget': 'datetime', 'time_only': True, 'hide_seconds': True}"/>
+                                </t>
                                 <span t-else="" class="text-muted">—</span>
                             </td>
                             <td class="text-end">

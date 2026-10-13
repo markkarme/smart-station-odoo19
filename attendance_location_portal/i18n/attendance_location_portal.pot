@@ -598,6 +598,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
 msgid "Date"
 msgstr ""
