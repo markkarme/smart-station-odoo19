@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_violation_user,student.violation user,model_student_violation,base.group_user,1,1,1,1
+access_student_violation_principle,student.violation principle,model_student_violation,jt_education_base.group_principle,1,1,1,1
+access_student_violation_faculty,student.violation faculty,model_student_violation,jt_education_base.group_faculty,1,1,1,1
+access_student_case_study_user,student.case.study user,model_student_case_study,base.group_user,1,1,1,1
+access_student_case_study_principle,student.case.study principle,model_student_case_study,jt_education_base.group_principle,1,1,1,1
+access_student_case_study_faculty,student.case.study faculty,model_student_case_study,jt_education_base.group_faculty,1,1,1,1
+access_student_case_study_family_user,student.case.study.family user,model_student_case_study_family,base.group_user,1,1,1,1
+access_student_case_study_family_principle,student.case.study.family principle,model_student_case_study_family,jt_education_base.group_principle,1,1,1,1
+access_student_case_study_family_faculty,student.case.study.family faculty,model_student_case_study_family,jt_education_base.group_faculty,1,1,1,1

@@ -246,6 +246,13 @@ class StudentFeePlan(models.Model):
             plan.total_paid = basic_paid + bus_paid + books_paid + uniform_paid
             plan.remaining = plan.total_due - plan.total_paid
 
+    def _basic_total_from_standard(self, standard):
+        if not standard:
+            return 0.0
+        if hasattr(standard, 'get_basic_fee_total'):
+            return standard.get_basic_fee_total()
+        return standard.fee or 0.0
+
     @api.onchange('student_id')
     def _onchange_student_id(self):
         if not self.student_id:
@@ -255,10 +262,15 @@ class StudentFeePlan(models.Model):
         self.division_id = self.student_id.div
         self.class_id = self.student_id.class_id
         self.bus_category_id = self.student_id.bus_category_id
-        if self.student_id.standard and self.student_id.standard.fee and not self.basic_total_due:
-            self.basic_total_due = self.student_id.standard.fee
+        if self.student_id.standard and not self.basic_total_due:
+            self.basic_total_due = self._basic_total_from_standard(self.student_id.standard)
         if self.bus_category_id:
             self.bus_total_due = self.bus_category_id.price
+
+    @api.onchange('standard_id')
+    def _onchange_standard_id(self):
+        if self.standard_id:
+            self.basic_total_due = self._basic_total_from_standard(self.standard_id)
 
     @api.onchange('bus_category_id')
     def _onchange_bus_category_id(self):
@@ -275,7 +287,18 @@ class StudentFeePlan(models.Model):
         amounts[-1] = round(total - base * (count - 1), 2)
         return amounts
 
-    def _sync_installment_lines(self, fee_type, count, total_due):
+    def _get_basic_installment_amounts(self):
+        """Prefer amounts configured on student.standard; else equal split."""
+        self.ensure_one()
+        count = max(int(self.basic_installment_count or 0), 0)
+        standard = self.standard_id
+        if standard and hasattr(standard, 'get_basic_installment_amounts'):
+            amounts = standard.get_basic_installment_amounts(count)
+            if any(amounts):
+                return amounts
+        return self._split_amount(self.basic_total_due, count)
+
+    def _sync_installment_lines(self, fee_type, count, total_due, amounts=None):
         """Create/update/remove installment lines for a fee type."""
         self.ensure_one()
         Installment = self.env['student.fee.installment']
@@ -284,7 +307,13 @@ class StudentFeePlan(models.Model):
             ('fee_type', '=', fee_type),
         ], order='number')
         count = max(int(count or 0), 0)
-        amounts = self._split_amount(total_due, count) if count else []
+        if amounts is None:
+            amounts = self._split_amount(total_due, count) if count else []
+        else:
+            amounts = list(amounts or [])
+            if len(amounts) < count:
+                amounts.extend([0.0] * (count - len(amounts)))
+            amounts = amounts[:count]
 
         # Remove extra lines (only unpaid empty ones preferred; force remove extras)
         for line in existing.filtered(lambda l: l.number > count):
@@ -315,10 +344,18 @@ class StudentFeePlan(models.Model):
         for plan in self:
             if plan.basic_installment_count < 0 or plan.bus_installment_count < 0:
                 raise ValidationError(_('Installment count cannot be negative.'))
+            basic_amounts = plan._get_basic_installment_amounts()
+            use_amounts = basic_amounts if basic_amounts and any(basic_amounts) else None
+            if plan.standard_id:
+                # Fee on standard is the total; installments may sum to less
+                plan.with_context(skip_installment_sync=True).write({
+                    'basic_total_due': plan._basic_total_from_standard(plan.standard_id),
+                })
             plan._sync_installment_lines(
                 'basic',
                 plan.basic_installment_count,
                 plan.basic_total_due,
+                amounts=use_amounts,
             )
             plan._sync_installment_lines(
                 'bus',
@@ -347,12 +384,15 @@ class StudentFeePlan(models.Model):
                     student.bus_category_id.id or False,
                 )
                 if not vals.get('basic_total_due') and student.standard:
-                    vals['basic_total_due'] = student.standard.fee or 0.0
+                    vals['basic_total_due'] = self._basic_total_from_standard(student.standard)
                 if not vals.get('bus_total_due') and student.bus_category_id:
                     vals['bus_total_due'] = student.bus_category_id.price or 0.0
             elif vals.get('bus_category_id') and not vals.get('bus_total_due'):
                 bus = self.env['bus.category'].browse(vals['bus_category_id'])
                 vals['bus_total_due'] = bus.price or 0.0
+            if vals.get('standard_id') and not vals.get('basic_total_due'):
+                standard = self.env['student.standard'].browse(vals['standard_id'])
+                vals['basic_total_due'] = self._basic_total_from_standard(standard)
         plans = super().create(vals_list)
         plans.action_generate_installments()
         return plans
@@ -363,6 +403,9 @@ class StudentFeePlan(models.Model):
             bus = self.env['bus.category'].browse(vals['bus_category_id'])
             if bus:
                 vals['bus_total_due'] = bus.price or 0.0
+        if vals.get('standard_id') and 'basic_total_due' not in vals:
+            standard = self.env['student.standard'].browse(vals['standard_id'])
+            vals['basic_total_due'] = self._basic_total_from_standard(standard)
         res = super().write(vals)
         if self.env.context.get('skip_installment_sync'):
             return res
@@ -371,6 +414,7 @@ class StudentFeePlan(models.Model):
             'bus_installment_count',
             'basic_total_due',
             'bus_total_due',
+            'standard_id',
         }
         if sync_fields & set(vals):
             self.action_generate_installments()

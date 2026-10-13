@@ -12,11 +12,21 @@
                             <field name="capacity"/>
                             <field name="currency_id" invisible="1"/>
                             <field name="fee"/>
+                            <field name="down_payment"/>
+                            <field name="first_installment"/>
+                            <field name="second_installment"/>
                             <field name="occupied_seats"/>
                             <field name="vacant_seates"/>
                         </group>
                         <group>
                             <field name="app_close_date" groups="base.group_system"/>
+                            <field
+                                name="company_ids"
+                                widget="many2many_tags"
+                                options="{'no_create': True}"
+                                groups="base.group_multi_company"
+                                placeholder="ظاهر لجميع الشركات"
+                            />
                         </group>
                     </group>
                 </sheet>
@@ -34,8 +44,17 @@
                 <field name="capacity"/>
                 <field name="currency_id" column_invisible="1"/>
                 <field name="fee"/>
+                <field name="down_payment" optional="show"/>
+                <field name="first_installment" optional="show"/>
+                <field name="second_installment" optional="show"/>
                 <field name="occupied_seats"/>
                 <field name="vacant_seates"/>
+                <field
+                    name="company_ids"
+                    widget="many2many_tags"
+                    groups="base.group_multi_company"
+                    optional="hide"
+                />
             </list>
         </field>
     </record>

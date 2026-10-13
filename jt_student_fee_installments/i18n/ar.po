@@ -922,3 +922,33 @@ msgstr "تذكير أقساط الرسوم"
 #: code:addons/jt_student_fee_installments/models/res_partner.py:0
 msgid "Fees Reminder"
 msgstr "تذكير بالرسوم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__down_payment
+msgid "Down Payment / المقدم"
+msgstr "المقدم"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__first_installment
+msgid "First Installment / القسط الأول"
+msgstr "القسط الأول"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,field_description:jt_student_fee_installments.field_student_fee_plan__second_installment
+msgid "Second Installment / القسط الثاني"
+msgstr "القسط الثاني"
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__down_payment
+msgid "Amount due of basic installment #1 (المقدم)."
+msgstr "المبلغ المستحق للقسط الأساسي رقم 1 (المقدم)."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__first_installment
+msgid "Amount due of basic installment #2 (القسط 1)."
+msgstr "المبلغ المستحق للقسط الأساسي رقم 2 (القسط 1)."
+
+#. module: jt_student_fee_installments
+#: model:ir.model.fields,help:jt_student_fee_installments.field_student_fee_plan__second_installment
+msgid "Amount due of basic installment #3 (القسط 2)."
+msgstr "المبلغ المستحق للقسط الأساسي رقم 3 (القسط 2)."

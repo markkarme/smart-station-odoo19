@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_student_case_study_list" model="ir.ui.view">
+        <field name="name">student.case.study.list</field>
+        <field name="model">student.case.study</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="name"/>
+                <field name="student_id"/>
+                <field name="stud_id"/>
+                <field name="class_id"/>
+                <field name="div_id"/>
+                <field name="psychologist_id"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_student_case_study_form" model="ir.ui.view">
+        <field name="name">student.case.study.form</field>
+        <field name="model">student.case.study</field>
+        <field name="arch" type="xml">
+            <form string="دراسة حالة">
+                <header>
+                    <button name="action_print_case_study"
+                            type="object"
+                            string="طباعة دراسة الحالة"
+                            class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="اسم الطالب"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="stud_id"/>
+                            <field name="standard_id"/>
+                            <field name="class_id"/>
+                            <field name="div_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="psychologist_id"/>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="بيانات ديموجرافية" name="demographic">
+                            <group>
+                                <group>
+                                    <field name="gender" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="birthdate"/>
+                                    <field name="nationality"/>
+                                    <field name="marital_status"/>
+                                </group>
+                                <group>
+                                    <field name="residence"/>
+                                    <field name="live_with"/>
+                                </group>
+                            </group>
+                            <group string="سبب الإحالة">
+                                <field name="referral_reason" nolabel="1"/>
+                            </group>
+                            <group string="التكوين الأسري">
+                                <field name="family_member_ids" nolabel="1">
+                                    <list editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="relation_type"/>
+                                        <field name="name"/>
+                                        <field name="age"/>
+                                        <field name="education"/>
+                                        <field name="job"/>
+                                        <field name="economic_level"/>
+                                    </list>
+                                </field>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="has_siblings" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="siblings_count" invisible="has_siblings != 'yes'"/>
+                                    <field name="sibling_order" invisible="has_siblings != 'yes'"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="تاريخ الطفولة والمراهقة" name="childhood">
+                            <group>
+                                <field name="grew_up_with" widget="radio" options="{'horizontal': true}"/>
+                                <field name="birth_health_problems"/>
+                                <field name="childhood_illnesses"/>
+                                <field name="family_economic_at_birth"/>
+                                <field name="family_relationships_general"/>
+                            </group>
+                            <group string="كيف كانت علاقتك بكل من">
+                                <group>
+                                    <field name="relation_mother"/>
+                                    <field name="relation_father"/>
+                                    <field name="relation_siblings"/>
+                                </group>
+                            </group>
+                            <group string="هل سبق وعانيت من أي عنف؟">
+                                <group>
+                                    <field name="violence_emotional"/>
+                                    <field name="violence_physical"/>
+                                    <field name="violence_sexual"/>
+                                    <field name="violence_neglect"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="violence_description"/>
+                                <field name="current_health_disease"/>
+                                <field name="visited_psychiatrist" widget="radio" options="{'horizontal': true}"/>
+                                <field name="psychological_complaint"/>
+                            </group>
+                        </page>
+
+                        <page string="الاهتمامات والأعراض" name="interests">
+                            <group>
+                                <field name="receiving_treatment"/>
+                                <field name="hereditary_diseases"/>
+                            </group>
+                            <group string="الاهتمامات والميول">
+                                <field name="do_you_work"/>
+                                <field name="practice_sport"/>
+                                <field name="artistic_activities"/>
+                                <field name="any_skill"/>
+                                <field name="routine_habit"/>
+                                <field name="school_absence_period"/>
+                            </group>
+                            <group string="هل تعاني من أي من هذه الأعراض في الوقت الحالي؟">
+                                <group>
+                                    <field name="symptom_nervousness"/>
+                                    <field name="symptom_anxiety"/>
+                                    <field name="symptom_decreased_interest"/>
+                                    <field name="symptom_lack_energy"/>
+                                    <field name="symptom_appetite"/>
+                                    <field name="symptom_weight"/>
+                                    <field name="symptom_sleep"/>
+                                </group>
+                                <group>
+                                    <field name="symptom_thoughts"/>
+                                    <field name="symptom_concentration"/>
+                                    <field name="symptom_memory"/>
+                                    <field name="symptom_motor"/>
+                                    <field name="symptom_depressive"/>
+                                    <field name="symptom_isolation"/>
+                                    <field name="symptom_worthlessness"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="أسئلة إضافية" name="additional">
+                            <group>
+                                <field name="life_changes_symptoms"/>
+                                <field name="worst_period"/>
+                                <field name="self_harm_history"/>
+                                <field name="harm_others_history"/>
+                                <field name="substance_medication_history"/>
+                                <field name="future_plans"/>
+                            </group>
+                        </page>
+
+                        <page string="تقييم الأخصائي النفسي" name="psychologist">
+                            <div class="alert alert-warning" role="alert">
+                                هذا الجزء خاص بالأخصائي النفسي فقط / لا يجب إطلاع الحالة عليه ....
+                            </div>
+                            <group string="الملاحظات السلوكية">
+                                <field name="general_appearance"/>
+                                <field name="smile_type"/>
+                                <field name="sitting_posture"/>
+                                <field name="eye_contact"/>
+                                <field name="movement_activity_level"/>
+                                <field name="thought_coherence"/>
+                                <field name="voice_tone"/>
+                                <field name="mood_emotional_state"/>
+                                <field name="involuntary_movements"/>
+                                <field name="physical_injuries"/>
+                                <field name="behavioral_notes"/>
+                            </group>
+                            <group>
+                                <field name="depression_anxiety_indicators"/>
+                                <field name="initial_diagnosis"/>
+                                <field name="therapeutic_goals"/>
+                                <field name="treatment_plan"/>
+                                <field name="recommendations"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_student_case_study_search" model="ir.ui.view">
+        <field name="name">student.case.study.search</field>
+        <field name="model">student.case.study</field>
+        <field name="arch" type="xml">
+            <search string="دراسات الحالة">
+                <field name="name"/>
+                <field name="student_id"/>
+                <field name="stud_id"/>
+                <field name="class_id"/>
+                <field name="div_id"/>
+                <field name="psychologist_id"/>
+                <field name="date"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <group>
+                    <filter string="الطالب" name="group_student" context="{'group_by': 'student_id'}"/>
+                    <filter string="الفصل" name="group_class" context="{'group_by': 'class_id'}"/>
+                    <filter string="الشعبة" name="group_div" context="{'group_by': 'div_id'}"/>
+                    <filter string="الأخصائي النفسي" name="group_psychologist" context="{'group_by': 'psychologist_id'}"/>
+                    <filter string="التاريخ" name="group_date" context="{'group_by': 'date'}"/>
+                    <filter string="الشركة" name="group_company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_student_case_study" model="ir.actions.act_window">
+        <field name="name">دراسات الحالة</field>
+        <field name="res_model">student.case.study</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_student_case_study_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                إنشاء دراسة حالة إكلينيكية
+            </p>
+        </field>
+    </record>
+</odoo>

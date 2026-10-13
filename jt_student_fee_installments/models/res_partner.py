@@ -150,7 +150,11 @@ class ResPartner(models.Model):
             'default_division_id': self.div.id if self.div else False,
             'default_class_id': self.class_id.id if self.class_id else False,
             'default_bus_category_id': self.bus_category_id.id if self.bus_category_id else False,
-            'default_basic_total_due': self.standard.fee if self.standard else 0.0,
+            'default_basic_total_due': (
+                self.standard.get_basic_fee_total()
+                if self.standard and hasattr(self.standard, 'get_basic_fee_total')
+                else (self.standard.fee if self.standard else 0.0)
+            ),
             'default_bus_total_due': self.bus_category_id.price if self.bus_category_id else 0.0,
             'default_state': 'draft',
         }

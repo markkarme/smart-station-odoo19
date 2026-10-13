@@ -2925,3 +2925,66 @@ msgstr "الرقم القومي"
 #: model_terms:ir.ui.view,arch_db:jt_education_base.student_profile
 msgid "telephone number 3"
 msgstr "التليفون 3"
+
+#. module: jt_education_base
+#: model:ir.model.fields,help:jt_education_base.field_student_standard__company_ids
+msgid "If empty, this standard is visible for all companies. If set, it is only visible for the selected companies."
+msgstr "إذا كان فارغاً، يظهر هذا الصف لجميع الشركات. وإذا تم تعيينه، يظهر فقط للشركات المحددة."
+
+#. module: jt_education_base
+#: model_terms:ir.ui.view,arch_db:jt_education_base.standard_form_view
+msgid "ظاهر لجميع الشركات"
+msgstr "ظاهر لجميع الشركات"
+
+#. module: jt_education_base
+#: model:ir.rule,name:jt_education_base.student_standard_company_rule
+msgid "Student Standard multi-company"
+msgstr "صف الطالب متعدد الشركات"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_student_standard__down_payment
+msgid "Down Payment / المقدم"
+msgstr "المقدم"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_student_standard__first_installment
+msgid "First Installment / القسط الأول"
+msgstr "القسط الأول"
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_student_standard__second_installment
+msgid "Second Installment / القسط الثاني"
+msgstr "القسط الثاني"
+
+#. module: jt_education_base
+#: model:ir.model.fields,help:jt_education_base.field_student_standard__down_payment
+msgid "Used as basic fee installment #1 (المقدم) on student fee plans."
+msgstr "يُستخدم كقسط المصاريف الأساسي رقم 1 (المقدم) في خطط رسوم الطلاب."
+
+#. module: jt_education_base
+#: model:ir.model.fields,help:jt_education_base.field_student_standard__first_installment
+msgid "Used as basic fee installment #2 (القسط 1) on student fee plans."
+msgstr "يُستخدم كقسط المصاريف الأساسي رقم 2 (القسط 1) في خطط رسوم الطلاب."
+
+#. module: jt_education_base
+#: model:ir.model.fields,help:jt_education_base.field_student_standard__second_installment
+msgid "Used as basic fee installment #3 (القسط 2) on student fee plans."
+msgstr "يُستخدم كقسط المصاريف الأساسي رقم 3 (القسط 2) في خطط رسوم الطلاب."
+
+#. module: jt_education_base
+#. odoo-python
+#: code:addons/jt_education_base/models/student.py:0
+msgid "مجموع المقدم والقسط الأول والقسط الثاني (%(installments)s) لا يمكن أن يكون أكبر من الرسوم (%(fee)s)."
+msgstr "مجموع المقدم والقسط الأول والقسط الثاني (%(installments)s) لا يمكن أن يكون أكبر من الرسوم (%(fee)s)."
+
+
+#. module: jt_education_base
+#: model:ir.model.fields,help:jt_education_base.field_student_standard__fee
+msgid "Total tuition fee. Down payment and installments must not exceed this amount."
+msgstr "إجمالي المصاريف الدراسية. يجب ألا يتجاوز المقدم والأقساط هذا المبلغ."
+
+#. module: jt_education_base
+#: model:ir.model.fields,field_description:jt_education_base.field_student_standard__company_ids
+msgid "الشركات"
+msgstr "الشركات"
+

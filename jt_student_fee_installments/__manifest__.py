@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Student Fee Installments',
-    'version': '19.0.1.1.14',
+    'version': '19.0.1.1.16',
     'category': 'Education',
     'summary': 'Per-student fee plans with configurable basic/bus installments plus books and uniform',
     'description': """

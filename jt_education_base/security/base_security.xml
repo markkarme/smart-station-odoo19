@@ -57,4 +57,10 @@
         <field name="implied_ids" eval="[Command.link(ref('base.group_user'))]"/>
         <field name="comment">Show college-oriented labels and fields.</field>
     </record>
+
+    <record id="student_standard_company_rule" model="ir.rule">
+        <field name="name">Student Standard multi-company</field>
+        <field name="model_id" ref="model_student_standard"/>
+        <field name="domain_force">['|', ('company_ids', 'in', company_ids), ('company_ids', '=', False)]</field>
+    </record>
 </odoo>
