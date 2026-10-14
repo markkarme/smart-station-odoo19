@@ -2645,3 +2645,28 @@ msgstr "يمكن لمسؤولي الموارد البشرية أو معتمدي 
 msgid "Only HR Responsibles or Time Off Approvers can refuse this attendance adjustment request."
 msgstr "يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط رفض طلب تعديل الحضور هذا."
 
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "Photo updated."
+msgstr "تم تحديث الصورة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "Please choose an image file."
+msgstr "يرجى اختيار ملف صورة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "The image is too large. Maximum size is 5 MB."
+msgstr "الصورة كبيرة جدًا. الحد الأقصى للحجم هو 5 ميغابايت."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "The image could not be updated."
+msgstr "تعذر تحديث الصورة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "Change photo"
+msgstr "تغيير الصورة"
+

@@ -330,6 +330,64 @@
         </t>
     </template>
 
+    <template id="portal_avatar_upload" name="Portal Avatar Upload">
+        <form action="/my/account/image" method="post" enctype="multipart/form-data" t-attf-class="o_portal_avatar_form {{'' if compact else 'mb-4'}}">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <input type="hidden" name="redirect" t-att-value="redirect or '/my/home'"/>
+            <div t-if="not compact and request.params.get('image_updated')" class="alert alert-success py-2" role="status">
+                Photo updated.
+            </div>
+            <div t-if="not compact and request.params.get('image_error')" class="alert alert-danger py-2" role="alert">
+                <t t-if="request.params.get('image_error') == 'type'">Please choose an image file.</t>
+                <t t-elif="request.params.get('image_error') == 'size'">The image is too large. Maximum size is 5 MB.</t>
+                <t t-else="">The image could not be updated.</t>
+            </div>
+            <label class="o_portal_avatar_picker mb-0">
+                <img class="rounded object-fit-cover"
+                     t-att-src="image_data_uri(request.env.user.partner_id.avatar_128)"
+                     alt="Contact"
+                     t-att-width="96 if not compact else 50"
+                     t-att-height="96 if not compact else 50"/>
+                <span class="o_portal_avatar_camera" title="Change photo">
+                    <i class="fa fa-camera"/>
+                </span>
+                <input type="file"
+                       name="image"
+                       accept="image/png,image/jpeg,image/webp,image/gif"
+                       class="d-none"
+                       onchange="this.form.submit()"/>
+            </label>
+            <div t-if="not compact" class="small text-muted mt-2">Change photo</div>
+        </form>
+    </template>
+
+    <template id="portal_side_avatar_upload" inherit_id="portal.side_content" name="Portal Sidebar Avatar Upload">
+        <xpath expr="//div[hasclass('d-flex')]" position="before">
+            <div t-if="request.params.get('image_updated')" class="alert alert-success py-2" role="status">
+                Photo updated.
+            </div>
+            <div t-if="request.params.get('image_error')" class="alert alert-danger py-2" role="alert">
+                <t t-if="request.params.get('image_error') == 'type'">Please choose an image file.</t>
+                <t t-elif="request.params.get('image_error') == 'size'">The image is too large. Maximum size is 5 MB.</t>
+                <t t-else="">The image could not be updated.</t>
+            </div>
+        </xpath>
+        <xpath expr="//img[hasclass('object-fit-cover')]" position="replace">
+            <t t-call="attendance_location_portal.portal_avatar_upload">
+                <t t-set="compact" t-value="True"/>
+                <t t-set="redirect" t-value="'/my/home'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_details_avatar_upload" inherit_id="portal.portal_my_details" name="Portal Details Avatar Upload">
+        <xpath expr="//form[@name='address_form']" position="before">
+            <t t-call="attendance_location_portal.portal_avatar_upload">
+                <t t-set="redirect" t-value="'/my/account'"/>
+            </t>
+        </xpath>
+    </template>
+
     <template id="portal_attendance_failed_page" name="Portal Attendance Failed">
         <t t-call="portal.portal_layout">
             <div class="container py-5 portal-attendance-result">

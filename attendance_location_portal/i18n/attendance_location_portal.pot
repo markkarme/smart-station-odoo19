@@ -2605,3 +2605,28 @@ msgstr ""
 msgid "Only HR Responsibles or Time Off Approvers can refuse this attendance adjustment request."
 msgstr ""
 
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "Photo updated."
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "Please choose an image file."
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "The image is too large. Maximum size is 5 MB."
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "The image could not be updated."
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_templates.xml:0
+msgid "Change photo"
+msgstr ""
+
