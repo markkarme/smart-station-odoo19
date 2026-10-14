@@ -180,6 +180,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <div t-if="can_approve_request or can_refuse_request" class="mt-4 pt-3 border-top d-flex flex-wrap gap-2">
+                        <form t-if="can_approve_request" t-att-action="'/my/general_requests/%s/approve' % general_request.id" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <button type="submit" class="btn btn-success"><t>Approve</t></button>
+                        </form>
+                        <form t-if="can_refuse_request" t-att-action="'/my/general_requests/%s/refuse' % general_request.id" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <button type="submit" class="btn btn-outline-danger"><t>Refuse</t></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </t>

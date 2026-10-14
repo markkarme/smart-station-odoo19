@@ -238,6 +238,7 @@
             </div>
 
             <t t-if="attendance_groups">
+                <t t-set="classes" t-value="'portal-attendance-groups'"/>
                 <t t-call="portal.portal_table">
                     <thead>
                         <tr>
@@ -245,7 +246,8 @@
                                 <t t-if="groupby == 'employee'">Employee</t>
                                 <t t-else="">Company</t>
                             </th>
-                            <th class="text-end">Worked Hours</th>
+                            <th class="text-end text-nowrap">Records</th>
+                            <th class="text-end text-nowrap">Worked Hours</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -254,9 +256,11 @@
                                 <a t-att-href="attendance_group['url']">
                                     <t t-out="attendance_group['name']"/>
                                 </a>
-                                <span class="text-muted ms-1">(<t t-out="attendance_group['count']"/>)</span>
                             </td>
-                            <td class="text-end">
+                            <td class="text-end text-nowrap">
+                                <span t-out="attendance_group['count']"/>
+                            </td>
+                            <td class="text-end text-nowrap">
                                 <span t-out="attendance_group['hours']"/>
                             </td>
                         </tr>

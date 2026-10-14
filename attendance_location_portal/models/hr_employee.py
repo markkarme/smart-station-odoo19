@@ -15,6 +15,7 @@ class HrEmployee(models.Model):
         "employee_id",
         "user_id",
         string="HR Responsibles",
+        domain="[('share', '=', False)]",
         groups="hr.group_hr_user",
     )
     leave_manager_ids = fields.Many2many(
@@ -23,6 +24,7 @@ class HrEmployee(models.Model):
         "employee_id",
         "user_id",
         string="Time Off Approvers",
+        domain="['|', ('share', '=', False), ('portal_hr_admin', '=', True)]",
         groups="hr.group_hr_user",
     )
     attendance_manager_ids = fields.Many2many(
@@ -31,6 +33,7 @@ class HrEmployee(models.Model):
         "employee_id",
         "user_id",
         string="Attendance Approvers",
+        domain="[('share', '=', False)]",
         groups="hr.group_hr_user",
     )
     expense_manager_ids = fields.Many2many(
@@ -39,6 +42,7 @@ class HrEmployee(models.Model):
         "employee_id",
         "user_id",
         string="Expense Approvers",
+        domain="[('share', '=', False)]",
         groups="hr.group_hr_user",
     )
     attendance_location_ids = fields.Many2many(

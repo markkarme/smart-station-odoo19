@@ -4,13 +4,13 @@
         <field name="name">hr.attendance.adjustment.request.view.list</field>
         <field name="model">hr.attendance.adjustment.request</field>
         <field name="arch" type="xml">
-            <list string="Attendance Adjustment Requests" decoration-warning="state == 'confirm'" decoration-success="state == 'approve'" decoration-danger="state == 'refuse'">
+            <list string="Attendance Adjustment Requests" decoration-warning="state == 'confirm'" decoration-info="state == 'validate1'" decoration-success="state == 'approve'" decoration-danger="state == 'refuse'">
                 <field name="employee_id"/>
                 <field name="request_type"/>
                 <field name="date"/>
                 <field name="time_minutes"/>
                 <field name="description"/>
-                <field name="state" widget="badge" decoration-warning="state == 'confirm'" decoration-success="state == 'approve'" decoration-danger="state == 'refuse'"/>
+                <field name="state" widget="badge" decoration-warning="state == 'confirm'" decoration-info="state == 'validate1'" decoration-success="state == 'approve'" decoration-danger="state == 'refuse'"/>
             </list>
         </field>
     </record>
@@ -22,12 +22,10 @@
             <form string="Attendance Adjustment Request">
                 <header>
                     <button name="action_approve" type="object" string="Approve" class="btn-primary"
-                            invisible="not can_approve_refuse"
-                            groups="hr_holidays.group_hr_holidays_manager"/>
+                            invisible="not can_approve_refuse"/>
                     <button name="action_refuse" type="object" string="Refuse" class="btn-secondary"
-                            invisible="not can_approve_refuse"
-                            groups="hr_holidays.group_hr_holidays_manager"/>
-                    <field name="state" widget="statusbar" statusbar_visible="confirm,approve,refuse"/>
+                            invisible="not can_approve_refuse"/>
+                    <field name="state" widget="statusbar" statusbar_visible="confirm,validate1,approve"/>
                 </header>
                 <sheet>
                     <group>
@@ -61,6 +59,7 @@
                 <field name="description"/>
                 <field name="date"/>
                 <filter string="To Approve" name="filter_confirm" domain="[('state', '=', 'confirm')]"/>
+                <filter string="Second Approval" name="filter_validate1" domain="[('state', '=', 'validate1')]"/>
                 <filter string="Approved" name="filter_approve" domain="[('state', '=', 'approve')]"/>
                 <filter string="Refused" name="filter_refuse" domain="[('state', '=', 'refuse')]"/>
                 <filter string="Early Departure" name="filter_early_departure" domain="[('request_type', '=', 'early_departure')]"/>
@@ -85,6 +84,7 @@
                 <field name="description"/>
                 <field name="date"/>
                 <filter string="To Approve" name="filter_confirm" domain="[('state', '=', 'confirm')]"/>
+                <filter string="Second Approval" name="filter_validate1" domain="[('state', '=', 'validate1')]"/>
                 <separator/>
                 <filter
                     string="My Activities"

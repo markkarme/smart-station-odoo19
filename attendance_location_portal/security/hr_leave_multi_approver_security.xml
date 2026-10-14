@@ -11,6 +11,32 @@
         <field name="perm_unlink" eval="0"/>
     </record>
 
+    <record id="hr_leave_hr_responsible_read_rule" model="ir.rule">
+        <field name="name">Time Off HR Responsible Read</field>
+        <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+        <field name="domain_force">[('employee_id.hr_responsible_ids', 'in', [user.id])]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="hr_leave_hr_responsible_write_rule" model="ir.rule">
+        <field name="name">Time Off HR Responsible Write</field>
+        <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+        <field name="domain_force">[
+            '&amp;',
+                ('validation_type', '=', 'both'),
+                ('employee_id.hr_responsible_ids', 'in', [user.id])
+        ]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="0"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
     <record id="hr_leave_multi_approver_write_rule" model="ir.rule">
         <field name="name">Time Off Multi Approver Write</field>
         <field name="model_id" ref="hr_holidays.model_hr_leave"/>

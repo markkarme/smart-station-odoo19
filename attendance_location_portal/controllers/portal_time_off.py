@@ -3,7 +3,7 @@ import logging
 from urllib.parse import urlencode
 
 from odoo import _, http
-from odoo.exceptions import AccessError, UserError
+from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
 
@@ -31,6 +31,14 @@ def _get_leave_state_labels():
 
 
 class PortalTimeOffController(PortalHrMixin, http.Controller):
+    def _portal_can_decide(self, record, states):
+        user = request.env.user
+        if record.employee_id.user_id == user or record.state not in states:
+            return False
+        if record._uses_assigned_approvers():
+            return record._user_can_approve_current_step()
+        return self._is_portal_hr_admin()
+
     def _get_employee_leave(self, employee, leave_id):
         leave = request.env["hr.leave"].sudo().browse(leave_id)
         if not leave.exists() or not self._portal_can_access_employee_record(
@@ -353,7 +361,15 @@ class PortalTimeOffController(PortalHrMixin, http.Controller):
             "success_message": kwargs.get("success"),
             "error_message": kwargs.get("error"),
             "is_portal_hr_admin": self._is_portal_hr_admin(),
-            "can_cancel_leave": leave.employee_id == employee and leave.can_cancel,
+            "can_cancel_leave": (
+                self._is_portal_hr_admin()
+                and leave.employee_id == employee
+                and leave.can_cancel
+            ),
+            "can_approve_request": self._portal_can_decide(leave, ("confirm", "validate1")),
+            "can_refuse_request": self._portal_can_decide(
+                leave, ("confirm", "validate", "validate1")
+            ),
         }
         return request.render("attendance_location_portal.portal_time_off_detail", values)
 
@@ -373,6 +389,8 @@ class PortalTimeOffController(PortalHrMixin, http.Controller):
 
         try:
             leave = self._get_employee_leave(employee, leave_id)
+            if not self._is_portal_hr_admin():
+                raise AccessError(_("You cannot cancel this time off request."))
             if leave.employee_id != employee:
                 raise AccessError(_("You can only cancel your own time off requests."))
             employee.action_portal_cancel_leave(leave, reason=post.get("cancel_reason"))
@@ -387,3 +405,50 @@ class PortalTimeOffController(PortalHrMixin, http.Controller):
                 {"error": _("Unexpected error while cancelling time off. Please try again.")}
             )
             return request.redirect("/my/time_off/%s?%s" % (leave_id, params))
+
+    def _portal_time_off_decision(self, leave_id, action):
+        employee = self._get_user_employee()
+        if not employee:
+            params = urlencode({"error": _("No employee is linked to your user.")})
+            return request.redirect("/my/time_off?%s" % params)
+        try:
+            leave = self._get_employee_leave(employee, leave_id)
+            if action == "approve":
+                leave.action_portal_admin_approve()
+                message = _("Time off request approved.")
+            else:
+                leave.action_portal_admin_refuse()
+                message = _("Time off request refused.")
+            params = urlencode({"success": message})
+            return request.redirect("/my/time_off/%s?%s" % (leave.id, params))
+        except (UserError, AccessError, ValidationError) as error:
+            params = urlencode({"error": str(error)})
+            return request.redirect("/my/time_off/%s?%s" % (leave_id, params))
+        except Exception as error:
+            _logger.exception("Portal time off %s failed: %s", action, error)
+            params = urlencode(
+                {"error": _("Unexpected error while updating the time off request.")}
+            )
+            return request.redirect("/my/time_off/%s?%s" % (leave_id, params))
+
+    @http.route(
+        "/my/time_off/<int:leave_id>/approve",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_time_off_approve(self, leave_id, **post):
+        return self._portal_time_off_decision(leave_id, "approve")
+
+    @http.route(
+        "/my/time_off/<int:leave_id>/refuse",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_time_off_refuse(self, leave_id, **post):
+        return self._portal_time_off_decision(leave_id, "refuse")
