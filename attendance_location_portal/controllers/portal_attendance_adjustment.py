@@ -12,6 +12,7 @@ _logger = logging.getLogger(__name__)
 
 ADJUSTMENT_REQUEST_STATE_BADGES = {
     "confirm": "text-bg-warning",
+    "validate1": "text-bg-info",
     "approve": "text-bg-success",
     "refuse": "text-bg-danger",
 }
@@ -20,6 +21,7 @@ ADJUSTMENT_REQUEST_STATE_BADGES = {
 def _get_adjustment_request_state_labels(env):
     return {
         "confirm": env._("To Approve"),
+        "validate1": env._("Second Approval"),
         "approve": env._("Approved"),
         "refuse": env._("Refused"),
     }

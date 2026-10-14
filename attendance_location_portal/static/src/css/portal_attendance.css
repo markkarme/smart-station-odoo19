@@ -45,3 +45,23 @@
 .portal-attendance-result .result-card.failed .result-icon {
     color: #dc3545;
 }
+
+@media (max-width: 767.98px) {
+    .portal-attendance-groups table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .portal-attendance-groups th:first-child,
+    .portal-attendance-groups td:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .portal-attendance-groups th:not(:first-child),
+    .portal-attendance-groups td:not(:first-child) {
+        width: 1%;
+        white-space: nowrap;
+    }
+}

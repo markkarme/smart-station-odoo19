@@ -2,7 +2,7 @@ import logging
 from urllib.parse import urlencode
 
 from odoo import _, http
-from odoo.exceptions import AccessError, UserError
+from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
 
@@ -12,6 +12,7 @@ _logger = logging.getLogger(__name__)
 
 GENERAL_REQUEST_STATE_BADGES = {
     "confirm": "text-bg-warning",
+    "validate1": "text-bg-info",
     "approve": "text-bg-success",
     "refuse": "text-bg-danger",
 }
@@ -20,12 +21,21 @@ GENERAL_REQUEST_STATE_BADGES = {
 def _get_general_request_state_labels(env):
     return {
         "confirm": env._("To Approve"),
+        "validate1": env._("Second Approval"),
         "approve": env._("Approved"),
         "refuse": env._("Refused"),
     }
 
 
 class PortalGeneralRequestController(PortalHrMixin, http.Controller):
+    def _portal_can_decide(self, record, states):
+        user = request.env.user
+        if record.employee_id.user_id == user or record.state not in states:
+            return False
+        if record.employee_id.hr_responsible_ids:
+            return record._user_can_decide()
+        return self._is_portal_hr_admin()
+
     def _get_employee_general_request(self, employee, request_id):
         general_request = request.env["hr.general.request"].sudo().browse(request_id)
         if not general_request.exists() or not self._portal_can_access_employee_record(
@@ -271,5 +281,57 @@ class PortalGeneralRequestController(PortalHrMixin, http.Controller):
             "success_message": kwargs.get("success"),
             "error_message": kwargs.get("error"),
             "is_portal_hr_admin": self._is_portal_hr_admin(),
+            "can_approve_request": self._portal_can_decide(general_request, ("confirm", "validate1")),
+            "can_refuse_request": self._portal_can_decide(general_request, ("confirm", "validate1")),
         }
         return request.render("attendance_location_portal.portal_general_request_detail", values)
+
+    def _portal_general_request_decision(self, request_id, action):
+        employee = self._get_user_employee()
+        if not employee:
+            params = urlencode({"error": _("No employee is linked to your user.")})
+            return request.redirect("/my/general_requests?%s" % params)
+        try:
+            general_request = self._get_employee_general_request(employee, request_id)
+            if action == "approve":
+                general_request.action_approve()
+                if general_request.state == "validate1":
+                    message = _("General request sent for second approval.")
+                else:
+                    message = _("General request approved.")
+            else:
+                general_request.action_refuse()
+                message = _("General request refused.")
+            params = urlencode({"success": message})
+            return request.redirect("/my/general_requests/%s?%s" % (general_request.id, params))
+        except (UserError, AccessError, ValidationError) as error:
+            params = urlencode({"error": str(error)})
+            return request.redirect("/my/general_requests/%s?%s" % (request_id, params))
+        except Exception as error:
+            _logger.exception("Portal general request %s failed: %s", action, error)
+            params = urlencode(
+                {"error": _("Unexpected error while updating the general request.")}
+            )
+            return request.redirect("/my/general_requests/%s?%s" % (request_id, params))
+
+    @http.route(
+        "/my/general_requests/<int:request_id>/approve",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_general_request_approve(self, request_id, **post):
+        return self._portal_general_request_decision(request_id, "approve")
+
+    @http.route(
+        "/my/general_requests/<int:request_id>/refuse",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_general_request_refuse(self, request_id, **post):
+        return self._portal_general_request_decision(request_id, "refuse")

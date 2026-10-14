@@ -2,7 +2,7 @@ import logging
 from urllib.parse import urlencode
 
 from odoo import _, http
-from odoo.exceptions import AccessError, UserError
+from odoo.exceptions import AccessError, UserError, ValidationError
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import pager as portal_pager
 
@@ -28,6 +28,14 @@ def _get_allocation_state_labels():
 
 
 class PortalAllocationController(PortalHrMixin, http.Controller):
+    def _portal_can_decide(self, record, states):
+        user = request.env.user
+        if record.employee_id.user_id == user or record.state not in states:
+            return False
+        if record._uses_assigned_approvers():
+            return record._user_can_approve_current_step()
+        return self._is_portal_hr_admin()
+
     def _get_employee_allocation(self, employee, allocation_id):
         allocation = request.env["hr.leave.allocation"].sudo().browse(allocation_id)
         if not allocation.exists() or not self._portal_can_access_employee_record(
@@ -217,6 +225,12 @@ class PortalAllocationController(PortalHrMixin, http.Controller):
                 allocation.employee_id == employee
                 and allocation.state in ("confirm", "refuse")
             ),
+            "can_approve_request": self._portal_can_decide(
+                allocation, ("confirm", "validate1")
+            ),
+            "can_refuse_request": self._portal_can_decide(
+                allocation, ("confirm", "validate", "validate1")
+            ),
         }
         return request.render("attendance_location_portal.portal_allocation_detail", values)
 
@@ -250,3 +264,50 @@ class PortalAllocationController(PortalHrMixin, http.Controller):
                 {"error": _("Unexpected error while cancelling allocation. Please try again.")}
             )
             return request.redirect("/my/allocations/%s?%s" % (allocation_id, params))
+
+    def _portal_allocation_decision(self, allocation_id, action):
+        employee = self._get_user_employee()
+        if not employee:
+            params = urlencode({"error": _("No employee is linked to your user.")})
+            return request.redirect("/my/allocations?%s" % params)
+        try:
+            allocation = self._get_employee_allocation(employee, allocation_id)
+            if action == "approve":
+                allocation.action_portal_admin_approve()
+                message = _("Allocation request approved.")
+            else:
+                allocation.action_portal_admin_refuse()
+                message = _("Allocation request refused.")
+            params = urlencode({"success": message})
+            return request.redirect("/my/allocations/%s?%s" % (allocation.id, params))
+        except (UserError, AccessError, ValidationError) as error:
+            params = urlencode({"error": str(error)})
+            return request.redirect("/my/allocations/%s?%s" % (allocation_id, params))
+        except Exception as error:
+            _logger.exception("Portal allocation %s failed: %s", action, error)
+            params = urlencode(
+                {"error": _("Unexpected error while updating the allocation request.")}
+            )
+            return request.redirect("/my/allocations/%s?%s" % (allocation_id, params))
+
+    @http.route(
+        "/my/allocations/<int:allocation_id>/approve",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_allocation_approve(self, allocation_id, **post):
+        return self._portal_allocation_decision(allocation_id, "approve")
+
+    @http.route(
+        "/my/allocations/<int:allocation_id>/refuse",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_allocation_refuse(self, allocation_id, **post):
+        return self._portal_allocation_decision(allocation_id, "refuse")

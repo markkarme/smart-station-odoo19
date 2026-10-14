@@ -1,6 +1,7 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
-from odoo.tools import email_normalize
+
+from .approval_access import decision_user
 
 
 class HrAttendanceAdjustmentRequest(models.Model):
@@ -45,6 +46,7 @@ class HrAttendanceAdjustmentRequest(models.Model):
     state = fields.Selection(
         [
             ("confirm", "To Approve"),
+            ("validate1", "Second Approval"),
             ("approve", "Approved"),
             ("refuse", "Refused"),
         ],
@@ -90,14 +92,14 @@ class HrAttendanceAdjustmentRequest(models.Model):
 
     @api.depends("state")
     def _compute_can_approve_refuse(self):
-        is_admin = self.env.user.has_group("hr_holidays.group_hr_holidays_manager")
         for request in self:
-            request.can_approve_refuse = is_admin and request.state == "confirm"
+            request.can_approve_refuse = request._user_can_decide()
 
     def _portal_state_badge_class(self):
         self.ensure_one()
         return {
             "confirm": "text-bg-warning",
+            "validate1": "text-bg-info",
             "approve": "text-bg-success",
             "refuse": "text-bg-danger",
         }.get(self.state, "text-bg-secondary")
@@ -107,24 +109,43 @@ class HrAttendanceAdjustmentRequest(models.Model):
             return False
         return user.has_group("base.group_portal") and not user.has_group("base.group_user")
 
-    def _get_manager_users(self):
+    def _second_approver_users(self):
         self.ensure_one()
         employee = self.employee_id
-        if employee.leave_manager_ids:
-            return employee.leave_manager_ids
+        approvers = employee.leave_manager_ids
         if employee.leave_manager_id:
-            return employee.leave_manager_id
-        manager = employee.parent_id
-        if manager and manager.user_id:
-            return manager.user_id
-        if manager:
-            work_email = email_normalize(manager.work_email)
-            if work_email:
-                return self.env["res.users"].sudo().search(
-                    ["|", ("login", "=", work_email), ("email_normalized", "=", work_email)],
-                    limit=1,
-                )
+            approvers |= employee.leave_manager_id
+        return approvers
+
+    def _activity_users(self):
+        self.ensure_one()
+        employee = self.employee_id
+        if not employee.hr_responsible_ids:
+            return self.env["res.users"]
+        if self.state == "confirm":
+            return employee.hr_responsible_ids
+        if self.state == "validate1":
+            return self._second_approver_users()
         return self.env["res.users"]
+
+    def _user_can_decide(self):
+        self.ensure_one()
+        user = decision_user(self)
+        is_manager = user.has_group("hr_holidays.group_hr_holidays_manager")
+        is_portal_admin = user.has_group("attendance_location_portal.group_portal_hr_admin")
+        employee = self.employee_id
+        if is_portal_admin and not is_manager:
+            if employee.user_id == user:
+                return False
+            if self.company_id and self.company_id not in user.company_ids:
+                return False
+        if self.state == "confirm":
+            if employee.hr_responsible_ids:
+                return user in employee.hr_responsible_ids
+            return is_manager or is_portal_admin
+        if self.state == "validate1":
+            return user in self._second_approver_users()
+        return False
 
     def _get_to_clean_activities(self):
         return ["attendance_location_portal.mail_act_attendance_adjustment_approval"]
@@ -143,9 +164,15 @@ class HrAttendanceAdjustmentRequest(models.Model):
             activity_type = self.env.ref("mail.mail_activity_data_todo")
 
         for request in self:
-            if request.state == "confirm":
-                manager_users = request.sudo()._get_manager_users()
+            if request.state in ("confirm", "validate1"):
+                manager_users = request.sudo()._activity_users()
                 if not manager_users:
+                    existing = request.activity_ids.filtered(
+                        lambda activity: activity.automated
+                        and activity.activity_type_id == activity_type
+                    )
+                    if existing:
+                        existing.unlink()
                     continue
                 date_deadline = request.date or today
                 if date_deadline < today:
@@ -172,6 +199,11 @@ class HrAttendanceAdjustmentRequest(models.Model):
                             "automated": True,
                             "date_deadline": date_deadline,
                             "note": _(
+                                "Second approval request from %(employee)s",
+                                employee=request.employee_id.name,
+                            )
+                            if request.state == "validate1"
+                            else _(
                                 "New Attendance Adjustment Request from %(employee)s",
                                 employee=request.employee_id.name,
                             ),
@@ -219,32 +251,41 @@ class HrAttendanceAdjustmentRequest(models.Model):
         return result
 
     def action_approve(self):
-        if not self.env.user.has_group("hr_holidays.group_hr_holidays_manager"):
-            raise UserError(_("Only Time Off Administrators can approve attendance adjustment requests."))
-        requests = self.filtered(lambda request: request.state == "confirm")
-        if len(requests) != len(self):
+        if any(not request._user_can_decide() for request in self):
+            raise UserError(_("Only HR Responsibles or Time Off Approvers can approve this attendance adjustment request."))
+        first_step = self.filtered(
+            lambda request: request.state == "confirm" and request.employee_id.hr_responsible_ids
+        )
+        final_step = self.filtered(
+            lambda request: request.state == "validate1"
+            or (request.state == "confirm" and not request.employee_id.hr_responsible_ids)
+        )
+        if len(first_step) + len(final_step) != len(self):
             raise UserError(_("Only requests pending approval can be approved."))
-        requests.write({"state": "approve"})
-        for request in requests:
-            partner = request.employee_id.user_id.partner_id
-            if partner:
-                request.message_post(
-                    body=_("Your attendance adjustment request has been approved."),
-                    partner_ids=partner.ids,
-                )
+        if first_step:
+            first_step.sudo().write({"state": "validate1"})
+        if final_step:
+            final_step.sudo().write({"state": "approve"})
+            for request in final_step:
+                partner = request.employee_id.user_id.partner_id
+                if partner:
+                    request.sudo().message_post(
+                        body=_("Your attendance adjustment request has been approved."),
+                        partner_ids=partner.ids,
+                    )
         return True
 
     def action_refuse(self):
-        if not self.env.user.has_group("hr_holidays.group_hr_holidays_manager"):
-            raise UserError(_("Only Time Off Administrators can refuse attendance adjustment requests."))
-        requests = self.filtered(lambda request: request.state == "confirm")
+        if any(not request._user_can_decide() for request in self):
+            raise UserError(_("Only HR Responsibles or Time Off Approvers can refuse this attendance adjustment request."))
+        requests = self.filtered(lambda request: request.state in ("confirm", "validate1"))
         if len(requests) != len(self):
             raise UserError(_("Only requests pending approval can be refused."))
-        requests.write({"state": "refuse"})
+        requests.sudo().write({"state": "refuse"})
         for request in requests:
             partner = request.employee_id.user_id.partner_id
             if partner:
-                request.message_post(
+                request.sudo().message_post(
                     body=_("Your attendance adjustment request has been refused."),
                     partner_ids=partner.ids,
                 )

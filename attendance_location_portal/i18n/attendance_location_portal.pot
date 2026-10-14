@@ -292,6 +292,9 @@ msgstr ""
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 msgid "Approve"
 msgstr ""
 
@@ -531,10 +534,13 @@ msgid "Checked Out"
 msgstr ""
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__company_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__company_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__company_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__company_id
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 msgid "Company"
 msgstr ""
 
@@ -731,6 +737,7 @@ msgid "Employee's Feedback"
 msgstr ""
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 msgid "Employee:"
@@ -1570,6 +1577,9 @@ msgstr ""
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 msgid "Refuse"
 msgstr ""
 
@@ -1696,6 +1706,10 @@ msgstr ""
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__validate1
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__validate1
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
 msgid "Second Approval"
@@ -2405,5 +2419,189 @@ msgstr ""
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 msgid "Back to groups"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Records"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "You cannot approve or refuse your own request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only portal administrators can approve or refuse requests."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only requests pending approval can be approved."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "This general request is not accessible."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "This time off request is not accessible."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Only pending or approved time off can be refused."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "This allocation request is not accessible."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only pending or approved allocations can be refused."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Time off request approved."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Time off request refused."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Unexpected error while updating the time off request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Allocation request approved."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Allocation request refused."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Unexpected error while updating the allocation request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "General request approved."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "General request sent for second approval."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "General request refused."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "Unexpected error while updating the general request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "You cannot cancel this time off request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Only HR Responsibles can give the first approval for %(employee)s."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Only Time Off Approvers can give the second approval."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Second approval request for %(leave_type)s"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "New Allocation request from %(employee)s"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Second approval request for %(allocation_type)s"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Second approval request from %(employee)s"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Only HR Responsibles or Time Off Approvers can approve this general request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Only HR Responsibles or Time Off Approvers can refuse this general request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Only HR Responsibles or Time Off Approvers can approve this attendance adjustment request."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Only HR Responsibles or Time Off Approvers can refuse this attendance adjustment request."
 msgstr ""
 

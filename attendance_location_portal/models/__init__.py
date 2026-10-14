@@ -1,4 +1,6 @@
+from . import approval_access
 from . import attendance_location
+from . import res_users
 from . import hr_appraisal
 from . import hr_attendance
 from . import hr_attendance_adjustment_request
