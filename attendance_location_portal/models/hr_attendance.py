@@ -39,6 +39,31 @@ class HrAttendance(models.Model):
         copy=False,
         tracking=True,
     )
+    has_approved_adjustment_request = fields.Boolean(
+        string="Has Approved Adjustment Request",
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
+    approved_adjustment_minutes = fields.Integer(
+        string="Approved Adjustment Minutes",
+        readonly=True,
+        copy=False,
+        tracking=True,
+        help="Total approved attendance adjustment minutes applied on this attendance.",
+    )
+    adjustment_check_in_time = fields.Datetime(
+        string="Check In Time",
+        compute="_compute_adjustment_preview_times",
+    )
+    adjustment_actual_time = fields.Datetime(
+        string="Actual Time",
+        compute="_compute_adjustment_preview_times",
+    )
+    adjustment_updated_time = fields.Datetime(
+        string="Updated Time",
+        compute="_compute_adjustment_preview_times",
+    )
     company_id = fields.Many2one(
         "res.company",
         string="Company",
@@ -312,11 +337,68 @@ class HrAttendance(models.Model):
             return
         return super(HrAttendance, valid)._create_work_entries()
 
+    @api.depends("check_in", "has_approved_adjustment_request", "approved_adjustment_minutes")
+    def _compute_adjustment_preview_times(self):
+        request_model = self.env["hr.attendance.adjustment.request"]
+        for attendance in self:
+            attendance.adjustment_check_in_time = attendance.check_in or False
+            attendance.adjustment_actual_time = False
+            attendance.adjustment_updated_time = False
+            if not attendance.check_in and not attendance.check_out:
+                continue
+            requests = request_model.sudo().search([
+                ("applied_attendance_id", "=", attendance.id),
+                ("state", "=", "approve"),
+                ("adjustment_applied", "=", True),
+            ])
+            if not requests:
+                continue
+            latest_request = requests.sorted("id", reverse=True)[:1]
+            if latest_request.applied_actual_time and latest_request.applied_updated_time:
+                attendance.adjustment_actual_time = latest_request.applied_actual_time
+                attendance.adjustment_updated_time = latest_request.applied_updated_time
+            elif latest_request.request_type == "late_arrival" and attendance.check_in:
+                attendance.adjustment_updated_time = attendance.check_in
+                attendance.adjustment_actual_time = attendance.check_in + timedelta(
+                    minutes=latest_request.time_minutes or 0
+                )
+            elif latest_request.request_type == "early_departure" and attendance.check_out:
+                attendance.adjustment_updated_time = attendance.check_out
+                attendance.adjustment_actual_time = attendance.check_out - timedelta(
+                    minutes=latest_request.time_minutes or 0
+                )
+
+    def _apply_pending_approved_adjustments(self):
+        if self.env.context.get("skip_pending_adjustment_apply"):
+            return
+        adjustment_request_model = self.env["hr.attendance.adjustment.request"].sudo()
+        for attendance in self:
+            if not attendance.employee_id:
+                continue
+            if attendance.check_in:
+                attendance_date = fields.Datetime.to_datetime(attendance.check_in).date()
+            elif attendance.check_out:
+                attendance_date = fields.Datetime.to_datetime(attendance.check_out).date()
+            else:
+                continue
+            pending_requests = adjustment_request_model.search(
+                [
+                    ("employee_id", "=", attendance.employee_id.id),
+                    ("date", "=", attendance_date),
+                    ("state", "=", "approve"),
+                    ("adjustment_applied", "=", False),
+                ],
+                order="id asc",
+            )
+            for request in pending_requests:
+                request._apply_approved_adjustment_to_attendance(attendance=attendance)
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
             vals["company_id"] = self._company_from_vals(vals)
         records = super().create(vals_list)
+        records._apply_pending_approved_adjustments()
         records._notify_attendance_validity_warnings()
         records.filtered(
             lambda record: record.portal_note and record.check_out
@@ -370,6 +452,7 @@ class HrAttendance(models.Model):
                 result = super(HrAttendance, checkout_only).write(vals)
 
         if {"check_in", "check_out", "employee_id"} & set(vals.keys()):
+            self._apply_pending_approved_adjustments()
             self._notify_attendance_validity_warnings()
         if note_updated:
             self.filtered(

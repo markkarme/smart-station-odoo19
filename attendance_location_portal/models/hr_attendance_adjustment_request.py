@@ -1,3 +1,7 @@
+from datetime import datetime, time, timedelta
+
+import pytz
+
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
@@ -61,9 +65,63 @@ class HrAttendanceAdjustmentRequest(models.Model):
         store=True,
         readonly=True,
     )
+    adjustment_applied = fields.Boolean(
+        string="Adjustment Applied",
+        default=False,
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
+    applied_attendance_id = fields.Many2one(
+        "hr.attendance",
+        string="Applied Attendance",
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
     can_approve_refuse = fields.Boolean(compute="_compute_can_approve_refuse")
     portal_state_label = fields.Char(compute="_compute_portal_state_label")
     request_type_label = fields.Char(compute="_compute_request_type_label")
+    actual_time = fields.Datetime(
+        string="Actual Time",
+        compute="_compute_actual_updated_time",
+    )
+    updated_time = fields.Datetime(
+        string="Updated Time",
+        compute="_compute_actual_updated_time",
+    )
+    attendance_check_in_time = fields.Datetime(
+        string="Check In Time",
+        compute="_compute_actual_updated_time",
+    )
+    workday_start_time = fields.Datetime(
+        string="Workday Start Time",
+        compute="_compute_actual_updated_time",
+        help="Planned start time from the employee working schedule on request date.",
+    )
+    workday_end_time = fields.Datetime(
+        string="Workday End Time",
+        compute="_compute_actual_updated_time",
+        help="Planned end time from the employee working schedule on request date.",
+    )
+    applied_actual_time = fields.Datetime(
+        string="Applied Actual Time",
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
+    applied_updated_time = fields.Datetime(
+        string="Applied Updated Time",
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
+    applied_effective_minutes = fields.Integer(
+        string="Applied Effective Minutes",
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
 
     @api.depends("employee_id", "date", "request_type")
     def _compute_name(self):
@@ -250,6 +308,149 @@ class HrAttendanceAdjustmentRequest(models.Model):
             self.activity_update()
         return result
 
+    @api.depends("employee_id", "date", "request_type", "time_minutes", "state", "adjustment_applied")
+    def _compute_actual_updated_time(self):
+        for request in self:
+            request.actual_time = False
+            request.updated_time = False
+            request.attendance_check_in_time = False
+            workday_start, workday_end = request._get_workday_bounds()
+            request.workday_start_time = workday_start
+            request.workday_end_time = workday_end
+            attendance = request.applied_attendance_id or request._get_attendance_for_adjustment()
+            if not attendance:
+                continue
+            request.attendance_check_in_time = attendance.check_in
+            if request.adjustment_applied and request.applied_actual_time and request.applied_updated_time:
+                request.actual_time = request.applied_actual_time
+                request.updated_time = request.applied_updated_time
+                continue
+            if request.request_type == "late_arrival":
+                if not attendance.check_in:
+                    continue
+                if request.adjustment_applied:
+                    request.updated_time = attendance.check_in
+                    request.actual_time = attendance.check_in + timedelta(minutes=request.time_minutes)
+                else:
+                    request.actual_time = attendance.check_in
+                    request.updated_time = request._get_updated_check_in(attendance)
+            else:
+                if not attendance.check_out:
+                    continue
+                if request.adjustment_applied:
+                    request.updated_time = attendance.check_out
+                    request.actual_time = attendance.check_out - timedelta(minutes=request.time_minutes)
+                else:
+                    request.actual_time = attendance.check_out
+                    request.updated_time = request._get_updated_check_out(attendance)
+
+    def _get_attendance_for_adjustment(self):
+        self.ensure_one()
+        day_start = datetime.combine(self.date, time.min)
+        day_end = day_start + timedelta(days=1)
+        attendances = self.env["hr.attendance"].sudo().search([
+            ("employee_id", "=", self.employee_id.id),
+            "|",
+            "&",
+            ("check_in", ">=", fields.Datetime.to_string(day_start)),
+            ("check_in", "<", fields.Datetime.to_string(day_end)),
+            "&",
+            ("check_out", ">=", fields.Datetime.to_string(day_start)),
+            ("check_out", "<", fields.Datetime.to_string(day_end)),
+        ])
+        if self.request_type == "late_arrival":
+            return attendances.filtered("check_in").sorted("check_in")[:1]
+        return attendances.filtered("check_out").sorted(
+            key=lambda attendance: attendance.check_out,
+            reverse=True,
+        )[:1]
+
+    def _get_workday_bounds(self):
+        self.ensure_one()
+        if not self.employee_id or not self.date:
+            return False, False
+        version = self.employee_id._get_version(self.date)
+        calendar = (version and version.resource_calendar_id) or self.employee_id.resource_calendar_id
+        if not calendar:
+            return False, False
+        employee_tz = self.employee_id.tz or self.env.user.tz or "UTC"
+        tz = pytz.timezone(employee_tz)
+        day_start = datetime.combine(self.date, time.min)
+        day_end = day_start + timedelta(days=1)
+        if hasattr(calendar, "att_get_work_intervals"):
+            work_intervals = calendar.att_get_work_intervals(self, day_start, day_end, tz)
+        else:
+            start_localized = tz.localize(day_start)
+            end_localized = tz.localize(day_end)
+            attendance_intervals = calendar._attendance_intervals(start_localized, end_localized)
+            work_intervals = [
+                (
+                    start.astimezone(pytz.UTC).replace(tzinfo=None),
+                    end.astimezone(pytz.UTC).replace(tzinfo=None),
+                )
+                for start, end, _meta in attendance_intervals
+            ]
+        if not work_intervals:
+            return False, False
+        return (
+            min(start for start, _end in work_intervals),
+            max(end for _start, end in work_intervals),
+        )
+
+    def _get_updated_check_in(self, attendance):
+        self.ensure_one()
+        updated_check_in = attendance.check_in - timedelta(minutes=self.time_minutes)
+        workday_start, _workday_end = self._get_workday_bounds()
+        if workday_start and updated_check_in < workday_start:
+            return workday_start
+        return updated_check_in
+
+    def _get_updated_check_out(self, attendance):
+        self.ensure_one()
+        updated_check_out = attendance.check_out + timedelta(minutes=self.time_minutes)
+        _workday_start, workday_end = self._get_workday_bounds()
+        if workday_end and updated_check_out > workday_end:
+            return workday_end
+        return updated_check_out
+
+    def _apply_approved_adjustment_to_attendance(self, attendance=None):
+        self.ensure_one()
+        if self.adjustment_applied:
+            return True
+        attendance = attendance or self._get_attendance_for_adjustment()
+        if not attendance:
+            return False
+        update_vals = {
+            "has_approved_adjustment_request": True,
+            "approved_adjustment_minutes": attendance.approved_adjustment_minutes + self.time_minutes,
+        }
+        if self.request_type == "late_arrival":
+            if not attendance.check_in:
+                return False
+            actual_time = attendance.check_in
+            updated_time = self._get_updated_check_in(attendance)
+            update_vals["check_in"] = updated_time
+            effective_minutes = int(round((actual_time - updated_time).total_seconds() / 60.0))
+        else:
+            if not attendance.check_out:
+                return False
+            actual_time = attendance.check_out
+            updated_time = self._get_updated_check_out(attendance)
+            update_vals["check_out"] = updated_time
+            effective_minutes = int(round((updated_time - actual_time).total_seconds() / 60.0))
+        attendance.sudo().with_context(
+            skip_attendance_validity_notification=True,
+            skip_pending_adjustment_apply=True,
+        ).write(update_vals)
+        self.sudo().write({
+            "adjustment_applied": True,
+            "applied_attendance_id": attendance.id,
+            "applied_actual_time": actual_time,
+            "applied_updated_time": updated_time,
+            "applied_effective_minutes": effective_minutes,
+        })
+        return True
+
     def action_approve(self):
         if any(not request._user_can_decide() for request in self):
             raise UserError(_("Only HR Responsibles or Time Off Approvers can approve this attendance adjustment request."))
@@ -265,6 +466,8 @@ class HrAttendanceAdjustmentRequest(models.Model):
         if first_step:
             first_step.sudo().write({"state": "validate1"})
         if final_step:
+            for request in final_step:
+                request._apply_approved_adjustment_to_attendance()
             final_step.sudo().write({"state": "approve"})
             for request in final_step:
                 partner = request.employee_id.user_id.partner_id
