@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="attendance_attendance_company_rule" model="ir.rule">
+        <field name="name">Attendance: multi-company</field>
+        <field name="model_id" ref="model_attendance_attendance"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="attendance_line_company_rule" model="ir.rule">
+        <field name="name">Attendance Line: multi-company</field>
+        <field name="model_id" ref="model_attendance_line"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

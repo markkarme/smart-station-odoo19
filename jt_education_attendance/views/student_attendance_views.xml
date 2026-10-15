@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_attendance_line_student_history_list" model="ir.ui.view">
+        <field name="name">attendance.line.student.history.list</field>
+        <field name="model">attendance.line</field>
+        <field name="arch" type="xml">
+            <list create="0" delete="0" edit="0">
+                <field name="date"/>
+                <field name="student_id" optional="hide"/>
+                <field name="attendance_id"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="standard_id" optional="show"/>
+                <field name="division_id" optional="show"/>
+                <field name="class_id" optional="show"/>
+                <field name="status" widget="badge"
+                    decoration-success="status == 'present'"
+                    decoration-warning="status == 'late'"
+                    decoration-danger="status == 'absence_reason'"
+                    decoration-info="status == 'absence_noreason'"
+                    decoration-muted="status == 'none'"/>
+                <field name="present" optional="hide"/>
+                <field name="absence_reason" optional="hide"/>
+                <field name="absence_noreason" optional="hide"/>
+                <field name="late" optional="hide"/>
+                <field name="withdraw" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_attendance_line_student_history_search" model="ir.ui.view">
+        <field name="name">attendance.line.student.history.search</field>
+        <field name="model">attendance.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="date"/>
+                <field name="student_id"/>
+                <field name="attendance_id"/>
+                <field name="standard_id"/>
+                <field name="division_id"/>
+                <field name="class_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <filter string="حاضر" name="filter_present" domain="[('present', '=', True)]"/>
+                <filter string="غائب بسبب" name="filter_absence_reason" domain="[('absence_reason', '=', True)]"/>
+                <filter string="غائب بدون سبب" name="filter_absence_noreason" domain="[('absence_noreason', '=', True)]"/>
+                <filter string="متأخر" name="filter_late" domain="[('late', '=', True)]"/>
+                <filter string="سحب" name="filter_withdraw" domain="[('withdraw', '=', True)]"/>
+                <group>
+                    <filter string="التاريخ" name="group_date" context="{'group_by': 'date'}"/>
+                    <filter string="الحالة" name="group_status" context="{'group_by': 'status'}"/>
+                    <filter string="الصف" name="group_standard" context="{'group_by': 'standard_id'}"/>
+                    <filter string="الشعبة" name="group_division" context="{'group_by': 'division_id'}"/>
+                    <filter string="الفصل" name="group_class" context="{'group_by': 'class_id'}"/>
+                    <filter string="الشركة" name="group_company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_student_attendance_history" model="ir.actions.act_window">
+        <field name="name">سجل الحضور</field>
+        <field name="res_model">attendance.line</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_attendance_line_student_history_search"/>
+        <field name="view_id" ref="view_attendance_line_student_history_list"/>
+        <field name="context">{'create': False}</field>
+    </record>
+
+    <record id="view_partner_form_student_attendance" model="ir.ui.view">
+        <field name="name">res.partner.form.student.attendance.smart.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="jt_education_base.student_profile"/>
+        <field name="priority" eval="35"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_student_attendance"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-check-square-o"
+                        invisible="not is_student">
+                    <div class="o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="attendance_line_count"/>
+                        </span>
+                        <span class="o_stat_text">الحضور</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

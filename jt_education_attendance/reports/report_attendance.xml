@@ -5,29 +5,37 @@
             <t t-call="web.basic_layout">
                 <t t-foreach="docs" t-as="result">
                     <div class="page">
-                        <t t-set="report_data" t-value="result.get_report_data()"/>
+                        <t t-set="report_data" t-value="result.get_report_data(data or {})"/>
+                        <t t-set="all_dates" t-value="report_data.get('all_dates') or []"/>
+                        <t t-set="unavailable_dates" t-value="report_data.get('unavailable_dates') or [[], []]"/>
                         <div style="padding-top:10px;">
                             <div>
-                                <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-field="res_company.name"/></p>
+                                <p style="align:center;text-align:center;"><span style="font-size:45px;color:black;" t-esc="report_data.get('company_name') or result.company_id.name or res_company.name"/></p>
                             </div>
                             <div style="align:center;text-align:center;">
-                                <p style="align:center;text-align:color:black;font-size:25px;margin-top:30px;">Attendance Report</p>
+                                <p style="align:center;text-align:color:black;font-size:25px;margin-top:30px;">تقرير الحضور</p>
                                 <p  style="align:center;text-align:center;black;font-size:20px;">
-                                    For Class
-                                    <span t-esc="result.standard_id.name"/> - 
-                                    <span t-esc="result.division_id.name"/>
+                                    للصف
+                                    <span t-esc="report_data.get('standard_name') or result.standard_id.name"/> - 
+                                    <span t-esc="report_data.get('division_name') or result.division_id.name"/>
+                                    <t t-if="report_data.get('class_name') or result.class_id">
+                                        - <span t-esc="report_data.get('class_name') or result.class_id.name"/>
+                                    </t>
                                 </p>
-                                 <p  style="align:center;text-align:center;color:black;font-size:20px;margin-top:30px;"><strong>From:</strong>
-                                 <span t-esc="result.start_date"/>
-                                <strong>To:</strong>
-                                 <span t-esc="result.end_date"/>
+                                <t t-if="report_data.get('student_id')">
+                                    <p style="align:center;text-align:center;color:black;font-size:20px;">
+                                        <strong>الطالب:</strong>
+                                        <span t-esc="report_data.get('student_id').name"/>
+                                    </p>
+                                </t>
+                                 <p  style="align:center;text-align:center;color:black;font-size:20px;margin-top:30px;"><strong>من:</strong>
+                                 <span t-esc="report_data.get('start_date') or result.start_date"/>
+                                <strong>إلى:</strong>
+                                 <span t-esc="report_data.get('end_date') or result.end_date"/>
                                 </p>
                             </div>
                         </div>
-                        <div>
-                            <strong>Responsible Teacher:</strong>
-                            <span t-esc="result.faculty_id.name"/>
-                        </div><br/>
+                        <br/>
                         <div class="container-justify-content-center text-center">                    
                             <t t-set="is_present" t-value="0"/>
                             <t t-set="is_late" t-value="0"/>
@@ -36,8 +44,6 @@
                             <t t-set="is_withdraw" t-value="0"/>
                             <table class="table table-bordered mb32" style="table-layout:auto">
                                 <thead>
-                                    <t t-set="unavailable_dates" t-value="result._get_unavailable_dates()"/>
-                                    <t t-set="all_dates" t-value="result.get_all_date(result.start_date,result.end_date)"/>
                                     <tr>
                                         <th>Month</th>
                                         <t t-foreach="report_data.get('month_name')" t-as="month_name">
@@ -246,7 +252,7 @@
             <field name="report_name">jt_education_attendance.attendance_report_template</field>
             <field name="report_file">jt_education_attendance.attendance_report_template</field>
             <field name="paperformat_id" ref="jt_education_attendance.attendance_report_template_paperformate"/>
-            <field name="print_report_name">"Attendance Report"</field>
+            <field name="print_report_name">'Attendance Report'</field>
             <field name="binding_model_id" ref="jt_education_attendance.model_print_attendance"/>
             <field name="binding_type">report</field>
         </record>

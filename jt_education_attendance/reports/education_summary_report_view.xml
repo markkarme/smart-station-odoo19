@@ -5,7 +5,7 @@
             <t t-call="web.basic_layout">
                 <t t-foreach="docs" t-as="result">
                     <div class="page">
-                        <t t-set="report_data" t-value="result.get_report_data()"/>
+                        <t t-set="report_data" t-value="result.get_report_data(data)"/>
                         <div style="padding-top:10px;">
                             <div>
                                 <p style="align:center;text-align:center;"><span style="font-size:40px;color:black;" t-field="res_company.name"/></p>
@@ -322,7 +322,7 @@
             <field name="report_name">jt_education_attendance.attendance_summary_report_template</field>
             <field name="report_file">jt_education_attendance.attendance_summary_report_template</field>
             <field name="paperformat_id" ref="jt_education_attendance.attendance_report_template_paperformate"/>
-            <field name="print_report_name">"Attendance Summary Report"</field>
+            <field name="print_report_name">'Attendance Summary Report'</field>
             <field name="binding_model_id" ref="jt_education_attendance.model_print_attendance"/>
             <field name="binding_type">report</field>
         </record>

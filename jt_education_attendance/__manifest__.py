@@ -23,14 +23,16 @@
 {
     'name': "Attendance Management",
     'sequence':6,
-    'version': '19.0.1.0.1',
+    'version': '19.0.1.0.4',
     'summary': "Manage the Attendance of students",
     'category': 'Student Attendance',
     'depends': ['jt_education_base', 'jt_education_exam'],
     'data': [
 
         'security/ir.model.access.csv',
+        'security/attendance_security.xml',
         'views/attendance_view.xml',
+        'views/student_attendance_views.xml',
         'reports/report_attendance.xml',
         'reports/education_summary_report_view.xml',
         'reports/daily_attendance.xml',
