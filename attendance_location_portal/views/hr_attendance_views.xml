@@ -25,6 +25,12 @@
                     <field name="attendance_location_id" readonly="1"/>
                     <field name="company_id" groups="base.group_multi_company" readonly="1"/>
                 </group>
+                <group name="attendance_adjustment_group">
+                    <field name="has_approved_adjustment_request" readonly="1" invisible="not has_approved_adjustment_request"/>
+                    <field name="approved_adjustment_minutes" readonly="1" invisible="not has_approved_adjustment_request"/>
+                    <field name="adjustment_actual_time" readonly="1" invisible="not has_approved_adjustment_request"/>
+                    <field name="adjustment_updated_time" readonly="1" invisible="not has_approved_adjustment_request"/>
+                </group>
                 <notebook>
                     <page string="Note" name="attendance_note_page">
                         <field
@@ -34,6 +40,17 @@
                         />
                     </page>
                 </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_attendance_list_adjustment" model="ir.ui.view">
+        <field name="name">hr.attendance.list.adjustment</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='check_out']" position="after">
+                <field name="approved_adjustment_minutes" optional="show"/>
             </xpath>
         </field>
     </record>

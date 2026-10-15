@@ -2630,3 +2630,38 @@ msgstr ""
 msgid "Change photo"
 msgstr ""
 
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "Has Approved Adjustment Request"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "Approved Adjustment Minutes"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "Actual Time"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "Updated Time"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Workday Start Time"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid "Workday End Time"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/hr_attendance_adjustment_request_views.xml:0
+msgid "Adjustment Preview"
+msgstr ""
+
