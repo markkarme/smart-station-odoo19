@@ -8,10 +8,10 @@
                 <header>
                     <button name="confirm_student" string="Confirm" type="object" class="oe_highlight" invisible="state not in ('draft', 'cancel')"/>
                     <button name="cancel_state" string="Cancel" type="object" class="oe_highlight" invisible="state not in ('draft', 'confirm')"/>
-                    <button name="send_by_mail" string="Fees Reminder" type="object" class="oe_highlight" invisible="state != 'confirm'"/>
-                    <button name="pending_fees" string="Pending Fees" type="object" class="oe_highlight" invisible="state != 'confirm'"/>
-                    <button name="update_student_ranks" type="object" string="Update Student Ranks" class="btn-primary"/>
-                    <button name="update_student_percentage" type="object" string="Update Student Percentage" class="btn-primary"/>
+                    <!-- <button name="send_by_mail" string="Fees Reminder" type="object" class="oe_highlight" invisible="state != 'confirm'"/> -->
+                    <!-- <button name="pending_fees" string="Pending Fees" type="object" class="oe_highlight" invisible="state != 'confirm'"/> -->
+                    <!-- <button name="update_student_ranks" type="object" string="Update Student Ranks" class="btn-primary"/> -->
+                    <!-- <button name="update_student_percentage" type="object" string="Update Student Percentage" class="btn-primary"/> -->
                     <button name="open_wizard_academic_year" string="Change Academic Year" type="object" class="oe_highlight"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,cancel"/>
                 </header>
@@ -127,9 +127,9 @@
                                     <field name="mother_tonque" string="Mother Tongue"/>
                                     <field name="detension"/>
                                     <field name="working_days"/>
-                                    <field name="student_rank" readonly="1"/>
-                                    <field name="student_result"/>
-                                    <field name="the_total_marks" string="The Total Marks"/>
+                                    <!-- <field name="student_rank" readonly="1"/> -->
+                                    <!-- <field name="student_result"/> -->
+                                    <field name="the_total_marks" string="The Total Marks" invisible="1"/>
                                 </group>
                             </group>
                             <group string="Notes">

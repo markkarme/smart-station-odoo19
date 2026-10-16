@@ -49,7 +49,7 @@
 
         <menuitem name="Exam" id="studentexam_menu" action="action_studentexam" parent="root_exam" sequence="1"/>
         
-        <menuitem name="Result" id="studentresult_menu" action="action_studentresult" parent="root_exam" sequence="2"/>
+        <!-- <menuitem name="Result" id="studentresult_menu" action="action_studentresult" parent="root_exam" sequence="2"/> -->
 
         <menuitem name="Exam" id="configurations_exam" parent="jt_education_base.configurations_menu" sequence="3"/>
 

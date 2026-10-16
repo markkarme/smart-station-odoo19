@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="school_mold_line_result_view_list" model="ir.ui.view">
+        <field name="name">school.mold.line.result.list</field>
+        <field name="model">school.mold.line</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0">
+                <field name="mold_date" string="التاريخ"/>
+                <field name="mold_name" string="النتيجة"/>
+                <field name="mold_term" string="الصف"/>
+                <field name="mold_term_types" string="التخصص"/>
+                <field name="mold_exam_type" string="نوع الامتحان"/>
+                <field name="mold_year_id" string="السنة الدراسية"/>
+                <field name="mold_company_id" string="الشركة" groups="base.group_multi_company"/>
+                <field name="grand_total" string="المجموع الكلي"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="school_mold_line_result_view_form" model="ir.ui.view">
+        <field name="name">school.mold.line.result.form</field>
+        <field name="model">school.mold.line</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <header>
+                    <button name="action_print_result" type="object" string="طباعة النتيجة" class="btn-primary" icon="fa-print"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_id" string="الطالب" readonly="1"/>
+                            <field name="student_name" string="اسم الطالب" readonly="1"/>
+                            <field name="mold_id" string="القالب" readonly="1"/>
+                            <field name="mold_name" string="النتيجة" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="mold_date" string="التاريخ" readonly="1"/>
+                            <field name="mold_term" string="الصف" readonly="1"/>
+                            <field name="mold_term_types" string="التخصص" readonly="1"/>
+                            <field name="mold_exam_type" string="نوع الامتحان" readonly="1"/>
+                            <field name="mold_year_id" string="السنة الدراسية" readonly="1"/>
+                            <field name="mold_company_id" string="الشركة" groups="base.group_multi_company" readonly="1"/>
+                            <field name="grand_total" string="المجموع الكلي" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="الدرجات">
+                        <field name="score_summary" nolabel="1" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_form_mold_results" model="ir.ui.view">
+        <field name="name">res.partner.form.mold.results.smart.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="jt_education_base.student_profile"/>
+        <field name="priority" eval="30"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_mold_results"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-graduation-cap"
+                        invisible="not is_student">
+                    <div class="o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="mold_result_count"/>
+                        </span>
+                        <span class="o_stat_text">سجل الدرجات</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

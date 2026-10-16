@@ -4,8 +4,9 @@ import io
 import os
 
 import xlsxwriter
+from markupsafe import Markup
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from odoo.modules.module import get_module_path
 
 from .default_columns import (
@@ -37,6 +38,23 @@ FIRST_TERM_ONLY_TYPE_KEYS = (
     'artificial_intelligence',
 )
 
+# Map mold term → student.standard name aliases used in production data
+TERM_STANDARD_ALIASES = {
+    'first': ('اولي', 'أولى', 'اولى', 'الصف الاول', 'الصف الأول', '1'),
+    'second': ('تانية', 'ثانية', 'ثانيه', 'الصف الثاني', '2'),
+    'third': ('ثالثة', 'ثالثه', 'الصف الثالث', '3'),
+}
+# Map mold specialization → standard.division name aliases (evening variants match via substring)
+TERM_TYPE_DIVISION_ALIASES = {
+    'industrial_electricity': ('كهرباء صناعية',),
+    'computer': ('حاسب آلى', 'حاسب الي', 'حاسب آلي'),
+    'industrial_electronics': ('الكترونيات صناعية',),
+    'office_equipment': ('اجهزة مكتبية', 'اجهزه مكتبية'),
+    'graphics': ('جرافيكس',),
+    'programming': ('برمجة',),
+    'artificial_intelligence': ('الذكاء الاصطناعي', 'ذكاء صناعي', 'ذكاء اصطناعي'),
+}
+
 
 class SchoolMold(models.Model):
     _name = 'school.mold'
@@ -45,7 +63,14 @@ class SchoolMold(models.Model):
     _order = 'id desc'
     _check_company_auto = True
 
-    name = fields.Char(required=True, tracking=True, default=lambda self: _('New Mold'))
+    name = fields.Char(
+        compute='_compute_name',
+        inverse='_inverse_name',
+        store=True,
+        required=True,
+        readonly=False,
+        tracking=True,
+    )
     company_id = fields.Many2one(
         'res.company',
         string='Company',
@@ -60,6 +85,7 @@ class SchoolMold(models.Model):
         ('form_27', 'Form 27 report'),
     ], string='Template', default='grades', required=True, tracking=True)
     year_id = fields.Many2one('year.year', string='Academic Year', tracking=True)
+    class_id = fields.Many2one('student.class', string='Class', tracking=True)
     standard_id = fields.Many2one('student.standard', string='Standard', tracking=True)
     division_id = fields.Many2one('standard.division', string='Division', tracking=True)
     craft = fields.Char(string='الحرفة', help='Used on Form 27 header')
@@ -84,6 +110,11 @@ class SchoolMold(models.Model):
         ('programming', 'برمجة'),
         ('artificial_intelligence', 'ذكاء صناعي'),
     ], string='Specialization', default='industrial_electricity')
+    exam_type = fields.Selection([
+        ('monthly', 'Monthly'),
+        ('mid_term', 'Mid Term'),
+        ('final', 'Final'),
+    ], string='Exam Type', default='monthly')
     allowed_term_types = fields.Json(
         compute='_compute_allowed_term_types',
         help='Specialization keys allowed for the selected grade (used by the form dropdown).',
@@ -105,6 +136,44 @@ class SchoolMold(models.Model):
     def _compute_line_count(self):
         for mold in self:
             mold.line_count = len(mold.line_ids)
+
+    def _generate_name(self):
+        """Build display name: term - term_types - class (company)."""
+        self.ensure_one()
+        term_label = dict(self._fields['term'].selection).get(self.term) or ''
+        type_label = dict(self._fields['term_types'].selection).get(self.term_types) or ''
+        class_label = self.class_id.display_name or ''
+        company_label = self.company_id.display_name or ''
+        parts = [part for part in (term_label, type_label) if part]
+        if class_label and company_label:
+            parts.append('%s (%s)' % (class_label, company_label))
+        elif class_label:
+            parts.append(class_label)
+        elif company_label:
+            parts.append('(%s)' % company_label)
+        return ' - '.join(parts) or _('New Mold')
+
+    @api.depends(
+        'term',
+        'term_types',
+        'class_id',
+        'class_id.name',
+        'company_id',
+        'company_id.name',
+        'mold_kind',
+    )
+    def _compute_name(self):
+        for mold in self:
+            if mold.mold_kind == 'health_insurance':
+                mold.name = mold.name or _('Health Insurance report')
+            elif mold.mold_kind == 'form_27':
+                mold.name = mold.name or _('Form 27 report')
+            else:
+                mold.name = mold._generate_name()
+
+    def _inverse_name(self):
+        # Allow manual edits; stored value is kept until depends change.
+        return
 
     @api.depends('term')
     def _compute_allowed_term_types(self):
@@ -258,15 +327,22 @@ class SchoolMold(models.Model):
             for index in range(count)
         ]
 
+    def _ensure_draft(self):
+        if any(mold.state == 'done' for mold in self):
+            raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
+
     def action_add_row(self):
+        self._ensure_draft()
         self._add_empty_rows(1)
         return True
 
     def action_add_empty_rows(self):
+        self._ensure_draft()
         self._add_empty_rows(10)
         return True
 
     def action_reset_columns(self):
+        self._ensure_draft()
         self._apply_layout()
         title = _('School Mold')
         if self[:1].mold_kind == 'health_insurance':
@@ -283,12 +359,12 @@ class SchoolMold(models.Model):
         }
 
     def _apply_layout(self):
-        """Reload columns for the current term + specialization."""
+        """Reload columns for the current term + specialization and clear the sheet."""
         for mold in self:
             mold.column_ids.unlink()
             mold._load_default_columns()
-            if not mold.line_ids:
-                mold._add_empty_rows(mold._target_row_count())
+            mold.line_ids.unlink()
+            mold._add_empty_rows(25)
 
     def _apply_first_term_layout(self):
         # Kept for older migrations/callers.
@@ -332,20 +408,77 @@ class SchoolMold(models.Model):
             for sequence, column in enumerate(layout, start=1)
         ]
 
+    def _standards_for_term(self, term):
+        """Resolve student.standard records for a mold term key."""
+        aliases = TERM_STANDARD_ALIASES.get(term) or ()
+        if not aliases:
+            return self.env['student.standard']
+        standards = self.env['student.standard']
+        for standard in self.env['student.standard'].search([]):
+            name = (standard.name or '').strip()
+            if not name:
+                continue
+            if name in aliases or any(alias in name for alias in aliases):
+                standards |= standard
+        return standards
+
+    def _divisions_for_term_type(self, term_type):
+        """Resolve standard.division records for a mold specialization key."""
+        aliases = TERM_TYPE_DIVISION_ALIASES.get(term_type) or ()
+        if not aliases:
+            return self.env['standard.division']
+        divisions = self.env['standard.division']
+        for division in self.env['standard.division'].search([]):
+            name = (division.name or '').strip()
+            if not name:
+                continue
+            if any(alias in name for alias in aliases):
+                divisions |= division
+        return divisions
+
+    def _student_domain_from_term(self):
+        """Build res.partner domain from company / term / term_types / year."""
+        self.ensure_one()
+        domain = [('is_student', '=', True)]
+        if self.company_id:
+            domain.append(('company_id', '=', self.company_id.id))
+
+        if self.mold_kind == 'form_27':
+            term = self.term or 'first'
+            standards = self._standards_for_term(term)
+            if standards:
+                domain.append(('standard', 'in', standards.ids))
+        elif self.mold_kind == 'health_insurance':
+            pass
+        else:
+            if not self.term:
+                raise UserError(_('Select a term (grade) first.'))
+            if not self.term_types:
+                raise UserError(_('Select a specialization first.'))
+            standards = self._standards_for_term(self.term)
+            if not standards:
+                raise UserError(_('No matching standard found for the selected term.'))
+            domain.append(('standard', 'in', standards.ids))
+            divisions = self._divisions_for_term_type(self.term_types)
+            if not divisions:
+                raise UserError(_('No matching division found for the selected specialization.'))
+            domain.append(('div', 'in', divisions.ids))
+
+        if self.year_id:
+            domain.append(('curr_year', '=', self.year_id.id))
+        if self.class_id:
+            domain.append(('class_id', '=', self.class_id.id))
+        return domain
+
     def action_load_students(self):
         self.ensure_one()
-        if not self.standard_id:
-            raise UserError(_('Select a standard first.'))
-        domain = [
-            ('is_student', '=', True),
-            ('standard', '=', self.standard_id.id),
-        ]
-        if self.division_id:
-            domain.append(('div', '=', self.division_id.id))
+        self._ensure_draft()
+        domain = self._student_domain_from_term()
         students = self.env['res.partner'].search(domain, order='roll_no, name')
         if not students:
-            raise UserError(_('No students found for this standard.'))
+            raise UserError(_('No students found for this term and specialization.'))
         empty_lines = self.line_ids.filtered(lambda line: not line.student_id and not line.student_name)
+        term_type_label = dict(self._fields['term_types'].selection).get(self.term_types, '')
         commands = []
         for index, student in enumerate(students):
             if self.mold_kind == 'health_insurance':
@@ -359,7 +492,7 @@ class SchoolMold(models.Model):
             else:
                 values_json = {
                     'seat_number': student.roll_no or '',
-                    'class': student.div.name if student.div else (self.division_id.name or ''),
+                    'class': student.class_id.name if student.class_id else '',
                 }
             values = {
                 'sequence': index + 1,
@@ -412,17 +545,59 @@ class SchoolMold(models.Model):
         }
 
     def action_recompute_totals(self):
+        self._ensure_draft()
         for mold in self:
             mold.line_ids._recompute_totals(mold.column_ids)
         return True
 
     def action_mark_done(self):
-        self.write({'state': 'done'})
+        for mold in self:
+            if mold.mold_kind == 'grades':
+                mold.line_ids._recompute_totals(mold.column_ids)
+                linked = mold.line_ids.filtered(lambda line: line.student_id)
+                if not linked:
+                    raise UserError(_(
+                        'Link at least one student (Load Students) before marking this result as done.'
+                    ))
+            mold.state = 'done'
         return True
 
     def action_reset_draft(self):
-        self.write({'state': 'draft'})
+        self.with_context(allow_done_mold_unlock=True).write({'state': 'draft'})
         return True
+
+    def _check_done_lock(self, vals=None):
+        """Block edits on done molds (except unlock / excel download fields)."""
+        if self.env.context.get('allow_done_mold_unlock'):
+            return
+        locked = self.filtered(lambda mold: mold.state == 'done')
+        if not locked:
+            return
+        vals = vals or {}
+        allowed = {
+            'state',
+            'xlsx_file',
+            'xlsx_filename',
+            'message_follower_ids',
+            'message_ids',
+            'activity_ids',
+        }
+        if vals and set(vals) <= allowed:
+            if 'state' in vals and vals['state'] != 'draft':
+                raise UserError(_('Done results can only be reset to draft.'))
+            return
+        if vals and set(vals) - allowed:
+            raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
+        if not vals:
+            raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
+
+    def write(self, vals):
+        self._check_done_lock(vals)
+        return super().write(vals)
+
+    def unlink(self):
+        self._check_done_lock()
+        return super().unlink()
 
     def action_download_xlsx(self):
         self.ensure_one()
@@ -810,28 +985,216 @@ class SchoolMoldColumn(models.Model):
              "in المجموع الكلي (e.g. تربية دينية).",
     )
 
+    def _check_parent_done(self):
+        if self.env.context.get('allow_done_mold_unlock'):
+            return
+        if any(column.mold_id.state == 'done' for column in self):
+            raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
             if not vals.get('key'):
                 vals['key'] = 'col_%s' % fields.Datetime.now().strftime('%H%M%S%f')
+            mold = self.env['school.mold'].browse(vals.get('mold_id'))
+            if mold.state == 'done':
+                raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
         return super().create(vals_list)
+
+    def write(self, vals):
+        self._check_parent_done()
+        return super().write(vals)
+
+    def unlink(self):
+        self._check_parent_done()
+        return super().unlink()
 
 
 class SchoolMoldLine(models.Model):
     _name = 'school.mold.line'
     _description = 'School Mold Row'
-    _order = 'sequence, id'
+    _order = 'mold_date desc, sequence, id'
 
-    mold_id = fields.Many2one('school.mold', required=True, ondelete='cascade')
+    mold_id = fields.Many2one('school.mold', string='Mold', required=True, ondelete='cascade')
     sequence = fields.Integer(default=10)
     student_id = fields.Many2one(
         'res.partner',
         domain=[('is_student', '=', True)],
         string='Student',
+        index=True,
     )
-    student_name = fields.Char()
+    student_name = fields.Char(string='Student Name')
     values_json = fields.Json(default=dict)
+
+    mold_name = fields.Char(related='mold_id.name', string='Result', store=True)
+    mold_state = fields.Selection(related='mold_id.state', string='Mold Status', store=True)
+    mold_kind = fields.Selection(related='mold_id.mold_kind', store=True)
+    mold_term = fields.Selection(related='mold_id.term', string='Term', store=True)
+    mold_term_types = fields.Selection(related='mold_id.term_types', string='Specialization', store=True)
+    mold_exam_type = fields.Selection(related='mold_id.exam_type', string='Exam Type', store=True)
+    mold_date = fields.Date(related='mold_id.date', string='Date', store=True)
+    mold_year_id = fields.Many2one(related='mold_id.year_id', string='Academic Year', store=True)
+    mold_company_id = fields.Many2one(related='mold_id.company_id', string='Company', store=True)
+    grand_total = fields.Float(string='Grand Total', compute='_compute_result_display')
+    score_summary = fields.Text(string='Marks', compute='_compute_result_display')
+
+    @api.depends(
+        'values_json',
+        'mold_id',
+        'mold_id.column_ids',
+        'mold_id.column_ids.key',
+        'mold_id.column_ids.name',
+        'mold_id.column_ids.col_type',
+    )
+    def _compute_result_display(self):
+        for line in self:
+            values = line.values_json or {}
+            columns = line.mold_id.column_ids
+            grand = ''
+            grand_col = columns.filtered(lambda col: col.col_type == 'grand_total')[:1]
+            if grand_col:
+                grand = values.get(grand_col.key, '')
+            elif 'grand_total' in values:
+                grand = values.get('grand_total', '')
+            try:
+                line.grand_total = float(grand) if grand not in (None, False, '') else 0.0
+            except (TypeError, ValueError):
+                line.grand_total = 0.0
+            parts = []
+            for column in columns.sorted(lambda col: (col.sequence, col.id)):
+                if column.col_type not in ('score', 'subtotal', 'total', 'grand_total'):
+                    continue
+                raw = values.get(column.key, '')
+                if raw in (None, False, ''):
+                    continue
+                label = column.name
+                if column.group_name and column.name != column.group_name:
+                    label = '%s / %s' % (column.group_name, column.name)
+                parts.append('%s: %s' % (label, raw))
+            line.score_summary = '\n'.join(parts)
+
+    def get_selection_label(self, field_name):
+        self.ensure_one()
+        field = self._fields.get(field_name)
+        if not field or field.type != 'selection':
+            return ''
+        value = self[field_name]
+        if not value:
+            return ''
+        selection = field._description_selection(self.env)
+        return dict(selection).get(value, '')
+
+    def get_report_score_rows(self):
+        """Rows for the printed result report (label / value / max)."""
+        self.ensure_one()
+        values = self.values_json or {}
+        rows = []
+        for column in self.mold_id.column_ids.sorted(lambda col: (col.sequence, col.id)):
+            if column.col_type not in ('score', 'subtotal', 'total', 'grand_total'):
+                continue
+            raw = values.get(column.key, '')
+            if raw in (None, False, ''):
+                continue
+            label = column.name
+            if column.group_name and column.name != column.group_name:
+                label = '%s / %s' % (column.group_name, column.name)
+            rows.append({
+                'label': label,
+                'value': raw,
+                'max_value': column.max_value or '',
+                'col_type': column.col_type,
+            })
+        return rows
+
+    def get_asset_data_uri(self, filename):
+        module_path = get_module_path('school_molds_generator')
+        path = os.path.join(module_path, 'static', 'assets', filename)
+        if not os.path.isfile(path):
+            return ''
+        with open(path, 'rb') as handle:
+            encoded = base64.b64encode(handle.read()).decode('ascii')
+        return 'data:image/png;base64,%s' % encoded
+
+    def get_arabic_font_face_css(self):
+        fonts = (
+            ('normal', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'),
+            ('bold', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'),
+        )
+        rules = []
+        for weight, path in fonts:
+            if not os.path.isfile(path):
+                continue
+            with open(path, 'rb') as handle:
+                encoded = base64.b64encode(handle.read()).decode('ascii')
+            rules.append(
+                "@font-face{"
+                "font-family:'ReportArabic';"
+                "src:url(data:font/truetype;charset=utf-8;base64,%s) format('truetype');"
+                "font-weight:%s;font-style:normal;}"
+                % (encoded, weight)
+            )
+        return Markup(''.join(rules))
+
+    def action_print_result(self):
+        return self.env.ref(
+            'school_molds_generator.action_report_mold_result'
+        ).report_action(self, config=False)
+
+    def _check_parent_done(self):
+        if self.env.context.get('allow_done_mold_unlock'):
+            return
+        if any(line.mold_id.state == 'done' for line in self):
+            raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        Mold = self.env['school.mold']
+        for vals in vals_list:
+            mold = Mold.browse(vals.get('mold_id'))
+            if mold.state == 'done':
+                raise UserError(_('This result is done and cannot be modified. Reset to draft first.'))
+        return super().create(vals_list)
+
+    def write(self, vals):
+        self._check_parent_done()
+        return super().write(vals)
+
+    def unlink(self):
+        self._check_parent_done()
+        return super().unlink()
+
+    @api.constrains('values_json')
+    def _check_score_max_values(self):
+        for line in self:
+            columns_by_key = {
+                column.key: column
+                for column in line.mold_id.column_ids
+                if column.col_type == 'score' and (column.max_value or 0) > 0
+            }
+            if not columns_by_key:
+                continue
+            values = line.values_json or {}
+            for key, raw in values.items():
+                column = columns_by_key.get(key)
+                if not column or raw in (None, False, ''):
+                    continue
+                try:
+                    number = float(raw)
+                except (TypeError, ValueError):
+                    continue
+                if number < 0:
+                    raise ValidationError(
+                        _('Score cannot be negative (%(column)s).', column=column.name)
+                    )
+                if number > column.max_value:
+                    raise ValidationError(
+                        _(
+                            'Value %(value)s exceeds the maximum %(max)s for %(column)s.',
+                            value=raw,
+                            max=column.max_value,
+                            column=column.name,
+                        )
+                    )
 
     @api.onchange('student_id')
     def _onchange_student_id(self):

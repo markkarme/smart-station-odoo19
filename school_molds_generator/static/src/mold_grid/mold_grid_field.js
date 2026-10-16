@@ -1,6 +1,7 @@
 import { Component, onWillUnmount, useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
+import { useService } from "@web/core/utils/hooks";
 import { useRecordObserver } from "@web/model/relational_model/utils";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
@@ -9,6 +10,7 @@ export class SchoolMoldGridField extends Component {
     static props = { ...standardFieldProps };
 
     setup() {
+        this.notification = useService("notification");
         this.state = useState({
             columns: [],
             rows: [],
@@ -231,20 +233,52 @@ export class SchoolMoldGridField extends Component {
         return ["serial", "subtotal", "total", "grand_total"].includes(column.colType);
     }
 
+    get isMoldReadonly() {
+        return Boolean(this.props.readonly);
+    }
+
     async onNameChange(row, event) {
+        if (this.isMoldReadonly) {
+            return;
+        }
         await row.record.update({ student_name: event.target.value });
     }
 
     async onScoreChange(row, column, event) {
+        if (this.isMoldReadonly) {
+            return;
+        }
         const raw = event.target.value;
         const values = { ...(row.record.data.values_json || {}) };
+        const previous = row.cells[column.key];
         if (raw === "") {
             delete values[column.key];
         } else if (this.isIdentity(column)) {
             values[column.key] = raw;
         } else {
             const number = this._toNumber(raw);
-            values[column.key] = number === null ? raw : number;
+            if (number === null) {
+                values[column.key] = raw;
+            } else {
+                const maxValue = Number(column.maxValue) || 0;
+                if (number < 0) {
+                    this.notification.add(_t("Score cannot be negative."), { type: "danger" });
+                    event.target.value = previous === undefined || previous === null ? "" : previous;
+                    return;
+                }
+                if (maxValue > 0 && number > maxValue) {
+                    this.notification.add(
+                        _t("Value cannot exceed %(max)s for %(column)s.", {
+                            max: maxValue,
+                            column: column.name || column.key,
+                        }),
+                        { type: "danger" }
+                    );
+                    event.target.value = previous === undefined || previous === null ? "" : previous;
+                    return;
+                }
+                values[column.key] = number;
+            }
         }
         const columns = this.state.columns;
         for (const col of columns) {
@@ -256,6 +290,9 @@ export class SchoolMoldGridField extends Component {
     }
 
     async addRow() {
+        if (this.isMoldReadonly) {
+            return;
+        }
         const nextSequence = this.state.rows.reduce(
             (max, row) => Math.max(max, row.sequence || 0),
             0
@@ -265,6 +302,9 @@ export class SchoolMoldGridField extends Component {
     }
 
     async removeRow(row) {
+        if (this.isMoldReadonly) {
+            return;
+        }
         await this.lineList.delete(row.record);
     }
 }
