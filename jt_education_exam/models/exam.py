@@ -20,25 +20,75 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+import base64
+import os
+
+from markupsafe import Markup
 from odoo import models, fields, api, exceptions, _
+from odoo.exceptions import ValidationError, UserError
+from odoo.modules.module import get_module_path
 from datetime import timedelta
-from odoo.exceptions import ValidationError,UserError
+
+DAY_LABELS_AR = {
+	'sunday': 'الأحد',
+	'monday': 'الإثنين',
+	'tuesday': 'الثلاثاء',
+	'wednesday': 'الأربعاء',
+	'thursday': 'الخميس',
+	'friday': 'الجمعة',
+	'saturday': 'السبت',
+}
 
 class SubjectLine(models.Model):
 	_name = 'subject.line'
 	_description = 'Subject Line'
 	_rec_name = 'subject_id'
+	_order = 'sequence, id'
 
+	sequence = fields.Integer(string='Sequence', default=10)
 	subject_id = fields.Many2one(
 		'student.subject', string='Subject', help="Select Subjects")
 	date = fields.Date(string='Date')
 	day = fields.Selection([('sunday', 'Sunday'), ('monday', 'Monday'),
 							  ('tuesday', 'Tuesday'), ('wednesday', 'Wednesday'),('thursday', 'Thursday'),
 							  ('friday', 'Friday'), ('saturday', 'Saturday')], default='monday')
-	time_from = fields.Float(related='exam_id.time_from',string='Time From', help="Start time")
-	time_to = fields.Float(related='exam_id.time_to',string='Time To', help="Finish time")
+	time_from = fields.Float(string='Time From', help="Start time")
+	time_to = fields.Float(string='Time To', help="Finish time")
 	mark = fields.Integer(string='Mark',help="Total Marks of Subject")
 	exam_id = fields.Many2one('student.exam', string='Exam')
+	exam_start_date = fields.Date(related='exam_id.start_date', string='Exam Start Date')
+	exam_end_date = fields.Date(related='exam_id.end_date', string='Exam End Date')
+
+	@api.onchange('exam_id')
+	def _onchange_exam_id(self):
+		for line in self:
+			if line.exam_id:
+				if not line.time_from:
+					line.time_from = line.exam_id.time_from
+				if not line.time_to:
+					line.time_to = line.exam_id.time_to
+
+	@api.onchange('date')
+	def _onchange_date(self):
+		for line in self:
+			if line.date:
+				line.day = line.date.strftime('%A').lower()
+
+	@api.constrains('date', 'exam_id')
+	def _check_date_in_exam_range(self):
+		for line in self:
+			if not line.date or not line.exam_id:
+				continue
+			start = line.exam_id.start_date
+			end = line.exam_id.end_date
+			if start and end and not (start <= line.date <= end):
+				raise ValidationError(_(
+					"Subject line date %(date)s must be between exam start date %(start)s and end date %(end)s."
+				) % {
+					'date': line.date,
+					'start': start,
+					'end': end,
+				})
 
 class StudentSubject(models.Model):
 	_name = 'student.subject'
@@ -56,10 +106,10 @@ class StudentSubject(models.Model):
 	pass_mark = fields.Float('Passing Marks')
 
 
-	@api.depends('name', 'code')
+	@api.depends('name')
 	def _compute_display_name(self):
 		for rec in self:
-			rec.display_name = '%s - %s' % (rec.code or '', rec.name or '')
+			rec.display_name = '%s' % rec.name
 
    
 
@@ -71,6 +121,7 @@ class StudentExam(models.Model):
 				'mail.activity.mixin',
 			
 			   ]
+	_check_company_auto = True
 
 	@api.depends('name', 'start_date', 'standard.name', 'division.name')
 	def _compute_display_name(self):
@@ -89,21 +140,36 @@ class StudentExam(models.Model):
 				raise ValidationError("Start date must be Greater to end date")
 	
 
-	@api.constrains('standard', 'division', 'start_date', 'end_date')
+	@api.constrains('company_id', 'standard', 'division', 'class_id', 'start_date', 'end_date')
 	def _check_duplicate_exam(self):
 		for rec in self:
 			existing_exam = self.env['student.exam'].search([
+				('company_id', '=', rec.company_id.id),
 				('standard', '=', rec.standard.id),
 				('division', '=', rec.division.id),
+				('class_id', '=', rec.class_id.id),
 				('start_date', '=', rec.start_date),
 				('end_date', '=', rec.end_date),
 				('id', '!=', rec.id)
 			])
 			if existing_exam:
-				raise ValidationError("Exam with similar standard and division already exists")			
+				raise ValidationError("Exam with similar standard, division and class already exists")			
 
+	company_id = fields.Many2one(
+		'res.company',
+		string='Company',
+		required=True,
+		index=True,
+		default=lambda self: self.env.company,
+		tracking=True,
+	)
 	student_ids = fields.Many2many(
-		'res.partner', domain=[('is_student', '=', True)])
+		'res.partner', domain=[('is_student', '=', True)],
+		check_company=True)
+	student_domain = fields.Char(
+		compute='_compute_student_domain',
+		string='Student Domain',
+	)
 	name = fields.Char(string='Name')
 	start_date = fields.Date('Start Date')
 	end_date = fields.Date('End Date')
@@ -113,6 +179,8 @@ class StudentExam(models.Model):
 		'student.standard', string="Standard")
 	division = fields.Many2one(
 		'standard.division', string="Division")
+	class_id = fields.Many2one(
+		'student.class', string='الفصل', tracking=True)
 	curr_year = fields.Many2one('year.year', string='Year')
 	state = fields.Selection([('draft', 'Draft'), ('ongoing', 'On Going'),
 							  ('close', 'Closed'), ('cancel', 'Canceled')], default='draft')
@@ -120,24 +188,42 @@ class StudentExam(models.Model):
 	time_from = fields.Float(string='Time From', help="Start time")
 	time_to = fields.Float(string='Time To', help="Finish time")
 	is_annual = fields.Boolean('Is Annual ?')
-	
-	
-	# @api.onchange('student_ids')
-	# def manage_student_results(self):
-	# 	print("helloo_________")
-	# 	for exam in self:
-	# 		for student in exam.student_ids:
-				
-	# 			result = self.env['student.result'].search([
-	# 				('student_id', '=', student.id),
-	# 				('exam_id', '=', exam.id)
-	# 			], limit=1, order='id desc')  
-				
-	# 			if result:
-	# 				student.student_result = result.percentage
-	# 			else:
-	# 				student.student_result = 0.0
 
+	def _get_student_domain(self):
+		"""Progressive domain: company+standard required; division/class/year only if set."""
+		self.ensure_one()
+		domain = [('is_student', '=', True)]
+		if self.company_id:
+			domain.append(('company_id', '=', self.company_id.id))
+		if self.standard:
+			domain.append(('standard', '=', self.standard.id))
+		if self.division:
+			domain.append(('div', '=', self.division.id))
+		if self.class_id:
+			domain.append(('class_id', '=', self.class_id.id))
+		if self.curr_year:
+			domain.append(('curr_year', '=', self.curr_year.id))
+		return domain
+
+	@api.depends('company_id', 'standard', 'division', 'class_id', 'curr_year')
+	def _compute_student_domain(self):
+		for exam in self:
+			exam.student_domain = str(exam._get_student_domain())
+
+	@api.onchange('company_id', 'standard', 'division', 'class_id', 'curr_year')
+	def _onchange_student_filters(self):
+		"""Load/update students as filters are refined.
+
+		- company + standard → load matching students
+		- adding division / class / year → refine the list
+		"""
+		domain = self._get_student_domain()
+		if not self.company_id or not self.standard:
+			self.student_ids = [(5, 0, 0)]
+		else:
+			students = self.env['res.partner'].search(domain, order='roll_no, name')
+			self.student_ids = [(6, 0, students.ids)]
+		return {'domain': {'student_ids': domain}}
 
 	@api.onchange('start_date', 'end_date')
 	def _onchange_dates(self):
@@ -154,8 +240,11 @@ class StudentExam(models.Model):
 				day_name = day_name.lower()
 				line_info = {
 					'exam_id': self.id,
+					'sequence': (i + 1) * 10,
 					'date': exam_date,
-					'day':day_name,
+					'day': day_name,
+					'time_from': self.time_from,
+					'time_to': self.time_to,
 				}
 				
 				exam_date = exam_date + timedelta(days=count)
@@ -172,6 +261,62 @@ class StudentExam(models.Model):
 
 	def ongoing_exam(self):
 		self.state = 'ongoing'
+
+	def action_print_exam_schedule(self):
+		self.ensure_one()
+		lang = self.env.lang if (self.env.lang or '').startswith('ar') else 'ar_001'
+		return self.env.ref(
+			'jt_education_exam.action_report_exam_schedule'
+		).with_context(lang=lang).report_action(self)
+
+	def get_asset_data_uri(self, filename):
+		"""Return a data URI for a logo so wkhtmltopdf does not need HTTP."""
+		module_path = get_module_path('jt_education_exam')
+		path = os.path.join(module_path, 'static', 'assets', filename)
+		if not os.path.isfile(path):
+			return ''
+		with open(path, 'rb') as handle:
+			encoded = base64.b64encode(handle.read()).decode('ascii')
+		ext = os.path.splitext(filename)[1].lower().lstrip('.') or 'png'
+		mime = 'jpeg' if ext in ('jpg', 'jpeg') else ext
+		return 'data:image/%s;base64,%s' % (mime, encoded)
+
+	def get_arabic_font_face_css(self):
+		fonts = (
+			('normal', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'),
+			('bold', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'),
+		)
+		rules = []
+		for weight, path in fonts:
+			if not os.path.isfile(path):
+				continue
+			with open(path, 'rb') as handle:
+				encoded = base64.b64encode(handle.read()).decode('ascii')
+			rules.append(
+				"@font-face{"
+				"font-family:'ReportArabic';"
+				"src:url(data:font/truetype;charset=utf-8;base64,%s) format('truetype');"
+				"font-weight:%s;font-style:normal;}"
+				% (encoded, weight)
+			)
+		return Markup(''.join(rules))
+
+	def format_float_time(self, value):
+		value = value or 0.0
+		hours = int(value)
+		minutes = int(round((value - hours) * 60))
+		if minutes == 60:
+			hours += 1
+			minutes = 0
+		return '%02d:%02d' % (hours, minutes)
+
+	def get_day_label_ar(self, day_key):
+		return DAY_LABELS_AR.get(day_key or '', day_key or '')
+
+	def get_schedule_lines(self):
+		"""Ordered subject lines for the examination schedule report."""
+		self.ensure_one()
+		return self.subject_line.sorted(key=lambda line: (line.sequence, line.date or fields.Date.today(), line.id))
 
 
 class ResUsers(models.Model):

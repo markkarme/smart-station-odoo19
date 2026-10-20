@@ -15,6 +15,8 @@ from .default_columns import (
     HEALTH_INSURANCE_ROW_COUNT,
     IDENTITY_COL_TYPES,
     SUMMARY_SCORE_KEYS,
+    TERM_STANDARD_ALIASES,
+    TERM_TYPE_DIVISION_ALIASES,
     get_template_columns,
 )
 
@@ -37,24 +39,6 @@ FIRST_TERM_ONLY_TYPE_KEYS = (
     'programming',
     'artificial_intelligence',
 )
-
-# Map mold term → student.standard name aliases used in production data
-TERM_STANDARD_ALIASES = {
-    'first': ('اولي', 'أولى', 'اولى', 'الصف الاول', 'الصف الأول', '1'),
-    'second': ('تانية', 'ثانية', 'ثانيه', 'الصف الثاني', '2'),
-    'third': ('ثالثة', 'ثالثه', 'الصف الثالث', '3'),
-}
-# Map mold specialization → standard.division name aliases (evening variants match via substring)
-TERM_TYPE_DIVISION_ALIASES = {
-    'industrial_electricity': ('كهرباء صناعية',),
-    'computer': ('حاسب آلى', 'حاسب الي', 'حاسب آلي'),
-    'industrial_electronics': ('الكترونيات صناعية',),
-    'office_equipment': ('اجهزة مكتبية', 'اجهزه مكتبية'),
-    'graphics': ('جرافيكس',),
-    'programming': ('برمجة',),
-    'artificial_intelligence': ('الذكاء الاصطناعي', 'ذكاء صناعي', 'ذكاء اصطناعي'),
-}
-
 
 class SchoolMold(models.Model):
     _name = 'school.mold'
@@ -115,6 +99,14 @@ class SchoolMold(models.Model):
         ('mid_term', 'Mid Term'),
         ('final', 'Final'),
     ], string='Exam Type', default='monthly')
+    exam_id = fields.Many2one(
+        'student.exam',
+        string='Exam',
+        index=True,
+        copy=False,
+        ondelete='set null',
+        help='Source exam that created this mold when the exam was completed.',
+    )
     allowed_term_types = fields.Json(
         compute='_compute_allowed_term_types',
         help='Specialization keys allowed for the selected grade (used by the form dropdown).',
@@ -272,8 +264,10 @@ class SchoolMold(models.Model):
     def create(self, vals_list):
         molds = super().create(vals_list)
         for mold in molds:
-            # default_get may have injected columns before term/type were known
-            mold._ensure_layout_columns()
+            # Exam-driven molds load a filtered subject layout afterwards.
+            if not self.env.context.get('skip_mold_layout'):
+                # default_get may have injected columns before term/type were known
+                mold._ensure_layout_columns()
             target_rows = mold._target_row_count()
             if not mold.line_ids:
                 mold._add_empty_rows(target_rows)

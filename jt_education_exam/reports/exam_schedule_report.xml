@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_exam_schedule" model="report.paperformat">
+        <field name="name">جدول الامتحانات A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">12</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="action_report_exam_schedule" model="ir.actions.report">
+        <field name="name">جدول الامتحانات</field>
+        <field name="model">student.exam</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">jt_education_exam.report_exam_schedule</field>
+        <field name="report_file">jt_education_exam.report_exam_schedule</field>
+        <field name="print_report_name">'جدول_امتحانات_%s' % (object.name or object.id)</field>
+        <field name="binding_model_id" ref="model_student_exam"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_exam_schedule"/>
+    </record>
+
+    <template id="report_exam_schedule_logos">
+        <div class="o_es_logos">
+            <div class="o_es_logo">
+                <img t-att-src="o.get_asset_data_uri('ministry_of_industry.png')" alt="Ministry"/>
+            </div>
+            <div class="o_es_logo">
+                <img t-att-src="o.get_asset_data_uri('pvtd_image.png')" alt="PVTD"/>
+            </div>
+            <div class="o_es_logo">
+                <img t-att-src="o.get_asset_data_uri('smart-logo.png')" alt="SMART"/>
+            </div>
+        </div>
+        <div style="clear: both;"/>
+    </template>
+
+    <template id="report_exam_schedule">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article page" dir="rtl" lang="ar">
+                    <style type="text/css">
+                        <t t-out="o.get_arabic_font_face_css()"/>
+                        .article, .page, .o_report_layout_standard, .o_report_layout_boxed {
+                            border: none !important;
+                            box-shadow: none !important;
+                        }
+                        .o_exam_schedule,
+                        .o_exam_schedule * {
+                            font-family: 'ReportArabic', 'DejaVu Sans', sans-serif !important;
+                            color: #1a1a1a;
+                        }
+                        .o_exam_schedule {
+                            direction: rtl;
+                            font-size: 13px;
+                        }
+                        .o_es_logos {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-bottom: 6px;
+                        }
+                        .o_es_logo {
+                            float: right;
+                            width: 33.33%;
+                            text-align: center;
+                            padding-top: 2px;
+                        }
+                        .o_es_logo img {
+                            max-height: 72px;
+                            max-width: 140px;
+                        }
+                        .o_es_gov {
+                            text-align: center;
+                            font-size: 13px;
+                            font-weight: bold;
+                            line-height: 1.55;
+                            margin: 4px 0 10px;
+                        }
+                        .o_es_title_wrap {
+                            text-align: center;
+                            margin: 10px 0 16px;
+                        }
+                        .o_es_title {
+                            display: inline-block;
+                            background: #0b4f6c;
+                            color: #fff !important;
+                            padding: 8px 36px;
+                            border-radius: 6px;
+                            font-size: 22px;
+                            font-weight: bold;
+                            letter-spacing: 0.5px;
+                        }
+                        .o_es_subtitle {
+                            margin-top: 8px;
+                            font-size: 15px;
+                            font-weight: bold;
+                            color: #0b4f6c;
+                        }
+                        .o_es_info {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-bottom: 16px;
+                        }
+                        .o_es_info td {
+                            border: 1px solid #8aa4b5;
+                            padding: 7px 10px;
+                            vertical-align: middle;
+                        }
+                        .o_es_info .label {
+                            width: 16%;
+                            background: #e8f1f6;
+                            font-weight: bold;
+                            color: #0b4f6c;
+                            white-space: nowrap;
+                        }
+                        .o_es_info .value {
+                            width: 34%;
+                            background: #fff;
+                        }
+                        .o_es_table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 4px;
+                        }
+                        .o_es_table th,
+                        .o_es_table td {
+                            border: 1px solid #6f8fa3;
+                            padding: 8px 6px;
+                            text-align: center;
+                            vertical-align: middle;
+                        }
+                        .o_es_table th {
+                            background: #0b4f6c;
+                            color: #fff !important;
+                            font-weight: bold;
+                            font-size: 13px;
+                        }
+                        .o_es_table tbody tr:nth-child(even) td {
+                            background: #f4f8fb;
+                        }
+                        .o_es_table td.subject {
+                            text-align: right;
+                            padding-right: 12px;
+                            font-weight: bold;
+                        }
+                        .o_es_table td.serial {
+                            background: #e8f1f6;
+                            font-weight: bold;
+                            width: 6%;
+                        }
+                        .o_es_empty {
+                            text-align: center;
+                            padding: 18px;
+                            color: #666;
+                            font-style: italic;
+                        }
+                        .o_es_footer {
+                            margin-top: 42px;
+                            width: 100%;
+                            overflow: hidden;
+                            font-weight: bold;
+                            font-size: 14px;
+                        }
+                        .o_es_sig {
+                            float: right;
+                            width: 50%;
+                            text-align: center;
+                        }
+                        .o_es_sig .line {
+                            margin-top: 36px;
+                            border-top: 1px solid #333;
+                            width: 60%;
+                            margin-left: auto;
+                            margin-right: auto;
+                            padding-top: 6px;
+                        }
+                        .o_es_note {
+                            margin-top: 18px;
+                            font-size: 12px;
+                            color: #444;
+                            border-top: 1px dashed #9bb3c3;
+                            padding-top: 8px;
+                        }
+                    </style>
+
+                    <div class="o_exam_schedule">
+                        <t t-call="jt_education_exam.report_exam_schedule_logos"/>
+
+                        <div class="o_es_gov">
+                            <div>جمهورية مصر العربية</div>
+                            <div>وزارة الصناعة — مصلحة الكفاية الإنتاجية والتدريب المهني</div>
+                            <div t-esc="o.company_id.name or ''"/>
+                        </div>
+
+                        <div class="o_es_title_wrap">
+                            <div class="o_es_title">جدول الامتحانات</div>
+                            <div class="o_es_subtitle" t-esc="o.name or ''"/>
+                        </div>
+
+                        <table class="o_es_info">
+                            <tr>
+                                <td class="label">الصف</td>
+                                <td class="value" t-esc="o.standard.name or '—'"/>
+                                <td class="label">التخصص</td>
+                                <td class="value" t-esc="o.division.name or '—'"/>
+                            </tr>
+                            <tr>
+                                <td class="label">الفصل</td>
+                                <td class="value" t-esc="o.class_id.name or '—'"/>
+                                <td class="label">العام الدراسي</td>
+                                <td class="value" t-esc="o.curr_year.name or '—'"/>
+                            </tr>
+                            <tr>
+                                <td class="label">من تاريخ</td>
+                                <td class="value" t-esc="o.start_date or '—'"/>
+                                <td class="label">إلى تاريخ</td>
+                                <td class="value" t-esc="o.end_date or '—'"/>
+                            </tr>
+                        </table>
+
+                        <t t-set="lines" t-value="o.get_schedule_lines()"/>
+                        <table class="o_es_table" t-if="lines">
+                            <thead>
+                                <tr>
+                                    <th style="width: 6%;">م</th>
+                                    <th style="width: 28%;">المادة</th>
+                                    <th style="width: 14%;">اليوم</th>
+                                    <th style="width: 16%;">التاريخ</th>
+                                    <th style="width: 12%;">من</th>
+                                    <th style="width: 12%;">إلى</th>
+                                    <th style="width: 12%;">الدرجة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="lines" t-as="line">
+                                    <td class="serial" t-esc="line_index + 1"/>
+                                    <td class="subject" t-esc="line.subject_id.name or '—'"/>
+                                    <td t-esc="o.get_day_label_ar(line.day)"/>
+                                    <td t-esc="line.date or '—'"/>
+                                    <td t-esc="o.format_float_time(line.time_from)"/>
+                                    <td t-esc="o.format_float_time(line.time_to)"/>
+                                    <td t-esc="line.mark"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="o_es_empty" t-if="not lines">
+                            لا توجد مواد مجدولة لهذا الامتحان
+                        </div>
+
+                        <div class="o_es_note">
+                            يُرجى الالتزام بالمواعيد المحددة أعلاه، والحضور قبل بدء الامتحان بربع ساعة على الأقل.
+                        </div>
+
+                        <!-- <div class="o_es_footer">
+                            <div class="o_es_sig">
+                                <div>مدير المحطة</div>
+                                <div class="line">التوقيع</div>
+                            </div>
+                            <div class="o_es_sig">
+                                <div>شئون الطلاب</div>
+                                <div class="line">التوقيع</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

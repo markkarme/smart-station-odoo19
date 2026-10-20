@@ -43,6 +43,15 @@
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_exam" type="object" class="oe_stat_button" icon="fa-graduation-cap"
+                                invisible="not exam_id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">امتحان</span>
+                            </div>
+                        </button>
+                    </div>
+                    <field name="exam_id" invisible="1"/>
                     <div class="oe_title">
                         <label for="name"/>
                         <h1><field name="name" placeholder="Mold name" readonly="state == 'done'"/></h1>
@@ -55,8 +64,8 @@
                             <field name="year_id" readonly="state == 'done'"/>
                             <field name="class_id" readonly="state == 'done'"/>
                             <field name="exam_type" readonly="state == 'done'"/>
-                            <!-- <field name="standard_id"/>
-                            <field name="division_id"/> -->
+                            <field name="standard_id" readonly="1"/>
+                            <field name="division_id" readonly="1"/>
                             <field name="date" readonly="state == 'done'"/>
                             <field name="note" readonly="state == 'done'"/>
                             <field name="line_count" readonly="1"/>

@@ -438,3 +438,81 @@ msgstr "الشركة"
 #: model:ir.rule,name:school_molds_generator.school_mold_company_rule
 msgid "School Mold: multi-company"
 msgstr "قالب المدرسة: متعدد الشركات"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_student_exam__allowed_subject_ids
+msgid "Allowed Subjects"
+msgstr "المواد المسموح بها"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_student_exam__allowed_subject_ids
+msgid "Subjects available for the selected standard and division (from school mold column layouts)."
+msgstr "المواد المتاحة للصف والتخصص المحددين (من تخطيط أعمدة قالب المدرسة)."
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_student_exam__mold_id
+msgid "School Mold"
+msgstr "قالب المدرسة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_student_exam__mold_id
+msgid "Grade mold created automatically when this exam is completed."
+msgstr "يتم إنشاء قالب الدرجات تلقائياً عند إتمام هذا الامتحان."
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__exam_id
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "امتحان"
+msgstr "امتحان"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_school_mold__exam_id
+msgid "Source exam that created this mold when the exam was completed."
+msgstr "الامتحان المصدر الذي أنشأ هذا القالب عند إتمام الامتحان."
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.student_exam_form_view_mold_subjects
+msgid "النتائج"
+msgstr "النتائج"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "No school mold is linked to this exam yet. Complete the exam first."
+msgstr "لا يوجد قالب مدرسة مرتبط بهذا الامتحان بعد. يرجى إتمام الامتحان أولاً."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Company and Standard are required to create a school mold."
+msgstr "الشركة والصف مطلوبان لإنشاء قالب المدرسة."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Add at least one subject before completing the exam."
+msgstr "أضف مادة واحدة على الأقل قبل إتمام الامتحان."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Created automatically from exam <a href=\"#\" data-oe-model=\"student.exam\" data-oe-id=\"%(exam_id)s\">%(exam_name)s</a> with %(count)s subject(s)."
+msgstr "تم الإنشاء تلقائياً من الامتحان <a href=\"#\" data-oe-model=\"student.exam\" data-oe-id=\"%(exam_id)s\">%(exam_name)s</a> بعدد %(count)s مادة."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Exam Mold"
+msgstr "قالب امتحان"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "This mold is not linked to an exam."
+msgstr "هذا القالب غير مرتبط بامتحان."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Subject '%(subject)s' is not valid for standard %(standard)s / division %(division)s."
+msgstr "المادة '%(subject)s' غير صالحة للصف %(standard)s / التخصص %(division)s."
