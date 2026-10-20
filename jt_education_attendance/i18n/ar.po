@@ -15,18 +15,18 @@ msgstr ""
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,print_report_name:jt_education_attendance.action_attendance_report
-msgid "\"Attendance Report\""
-msgstr "\"تقرير الحضور\\"
+msgid "'Attendance Report'"
+msgstr "'Attendance Report'"
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,print_report_name:jt_education_attendance.action_summary_attendance_report
-msgid "\"Attendance Summary Report\""
-msgstr "\"تقرير ملخص الحضور\\"
+msgid "'Attendance Summary Report'"
+msgstr "'Attendance Summary Report'"
 
 #. module: jt_education_attendance
 #: model:ir.actions.report,print_report_name:jt_education_attendance.action_daily_attendance_report
-msgid "\"Daily Attendance Report\""
-msgstr "\"تقرير الحضور اليومي\\"
+msgid "object.name or 'Daily Attendance Report'"
+msgstr "object.name or 'Daily Attendance Report'"
 
 #. module: jt_education_attendance
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_report_template
@@ -747,3 +747,81 @@ msgstr "سحب"
 #: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
 msgid "select All"
 msgstr "تحديد الكل"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Select All"
+msgstr "تحديد الكل"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields.selection,name:jt_education_attendance.selection__attendance_line__status__absence_noreason
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_student_history_search
+msgid "Absent without Reason"
+msgstr "غائب بدون سبب"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.attendance_form_view
+msgid "Send Reminder"
+msgstr "إرسال تذكير"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__company_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__company_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__company_id
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_student_history_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_attendance__class_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__class_id
+#: model:ir.model.fields,field_description:jt_education_attendance.field_print_attendance__class_id
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_student_history_search
+msgid "Class"
+msgstr "الفصل"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_attendance_line__status
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_student_history_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields.selection,name:jt_education_attendance.selection__attendance_line__status__none
+msgid "Not Marked"
+msgstr "غير محدد"
+
+#. module: jt_education_attendance
+#: model:ir.actions.act_window,name:jt_education_attendance.action_student_attendance_history
+#: model:ir.model.fields,field_description:jt_education_attendance.field_res_partner__attendance_line_ids
+#: model:ir.model.fields,field_description:jt_education_attendance.field_res_users__attendance_line_ids
+msgid "Attendance History"
+msgstr "سجل الحضور"
+
+#. module: jt_education_attendance
+#: model:ir.model.fields,field_description:jt_education_attendance.field_res_partner__attendance_line_count
+#: model:ir.model.fields,field_description:jt_education_attendance.field_res_users__attendance_line_count
+msgid "Attendance Count"
+msgstr "عدد سجلات الحضور"
+
+#. module: jt_education_attendance
+#: code:addons/jt_education_attendance/models/attendance.py:0
+msgid "Attendance for this standard, division and class already exists!"
+msgstr "سجل الحضور لهذا الصف والشعبة والفصل موجود بالفعل!"
+
+#. module: jt_education_attendance
+#: code:addons/jt_education_attendance/models/res_partner.py:0
+#, python-format
+msgid "Attendance History - %s"
+msgstr "سجل الحضور - %s"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_student_history_search
+msgid "Standard"
+msgstr "الصف"
+
+#. module: jt_education_attendance
+#: model_terms:ir.ui.view,arch_db:jt_education_attendance.view_attendance_line_student_history_search
+msgid "Division"
+msgstr "الشعبة"

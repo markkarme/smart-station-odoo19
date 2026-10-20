@@ -33,7 +33,7 @@
                     <p>If any of these absences were not pre-approved, we encourage you to contact us for clarification.</p>
 
                     <p style="margin-top: 30px;">Best regards,</p>
-                    <p><strong><t t-out="object.faculty_id.name or ''"/></strong><br/></p>
+                    <p><strong><t t-out="object.company_id.name or ''"/></strong><br/></p>
                 </div>
             </field>
         </record>

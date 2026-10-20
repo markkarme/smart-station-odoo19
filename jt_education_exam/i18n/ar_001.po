@@ -1254,3 +1254,56 @@ msgstr "تاريخ البدء"
 #: model:ir.model.fields,field_description:jt_education_exam.field_subject_category_line__subject_line_data_id
 msgid "subject line"
 msgstr "بند المادة"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__company_id
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_search_view
+msgid "Company"
+msgstr "الشركة"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__class_id
+msgid "الفصل"
+msgstr "الفصل"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__exam_start_date
+msgid "Exam Start Date"
+msgstr "تاريخ بداية الامتحان"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_subject_line__exam_end_date
+msgid "Exam End Date"
+msgstr "تاريخ نهاية الامتحان"
+
+#. module: jt_education_exam
+#: model:ir.model.fields,field_description:jt_education_exam.field_student_exam__student_domain
+msgid "Student Domain"
+msgstr "نطاق الطلاب"
+
+#. module: jt_education_exam
+#: model:ir.rule,name:jt_education_exam.student_exam_company_rule
+msgid "Student Exam: multi-company"
+msgstr "امتحان الطالب: متعدد الشركات"
+
+#. module: jt_education_exam
+#. odoo-python
+#: code:addons/jt_education_exam/models/exam.py:0
+msgid "Subject line date %(date)s must be between exam start date %(start)s and end date %(end)s."
+msgstr "تاريخ بند المادة %(date)s يجب أن يكون بين تاريخ بداية الامتحان %(start)s وتاريخ نهايته %(end)s."
+
+#. module: jt_education_exam
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "إتمام الامتحان سينشئ قالب درجات بطلاب ومواد هذا الامتحان. هل تريد المتابعة؟"
+msgstr "إتمام الامتحان سينشئ قالب درجات بطلاب ومواد هذا الامتحان. هل تريد المتابعة؟"
+
+#. module: jt_education_exam
+#: model:ir.actions.report,name:jt_education_exam.action_report_exam_schedule
+#: model_terms:ir.ui.view,arch_db:jt_education_exam.student_exam_form_view
+msgid "جدول الامتحانات"
+msgstr "جدول الامتحانات"
+
+#. module: jt_education_exam
+#: model:report.paperformat,name:jt_education_exam.paperformat_exam_schedule
+msgid "جدول الامتحانات A4"
+msgstr "جدول الامتحانات A4"

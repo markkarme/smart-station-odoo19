@@ -3,7 +3,7 @@
     <t t-name="school_molds_generator.MoldGridField">
         <div class="o_school_mold_grid" t-att-class="{ 'o_school_mold_expanded': state.expanded }" dir="rtl">
             <div class="o_school_mold_toolbar">
-                <button type="button" class="btn btn-sm btn-primary" t-on-click="addRow">
+                <button t-if="!isMoldReadonly" type="button" class="btn btn-sm btn-primary" t-on-click="addRow">
                     إضافة صف
                 </button>
                 <button type="button" class="btn btn-sm btn-secondary" t-on-click="toggleExpanded">
@@ -43,25 +43,26 @@
                     <tbody>
                         <tr t-foreach="state.rows" t-as="row" t-key="row.id">
                             <td class="o_school_mold_action">
-                                <button type="button" class="btn btn-link text-danger p-0" t-on-click="() => this.removeRow(row)" title="حذف">
+                                <button t-if="!isMoldReadonly" type="button" class="btn btn-link text-danger p-0" t-on-click="() => this.removeRow(row)" title="حذف">
                                     ✕
                                 </button>
                             </td>
                             <t t-foreach="state.columns" t-as="column" t-key="row.id + '_' + column.uid">
                                 <td t-att-class="'o_school_mold_col_' + column.colType" t-att-style="'background:' + column.color">
-                                    <t t-if="column.colType === 'name'">
+                                    <t t-if="isMoldReadonly or isReadonly(column)">
+                                        <span t-esc="column.colType === 'name' ? row.studentName : row.cells[column.key]"/>
+                                    </t>
+                                    <t t-elif="column.colType === 'name'">
                                         <input type="text"
                                                class="o_school_mold_input"
                                                t-att-value="row.studentName"
                                                t-on-change="(ev) => this.onNameChange(row, ev)"/>
                                     </t>
-                                    <t t-elif="isReadonly(column)">
-                                        <span t-esc="row.cells[column.key]"/>
-                                    </t>
                                     <t t-else="">
                                         <input type="text"
                                                class="o_school_mold_input"
                                                t-att-inputmode="isIdentity(column) ? 'text' : 'decimal'"
+                                               t-att-max="(!isIdentity(column) &amp;&amp; column.maxValue) ? column.maxValue : false"
                                                t-att-value="row.cells[column.key]"
                                                t-on-change="(ev) => this.onScoreChange(row, column, ev)"/>
                                     </t>

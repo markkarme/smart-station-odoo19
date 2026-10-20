@@ -9,8 +9,9 @@
                 <form string="Exam Details">
                     <header>
                         <button name="ongoing_exam" type="object" invisible="state != 'draft'" class="oe_highlight" string="Confirm"/>
-                        <button name="close_exam" type="object" invisible="state != 'ongoing'" string="Completed" confirm="After closing the exam, you can't do valuation. You can close the exam only after the completion of valuation process. Do you want to proceed?"/>
+                        <button name="close_exam" type="object" invisible="state != 'ongoing'" string="Completed" confirm="إتمام الامتحان سينشئ قالب درجات بطلاب ومواد هذا الامتحان. هل تريد المتابعة؟"/>
                         <button name="cancel_exam" type="object" invisible="state != 'draft'" string="Cancel"/>
+                        <button name="action_print_exam_schedule" type="object" string="جدول الامتحانات" class="btn-secondary"/>
                         <field name="state" readonly="1" widget="statusbar" statusbar_visible="draft,ongoing,close"/>
                     </header>
                     <sheet string="Exam Details">
@@ -19,14 +20,16 @@
                                 <field name="name" required="1" readonly="state != 'draft'"/>
                                 <field name="start_date" required="1" readonly="state != 'draft'"/>
                                 <field name="end_date" required="1" readonly="state != 'draft'"/>
+                                <field name="company_id" groups="base.group_multi_company" readonly="state != 'draft'" options="{'no_create': True}"/>
                             </group>
                             <group>
                                 <field name="standard" required="1" readonly="state != 'draft'"/>
-                                <field name="division" required="1" readonly="state != 'draft'"/>
-                                <field name="curr_year" required="1" readonly="state != 'draft'"/>
+                                <field name="division" readonly="state != 'draft'"/>
+                                <field name="class_id" string="الفصل" readonly="state != 'draft'"/>
+                                <field name="curr_year" readonly="state != 'draft'"/>
                                 <field name="time_from" widget="float_time" required="1"  readonly="state != 'draft'"/>
                                 <field name="time_to" widget="float_time" required="1" readonly="state != 'draft'"/>
-                                <field name="is_annual" />
+                                <!-- <field name="is_annual" /> -->
                             </group>
                         </group>
                                        
@@ -42,27 +45,32 @@
                         <notebook>
                             <page string="Subjects">
                                 <field name="subject_line" readonly="state != 'draft'"  required="1">
-                                    <list editable="bottom" create="0">
+                                    <list editable="bottom">
+                                        <field name="sequence" widget="handle"/>
                                         <field name="subject_id" required="1"/>
-                                        <field name="date"  required="1"/>
+                                        <field name="date" required="1"/>
                                         <field name="day"/>
                                         <field name="time_from" widget="float_time" required="1"/>
                                         <field name="time_to" widget="float_time" required="1"/>
-                                        <field name="mark"/>
+                                        <field name="mark" column_invisible="1"/>
                                         <field name="exam_id" column_invisible="1"/>
+                                        <field name="exam_start_date" column_invisible="1"/>
+                                        <field name="exam_end_date" column_invisible="1"/>
                                     </list>
                                 </field>
                             </page>
                             <page string="Students">
-                                <field name="student_ids" readonly="state != 'draft'"  required="1" domain="[('standard','=',standard),('div','=',division),('curr_year','=',curr_year)]" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}">
+                                <field name="student_domain" invisible="1"/>
+                                <field name="student_ids" readonly="state != 'draft'"
+                                         domain="student_domain"
+                                         options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create':True}">
                                     <list editable="bottom">
                                         <field name="name" required="1"/>
-                                        <field name="standard"  required="1"/>
+                                        <field name="standard" required="1"/>
                                         <field name="div"/>
-                                        
-                                        <field name="roll_no"/>
-                                        <field name="student_result"/>
-                                     
+                                        <field name="class_id" string="الفصل"/>
+                                        <field name="roll_no" column_invisible="1"/>
+                                        <field name="student_result" column_invisible="1"/>
                                     </list>
                                 </field>
                             </page>
@@ -82,8 +90,10 @@
                     <field name="name"/>
                     <field name="standard"/>
                     <field name="division"/>
+                    <field name="class_id" string="الفصل"/>
                     <field name="start_date"/>
-                    <field name="end_date"/>     
+                    <field name="end_date"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="show"/>
                 </list>
             </field>
         </record>
@@ -92,19 +102,19 @@
             <field name="model">student.exam</field>
             <field name="arch" type="xml">
                 <kanban>
-                    <field name = "name"/>
-                    <field name = "standard"/>
-                    <field name = "division"/>
-                    <field name = "start_date"/>
-                    <field name = "end_date"/>
-                   
+                    <field name="name"/>
+                    <field name="standard"/>
+                    <field name="division"/>
+                    <field name="class_id" string="الفصل"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
                     <templates>
                         <t t-name="card">
                             <div t-attf-class="oe_kanban_global_click">
                                 <div class="oe_kanban_details">
                                     <strong class="o_kanban_record_title">
                                         <field name="name"/><br/>
-                                        <field name = "standard"/> - <field name="division"/><br/>
+                                        <field name="standard"/> - <field name="division"/> - <field name="class_id"/><br/>
                                         <field name="start_date"/><br/>
                                         <field name="end_date"/><br/>
                                     </strong>
@@ -122,6 +132,7 @@
             <field name="model">student.exam</field>
             <field name="arch" type="xml">
                 <search string="Exam">
+                    <field name="company_id" groups="base.group_multi_company"/>
                     <filter string="Start Date" name="filter_start_date" date="start_date"/>
                     <separator/>
                     <filter string="End Date" name="filter_end_date" date="end_date"/>
@@ -133,6 +144,7 @@
                         <filter string="Exam Type" name="type" domain="[]" context="{'group_by': 'name'}"/>
                         <filter name="start_date" string="start_date" domain="[]" context="{'group_by': 'start_date'}"/>
                         <filter string="End Date" name="end_date" domain="[]" context="{'group_by': 'end_date'}"/>
+                        <filter name="group_company" string="Company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
                     </group>
                 </search>
             </field>

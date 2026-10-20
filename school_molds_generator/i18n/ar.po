@@ -25,6 +25,11 @@ msgid "School Molds"
 msgstr "قوالب المدرسة"
 
 #. module: school_molds_generator
+#: model:ir.ui.menu,name:school_molds_generator.menu_exam_result
+msgid "Result"
+msgstr "نتيجة"
+
+#. module: school_molds_generator
 #: model:ir.model,name:school_molds_generator.model_school_mold
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
 msgid "School Mold"
@@ -39,6 +44,11 @@ msgstr "الاسم"
 #: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__year_id
 msgid "Academic Year"
 msgstr "السنة الدراسية"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__class_id
+msgid "Class"
+msgstr "الفصل"
 
 #. module: school_molds_generator
 #: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__standard_id
@@ -61,6 +71,21 @@ msgid "Specialization"
 msgstr "التخصص"
 
 #. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__exam_type
+msgid "Exam Type"
+msgstr "نوع الامتحان"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__exam_type__monthly
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__exam_type__mid_term
+msgid "Mid Term"
+msgstr "منتصف الترم"
+
+#. module: school_molds_generator
 #: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__first
 msgid "First Term"
 msgstr "الفصل الأول"
@@ -72,8 +97,9 @@ msgstr "الفصل الثاني"
 
 #. module: school_molds_generator
 #: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__final
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__exam_type__final
 msgid "Final"
-msgstr "النهائي"
+msgstr "نهائي"
 
 #. module: school_molds_generator
 #: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__date
@@ -125,6 +151,23 @@ msgstr "تنزيل إكسل"
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
 msgid "Reset Columns"
 msgstr "استعادة الأعمدة"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Reset columns to the template for this report?"
+msgstr "هل تريد استعادة الأعمدة إلى قالب هذا التقرير؟"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Layout"
+msgstr "التخطيط"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Template changed. Click \"Reset Columns\" to load the matching sheet template."
+msgstr "تم تغيير القالب. اضغط «استعادة الأعمدة» لتحميل قالب الورقة المناسب."
 
 #. module: school_molds_generator
 #: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
@@ -206,14 +249,101 @@ msgstr "اسم الطالب"
 #. module: school_molds_generator
 #. odoo-python
 #: code:addons/school_molds_generator/models/school_mold.py:0
-msgid "Select a standard first."
+msgid "Select a term (grade) first."
 msgstr "اختر الصف أولاً."
 
 #. module: school_molds_generator
 #. odoo-python
 #: code:addons/school_molds_generator/models/school_mold.py:0
-msgid "No students found for this standard."
-msgstr "لا يوجد طلاب في هذا الصف."
+msgid "Select a specialization first."
+msgstr "اختر التخصص أولاً."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No matching standard found for the selected term."
+msgstr "لا يوجد صف مطابق للصف المحدد."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No matching division found for the selected specialization."
+msgstr "لا توجد شعبة مطابقة للتخصص المحدد."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No students found for this term and specialization."
+msgstr "لا يوجد طلاب لهذا الصف والتخصص."
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Score cannot be negative."
+msgstr "لا يمكن أن تكون الدرجة سالبة."
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Value cannot exceed %(max)s for %(column)s."
+msgstr "لا يمكن أن تتجاوز القيمة %(max)s لـ %(column)s."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Score cannot be negative (%(column)s)."
+msgstr "لا يمكن أن تكون الدرجة سالبة (%(column)s)."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Value %(value)s exceeds the maximum %(max)s for %(column)s."
+msgstr "القيمة %(value)s تتجاوز الحد الأقصى %(max)s لـ %(column)s."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Link at least one student (Load Students) before marking this result as done."
+msgstr "اربط طالبًا واحدًا على الأقل (تحميل الطلاب) قبل اعتماد هذه النتيجة."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "This result is done and cannot be modified. Reset to draft first."
+msgstr "هذه النتيجة معتمدة ولا يمكن تعديلها. أعدها إلى مسودة أولاً."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Done results can only be reset to draft."
+msgstr "يمكن فقط إعادة النتائج المعتمدة إلى مسودة."
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_res_partner__mold_result_ids
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_partner_form_mold_results
+msgid "Grades Record"
+msgstr "سجل الدرجات"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_id
+msgid "Mold"
+msgstr "القالب"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__score_summary
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_line_result_view_form
+msgid "Marks"
+msgstr "الدرجات"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__grand_total
+msgid "Grand Total"
+msgstr "المجموع الكلي"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_name
+msgid "Result"
+msgstr "النتيجة"
 
 #. module: school_molds_generator
 #. odoo-python
@@ -308,3 +438,81 @@ msgstr "الشركة"
 #: model:ir.rule,name:school_molds_generator.school_mold_company_rule
 msgid "School Mold: multi-company"
 msgstr "قالب المدرسة: متعدد الشركات"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_student_exam__allowed_subject_ids
+msgid "Allowed Subjects"
+msgstr "المواد المسموح بها"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_student_exam__allowed_subject_ids
+msgid "Subjects available for the selected standard and division (from school mold column layouts)."
+msgstr "المواد المتاحة للصف والتخصص المحددين (من تخطيط أعمدة قالب المدرسة)."
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_student_exam__mold_id
+msgid "School Mold"
+msgstr "قالب المدرسة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_student_exam__mold_id
+msgid "Grade mold created automatically when this exam is completed."
+msgstr "يتم إنشاء قالب الدرجات تلقائياً عند إتمام هذا الامتحان."
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__exam_id
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "امتحان"
+msgstr "امتحان"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_school_mold__exam_id
+msgid "Source exam that created this mold when the exam was completed."
+msgstr "الامتحان المصدر الذي أنشأ هذا القالب عند إتمام الامتحان."
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.student_exam_form_view_mold_subjects
+msgid "النتائج"
+msgstr "النتائج"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "No school mold is linked to this exam yet. Complete the exam first."
+msgstr "لا يوجد قالب مدرسة مرتبط بهذا الامتحان بعد. يرجى إتمام الامتحان أولاً."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Company and Standard are required to create a school mold."
+msgstr "الشركة والصف مطلوبان لإنشاء قالب المدرسة."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Add at least one subject before completing the exam."
+msgstr "أضف مادة واحدة على الأقل قبل إتمام الامتحان."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Created automatically from exam <a href=\"#\" data-oe-model=\"student.exam\" data-oe-id=\"%(exam_id)s\">%(exam_name)s</a> with %(count)s subject(s)."
+msgstr "تم الإنشاء تلقائياً من الامتحان <a href=\"#\" data-oe-model=\"student.exam\" data-oe-id=\"%(exam_id)s\">%(exam_name)s</a> بعدد %(count)s مادة."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Exam Mold"
+msgstr "قالب امتحان"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "This mold is not linked to an exam."
+msgstr "هذا القالب غير مرتبط بامتحان."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Subject '%(subject)s' is not valid for standard %(standard)s / division %(division)s."
+msgstr "المادة '%(subject)s' غير صالحة للصف %(standard)s / التخصص %(division)s."

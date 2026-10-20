@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="student_exam_form_view_mold_subjects" model="ir.ui.view">
+        <field name="name">student.exam.form.mold.subjects</field>
+        <field name="model">student.exam</field>
+        <field name="inherit_id" ref="jt_education_exam.student_exam_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[1]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_open_school_mold" type="object" class="oe_stat_button" icon="fa-table"
+                            invisible="not mold_id">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">النتائج</span>
+                        </div>
+                    </button>
+                </div>
+                <field name="mold_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='division']" position="after">
+                <field name="allowed_subject_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='subject_line']//field[@name='subject_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', parent.allowed_subject_ids)]</attribute>
+                <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_mold_result" model="report.paperformat">
+        <field name="name">Student Result A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">12</field>
+        <field name="margin_bottom">12</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_line" eval="False"/>
+        <field name="dpi">96</field>
+    </record>
+
+    <template id="report_mold_result">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="article page" dir="rtl" lang="ar">
+                    <style type="text/css">
+                        <t t-out="o.get_arabic_font_face_css()"/>
+                        .o_mold_result_report,
+                        .o_mold_result_report * {
+                            font-family: 'ReportArabic', 'DejaVu Sans', sans-serif !important;
+                            color: #000;
+                        }
+                        .o_mold_result_report {
+                            direction: rtl;
+                            font-size: 13px;
+                        }
+                        .o_mr_header {
+                            width: 100%;
+                            overflow: hidden;
+                            margin-bottom: 12px;
+                            border-bottom: 2px solid #222;
+                            padding-bottom: 8px;
+                        }
+                        .o_mr_header_text {
+                            float: right;
+                            width: 40%;
+                            text-align: right;
+                            font-size: 13px;
+                            line-height: 1.5;
+                            font-weight: bold;
+                        }
+                        .o_mr_header_logo {
+                            float: left;
+                            width: 28%;
+                            text-align: center;
+                        }
+                        .o_mr_header_logo img {
+                            max-height: 70px;
+                            max-width: 130px;
+                        }
+                        .o_mr_title {
+                            clear: both;
+                            text-align: center;
+                            font-size: 20px;
+                            font-weight: bold;
+                            margin: 18px 0 14px;
+                        }
+                        .o_mr_info {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-bottom: 16px;
+                        }
+                        .o_mr_info td {
+                            padding: 5px 8px;
+                            border: 1px solid #444;
+                            vertical-align: top;
+                        }
+                        .o_mr_info .label {
+                            width: 28%;
+                            background: #f2f2f2;
+                            font-weight: bold;
+                        }
+                        .o_mr_scores {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 8px;
+                        }
+                        .o_mr_scores th,
+                        .o_mr_scores td {
+                            border: 1px solid #444;
+                            padding: 6px 8px;
+                            text-align: center;
+                        }
+                        .o_mr_scores th {
+                            background: #e8e8e8;
+                            font-weight: bold;
+                        }
+                        .o_mr_scores td.subject {
+                            text-align: right;
+                        }
+                        .o_mr_scores tr.total-row td {
+                            font-weight: bold;
+                            background: #f7f7f7;
+                        }
+                        .o_mr_footer {
+                            margin-top: 40px;
+                            width: 100%;
+                            overflow: hidden;
+                            font-weight: bold;
+                            font-size: 14px;
+                        }
+                        .o_mr_sig {
+                            float: right;
+                            width: 50%;
+                            text-align: center;
+                        }
+                    </style>
+
+                    <div class="o_mold_result_report">
+                        <div class="o_mr_header">
+                            <div class="o_mr_header_text">
+                                <div>جمهورية مصر العربية</div>
+                                <div>وزارة الصناعة</div>
+                                <div t-esc="o.mold_company_id.name or ''"/>
+                            </div>
+                            <div class="o_mr_header_logo">
+                                <img t-att-src="o.get_asset_data_uri('smart-logo.png')"/>
+                            </div>
+                        </div>
+
+                        <div class="o_mr_title">كشف درجات الطالب</div>
+
+                        <table class="o_mr_info">
+                            <tr>
+                                <td class="label">اسم الطالب</td>
+                                <td t-esc="o.student_name or (o.student_id.name if o.student_id else '')"/>
+                                <td class="label">التاريخ</td>
+                                <td t-esc="o.mold_date or ''"/>
+                            </tr>
+                            <tr>
+                                <td class="label">الصف</td>
+                                <td t-esc="o.get_selection_label('mold_term')"/>
+                                <td class="label">التخصص</td>
+                                <td t-esc="o.get_selection_label('mold_term_types')"/>
+                            </tr>
+                            <tr>
+                                <td class="label">نوع الامتحان</td>
+                                <td t-esc="o.get_selection_label('mold_exam_type')"/>
+                                <td class="label">السنة الدراسية</td>
+                                <td t-esc="o.mold_year_id.name or ''"/>
+                            </tr>
+                            <tr>
+                                <td class="label">النتيجة</td>
+                                <td colspan="3" t-esc="o.mold_name or ''"/>
+                            </tr>
+                        </table>
+
+                        <table class="o_mr_scores">
+                            <thead>
+                                <tr>
+                                    <th style="width: 8%;">م</th>
+                                    <th style="width: 52%;">المادة / البند</th>
+                                    <th style="width: 20%;">الدرجة</th>
+                                    <th style="width: 20%;">من</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="score_rows" t-value="o.get_report_score_rows()"/>
+                                <tr t-foreach="score_rows" t-as="row"
+                                    t-attf-class="#{'total-row' if row.get('col_type') in ('subtotal', 'total', 'grand_total') else ''}">
+                                    <td t-esc="row_index + 1"/>
+                                    <td class="subject" t-esc="row.get('label')"/>
+                                    <td t-esc="row.get('value')"/>
+                                    <td t-esc="row.get('max_value') or ''"/>
+                                </tr>
+                                <tr t-if="not score_rows">
+                                    <td colspan="4">لا توجد درجات مسجلة</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="margin-top: 14px; font-size: 15px; font-weight: bold;">
+                            المجموع الكلي:
+                            <span t-esc="o.grand_total"/>
+                        </div>
+
+                        <div class="o_mr_footer">
+                            <div class="o_mr_sig">شئون طلاب</div>
+                            <div class="o_mr_sig">مدير المدرسة</div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_mold_result" model="ir.actions.report">
+        <field name="name">طباعة النتيجة</field>
+        <field name="model">school.mold.line</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_molds_generator.report_mold_result</field>
+        <field name="report_file">school_molds_generator.report_mold_result</field>
+        <field name="print_report_name">'نتيجة - %s' % (object.student_name or object.student_id.name or '')</field>
+        <field name="binding_model_id" ref="model_school_mold_line"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_mold_result"/>
+    </record>
+
+    <record id="action_server_print_mold_result" model="ir.actions.server">
+        <field name="name">طباعة النتيجة</field>
+        <field name="model_id" ref="model_school_mold_line"/>
+        <field name="binding_model_id" ref="model_school_mold_line"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_print_result()</field>
+    </record>
+</odoo>

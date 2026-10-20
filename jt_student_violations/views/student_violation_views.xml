@@ -27,8 +27,8 @@
                         <group string="بيانات الطالب">
                             <field name="student_id"/>
                             <field name="stud_id"/>
-                            <field name="father_name"/>
-                            <field name="surname"/>
+                            <!-- <field name="father_name"/>
+                            <field name="surname"/> -->
                             <field name="standard_id"/>
                             <field name="class_id"/>
                             <field name="div_id"/>

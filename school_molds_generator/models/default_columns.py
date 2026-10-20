@@ -420,6 +420,23 @@ TEMPLATE_COLUMNS = {
     ('third', 'office_equipment'): THIRD_TERM_OFFICE_EQUIPMENT_COLUMNS,
 }
 
+# Map mold term → student.standard name aliases used in production data
+TERM_STANDARD_ALIASES = {
+    'first': ('اولي', 'أولى', 'اولى', 'الصف الاول', 'الصف الأول', '1'),
+    'second': ('تانية', 'ثانية', 'ثانيه', 'الصف الثاني', '2'),
+    'third': ('ثالثة', 'ثالثه', 'الصف الثالث', '3'),
+}
+# Map mold specialization → standard.division name aliases (evening variants match via substring)
+TERM_TYPE_DIVISION_ALIASES = {
+    'industrial_electricity': ('كهرباء صناعية',),
+    'computer': ('حاسب آلى', 'حاسب الي', 'حاسب آلي'),
+    'industrial_electronics': ('الكترونيات صناعية',),
+    'office_equipment': ('اجهزة مكتبية', 'اجهزه مكتبية'),
+    'graphics': ('جرافيكس',),
+    'programming': ('برمجة',),
+    'artificial_intelligence': ('الذكاء الاصطناعي', 'ذكاء صناعي', 'ذكاء اصطناعي'),
+}
+
 
 def get_template_columns(term='first', term_types=None, mold_kind='grades'):
     """Return the column layout for a mold kind / term + specialization."""
@@ -447,3 +464,48 @@ def get_template_columns(term='first', term_types=None, mold_kind='grades'):
         return FIRST_TERM_COLUMNS
     # Fallback: first-term layout until more second/third templates exist
     return FIRST_TERM_COLUMNS
+
+
+def resolve_term_from_standard_name(name):
+    """Map a student.standard name to mold term key (first/second/third)."""
+    name = (name or '').strip()
+    if not name:
+        return None
+    for term, aliases in TERM_STANDARD_ALIASES.items():
+        if name in aliases or any(alias in name for alias in aliases):
+            return term
+    return None
+
+
+def resolve_term_type_from_division_name(name):
+    """Map a standard.division name to mold specialization key."""
+    name = (name or '').strip()
+    if not name:
+        return None
+    for term_type, aliases in TERM_TYPE_DIVISION_ALIASES.items():
+        if any(alias in name for alias in aliases):
+            return term_type
+    return None
+
+
+def get_exam_subject_names(term='first', term_types=None):
+    """Return ordered unique exam subject labels for a term + specialization.
+
+    Pulls names from the same mold column layouts used by school molds:
+    group_name when present (e.g. لغة عربية), otherwise the score column name
+    (third-term single-score subjects).
+    """
+    columns = get_template_columns(term, term_types)
+    names = []
+    seen = set()
+    for col in columns:
+        if col.get('col_type') != 'score':
+            continue
+        if col.get('key') in SUMMARY_SCORE_KEYS:
+            continue
+        label = (col.get('group_name') or col.get('name') or '').strip()
+        if not label or label in seen:
+            continue
+        seen.add(label)
+        names.append(label)
+    return names
