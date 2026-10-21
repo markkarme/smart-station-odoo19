@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.8.12",
+    "version": "19.0.1.8.13",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -16,7 +16,7 @@ Portal users:
     """,
     "author": "CUC",
     "license": "LGPL-3",
-    "depends": ["hr_attendance", "hr_holidays", "hr_appraisal", "mail", "portal", "website"],
+    "depends": ["hr_attendance", "hr_holidays", "hr_appraisal", "hr_payroll", "mail", "portal", "website"],
     "data": [
         "data/mail_activity_data.xml",
         "security/portal_security.xml",
@@ -37,6 +37,7 @@ Portal users:
         "views/portal_general_request_templates.xml",
         "views/portal_attendance_adjustment_templates.xml",
         "views/portal_appraisal_templates.xml",
+        "views/portal_payslip_templates.xml",
     ],
     "assets": {
         "web.assets_backend": [

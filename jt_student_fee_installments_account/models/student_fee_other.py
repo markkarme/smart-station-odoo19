@@ -35,12 +35,13 @@ class StudentFeeOther(models.Model):
 
     def _fee_accounting_description(self):
         self.ensure_one()
-        if self.product_id:
+        if self.product_id or self.description:
             student = self.student_id.name or ''
             year = self.year_id.name or ''
+            label = self.description or self.product_id.display_name
             return _(
                 '%(product)s — %(student)s (%(year)s)',
-                product=self.product_id.display_name,
+                product=label,
                 student=student,
                 year=year,
             )

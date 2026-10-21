@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class AccountMove(models.Model):
@@ -46,3 +46,28 @@ class AccountMove(models.Model):
                 move.student_fee_installment_id._apply_invoice_payment_sync(move)
             if move.student_fee_other_id:
                 move.student_fee_other_id._apply_invoice_payment_sync(move)
+
+
+class AccountMoveLine(models.Model):
+    _inherit = 'account.move.line'
+
+    def _is_student_fee_invoice_line(self):
+        self.ensure_one()
+        move = self.move_id
+        return bool(
+            move.student_fee_plan_id
+            or move.student_fee_installment_id
+            or move.student_fee_other_id
+        )
+
+    @api.depends('product_id', 'product_uom_id')
+    def _compute_tax_ids(self):
+        """Student fee invoices are tax-free, even if the income account has a default tax."""
+        fee_lines = self.filtered(lambda line: line.move_id and line._is_student_fee_invoice_line())
+        super(AccountMoveLine, self - fee_lines)._compute_tax_ids()
+        for line in fee_lines:
+            if line.display_type in (
+                'line_section', 'line_subsection', 'line_note', 'payment_term', 'cogs',
+            ):
+                continue
+            line.tax_ids = False

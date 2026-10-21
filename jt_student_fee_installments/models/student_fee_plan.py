@@ -146,6 +146,13 @@ class StudentFeePlan(models.Model):
         domain=[('fee_type', '=', 'uniform')],
         context={'default_fee_type': 'uniform'},
     )
+    other_expense_ids = fields.One2many(
+        'student.fee.other',
+        'plan_id',
+        string='مصاريف اخري',
+        domain=[('fee_type', '=', 'other')],
+        context={'default_fee_type': 'other'},
+    )
     books_paid = fields.Monetary(
         string='Books Paid',
         currency_field='currency_id',
@@ -154,6 +161,12 @@ class StudentFeePlan(models.Model):
     )
     uniform_paid = fields.Monetary(
         string='Uniform Paid',
+        currency_field='currency_id',
+        compute='_compute_totals',
+        store=True,
+    )
+    other_expenses_paid = fields.Monetary(
+        string='Other Expenses Paid / المدفوع للمصاريف الأخرى',
         currency_field='currency_id',
         compute='_compute_totals',
         store=True,
@@ -225,25 +238,30 @@ class StudentFeePlan(models.Model):
             )
             books_lines = plan.other_fee_ids.filtered(lambda l: l.fee_type == 'books')
             uniform_lines = plan.other_fee_ids.filtered(lambda l: l.fee_type == 'uniform')
+            other_lines = plan.other_fee_ids.filtered(lambda l: l.fee_type == 'other')
             books_total = sum(books_lines.mapped('amount'))
             uniform_total = sum(uniform_lines.mapped('amount'))
+            other_total = sum(other_lines.mapped('amount'))
             # Paid summary: only lines whose invoice is paid (is_paid)
             books_paid = sum(books_lines.filtered('is_paid').mapped('amount'))
             uniform_paid = sum(uniform_lines.filtered('is_paid').mapped('amount'))
+            other_paid = sum(other_lines.filtered('is_paid').mapped('amount'))
             plan.basic_paid = basic_paid
             plan.bus_paid = bus_paid
             plan.books_paid = books_paid
             plan.uniform_paid = uniform_paid
+            plan.other_expenses_paid = other_paid
             plan.basic_remaining = (plan.basic_total_due or 0.0) - basic_paid
             plan.bus_remaining = (plan.bus_total_due or 0.0) - bus_paid
-            # Total dues include books/uniform whether paid or not
+            # Total dues include books, uniform and other expenses whether paid or not
             plan.total_due = (
                 (plan.basic_total_due or 0.0)
                 + (plan.bus_total_due or 0.0)
                 + books_total
                 + uniform_total
+                + other_total
             )
-            plan.total_paid = basic_paid + bus_paid + books_paid + uniform_paid
+            plan.total_paid = basic_paid + bus_paid + books_paid + uniform_paid + other_paid
             plan.remaining = plan.total_due - plan.total_paid
 
     def _basic_total_from_standard(self, standard):

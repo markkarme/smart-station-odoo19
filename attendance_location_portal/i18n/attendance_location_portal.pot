@@ -2665,3 +2665,73 @@ msgstr ""
 msgid "Adjustment Preview"
 msgstr ""
 
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Payslips"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "My Payslips"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Payslip"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "View validated payslips for your companies"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "View your payslip after it is validated"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "You have no validated payslips yet."
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Period"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Net Wage"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "Validated"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "Paid"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Download"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Back"
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "This payslip does not exist or is not accessible."
+msgstr ""
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "This payslip is not accessible."
+msgstr ""
+

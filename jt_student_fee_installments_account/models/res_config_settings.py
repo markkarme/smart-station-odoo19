@@ -31,3 +31,9 @@ class ResConfigSettings(models.TransientModel):
         config_parameter=CONFIG_KEYS['uniform'],
         domain=[('type', '=', 'service')],
     )
+    fee_product_other_id = fields.Many2one(
+        'product.product',
+        string='Other Expenses Product',
+        config_parameter=CONFIG_KEYS['other'],
+        domain=[('type', '=', 'service')],
+    )

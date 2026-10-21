@@ -3,27 +3,36 @@
         <field name="name">change.academic.year.wizard.view</field>
         <field name="model">change.year.wizard</field>
         <field name="arch" type="xml">
-            <form string="Change Academic Year Wizard">
+            <form string="تغيير العام والصف والقسم والفصل">
                 <group>
-           
-                                <field name="reason_to_change"/>
-                                <field name="current_year"/>
-                                <field name="year_to_change"/>
-
-                                
-                      </group>     
+                    <field name="reason_to_change"/>
+                </group>
+                <group>
+                    <group string="الحالي">
+                        <field name="current_year"/>
+                        <field name="current_standard"/>
+                        <field name="current_division"/>
+                        <field name="current_class"/>
+                    </group>
+                    <group string="الجديد">
+                        <field name="year_to_change" required="1"/>
+                        <field name="standard_to_change" required="1"/>
+                        <field name="division_to_change" required="1"/>
+                        <field name="class_to_change" required="1"/>
+                    </group>
+                </group>
                 <footer>
-                    <button name="year_to_change_button" string="Change" type="object" class="btn-primary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    <button name="year_to_change_button" string="تغيير" type="object" class="btn-primary"/>
+                    <button string="إلغاء" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
         </field>
     </record>
     <record id="action_change_acedamic_year" model="ir.actions.act_window">
-        <field name="name">Change Academic Year</field>
+        <field name="name">تغيير العام الدراسي</field>
         <field name="res_model">change.year.wizard</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="change_academic_year_wizard"/>
-        <field name="target">new</field>           
+        <field name="target">new</field>
     </record>
 </odoo>
