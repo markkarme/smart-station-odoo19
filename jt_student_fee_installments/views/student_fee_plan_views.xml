@@ -77,6 +77,7 @@
                             <field name="remaining"/>
                             <field name="books_paid"/>
                             <field name="uniform_paid"/>
+                            <field name="other_expenses_paid"/>
                         </group>
                     </group>
 
@@ -164,6 +165,20 @@
                         <page string="اليونيفورم" name="uniform">
                             <field name="uniform_fee_ids" readonly="state == 'closed'">
                                 <list editable="bottom">
+                                    <field name="amount" string="المبلغ" sum="Total"/>
+                                    <field name="receipt_number" string="رقم الإيصال"/>
+                                    <field name="payment_date" string="التاريخ"/>
+                                    <field name="note" optional="show"/>
+                                    <field name="fee_type" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="مصاريف اخري" name="other_expenses">
+                            <field name="other_expense_ids" readonly="state == 'closed'">
+                                <list editable="bottom">
+                                    <field name="description" string="البيان"/>
                                     <field name="amount" string="المبلغ" sum="Total"/>
                                     <field name="receipt_number" string="رقم الإيصال"/>
                                     <field name="payment_date" string="التاريخ"/>

@@ -8,6 +8,7 @@ PRODUCT_XMLIDS = {
     'bus': 'jt_student_fee_installments_account.product_fee_bus',
     'books': 'jt_student_fee_installments_account.product_fee_books',
     'uniform': 'jt_student_fee_installments_account.product_fee_uniform',
+    'other': 'jt_student_fee_installments_account.product_fee_other',
 }
 
 CONFIG_KEYS = {
@@ -15,6 +16,7 @@ CONFIG_KEYS = {
     'bus': 'jt_student_fee_installments_account.product_bus_id',
     'books': 'jt_student_fee_installments_account.product_books_id',
     'uniform': 'jt_student_fee_installments_account.product_uniform_id',
+    'other': 'jt_student_fee_installments_account.product_other_id',
 }
 
 
@@ -103,6 +105,7 @@ class StudentFeeAccountingMixin(models.AbstractModel):
                 'name': self._fee_accounting_description(),
                 'quantity': 1.0,
                 'price_unit': amount,
+                'tax_ids': [(5, 0, 0)],
             })],
         }
 

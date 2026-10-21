@@ -26,6 +26,10 @@
                                 <label for="fee_product_uniform_id" class="col-lg-4 o_light_label"/>
                                 <field name="fee_product_uniform_id" class="col-lg-6"/>
                             </div>
+                            <div class="row mt8">
+                                <label for="fee_product_other_id" class="col-lg-4 o_light_label"/>
+                                <field name="fee_product_other_id" class="col-lg-6"/>
+                            </div>
                         </div>
                     </setting>
                 </block>

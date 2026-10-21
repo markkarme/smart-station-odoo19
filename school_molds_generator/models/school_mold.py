@@ -248,8 +248,14 @@ class SchoolMold(models.Model):
             ]
         if mold_kind == 'health_insurance' and not vals.get('name'):
             vals['name'] = _('Health Insurance report')
-        if mold_kind == 'form_27' and not vals.get('name'):
-            vals['name'] = _('Form 27 report')
+        if mold_kind == 'form_27':
+            if not vals.get('name'):
+                vals['name'] = _('Form 27 report')
+            # Optional filters on Form 27 — leave empty unless explicitly set
+            if 'term' in fields_list and 'default_term' not in self.env.context:
+                vals['term'] = False
+            if 'term_types' in fields_list and 'default_term_types' not in self.env.context:
+                vals['term_types'] = False
         return vals
 
     def _target_row_count(self):
@@ -438,10 +444,17 @@ class SchoolMold(models.Model):
             domain.append(('company_id', '=', self.company_id.id))
 
         if self.mold_kind == 'form_27':
-            term = self.term or 'first'
-            standards = self._standards_for_term(term)
-            if standards:
+            # Optional filters: company (+ year) always; term / specialization when set
+            if self.term:
+                standards = self._standards_for_term(self.term)
+                if not standards:
+                    raise UserError(_('No matching standard found for the selected term.'))
                 domain.append(('standard', 'in', standards.ids))
+            if self.term_types:
+                divisions = self._divisions_for_term_type(self.term_types)
+                if not divisions:
+                    raise UserError(_('No matching division found for the selected specialization.'))
+                domain.append(('div', 'in', divisions.ids))
         elif self.mold_kind == 'health_insurance':
             pass
         else:

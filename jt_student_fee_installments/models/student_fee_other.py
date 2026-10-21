@@ -34,11 +34,13 @@ class StudentFeeOther(models.Model):
         [
             ('books', 'الكتب'),
             ('uniform', 'اليونيفورم'),
+            ('other', 'مصاريف اخري'),
         ],
         string='Fee Type',
         required=True,
         index=True,
     )
+    description = fields.Char(string='Description / البيان')
     amount = fields.Monetary(
         string='Amount / المبلغ',
         currency_field='currency_id',
@@ -57,11 +59,11 @@ class StudentFeeOther(models.Model):
         store=True,
     )
 
-    @api.depends('fee_type', 'receipt_number', 'amount')
+    @api.depends('fee_type', 'description', 'receipt_number', 'amount')
     def _compute_name(self):
         labels = dict(self._fields['fee_type'].selection)
         for line in self:
-            label = labels.get(line.fee_type, '')
+            label = line.description or labels.get(line.fee_type, '')
             line.name = '%s — %s (%s)' % (
                 label,
                 line.amount or 0.0,

@@ -59,13 +59,13 @@
                     <group>
                         <group>
                             <field name="mold_kind" invisible="1"/>
-                            <field name="term" invisible="mold_kind in ('health_insurance', 'form_27')" readonly="state == 'done'"/>
+                            <field name="term" invisible="mold_kind == 'health_insurance'" readonly="state == 'done'"/>
                             <field name="company_id" groups="base.group_multi_company" readonly="state == 'done'"/>
                             <field name="year_id" readonly="state == 'done'"/>
                             <field name="class_id" readonly="state == 'done'"/>
                             <field name="exam_type" readonly="state == 'done'"/>
-                            <field name="standard_id" readonly="1"/>
-                            <field name="division_id" readonly="1"/>
+                            <field name="standard_id" invisible="mold_kind == 'form_27'" readonly="1"/>
+                            <field name="division_id" invisible="mold_kind == 'form_27'" readonly="1"/>
                             <field name="date" readonly="state == 'done'"/>
                             <field name="note" readonly="state == 'done'"/>
                             <field name="line_count" readonly="1"/>
@@ -75,7 +75,7 @@
                             <field name="term_types"
                                      widget="filterable_selection"
                                      options="{'whitelist_fname': 'allowed_term_types'}"
-                                     invisible="mold_kind in ('health_insurance', 'form_27')"
+                                     invisible="mold_kind == 'health_insurance'"
                                      readonly="state == 'done'"/>
                             <field name="craft" invisible="mold_kind != 'form_27'" readonly="state == 'done'"/>
                             <field name="batch_label" invisible="mold_kind != 'form_27'" readonly="state == 'done'"/>

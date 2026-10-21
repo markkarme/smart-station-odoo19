@@ -317,8 +317,26 @@ class ResPartner(models.Model):
                 },
             )
 
+    def _check_fee_plan_has_no_remaining(self):
+        """Promotion is allowed only when the student owes nothing on a fee plan."""
+        self.ensure_one()
+        if 'student.fee.plan' not in self.env:
+            return
+        plans = self.env['student.fee.plan'].search([
+            ('student_id', '=', self.id),
+            ('remaining', '>', 0),
+        ])
+        if plans:
+            amount = sum(plans.mapped('remaining'))
+            raise exceptions.UserError(_(
+                'لا يمكن تغيير العام الدراسي أو الصف أو القسم أو الفصل. '
+                'يوجد مبلغ متبقي %(amount).2f على خطة رسوم هذا الطالب.',
+                amount=amount,
+            ))
+
     def open_wizard_academic_year(self):
         self.ensure_one()
+        self._check_fee_plan_has_no_remaining()
         return self.env['ir.actions.act_window']._for_xml_id(
             'jt_education_base.action_change_acedamic_year'
         )

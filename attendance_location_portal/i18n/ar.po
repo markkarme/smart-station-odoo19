@@ -2705,3 +2705,73 @@ msgstr "نهاية يوم العمل"
 msgid "Adjustment Preview"
 msgstr "معاينة التعديل"
 
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Payslips"
+msgstr "كشوف الرواتب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "My Payslips"
+msgstr "كشوف رواتبي"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Payslip"
+msgstr "كشف الراتب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "View validated payslips for your companies"
+msgstr "عرض كشوف الرواتب المعتمدة لشركاتك"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "View your payslip after it is validated"
+msgstr "عرض كشف راتبك بعد اعتماده"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "You have no validated payslips yet."
+msgstr "لا توجد كشوف رواتب معتمدة حتى الآن."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Period"
+msgstr "الفترة"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Net Wage"
+msgstr "صافي الراتب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "Validated"
+msgstr "معتمد"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Download"
+msgstr "تنزيل"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
+msgid "Back"
+msgstr "رجوع"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "This payslip does not exist or is not accessible."
+msgstr "كشف الراتب هذا غير موجود أو لا يمكن الوصول إليه."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "This payslip is not accessible."
+msgstr "لا يمكن الوصول إلى كشف الراتب هذا."
+
