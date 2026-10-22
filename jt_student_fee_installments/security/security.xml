@@ -23,4 +23,20 @@
         <field name="implied_ids" eval="[(4, ref('group_fee_installment_user'))]"/>
         <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
     </record>
+
+    <record id="student_fee_plan_company_rule" model="ir.rule">
+        <field name="name">Student Fee Plan: multi-company</field>
+        <field name="model_id" ref="model_student_fee_plan"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="student_fee_installment_company_rule" model="ir.rule">
+        <field name="name">Student Fee Installment: multi-company</field>
+        <field name="model_id" ref="model_student_fee_installment"/>
+        <field name="domain_force">[('plan_id.company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="student_fee_other_company_rule" model="ir.rule">
+        <field name="name">Student Other Fee: multi-company</field>
+        <field name="model_id" ref="model_student_fee_other"/>
+        <field name="domain_force">[('plan_id.company_id', 'in', company_ids)]</field>
+    </record>
 </odoo>
