@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Student Fee Exceptions & Penalties',
-    'version': '19.0.1.0.3',
+    'version': '19.0.1.0.4',
     'category': 'Education',
     'summary': 'Late payment weekly penalties and fee exceptions (more installments / discount / due date)',
     'description': """
@@ -21,6 +21,7 @@ Student Fee Installments — Exceptions & Penalties
     'license': 'LGPL-3',
     'depends': ['jt_student_fee_installments'],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
         'views/student_fee_exception_views.xml',

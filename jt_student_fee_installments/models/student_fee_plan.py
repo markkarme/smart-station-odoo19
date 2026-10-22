@@ -23,6 +23,7 @@ class StudentFeePlan(models.Model):
         string='Company',
         required=True,
         default=lambda self: self.env.company,
+        index=True,
     )
     currency_id = fields.Many2one(
         'res.currency',
