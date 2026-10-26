@@ -1,9 +1,12 @@
+import logging
 from datetime import timedelta
 
 from pytz import timezone, utc
 
 from odoo import _, api, fields, models
 from odoo.tools import email_normalize, format_datetime
+
+_logger = logging.getLogger(__name__)
 
 
 class HrAttendance(models.Model):
@@ -325,9 +328,27 @@ class HrAttendance(models.Model):
         )._get_overtimes_to_update_domain()
 
     def _update_overtime(self, attendance_domain=None):
-        return super(HrAttendance, self.filtered("check_in"))._update_overtime(
-            attendance_domain=attendance_domain
-        )
+        attendances = self.filtered("check_in")
+        if not self.env.context.get("ignore_overtime_singleton_error"):
+            return super(HrAttendance, attendances)._update_overtime(
+                attendance_domain=attendance_domain
+            )
+        # Public-holiday creation recalculates overtime for every attendance
+        # on that day. Overlapping attendances are merged into one recordset,
+        # and core then reads check_in on that recordset. Roll back only the
+        # overtime change and let the holiday save continue.
+        try:
+            with self.env.cr.savepoint():
+                return super(HrAttendance, attendances)._update_overtime(
+                    attendance_domain=attendance_domain
+                )
+        except ValueError as error:
+            if "Expected singleton" not in str(error):
+                raise
+            _logger.warning(
+                "Skipped attendance overtime update while saving public holidays: %s",
+                error,
+            )
 
     def _create_work_entries(self):
         # Enterprise hr_work_entry_attendance crashes on min(check_in) when
