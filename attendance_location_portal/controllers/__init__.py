@@ -6,3 +6,7 @@ from . import portal_general_request
 from . import portal_attendance_adjustment
 from . import portal_appraisal
 from . import portal_payslip
+from . import portal_student_attendance
+from . import portal_student_exam
+from . import portal_school_mold
+from . import portal_student_fee_plan

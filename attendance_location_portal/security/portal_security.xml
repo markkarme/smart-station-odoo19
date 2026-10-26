@@ -16,4 +16,142 @@
             allocations, and attendance adjustments for their allowed companies only.
         </field>
     </record>
+
+    <record id="privilege_portal_attendance" model="res.groups.privilege">
+        <field name="name">Portal Attendance</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="sequence">91</field>
+    </record>
+
+    <record id="group_portal_attendance_admin" model="res.groups">
+        <field name="name">Admin Attendance Portal</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="privilege_portal_attendance"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="comment">
+            Admin attendance portal users can manage student attendance
+            (attendance.attendance) for their allowed companies only.
+        </field>
+    </record>
+
+    <record id="student_attendance_portal_company_rule" model="ir.rule">
+        <field name="name">Student Attendance Portal: allowed companies</field>
+        <field name="model_id" ref="jt_education_attendance.model_attendance_attendance"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_attendance_admin'))]"/>
+    </record>
+
+    <record id="student_attendance_line_portal_company_rule" model="ir.rule">
+        <field name="name">Student Attendance Line Portal: allowed companies</field>
+        <field name="model_id" ref="jt_education_attendance.model_attendance_line"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_attendance_admin'))]"/>
+    </record>
+
+    <record id="privilege_portal_exam" model="res.groups.privilege">
+        <field name="name">Portal Exam</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="sequence">92</field>
+    </record>
+
+    <record id="group_portal_exam_admin" model="res.groups">
+        <field name="name">Admin Exam Portal</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="privilege_portal_exam"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="comment">
+            Admin exam portal users can manage student exams
+            (student.exam) for their allowed companies only.
+        </field>
+    </record>
+
+    <record id="student_exam_portal_company_rule" model="ir.rule">
+        <field name="name">Student Exam Portal: allowed companies</field>
+        <field name="model_id" ref="jt_education_exam.model_student_exam"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_exam_admin'))]"/>
+    </record>
+
+    <record id="subject_line_portal_company_rule" model="ir.rule">
+        <field name="name">Subject Line Portal: allowed companies</field>
+        <field name="model_id" ref="jt_education_exam.model_subject_line"/>
+        <field name="domain_force">[('exam_id.company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_exam_admin'))]"/>
+    </record>
+
+    <record id="privilege_portal_mold" model="res.groups.privilege">
+        <field name="name">Portal Mold</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="sequence">93</field>
+    </record>
+
+    <record id="group_portal_mold_admin" model="res.groups">
+        <field name="name">Admin Mold Portal</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="privilege_portal_mold"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="comment">
+            Admin mold portal users can manage school molds / results
+            (school.mold) for their allowed companies only.
+        </field>
+    </record>
+
+    <record id="school_mold_portal_company_rule" model="ir.rule">
+        <field name="name">School Mold Portal: allowed companies</field>
+        <field name="model_id" ref="school_molds_generator.model_school_mold"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_mold_admin'))]"/>
+    </record>
+
+    <record id="school_mold_column_portal_company_rule" model="ir.rule">
+        <field name="name">School Mold Column Portal: allowed companies</field>
+        <field name="model_id" ref="school_molds_generator.model_school_mold_column"/>
+        <field name="domain_force">[('mold_id.company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_mold_admin'))]"/>
+    </record>
+
+    <record id="school_mold_line_portal_company_rule" model="ir.rule">
+        <field name="name">School Mold Line Portal: allowed companies</field>
+        <field name="model_id" ref="school_molds_generator.model_school_mold_line"/>
+        <field name="domain_force">[('mold_id.company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_mold_admin'))]"/>
+    </record>
+
+    <record id="privilege_portal_fee" model="res.groups.privilege">
+        <field name="name">Portal Fee Plans</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="sequence">94</field>
+    </record>
+
+    <record id="group_portal_fee_admin" model="res.groups">
+        <field name="name">Admin Fee Plan Portal</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="privilege_portal_fee"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="comment">
+            Admin fee plan portal users can manage student fee plans / installments
+            (student.fee.plan) for their allowed companies only.
+        </field>
+    </record>
+
+    <record id="student_fee_plan_portal_company_rule" model="ir.rule">
+        <field name="name">Student Fee Plan Portal: allowed companies</field>
+        <field name="model_id" ref="jt_student_fee_installments.model_student_fee_plan"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_fee_admin'))]"/>
+    </record>
+
+    <record id="student_fee_installment_portal_company_rule" model="ir.rule">
+        <field name="name">Student Fee Installment Portal: allowed companies</field>
+        <field name="model_id" ref="jt_student_fee_installments.model_student_fee_installment"/>
+        <field name="domain_force">[('plan_id.company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_fee_admin'))]"/>
+    </record>
+
+    <record id="student_fee_other_portal_company_rule" model="ir.rule">
+        <field name="name">Student Fee Other Portal: allowed companies</field>
+        <field name="model_id" ref="jt_student_fee_installments.model_student_fee_other"/>
+        <field name="domain_force">[('plan_id.company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_portal_fee_admin'))]"/>
+    </record>
 </odoo>

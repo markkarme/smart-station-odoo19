@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_student_exam" inherit_id="portal.portal_breadcrumbs" priority="57">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_student_exams', 'portal_student_exam_new', 'portal_student_exam_detail', 'portal_student_exam_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_student_exams' else ''}">
+                <a t-if="page_name != 'portal_student_exams'" href="/my/student_exams"><t>Student Exams</t></a>
+                <t t-else=""><t>Student Exams</t></t>
+            </li>
+            <li t-if="page_name == 'portal_student_exam_new'" class="breadcrumb-item active">
+                <t>New Exam</t>
+            </li>
+            <li t-if="page_name == 'portal_student_exam_detail'" class="breadcrumb-item active">
+                <t>Exam</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_student_exam_entry" inherit_id="portal.portal_my_home" priority="57">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_exam_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_education_exam/static/description/icon.png'"/>
+                <t t-set="title">Student Exams</t>
+                <t t-set="text">Manage student exams for your allowed companies</t>
+                <t t-set="url" t-value="'/my/student_exams'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_student_exams" name="Student Exams">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Student Exams</t>
+            </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/student_exams/new" class="btn btn-primary"><t>New Exam</t></a>
+            </div>
+
+            <div t-if="not exams" class="alert alert-info">
+                <t>No exams found for your companies.</t>
+            </div>
+
+            <t t-if="exams">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Exam</t></th>
+                            <th t-if="show_company"><t>Company</t></th>
+                            <th><t>Standard</t></th>
+                            <th><t>Division</t></th>
+                            <th><t>Class</t></th>
+                            <th><t>Start Date</t></th>
+                            <th><t>End Date</t></th>
+                            <th class="text-end"><t>Status</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="exams" t-as="exam">
+                            <td>
+                                <a t-att-href="'/my/student_exams/%s' % exam.id">
+                                    <span t-out="exam.name"/>
+                                </a>
+                            </td>
+                            <td t-if="show_company"><span t-out="exam.company_id.name"/></td>
+                            <td><span t-out="exam.standard.name"/></td>
+                            <td><span t-out="exam.division.name or '-'"/></td>
+                            <td><span t-out="exam.class_id.name or '-'"/></td>
+                            <td><span t-field="exam.start_date"/></td>
+                            <td><span t-field="exam.end_date"/></td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{state_badges.get(exam.state, 'text-bg-secondary')}">
+                                    <t t-out="state_labels.get(exam.state, exam.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_student_exam_new" name="New Student Exam">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <h3 class="mb-3"><t>New Exam</t></h3>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+                <form method="post" action="/my/student_exams/submit" class="card shadow-sm">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="name"><t>Name</t></label>
+                                <input type="text" class="form-control" id="name" name="name" t-att-value="name" required="required"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="company_id"><t>Company</t></label>
+                                <select
+                                    id="company_id"
+                                    name="company_id"
+                                    class="form-select"
+                                    required="required"
+                                    onchange="window.location='/my/student_exams/new?company_id=' + this.value"
+                                >
+                                    <option
+                                        t-foreach="companies"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="item.id == company.id"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="start_date"><t>Start Date</t></label>
+                                <input type="date" class="form-control" id="start_date" name="start_date" t-att-value="start_date" required="required"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="end_date"><t>End Date</t></label>
+                                <input type="date" class="form-control" id="end_date" name="end_date" t-att-value="end_date" required="required"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="standard_id"><t>Standard</t></label>
+                                <select
+                                    id="standard_id"
+                                    name="standard_id"
+                                    class="form-select"
+                                    required="required"
+                                    t-att-onchange="'window.location=\'/my/student_exams/new?company_id=%s&amp;standard_id=\' + this.value' % company.id"
+                                >
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="standards"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="standard and item.id == standard.id"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="division_id"><t>Division</t></label>
+                                <select id="division_id" name="division_id" class="form-select">
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="divisions"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="str(item.id) == str(division_id)"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="class_id"><t>Class</t></label>
+                                <select id="class_id" name="class_id" class="form-select">
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="classes"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="str(item.id) == str(class_id)"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="curr_year"><t>Year</t></label>
+                                <select id="curr_year" name="curr_year" class="form-select">
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="years"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="str(item.id) == str(curr_year)"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="time_from"><t>Time From</t></label>
+                                <input type="time" class="form-control" id="time_from" name="time_from" t-att-value="time_from" required="required"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="time_to"><t>Time To</t></label>
+                                <input type="time" class="form-control" id="time_to" name="time_to" t-att-value="time_to" required="required"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex gap-2">
+                        <button type="submit" class="btn btn-primary"><t>Create</t></button>
+                        <a href="/my/student_exams" class="btn btn-outline-secondary"><t>Back</t></a>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_student_exam_detail" name="Student Exam Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                    <div>
+                        <h3 class="mb-1" t-out="exam.name"/>
+                        <div class="text-muted">
+                            <span t-out="exam.company_id.name"/>
+                            · <span t-out="exam.standard.name"/>
+                            <t t-if="exam.division"> · <span t-out="exam.division.name"/></t>
+                            <t t-if="exam.class_id"> · <span t-out="exam.class_id.name"/></t>
+                        </div>
+                    </div>
+                    <span t-attf-class="badge rounded-pill #{state_badges.get(exam.state, 'text-bg-secondary')}">
+                        <t t-out="state_labels.get(exam.state, exam.state)"/>
+                    </span>
+                </div>
+
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post" t-att-action="'/my/student_exams/%s/action' % exam.id" class="d-flex flex-wrap gap-2 mb-3">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <button t-if="is_exam_editable" type="submit" name="exam_action" value="confirm" class="btn btn-primary">
+                        <t>Confirm</t>
+                    </button>
+                    <button t-if="is_exam_editable" type="submit" name="exam_action" value="cancel" class="btn btn-outline-danger">
+                        <t>Cancel</t>
+                    </button>
+                    <button t-if="exam.state == 'ongoing'" type="submit" name="exam_action" value="complete" class="btn btn-success"
+                            onclick="return confirm('إتمام الامتحان سينشئ قالب درجات بطلاب ومواد هذا الامتحان. هل تريد المتابعة؟');">
+                        <t>Completed</t>
+                    </button>
+                    <button t-if="is_exam_editable" type="submit" name="exam_action" value="reload_students" class="btn btn-outline-secondary">
+                        <t>Reload Students</t>
+                    </button>
+                    <button t-if="is_exam_editable" type="submit" name="exam_action" value="add_subject_line" class="btn btn-outline-primary">
+                        <t>Add Subject Line</t>
+                    </button>
+                    <a t-att-href="'/my/student_exams/%s/schedule' % exam.id" class="btn btn-outline-primary" target="_blank">
+                        <t>Exam Schedule</t>
+                    </a>
+                    <a t-if="exam.mold_id" t-att-href="'/my/school_molds/%s' % exam.mold_id.id"
+                       class="btn btn-outline-success">
+                        <i class="fa fa-table"/> <t>Result</t>
+                    </a>
+                    <button type="submit" name="exam_action" value="delete" class="btn btn-danger"
+                            onclick="return confirm('هل تريد حذف هذا الامتحان؟');">
+                        <t>Delete</t>
+                    </button>
+                    <a href="/my/student_exams" class="btn btn-outline-secondary"><t>Back</t></a>
+                </form>
+
+                <div class="card mb-3">
+                    <div class="card-body row g-3">
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Start Date</t></div>
+                            <div t-field="exam.start_date"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>End Date</t></div>
+                            <div t-field="exam.end_date"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Year</t></div>
+                            <div t-out="exam.curr_year.name or '-'"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Time From</t></div>
+                            <div t-out="float_to_time(exam.time_from)"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Time To</t></div>
+                            <div t-out="float_to_time(exam.time_to)"/>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#exam_subjects" type="button" role="tab">
+                            <t>Subjects</t>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#exam_students" type="button" role="tab">
+                            <t>Students</t>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content border border-top-0 p-3">
+                    <div class="tab-pane fade show active" id="exam_subjects" role="tabpanel">
+                        <div t-if="is_exam_editable and not subjects" class="alert alert-warning">
+                            <t>No subjects are configured yet. Create subjects in the backend first.</t>
+                        </div>
+                        <form t-if="is_exam_editable" method="post" t-att-action="'/my/student_exams/%s/subjects' % exam.id">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 2.5rem;"><t>Delete</t></th>
+                                            <th><t>Subjects</t></th>
+                                            <th><t>Date</t></th>
+                                            <th><t>Day</t></th>
+                                            <th><t>Time From</t></th>
+                                            <th><t>Time To</t></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="exam.subject_line" t-as="line">
+                                            <td>
+                                                <input type="checkbox" class="form-check-input" name="delete_line_ids" t-att-value="line.id"/>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="line_id" t-att-value="line.id"/>
+                                                <select name="subject_id" class="form-select form-select-sm">
+                                                    <option value=""><t>Select...</t></option>
+                                                    <option
+                                                        t-foreach="subjects"
+                                                        t-as="subject"
+                                                        t-att-value="subject.id"
+                                                        t-att-selected="line.subject_id and line.subject_id.id == subject.id"
+                                                        t-out="subject.name"
+                                                    />
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="date" name="date" class="form-control form-control-sm" t-att-value="line.date"/>
+                                            </td>
+                                            <td>
+                                                <span t-out="day_labels.get(line.day, line.day or '-')"/>
+                                            </td>
+                                            <td>
+                                                <input type="time" name="time_from" class="form-control form-control-sm" t-att-value="float_to_time(line.time_from)"/>
+                                            </td>
+                                            <td>
+                                                <input type="time" name="time_to" class="form-control form-control-sm" t-att-value="float_to_time(line.time_to)"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="submit" class="btn btn-primary"><t>Save Subjects</t></button>
+                            </div>
+                        </form>
+
+                        <t t-if="not is_exam_editable">
+                            <t t-call="portal.portal_table">
+                                <thead>
+                                    <tr>
+                                        <th><t>Subjects</t></th>
+                                        <th><t>Date</t></th>
+                                        <th><t>Day</t></th>
+                                        <th><t>Time From</t></th>
+                                        <th><t>Time To</t></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="exam.subject_line" t-as="line">
+                                        <td t-out="line.subject_id.name or '-'"/>
+                                        <td><span t-field="line.date"/></td>
+                                        <td t-out="day_labels.get(line.day, line.day or '-')"/>
+                                        <td t-out="float_to_time(line.time_from)"/>
+                                        <td t-out="float_to_time(line.time_to)"/>
+                                    </tr>
+                                </tbody>
+                            </t>
+                        </t>
+                    </div>
+
+                    <div class="tab-pane fade" id="exam_students" role="tabpanel">
+                        <div t-if="not exam.student_ids" class="alert alert-info mb-0">
+                            <t>No students loaded for this exam.</t>
+                        </div>
+                        <t t-if="exam.student_ids" t-call="portal.portal_table">
+                            <thead>
+                                <tr>
+                                    <th><t>Student</t></th>
+                                    <th><t>Standard</t></th>
+                                    <th><t>Division</t></th>
+                                    <th><t>Class</t></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="exam.student_ids" t-as="student">
+                                    <td t-out="student.name"/>
+                                    <td t-out="student.standard.name or '-'"/>
+                                    <td t-out="student.div.name or '-'"/>
+                                    <td t-out="student.class_id.name or '-'"/>
+                                </tr>
+                            </tbody>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_student_exam_failed_page" name="Student Exam Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-warning" role="alert">
+                    <span t-out="error_message"/>
+                </div>
+                <a href="/my/home" class="btn btn-secondary"><t>Back</t></a>
+            </div>
+        </t>
+    </template>
+</odoo>

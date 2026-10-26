@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.8.13",
+    "version": "19.0.1.8.25",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -13,10 +13,26 @@ Attendance company is always taken from the check-in location company.
 Portal users:
 - Portal User: own attendance, requests, and time off only
 - Portal Admin: can view attendance, general requests, and time off for their allowed companies only
+- Admin Attendance Portal: can manage student attendance for their allowed companies only
+- Admin Exam Portal: can manage student exams for their allowed companies only
+- Admin Mold Portal: can manage school molds / exam results for their allowed companies only
+- Admin Fee Plan Portal: can manage student fee plans / installments for their allowed companies only
     """,
     "author": "CUC",
     "license": "LGPL-3",
-    "depends": ["hr_attendance", "hr_holidays", "hr_appraisal", "hr_payroll", "mail", "portal", "website"],
+    "depends": [
+        "hr_attendance",
+        "hr_holidays",
+        "hr_appraisal",
+        "hr_payroll",
+        "jt_education_attendance",
+        "jt_education_exam",
+        "school_molds_generator",
+        "jt_student_fee_installments",
+        "mail",
+        "portal",
+        "website",
+    ],
     "data": [
         "data/mail_activity_data.xml",
         "security/portal_security.xml",
@@ -38,6 +54,10 @@ Portal users:
         "views/portal_attendance_adjustment_templates.xml",
         "views/portal_appraisal_templates.xml",
         "views/portal_payslip_templates.xml",
+        "views/portal_student_attendance_templates.xml",
+        "views/portal_student_exam_templates.xml",
+        "views/portal_school_mold_templates.xml",
+        "views/portal_student_fee_plan_templates.xml",
     ],
     "assets": {
         "web.assets_backend": [
@@ -51,6 +71,8 @@ Portal users:
             "attendance_location_portal/static/src/js/portal_allocation.js",
             "attendance_location_portal/static/src/css/portal_appraisal.css",
             "attendance_location_portal/static/src/js/portal_appraisal.js",
+            "attendance_location_portal/static/src/css/portal_school_mold.css",
+            "attendance_location_portal/static/src/js/portal_school_mold.js",
         ],
     },
     "installable": True,
