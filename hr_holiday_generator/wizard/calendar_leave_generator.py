@@ -99,7 +99,9 @@ class CalendarLeaveGenerator(models.TransientModel):
                 }
             }
         else:
-            self.env['resource.calendar.leaves'].create([{
+            self.env['resource.calendar.leaves'].with_context(
+                ignore_overtime_singleton_error=True,
+            ).create([{
                 'name': holiday.name,
                 'date_from': holiday.start_date,
                 'date_to': holiday.end_date
