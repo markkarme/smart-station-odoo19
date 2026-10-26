@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_student_attendance" inherit_id="portal.portal_breadcrumbs" priority="56">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_student_attendances', 'portal_student_attendance_new', 'portal_student_attendance_detail', 'portal_student_attendance_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_student_attendances' else ''}">
+                <a t-if="page_name != 'portal_student_attendances'" href="/my/student_attendances"><t>Student Attendance</t></a>
+                <t t-else=""><t>Student Attendance</t></t>
+            </li>
+            <li t-if="page_name == 'portal_student_attendance_new'" class="breadcrumb-item active">
+                <t>New Attendance</t>
+            </li>
+            <li t-if="page_name == 'portal_student_attendance_detail'" class="breadcrumb-item active">
+                <t>Attendance</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_student_attendance_entry" inherit_id="portal.portal_my_home" priority="56">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_attendance_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_education_attendance/static/description/icon.png'"/>
+                <t t-set="title">Student Attendance</t>
+                <t t-set="text">Take student attendance for your allowed companies</t>
+                <t t-set="url" t-value="'/my/student_attendances'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_my_student_attendances" name="Student Attendances">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Student Attendance</t>
+            </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/student_attendances/new" class="btn btn-primary">
+                    <t>New Attendance</t>
+                </a>
+            </div>
+
+            <div t-if="not attendances" class="alert alert-info">
+                <t>No student attendance records found for your companies.</t>
+            </div>
+
+            <t t-if="attendances">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Attendance</t></th>
+                            <th t-if="show_company"><t>Company</t></th>
+                            <th><t>Standard</t></th>
+                            <th><t>Division</t></th>
+                            <th><t>Class</t></th>
+                            <th class="text-end"><t>Date</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="attendances" t-as="attendance">
+                            <td>
+                                <a t-att-href="'/my/student_attendances/%s' % attendance.id">
+                                    <span t-out="attendance.name"/>
+                                </a>
+                            </td>
+                            <td t-if="show_company">
+                                <span t-out="attendance.company_id.name"/>
+                            </td>
+                            <td><span t-out="attendance.standard_id.name"/></td>
+                            <td><span t-out="attendance.division_id.name"/></td>
+                            <td><span t-out="attendance.class_id.name or '-'"/></td>
+                            <td class="text-end"><span t-field="attendance.date"/></td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_student_attendance_new" name="New Student Attendance">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <h3 class="mb-3"><t>New Attendance</t></h3>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post" action="/my/student_attendances/submit" class="card shadow-sm">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="company_id"><t>Company</t></label>
+                                <select
+                                    id="company_id"
+                                    name="company_id"
+                                    class="form-select"
+                                    required="required"
+                                    onchange="window.location='/my/student_attendances/new?company_id=' + this.value"
+                                >
+                                    <option
+                                        t-foreach="companies"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="item.id == company.id"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="date"><t>Date</t></label>
+                                <input type="date" class="form-control" id="date" name="date" t-att-value="date" required="required"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="standard_id"><t>Standard</t></label>
+                                <select
+                                    id="standard_id"
+                                    name="standard_id"
+                                    class="form-select"
+                                    required="required"
+                                    t-att-onchange="'window.location=\'/my/student_attendances/new?company_id=%s&amp;standard_id=\' + this.value' % company.id"
+                                >
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="standards"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="standard and item.id == standard.id"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="division_id"><t>Division</t></label>
+                                <select id="division_id" name="division_id" class="form-select" required="required">
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="divisions"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="division and item.id == division.id"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="class_id"><t>Class</t></label>
+                                <select id="class_id" name="class_id" class="form-select">
+                                    <option value=""><t>Select...</t></option>
+                                    <option
+                                        t-foreach="classes"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-att-selected="class_id == item.id"
+                                        t-out="item.name"
+                                    />
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- <label class="form-label" for="subject_id"><t>Subjects</t></label>
+                                <select id="subject_id" name="subject_id" class="form-select" multiple="multiple" size="4">
+                                    <option
+                                        t-foreach="subjects"
+                                        t-as="item"
+                                        t-att-value="item.id"
+                                        t-out="item.name"
+                                    />
+                                </select> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex gap-2">
+                        <button type="submit" class="btn btn-primary"><t>Create</t></button>
+                        <a href="/my/student_attendances" class="btn btn-outline-secondary"><t>Back</t></a>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_student_attendance_detail" name="Student Attendance Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3 portal-student-attendance">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                    <div>
+                        <h3 class="mb-1" t-out="attendance.name"/>
+                        <div class="text-muted">
+                            <span t-out="attendance.company_id.name"/>
+                            · <span t-out="attendance.standard_id.name"/>
+                            · <span t-out="attendance.division_id.name"/>
+                            <t t-if="attendance.class_id"> · <span t-out="attendance.class_id.name"/></t>
+                            · <span t-field="attendance.date"/>
+                        </div>
+                    </div>
+                    <a href="/my/student_attendances" class="btn btn-outline-secondary"><t>Back</t></a>
+                </div>
+
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post" t-att-action="'/my/student_attendances/%s/action' % attendance.id">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button type="submit" name="attendance_action" value="select_all" class="btn btn-secondary">
+                            <t>Select All</t>
+                        </button>
+                        <button type="submit" name="attendance_action" value="present" class="btn btn-primary">
+                            <t>Present</t>
+                        </button>
+                        <button type="submit" name="attendance_action" value="absence_reason" class="btn btn-outline-warning">
+                            <t>Absent with Reason</t>
+                        </button>
+                        <button type="submit" name="attendance_action" value="absence_noreason" class="btn btn-outline-danger">
+                            <t>Absent with no Reason</t>
+                        </button>
+                        <button type="submit" name="attendance_action" value="late" class="btn btn-outline-info">
+                            <t>Late</t>
+                        </button>
+                        <button type="submit" name="attendance_action" value="withdraw" class="btn btn-outline-secondary">
+                            <t>Withdraw</t>
+                        </button>
+                    </div>
+
+                    <div t-if="not attendance.attendance_ids" class="alert alert-info">
+                        <t>No students found for this class.</t>
+                    </div>
+
+                    <t t-if="attendance.attendance_ids" t-call="portal.portal_table">
+                        <thead>
+                            <tr>
+                                <th style="width: 2.5rem;"><t>Select</t></th>
+                                <th><t>Student</t></th>
+                                <!-- <th class="text-end"><t>Roll Number</t></th> -->
+                                <th class="text-end"><t>Status</t></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="attendance.attendance_ids" t-as="line">
+                                <td>
+                                    <input
+                                        type="checkbox"
+                                        class="form-check-input"
+                                        name="line_ids"
+                                        t-att-value="line.id"
+                                        t-att-checked="line.selected"
+                                    />
+                                </td>
+                                <td><span t-out="line.student_id.name"/></td>
+                                <!-- <td class="text-end"><span t-out="line.roll_no"/></td> -->
+                                <td class="text-end">
+                                    <span t-attf-class="badge rounded-pill #{status_badges.get(line.status, 'text-bg-light')}">
+                                        <t t-out="status_labels.get(line.status, line.status)"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </t>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_student_attendance_failed_page" name="Student Attendance Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-warning" role="alert">
+                    <span t-out="error_message"/>
+                </div>
+                <a href="/my/home" class="btn btn-secondary"><t>Back</t></a>
+            </div>
+        </t>
+    </template>
+</odoo>

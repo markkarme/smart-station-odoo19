@@ -38,7 +38,7 @@
 							</group>
 							<group>
 								<field name="date"/>
-								<field name="subject_id" widget="many2many_tags"/>
+								<!-- <field name="subject_id" widget="many2many_tags"/> -->
 							</group>
 						</group>
 						<notebook>

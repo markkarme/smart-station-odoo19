@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_school_mold" inherit_id="portal.portal_breadcrumbs" priority="58">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_school_molds', 'portal_school_mold_detail', 'portal_school_mold_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_school_molds' else ''}">
+                <a t-if="page_name != 'portal_school_molds'" href="/my/school_molds"><t>Exam Results</t></a>
+                <t t-else=""><t>Exam Results</t></t>
+            </li>
+            <li t-if="page_name == 'portal_school_mold_detail'" class="breadcrumb-item active">
+                <t>Result</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_school_mold_entry" inherit_id="portal.portal_my_home" priority="58">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_mold_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_education_exam/static/description/icon.png'"/>
+                <t t-set="title">Exam Results</t>
+                <t t-set="text">Manage school molds / exam results for your allowed companies</t>
+                <t t-set="url" t-value="'/my/school_molds'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_school_mold_failed_page" name="School Mold Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-danger" t-out="error_message"/>
+                <a href="/my" class="btn btn-secondary"><t>Back to Portal</t></a>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_school_molds" name="Exam Results">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Exam Results</t>
+            </t>
+
+            <div t-if="not molds" class="alert alert-info">
+                <t>No exam results found for your companies.</t>
+            </div>
+
+            <t t-if="molds">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Result</t></th>
+                            <th t-if="show_company"><t>Company</t></th>
+                            <th><t>Term</t></th>
+                            <th><t>Specialization</t></th>
+                            <th><t>Exam Type</t></th>
+                            <th><t>Date</t></th>
+                            <th><t>Exam</t></th>
+                            <th class="text-end"><t>Rows</t></th>
+                            <th class="text-end"><t>Status</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="molds" t-as="mold">
+                            <td>
+                                <a t-att-href="'/my/school_molds/%s' % mold.id">
+                                    <span t-out="mold.name"/>
+                                </a>
+                            </td>
+                            <td t-if="show_company"><span t-out="mold.company_id.name"/></td>
+                            <td><span t-out="selection_label(mold, 'term') or '-'"/></td>
+                            <td><span t-out="selection_label(mold, 'term_types') or '-'"/></td>
+                            <td><span t-out="selection_label(mold, 'exam_type') or '-'"/></td>
+                            <td><span t-field="mold.date"/></td>
+                            <td>
+                                <t t-if="mold.exam_id">
+                                    <a t-att-href="'/my/student_exams/%s' % mold.exam_id.id">
+                                        <span t-out="mold.exam_id.name"/>
+                                    </a>
+                                </t>
+                                <t t-else="">-</t>
+                            </td>
+                            <td class="text-end"><span t-out="mold.line_count"/></td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{state_badges.get(mold.state, 'text-bg-secondary')}">
+                                    <t t-out="state_labels.get(mold.state, mold.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager text-center">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_school_mold_detail" name="School Mold Detail">
+        <t t-call="portal.portal_layout">
+            <style type="text/css">
+                .o_portal_mold_expand_check {
+                    position: absolute !important;
+                    width: 1px !important;
+                    height: 1px !important;
+                    opacity: 0 !important;
+                    pointer-events: none !important;
+                }
+                .o_portal_mold_sheet .o_portal_mold_sheet_toolbar {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-bottom: 0.5rem;
+                }
+                .o_portal_mold_sheet .o_portal_mold_table_wrap {
+                    max-height: 70vh;
+                    overflow: auto;
+                }
+                .o_portal_mold_expand_label_close { display: none; }
+
+                body:has(#o_portal_mold_expand_check:checked) {
+                    overflow: hidden !important;
+                }
+                body:has(#o_portal_mold_expand_check:checked) header,
+                body:has(#o_portal_mold_expand_check:checked) #top,
+                body:has(#o_portal_mold_expand_check:checked) footer,
+                body:has(#o_portal_mold_expand_check:checked) .o_footer,
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_submenu,
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_mold_chrome {
+                    display: none !important;
+                }
+                body:has(#o_portal_mold_expand_check:checked) #wrapwrap,
+                body:has(#o_portal_mold_expand_check:checked) main,
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_wrap,
+                body:has(#o_portal_mold_expand_check:checked) .container,
+                body:has(#o_portal_mold_expand_check:checked) .container-fluid {
+                    max-width: 100% !important;
+                    width: 100% !important;
+                    padding-left: 0.5rem !important;
+                    padding-right: 0.5rem !important;
+                    margin: 0 !important;
+                    transform: none !important;
+                    filter: none !important;
+                }
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_mold_sheet {
+                    position: fixed !important;
+                    inset: 0 !important;
+                    z-index: 2000 !important;
+                    background: #fff !important;
+                    padding: 0.75rem 1rem 1rem !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    margin: 0 !important;
+                    box-shadow: 0 0 0 100vmax #fff;
+                }
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_mold_sheet_toolbar {
+                    position: sticky;
+                    top: 0;
+                    z-index: 2;
+                    background: #fff;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 1px solid #e9ecef;
+                    margin-bottom: 0.75rem;
+                }
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_mold_table_wrap {
+                    flex: 1 1 auto !important;
+                    max-height: none !important;
+                    height: calc(100vh - 4.5rem) !important;
+                }
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_mold_expand_label_open {
+                    display: none !important;
+                }
+                body:has(#o_portal_mold_expand_check:checked) .o_portal_mold_expand_label_close {
+                    display: inline !important;
+                }
+            </style>
+
+            <div class="container-fluid py-3 o_portal_mold_page">
+                <input type="checkbox" id="o_portal_mold_expand_check" class="o_portal_mold_expand_check" autocomplete="off"/>
+
+                <div class="o_portal_mold_chrome">
+                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                        <div>
+                            <h3 class="mb-1" t-out="mold.name"/>
+                            <div class="text-muted">
+                                <span t-out="mold.company_id.name"/>
+                                · <span t-out="selection_label(mold, 'term')"/>
+                                · <span t-out="selection_label(mold, 'term_types')"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                            <a t-if="mold.exam_id" t-att-href="'/my/student_exams/%s' % mold.exam_id.id"
+                               class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-graduation-cap"/> <t>Exam</t>
+                            </a>
+                            <span t-attf-class="badge rounded-pill #{state_badges.get(mold.state, 'text-bg-secondary')}">
+                                <t t-out="state_labels.get(mold.state, mold.state)"/>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div t-if="message" class="alert alert-success" t-out="message"/>
+                    <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                    <form t-if="can_write" method="post" t-att-action="'/my/school_molds/%s/action' % mold.id"
+                          class="d-flex flex-wrap gap-2 mb-3">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <button t-if="mold_editable" type="submit" name="mold_action" value="load_students" class="btn btn-primary">
+                            <t>Load Students</t>
+                        </button>
+                        <button t-if="mold_editable" type="submit" name="mold_action" value="add_rows" class="btn btn-outline-secondary">
+                            <t>Add 10 Rows</t>
+                        </button>
+                        <button t-if="mold_editable" type="submit" name="mold_action" value="recompute" class="btn btn-outline-secondary">
+                            <t>Recompute Totals</t>
+                        </button>
+                        <a t-att-href="'/my/school_molds/%s/xlsx' % mold.id" class="btn btn-outline-primary">
+                            <t>Download Excel</t>
+                        </a>
+                        <button t-if="mold_editable" type="submit" name="mold_action" value="mark_done" class="btn btn-success"
+                                onclick="return confirm('هل تريد اعتماد هذه النتيجة؟');">
+                            <t>Mark Done</t>
+                        </button>
+                        <button t-if="mold.state == 'done'" type="submit" name="mold_action" value="reset_draft" class="btn btn-warning">
+                            <t>Reset to Draft</t>
+                        </button>
+                        <button type="submit" name="mold_action" value="delete" class="btn btn-danger"
+                                onclick="return confirm('هل تريد حذف هذه النتيجة؟');">
+                            <t>Delete</t>
+                        </button>
+                        <a href="/my/school_molds" class="btn btn-outline-secondary"><t>Back</t></a>
+                    </form>
+                    <div t-if="not can_write" class="d-flex flex-wrap gap-2 mb-3">
+                        <a t-att-href="'/my/school_molds/%s/xlsx' % mold.id" class="btn btn-outline-primary">
+                            <t>Download Excel</t>
+                        </a>
+                        <a t-if="mold.exam_id" t-att-href="'/my/student_exams/%s' % mold.exam_id.id" class="btn btn-outline-secondary">
+                            <t>Back to Exam</t>
+                        </a>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-body row g-3">
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Term</t></div>
+                                <div t-out="selection_label(mold, 'term') or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Company</t></div>
+                                <div t-out="mold.company_id.name or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Academic Year</t></div>
+                                <div t-out="mold.year_id.name or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Class</t></div>
+                                <div t-out="mold.class_id.name or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Exam Type</t></div>
+                                <div t-out="selection_label(mold, 'exam_type') or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Standard</t></div>
+                                <div t-out="mold.standard_id.name or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Division</t></div>
+                                <div t-out="mold.division_id.name or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Date</t></div>
+                                <div t-field="mold.date"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Specialization</t></div>
+                                <div t-out="selection_label(mold, 'term_types') or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Note</t></div>
+                                <div t-out="mold.note or '-'"/>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-muted"><t>Line Count</t></div>
+                                <div t-out="mold.line_count"/>
+                            </div>
+                            <div class="col-md-3" t-if="mold.exam_id">
+                                <div class="text-muted"><t>Linked Exam</t></div>
+                                <div>
+                                    <a t-att-href="'/my/student_exams/%s' % mold.exam_id.id" t-out="mold.exam_id.name"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_portal_mold_sheet">
+                    <form t-if="mold_editable" method="post" t-att-action="'/my/school_molds/%s/save' % mold.id">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="o_portal_mold_sheet_toolbar">
+                            <label for="o_portal_mold_expand_check" class="btn btn-outline-secondary mb-0" role="button">
+                                <i class="fa fa-expand me-1"/>
+                                <span class="o_portal_mold_expand_label_open"><t>Expand View</t></span>
+                                <span class="o_portal_mold_expand_label_close"><t>Exit Expand</t></span>
+                            </label>
+                            <button type="submit" class="btn btn-primary"><t>Save Sheet</t></button>
+                        </div>
+                        <div class="table-responsive border rounded o_portal_mold_table_wrap">
+                            <table class="table table-sm table-bordered align-middle mb-0 text-center o_portal_mold_table" style="min-width: 1100px;">
+                                <thead class="sticky-top bg-white">
+                                    <tr>
+                                        <th rowspan="2" style="width: 2.5rem;"/>
+                                        <t t-foreach="header_groups" t-as="group">
+                                            <th t-if="group['name']" t-att-colspan="group['span']"
+                                                t-att-style="'background:%s' % group['color']">
+                                                <span t-out="group['name']"/>
+                                            </th>
+                                            <t t-else="">
+                                                <th t-foreach="group['columns']" t-as="column" rowspan="2"
+                                                    t-att-style="'background:%s; min-width: 4.5rem;' % (column.color or '#FFFFFF')">
+                                                    <span t-out="column.name"/>
+                                                </th>
+                                            </t>
+                                        </t>
+                                    </tr>
+                                    <tr>
+                                        <t t-foreach="header_groups" t-as="group">
+                                            <t t-if="group['name']">
+                                                <th t-foreach="group['columns']" t-as="column"
+                                                    t-att-style="'background:%s; min-width: 4.5rem;' % (column.color or '#FFFFFF')">
+                                                    <span t-out="column.name"/>
+                                                </th>
+                                            </t>
+                                        </t>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="lines" t-as="line">
+                                        <td>
+                                            <button type="submit"
+                                                    class="btn btn-link text-danger p-0"
+                                                    t-att-formaction="'/my/school_molds/%s/action' % mold.id"
+                                                    name="mold_action"
+                                                    t-att-value="'delete_line:%s' % line.id"
+                                                    onclick="return confirm('حذف الصف؟');">
+                                                <i class="fa fa-times"/>
+                                            </button>
+                                        </td>
+                                        <td t-foreach="columns" t-as="column"
+                                            t-att-style="'background:%s' % (column.color or '#FFFFFF')">
+                                            <t t-if="column.col_type == 'name'">
+                                                <input type="text" class="form-control form-control-sm"
+                                                       t-att-name="'cell_%s__student_name' % line.id"
+                                                       t-att-value="line.student_name or ''"/>
+                                            </t>
+                                            <t t-elif="is_cell_editable(column, mold_editable)">
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                       t-att-name="'cell_%s_%s' % (line.id, column.key)"
+                                                       t-att-value="cell_value(line, column)"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-out="cell_value(line, column)"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="o_portal_mold_sheet_toolbar mt-2">
+                            <label for="o_portal_mold_expand_check" class="btn btn-outline-secondary mb-0" role="button">
+                                <i class="fa fa-expand me-1"/>
+                                <span class="o_portal_mold_expand_label_open"><t>Expand View</t></span>
+                                <span class="o_portal_mold_expand_label_close"><t>Exit Expand</t></span>
+                            </label>
+                            <button type="submit" class="btn btn-primary"><t>Save Sheet</t></button>
+                        </div>
+                    </form>
+
+                    <div t-if="not mold_editable">
+                        <div class="o_portal_mold_sheet_toolbar">
+                            <label for="o_portal_mold_expand_check" class="btn btn-outline-secondary mb-0" role="button">
+                                <i class="fa fa-expand me-1"/>
+                                <span class="o_portal_mold_expand_label_open"><t>Expand View</t></span>
+                                <span class="o_portal_mold_expand_label_close"><t>Exit Expand</t></span>
+                            </label>
+                        </div>
+                        <div class="table-responsive border rounded o_portal_mold_table_wrap">
+                            <table class="table table-sm table-bordered align-middle mb-0 text-center o_portal_mold_table" style="min-width: 1100px;">
+                                <thead class="sticky-top bg-white">
+                                    <tr>
+                                        <t t-foreach="header_groups" t-as="group">
+                                            <th t-if="group['name']" t-att-colspan="group['span']"
+                                                t-att-style="'background:%s' % group['color']">
+                                                <span t-out="group['name']"/>
+                                            </th>
+                                            <t t-else="">
+                                                <th t-foreach="group['columns']" t-as="column" rowspan="2"
+                                                    t-att-style="'background:%s; min-width: 4.5rem;' % (column.color or '#FFFFFF')">
+                                                    <span t-out="column.name"/>
+                                                </th>
+                                            </t>
+                                        </t>
+                                    </tr>
+                                    <tr>
+                                        <t t-foreach="header_groups" t-as="group">
+                                            <t t-if="group['name']">
+                                                <th t-foreach="group['columns']" t-as="column"
+                                                    t-att-style="'background:%s; min-width: 4.5rem;' % (column.color or '#FFFFFF')">
+                                                    <span t-out="column.name"/>
+                                                </th>
+                                            </t>
+                                        </t>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="lines" t-as="line">
+                                        <td t-foreach="columns" t-as="column"
+                                            t-att-style="'background:%s' % (column.color or '#FFFFFF')">
+                                            <span t-out="cell_value(line, column)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -61,6 +61,34 @@ class HrEmployee(models.Model):
         help="Portal admin users can view all attendance, general requests, "
         "time off, allocations, and attendance adjustments in the portal.",
     )
+    is_portal_attendance_admin = fields.Boolean(
+        string="Admin Attendance Portal",
+        compute="_compute_is_portal_attendance_admin",
+        inverse="_inverse_is_portal_attendance_admin",
+        help="Admin attendance portal users can manage student attendance "
+        "for their allowed companies from the portal.",
+    )
+    is_portal_exam_admin = fields.Boolean(
+        string="Admin Exam Portal",
+        compute="_compute_is_portal_exam_admin",
+        inverse="_inverse_is_portal_exam_admin",
+        help="Admin exam portal users can manage student exams "
+        "for their allowed companies from the portal.",
+    )
+    is_portal_mold_admin = fields.Boolean(
+        string="Admin Mold Portal",
+        compute="_compute_is_portal_mold_admin",
+        inverse="_inverse_is_portal_mold_admin",
+        help="Admin mold portal users can manage school molds / results "
+        "for their allowed companies from the portal.",
+    )
+    is_portal_fee_admin = fields.Boolean(
+        string="Admin Fee Plan Portal",
+        compute="_compute_is_portal_fee_admin",
+        inverse="_inverse_is_portal_fee_admin",
+        help="Admin fee plan portal users can manage student fee plans "
+        "for their allowed companies from the portal.",
+    )
 
     def _sync_approver_fields(self, vals):
         if self.env.context.get("skip_approver_sync"):
@@ -148,6 +176,118 @@ class HrEmployee(models.Model):
             if not user:
                 continue
             if employee.is_portal_hr_admin:
+                user.sudo().write({"group_ids": [(4, admin_group.id)]})
+            else:
+                user.sudo().write({"group_ids": [(3, admin_group.id)]})
+
+    def _get_portal_attendance_admin_group(self):
+        return self.env.ref(
+            "attendance_location_portal.group_portal_attendance_admin",
+            raise_if_not_found=False,
+        )
+
+    def _compute_is_portal_attendance_admin(self):
+        admin_group = self._get_portal_attendance_admin_group()
+        for employee in self:
+            employee.is_portal_attendance_admin = bool(
+                admin_group
+                and employee.user_id
+                and admin_group in employee.user_id.sudo().all_group_ids
+            )
+
+    def _inverse_is_portal_attendance_admin(self):
+        admin_group = self._get_portal_attendance_admin_group()
+        if not admin_group:
+            return
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            if employee.is_portal_attendance_admin:
+                user.sudo().write({"group_ids": [(4, admin_group.id)]})
+            else:
+                user.sudo().write({"group_ids": [(3, admin_group.id)]})
+
+    def _get_portal_exam_admin_group(self):
+        return self.env.ref(
+            "attendance_location_portal.group_portal_exam_admin",
+            raise_if_not_found=False,
+        )
+
+    def _compute_is_portal_exam_admin(self):
+        admin_group = self._get_portal_exam_admin_group()
+        for employee in self:
+            employee.is_portal_exam_admin = bool(
+                admin_group
+                and employee.user_id
+                and admin_group in employee.user_id.sudo().all_group_ids
+            )
+
+    def _inverse_is_portal_exam_admin(self):
+        admin_group = self._get_portal_exam_admin_group()
+        if not admin_group:
+            return
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            if employee.is_portal_exam_admin:
+                user.sudo().write({"group_ids": [(4, admin_group.id)]})
+            else:
+                user.sudo().write({"group_ids": [(3, admin_group.id)]})
+
+    def _get_portal_mold_admin_group(self):
+        return self.env.ref(
+            "attendance_location_portal.group_portal_mold_admin",
+            raise_if_not_found=False,
+        )
+
+    def _compute_is_portal_mold_admin(self):
+        admin_group = self._get_portal_mold_admin_group()
+        for employee in self:
+            employee.is_portal_mold_admin = bool(
+                admin_group
+                and employee.user_id
+                and admin_group in employee.user_id.sudo().all_group_ids
+            )
+
+    def _inverse_is_portal_mold_admin(self):
+        admin_group = self._get_portal_mold_admin_group()
+        if not admin_group:
+            return
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            if employee.is_portal_mold_admin:
+                user.sudo().write({"group_ids": [(4, admin_group.id)]})
+            else:
+                user.sudo().write({"group_ids": [(3, admin_group.id)]})
+
+    def _get_portal_fee_admin_group(self):
+        return self.env.ref(
+            "attendance_location_portal.group_portal_fee_admin",
+            raise_if_not_found=False,
+        )
+
+    def _compute_is_portal_fee_admin(self):
+        admin_group = self._get_portal_fee_admin_group()
+        for employee in self:
+            employee.is_portal_fee_admin = bool(
+                admin_group
+                and employee.user_id
+                and admin_group in employee.user_id.sudo().all_group_ids
+            )
+
+    def _inverse_is_portal_fee_admin(self):
+        admin_group = self._get_portal_fee_admin_group()
+        if not admin_group:
+            return
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            if employee.is_portal_fee_admin:
                 user.sudo().write({"group_ids": [(4, admin_group.id)]})
             else:
                 user.sudo().write({"group_ids": [(3, admin_group.id)]})

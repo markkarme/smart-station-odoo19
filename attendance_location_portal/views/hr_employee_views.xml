@@ -43,6 +43,26 @@
                     invisible="not user_id"
                     groups="hr.group_hr_user"
                 />
+                <field
+                    name="is_portal_attendance_admin"
+                    invisible="not user_id"
+                    groups="hr.group_hr_user"
+                />
+                <field
+                    name="is_portal_exam_admin"
+                    invisible="not user_id"
+                    groups="hr.group_hr_user"
+                />
+                <field
+                    name="is_portal_mold_admin"
+                    invisible="not user_id"
+                    groups="hr.group_hr_user"
+                />
+                <field
+                    name="is_portal_fee_admin"
+                    invisible="not user_id"
+                    groups="hr.group_hr_user"
+                />
             </xpath>
         </field>
     </record>

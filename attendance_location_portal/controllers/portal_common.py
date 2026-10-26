@@ -22,9 +22,35 @@ class PortalHrMixin:
             "attendance_location_portal.group_portal_hr_admin"
         )
 
+    def _is_portal_attendance_admin(self):
+        return request.env.user.has_group(
+            "attendance_location_portal.group_portal_attendance_admin"
+        )
+
+    def _is_portal_exam_admin(self):
+        return request.env.user.has_group(
+            "attendance_location_portal.group_portal_exam_admin"
+        )
+
+    def _is_portal_mold_admin(self):
+        return request.env.user.has_group(
+            "attendance_location_portal.group_portal_mold_admin"
+        )
+
+    def _is_portal_fee_admin(self):
+        return request.env.user.has_group(
+            "attendance_location_portal.group_portal_fee_admin"
+        )
+
     def _portal_user_company_ids(self):
         """Companies allowed for the current portal user."""
         return request.env.user.company_ids.ids
+
+    def _portal_company_domain(self, company_field="company_id"):
+        company_ids = self._portal_user_company_ids()
+        if not company_ids:
+            return [(company_field, "=", False)]
+        return [(company_field, "in", company_ids)]
 
     def _portal_employee_domain(self, employee, field="employee_id", company_field="company_id"):
         """Own records for normal portal users; company-scoped for portal admins."""

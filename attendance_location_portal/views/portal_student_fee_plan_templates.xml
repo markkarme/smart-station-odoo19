@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_fee_plan" inherit_id="portal.portal_breadcrumbs" priority="59">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_student_fee_plans', 'portal_student_fee_plan_detail', 'portal_student_fee_plan_new', 'portal_student_fee_plan_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_student_fee_plans' else ''}">
+                <a t-if="page_name != 'portal_student_fee_plans'" href="/my/fee_plans"><t>Fee Plans</t></a>
+                <t t-else=""><t>Fee Plans</t></t>
+            </li>
+            <li t-if="page_name == 'portal_student_fee_plan_new'" class="breadcrumb-item active">
+                <t>New Fee Plan</t>
+            </li>
+            <li t-if="page_name == 'portal_student_fee_plan_detail'" class="breadcrumb-item active">
+                <t>Fee Plan</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_fee_plan_entry" inherit_id="portal.portal_my_home" priority="59">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_fee_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_education_exam/static/description/icon.png'"/>
+                <t t-set="title">Fee Plans</t>
+                <t t-set="text">Manage student fee plans and installments for your allowed companies</t>
+                <t t-set="url" t-value="'/my/fee_plans'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_student_fee_plan_failed_page" name="Fee Plan Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-danger" t-out="error_message"/>
+                <a href="/my" class="btn btn-secondary"><t>Back to Portal</t></a>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_fee_plans" name="Fee Plans">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Fee Plans</t>
+            </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/fee_plans/new" class="btn btn-primary"><t>New Fee Plan</t></a>
+            </div>
+
+            <div t-if="not plans" class="alert alert-info">
+                <t>No fee plans found for your companies.</t>
+            </div>
+
+            <t t-if="plans">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>Student</t></th>
+                            <th><t>Academic Year</t></th>
+                            <th t-if="show_company"><t>Company</t></th>
+                            <th><t>Standard</t></th>
+                            <th class="text-end"><t>Total Due</t></th>
+                            <th class="text-end"><t>Total Paid</t></th>
+                            <th class="text-end"><t>Remaining</t></th>
+                            <th class="text-end"><t>Status</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="plans" t-as="plan">
+                            <td>
+                                <a t-att-href="'/my/fee_plans/%s' % plan.id">
+                                    <span t-out="plan.student_id.name"/>
+                                </a>
+                            </td>
+                            <td><span t-out="plan.year_id.name"/></td>
+                            <td t-if="show_company"><span t-out="plan.company_id.name"/></td>
+                            <td><span t-out="plan.standard_id.name or '-'"/></td>
+                            <td class="text-end"><span t-out="format_money(plan, plan.total_due)"/></td>
+                            <td class="text-end"><span t-out="format_money(plan, plan.total_paid)"/></td>
+                            <td class="text-end"><span t-out="format_money(plan, plan.remaining)"/></td>
+                            <td class="text-end">
+                                <span t-attf-class="badge rounded-pill #{state_badges.get(plan.state, 'text-bg-secondary')}">
+                                    <t t-out="state_labels.get(plan.state, plan.state)"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager text-center">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_student_fee_plan_new" name="New Fee Plan">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <h3 class="mb-3"><t>New Fee Plan</t></h3>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="get" action="/my/fee_plans/new" class="card mb-3">
+                    <div class="card-body row g-3 align-items-end">
+                        <div class="col-md-4" t-if="len(companies) > 1">
+                            <label class="form-label"><t>Company</t></label>
+                            <select class="form-select" name="company_id" onchange="this.form.submit()">
+                                <option t-foreach="companies" t-as="comp" t-att-value="comp.id"
+                                        t-att-selected="company.id == comp.id and 'selected' or None"
+                                        t-out="comp.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><t>Student</t></label>
+                            <select class="form-select" name="student_id" onchange="this.form.submit()">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="students" t-as="stud" t-att-value="stud.id"
+                                        t-att-selected="student and student.id == stud.id and 'selected' or None"
+                                        t-out="stud.display_name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-outline-secondary"><t>Reload</t></button>
+                        </div>
+                        <input type="hidden" name="year_id" t-att-value="year.id if year else ''"/>
+                        <input type="hidden" name="standard_id" t-att-value="standard.id if standard else ''"/>
+                        <input type="hidden" name="bus_category_id" t-att-value="bus_category.id if bus_category else ''"/>
+                    </div>
+                </form>
+
+                <form method="post" action="/my/fee_plans/submit" class="card">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="company_id" t-att-value="company.id"/>
+                    <div class="card-body row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Student</t> *</label>
+                            <select class="form-select" name="student_id" required="required">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="students" t-as="stud" t-att-value="stud.id"
+                                        t-att-selected="student and student.id == stud.id and 'selected' or None"
+                                        t-out="stud.display_name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Academic Year</t> *</label>
+                            <select class="form-select" name="year_id" required="required">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="years" t-as="yr" t-att-value="yr.id"
+                                        t-att-selected="year and year.id == yr.id and 'selected' or None"
+                                        t-out="yr.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Standard</t></label>
+                            <select class="form-select" name="standard_id">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="standards" t-as="std" t-att-value="std.id"
+                                        t-att-selected="standard and standard.id == std.id and 'selected' or None"
+                                        t-out="std.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Bus</t></label>
+                            <select class="form-select" name="bus_category_id">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="bus_categories" t-as="bus" t-att-value="bus.id"
+                                        t-att-selected="bus_category and bus_category.id == bus.id and 'selected' or None"
+                                        t-out="bus.display_name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Basic Installment Count</t></label>
+                            <input type="number" min="0" class="form-control" name="basic_installment_count"
+                                   t-att-value="basic_installment_count"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Basic Total Due</t></label>
+                            <input type="number" step="0.01" class="form-control" name="basic_total_due"
+                                   t-att-value="basic_total_due"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Bus Installment Count</t></label>
+                            <input type="number" min="0" class="form-control" name="bus_installment_count"
+                                   t-att-value="bus_installment_count"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Bus Total Due</t></label>
+                            <input type="number" step="0.01" class="form-control" name="bus_total_due"
+                                   t-att-value="bus_total_due"/>
+                        </div>
+                        <div class="col-12 d-flex gap-2">
+                            <button type="submit" class="btn btn-primary"><t>Create Fee Plan</t></button>
+                            <a href="/my/fee_plans" class="btn btn-outline-secondary"><t>Cancel</t></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_student_fee_plan_detail" name="Fee Plan Detail">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                    <div>
+                        <h3 class="mb-1" t-out="plan.display_name or plan.name"/>
+                        <div class="text-muted">
+                            <span t-out="plan.company_id.name"/>
+                            · <span t-out="plan.standard_id.name or '-'"/>
+                            <t t-if="plan.division_id"> · <span t-out="plan.division_id.name"/></t>
+                            <t t-if="plan.class_id"> · <span t-out="plan.class_id.name"/></t>
+                        </div>
+                    </div>
+                    <span t-attf-class="badge rounded-pill #{state_badges.get(plan.state, 'text-bg-secondary')}">
+                        <t t-out="state_labels.get(plan.state, plan.state)"/>
+                    </span>
+                </div>
+
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post" t-att-action="'/my/fee_plans/%s/action' % plan.id" class="d-flex flex-wrap gap-2 mb-3">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="tab" t-att-value="active_tab or 'basic'"/>
+                    <button t-if="plan.state != 'open'" type="submit" name="fee_action" value="open" class="btn btn-primary">
+                        <t>Open</t>
+                    </button>
+                    <button t-if="plan.state != 'closed'" type="submit" name="fee_action" value="close" class="btn btn-outline-secondary">
+                        <t>Close</t>
+                    </button>
+                    <button t-if="plan.state != 'draft'" type="submit" name="fee_action" value="draft" class="btn btn-warning">
+                        <t>Reset to Draft</t>
+                    </button>
+                    <button t-if="plan_editable" type="submit" name="fee_action" value="generate" class="btn btn-outline-primary">
+                        <t>Refresh Installments</t>
+                    </button>
+                    <button t-if="has_accounting and plan_editable" type="submit" name="fee_action" value="invoice_basic" class="btn btn-outline-success">
+                        <t>Invoice Basic Installments</t>
+                    </button>
+                    <button t-if="has_accounting and plan_editable" type="submit" name="fee_action" value="invoice_bus" class="btn btn-outline-success">
+                        <t>Invoice Bus Installments</t>
+                    </button>
+                    <button type="submit" name="fee_action" value="delete" class="btn btn-danger"
+                            onclick="return confirm('هل تريد حذف خطة الرسوم؟');">
+                        <t>Delete</t>
+                    </button>
+                    <a href="/my/fee_plans" class="btn btn-outline-secondary"><t>Back</t></a>
+                </form>
+
+                <div class="card mb-3">
+                    <div class="card-body row g-3">
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Student</t></div>
+                            <div t-out="plan.student_id.name"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Academic Year</t></div>
+                            <div t-out="plan.year_id.name"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-muted"><t>Standard</t></div>
+                            <div t-out="plan.standard_id.name or '-'"/>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-muted"><t>Total Due</t></div>
+                            <div class="fw-semibold" t-out="format_money(plan.total_due)"/>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-muted"><t>Total Paid</t></div>
+                            <div class="fw-semibold" t-out="format_money(plan.total_paid)"/>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-muted"><t>Remaining</t></div>
+                            <div class="fw-semibold" t-out="format_money(plan.remaining)"/>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-muted"><t>Books Paid</t></div>
+                            <div t-out="format_money(plan.books_paid)"/>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-muted"><t>Uniform Paid</t></div>
+                            <div t-out="format_money(plan.uniform_paid)"/>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-muted"><t>Other Expenses Paid</t></div>
+                            <div t-out="format_money(plan.other_expenses_paid)"/>
+                        </div>
+                        <div class="col-md-3" t-if="'total_late_penalties' in plan._fields">
+                            <div class="text-muted"><t>Total Late Penalties</t></div>
+                            <div t-out="format_money(plan.total_late_penalties)"/>
+                        </div>
+                    </div>
+                </div>
+
+                <form t-if="plan_editable" method="post" t-att-action="'/my/fee_plans/%s/header' % plan.id" class="card mb-3">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="tab" t-att-value="active_tab or 'basic'"/>
+                    <div class="card-body row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Basic Total Due</t></label>
+                            <input type="number" step="0.01" class="form-control" name="basic_total_due" t-att-value="plan.basic_total_due"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Bus</t></label>
+                            <select class="form-select" name="bus_category_id">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="bus_categories" t-as="bus" t-att-value="bus.id"
+                                        t-att-selected="plan.bus_category_id.id == bus.id and 'selected' or None"
+                                        t-out="bus.display_name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Bus Total Due</t></label>
+                            <input type="number" step="0.01" class="form-control" name="bus_total_due" t-att-value="plan.bus_total_due"/>
+                        </div>
+                        <div class="col-md-3" t-if="'penalty_price_per_week' in plan._fields">
+                            <label class="form-label"><t>Penalty per Week</t></label>
+                            <input type="number" step="0.01" class="form-control" name="penalty_price_per_week" t-att-value="plan.penalty_price_per_week"/>
+                        </div>
+                        <div class="col-md-3" t-if="'installment_start_date' in plan._fields">
+                            <label class="form-label"><t>First Due Date</t></label>
+                            <input type="date" class="form-control" name="installment_start_date"
+                                   t-att-value="plan.installment_start_date and plan.installment_start_date.isoformat() or ''"/>
+                        </div>
+                        <div class="col-md-3" t-if="'installment_interval_months' in plan._fields">
+                            <label class="form-label"><t>Months Between Due Dates</t></label>
+                            <input type="number" class="form-control" name="installment_interval_months" t-att-value="plan.installment_interval_months"/>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary"><t>Save Header</t></button>
+                        </div>
+                    </div>
+                </form>
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'basic' else ''}" data-bs-toggle="tab" data-bs-target="#fee_basic" type="button" role="tab">
+                            <t>Basic Installments</t>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'bus' else ''}" data-bs-toggle="tab" data-bs-target="#fee_bus" type="button" role="tab">
+                            <t>Bus Installments</t>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'books' else ''}" data-bs-toggle="tab" data-bs-target="#fee_books" type="button" role="tab">
+                            <t>Books</t>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'uniform' else ''}" data-bs-toggle="tab" data-bs-target="#fee_uniform" type="button" role="tab">
+                            <t>Uniform</t>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'other' else ''}" data-bs-toggle="tab" data-bs-target="#fee_other" type="button" role="tab">
+                            <t>Other Expenses</t>
+                        </button>
+                    </li>
+                    <li t-if="has_exceptions" class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'exceptions' else ''}" data-bs-toggle="tab" data-bs-target="#fee_exceptions" type="button" role="tab">
+                            <t>Exceptions</t>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button t-attf-class="nav-link #{'active' if active_tab == 'notes' else ''}" data-bs-toggle="tab" data-bs-target="#fee_notes" type="button" role="tab">
+                            <t>Notes</t>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content border border-top-0 p-3">
+                    <!-- Basic -->
+                    <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'basic' else ''}" id="fee_basic" role="tabpanel">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3"><div class="text-muted"><t>Count</t></div><div t-out="plan.basic_installment_count"/></div>
+                            <div class="col-md-3"><div class="text-muted"><t>Total Due</t></div><div t-out="format_money(plan.basic_total_due)"/></div>
+                            <div class="col-md-3"><div class="text-muted"><t>Paid</t></div><div t-out="format_money(plan.basic_paid)"/></div>
+                            <div class="col-md-3"><div class="text-muted"><t>Remaining</t></div><div t-out="format_money(plan.basic_remaining)"/></div>
+                        </div>
+                        <form t-if="plan_editable" method="post" t-att-action="'/my/fee_plans/%s/installments' % plan.id">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="fee_type" value="basic"/>
+                            <t t-call="attendance_location_portal.portal_fee_installment_table">
+                                <t t-set="lines" t-value="plan.basic_installment_ids"/>
+                                <t t-set="editable" t-value="True"/>
+                            </t>
+                            <button type="submit" class="btn btn-primary mt-2"><t>Save Installments</t></button>
+                        </form>
+                        <t t-if="not plan_editable" t-call="attendance_location_portal.portal_fee_installment_table">
+                            <t t-set="lines" t-value="plan.basic_installment_ids"/>
+                            <t t-set="editable" t-value="False"/>
+                        </t>
+                    </div>
+
+                    <!-- Bus -->
+                    <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'bus' else ''}" id="fee_bus" role="tabpanel">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3"><div class="text-muted"><t>Bus</t></div><div t-out="plan.bus_category_id.display_name or '-'"/></div>
+                            <div class="col-md-3"><div class="text-muted"><t>Count</t></div><div t-out="plan.bus_installment_count"/></div>
+                            <div class="col-md-3"><div class="text-muted"><t>Paid</t></div><div t-out="format_money(plan.bus_paid)"/></div>
+                            <div class="col-md-3"><div class="text-muted"><t>Remaining</t></div><div t-out="format_money(plan.bus_remaining)"/></div>
+                        </div>
+                        <form t-if="plan_editable" method="post" t-att-action="'/my/fee_plans/%s/installments' % plan.id">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="fee_type" value="bus"/>
+                            <t t-call="attendance_location_portal.portal_fee_installment_table">
+                                <t t-set="lines" t-value="plan.bus_installment_ids"/>
+                                <t t-set="editable" t-value="True"/>
+                            </t>
+                            <button type="submit" class="btn btn-primary mt-2"><t>Save Installments</t></button>
+                        </form>
+                        <t t-if="not plan_editable" t-call="attendance_location_portal.portal_fee_installment_table">
+                            <t t-set="lines" t-value="plan.bus_installment_ids"/>
+                            <t t-set="editable" t-value="False"/>
+                        </t>
+                    </div>
+
+                    <!-- Books / Uniform / Other -->
+                    <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'books' else ''}" id="fee_books" role="tabpanel">
+                        <t t-call="attendance_location_portal.portal_fee_other_table">
+                            <t t-set="fee_type" t-value="'books'"/>
+                            <t t-set="lines" t-value="plan.books_fee_ids"/>
+                            <t t-set="show_description" t-value="False"/>
+                        </t>
+                    </div>
+                    <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'uniform' else ''}" id="fee_uniform" role="tabpanel">
+                        <t t-call="attendance_location_portal.portal_fee_other_table">
+                            <t t-set="fee_type" t-value="'uniform'"/>
+                            <t t-set="lines" t-value="plan.uniform_fee_ids"/>
+                            <t t-set="show_description" t-value="False"/>
+                        </t>
+                    </div>
+                    <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'other' else ''}" id="fee_other" role="tabpanel">
+                        <t t-call="attendance_location_portal.portal_fee_other_table">
+                            <t t-set="fee_type" t-value="'other'"/>
+                            <t t-set="lines" t-value="plan.other_expense_ids"/>
+                            <t t-set="show_description" t-value="True"/>
+                        </t>
+                    </div>
+
+                    <div t-if="has_exceptions" t-attf-class="tab-pane fade #{'show active' if active_tab == 'exceptions' else ''}" id="fee_exceptions" role="tabpanel">
+                        <div t-if="not plan.exception_ids" class="alert alert-info">
+                            <t>No exceptions recorded. Create exceptions from the backend form when a supporting document is required.</t>
+                        </div>
+                        <div t-if="plan.exception_ids" class="table-responsive">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    <tr>
+                                        <th><t>Name</t></th>
+                                        <th><t>Type</t></th>
+                                        <th><t>Fee Type</t></th>
+                                        <th><t>New Count</t></th>
+                                        <th><t>Discount</t></th>
+                                        <th><t>User</t></th>
+                                        <th><t>Date</t></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="plan.exception_ids" t-as="exc">
+                                        <td><span t-out="exc.name"/></td>
+                                        <td><span t-out="exc.exception_type"/></td>
+                                        <td><span t-out="exc.fee_type or '-'"/></td>
+                                        <td><span t-out="exc.new_installment_count or '-'"/></td>
+                                        <td><span t-out="exc.discount_value or '-'"/></td>
+                                        <td><span t-out="exc.user_id.name or '-'"/></td>
+                                        <td><span t-field="exc.create_date"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'notes' else ''}" id="fee_notes" role="tabpanel">
+                        <form t-if="plan_editable" method="post" t-att-action="'/my/fee_plans/%s/header' % plan.id">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="tab" value="notes"/>
+                            <textarea class="form-control" name="note" rows="5"><t t-esc="plan.note or ''"/></textarea>
+                            <button type="submit" class="btn btn-primary mt-2"><t>Save Notes</t></button>
+                        </form>
+                        <div t-if="not plan_editable" class="border rounded p-3" style="white-space: pre-wrap;" t-out="plan.note or '-'"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_fee_installment_table" name="Fee Installment Table">
+        <div class="table-responsive">
+            <table class="table table-sm align-middle">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th><t>Installment</t></th>
+                        <th t-if="'due_date' in lines._fields"><t>Due Date</t></th>
+                        <th><t>Amount Due</t></th>
+                        <th><t>Amount Paid</t></th>
+                        <th><t>Receipt</t></th>
+                        <th><t>Date</t></th>
+                        <th t-if="'penalty_amount' in lines._fields"><t>Penalty</t></th>
+                        <th><t>Paid</t></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="lines" t-as="line">
+                        <td><span t-out="line.number"/></td>
+                        <td><span t-out="line.name"/></td>
+                        <td t-if="'due_date' in line._fields">
+                            <input t-if="editable" type="date" class="form-control form-control-sm"
+                                   t-att-name="'inst_%s_due_date' % line.id"
+                                   t-att-value="line.due_date and line.due_date.isoformat() or ''"/>
+                            <span t-if="not editable" t-out="line.due_date or '-'"/>
+                        </td>
+                        <td>
+                            <input t-if="editable" type="number" step="0.01" class="form-control form-control-sm"
+                                   t-att-name="'inst_%s_amount_due' % line.id" t-att-value="line.amount_due"/>
+                            <span t-if="not editable" t-out="line.amount_due"/>
+                        </td>
+                        <td>
+                            <input t-if="editable" type="number" step="0.01" class="form-control form-control-sm"
+                                   t-att-name="'inst_%s_amount_paid' % line.id" t-att-value="line.amount_paid"/>
+                            <span t-if="not editable" t-out="line.amount_paid"/>
+                        </td>
+                        <td>
+                            <input t-if="editable" type="text" class="form-control form-control-sm"
+                                   t-att-name="'inst_%s_receipt_number' % line.id" t-att-value="line.receipt_number or ''"/>
+                            <span t-if="not editable" t-out="line.receipt_number or '-'"/>
+                        </td>
+                        <td>
+                            <input t-if="editable" type="date" class="form-control form-control-sm"
+                                   t-att-name="'inst_%s_payment_date' % line.id"
+                                   t-att-value="line.payment_date and line.payment_date.isoformat() or ''"/>
+                            <span t-if="not editable" t-out="line.payment_date or '-'"/>
+                        </td>
+                        <td t-if="'penalty_amount' in line._fields"><span t-out="line.penalty_amount"/></td>
+                        <td>
+                            <span t-if="line.is_paid" class="badge text-bg-success"><t>Yes</t></span>
+                            <span t-else="" class="badge text-bg-secondary"><t>No</t></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+    <template id="portal_fee_other_table" name="Fee Other Table">
+        <form t-if="plan_editable" method="post" t-att-action="'/my/fee_plans/%s/other_fees' % plan.id">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <input type="hidden" name="fee_type" t-att-value="fee_type"/>
+            <div class="table-responsive">
+                <table class="table table-sm align-middle">
+                    <thead>
+                        <tr>
+                            <th style="width: 2.5rem;"><t>Delete</t></th>
+                            <th t-if="show_description"><t>Description</t></th>
+                            <th><t>Amount</t></th>
+                            <th><t>Receipt</t></th>
+                            <th><t>Date</t></th>
+                            <th><t>Note</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="lines" t-as="line">
+                            <td><input type="checkbox" class="form-check-input" name="delete_other_ids" t-att-value="line.id"/></td>
+                            <td t-if="show_description">
+                                <input type="text" class="form-control form-control-sm"
+                                       t-att-name="'other_%s_description' % line.id" t-att-value="line.description or ''"/>
+                            </td>
+                            <td>
+                                <input type="number" step="0.01" class="form-control form-control-sm"
+                                       t-att-name="'other_%s_amount' % line.id" t-att-value="line.amount"/>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm"
+                                       t-att-name="'other_%s_receipt_number' % line.id" t-att-value="line.receipt_number or ''"/>
+                            </td>
+                            <td>
+                                <input type="date" class="form-control form-control-sm"
+                                       t-att-name="'other_%s_payment_date' % line.id"
+                                       t-att-value="line.payment_date and line.payment_date.isoformat() or ''"/>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm"
+                                       t-att-name="'other_%s_note' % line.id" t-att-value="line.note or ''"/>
+                            </td>
+                        </tr>
+                        <tr class="table-light">
+                            <td></td>
+                            <td t-if="show_description">
+                                <input type="text" class="form-control form-control-sm" name="new_description" placeholder="البيان"/>
+                            </td>
+                            <td><input type="number" step="0.01" class="form-control form-control-sm" name="new_amount" placeholder="0.00"/></td>
+                            <td><input type="text" class="form-control form-control-sm" name="new_receipt_number"/></td>
+                            <td><input type="date" class="form-control form-control-sm" name="new_payment_date"/></td>
+                            <td><input type="text" class="form-control form-control-sm" name="new_note"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex gap-2 mt-2">
+                <button type="submit" class="btn btn-primary"><t>Save</t></button>
+                <button type="submit" name="add_other" value="1" class="btn btn-outline-primary"><t>Add Line</t></button>
+            </div>
+        </form>
+        <div t-if="not plan_editable" class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th t-if="show_description"><t>Description</t></th>
+                        <th><t>Amount</t></th>
+                        <th><t>Receipt</t></th>
+                        <th><t>Date</t></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="lines" t-as="line">
+                        <td t-if="show_description"><span t-out="line.description or '-'"/></td>
+                        <td><span t-out="line.amount"/></td>
+                        <td><span t-out="line.receipt_number or '-'"/></td>
+                        <td><span t-out="line.payment_date or '-'"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</odoo>

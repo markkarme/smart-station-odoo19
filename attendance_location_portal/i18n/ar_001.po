@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* attendance_location_portal
 #
 msgid ""
 msgstr ""
@@ -23,15 +20,49 @@ msgid "\tfrom %(date_from)s to %(date_to)s - %(state)s"
 msgstr "\tمن %(date_from)s إلى %(date_to)s - %(state)s"
 
 #. module: attendance_location_portal
+#: model:res.groups,comment:attendance_location_portal.group_portal_attendance_admin
+msgid ""
+"\n"
+"            Admin attendance portal users can manage student attendance\n"
+"            (attendance.attendance) for their allowed companies only.\n"
+"        "
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:res.groups,comment:attendance_location_portal.group_portal_exam_admin
+msgid ""
+"\n"
+"            Admin exam portal users can manage student exams\n"
+"            (student.exam) for their allowed companies only.\n"
+"        "
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:res.groups,comment:attendance_location_portal.group_portal_fee_admin
+msgid ""
+"\n"
+"            Admin fee plan portal users can manage student fee plans / installments\n"
+"            (student.fee.plan) for their allowed companies only.\n"
+"        "
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:res.groups,comment:attendance_location_portal.group_portal_mold_admin
+msgid ""
+"\n"
+"            Admin mold portal users can manage school molds / results\n"
+"            (school.mold) for their allowed companies only.\n"
+"        "
+msgstr ""
+
+#. module: attendance_location_portal
 #: model:res.groups,comment:attendance_location_portal.group_portal_hr_admin
 msgid ""
 "\n"
-"            Portal admin users can view all attendance records, general requests,\n"
-"            time off requests, allocations, and attendance adjustments.\n"
+"            Portal admin users can view attendance, general requests, time off,\n"
+"            allocations, and attendance adjustments for their allowed companies only.\n"
 "        "
 msgstr ""
-"يمكن لمسؤولي البوابة عرض جميع سجلات الحضور والطلبات العامة وطلبات الإجازة "
-"والمخصصات وتعديلات الحضور."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -59,6 +90,12 @@ msgstr ". ثم حدد موعداً للاجتماع لمناقشتها."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid ". Then, share it with appraisers."
 msgstr ". ثم شاركها مع المقيّمين."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "10 rows added."
+msgstr "تمت إضافة 10 صفوف."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
@@ -113,6 +150,26 @@ msgid "<span class=\"mx-1\">→</span>"
 msgstr "<span class=\"mx-1\">←</span>"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+msgid ""
+"<span class=\"o_portal_avatar_camera\" title=\"Change photo\">\n"
+"                    <i class=\"fa fa-camera\"/>\n"
+"                </span>"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_payslip_detail
+msgid "<span> - </span>"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "A fee plan already exists for this student and year."
+msgstr "توجد خطة رسوم لهذا الطالب وهذا العام بالفعل."
+
+#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "A supporting document is required for %(leave_type)s."
@@ -134,6 +191,24 @@ msgstr ""
 " لهذا الموظف."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Absent with Reason"
+msgstr "غائب بسبب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Absent with no Reason"
+msgstr "غائب بدون سبب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Academic Year"
+msgstr "العام الدراسي"
+
+#. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__message_needaction
 msgid "Action Needed"
@@ -150,6 +225,11 @@ msgstr "نشط"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_ids
 msgid "Activities"
 msgstr "الأنشطة"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_mail_activity
+msgid "Activity"
+msgstr ""
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_exception_decoration
@@ -173,9 +253,25 @@ msgid "Activity Type Icon"
 msgstr "أيقونة نوع النشاط"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Add a note for your manager..."
-msgstr "أضف ملاحظة لمديرك..."
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__adjustment_actual_time
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__actual_time
+msgid "Actual Time"
+msgstr "الوقت الفعلي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Add 10 Rows"
+msgstr "إضافة 10 صفوف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "Add Line"
+msgstr "إضافة سطر"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Add Subject Line"
+msgstr "إضافة مادة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
@@ -186,6 +282,68 @@ msgstr "أضف سبباً..."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Add an appraiser..."
 msgstr "أضف مقيّماً..."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__adjustment_applied
+msgid "Adjustment Applied"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
+msgid "Adjustment Preview"
+msgstr "معاينة التعديل"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_attendance_admin
+#: model:res.groups,name:attendance_location_portal.group_portal_attendance_admin
+msgid "Admin Attendance Portal"
+msgstr "مسؤول حضور البوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_exam_admin
+#: model:res.groups,name:attendance_location_portal.group_portal_exam_admin
+msgid "Admin Exam Portal"
+msgstr "مسؤول امتحانات البوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_fee_admin
+#: model:res.groups,name:attendance_location_portal.group_portal_fee_admin
+msgid "Admin Fee Plan Portal"
+msgstr "مسؤول أقساط الرسوم"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_mold_admin
+#: model:res.groups,name:attendance_location_portal.group_portal_mold_admin
+msgid "Admin Mold Portal"
+msgstr "مسؤول نتائج البوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_attendance_admin
+msgid ""
+"Admin attendance portal users can manage student attendance for their "
+"allowed companies from the portal."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_exam_admin
+msgid ""
+"Admin exam portal users can manage student exams for their allowed companies"
+" from the portal."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_fee_admin
+msgid ""
+"Admin fee plan portal users can manage student fee plans for their allowed "
+"companies from the portal."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_mold_admin
+msgid ""
+"Admin mold portal users can manage school molds / results for their allowed "
+"companies from the portal."
+msgstr ""
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
@@ -251,8 +409,20 @@ msgstr "طلب مخصص"
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Allocation request approved."
+msgstr "تمت الموافقة على طلب التخصيص."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
 msgid "Allocation request cancelled successfully."
 msgstr "تم إلغاء طلب المخصص بنجاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Allocation request refused."
+msgstr "تم رفض طلب التخصيص."
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__attendance_location_ids
@@ -273,6 +443,41 @@ msgstr "المواقع المسموحة"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__allowed_range_m
 msgid "Allowed Range (m)"
 msgstr "المدى المسموح (م)"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "Amount Due"
+msgstr "المستحق"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "Amount Paid"
+msgstr "المبلغ المدفوع"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__applied_actual_time
+msgid "Applied Actual Time"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__applied_attendance_id
+msgid "Applied Attendance"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__applied_effective_minutes
+msgid "Applied Effective Minutes"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__applied_updated_time
+msgid "Applied Updated Time"
+msgstr ""
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
@@ -329,6 +534,11 @@ msgid "Approved"
 msgstr "موافق عليه"
 
 #. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__approved_adjustment_minutes
+msgid "Approved Adjustment Minutes"
+msgstr "دقائق التعديل المعتمدة"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_employee_form_multi_approvers
 msgid "Approvers"
 msgstr "المعتمدون"
@@ -351,8 +561,10 @@ msgstr "المرفقات"
 
 #. module: attendance_location_portal
 #: model:ir.model,name:attendance_location_portal.model_hr_attendance
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_attendance
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
 msgid "Attendance"
-msgstr "الحاضرين"
+msgstr "الحضور"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
@@ -411,11 +623,6 @@ msgid "Attendance Locations"
 msgstr "مواقع الحضور"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "Attendance Submitted Successfully"
-msgstr "تم تسجيل الحضور بنجاح"
-
-#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_attendance.py:0
 msgid "Attendance note from %s"
@@ -428,15 +635,39 @@ msgid "Attendance request failed."
 msgstr "فشل طلب تسجيل الحضور."
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Attendance updated."
+msgstr "تم تحديث الحضور."
+
+#. module: attendance_location_portal
 #: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance__in_mode__automatic
 #: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance__out_mode__automatic
 msgid "Automatic"
 msgstr "تلقائي"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_payslip_failed_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_failed_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_failed_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Back"
+msgstr "رجوع"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_failed_page
 msgid "Back to Appraisals"
 msgstr "العودة إلى التقييمات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Back to Exam"
+msgstr "العودة للامتحان"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_failed_page
@@ -459,9 +690,15 @@ msgid "Back to My Time Off"
 msgstr "العودة إلى إجازاتي"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "Back to Take Attendance"
-msgstr "العودة إلى تسجيل الحضور"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_failed_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_failed_page
+msgid "Back to Portal"
+msgstr "العودة للبوابة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Back to groups"
+msgstr "العودة إلى التجميع"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
@@ -470,6 +707,84 @@ msgstr "العودة إلى تسجيل الحضور"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 msgid "Back to list"
 msgstr "العودة إلى القائمة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Basic Installment Count"
+msgstr "عدد أقساط المصاريف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Basic Installments"
+msgstr "أقساط المصاريف الأساسية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Basic Total Due"
+msgstr "إجمالي المصاريف الدراسية"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Basic installment invoices created."
+msgstr "تم إنشاء فواتير أقساط المصاريف."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Books"
+msgstr "الكتب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Books Paid"
+msgstr "المدفوع للكتب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Bus"
+msgstr "الباص"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Bus Installment Count"
+msgstr "عدد أقساط الباصات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Bus Installments"
+msgstr "أقساط الباصات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Bus Total Due"
+msgstr "إجمالي الباصات"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Bus installment invoices created."
+msgstr "تم إنشاء فواتير أقساط الباصات."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave__validation_type__manager
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave_allocation__validation_type__manager
+msgid "By Employee's Approver"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave__validation_type__both
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave_allocation__validation_type__both
+msgid "By Employee's Approver and Time Off Officer"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave__validation_type__hr
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave_allocation__validation_type__hr
+msgid "By Time Off Officer"
+msgstr ""
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__can_approve_refuse
@@ -482,6 +797,8 @@ msgstr "يمكن الموافقة/الرفض"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "Cancel"
 msgstr "إلغاء"
@@ -509,26 +826,28 @@ msgid "Cancelled"
 msgstr "ملغى"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+msgid "Change photo"
+msgstr "تغيير الصورة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__check_in
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance__portal_action_type__check_in
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 msgid "Check In"
 msgstr "حضور"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Check In Now"
-msgstr "تسجيل الحضور الآن"
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__adjustment_check_in_time
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__attendance_check_in_time
+msgid "Check In Time"
+msgstr ""
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance__portal_action_type__check_out
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 msgid "Check Out"
 msgstr "انصراف"
-
-#. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Check Out Now"
-msgstr "تسجيل الانصراف الآن"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
@@ -549,6 +868,27 @@ msgid "Checked Out"
 msgstr "مسجّل انصراف"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "Class"
+msgstr "الفصل"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Closed plans cannot be modified."
+msgstr "لا يمكن تعديل الخطط المغلقة."
+
+#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__company_id
@@ -556,6 +896,14 @@ msgstr "مسجّل انصراف"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__company_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__company_id
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
 msgid "Company"
 msgstr "الشركة"
 
@@ -568,8 +916,9 @@ msgstr "شركة موقع الحضور المستخدم لتسجيل الدخو�
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 msgid "Completed"
-msgstr "مكتمل"
+msgstr "إتمام"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
@@ -578,8 +927,96 @@ msgstr "المواقع المُعدّة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 msgid "Confirm"
 msgstr "تأكيد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+msgid "Contact"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Could not create the attendance record."
+msgstr "تعذر إنشاء سجل الحضور."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Could not create the exam."
+msgstr "تعذر إنشاء الامتحان."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Could not create the fee plan."
+msgstr "تعذر إنشاء خطة الرسوم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Could not save installments."
+msgstr "تعذر حفظ الأقساط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Could not save other fees."
+msgstr "تعذر حفظ الرسوم الأخرى."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Could not save the sheet."
+msgstr "تعذر حفظ الجدول."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Could not update attendance."
+msgstr "تعذر تحديث الحضور."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Could not update subjects."
+msgstr "تعذر تحديث المواد."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Could not update the exam."
+msgstr "تعذر تحديث الامتحان."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Could not update the fee plan."
+msgstr "تعذر تحديث خطة الرسوم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Could not update the result."
+msgstr "تعذر تحديث النتيجة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Count"
+msgstr "العدد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "Create"
+msgstr "إنشاء"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Create Fee Plan"
+msgstr "إنشاء خطة الرسوم"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_employee_form_portal_user_button
@@ -617,10 +1054,18 @@ msgstr "الحالة الحالية:"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Date"
 msgstr "التاريخ"
 
@@ -632,10 +1077,23 @@ msgid "Dates"
 msgstr "التواريخ"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Day"
+msgstr "يوم"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "Day Period"
 msgstr "فترة اليوم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Delete"
+msgstr "حذف"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
@@ -648,6 +1106,7 @@ msgstr "صف طلبك..."
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__description
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
@@ -656,12 +1115,17 @@ msgstr "صف طلبك..."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
 msgid "Description"
-msgstr "الوصف"
+msgstr "البيان"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
 msgid "Detecting your location..."
 msgstr "جاري تحديد موقعك..."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Discount"
+msgstr "الخصم"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__display_name
@@ -672,15 +1136,37 @@ msgstr "جاري تحديد موقعك..."
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__display_name
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave__display_name
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave_allocation__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_mail_activity__display_name
+#: model:ir.model.fields,field_description:attendance_location_portal.field_res_users__display_name
 msgid "Display Name"
 msgstr "اسم العرض"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "Division"
+msgstr "الشعبة"
 
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Done"
-msgstr "منتهي"
+msgstr "تم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_payslip_detail
+msgid "Download"
+msgstr "تنزيل"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Download Excel"
+msgstr "تنزيل إكسل"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -688,6 +1174,11 @@ msgstr "منتهي"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Draft"
 msgstr "مسودة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -716,6 +1207,7 @@ msgstr "انصراف مبكر"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
 msgid "Employee"
 msgstr "الموظف"
@@ -760,13 +1252,124 @@ msgstr "الموظف:"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
 msgid "End Date"
-msgstr "تاريخ النهاية"
+msgstr "تاريخ الانتهاء"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_exam
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Exam"
+msgstr "امتحان"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_school_mold
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_school_mold_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+msgid "Exam Results"
+msgstr "نتائج الامتحانات"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Exam Schedule"
+msgstr "جدول الامتحانات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Exam Type"
+msgstr "نوع الامتحان"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Exam canceled."
+msgstr "تم إلغاء الامتحان."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Exam completed."
+msgstr "تم إتمام الامتحان."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Exam confirmed."
+msgstr "تم تأكيد الامتحان."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Exceptions"
+msgstr "الاستثناءات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Exit Expand"
+msgstr "إغلاق التوسيع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Expand View"
+msgstr "توسيع العرض"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__expense_manager_ids
 msgid "Expense Approvers"
 msgstr "معتمدو المصروفات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_fee_plan
+msgid "Fee Plan"
+msgstr "خطة الرسوم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_fee_plan_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_fee_plan
+msgid "Fee Plans"
+msgstr "خطط الرسوم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Fee Type"
+msgstr "نوع الرسوم"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Fee plan closed."
+msgstr "تم إغلاق خطة الرسوم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Fee plan created."
+msgstr "تم إنشاء خطة الرسوم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Fee plan opened."
+msgstr "تم فتح خطة الرسوم."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Fee plan reset to draft."
+msgstr "تمت إعادة خطة الرسوم إلى مسودة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Fee plan updated."
+msgstr "تم تحديث خطة الرسوم."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_appraisals_entry
@@ -782,6 +1385,11 @@ msgstr "املأ قسم ملاحظات الموظف قبل"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Fill in the manager's feedback section before"
 msgstr "املأ قسم ملاحظات المدير قبل"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "First Due Date"
+msgstr "أول تاريخ استحقاق"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_follower_ids
@@ -848,6 +1456,24 @@ msgid "General Requests"
 msgstr "الطلبات العامة"
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "General request approved."
+msgstr "تمت الموافقة على الطلب العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "General request refused."
+msgstr "تم رفض الطلب العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "General request sent for second approval."
+msgstr "تم إرسال الطلب العام للموافقة الثانية."
+
+#. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__google_maps_url
 msgid "Google Maps URL"
 msgstr "رابط خرائط Google"
@@ -856,6 +1482,11 @@ msgstr "رابط خرائط Google"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__hr_responsible_ids
 msgid "HR Responsibles"
 msgstr "مسؤولو الموارد البشرية"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__has_approved_adjustment_request
+msgid "Has Approved Adjustment Request"
+msgstr "يوجد طلب تعديل حضور معتمد"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__has_message
@@ -878,6 +1509,8 @@ msgstr "ساعات"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave__id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave_allocation__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_mail_activity__id
+#: model:ir.model.fields,field_description:attendance_location_portal.field_res_users__id
 msgid "ID"
 msgstr "المُعرف"
 
@@ -924,6 +1557,23 @@ msgstr ""
 "كان فارغاً، تُطبَّق قواعد مواقع الحضور على مستوى الشركة."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "Installment"
+msgstr "القسط"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Installments refreshed."
+msgstr "تم تحديث الأقساط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Installments saved."
+msgstr "تم حفظ الأقساط."
+
+#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
@@ -932,10 +1582,38 @@ msgstr "إحداثيات GPS غير صالحة من جهازك."
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Invalid attendance values."
+msgstr "قيم الحضور غير صالحة."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_appraisal.py:0
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "Invalid date format."
 msgstr "صيغة التاريخ غير صالحة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Invalid exam values."
+msgstr "قيم الامتحان غير صالحة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Invalid fee plan values."
+msgstr "قيم خطة الرسوم غير صالحة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Invoice Basic Installments"
+msgstr "فوترة أقساط المصاريف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Invoice Bus Installments"
+msgstr "فوترة أقساط الباصات"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_is_follower
@@ -956,6 +1634,11 @@ msgstr "آخر تحديث بواسطة"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__write_date
 msgid "Last Updated on"
 msgstr "تاريخ آخر تحديث"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Late"
+msgstr "متأخر"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
@@ -995,7 +1678,23 @@ msgid "Leave empty for no limit"
 msgstr "اتركه فارغاً لعدم تحديد حد"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Line Count"
+msgstr "عدد الصفوف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Linked Exam"
+msgstr "الامتحان المرتبط"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Load Students"
+msgstr "تحميل الطلاب"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_search_activity_filters
 msgid "Location"
 msgstr "الموقع"
 
@@ -1011,6 +1710,21 @@ msgid "Longitude must be between -180 and 180."
 msgstr "يجب أن يكون خط الطول بين -180 و 180."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_school_mold_entry
+msgid "Manage school molds / exam results for your allowed companies"
+msgstr "إدارة قوالب الدرجات / نتائج الامتحانات للشركات المسموح بها"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_student_exam_entry
+msgid "Manage student exams for your allowed companies"
+msgstr "إدارة امتحانات الطلاب للشركات المسموح بها"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_fee_plan_entry
+msgid "Manage student fee plans and installments for your allowed companies"
+msgstr "إدارة خطط رسوم الطلاب والأقساط للشركات المسموح بها"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Manager Assessment will show here"
 msgstr "سيظهر تقييم المدير هنا"
@@ -1019,6 +1733,11 @@ msgstr "سيظهر تقييم المدير هنا"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Manager's Feedback"
 msgstr "ملاحظات المدير"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Mark Done"
+msgstr "تم"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_error
@@ -1036,6 +1755,11 @@ msgstr "الرسائل"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__in_mode
 msgid "Mode"
 msgstr "الوضع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Months Between Due Dates"
+msgstr "الشهور بين تواريخ الاستحقاق"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
@@ -1101,6 +1825,11 @@ msgid "My General Requests"
 msgstr "طلباتي العامة"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_payslips_entry
+msgid "My Payslips"
+msgstr "كشوف رواتبي"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_time_off
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_time_off_entry
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
@@ -1111,8 +1840,21 @@ msgstr "إجازاتي"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__name
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__name
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__name
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Name"
 msgstr "الاسم"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Name, start date and end date are required."
+msgstr "الاسم وتاريخ البدء وتاريخ الانتهاء مطلوبة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+msgid "Net Wage"
+msgstr "صافي الراتب"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
@@ -1126,10 +1868,23 @@ msgid "New Allocation Request"
 msgstr "طلب مخصص جديد"
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "New Allocation request from %(employee)s"
+msgstr "طلب تخصيص جديد من %(employee)s"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_appraisals
 msgid "New Appraisal"
 msgstr "تقييم جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_attendance
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+msgid "New Attendance"
+msgstr "حضور جديد"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
@@ -1141,6 +1896,25 @@ msgstr "طلب تعديل حضور جديد"
 #: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
 msgid "New Attendance Adjustment Request from %(employee)s"
 msgstr "طلب تعديل حضور جديد من %(employee)s"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "New Count"
+msgstr "العدد الجديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_exam
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "New Exam"
+msgstr "امتحان جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_fee_plan
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "New Fee Plan"
+msgstr "خطة رسوم جديدة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_form
@@ -1211,6 +1985,23 @@ msgid "Next Activity Type"
 msgstr "نوع النشاط التالي"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "No"
+msgstr "لا"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "No Company"
+msgstr "بدون شركة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "No Employee"
+msgstr "بدون موظف"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
 msgid "No Limit"
@@ -1220,6 +2011,14 @@ msgstr "بدون حد"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
 msgid "No allocation requests found."
 msgstr "لا توجد طلبات مخصصات."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "No allowed companies are configured for your user."
+msgstr "لا توجد شركات مسموح بها لمستخدمك."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
@@ -1256,6 +2055,18 @@ msgid "No attendance records found."
 msgstr "لا توجد سجلات حضور."
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "No basic installments ready to invoice."
+msgstr "لا توجد أقساط مصاريف جاهزة للفوترة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "No bus installments ready to invoice."
+msgstr "لا توجد أقساط باصات جاهزة للفوترة."
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_general_request_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
@@ -1278,6 +2089,30 @@ msgid "No employee is linked to your user."
 msgstr "لا يوجد موظف مرتبط بحسابك."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+msgid "No exam results found for your companies."
+msgstr "لا توجد نتائج امتحانات لشركاتك."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+msgid "No exams found for your companies."
+msgstr "لا توجد امتحانات لشركاتك."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid ""
+"No exceptions recorded. Create exceptions from the backend form when a "
+"supporting document is required."
+msgstr ""
+"لا توجد استثناءات. أنشئ الاستثناءات من الواجهة الخلفية عند الحاجة لمستند "
+"داعم."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+msgid "No fee plans found for your companies."
+msgstr "لا توجد خطط رسوم لشركاتك."
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
 msgid "No general requests found."
 msgstr "لا توجد طلبات عامة."
@@ -1292,6 +2127,26 @@ msgstr "لا توجد طلبات عامة بعد."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_allocations
 msgid "No reason provided"
 msgstr "لم يتم تقديم سبب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+msgid "No student attendance records found for your companies."
+msgstr "لا توجد سجلات حضور طلاب لشركاتك."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "No students found for this class."
+msgstr "لا يوجد طلاب لهذا الفصل."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "No students loaded for this exam."
+msgstr "لا يوجد طلاب محمّلون لهذا الامتحان."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "No subjects are configured yet. Create subjects in the backend first."
+msgstr "لا توجد مواد بعد. أنشئ المواد من الواجهة الخلفية أولاً."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
@@ -1313,16 +2168,30 @@ msgid "No time off types are available. Please contact your HR manager."
 msgstr "لا توجد أنواع إجازات متاحة. يرجى التواصل مع مدير الموارد البشرية."
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
+msgid "None"
+msgstr "بدون"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave__validation_type__no_validation
+#: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_leave_allocation__validation_type__no_validation
+msgid "None needed"
+msgstr ""
+
+#. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__portal_note
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.view_hr_attendance_form_note_page
 msgid "Note"
 msgstr "ملاحظة"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Note (optional)"
-msgstr "ملاحظة (اختياري)"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Notes"
+msgstr "ملاحظات"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction_counter
@@ -1363,29 +2232,54 @@ msgstr "جارٍ"
 
 #. module: attendance_location_portal
 #. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid ""
-"Only Time Off Administrators can approve attendance adjustment requests."
-msgstr "يمكن لمسؤولي الإجازات فقط الموافقة على طلبات تعديل الحضور."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Only Time Off Administrators can approve general requests."
-msgstr "يمكن لمسؤولي الإجازات فقط الموافقة على الطلبات العامة."
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only HR Responsibles can give the first approval for %(employee)s."
+msgstr ""
+"يمكن لمسؤولي الموارد البشرية فقط إعطاء الموافقة الأولى لـ %(employee)s."
 
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
 msgid ""
-"Only Time Off Administrators can refuse attendance adjustment requests."
-msgstr "يمكن لمسؤولي الإجازات فقط رفض طلبات تعديل الحضور."
+"Only HR Responsibles or Time Off Approvers can approve this attendance "
+"adjustment request."
+msgstr ""
+"يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط الموافقة على طلب تعديل "
+"الحضور هذا."
 
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Only Time Off Administrators can refuse general requests."
-msgstr "يمكن لمسؤولي الإجازات فقط رفض الطلبات العامة."
+msgid ""
+"Only HR Responsibles or Time Off Approvers can approve this general request."
+msgstr ""
+"يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط الموافقة على هذا الطلب "
+"العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+msgid ""
+"Only HR Responsibles or Time Off Approvers can refuse this attendance "
+"adjustment request."
+msgstr ""
+"يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط رفض طلب تعديل الحضور هذا."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid ""
+"Only HR Responsibles or Time Off Approvers can refuse this general request."
+msgstr ""
+"يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط رفض هذا الطلب العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only Time Off Approvers can give the second approval."
+msgstr "يمكن لمعتمدي الإجازة فقط إعطاء الموافقة الثانية."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1401,10 +2295,37 @@ msgstr "يمكن تأكيد التقييمات في حالة المسودة فق
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Only draft exams can be edited."
+msgstr "يمكن تعديل الامتحانات المسودة فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only pending or approved allocations can be refused."
+msgstr "يمكن رفض التخصيصات المعلقة أو المعتمدة فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Only pending or approved time off can be refused."
+msgstr "يمكن رفض الإجازات المعلقة أو المعتمدة فقط."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Only portal administrators can approve or refuse requests."
+msgstr "فقط مديرو البوابة يمكنهم الموافقة على الطلبات أو رفضها."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
 #: code:addons/attendance_location_portal/models/hr_general_request.py:0
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
 msgid "Only requests pending approval can be approved."
-msgstr "يمكن الموافقة فقط على الطلبات قيد الانتظار."
+msgstr "يمكن الموافقة فقط على الطلبات قيد الموافقة."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1412,6 +2333,11 @@ msgstr "يمكن الموافقة فقط على الطلبات قيد الانت
 #: code:addons/attendance_location_portal/models/hr_general_request.py:0
 msgid "Only requests pending approval can be refused."
 msgstr "يمكن الرفض فقط للطلبات قيد الانتظار."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Open"
+msgstr "فتح"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
@@ -1424,9 +2350,91 @@ msgid "Optional reason for your request..."
 msgstr "سبب اختياري لطلبك..."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Other Expenses"
+msgstr "مصاريف أخرى"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Other Expenses Paid"
+msgstr "المدفوع للمصاريف الأخرى"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Other fees saved."
+msgstr "تم حفظ الرسوم الأخرى."
+
+#. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__out_mode
 msgid "Out Mode"
 msgstr "الوضع في الخارج"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Paid"
+msgstr "المدفوع"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_payslips
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+msgid "Payslip"
+msgstr "كشف الراتب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_payslips
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_payslips_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+msgid "Payslips"
+msgstr "كشوف الرواتب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "Penalty"
+msgstr "الغرامة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Penalty per Week"
+msgstr "غرامة الأسبوع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+msgid "Period"
+msgstr "الفترة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_side_avatar_upload
+msgid "Photo updated."
+msgstr "تم تحديث الصورة."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__workday_end_time
+msgid "Planned end time from the employee working schedule on request date."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance_adjustment_request__workday_start_time
+msgid "Planned start time from the employee working schedule on request date."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_side_avatar_upload
+msgid "Please choose an image file."
+msgstr "يرجى اختيار ملف صورة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_employee.py:0
+msgid "Please choose whether this is check in or check out."
+msgstr ""
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1472,9 +2480,22 @@ msgstr "يرجى اختيار نوع الإجازة."
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Please select a valid division."
+msgstr "يرجى اختيار شعبة صحيحة."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "Please select a valid request type."
 msgstr "يرجى اختيار نوع طلب صالح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Please select a valid standard."
+msgstr "يرجى اختيار صف صحيح."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1502,6 +2523,12 @@ msgstr "يرجى اختيار مقيّم واحد على الأقل."
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Please select at least one student."
+msgstr "يرجى تحديد طالب واحد على الأقل."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid ""
 "Please set a valid Work Email on the employee first. It will be used as the "
@@ -1511,6 +2538,7 @@ msgstr ""
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_hr_admin
+#: model:ir.model.fields,field_description:attendance_location_portal.field_res_users__portal_hr_admin
 #: model:res.groups,name:attendance_location_portal.group_portal_hr_admin
 msgid "Portal Admin"
 msgstr "مسؤول البوابة"
@@ -1522,9 +2550,39 @@ msgid "Portal Admin User"
 msgstr "مستخدم بوابة مسؤول"
 
 #. module: attendance_location_portal
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_attendance
+msgid "Portal Attendance"
+msgstr "الحضور للبوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__portal_action_type
+msgid "Portal Attendance Action"
+msgstr "إجراء حضور البوابة"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__portal_checkout_without_checkin
+msgid "Portal Checkout Without Checkin"
+msgstr "خروج من البوابة بدون دخول"
+
+#. module: attendance_location_portal
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_exam
+msgid "Portal Exam"
+msgstr "الامتحانات للبوابة"
+
+#. module: attendance_location_portal
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_fee
+msgid "Portal Fee Plans"
+msgstr "خطط الرسوم للبوابة"
+
+#. module: attendance_location_portal
 #: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_hr
 msgid "Portal HR"
 msgstr "الموارد البشرية للبوابة"
+
+#. module: attendance_location_portal
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_mold
+msgid "Portal Mold"
+msgstr "النتائج للبوابة"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_appraisal__portal_state_label
@@ -1564,6 +2622,11 @@ msgid ""
 msgstr "يمكن للموظفين تقديم طلبات عامة من حسابهم على البوابة."
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Present"
+msgstr "حاضر"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Private"
 msgstr "خاص"
@@ -1597,9 +2660,25 @@ msgid "Reasons"
 msgstr "الأسباب"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
-msgid "Refresh Location"
-msgstr "تحديث الموقع"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "Receipt"
+msgstr "رقم الإيصال"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Recompute Totals"
+msgstr "إعادة حساب المجاميع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+msgid "Records"
+msgstr "السجلات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Refresh Installments"
+msgstr "تحديث الأقساط"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_form
@@ -1622,6 +2701,22 @@ msgstr "رفض"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
 msgid "Refused"
 msgstr "مرفوض"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Reload"
+msgstr "إعادة تحميل"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Reload Students"
+msgstr "إعادة تحميل الطلاب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Remaining"
+msgstr "المتبقي"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
@@ -1671,11 +2766,53 @@ msgid "Request time off and track approval status"
 msgstr "قدّم طلب إجازة وتابع حالة الموافقة"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_user_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__activity_user_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__activity_user_id
 msgid "Responsible User"
 msgstr "المستخدم المسؤول"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_school_mold
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Result"
+msgstr "نتيجة"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Result marked as done."
+msgstr "تم اعتماد النتيجة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Result reset to draft."
+msgstr "تمت إعادة النتيجة إلى مسودة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Row deleted."
+msgstr "تم حذف الصف."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Row not found."
+msgstr "الصف غير موجود."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+msgid "Rows"
+msgstr "الصفوف"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_has_sms_error
@@ -1685,8 +2822,34 @@ msgstr "خطأ في تسليم الرسائل القصيرة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 msgid "Save"
 msgstr "حفظ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Save Header"
+msgstr "حفظ البيانات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Save Installments"
+msgstr "حفظ الأقساط"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Save Notes"
+msgstr "حفظ الملاحظات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Save Sheet"
+msgstr "حفظ الجدول"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Save Subjects"
+msgstr "حفظ المواد"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1732,20 +2895,68 @@ msgstr "البحث في نوع الإجازة"
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
 #: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_attendance_adjustment_request__state__validate1
 #: model:ir.model.fields.selection,name:attendance_location_portal.selection__hr_general_request__state__validate1
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_attendance_adjustment_request_view_search_activities
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.hr_general_request_view_search_activities
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_statusbar
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_statusbar
 msgid "Second Approval"
 msgstr "الموافقة الثانية"
 
 #. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "Second approval request for %(allocation_type)s"
+msgstr "طلب الموافقة الثانية على %(allocation_type)s"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+msgid "Second approval request for %(leave_type)s"
+msgstr "طلب الموافقة الثانية على %(leave_type)s"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
+#: code:addons/attendance_location_portal/models/hr_general_request.py:0
+msgid "Second approval request from %(employee)s"
+msgstr "طلب الموافقة الثانية من %(employee)s"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Select"
+msgstr "تحديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Select All"
+msgstr "تحديد الكل"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 msgid "Select a request type..."
 msgstr "اختر نوع الطلب..."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Select..."
+msgstr "اختر..."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Selection updated."
+msgstr "تم تحديث التحديد."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
@@ -1764,10 +2975,44 @@ msgstr "مشارك مع الموظف"
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Sheet saved."
+msgstr "تم حفظ الجدول."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Specialization"
+msgstr "التخصص"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Standard"
+msgstr "الصف"
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
 msgid "Start Date"
-msgstr "تاريخ البداية"
+msgstr "تاريخ البدء"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Start date must be Greater to end date"
+msgstr "يجب أن يكون تاريخ البدء قبل تاريخ الانتهاء أو مساوياً له."
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__state
@@ -1781,8 +3026,13 @@ msgstr "تاريخ البداية"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_appraisals
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_general_requests
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 msgid "Status"
 msgstr "الحالة"
@@ -1801,6 +3051,75 @@ msgstr ""
 "متأخر: تجاوز الموعد النهائي\n"
 "اليوم: تاريخ النشاط هو اليوم\n"
 "مخطط: أنشطة مستقبلية."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+msgid "Student"
+msgstr "الطالب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_attendance
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_student_attendance_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_attendances
+msgid "Student Attendance"
+msgstr "حضور الطلاب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_exam
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_student_exam_entry
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_exams
+msgid "Student Exams"
+msgstr "امتحانات الطلاب"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Student and academic year are required."
+msgstr "الطالب والعام الدراسي مطلوبان."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Students loaded."
+msgstr "تم تحميل الطلاب."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Students reloaded."
+msgstr "تم إعادة تحميل الطلاب."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Subject is not allowed for this exam standard/division."
+msgstr "المادة غير مسموحة لهذا الصف/الشعبة في الامتحان."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Subject line added."
+msgstr "تمت إضافة سطر المادة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+msgid "Subjects"
+msgstr "المواضيع"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "Subjects updated."
+msgstr "تم تحديث المواد."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_form
@@ -1843,6 +3162,11 @@ msgid "Take Attendance"
 msgstr "تسجيل الحضور"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_student_attendance_entry
+msgid "Take student attendance for your allowed companies"
+msgstr "تسجيل حضور الطلاب للشركات المسموح بها"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 msgid "Template"
 msgstr "قالب"
@@ -1852,6 +3176,12 @@ msgstr "قالب"
 #: code:addons/attendance_location_portal/controllers/portal_appraisal.py:0
 msgid "Template not found."
 msgstr "لم يتم العثور على القالب."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_school_molds
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Term"
+msgstr "الصف"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1870,6 +3200,18 @@ msgstr "تم تأكيد التقييم."
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "The end date must be on or after the start date."
 msgstr "يجب أن يكون تاريخ النهاية في أو بعد تاريخ البداية."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_side_avatar_upload
+msgid "The image could not be updated."
+msgstr "تعذر تحديث الصورة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_avatar_upload
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_side_avatar_upload
+msgid "The image is too large. Maximum size is 5 MB."
+msgstr "الصورة كبيرة جدًا. الحد الأقصى للحجم هو 5 ميغابايت."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1903,6 +3245,14 @@ msgstr "هذا الأسبوع"
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "This action is not available."
+msgstr "هذا الإجراء غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "This allocation request cannot be cancelled."
 msgstr "لا يمكن إلغاء طلب المخصص هذا."
@@ -1916,8 +3266,9 @@ msgstr "طلب المخصص هذا غير موجود أو غير متاح."
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
 msgid "This allocation request is not accessible."
-msgstr "طلب المخصص هذا غير متاح."
+msgstr "طلب التخصيص غير متاح."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1943,7 +3294,7 @@ msgstr "هذا التقييم غير متاح."
 #: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
 msgid ""
 "This attendance adjustment request does not exist or is not accessible."
-msgstr "طلب تعديل الحضور هذا غير موجود أو غير متاح."
+msgstr "طلب تعديل الحضور غير موجود أو لا يمكن الوصول إليه."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1953,9 +3304,35 @@ msgstr "طلب تعديل الحضور هذا غير متاح."
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "This attendance does not exist or is not accessible."
+msgstr "سجل الحضور هذا غير موجود أو لا يمكن الوصول إليه."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "This company is not in your allowed companies."
+msgstr "هذه الشركة غير ضمن الشركات المسموح بها."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "This employee already has a linked user."
 msgstr "هذا الموظف مرتبط بمستخدم بالفعل."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "This exam does not exist or is not accessible."
+msgstr "هذا الامتحان غير موجود أو لا يمكن الوصول إليه."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "This fee plan does not exist or is not accessible."
+msgstr "خطة الرسوم غير موجودة أو لا يمكن الوصول إليها."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1967,7 +3344,31 @@ msgstr "هذا الطلب العام غير موجود أو غير متاح."
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
 msgid "This general request is not accessible."
-msgstr "هذا الطلب العام غير متاح."
+msgstr "طلب عام غير متاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "This payslip does not exist or is not accessible."
+msgstr "كشف الراتب هذا غير موجود أو لا يمكن الوصول إليه."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "This payslip is not accessible."
+msgstr "لا يمكن الوصول إلى كشف الراتب هذا."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "This result does not exist or is not accessible."
+msgstr "هذه النتيجة غير موجودة أو لا يمكن الوصول إليها."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "This result is done and cannot be modified."
+msgstr "هذه النتيجة معتمدة ولا يمكن تعديلها."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1984,8 +3385,9 @@ msgstr "طلب الإجازة هذا غير موجود أو غير متاح."
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
 msgid "This time off request is not accessible."
-msgstr "طلب الإجازة هذا غير متاح."
+msgstr "طلب الإجازة غير متاح."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
@@ -1998,6 +3400,12 @@ msgstr "الوقت (دقيقة)"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 msgid "Time (minutes)"
 msgstr "الوقت (بالدقائق)"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "Time From"
+msgstr "الوقت من"
 
 #. module: attendance_location_portal
 #: model:ir.model,name:attendance_location_portal.model_hr_leave
@@ -2020,16 +3428,6 @@ msgid "Time Off Error"
 msgstr "خطأ في الإجازة"
 
 #. module: attendance_location_portal
-#: model:ir.rule,name:attendance_location_portal.hr_leave_multi_approver_read_rule
-msgid "Time Off Multi Approver Read"
-msgstr "قراءة إجازة للمعتمدين المتعددين"
-
-#. module: attendance_location_portal
-#: model:ir.rule,name:attendance_location_portal.hr_leave_multi_approver_write_rule
-msgid "Time Off Multi Approver Write"
-msgstr "كتابة إجازة للمعتمدين المتعددين"
-
-#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_detail
 msgid "Time Off Request"
 msgstr "طلب إجازة"
@@ -2045,6 +3443,12 @@ msgid "Time Off Type"
 msgstr "نوع الإجازة"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "Time To"
+msgstr "الوقت لـ"
+
+#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/models/hr_employee.py:0
 msgid "Time in minutes must be greater than zero."
@@ -2053,8 +3457,20 @@ msgstr "يجب أن يكون الوقت بالدقائق أكبر من صفر."
 #. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Time off request approved."
+msgstr "تمت الموافقة على طلب الإجازة."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
 msgid "Time off request cancelled successfully."
 msgstr "تم إلغاء طلب الإجازة بنجاح."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Time off request refused."
+msgstr "تم رفض طلب الإجازة."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
@@ -2093,6 +3509,35 @@ msgid "Today Activities"
 msgstr "أنشطة اليوم"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Total Due"
+msgstr "إجمالي المستحقات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Total Late Penalties"
+msgstr "إجمالي غرامات التأخير"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Total Paid"
+msgstr "إجمالي السداد"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_attendance__approved_adjustment_minutes
+msgid ""
+"Total approved attendance adjustment minutes applied on this attendance."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Totals recomputed."
+msgstr "تمت إعادة حساب المجاميع."
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_failed_page
 msgid "Try Again"
 msgstr "حاول مرة أخرى"
@@ -2103,6 +3548,7 @@ msgstr "حاول مرة أخرى"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Type"
 msgstr "النوع"
 
@@ -2164,9 +3610,67 @@ msgstr "حدث خطأ غير متوقع أثناء إرسال طلبك. يرجى
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
+msgid "Unexpected error while updating the allocation request."
+msgstr "حدث خطأ غير متوقع أثناء تحديث طلب التخصيص."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+msgid "Unexpected error while updating the general request."
+msgstr "حدث خطأ غير متوقع أثناء تحديث الطلب العام."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "Unexpected error while updating the time off request."
+msgstr "حدث خطأ غير متوقع أثناء تحديث طلب الإجازة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Uniform"
+msgstr "اليونيفورم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "Uniform Paid"
+msgstr "المدفوع لليونيفورم"
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 msgid "Unknown"
 msgstr "غير معروف"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "Unknown attendance action."
+msgstr "إجراء حضور غير معروف."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__adjustment_updated_time
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__updated_time
+msgid "Updated Time"
+msgstr "الوقت بعد التعديل"
+
+#. module: attendance_location_portal
+#: model:ir.model,name:attendance_location_portal.model_res_users
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid "User"
+msgstr "المستخدم"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
+msgid "Validated"
+msgstr "معتمد"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave__validation_type
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_leave_allocation__validation_type
+msgid "Validation Type"
+msgstr ""
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_allocation_detail
@@ -2201,9 +3705,19 @@ msgid "View all employees time off requests and approval status"
 msgstr "عرض طلبات الإجازة لجميع الموظفين وحالة الموافقة"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_payslips_entry
+msgid "View validated payslips for your companies"
+msgstr "عرض كشوف الرواتب المعتمدة لشركاتك"
+
+#. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_attendance_entry
 msgid "View your check-in and check-out history"
 msgstr "عرض سجل تسجيل الحضور والانصراف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_payslips_entry
+msgid "View your payslip after it is validated"
+msgstr "عرض كشف راتبك بعد اعتماده"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__website_message_ids
@@ -2223,11 +3737,67 @@ msgid "Welcome"
 msgstr "مرحباً"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_detail
+msgid "Withdraw"
+msgstr "سحب"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__workday_end_time
+msgid "Workday End Time"
+msgstr "نهاية يوم العمل"
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__workday_start_time
+msgid "Workday Start Time"
+msgstr "بداية يوم العمل"
+
+#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
 msgid "Worked Hours"
 msgstr "ساعات العمل"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+msgid "Year"
+msgstr "السنة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+msgid "Yes"
+msgstr "نعم"
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "You are not allowed to edit school molds."
+msgstr "غير مسموح لك بتعديل قوالب الدرجات."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "You are not allowed to manage school molds."
+msgstr "غير مسموح لك بإدارة قوالب الدرجات."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
+msgid "You are not allowed to manage student attendance."
+msgstr "غير مسموح لك بإدارة حضور الطلاب."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
+msgid "You are not allowed to manage student exams."
+msgstr "غير مسموح لك بإدارة امتحانات الطلاب."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "You are not allowed to manage student fee plans."
+msgstr "غير مسموح لك بإدارة خطط رسوم الطلاب."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -2277,6 +3847,19 @@ msgstr "يمكنك إدارة سجلات الموظف الخاصة بك فقط."
 
 #. module: attendance_location_portal
 #. odoo-python
+#: code:addons/attendance_location_portal/models/hr_leave.py:0
+#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
+msgid "You cannot approve or refuse your own request."
+msgstr "لا يمكنك الموافقة على طلبك أو رفضه."
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+msgid "You cannot cancel this time off request."
+msgstr "لا يمكنك إلغاء طلب الإجازة هذا."
+
+#. module: attendance_location_portal
+#. odoo-python
 #: code:addons/attendance_location_portal/models/hr_appraisal.py:0
 msgid "You cannot change the appraisers of this appraisal."
 msgstr "لا يمكنك تغيير مقيّمي هذا التقييم."
@@ -2310,6 +3893,11 @@ msgstr "لا توجد لديك طلبات عامة بعد."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_time_off
 msgid "You have no time off requests yet."
 msgstr "لا توجد طلبات إجازة بعد."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_payslips
+msgid "You have no validated payslips yet."
+msgstr "لا توجد كشوف رواتب معتمدة حتى الآن."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -2346,6 +3934,7 @@ msgstr "تمت الموافقة على %(leave_type)s المخطط في %(date)s
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: code:addons/attendance_location_portal/controllers/portal_attendance_adjustment.py:0
 #: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
+#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
 msgid ""
 "Your account is not linked to an employee record. Please contact your "
@@ -2422,11 +4011,6 @@ msgid "once published"
 msgstr "بعد النشر"
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
-msgid "recorded at"
-msgstr "تم التسجيل في"
-
-#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
@@ -2439,339 +4023,129 @@ msgid "to"
 msgstr "إلى"
 
 #. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "البيان"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "العودة إلى تسجيل الحضور"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_duplicate_checkin_page
+msgid "العودة إلى صفحة الحضور"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid ""
+"الموظف %(employee)s سجّل حضوراً جديداً دون إغلاق سجل الحضور السابق (بدون انصراف) منذ %(datetime)s.\n"
+"يرجى فتح سجل الحضور وإكمال وقت الانصراف."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "انصراف"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "تحديث الموقع"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "تحذير الحضور"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid ""
+"تحذير: %(empl_name)s مسجّل حضوره مسبقاً في %(datetime)s. يرجى التحقق من "
+"سجلات الحضور المتداخلة."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid ""
+"تحذير: لم يسجّل %(empl_name)s انصرافه منذ %(datetime)s. يرجى التحقق من سجلات"
+" الحضور المفتوحة."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "تحذير: وقت \"تسجيل الخروج\" قبل وقت \"تسجيل الحضور\". يرجى مراجعة سجل الحضور."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "تسجيل"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "تسجيل انصراف"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "تسجيل حضور"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "تم التسجيل في"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "تم تسجيل الحضور بنجاح"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_success_page
+msgid "حضور"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/models/hr_attendance.py:0
+msgid "حضور بدون انصراف: %s"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_duplicate_checkin_page
+msgid "رسالة تحقق"
+msgstr ""
+
+#. module: attendance_location_portal
 #. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "None"
-msgstr "بدون"
+msgid "لقد قمت بتسجيل الحضور اليوم بالفعل. هل تريد متابعة تسجيل حضور جديد؟"
+msgstr ""
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "No Company"
-msgstr "بدون شركة"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_duplicate_checkin_page
+msgid "متابعة"
+msgstr ""
 
 #. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
-msgid "No Employee"
-msgstr "بدون موظف"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "ملاحظة (اختياري)"
+msgstr ""
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Back to groups"
-msgstr "العودة إلى التجميع"
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "ملاحظة اختيارية (تستخدم عند تسجيل الانصراف)..."
+msgstr ""
 
 #. module: attendance_location_portal
-#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendances
-msgid "Records"
-msgstr "السجلات"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "You cannot approve or refuse your own request."
-msgstr "لا يمكنك الموافقة على طلبك أو رفضه."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "Only portal administrators can approve or refuse requests."
-msgstr "فقط مديرو البوابة يمكنهم الموافقة على الطلبات أو رفضها."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "Only requests pending approval can be approved."
-msgstr "يمكن الموافقة فقط على الطلبات قيد الموافقة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "This general request is not accessible."
-msgstr "طلب عام غير متاح."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-msgid "This time off request is not accessible."
-msgstr "طلب الإجازة غير متاح."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-msgid "Only pending or approved time off can be refused."
-msgstr "يمكن رفض الإجازات المعلقة أو المعتمدة فقط."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "This allocation request is not accessible."
-msgstr "طلب التخصيص غير متاح."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "Only pending or approved allocations can be refused."
-msgstr "يمكن رفض التخصيصات المعلقة أو المعتمدة فقط."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Time off request approved."
-msgstr "تمت الموافقة على طلب الإجازة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Time off request refused."
-msgstr "تم رفض طلب الإجازة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "Unexpected error while updating the time off request."
-msgstr "حدث خطأ غير متوقع أثناء تحديث طلب الإجازة."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Allocation request approved."
-msgstr "تمت الموافقة على طلب التخصيص."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Allocation request refused."
-msgstr "تم رفض طلب التخصيص."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_allocation.py:0
-msgid "Unexpected error while updating the allocation request."
-msgstr "حدث خطأ غير متوقع أثناء تحديث طلب التخصيص."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
-msgid "General request approved."
-msgstr "تمت الموافقة على الطلب العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
-msgid "General request sent for second approval."
-msgstr "تم إرسال الطلب العام للموافقة الثانية."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
-msgid "General request refused."
-msgstr "تم رفض الطلب العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
-msgid "Unexpected error while updating the general request."
-msgstr "حدث خطأ غير متوقع أثناء تحديث الطلب العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
-msgid "You cannot cancel this time off request."
-msgstr "لا يمكنك إلغاء طلب الإجازة هذا."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-msgid "Only HR Responsibles can give the first approval for %(employee)s."
-msgstr "يمكن لمسؤولي الموارد البشرية فقط إعطاء الموافقة الأولى لـ %(employee)s."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-msgid "Only Time Off Approvers can give the second approval."
-msgstr "يمكن لمعتمدي الإجازة فقط إعطاء الموافقة الثانية."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave.py:0
-msgid "Second approval request for %(leave_type)s"
-msgstr "طلب الموافقة الثانية على %(leave_type)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "New Allocation request from %(employee)s"
-msgstr "طلب تخصيص جديد من %(employee)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_leave_allocation.py:0
-msgid "Second approval request for %(allocation_type)s"
-msgstr "طلب الموافقة الثانية على %(allocation_type)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Second approval request from %(employee)s"
-msgstr "طلب الموافقة الثانية من %(employee)s"
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Only HR Responsibles or Time Off Approvers can approve this general request."
-msgstr "يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط الموافقة على هذا الطلب العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_general_request.py:0
-msgid "Only HR Responsibles or Time Off Approvers can refuse this general request."
-msgstr "يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط رفض هذا الطلب العام."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Only HR Responsibles or Time Off Approvers can approve this attendance adjustment request."
-msgstr "يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط الموافقة على طلب تعديل الحضور هذا."
-
-#. module: attendance_location_portal
-#. odoo-python
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Only HR Responsibles or Time Off Approvers can refuse this attendance adjustment request."
-msgstr "يمكن لمسؤولي الموارد البشرية أو معتمدي الإجازة فقط رفض طلب تعديل الحضور هذا."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_templates.xml:0
-msgid "Photo updated."
-msgstr "تم تحديث الصورة."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_templates.xml:0
-msgid "Please choose an image file."
-msgstr "يرجى اختيار ملف صورة."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_templates.xml:0
-msgid "The image is too large. Maximum size is 5 MB."
-msgstr "الصورة كبيرة جدًا. الحد الأقصى للحجم هو 5 ميغابايت."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_templates.xml:0
-msgid "The image could not be updated."
-msgstr "تعذر تحديث الصورة."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_templates.xml:0
-msgid "Change photo"
-msgstr "تغيير الصورة"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/models/hr_attendance.py:0
-msgid "Has Approved Adjustment Request"
-msgstr "يوجد طلب تعديل حضور معتمد"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/models/hr_attendance.py:0
-msgid "Approved Adjustment Minutes"
-msgstr "دقائق التعديل المعتمدة"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/models/hr_attendance.py:0
-msgid "Actual Time"
-msgstr "الوقت الفعلي"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/models/hr_attendance.py:0
-msgid "Updated Time"
-msgstr "الوقت بعد التعديل"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Workday Start Time"
-msgstr "بداية يوم العمل"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/models/hr_attendance_adjustment_request.py:0
-msgid "Workday End Time"
-msgstr "نهاية يوم العمل"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/hr_attendance_adjustment_request_views.xml:0
-msgid "Adjustment Preview"
-msgstr "معاينة التعديل"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "Payslips"
-msgstr "كشوف الرواتب"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "My Payslips"
-msgstr "كشوف رواتبي"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "Payslip"
-msgstr "كشف الراتب"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "View validated payslips for your companies"
-msgstr "عرض كشوف الرواتب المعتمدة لشركاتك"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "View your payslip after it is validated"
-msgstr "عرض كشف راتبك بعد اعتماده"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "You have no validated payslips yet."
-msgstr "لا توجد كشوف رواتب معتمدة حتى الآن."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "Period"
-msgstr "الفترة"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "Net Wage"
-msgstr "صافي الراتب"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
-msgid "Validated"
-msgstr "معتمد"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
-msgid "Paid"
-msgstr "مدفوع"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "Download"
-msgstr "تنزيل"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/views/portal_payslip_templates.xml:0
-msgid "Back"
-msgstr "رجوع"
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
-msgid "This payslip does not exist or is not accessible."
-msgstr "كشف الراتب هذا غير موجود أو لا يمكن الوصول إليه."
-
-#. module: attendance_location_portal
-#: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
-msgid "This payslip is not accessible."
-msgstr "لا يمكن الوصول إلى كشف الراتب هذا."
-
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
+msgid "نوع الحركة"
+msgstr ""
