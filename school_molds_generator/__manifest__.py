@@ -3,12 +3,16 @@
     'name': "School Molds Generator",
     'summary': "Fill school molds in an Excel-like view and download the sheet.",
     'category': 'Education',
-    'version': '19.0.1.0.37',
+    'version': '19.0.1.0.42',
     'author': 'Smart Station',
     'depends': ['jt_education_base', 'jt_education_exam'],
+    'external_dependencies': {
+        'python': ['openpyxl'],
+    },
     'data': [
         'security/ir.model.access.csv',
         'security/school_mold_security.xml',
+        'wizard/school_mold_import_wizard_views.xml',
         'views/school_mold_views.xml',
         'views/student_mold_result_views.xml',
         'views/student_exam_views.xml',
@@ -32,5 +36,4 @@
     'application': True,
     'installable': True,
     'license': 'LGPL-3',
-    
 }

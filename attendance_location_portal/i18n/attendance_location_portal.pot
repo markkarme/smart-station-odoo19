@@ -4110,3 +4110,32 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_page
 msgid "نوع الحركة"
 msgstr ""
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
+msgid "Upload Excel"
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Please select an Excel file (.xlsx)."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Only .xlsx Excel files are supported."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "%s row(s) loaded from Excel."
+msgstr ""
+
+#. module: attendance_location_portal
+#. odoo-python
+#: code:addons/attendance_location_portal/controllers/portal_school_mold.py:0
+msgid "Could not import the Excel file."
+msgstr ""

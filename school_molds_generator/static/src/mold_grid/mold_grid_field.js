@@ -1,4 +1,4 @@
-import { Component, onWillUnmount, useState } from "@odoo/owl";
+import { Component, onWillUnmount, useRef, useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
@@ -11,11 +11,15 @@ export class SchoolMoldGridField extends Component {
 
     setup() {
         this.notification = useService("notification");
+        this.action = useService("action");
+        this.orm = useService("orm");
+        this.excelInput = useRef("excelInput");
         this.state = useState({
             columns: [],
             rows: [],
             expanded: false,
             zoom: 130,
+            uploading: false,
         });
         this.zoomMin = 70;
         this.zoomMax = 230;
@@ -37,6 +41,10 @@ export class SchoolMoldGridField extends Component {
 
     get expandLabel() {
         return this.state.expanded ? _t("Exit Fullscreen") : _t("Expand Sheet");
+    }
+
+    get uploadExcelLabel() {
+        return _t("Upload Excel");
     }
 
     _setExpanded(expanded) {
@@ -299,6 +307,81 @@ export class SchoolMoldGridField extends Component {
         ) + 1;
         const record = await this.lineList.addNewRecord({ position: "bottom" });
         await record.update({ sequence: nextSequence, values_json: {} });
+    }
+
+    uploadExcel() {
+        if (this.isMoldReadonly || this.state.uploading) {
+            return;
+        }
+        const moldId = this.moldRecord.resId;
+        if (!moldId) {
+            this.notification.add(_t("Save the mold before uploading Excel."), { type: "warning" });
+            return;
+        }
+        const input = this.excelInput.el;
+        if (!input) {
+            return;
+        }
+        input.value = "";
+        input.click();
+    }
+
+    async onExcelSelected(ev) {
+        const file = ev.target.files?.[0];
+        if (!file) {
+            return;
+        }
+        const moldId = this.moldRecord.resId;
+        if (!moldId) {
+            this.notification.add(_t("Save the mold before uploading Excel."), { type: "warning" });
+            return;
+        }
+        this.state.uploading = true;
+        try {
+            const base64 = await this._readFileAsBase64(file);
+            const count = await this.orm.call("school.mold", "action_import_xlsx", [
+                [moldId],
+                base64,
+                file.name,
+            ]);
+            this.notification.add(
+                _t("%(count)s row(s) loaded from Excel.", { count }),
+                { type: "success" }
+            );
+            await this.action.doAction({
+                type: "ir.actions.act_window",
+                res_model: "school.mold",
+                res_id: moldId,
+                views: [[false, "form"]],
+                target: "current",
+            });
+        } catch (error) {
+            const message =
+                error?.data?.message ||
+                error?.message ||
+                _t("Excel import failed.");
+            this.notification.add(message, { type: "danger" });
+        } finally {
+            this.state.uploading = false;
+            if (ev.target) {
+                ev.target.value = "";
+            }
+        }
+    }
+
+    _readFileAsBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                const result = reader.result || "";
+                const base64 = String(result).includes(",")
+                    ? String(result).split(",")[1]
+                    : String(result);
+                resolve(base64);
+            };
+            reader.onerror = () => reject(reader.error || new Error("Failed to read file"));
+            reader.readAsDataURL(file);
+        });
     }
 
     async removeRow(row) {

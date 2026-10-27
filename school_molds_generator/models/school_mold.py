@@ -621,6 +621,210 @@ class SchoolMold(models.Model):
             'target': 'self',
         }
 
+    def action_open_import_xlsx(self):
+        """Open the Upload Excel wizard for this mold."""
+        self.ensure_one()
+        self._ensure_draft()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Upload Excel'),
+            'res_model': 'school.mold.import.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_mold_id': self.id,
+            },
+        }
+
+    def action_import_xlsx(self, file_data, filename=None):
+        """Parse uploaded Excel and replace mold sheet rows. Returns imported row count."""
+        self.ensure_one()
+        self._ensure_draft()
+        if not file_data:
+            raise UserError(_('Please select an Excel file (.xlsx).'))
+        columns = self.column_ids.sorted('sequence')
+        if not columns:
+            raise UserError(_('Add columns before importing Excel data.'))
+
+        rows = self._parse_mold_xlsx(file_data, columns)
+        if not rows:
+            raise UserError(_('No data rows found in the Excel file.'))
+
+        Partner = self.env['res.partner']
+        company = self.company_id
+        commands = [(5, 0, 0)]
+        for index, row in enumerate(rows, start=1):
+            student_name = row.get('student_name') or ''
+            values_json = row.get('values_json') or {}
+            student = Partner.browse()
+            if student_name and company:
+                student = Partner.search([
+                    ('is_student', '=', True),
+                    ('name', '=', student_name),
+                    ('company_id', '=', company.id),
+                ], limit=1)
+            elif student_name:
+                student = Partner.search([
+                    ('is_student', '=', True),
+                    ('name', '=', student_name),
+                ], limit=1)
+            commands.append((0, 0, {
+                'sequence': index,
+                'student_id': student.id if student else False,
+                'student_name': student_name or (student.name if student else ''),
+                'values_json': values_json,
+            }))
+        self.line_ids = commands
+        self.line_ids._recompute_totals(columns)
+        return len(rows)
+
+    def _parse_mold_xlsx(self, file_data, columns):
+        """Read .xlsx bytes/base64 and return list of {student_name, values_json}."""
+        try:
+            from openpyxl import load_workbook
+        except ImportError as exc:
+            raise UserError(_('openpyxl is required to import Excel files.')) from exc
+
+        raw = file_data
+        if isinstance(raw, str):
+            raw = base64.b64decode(raw)
+        workbook = load_workbook(io.BytesIO(raw), data_only=True, read_only=True)
+        try:
+            sheet = workbook.active
+            matrix = []
+            for row in sheet.iter_rows(values_only=True):
+                matrix.append([self._xlsx_cell_str(cell) for cell in row])
+        finally:
+            workbook.close()
+
+        if not matrix:
+            return []
+
+        header_row_index = self._find_xlsx_header_row(matrix, columns)
+        if header_row_index is None:
+            raise UserError(_(
+                'Could not find a header row matching this mold columns. '
+                'Download Excel from this mold and use that layout.'
+            ))
+
+        data_start = header_row_index + 1
+        # Grades export writes a max-values row under the headers.
+        if data_start < len(matrix) and self._is_xlsx_max_values_row(matrix[data_start], columns):
+            data_start += 1
+
+        parsed = []
+        skip_types = {'serial', 'subtotal', 'total', 'grand_total'}
+        for row_cells in matrix[data_start:]:
+            if self._xlsx_row_empty(row_cells, len(columns)):
+                continue
+            values_json = {}
+            student_name = ''
+            has_content = False
+            for col_index, column in enumerate(columns):
+                raw_value = row_cells[col_index] if col_index < len(row_cells) else ''
+                if column.col_type == 'name':
+                    student_name = raw_value
+                    if raw_value:
+                        has_content = True
+                    continue
+                if column.col_type in skip_types:
+                    continue
+                if raw_value in (None, False, ''):
+                    continue
+                has_content = True
+                if column.col_type == 'score':
+                    number = self._xlsx_to_number(raw_value)
+                    values_json[column.key] = number if number is not None else raw_value
+                else:
+                    values_json[column.key] = raw_value
+            if has_content:
+                parsed.append({
+                    'student_name': student_name,
+                    'values_json': values_json,
+                })
+        return parsed
+
+    @api.model
+    def _xlsx_cell_str(self, value):
+        if value is None or value is False:
+            return ''
+        if isinstance(value, float) and value == int(value):
+            return str(int(value))
+        return str(value).strip()
+
+    @api.model
+    def _xlsx_to_number(self, value):
+        if value in (None, False, ''):
+            return None
+        if isinstance(value, (int, float)):
+            return float(value)
+        text = str(value).strip().replace(',', '')
+        try:
+            return float(text)
+        except (TypeError, ValueError):
+            return None
+
+    def _find_xlsx_header_row(self, matrix, columns):
+        """Return row index whose cells best match mold column names (by position).
+
+        Also peeks at the next row so Form 27 merged group headers
+        (e.g. تاريخ الميلاد + يوم/شهر/سنة) still match.
+        """
+        expected = [(column.name or '').strip() for column in columns]
+        if not expected:
+            return None
+        best_index = None
+        best_score = 0
+        col_count = len(expected)
+        for row_index in range(min(40, len(matrix))):
+            row = matrix[row_index]
+            next_row = matrix[row_index + 1] if row_index + 1 < len(matrix) else []
+            score = 0
+            for col_index, name in enumerate(expected):
+                if not name:
+                    continue
+                cell = row[col_index] if col_index < len(row) else ''
+                next_cell = next_row[col_index] if col_index < len(next_row) else ''
+                if cell == name or next_cell == name:
+                    score += 1
+            # Require a solid match so logo/title rows are ignored.
+            if score > best_score and score >= max(2, int(col_count * 0.4)):
+                best_score = score
+                best_index = row_index
+        return best_index
+
+    def _is_xlsx_max_values_row(self, row_cells, columns):
+        """Detect the grades export max-value row under headers."""
+        identity_types = set(IDENTITY_COL_TYPES)
+        saw_max = False
+        for col_index, column in enumerate(columns):
+            cell = row_cells[col_index] if col_index < len(row_cells) else ''
+            if column.col_type in identity_types:
+                # Max row leaves identity columns blank (except maybe serial).
+                if column.col_type == 'name' and cell:
+                    return False
+                if column.col_type in ('seat_number', 'pin_number', 'class') and cell:
+                    return False
+                continue
+            if cell in (None, False, ''):
+                continue
+            number = self._xlsx_to_number(cell)
+            if number is None:
+                return False
+            if column.max_value and abs(number - float(column.max_value)) < 0.0001:
+                saw_max = True
+            elif column.col_type in ('score', 'subtotal', 'total', 'grand_total'):
+                saw_max = True
+        return saw_max
+
+    @api.model
+    def _xlsx_row_empty(self, row_cells, col_count):
+        for col_index in range(col_count):
+            cell = row_cells[col_index] if col_index < len(row_cells) else ''
+            if cell not in (None, False, ''):
+                return False
+        return True
+
     def _asset_path(self, filename):
         module_path = get_module_path('school_molds_generator')
         return os.path.join(module_path, 'static', 'assets', filename)

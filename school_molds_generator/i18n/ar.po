@@ -36,6 +36,14 @@ msgid "School Mold"
 msgstr "قالب المدرسة"
 
 #. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+#: model:ir.actions.act_window,name:school_molds_generator.action_form_27_report
+#: model:ir.ui.menu,name:school_molds_generator.menu_form_27_report
+msgid "Form 27 report"
+msgstr "تقرير النموذج 27"
+
+#. module: school_molds_generator
 #: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__name
 msgid "Name"
 msgstr "الاسم"
@@ -358,6 +366,8 @@ msgid "New Mold"
 msgstr "قالب جديد"
 
 #. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
 #: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_letter
 #: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_letter
 #: model:ir.model,name:school_molds_generator.model_health_insurance_letter
@@ -516,3 +526,111 @@ msgstr "هذا القالب غير مرتبط بامتحان."
 #: code:addons/school_molds_generator/models/student_exam.py:0
 msgid "Subject '%(subject)s' is not valid for standard %(standard)s / division %(division)s."
 msgstr "المادة '%(subject)s' غير صالحة للصف %(standard)s / التخصص %(division)s."
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+#: model:ir.actions.act_window,name:school_molds_generator.action_school_mold_import_wizard
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Upload Excel"
+msgstr "رفع إكسل"
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Save the mold before uploading Excel."
+msgstr "احفظ القالب قبل رفع ملف إكسل."
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "%(count)s row(s) loaded from Excel."
+msgstr "تم تحميل %(count)s صف من ملف إكسل."
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Excel import failed."
+msgstr "فشل استيراد ملف إكسل."
+
+#. module: school_molds_generator
+#: model:ir.model,name:school_molds_generator.model_school_mold_import_wizard
+msgid "Upload Excel into School Mold"
+msgstr "رفع إكسل إلى قالب المدرسة"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_import_wizard__data_file
+msgid "Excel File"
+msgstr "ملف إكسل"
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_import_wizard__filename
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Import"
+msgstr "استيراد"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Upload an Excel file exported from this mold (or with the same column headers). Existing sheet rows will be replaced with the file data."
+msgstr "ارفع ملف إكسل تم تنزيله من هذا القالب (أو بنفس عناوين الأعمدة). سيتم استبدال صفوف الجدول الحالية ببيانات الملف."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Please select an Excel file (.xlsx)."
+msgstr "يرجى اختيار ملف إكسل (.xlsx)."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+msgid "Only .xlsx Excel files are supported."
+msgstr "يُدعم فقط ملفات إكسل بصيغة .xlsx."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+msgid "Excel imported"
+msgstr "تم استيراد إكسل"
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+msgid "%s row(s) loaded into the sheet."
+msgstr "تم تحميل %s صف إلى الجدول."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Add columns before importing Excel data."
+msgstr "أضف الأعمدة قبل استيراد بيانات إكسل."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No data rows found in the Excel file."
+msgstr "لا توجد صفوف بيانات في ملف إكسل."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "openpyxl is required to import Excel files."
+msgstr "مكتبة openpyxl مطلوبة لاستيراد ملفات إكسل."
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Could not find a header row matching this mold columns. Download Excel from this mold and use that layout."
+msgstr "تعذر العثور على صف عناوين يطابق أعمدة هذا القالب. نزّل إكسل من هذا القالب واستخدم نفس التنسيق."
+
