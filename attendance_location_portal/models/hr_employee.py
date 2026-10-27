@@ -15,7 +15,7 @@ class HrEmployee(models.Model):
         "employee_id",
         "user_id",
         string="HR Responsibles",
-        domain="[('share', '=', False)]",
+        domain="['|', ('share', '=', False), ('portal_hr_admin', '=', True)]",
         groups="hr.group_hr_user",
     )
     leave_manager_ids = fields.Many2many(
@@ -90,6 +90,53 @@ class HrEmployee(models.Model):
         "for their allowed companies from the portal.",
     )
 
+    # Standard single approver fields grant Internal User groups on write
+    # (e.g. leave_manager_id -> Time Off Responsible). Portal users must not
+    # be written there or Odoo raises exclusive Portal/User group errors.
+    _PORTAL_UNSAFE_SINGLE_APPROVER_FIELDS = frozenset(
+        {
+            "hr_responsible_id",
+            "leave_manager_id",
+            "attendance_manager_id",
+            "expense_manager_id",
+        }
+    )
+
+    def _single_approver_id_from_users(self, users, single_field):
+        """Pick a user safe for the standard many2one approver field."""
+        if not users:
+            return False
+        if single_field in self._PORTAL_UNSAFE_SINGLE_APPROVER_FIELDS:
+            users = users.filtered(lambda user: not user.share)
+            if not users:
+                # Keep existing required hr_responsible_id; clear optional ones.
+                if single_field == "hr_responsible_id":
+                    return None
+                return False
+        return users[:1].id or False
+
+    def _sanitize_portal_unsafe_approver_vals(self, vals):
+        """Drop portal/share users from single approver fields before write.
+
+        Core HR grants Internal User groups when leave_manager_id /
+        attendance_manager_id are set. That conflicts with Portal users.
+        """
+        vals = dict(vals)
+        Users = self.env["res.users"]
+        for field_name in self._PORTAL_UNSAFE_SINGLE_APPROVER_FIELDS:
+            if field_name not in vals or field_name not in self._fields:
+                continue
+            user_id = vals.get(field_name)
+            if not user_id:
+                continue
+            user = Users.browse(user_id)
+            if user.exists() and user.share:
+                if field_name == "hr_responsible_id":
+                    vals.pop(field_name, None)
+                else:
+                    vals[field_name] = False
+        return vals
+
     def _sync_approver_fields(self, vals):
         if self.env.context.get("skip_approver_sync"):
             return
@@ -107,9 +154,15 @@ class HrEmployee(models.Model):
                 single_updated = single_field in vals
                 multi_updated = multi_field in vals
                 if multi_updated and not single_updated:
-                    update_vals[single_field] = employee[multi_field][:1].id or False
+                    single_id = self._single_approver_id_from_users(
+                        employee[multi_field], single_field
+                    )
+                    if single_id is not None:
+                        update_vals[single_field] = single_id
                 elif single_updated and not multi_updated:
-                    update_vals[multi_field] = [(6, 0, employee[single_field].ids)]
+                    user = employee[single_field]
+                    if user and not user.share:
+                        update_vals[multi_field] = [(6, 0, user.ids)]
             if update_vals:
                 super(
                     HrEmployee,
@@ -118,12 +171,14 @@ class HrEmployee(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
+        vals_list = [self._sanitize_portal_unsafe_approver_vals(vals) for vals in vals_list]
         records = super().create(vals_list)
         for employee, vals in zip(records, vals_list):
             employee._sync_approver_fields(vals)
         return records
 
     def write(self, vals):
+        vals = self._sanitize_portal_unsafe_approver_vals(vals)
         result = super().write(vals)
         self._sync_approver_fields(vals)
         return result
