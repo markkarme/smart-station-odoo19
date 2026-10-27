@@ -147,6 +147,14 @@ class HrLeave(models.Model):
         return result
 
     def _check_double_validation_rules(self, employees, state):
+        # create() passes employee_id as int; write() passes an hr.employee recordset.
+        if not isinstance(employees, models.BaseModel):
+            employees = (
+                self.env["hr.employee"].browse(employees)
+                if employees
+                else self.env["hr.employee"]
+            )
+
         user = decision_user(self)
         assigned = self.filtered(lambda leave: leave._uses_assigned_approvers())
         for leave in assigned:
