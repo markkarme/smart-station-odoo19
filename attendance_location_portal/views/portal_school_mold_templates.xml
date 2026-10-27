@@ -232,6 +232,23 @@
                         </button>
                         <a href="/my/school_molds" class="btn btn-outline-secondary"><t>Back</t></a>
                     </form>
+                    <form t-if="mold_editable"
+                          method="post"
+                          t-att-action="'/my/school_molds/%s/upload_xlsx' % mold.id"
+                          enctype="multipart/form-data"
+                          class="d-flex flex-wrap gap-2 align-items-center mb-3">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="file"
+                               name="excel_file"
+                               accept=".xlsx,.xlsm,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                               required="required"
+                               class="form-control form-control-sm"
+                               style="max-width: 18rem;"/>
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fa fa-upload me-1"/>
+                            <t>Upload Excel</t>
+                        </button>
+                    </form>
                     <div t-if="not can_write" class="d-flex flex-wrap gap-2 mb-3">
                         <a t-att-href="'/my/school_molds/%s/xlsx' % mold.id" class="btn btn-outline-primary">
                             <t>Download Excel</t>

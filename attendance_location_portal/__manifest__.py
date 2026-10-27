@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.8.25",
+    "version": "19.0.1.8.31",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -18,7 +18,7 @@ Portal users:
 - Admin Mold Portal: can manage school molds / exam results for their allowed companies only
 - Admin Fee Plan Portal: can manage student fee plans / installments for their allowed companies only
     """,
-    "author": "CUC",
+    "author": "Appivio",
     "license": "LGPL-3",
     "depends": [
         "hr_attendance",

@@ -6,6 +6,14 @@
                 <button t-if="!isMoldReadonly" type="button" class="btn btn-sm btn-primary" t-on-click="addRow">
                     إضافة صف
                 </button>
+                <button t-if="!isMoldReadonly" type="button" class="btn btn-sm btn-secondary" t-on-click="uploadExcel">
+                    <t t-esc="uploadExcelLabel"/>
+                </button>
+                <input type="file"
+                       class="d-none"
+                       t-ref="excelInput"
+                       accept=".xlsx,.xlsm,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                       t-on-change="onExcelSelected"/>
                 <button type="button" class="btn btn-sm btn-secondary" t-on-click="toggleExpanded">
                     <t t-esc="expandLabel"/>
                 </button>

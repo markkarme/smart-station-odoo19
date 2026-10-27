@@ -336,3 +336,50 @@ class PortalSchoolMoldController(PortalHrMixin, http.Controller):
                 ),
             ],
         )
+
+    @http.route(
+        "/my/school_molds/<int:mold_id>/upload_xlsx",
+        type="http",
+        auth="user",
+        website=True,
+        methods=["POST"],
+        csrf=True,
+    )
+    def portal_school_mold_upload_xlsx(self, mold_id, **post):
+        try:
+            mold = self._get_school_mold(mold_id, require_write=True)
+        except AccessError as error:
+            return self._failed_page(str(error))
+
+        if mold.state != "draft":
+            return request.redirect(
+                "/my/school_molds/%s?%s"
+                % (
+                    mold.id,
+                    urlencode({"error": _("This result is done and cannot be modified.")}),
+                )
+            )
+
+        upload = request.httprequest.files.get("excel_file")
+        filename = (upload.filename if upload else "") or ""
+        if not upload or not filename:
+            return request.redirect(
+                "/my/school_molds/%s?%s"
+                % (mold.id, urlencode({"error": _("Please select an Excel file (.xlsx).")}))
+            )
+        if not filename.lower().endswith((".xlsx", ".xlsm")):
+            return request.redirect(
+                "/my/school_molds/%s?%s"
+                % (mold.id, urlencode({"error": _("Only .xlsx Excel files are supported.")}))
+            )
+
+        try:
+            raw = upload.read()
+            count = mold.action_import_xlsx(raw, filename)
+            params = {"message": _("%s row(s) loaded from Excel.") % count}
+        except (UserError, ValidationError) as error:
+            params = {"error": str(error)}
+        except Exception as error:
+            _logger.exception("Portal school mold Excel upload failed: %s", error)
+            params = {"error": _("Could not import the Excel file.")}
+        return request.redirect("/my/school_molds/%s?%s" % (mold.id, urlencode(params)))

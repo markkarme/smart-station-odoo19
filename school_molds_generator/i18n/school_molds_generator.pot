@@ -1,0 +1,656 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_molds_generator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 00:00:00\n"
+"PO-Revision-Date: 2026-10-27 00:00:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_molds_generator
+#: model:ir.module.module,shortdesc:base.module_school_molds_generator
+msgid "School Molds Generator"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.module.module,summary:base.module_school_molds_generator
+msgid "Fill school molds in an Excel-like view and download the sheet."
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_school_mold
+#: model:ir.ui.menu,name:school_molds_generator.menu_school_mold
+msgid "School Molds"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.ui.menu,name:school_molds_generator.menu_exam_result
+msgid "Result"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_report
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_report
+msgid "Health Insurance Sheet"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+#: model:ir.actions.act_window,name:school_molds_generator.action_form_27_report
+#: model:ir.ui.menu,name:school_molds_generator.menu_form_27_report
+msgid "Form 27 report"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model,name:school_molds_generator.model_school_mold
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "School Mold"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__name
+msgid "Name"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__year_id
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_year_id
+msgid "Academic Year"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__class_id
+msgid "Class"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__standard_id
+msgid "Standard"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__division_id
+msgid "Division"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__term
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_term
+msgid "Term"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__term_types
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_term_types
+msgid "Specialization"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__exam_type
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_exam_type
+msgid "Exam Type"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__exam_type__monthly
+msgid "Monthly"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__exam_type__mid_term
+msgid "Mid Term"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__first
+msgid "First Term"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__second
+msgid "Second Term"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__term__final
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__exam_type__final
+msgid "Final"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__date
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_date
+msgid "Date"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__note
+msgid "Note"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__column_ids
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Columns"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__line_ids
+msgid "Rows"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Sheet"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Load Students"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Add 10 Rows"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Recompute Totals"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Download Excel"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Reset Columns"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Reset columns to the template for this report?"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Layout"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Template changed. Click \"Reset Columns\" to load the matching sheet template."
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Mark Done"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__state__draft
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold__state__done
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Done"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__group_name
+msgid "Group Name"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__max_value
+msgid "Max Value"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__color
+msgid "Color"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_column__col_type
+msgid "Col Type"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__serial
+msgid "Serial"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__score
+msgid "Score"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__subtotal
+msgid "Subject Total"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__total
+msgid "Total"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields.selection,name:school_molds_generator.selection__school_mold_column__col_type__grand_total
+msgid "Grand Total"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__student_id
+msgid "Student"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__student_name
+msgid "Student Name"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Select a term (grade) first."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Select a specialization first."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No matching standard found for the selected term."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No matching division found for the selected specialization."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No students found for this term and specialization."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Score cannot be negative."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Value cannot exceed %(max)s for %(column)s."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Score cannot be negative (%(column)s)."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Value %(value)s exceeds the maximum %(max)s for %(column)s."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Link at least one student (Load Students) before marking this result as done."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "This result is done and cannot be modified. Reset to draft first."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Done results can only be reset to draft."
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_res_partner__mold_result_ids
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_partner_form_mold_results
+msgid "Grades Record"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__score_summary
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_line_result_view_form
+msgid "Marks"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__grand_total
+msgid "Grand Total"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_name
+msgid "Result"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Add columns before downloading the mold."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "New Mold"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_letter
+#: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_letter
+#: model:ir.model,name:school_molds_generator.model_health_insurance_letter
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_letter
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
+msgid "Health Insurance report"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
+msgid "Download PDF"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_letter_form
+msgid "cancel"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__student_id
+msgid "الطالب"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__student_name
+msgid "اسم الطالب"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__insurance_number
+msgid "رقم بطاقة التأمين الصحي"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__region
+msgid "المنطقة"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_health_insurance_letter__station
+msgid "المحطة"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_proof_registration_letter
+#: model:ir.actions.report,name:school_molds_generator.action_report_proof_registration_letter
+#: model:ir.model,name:school_molds_generator.model_proof_registration_letter
+#: model:ir.ui.menu,name:school_molds_generator.menu_proof_registration_letter
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_proof_registration_letter_form
+msgid "Proof of Registration"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_enrollment_proof
+#: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_enrollment_proof
+#: model:ir.model,name:school_molds_generator.model_health_insurance_enrollment_proof
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_enrollment_proof
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_enrollment_proof_form
+msgid "Health Insurance Enrollment Proof 2"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.actions.act_window,name:school_molds_generator.action_health_insurance_response
+#: model:ir.actions.report,name:school_molds_generator.action_report_health_insurance_response
+#: model:ir.model,name:school_molds_generator.model_health_insurance_response
+#: model:ir.ui.menu,name:school_molds_generator.menu_health_insurance_response
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.view_health_insurance_response_form
+msgid "Health Insurance Response"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__company_id
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_company_id
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_search
+msgid "Company"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_line__mold_id
+msgid "Mold"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.rule,name:school_molds_generator.school_mold_company_rule
+msgid "School Mold: multi-company"
+msgstr ""
+
+
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_student_exam__allowed_subject_ids
+msgid "Allowed Subjects"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_student_exam__allowed_subject_ids
+msgid "Subjects available for the selected standard and division (from school mold column layouts)."
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_student_exam__mold_id
+msgid "School Mold"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_student_exam__mold_id
+msgid "Grade mold created automatically when this exam is completed."
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold__exam_id
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_view_form
+msgid "امتحان"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,help:school_molds_generator.field_school_mold__exam_id
+msgid "Source exam that created this mold when the exam was completed."
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.student_exam_form_view_mold_subjects
+msgid "النتائج"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "No school mold is linked to this exam yet. Complete the exam first."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Company and Standard are required to create a school mold."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Add at least one subject before completing the exam."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Created automatically from exam <a href=\"#\" data-oe-model=\"student.exam\" data-oe-id=\"%(exam_id)s\">%(exam_name)s</a> with %(count)s subject(s)."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Exam Mold"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "This mold is not linked to an exam."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/student_exam.py:0
+msgid "Subject '%(subject)s' is not valid for standard %(standard)s / division %(division)s."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+#: model:ir.actions.act_window,name:school_molds_generator.action_school_mold_import_wizard
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Upload Excel"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Save the mold before uploading Excel."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "%(count)s row(s) loaded from Excel."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-javascript
+#: code:addons/school_molds_generator/static/src/mold_grid/mold_grid_field.js:0
+msgid "Excel import failed."
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model,name:school_molds_generator.model_school_mold_import_wizard
+msgid "Upload Excel into School Mold"
+msgstr ""
+
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_import_wizard__data_file
+msgid "Excel File"
+msgstr ""
+#. module: school_molds_generator
+#: model:ir.model.fields,field_description:school_molds_generator.field_school_mold_import_wizard__filename
+msgid "Filename"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Import"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: school_molds_generator
+#: model_terms:ir.ui.view,arch_db:school_molds_generator.school_mold_import_wizard_view_form
+msgid "Upload an Excel file exported from this mold (or with the same column headers). Existing sheet rows will be replaced with the file data."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Please select an Excel file (.xlsx)."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+msgid "Only .xlsx Excel files are supported."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+msgid "Excel imported"
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/wizard/school_mold_import_wizard.py:0
+msgid "%s row(s) loaded into the sheet."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Add columns before importing Excel data."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "No data rows found in the Excel file."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "openpyxl is required to import Excel files."
+msgstr ""
+
+#. module: school_molds_generator
+#. odoo-python
+#: code:addons/school_molds_generator/models/school_mold.py:0
+msgid "Could not find a header row matching this mold columns. Download Excel from this mold and use that layout."
+msgstr ""
+

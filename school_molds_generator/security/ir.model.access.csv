@@ -6,3 +6,4 @@ access_health_insurance_letter_user,health.insurance.letter.user,model_health_in
 access_proof_registration_letter_user,proof.registration.letter.user,model_proof_registration_letter,base.group_user,1,1,1,1
 access_health_insurance_enrollment_proof_user,health.insurance.enrollment.proof.user,model_health_insurance_enrollment_proof,base.group_user,1,1,1,1
 access_health_insurance_response_user,health.insurance.response.user,model_health_insurance_response,base.group_user,1,1,1,1
+access_school_mold_import_wizard_user,school.mold.import.wizard.user,model_school_mold_import_wizard,,1,1,1,1
