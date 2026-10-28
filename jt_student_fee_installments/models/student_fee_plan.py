@@ -211,6 +211,23 @@ class StudentFeePlan(models.Model):
         ),
     ]
 
+    @api.model
+    def assign_missing_basic_total_due(self):
+        """One-time helper: set basic_total_due from sum of basic installment amount_due."""
+        plans = self.search([
+            '|',
+            ('basic_total_due', '=', False),
+            ('basic_total_due', '=', 0),
+        ])
+        for plan in plans:
+            total = sum(plan.basic_installment_ids.mapped('amount_due'))
+            if total:
+                # Avoid regenerating installment lines from the new total
+                plan.with_context(skip_installment_sync=True).write({
+                    'basic_total_due': total,
+                })
+        return True
+
     @api.depends('student_id.name', 'year_id.name', 'name')
     def _compute_display_name(self):
         for plan in self:

@@ -232,6 +232,18 @@
         </field>
     </record>
 
+    <!-- Inactive by default: run manually once to backfill basic_total_due from installment lines -->
+    <record id="ir_cron_assign_missing_basic_total_due" model="ir.cron">
+        <field name="name">Assign Missing Basic Total Due</field>
+        <field name="model_id" ref="model_student_fee_plan"/>
+        <field name="state">code</field>
+        <field name="code">model.assign_missing_basic_total_due()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="active" eval="False"/>
+        <field name="interval_type">days</field>
+        <field name="interval_number">1</field>
+    </record>
+
     <!-- Fee Plans smart button on student form -->
     <record id="view_partner_form_fee_plans" model="ir.ui.view">
         <field name="name">res.partner.form.fee.plans.smart.button</field>
