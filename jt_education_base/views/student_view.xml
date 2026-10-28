@@ -287,4 +287,16 @@
         <field name="interval_type">days</field>
         <field name="interval_number">1</field>
     </record>
+
+    <!-- Inactive by default: run manually once to backfill missing Student UIDs -->
+    <record id="ir_cron_assign_missing_student_uids" model="ir.cron">
+        <field name="name">Assign Missing Student UIDs</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.assign_missing_student_uids()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="active" eval="False"/>
+        <field name="interval_type">days</field>
+        <field name="interval_number">1</field>
+    </record>
 </odoo>

@@ -26,7 +26,7 @@
     'summary': "Manage the students details",
     'category': 'Education',
     'author': 'Jupical Technologies Pvt. Ltd.',
-    'version': '19.0.1.0.15',
+    'version': '19.0.1.0.16',
     'depends': ['contacts', 'hr_recruitment', 'mail'],
     'data': [
         'security/base_security.xml',

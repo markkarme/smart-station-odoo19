@@ -383,6 +383,20 @@ class ResPartner(models.Model):
             if rec.birthdate and rec.birthdate >= today:
                 raise exceptions.ValidationError(_('Invalid date of birth ..please enter correct date'))
 
+    @api.model
+    def assign_missing_student_uids(self):
+        """One-time helper: assign Student UID (stud_id) via sequence to students missing it."""
+        students = self.search([
+            ('is_student', '=', True),
+            '|',
+            ('stud_id', '=', False),
+            ('stud_id', '=', ''),
+        ])
+        sequence = self.env['ir.sequence']
+        for student in students:
+            student.stud_id = sequence.next_by_code('studentinformation.seq')
+        return True
+
     @api.model_create_multi
     def create(self, vals_list):
         partners = super().create(vals_list)
