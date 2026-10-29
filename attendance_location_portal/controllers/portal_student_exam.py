@@ -170,24 +170,103 @@ class PortalStudentExamController(PortalHrMixin, http.Controller):
         auth="user",
         website=True,
     )
-    def portal_my_student_exams(self, page=1, **kwargs):
+    def portal_my_student_exams(
+        self,
+        page=1,
+        sortby=None,
+        filterby=None,
+        search=None,
+        search_in="all",
+        **kwargs,
+    ):
         try:
             self._require_exam_admin()
         except AccessError as error:
             return self._failed_page(str(error))
 
+        companies = self._allowed_companies()
         exam_model = request.env["student.exam"].sudo()
         domain = self._portal_company_domain()
+
+        searchbar_filters = self._portal_company_searchbar_filters(
+            companies,
+            base={
+                "all": {"label": _("All"), "domain": [], "sequence": 10},
+                "draft": {
+                    "label": _("Draft"),
+                    "domain": [("state", "=", "draft")],
+                    "sequence": 20,
+                },
+                "ongoing": {
+                    "label": _("On Going"),
+                    "domain": [("state", "=", "ongoing")],
+                    "sequence": 30,
+                },
+                "close": {
+                    "label": _("Closed"),
+                    "domain": [("state", "=", "close")],
+                    "sequence": 40,
+                },
+                "cancel": {
+                    "label": _("Canceled"),
+                    "domain": [("state", "=", "cancel")],
+                    "sequence": 50,
+                },
+            },
+        )
+        search_inputs = self._portal_student_searchbar_inputs(
+            name_fields=["student_ids.name"],
+            id_fields=["student_ids.stud_id"],
+            extra_all_domains=lambda value: [
+                [("name", "ilike", value)],
+                [("standard.name", "ilike", value)],
+                [("division.name", "ilike", value)],
+                [("class_id.name", "ilike", value)],
+            ],
+            extra_inputs={
+                "exam": {
+                    "input": "exam",
+                    "label": _("Search in Exam"),
+                    "sequence": 40,
+                    "domain": lambda value: [("name", "ilike", value)],
+                },
+            },
+        )
+        searchbar_sortings = {
+            "date": {"label": _("Newest"), "order": "start_date desc, id desc"},
+            "name": {"label": _("Exam"), "order": "name, id desc"},
+            "state": {"label": _("Status"), "order": "state, start_date desc"},
+        }
+        searchbar = self._portal_apply_searchbar(
+            domain,
+            searchbar_filters=searchbar_filters,
+            searchbar_inputs=search_inputs,
+            searchbar_sortings=searchbar_sortings,
+            filterby=filterby,
+            search=search,
+            search_in=search_in,
+            sortby=sortby,
+            default_filterby="all",
+            default_search_in="all",
+            default_sortby="date",
+        )
+        domain = searchbar["domain"]
         exam_count = exam_model.search_count(domain)
         pager = portal_pager(
             url="/my/student_exams",
+            url_args={
+                "sortby": searchbar["sortby"],
+                "filterby": searchbar["filterby"],
+                "search": searchbar["search"],
+                "search_in": searchbar["search_in"],
+            },
             total=exam_count,
             page=page,
             step=self._items_per_page,
         )
         exams = exam_model.search(
             domain,
-            order="start_date desc, id desc",
+            order=searchbar["order"],
             limit=self._items_per_page,
             offset=pager["offset"],
         )
@@ -197,9 +276,17 @@ class PortalStudentExamController(PortalHrMixin, http.Controller):
                 "page_name": "portal_student_exams",
                 "exams": exams,
                 "pager": pager,
-                "show_company": len(self._allowed_companies()) > 1,
+                "show_company": len(companies) > 1,
                 "state_labels": self._state_labels(),
                 "state_badges": EXAM_STATE_BADGES,
+                "default_url": "/my/student_exams",
+                "searchbar_filters": searchbar["searchbar_filters"],
+                "filterby": searchbar["filterby"],
+                "searchbar_inputs": searchbar["searchbar_inputs"],
+                "search_in": searchbar["search_in"],
+                "search": searchbar["search"],
+                "searchbar_sortings": searchbar["searchbar_sortings"],
+                "sortby": searchbar["sortby"],
             },
         )
 

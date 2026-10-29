@@ -42,6 +42,11 @@ class PortalHrMixin:
             "attendance_location_portal.group_portal_fee_admin"
         )
 
+    def _is_portal_misconduct_admin(self):
+        return request.env.user.has_group(
+            "attendance_location_portal.group_portal_misconduct_admin"
+        )
+
     def _portal_user_company_ids(self):
         """Companies allowed for the current portal user."""
         return request.env.user.company_ids.ids
@@ -82,6 +87,68 @@ class PortalHrMixin:
         return OrderedDict(
             sorted(values.items(), key=lambda item: item[1].get("sequence", 50))
         )
+
+    def _portal_company_searchbar_filters(
+        self, companies, *, base=None, company_field="company_id", start_sequence=100
+    ):
+        """Extend filters with one entry per allowed company (when multi-company)."""
+        filters = dict(base or {"all": {"label": _("All"), "domain": [], "sequence": 10}})
+        if len(companies) > 1:
+            sequence = start_sequence
+            for company in companies:
+                filters["company_%s" % company.id] = {
+                    "label": company.name,
+                    "domain": [(company_field, "=", company.id)],
+                    "sequence": sequence,
+                }
+                sequence += 10
+        return filters
+
+    def _portal_student_searchbar_inputs(
+        self,
+        *,
+        name_fields,
+        id_fields,
+        extra_all_domains=None,
+        extra_inputs=None,
+    ):
+        """Build portal search inputs focused on student name + student ID (stud_id)."""
+        name_fields = list(name_fields or [])
+        id_fields = list(id_fields or [])
+
+        def _ilike_domains(fields_list, value):
+            return [[(field_name, "ilike", value)] for field_name in fields_list]
+
+        inputs = {
+            "all": {
+                "input": "all",
+                "label": _("Search in All"),
+                "sequence": 10,
+                "domain": lambda value: self._portal_or_domain(
+                    _ilike_domains(name_fields + id_fields, value)
+                    + list(extra_all_domains(value) if callable(extra_all_domains) else (extra_all_domains or []))
+                ),
+            },
+            "student_name": {
+                "input": "student_name",
+                "label": _("Search in Student Name"),
+                "sequence": 20,
+                "domain": lambda value: self._portal_or_domain(
+                    _ilike_domains(name_fields, value)
+                ),
+            },
+            "student_id": {
+                "input": "student_id",
+                "label": _("Search in Student ID"),
+                "sequence": 30,
+                "domain": lambda value: self._portal_or_domain(
+                    _ilike_domains(id_fields, value)
+                ),
+            },
+        }
+        if extra_inputs:
+            inputs.update(extra_inputs)
+        return inputs
 
     def _portal_or_domain(self, domains):
         domains = [domain for domain in domains if domain]
