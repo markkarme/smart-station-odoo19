@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_student_misconduct" inherit_id="portal.portal_breadcrumbs" priority="60">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_student_violations', 'portal_student_violation_new', 'portal_student_violation_detail', 'portal_student_misconduct_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_student_violations' else ''}">
+                <a t-if="page_name != 'portal_student_violations'" href="/my/student_violations"><t>مخالفات الطلاب</t></a>
+                <t t-else=""><t>مخالفات الطلاب</t></t>
+            </li>
+            <li t-if="page_name == 'portal_student_violation_new'" class="breadcrumb-item active">
+                <t>مخالفة جديدة</t>
+            </li>
+            <li t-if="page_name == 'portal_student_violation_detail'" class="breadcrumb-item active">
+                <t>المخالفة</t>
+            </li>
+            <li t-if="page_name in ('portal_case_studies', 'portal_case_study_new', 'portal_case_study_detail')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_case_studies' else ''}">
+                <a t-if="page_name != 'portal_case_studies'" href="/my/case_studies"><t>دراسات الحالة</t></a>
+                <t t-else=""><t>دراسات الحالة</t></t>
+            </li>
+            <li t-if="page_name == 'portal_case_study_new'" class="breadcrumb-item active">
+                <t>دراسة حالة جديدة</t>
+            </li>
+            <li t-if="page_name == 'portal_case_study_detail'" class="breadcrumb-item active">
+                <t>دراسة حالة</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_student_misconduct_entry" inherit_id="portal.portal_my_home" priority="60">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_misconduct_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_student_violations/static/assets/smart-logo.png'"/>
+                <t t-set="title"><t>مخالفات الطلاب</t></t>
+                <t t-set="text"><t>إدارة مخالفات الطلاب للشركات المسموح بها</t></t>
+                <t t-set="url" t-value="'/my/student_violations'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_misconduct_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_student_violations/static/assets/smart-logo.png'"/>
+                <t t-set="title"><t>دراسات الحالة</t></t>
+                <t t-set="text"><t>إدارة دراسات الحالة الإكلينيكية للشركات المسموح بها</t></t>
+                <t t-set="url" t-value="'/my/case_studies'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_student_misconduct_failed_page" name="Student Misconduct Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-danger" t-out="error_message"/>
+                <a href="/my" class="btn btn-secondary"><t>العودة للبوابة</t></a>
+            </div>
+        </t>
+    </template>
+
+    <!-- ===================== Violations ===================== -->
+    <template id="portal_my_student_violations" name="Student Violations">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title"><t>مخالفات الطلاب</t></t>
+            </t>
+            <div t-if="message" class="alert alert-success" t-out="message"/>
+            <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/student_violations/new" class="btn btn-primary"><t>مخالفة جديدة</t></a>
+            </div>
+            <div t-if="not violations" class="alert alert-info">
+                <t>لا توجد مخالفات طلاب لشركاتك.</t>
+            </div>
+            <t t-if="violations">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>التاريخ</t></th>
+                            <th><t>الطالب</t></th>
+                            <th><t>رقم الطالب</t></th>
+                            <th t-if="show_company"><t>الشركة</t></th>
+                            <th><t>المخالفة</t></th>
+                            <th><t>الإجراء المتخذ</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="violations" t-as="rec">
+                            <td>
+                                <a t-att-href="'/my/student_violations/%s' % rec.id">
+                                    <span t-field="rec.date"/>
+                                </a>
+                            </td>
+                            <td><span t-out="rec.student_id.name"/></td>
+                            <td><span t-out="rec.stud_id or '-'"/></td>
+                            <td t-if="show_company"><span t-out="rec.company_id.name"/></td>
+                            <td><span t-out="violation_labels.get(rec.violation_type, rec.violation_type)"/></td>
+                            <td><span t-out="action_labels.get(rec.action_taken, rec.action_taken or '-')"/></td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_student_violation_form" name="Student Violation Form">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3" style="max-width: 920px;">
+                <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                    <h3 class="mb-0">
+                        <t t-if="violation"><t>المخالفة</t></t>
+                        <t t-else=""><t>مخالفة جديدة</t></t>
+                    </h3>
+                    <a href="/my/student_violations" class="btn btn-outline-secondary"><t>رجوع</t></a>
+                </div>
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post"
+                      t-att-action="violation and ('/my/student_violations/%s/save' % violation.id) or '/my/student_violations/submit'"
+                      class="card">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="card-body row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label"><t>الشركة</t></label>
+                            <select t-if="not violation" class="form-select" name="company_id" required="required"
+                                    t-att-onchange="'window.location=\'/my/student_violations/new?company_id=\' + this.value'">
+                                <option t-foreach="companies" t-as="item" t-att-value="item.id"
+                                        t-att-selected="item.id == company.id" t-out="item.name"/>
+                            </select>
+                            <input t-if="violation" type="text" class="form-control" t-att-value="company.name" readonly="readonly"/>
+                            <input t-if="violation" type="hidden" name="company_id" t-att-value="company.id"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>التاريخ</t></label>
+                            <input type="date" class="form-control" name="date" required="required"
+                                   t-att-value="form_values.get('date')"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>الطالب</t></label>
+                            <select class="form-select" name="student_id" required="required"
+                                    t-att-onchange="not violation and ('window.location=\'/my/student_violations/new?company_id=%s&amp;student_id=\' + this.value' % company.id) or None">
+                                <option value=""><t>اختر...</t></option>
+                                <option t-foreach="students" t-as="item" t-att-value="item.id"
+                                        t-att-selected="student and item.id == student.id"
+                                        t-out="item.display_name or item.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>الفصل</t></label>
+                            <select class="form-select" name="class_id">
+                                <option value=""><t>اختر...</t></option>
+                                <option t-foreach="classes" t-as="item" t-att-value="item.id"
+                                        t-att-selected="form_values.get('class_id') == item.id"
+                                        t-out="item.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>الشعبة</t></label>
+                            <select class="form-select" name="div_id">
+                                <option value=""><t>اختر...</t></option>
+                                <option t-foreach="divisions" t-as="item" t-att-value="item.id"
+                                        t-att-selected="form_values.get('div_id') == item.id"
+                                        t-out="item.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>المخالفة</t></label>
+                            <select class="form-select" name="violation_type" required="required">
+                                <option value=""><t>اختر...</t></option>
+                                <option t-foreach="violation_types" t-as="item" t-att-value="item['value']"
+                                        t-att-selected="form_values.get('violation_type') == item['value']"
+                                        t-out="item['label']"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>الإجراء المتخذ</t></label>
+                            <select class="form-select" name="action_taken">
+                                <option value=""><t>اختر...</t></option>
+                                <option t-foreach="action_options" t-as="item" t-att-value="item['value']"
+                                        t-att-selected="form_values.get('action_taken') == item['value']"
+                                        t-out="item['label']"/>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label"><t>وصف المشكلة</t></label>
+                            <textarea class="form-control" name="description" rows="3"
+                                      t-esc="form_values.get('description') or ''"/>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label"><t>الملاحظات</t></label>
+                            <textarea class="form-control" name="notes" rows="3"
+                                      t-esc="form_values.get('notes') or ''"/>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-wrap gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <t t-if="violation"><t>حفظ</t></t>
+                            <t t-else=""><t>إنشاء</t></t>
+                        </button>
+                        <a href="/my/student_violations" class="btn btn-outline-secondary"><t>إلغاء</t></a>
+                    </div>
+                </form>
+
+                <form t-if="violation" method="post" t-att-action="'/my/student_violations/%s/delete' % violation.id" class="mt-3">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('هل تريد حذف هذه المخالفة؟');">
+                        <t>حذف</t>
+                    </button>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <!-- ===================== Case Studies ===================== -->
+    <template id="portal_my_case_studies" name="Case Studies">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title"><t>دراسات الحالة</t></t>
+            </t>
+            <div t-if="message" class="alert alert-success" t-out="message"/>
+            <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/case_studies/new" class="btn btn-primary"><t>دراسة حالة جديدة</t></a>
+            </div>
+            <div t-if="not cases" class="alert alert-info">
+                <t>لا توجد دراسات حالة لشركاتك.</t>
+            </div>
+            <t t-if="cases">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>التاريخ</t></th>
+                            <th><t>الاسم</t></th>
+                            <th><t>الطالب</t></th>
+                            <th><t>رقم الطالب</t></th>
+                            <th t-if="show_company"><t>الشركة</t></th>
+                            <th><t>الأخصائي النفسي</t></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="cases" t-as="rec">
+                            <td>
+                                <a t-att-href="'/my/case_studies/%s' % rec.id">
+                                    <span t-field="rec.date"/>
+                                </a>
+                            </td>
+                            <td><span t-out="rec.name or '-'"/></td>
+                            <td><span t-out="rec.student_id.name"/></td>
+                            <td><span t-out="rec.stud_id or '-'"/></td>
+                            <td t-if="show_company"><span t-out="rec.company_id.name"/></td>
+                            <td><span t-out="rec.psychologist_id.name or '-'"/></td>
+                        </tr>
+                    </tbody>
+                </t>
+                <div t-if="pager" class="o_portal_pager mt-3">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_student_case_study_form" name="Case Study Form">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                    <div>
+                        <h3 class="mb-1">
+                            <t t-if="case"><t>دراسة حالة</t></t>
+                            <t t-else=""><t>دراسة حالة جديدة</t></t>
+                        </h3>
+                        <div t-if="case" class="text-muted">
+                            <span t-out="case.student_id.name"/> · <span t-field="case.date"/>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a t-if="case" t-att-href="'/my/case_studies/%s/print' % case.id" class="btn btn-outline-primary">
+                            <t>طباعة دراسة الحالة</t>
+                        </a>
+                        <a href="/my/case_studies" class="btn btn-outline-secondary"><t>رجوع</t></a>
+                    </div>
+                </div>
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post"
+                      t-att-action="case and ('/my/case_studies/%s/save' % case.id) or '/my/case_studies/submit'"
+                      class="card">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="tab" t-att-value="active_tab or 'demographic'"/>
+
+                    <div class="card-body">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label"><t>الشركة</t></label>
+                                <select t-if="not case" class="form-select" name="company_id" required="required"
+                                        t-att-onchange="'window.location=\'/my/case_studies/new?company_id=\' + this.value'">
+                                    <option t-foreach="companies" t-as="item" t-att-value="item.id"
+                                            t-att-selected="item.id == company.id" t-out="item.name"/>
+                                </select>
+                                <input t-if="case" type="text" class="form-control" t-att-value="company.name" readonly="readonly"/>
+                                <input t-if="case" type="hidden" name="company_id" t-att-value="company.id"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><t>الطالب</t></label>
+                                <select class="form-select" name="student_id" required="required"
+                                        t-att-onchange="not case and ('window.location=\'/my/case_studies/new?company_id=%s&amp;student_id=\' + this.value' % company.id) or None">
+                                    <option value=""><t>اختر...</t></option>
+                                    <option t-foreach="students" t-as="item" t-att-value="item.id"
+                                            t-att-selected="student and item.id == student.id"
+                                            t-out="item.display_name or item.name"/>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><t>التاريخ</t></label>
+                                <input type="date" class="form-control" name="date" required="required"
+                                       t-att-value="form_values.get('date')"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><t>الاسم</t></label>
+                                <input type="text" class="form-control" name="name" t-att-value="form_values.get('name') or ''"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><t>الفصل</t></label>
+                                <select class="form-select" name="class_id">
+                                    <option value=""><t>اختر...</t></option>
+                                    <option t-foreach="classes" t-as="item" t-att-value="item.id"
+                                            t-att-selected="form_values.get('class_id') == item.id" t-out="item.name"/>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><t>الشعبة</t></label>
+                                <select class="form-select" name="div_id">
+                                    <option value=""><t>اختر...</t></option>
+                                    <option t-foreach="divisions" t-as="item" t-att-value="item.id"
+                                            t-att-selected="form_values.get('div_id') == item.id" t-out="item.name"/>
+                                </select>
+                            </div>
+                        </div>
+
+                        <ul class="nav nav-tabs mb-3" role="tablist">
+                            <li class="nav-item"><button type="button" class="nav-link" t-att-class="'nav-link' + (' active' if (active_tab or 'demographic') == 'demographic' else '')" data-bs-toggle="tab" data-bs-target="#cs_demographic"><t>بيانات ديموجرافية</t></button></li>
+                            <li class="nav-item"><button type="button" t-att-class="'nav-link' + (' active' if active_tab == 'childhood' else '')" data-bs-toggle="tab" data-bs-target="#cs_childhood"><t>تاريخ الطفولة والمراهقة</t></button></li>
+                            <li class="nav-item"><button type="button" t-att-class="'nav-link' + (' active' if active_tab == 'interests' else '')" data-bs-toggle="tab" data-bs-target="#cs_interests"><t>الاهتمامات والأعراض</t></button></li>
+                            <li class="nav-item"><button type="button" t-att-class="'nav-link' + (' active' if active_tab == 'additional' else '')" data-bs-toggle="tab" data-bs-target="#cs_additional"><t>أسئلة إضافية</t></button></li>
+                            <li class="nav-item"><button type="button" t-att-class="'nav-link' + (' active' if active_tab == 'psychologist' else '')" data-bs-toggle="tab" data-bs-target="#cs_psychologist"><t>تقييم الأخصائي النفسي</t></button></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div t-attf-class="tab-pane fade #{'show active' if (active_tab or 'demographic') == 'demographic' else ''}" id="cs_demographic">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>الجنس</t></label>
+                                        <select class="form-select" name="gender">
+                                            <option value=""/>
+                                            <option t-foreach="gender_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('gender') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>تاريخ الميلاد</t></label>
+                                        <input type="date" class="form-control" name="birthdate" t-att-value="form_values.get('birthdate') or ''"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>الجنسية</t></label>
+                                        <input type="text" class="form-control" name="nationality" t-att-value="form_values.get('nationality') or ''"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>الحالة الاجتماعية</t></label>
+                                        <select class="form-select" name="marital_status">
+                                            <option value=""/>
+                                            <option t-foreach="marital_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('marital_status') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>أين تعيش؟</t></label>
+                                        <input type="text" class="form-control" name="residence" t-att-value="form_values.get('residence') or ''"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>مع من تعيش؟</t></label>
+                                        <input type="text" class="form-control" name="live_with" t-att-value="form_values.get('live_with') or ''"/>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label"><t>سبب الإحالة</t></label>
+                                        <textarea class="form-control" name="referral_reason" rows="3" t-esc="form_values.get('referral_reason') or ''"/>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5 class="mt-2"><t>التكوين الأسري</t></h5>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm align-middle">
+                                                <thead>
+                                                    <tr>
+                                                        <th><t>الصلة</t></th>
+                                                        <th><t>الاسم</t></th>
+                                                        <th><t>العمر</t></th>
+                                                        <th><t>التعليم</t></th>
+                                                        <th><t>الوظيفة</t></th>
+                                                        <th><t>المستوى الاقتصادي</t></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr t-foreach="family_lines" t-as="line">
+                                                        <td>
+                                                            <input type="hidden" name="family_row_id" t-att-value="line.get('id') or ''"/>
+                                                            <select class="form-select form-select-sm" name="family_relation_type">
+                                                                <option t-foreach="relation_options" t-as="item" t-att-value="item['value']"
+                                                                        t-att-selected="line.get('relation_type') == item['value']" t-out="item['label']"/>
+                                                            </select>
+                                                        </td>
+                                                        <td><input type="text" class="form-control form-control-sm" name="family_name" t-att-value="line.get('name') or ''"/></td>
+                                                        <td><input type="number" class="form-control form-control-sm" name="family_age" t-att-value="line.get('age') or 0"/></td>
+                                                        <td><input type="text" class="form-control form-control-sm" name="family_education" t-att-value="line.get('education') or ''"/></td>
+                                                        <td><input type="text" class="form-control form-control-sm" name="family_job" t-att-value="line.get('job') or ''"/></td>
+                                                        <td>
+                                                            <select class="form-select form-select-sm" name="family_economic_level">
+                                                                <option value=""/>
+                                                                <option t-foreach="economic_options" t-as="item" t-att-value="item['value']"
+                                                                        t-att-selected="line.get('economic_level') == item['value']" t-out="item['label']"/>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>هل لديك أخوات؟</t></label>
+                                        <select class="form-select" name="has_siblings">
+                                            <option value=""/>
+                                            <option t-foreach="siblings_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('has_siblings') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>كم عددهم؟</t></label>
+                                        <input type="number" class="form-control" name="siblings_count" t-att-value="form_values.get('siblings_count') or 0"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>ما ترتيبك بينهم؟</t></label>
+                                        <input type="text" class="form-control" name="sibling_order" t-att-value="form_values.get('sibling_order') or ''"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'childhood' else ''}" id="cs_childhood">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label"><t>مع من نشأت؟</t></label>
+                                        <select class="form-select" name="grew_up_with">
+                                            <option value=""/>
+                                            <option t-foreach="grew_up_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('grew_up_with') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label"><t>هل سبق وزرت طبيب أو معالج نفسي من قبل؟</t></label>
+                                        <select class="form-select" name="visited_psychiatrist">
+                                            <option value=""/>
+                                            <option t-foreach="psychiatrist_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('visited_psychiatrist') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-12" t-foreach="['birth_health_problems','childhood_illnesses','family_economic_at_birth','family_relationships_general','relation_mother','relation_father','relation_siblings','violence_description','current_health_disease','psychological_complaint']" t-as="fname">
+                                        <label class="form-label" t-out="field_labels.get(fname)"/>
+                                        <textarea class="form-control" t-att-name="fname" rows="2" t-esc="form_values.get(fname) or ''"/>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label fw-semibold"><t>أنواع العنف</t></label>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <label t-foreach="['violence_emotional','violence_physical','violence_sexual','violence_neglect']" t-as="fname" class="form-check">
+                                                <input type="checkbox" class="form-check-input" t-att-name="fname" value="1"
+                                                       t-att-checked="form_values.get(fname) and 'checked' or None"/>
+                                                <span class="form-check-label" t-out="bool_labels.get(fname)"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'interests' else ''}" id="cs_interests">
+                                <div class="row g-3">
+                                    <div class="col-12" t-foreach="['receiving_treatment','hereditary_diseases','do_you_work','practice_sport','artistic_activities','any_skill','routine_habit','school_absence_period']" t-as="fname">
+                                        <label class="form-label" t-out="field_labels.get(fname)"/>
+                                        <textarea class="form-control" t-att-name="fname" rows="2" t-esc="form_values.get(fname) or ''"/>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label fw-semibold"><t>الأعراض الحالية</t></label>
+                                        <div class="row">
+                                            <div class="col-md-6" t-foreach="bool_fields" t-as="fname">
+                                                <label t-if="fname.startswith('symptom_')" class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" t-att-name="fname" value="1"
+                                                           t-att-checked="form_values.get(fname) and 'checked' or None"/>
+                                                    <span class="form-check-label" t-out="bool_labels.get(fname)"/>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'additional' else ''}" id="cs_additional">
+                                <div class="row g-3">
+                                    <div class="col-12" t-foreach="['life_changes_symptoms','worst_period','self_harm_history','harm_others_history','substance_medication_history','future_plans']" t-as="fname">
+                                        <label class="form-label" t-out="field_labels.get(fname)"/>
+                                        <textarea class="form-control" t-att-name="fname" rows="2" t-esc="form_values.get(fname) or ''"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div t-attf-class="tab-pane fade #{'show active' if active_tab == 'psychologist' else ''}" id="cs_psychologist">
+                                <div class="alert alert-warning">
+                                    <t>هذا الجزء خاص بالأخصائي النفسي فقط.</t>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>الابتسامة</t></label>
+                                        <select class="form-select" name="smile_type">
+                                            <option value=""/>
+                                            <option t-foreach="smile_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('smile_type') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>وضعية الجلوس</t></label>
+                                        <select class="form-select" name="sitting_posture">
+                                            <option value=""/>
+                                            <option t-foreach="posture_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('sitting_posture') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>التواصل البصري</t></label>
+                                        <select class="form-select" name="eye_contact">
+                                            <option value=""/>
+                                            <option t-foreach="eye_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('eye_contact') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"><t>نبرة الصوت</t></label>
+                                        <select class="form-select" name="voice_tone">
+                                            <option value=""/>
+                                            <option t-foreach="voice_options" t-as="item" t-att-value="item['value']"
+                                                    t-att-selected="form_values.get('voice_tone') == item['value']" t-out="item['label']"/>
+                                        </select>
+                                    </div>
+                                    <div class="col-12" t-foreach="['general_appearance','movement_activity_level','thought_coherence','mood_emotional_state','involuntary_movements','physical_injuries','behavioral_notes','depression_anxiety_indicators','initial_diagnosis','therapeutic_goals','treatment_plan','recommendations']" t-as="fname">
+                                        <label class="form-label" t-out="field_labels.get(fname)"/>
+                                        <textarea class="form-control" t-att-name="fname" rows="2" t-esc="form_values.get(fname) or ''"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer d-flex flex-wrap gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <t t-if="case"><t>حفظ</t></t>
+                            <t t-else=""><t>إنشاء</t></t>
+                        </button>
+                        <a href="/my/case_studies" class="btn btn-outline-secondary"><t>إلغاء</t></a>
+                    </div>
+                </form>
+
+                <form t-if="case" method="post" t-att-action="'/my/case_studies/%s/delete' % case.id" class="mt-3">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('هل تريد حذف دراسة الحالة؟');">
+                        <t>حذف</t>
+                    </button>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

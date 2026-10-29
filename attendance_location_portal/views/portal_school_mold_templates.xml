@@ -2,10 +2,13 @@
 <odoo>
     <template id="portal_my_home_menu_school_mold" inherit_id="portal.portal_breadcrumbs" priority="58">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
-            <li t-if="page_name in ('portal_school_molds', 'portal_school_mold_detail', 'portal_school_mold_failed')"
+            <li t-if="page_name in ('portal_school_molds', 'portal_school_mold_new', 'portal_school_mold_detail', 'portal_school_mold_failed')"
                 t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_school_molds' else ''}">
                 <a t-if="page_name != 'portal_school_molds'" href="/my/school_molds"><t>Exam Results</t></a>
                 <t t-else=""><t>Exam Results</t></t>
+            </li>
+            <li t-if="page_name == 'portal_school_mold_new'" class="breadcrumb-item active">
+                <t>New Result</t>
             </li>
             <li t-if="page_name == 'portal_school_mold_detail'" class="breadcrumb-item active">
                 <t>Result</t>
@@ -40,6 +43,10 @@
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Exam Results</t>
             </t>
+
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/my/school_molds/new" class="btn btn-primary"><t>New Result</t></a>
+            </div>
 
             <div t-if="not molds" class="alert alert-info">
                 <t>No exam results found for your companies.</t>
@@ -93,6 +100,116 @@
                     <t t-call="portal.pager"/>
                 </div>
             </t>
+        </t>
+    </template>
+
+    <template id="portal_school_mold_new" name="New Exam Result">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3">
+                <h3 class="mb-3"><t>New Result</t></h3>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="get" action="/my/school_molds/new" class="card mb-3">
+                    <div class="card-body row g-3 align-items-end">
+                        <div class="col-md-4" t-if="len(companies) > 1">
+                            <label class="form-label"><t>Company</t></label>
+                            <select class="form-select" name="company_id" onchange="this.form.submit()">
+                                <option t-foreach="companies" t-as="comp" t-att-value="comp.id"
+                                        t-att-selected="company.id == comp.id and 'selected' or None"
+                                        t-out="comp.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label"><t>Term</t></label>
+                            <select class="form-select" name="term" onchange="this.form.submit()">
+                                <option t-foreach="term_options" t-as="opt" t-att-value="opt[0]"
+                                        t-att-selected="term == opt[0] and 'selected' or None"
+                                        t-out="opt[1]"/>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-outline-secondary"><t>Reload</t></button>
+                        </div>
+                        <input type="hidden" name="term_types" t-att-value="term_types"/>
+                        <input type="hidden" name="exam_type" t-att-value="exam_type"/>
+                        <input type="hidden" name="year_id" t-att-value="year_id"/>
+                        <input type="hidden" name="class_id" t-att-value="class_id"/>
+                        <input type="hidden" name="date" t-att-value="date"/>
+                        <input type="hidden" name="load_students" t-att-value="'1' if load_students else '0'"/>
+                    </div>
+                </form>
+
+                <form method="post" action="/my/school_molds/submit" class="card">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="company_id" t-att-value="company.id"/>
+                    <div class="card-body row g-3">
+                        <div class="col-md-6" t-if="len(companies) > 1">
+                            <label class="form-label"><t>Company</t></label>
+                            <input type="text" class="form-control" t-att-value="company.name" readonly="readonly"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Term</t> *</label>
+                            <select class="form-select" name="term" required="required">
+                                <option t-foreach="term_options" t-as="opt" t-att-value="opt[0]"
+                                        t-att-selected="term == opt[0] and 'selected' or None"
+                                        t-out="opt[1]"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Specialization</t> *</label>
+                            <select class="form-select" name="term_types" required="required">
+                                <option t-foreach="term_type_options" t-as="opt" t-att-value="opt[0]"
+                                        t-att-selected="term_types == opt[0] and 'selected' or None"
+                                        t-out="opt[1]"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Exam Type</t></label>
+                            <select class="form-select" name="exam_type">
+                                <option t-foreach="exam_type_options" t-as="opt" t-att-value="opt[0]"
+                                        t-att-selected="exam_type == opt[0] and 'selected' or None"
+                                        t-out="opt[1]"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Academic Year</t></label>
+                            <select class="form-select" name="year_id">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="years" t-as="yr" t-att-value="yr.id"
+                                        t-att-selected="str(year_id) == str(yr.id) and 'selected' or None"
+                                        t-out="yr.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Class</t></label>
+                            <select class="form-select" name="class_id">
+                                <option value=""><t>Select...</t></option>
+                                <option t-foreach="classes" t-as="cls" t-att-value="cls.id"
+                                        t-att-selected="str(class_id) == str(cls.id) and 'selected' or None"
+                                        t-out="cls.name"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><t>Date</t></label>
+                            <input type="date" class="form-control" name="date" t-att-value="date"/>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="load_students"
+                                       name="load_students" value="1"
+                                       t-att-checked="load_students and 'checked' or None"/>
+                                <label class="form-check-label" for="load_students">
+                                    <t>Load students after create</t>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex gap-2">
+                            <button type="submit" class="btn btn-primary"><t>Create Result</t></button>
+                            <a href="/my/school_molds" class="btn btn-outline-secondary"><t>Cancel</t></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </t>
     </template>
 

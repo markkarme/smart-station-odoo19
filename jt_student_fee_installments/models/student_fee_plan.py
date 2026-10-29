@@ -380,6 +380,20 @@ class StudentFeePlan(models.Model):
         for plan in self:
             if plan.basic_installment_count < 0 or plan.bus_installment_count < 0:
                 raise ValidationError(_('Installment count cannot be negative.'))
+
+            # If a total is set but count is still 0, use field defaults so lines appear.
+            count_vals = {}
+            basic_count = plan.basic_installment_count or 0
+            bus_count = plan.bus_installment_count or 0
+            if (plan.basic_total_due or 0.0) > 0 and basic_count <= 0:
+                basic_count = 3
+                count_vals['basic_installment_count'] = basic_count
+            if (plan.bus_total_due or 0.0) > 0 and bus_count <= 0:
+                bus_count = 2
+                count_vals['bus_installment_count'] = bus_count
+            if count_vals:
+                plan.with_context(skip_installment_sync=True).write(count_vals)
+
             basic_amounts = plan._get_basic_installment_amounts()
             use_amounts = basic_amounts if basic_amounts and any(basic_amounts) else None
             if plan.standard_id:
@@ -389,13 +403,13 @@ class StudentFeePlan(models.Model):
                 })
             plan._sync_installment_lines(
                 'basic',
-                plan.basic_installment_count,
+                basic_count,
                 plan.basic_total_due,
                 amounts=use_amounts,
             )
             plan._sync_installment_lines(
                 'bus',
-                plan.bus_installment_count,
+                bus_count,
                 plan.bus_total_due,
             )
         return True

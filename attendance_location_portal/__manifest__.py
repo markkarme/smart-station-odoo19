@@ -1,6 +1,6 @@
 {
     "name": "Attendance Location Portal",
-    "version": "19.0.1.8.31",
+    "version": "19.0.1.9.4",
     "category": "Human Resources/Attendance",
     "summary": "Geo-fenced employee attendance from portal",
     "description": """
@@ -17,6 +17,7 @@ Portal users:
 - Admin Exam Portal: can manage student exams for their allowed companies only
 - Admin Mold Portal: can manage school molds / exam results for their allowed companies only
 - Admin Fee Plan Portal: can manage student fee plans / installments for their allowed companies only
+- Admin Student Misconduct Portal: can manage student violations and case studies for their allowed companies only
     """,
     "author": "Appivio",
     "license": "LGPL-3",
@@ -29,6 +30,7 @@ Portal users:
         "jt_education_exam",
         "school_molds_generator",
         "jt_student_fee_installments",
+        "jt_student_violations",
         "mail",
         "portal",
         "website",
@@ -58,6 +60,7 @@ Portal users:
         "views/portal_student_exam_templates.xml",
         "views/portal_school_mold_templates.xml",
         "views/portal_student_fee_plan_templates.xml",
+        "views/portal_student_misconduct_templates.xml",
     ],
     "assets": {
         "web.assets_backend": [

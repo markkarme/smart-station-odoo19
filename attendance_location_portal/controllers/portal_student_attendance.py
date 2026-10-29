@@ -107,24 +107,83 @@ class PortalStudentAttendanceController(PortalHrMixin, http.Controller):
         auth="user",
         website=True,
     )
-    def portal_my_student_attendances(self, page=1, **kwargs):
+    def portal_my_student_attendances(
+        self,
+        page=1,
+        sortby=None,
+        filterby=None,
+        search=None,
+        search_in="all",
+        **kwargs,
+    ):
         try:
             self._require_attendance_admin()
         except AccessError as error:
             return self._failed_page(str(error))
 
+        companies = self._allowed_companies()
         attendance_model = request.env["attendance.attendance"].sudo()
         domain = self._student_attendance_domain()
+
+        searchbar_filters = self._portal_company_searchbar_filters(
+            companies,
+            base={"all": {"label": _("All"), "domain": [], "sequence": 10}},
+        )
+        search_inputs = self._portal_student_searchbar_inputs(
+            name_fields=[
+                "attendance_ids.student_id.name",
+                "attendance_ids.name",
+            ],
+            id_fields=["attendance_ids.student_id.stud_id"],
+            extra_all_domains=lambda value: [
+                [("name", "ilike", value)],
+                [("standard_id.name", "ilike", value)],
+                [("division_id.name", "ilike", value)],
+                [("class_id.name", "ilike", value)],
+            ],
+            extra_inputs={
+                "attendance": {
+                    "input": "attendance",
+                    "label": _("Search in Attendance"),
+                    "sequence": 40,
+                    "domain": lambda value: [("name", "ilike", value)],
+                },
+            },
+        )
+        searchbar_sortings = {
+            "date": {"label": _("Newest"), "order": "date desc, id desc"},
+            "name": {"label": _("Attendance"), "order": "name, id desc"},
+        }
+        searchbar = self._portal_apply_searchbar(
+            domain,
+            searchbar_filters=searchbar_filters,
+            searchbar_inputs=search_inputs,
+            searchbar_sortings=searchbar_sortings,
+            filterby=filterby,
+            search=search,
+            search_in=search_in,
+            sortby=sortby,
+            default_filterby="all",
+            default_search_in="all",
+            default_sortby="date",
+        )
+        domain = searchbar["domain"]
         attendance_count = attendance_model.search_count(domain)
         pager = portal_pager(
             url="/my/student_attendances",
+            url_args={
+                "sortby": searchbar["sortby"],
+                "filterby": searchbar["filterby"],
+                "search": searchbar["search"],
+                "search_in": searchbar["search_in"],
+            },
             total=attendance_count,
             page=page,
             step=self._items_per_page,
         )
         attendances = attendance_model.search(
             domain,
-            order="date desc, id desc",
+            order=searchbar["order"],
             limit=self._items_per_page,
             offset=pager["offset"],
         )
@@ -134,7 +193,15 @@ class PortalStudentAttendanceController(PortalHrMixin, http.Controller):
                 "page_name": "portal_student_attendances",
                 "attendances": attendances,
                 "pager": pager,
-                "show_company": len(self._allowed_companies()) > 1,
+                "show_company": len(companies) > 1,
+                "default_url": "/my/student_attendances",
+                "searchbar_filters": searchbar["searchbar_filters"],
+                "filterby": searchbar["filterby"],
+                "searchbar_inputs": searchbar["searchbar_inputs"],
+                "search_in": searchbar["search_in"],
+                "search": searchbar["search"],
+                "searchbar_sortings": searchbar["searchbar_sortings"],
+                "sortby": searchbar["sortby"],
             },
         )
 

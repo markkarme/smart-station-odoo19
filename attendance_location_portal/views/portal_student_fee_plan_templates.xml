@@ -2,7 +2,7 @@
 <odoo>
     <template id="portal_my_home_menu_fee_plan" inherit_id="portal.portal_breadcrumbs" priority="59">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
-            <li t-if="page_name in ('portal_student_fee_plans', 'portal_student_fee_plan_detail', 'portal_student_fee_plan_new', 'portal_student_fee_plan_failed')"
+            <li t-if="page_name in ('portal_student_fee_plans', 'portal_student_fee_plan_detail', 'portal_student_fee_plan_new', 'portal_student_fee_plan_pay', 'portal_student_fee_plan_exception', 'portal_student_fee_plan_failed')"
                 t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_student_fee_plans' else ''}">
                 <a t-if="page_name != 'portal_student_fee_plans'" href="/my/fee_plans"><t>Fee Plans</t></a>
                 <t t-else=""><t>Fee Plans</t></t>
@@ -10,8 +10,16 @@
             <li t-if="page_name == 'portal_student_fee_plan_new'" class="breadcrumb-item active">
                 <t>New Fee Plan</t>
             </li>
-            <li t-if="page_name == 'portal_student_fee_plan_detail'" class="breadcrumb-item active">
-                <t>Fee Plan</t>
+            <li t-if="page_name in ('portal_student_fee_plan_detail', 'portal_student_fee_plan_pay', 'portal_student_fee_plan_exception')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_student_fee_plan_detail' else ''}">
+                <a t-if="page_name != 'portal_student_fee_plan_detail'" t-att-href="'/my/fee_plans/%s' % plan.id"><t>Fee Plan</t></a>
+                <t t-else=""><t>Fee Plan</t></t>
+            </li>
+            <li t-if="page_name == 'portal_student_fee_plan_pay'" class="breadcrumb-item active">
+                <t>Pay</t>
+            </li>
+            <li t-if="page_name == 'portal_student_fee_plan_exception'" class="breadcrumb-item active">
+                <t>Exception</t>
             </li>
         </xpath>
     </template>
@@ -37,6 +45,89 @@
         </t>
     </template>
 
+    <template id="portal_student_fee_plan_pay" name="Pay Fee Installment">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3" style="max-width: 640px;">
+                <h3 class="mb-3"><t>Pay</t></h3>
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <div class="text-muted"><t>Student</t></div>
+                                <div class="fw-semibold" t-out="student_name"/>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-muted"><t>Installment</t></div>
+                                <div t-out="line_name"/>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-muted"><t>Invoice</t></div>
+                                <div t-out="invoice_name"/>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-muted"><t>Amount Due</t></div>
+                                <div t-out="format_money(invoice_residual)"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form method="post"
+                      t-att-action="'/my/fee_plans/%s/pay/%s/%s/submit' % (plan.id, line_model, line.id)"
+                      class="card">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="tab" t-att-value="tab"/>
+                    <div class="card-body row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="journal_id"><t>Journal</t></label>
+                            <select class="form-select" id="journal_id" name="journal_id" required="required">
+                                <option t-foreach="journal_options" t-as="jour" t-att-value="jour['id']"
+                                        t-att-selected="journal_id == jour['id'] and 'selected' or None"
+                                        t-out="jour['name']"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6" t-if="payment_method_options">
+                            <label class="form-label" for="payment_method_line_id"><t>Payment Method</t></label>
+                            <select class="form-select" id="payment_method_line_id" name="payment_method_line_id">
+                                <option t-foreach="payment_method_options" t-as="method" t-att-value="method['id']"
+                                        t-att-selected="payment_method_id == method['id'] and 'selected' or None"
+                                        t-out="method['name']"/>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="amount"><t>Amount</t></label>
+                            <div class="input-group">
+                                <input type="number" step="0.01" min="0.01" class="form-control"
+                                       id="amount" name="amount" required="required" t-att-value="amount"/>
+                                <span class="input-group-text" t-out="currency_label"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="payment_date"><t>Payment Date</t></label>
+                            <input type="date" class="form-control" id="payment_date" name="payment_date"
+                                   required="required"
+                                   t-att-value="payment_date and payment_date.isoformat() or ''"/>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="communication"><t>Memo</t></label>
+                            <input type="text" class="form-control" id="communication" name="communication"
+                                   t-att-value="communication or ''"/>
+                        </div>
+                        <div class="col-12 d-flex gap-2">
+                            <button type="submit" class="btn btn-primary"><t>Create Payment</t></button>
+                            <a t-att-href="'/my/fee_plans/%s?tab=%s' % (plan.id, tab)" class="btn btn-outline-secondary">
+                                <t>Discard</t>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
     <template id="portal_my_fee_plans" name="Fee Plans">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
@@ -56,6 +147,7 @@
                 <t t-call="portal.portal_table">
                     <thead>
                         <tr>
+                            <th><t>Student ID</t></th>
                             <th><t>Student</t></th>
                             <th><t>Academic Year</t></th>
                             <th t-if="show_company"><t>Company</t></th>
@@ -68,6 +160,7 @@
                     </thead>
                     <tbody>
                         <tr t-foreach="plans" t-as="plan">
+                            <td><span t-out="plan.student_id.stud_id or '-'"/></td>
                             <td>
                                 <a t-att-href="'/my/fee_plans/%s' % plan.id">
                                     <span t-out="plan.student_id.name"/>
@@ -240,6 +333,11 @@
                     <button t-if="has_accounting and plan_editable" type="submit" name="fee_action" value="invoice_bus" class="btn btn-outline-success">
                         <t>Invoice Bus Installments</t>
                     </button>
+                    <a t-if="has_exceptions and plan_editable"
+                       t-att-href="'/my/fee_plans/%s/exception' % plan.id"
+                       class="btn btn-warning">
+                        <t>Exception</t>
+                    </a>
                     <button type="submit" name="fee_action" value="delete" class="btn btn-danger"
                             onclick="return confirm('هل تريد حذف خطة الرسوم؟');">
                         <t>Delete</t>
@@ -301,6 +399,11 @@
                             <input type="number" step="0.01" class="form-control" name="basic_total_due" t-att-value="plan.basic_total_due"/>
                         </div>
                         <div class="col-md-3">
+                            <label class="form-label"><t>Basic Installment Count</t></label>
+                            <input type="number" min="0" class="form-control" name="basic_installment_count"
+                                   t-att-value="plan.basic_installment_count"/>
+                        </div>
+                        <div class="col-md-3">
                             <label class="form-label"><t>Bus</t></label>
                             <select class="form-select" name="bus_category_id">
                                 <option value=""><t>Select...</t></option>
@@ -312,6 +415,11 @@
                         <div class="col-md-3">
                             <label class="form-label"><t>Bus Total Due</t></label>
                             <input type="number" step="0.01" class="form-control" name="bus_total_due" t-att-value="plan.bus_total_due"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label"><t>Bus Installment Count</t></label>
+                            <input type="number" min="0" class="form-control" name="bus_installment_count"
+                                   t-att-value="plan.bus_installment_count"/>
                         </div>
                         <div class="col-md-3" t-if="'penalty_price_per_week' in plan._fields">
                             <label class="form-label"><t>Penalty per Week</t></label>
@@ -385,12 +493,16 @@
                             <t t-call="attendance_location_portal.portal_fee_installment_table">
                                 <t t-set="lines" t-value="plan.basic_installment_ids"/>
                                 <t t-set="editable" t-value="True"/>
+                                <t t-set="fee_type" t-value="'basic'"/>
+                                <t t-set="tab" t-value="'basic'"/>
                             </t>
                             <button type="submit" class="btn btn-primary mt-2"><t>Save Installments</t></button>
                         </form>
                         <t t-if="not plan_editable" t-call="attendance_location_portal.portal_fee_installment_table">
                             <t t-set="lines" t-value="plan.basic_installment_ids"/>
                             <t t-set="editable" t-value="False"/>
+                            <t t-set="fee_type" t-value="'basic'"/>
+                            <t t-set="tab" t-value="'basic'"/>
                         </t>
                     </div>
 
@@ -408,12 +520,16 @@
                             <t t-call="attendance_location_portal.portal_fee_installment_table">
                                 <t t-set="lines" t-value="plan.bus_installment_ids"/>
                                 <t t-set="editable" t-value="True"/>
+                                <t t-set="fee_type" t-value="'bus'"/>
+                                <t t-set="tab" t-value="'bus'"/>
                             </t>
                             <button type="submit" class="btn btn-primary mt-2"><t>Save Installments</t></button>
                         </form>
                         <t t-if="not plan_editable" t-call="attendance_location_portal.portal_fee_installment_table">
                             <t t-set="lines" t-value="plan.bus_installment_ids"/>
                             <t t-set="editable" t-value="False"/>
+                            <t t-set="fee_type" t-value="'bus'"/>
+                            <t t-set="tab" t-value="'bus'"/>
                         </t>
                     </div>
 
@@ -441,8 +557,13 @@
                     </div>
 
                     <div t-if="has_exceptions" t-attf-class="tab-pane fade #{'show active' if active_tab == 'exceptions' else ''}" id="fee_exceptions" role="tabpanel">
+                        <div t-if="plan_editable" class="mb-3">
+                            <a t-att-href="'/my/fee_plans/%s/exception' % plan.id" class="btn btn-warning">
+                                <t>Exception</t>
+                            </a>
+                        </div>
                         <div t-if="not plan.exception_ids" class="alert alert-info">
-                            <t>No exceptions recorded. Create exceptions from the backend form when a supporting document is required.</t>
+                            <t>No exceptions recorded yet. Use the Exception button to apply one (supporting document required).</t>
                         </div>
                         <div t-if="plan.exception_ids" class="table-responsive">
                             <table class="table table-sm align-middle">
@@ -460,8 +581,8 @@
                                 <tbody>
                                     <tr t-foreach="plan.exception_ids" t-as="exc">
                                         <td><span t-out="exc.name"/></td>
-                                        <td><span t-out="exc.exception_type"/></td>
-                                        <td><span t-out="exc.fee_type or '-'"/></td>
+                                        <td><span t-field="exc.exception_type"/></td>
+                                        <td><span t-field="exc.fee_type"/><t t-if="not exc.fee_type">-</t></td>
                                         <td><span t-out="exc.new_installment_count or '-'"/></td>
                                         <td><span t-out="exc.discount_value or '-'"/></td>
                                         <td><span t-out="exc.user_id.name or '-'"/></td>
@@ -500,6 +621,7 @@
                         <th><t>Date</t></th>
                         <th t-if="'penalty_amount' in lines._fields"><t>Penalty</t></th>
                         <th><t>Paid</t></th>
+                        <th t-if="has_accounting"><t>Actions</t></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -538,6 +660,37 @@
                             <span t-if="line.is_paid" class="badge text-bg-success"><t>Yes</t></span>
                             <span t-else="" class="badge text-bg-secondary"><t>No</t></span>
                         </td>
+                        <td t-if="has_accounting" class="text-nowrap">
+                            <t t-set="can_invoice" t-value="plan.state != 'closed' and (not line.invoice_id or line.invoice_id.state == 'cancel')"/>
+                            <t t-set="can_pay" t-value="plan.state != 'closed' and line.invoice_id and line.invoice_id.state != 'cancel' and line.invoice_payment_state not in ('paid', 'in_payment')"/>
+                            <t t-set="pay_url" t-value="'/my/fee_plans/%s/pay/installment/%s?tab=%s' % (plan.id, line.id, tab or fee_type or 'basic')"/>
+                            <t t-if="editable">
+                                <button t-if="can_invoice" type="submit"
+                                        class="btn btn-sm btn-outline-success me-1"
+                                        t-att-formaction="'/my/fee_plans/%s/line_action' % plan.id"
+                                        name="line_action"
+                                        t-att-value="'invoice:%s' % line.id">
+                                    <t>Invoice</t>
+                                </button>
+                            </t>
+                            <t t-if="not editable and can_invoice">
+                                <form method="post" t-att-action="'/my/fee_plans/%s/line_action' % plan.id" class="d-inline">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="fee_type" t-att-value="fee_type or tab or 'basic'"/>
+                                    <input type="hidden" name="tab" t-att-value="tab or fee_type or 'basic'"/>
+                                    <button type="submit" name="line_action"
+                                            t-att-value="'invoice:%s' % line.id"
+                                            class="btn btn-sm btn-outline-success me-1">
+                                        <t>Invoice</t>
+                                    </button>
+                                </form>
+                            </t>
+                            <a t-if="can_pay" t-att-href="pay_url" class="btn btn-sm btn-success me-1">
+                                <t>Pay</t>
+                            </a>
+                            <span t-if="line.invoice_id and line.invoice_id.state != 'cancel'" class="text-muted small d-block mt-1"
+                                  t-out="line.invoice_id.display_name"/>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -558,6 +711,8 @@
                             <th><t>Receipt</t></th>
                             <th><t>Date</t></th>
                             <th><t>Note</t></th>
+                            <th><t>Paid</t></th>
+                            <th t-if="has_accounting"><t>Actions</t></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -584,23 +739,56 @@
                                 <input type="text" class="form-control form-control-sm"
                                        t-att-name="'other_%s_note' % line.id" t-att-value="line.note or ''"/>
                             </td>
+                            <td>
+                                <span t-if="line.is_paid" class="badge text-bg-success"><t>Yes</t></span>
+                                <span t-else="" class="badge text-bg-secondary"><t>No</t></span>
+                            </td>
+                            <td t-if="has_accounting" class="text-nowrap">
+                                <t t-set="can_invoice" t-value="plan.state != 'closed' and (not line.invoice_id or line.invoice_id.state == 'cancel')"/>
+                                <t t-set="can_pay" t-value="plan.state != 'closed' and line.invoice_id and line.invoice_id.state != 'cancel' and line.invoice_payment_state not in ('paid', 'in_payment')"/>
+                                <button t-if="can_invoice" type="submit"
+                                        class="btn btn-sm btn-outline-success me-1"
+                                        t-att-formaction="'/my/fee_plans/%s/line_action' % plan.id"
+                                        name="line_action"
+                                        t-att-value="'invoice:%s' % line.id">
+                                    <t>Invoice</t>
+                                </button>
+                                <a t-if="can_pay"
+                                   t-att-href="'/my/fee_plans/%s/pay/other/%s?tab=%s' % (plan.id, line.id, fee_type)"
+                                   class="btn btn-sm btn-success me-1">
+                                    <t>Pay</t>
+                                </a>
+                                <span t-if="line.invoice_id and line.invoice_id.state != 'cancel'"
+                                      class="text-muted small d-block mt-1"
+                                      t-out="line.invoice_id.display_name"/>
+                            </td>
                         </tr>
                         <tr class="table-light">
-                            <td></td>
+                            <td class="text-muted small align-middle"><t>New</t></td>
                             <td t-if="show_description">
                                 <input type="text" class="form-control form-control-sm" name="new_description" placeholder="البيان"/>
                             </td>
-                            <td><input type="number" step="0.01" class="form-control form-control-sm" name="new_amount" placeholder="0.00"/></td>
-                            <td><input type="text" class="form-control form-control-sm" name="new_receipt_number"/></td>
+                            <td>
+                                <input type="number" step="0.01" min="0" class="form-control form-control-sm"
+                                       name="new_amount" placeholder="0.00"/>
+                            </td>
+                            <td><input type="text" class="form-control form-control-sm" name="new_receipt_number" placeholder="رقم الإيصال"/></td>
                             <td><input type="date" class="form-control form-control-sm" name="new_payment_date"/></td>
                             <td><input type="text" class="form-control form-control-sm" name="new_note"/></td>
+                            <td></td>
+                            <td t-if="has_accounting"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="d-flex gap-2 mt-2">
-                <button type="submit" class="btn btn-primary"><t>Save</t></button>
-                <button type="submit" name="add_other" value="1" class="btn btn-outline-primary"><t>Add Line</t></button>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+                <button type="submit" name="add_other" value="1" class="btn btn-primary">
+                    <t>Add Line</t>
+                </button>
+                <button type="submit" class="btn btn-outline-primary"><t>Save</t></button>
+            </div>
+            <div class="form-text mt-1">
+                <t>Fill the new row then click Add Line (or Save).</t>
             </div>
         </form>
         <div t-if="not plan_editable" class="table-responsive">
@@ -611,6 +799,8 @@
                         <th><t>Amount</t></th>
                         <th><t>Receipt</t></th>
                         <th><t>Date</t></th>
+                        <th><t>Paid</t></th>
+                        <th t-if="has_accounting"><t>Actions</t></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -619,9 +809,247 @@
                         <td><span t-out="line.amount"/></td>
                         <td><span t-out="line.receipt_number or '-'"/></td>
                         <td><span t-out="line.payment_date or '-'"/></td>
+                        <td>
+                            <span t-if="line.is_paid" class="badge text-bg-success"><t>Yes</t></span>
+                            <span t-else="" class="badge text-bg-secondary"><t>No</t></span>
+                        </td>
+                        <td t-if="has_accounting" class="text-nowrap">
+                            <t t-set="can_invoice" t-value="plan.state != 'closed' and (not line.invoice_id or line.invoice_id.state == 'cancel')"/>
+                            <t t-set="can_pay" t-value="plan.state != 'closed' and line.invoice_id and line.invoice_id.state != 'cancel' and line.invoice_payment_state not in ('paid', 'in_payment')"/>
+                            <form t-if="can_invoice" method="post" t-att-action="'/my/fee_plans/%s/line_action' % plan.id" class="d-inline">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" name="fee_type" t-att-value="fee_type"/>
+                                <input type="hidden" name="tab" t-att-value="fee_type"/>
+                                <button type="submit" name="line_action"
+                                        t-att-value="'invoice:%s' % line.id"
+                                        class="btn btn-sm btn-outline-success me-1">
+                                    <t>Invoice</t>
+                                </button>
+                            </form>
+                            <a t-if="can_pay"
+                               t-att-href="'/my/fee_plans/%s/pay/other/%s?tab=%s' % (plan.id, line.id, fee_type)"
+                               class="btn btn-sm btn-success me-1">
+                                <t>Pay</t>
+                            </a>
+                            <span t-if="line.invoice_id and line.invoice_id.state != 'cancel'"
+                                  class="text-muted small d-block mt-1"
+                                  t-out="line.invoice_id.display_name"/>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+    </template>
+
+    <template id="portal_student_fee_plan_exception" name="Fee Plan Exception">
+        <t t-call="portal.portal_layout">
+            <div class="container py-3" style="max-width: 820px;">
+                <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                    <div>
+                        <h3 class="mb-1"><t>Exception</t></h3>
+                        <div class="text-muted">
+                            <span t-out="plan.student_id.name"/> · <span t-out="plan.year_id.name"/>
+                        </div>
+                    </div>
+                    <a t-att-href="'/my/fee_plans/%s?tab=exceptions' % plan.id" class="btn btn-outline-secondary">
+                        <t>Back</t>
+                    </a>
+                </div>
+
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <form method="post"
+                      t-att-action="'/my/fee_plans/%s/exception' % plan.id"
+                      enctype="multipart/form-data"
+                      class="card"
+                      id="portal_fee_exception_form">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold"><t>Exception Type</t></label>
+                            <div class="d-flex flex-column gap-2">
+                                <label class="form-check">
+                                    <input class="form-check-input o_fee_exc_type" type="radio" name="exception_type"
+                                           value="increase_installments"
+                                           t-att-checked="exception_type == 'increase_installments' and 'checked' or None"/>
+                                    <span class="form-check-label"><t>Increase Installment Count</t></span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input o_fee_exc_type" type="radio" name="exception_type"
+                                           value="discount"
+                                           t-att-checked="exception_type == 'discount' and 'checked' or None"/>
+                                    <span class="form-check-label"><t>Discount</t></span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input o_fee_exc_type" type="radio" name="exception_type"
+                                           value="change_due_date"
+                                           t-att-checked="exception_type == 'change_due_date' and 'checked' or None"/>
+                                    <span class="form-check-label"><t>Change Due Date</t></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="border rounded p-3 mb-3 o_fee_exc_section" data-exc-type="increase_installments"
+                             t-att-style="exception_type != 'increase_installments' and 'display:none' or None">
+                            <h5 class="mb-3"><t>Increase Installment Count</t></h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><t>Apply On</t></label>
+                                    <select class="form-select" name="fee_type" id="o_fee_exc_fee_type">
+                                        <option value="basic" t-att-selected="(form_values.get('fee_type') or 'basic') == 'basic' and 'selected' or None">
+                                            <t>Basic Tuition Installments</t>
+                                        </option>
+                                        <option value="bus" t-att-selected="(form_values.get('fee_type') or 'basic') == 'bus' and 'selected' or None">
+                                            <t>Bus Installments</t>
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label"><t>Current Count</t></label>
+                                    <input type="text" class="form-control" t-att-value="current_installment_count" readonly="readonly"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label"><t>New Count</t></label>
+                                    <input type="number" min="1" class="form-control" name="new_installment_count"
+                                           t-att-value="form_values.get('new_installment_count') or default_new_count"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border rounded p-3 mb-3 o_fee_exc_section" data-exc-type="discount"
+                             t-att-style="exception_type != 'discount' and 'display:none' or None">
+                            <h5 class="mb-3"><t>Discount</t></h5>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label"><t>Discount Type</t></label>
+                                    <select class="form-select" name="discount_type">
+                                        <option value="fixed" t-att-selected="(form_values.get('discount_type') or 'fixed') == 'fixed' and 'selected' or None">
+                                            <t>Fixed Amount</t>
+                                        </option>
+                                        <option value="percent" t-att-selected="(form_values.get('discount_type') or 'fixed') == 'percent' and 'selected' or None">
+                                            <t>Percentage</t>
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label"><t>Discount Value</t></label>
+                                    <input type="number" step="0.01" min="0" class="form-control" name="discount_value"
+                                           t-att-value="form_values.get('discount_value') or ''"/>
+                                </div>
+                            </div>
+                            <label class="form-label"><t>Unpaid Installments</t></label>
+                            <div t-if="not unpaid_installments" class="alert alert-warning mb-0">
+                                <t>No unpaid installments available.</t>
+                            </div>
+                            <div t-if="unpaid_installments" class="table-responsive">
+                                <table class="table table-sm align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 2.5rem;"></th>
+                                            <th><t>Installment</t></th>
+                                            <th><t>Type</t></th>
+                                            <th><t>Amount Due</t></th>
+                                            <th t-if="'due_date' in unpaid_installments._fields"><t>Due Date</t></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="unpaid_installments" t-as="line">
+                                            <td>
+                                                <input type="checkbox" class="form-check-input" name="installment_ids"
+                                                       t-att-value="line.id"
+                                                       t-att-checked="line.id in selected_installment_ids and 'checked' or None"/>
+                                            </td>
+                                            <td><span t-out="line.name or line.number"/></td>
+                                            <td><span t-field="line.fee_type"/></td>
+                                            <td><span t-out="format_money(line.amount_due)"/></td>
+                                            <td t-if="'due_date' in line._fields"><span t-out="line.due_date or '-'"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="border rounded p-3 mb-3 o_fee_exc_section" data-exc-type="change_due_date"
+                             t-att-style="exception_type != 'change_due_date' and 'display:none' or None">
+                            <h5 class="mb-3"><t>Change Due Date</t></h5>
+                            <div class="mb-3">
+                                <label class="form-label"><t>New Due Date</t></label>
+                                <input type="date" class="form-control" name="new_due_date"
+                                       t-att-value="form_values.get('new_due_date') or ''"/>
+                            </div>
+                            <label class="form-label"><t>Unpaid Installments</t></label>
+                            <div t-if="not unpaid_installments" class="alert alert-warning mb-0">
+                                <t>No unpaid installments available.</t>
+                            </div>
+                            <div t-if="unpaid_installments" class="table-responsive">
+                                <table class="table table-sm align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 2.5rem;"></th>
+                                            <th><t>Installment</t></th>
+                                            <th><t>Type</t></th>
+                                            <th><t>Amount Due</t></th>
+                                            <th t-if="'due_date' in unpaid_installments._fields"><t>Due Date</t></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="unpaid_installments" t-as="line">
+                                            <td>
+                                                <input type="checkbox" class="form-check-input" name="installment_ids"
+                                                       t-att-value="line.id"
+                                                       t-att-checked="line.id in selected_installment_ids and 'checked' or None"/>
+                                            </td>
+                                            <td><span t-out="line.name or line.number"/></td>
+                                            <td><span t-field="line.fee_type"/></td>
+                                            <td><span t-out="format_money(line.amount_due)"/></td>
+                                            <td t-if="'due_date' in line._fields"><span t-out="line.due_date or '-'"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="border rounded p-3 mb-3">
+                            <h5 class="mb-3"><t>Supporting Document and Notes</t></h5>
+                            <div class="mb-3">
+                                <label class="form-label"><t>Supporting Document</t> <span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" name="document" required="required"/>
+                            </div>
+                            <div>
+                                <label class="form-label"><t>Notes</t></label>
+                                <textarea class="form-control" name="reason" rows="3"
+                                          t-esc="form_values.get('reason') or ''"/>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-primary"><t>Apply Exception</t></button>
+                            <a t-att-href="'/my/fee_plans/%s?tab=exceptions' % plan.id" class="btn btn-outline-secondary">
+                                <t>Cancel</t>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script type="text/javascript">
+                (function () {
+                    function syncSections() {
+                        var selected = document.querySelector('input[name="exception_type"]:checked');
+                        var type = selected ? selected.value : 'increase_installments';
+                        document.querySelectorAll('.o_fee_exc_section').forEach(function (section) {
+                            var active = section.getAttribute('data-exc-type') === type;
+                            section.style.display = active ? '' : 'none';
+                            section.querySelectorAll('input, select, textarea').forEach(function (field) {
+                                field.disabled = !active;
+                            });
+                        });
+                    }
+                    document.querySelectorAll('.o_fee_exc_type').forEach(function (input) {
+                        input.addEventListener('change', syncSections);
+                    });
+                    syncSections();
+                })();
+            </script>
+        </t>
     </template>
 </odoo>

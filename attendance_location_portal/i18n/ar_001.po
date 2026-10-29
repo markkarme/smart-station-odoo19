@@ -351,11 +351,11 @@ msgid "Afternoon"
 msgstr "مساءً"
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: code:addons/attendance_location_portal/controllers/portal_common.py:0
 #: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
 msgid "All"
 msgstr "الكل"
 
@@ -446,18 +446,21 @@ msgstr "المدى المسموح (م)"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
 msgid "Amount"
 msgstr "المبلغ"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
 msgid "Amount Due"
-msgstr "المستحق"
+msgstr "المبلغ المستحق"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
 msgid "Amount Paid"
-msgstr "المبلغ المدفوع"
+msgstr "المبلغ المسدد"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__applied_actual_time
@@ -656,6 +659,9 @@ msgstr "تلقائي"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_failed_page
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Back"
 msgstr "رجوع"
 
@@ -692,6 +698,7 @@ msgstr "العودة إلى إجازاتي"
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_failed_page
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_failed_page
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_misconduct_failed_page
 msgid "Back to Portal"
 msgstr "العودة للبوابة"
 
@@ -710,13 +717,14 @@ msgstr "العودة إلى القائمة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Basic Installment Count"
 msgstr "عدد أقساط المصاريف"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Basic Installments"
-msgstr "أقساط المصاريف الأساسية"
+msgstr "أقساط المصاريف الدراسية"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
@@ -748,11 +756,13 @@ msgstr "الباص"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Bus Installment Count"
 msgstr "عدد أقساط الباصات"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
 msgid "Bus Installments"
 msgstr "أقساط الباصات"
 
@@ -800,6 +810,9 @@ msgstr "يمكن الموافقة/الرفض"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_time_off_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -874,6 +887,8 @@ msgstr "مسجّل انصراف"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Class"
 msgstr "الفصل"
 
@@ -889,7 +904,6 @@ msgid "Closed plans cannot be modified."
 msgstr "لا يمكن تعديل الخطط المغلقة."
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__company_id
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__company_id
@@ -904,6 +918,10 @@ msgstr "لا يمكن تعديل الخطط المغلقة."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Company"
 msgstr "الشركة"
 
@@ -1010,6 +1028,8 @@ msgstr "العدد"
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Create"
 msgstr "إنشاء"
 
@@ -1066,6 +1086,10 @@ msgstr "الحالة الحالية:"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Date"
 msgstr "التاريخ"
 
@@ -1092,6 +1116,8 @@ msgstr "فترة اليوم"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Delete"
 msgstr "حذف"
 
@@ -1124,8 +1150,9 @@ msgstr "جاري تحديد موقعك..."
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
 msgid "Discount"
-msgstr "الخصم"
+msgstr "خصم"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_attendance_location__display_name
@@ -1148,6 +1175,8 @@ msgstr "اسم العرض"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_attendance_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Division"
 msgstr "الشعبة"
 
@@ -1177,6 +1206,7 @@ msgstr "مسودة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
 msgid "Due Date"
 msgstr "تاريخ الاستحقاق"
 
@@ -1339,7 +1369,7 @@ msgstr "خطط الرسوم"
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Fee Type"
-msgstr "نوع الرسوم"
+msgstr "نوع القسط"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -1558,6 +1588,8 @@ msgstr ""
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
 msgid "Installment"
 msgstr "القسط"
 
@@ -1613,7 +1645,7 @@ msgstr "فوترة أقساط المصاريف"
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Invoice Bus Installments"
-msgstr "فوترة أقساط الباصات"
+msgstr "فوترة أقساط الباص"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_is_follower
@@ -1842,6 +1874,8 @@ msgstr "إجازاتي"
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_general_request__name
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Name"
 msgstr "الاسم"
 
@@ -1899,8 +1933,9 @@ msgstr "طلب تعديل حضور جديد من %(employee)s"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
 msgid "New Count"
-msgstr "العدد الجديد"
+msgstr "عدد الأقساط الجديد"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_exam
@@ -1949,10 +1984,10 @@ msgid "New Time Off request from %(employee)s"
 msgstr "طلب إجازة جديد من %(employee)s"
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_attendance.py:0
 #: code:addons/attendance_location_portal/controllers/portal_general_request.py:0
 #: code:addons/attendance_location_portal/controllers/portal_time_off.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
 msgid "Newest"
 msgstr "الأحدث"
 
@@ -1986,6 +2021,7 @@ msgstr "نوع النشاط التالي"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 msgid "No"
 msgstr "لا"
 
@@ -2013,10 +2049,10 @@ msgid "No allocation requests found."
 msgstr "لا توجد طلبات مخصصات."
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
 #: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
 #: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
 msgid "No allowed companies are configured for your user."
 msgstr "لا توجد شركات مسموح بها لمستخدمك."
 
@@ -2190,8 +2226,10 @@ msgstr "ملاحظة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
 msgid "Notes"
-msgstr "ملاحظات"
+msgstr "الملاحظات"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance_adjustment_request__message_needaction_counter
@@ -2360,7 +2398,6 @@ msgid "Other Expenses Paid"
 msgstr "المدفوع للمصاريف الأخرى"
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
 msgid "Other fees saved."
 msgstr "تم حفظ الرسوم الأخرى."
@@ -2371,12 +2408,12 @@ msgid "Out Mode"
 msgstr "الوضع في الخارج"
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_payslip.py:0
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 msgid "Paid"
-msgstr "المدفوع"
+msgstr "مسدد"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -2663,7 +2700,7 @@ msgstr "الأسباب"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 msgid "Receipt"
-msgstr "رقم الإيصال"
+msgstr "الإيصال"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
@@ -2769,7 +2806,7 @@ msgstr "قدّم طلب إجازة وتابع حالة الموافقة"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_school_mold_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 msgid "Reset to Draft"
-msgstr "إعادة إلى مسودة"
+msgstr "إعادة لمسودة"
 
 #. module: attendance_location_portal
 #: model:ir.model.fields,field_description:attendance_location_portal.field_hr_attendance__activity_user_id
@@ -2823,6 +2860,8 @@ msgstr "خطأ في تسليم الرسائل القصيرة"
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_appraisal_sheet
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Save"
 msgstr "حفظ"
 
@@ -2949,6 +2988,8 @@ msgstr "اختر نوع الطلب..."
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_new
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Select..."
 msgstr "اختر..."
 
@@ -2996,7 +3037,7 @@ msgstr "التخصص"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
 msgid "Standard"
-msgstr "الصف"
+msgstr "المرحلة"
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -3058,6 +3099,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_exam_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_new
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
 msgid "Student"
 msgstr "الطالب"
 
@@ -3309,12 +3355,12 @@ msgid "This attendance does not exist or is not accessible."
 msgstr "سجل الحضور هذا غير موجود أو لا يمكن الوصول إليه."
 
 #. module: attendance_location_portal
-#. odoo-python
 #: code:addons/attendance_location_portal/controllers/portal_student_attendance.py:0
 #: code:addons/attendance_location_portal/controllers/portal_student_exam.py:0
 #: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
 msgid "This company is not in your allowed companies."
-msgstr "هذه الشركة غير ضمن الشركات المسموح بها."
+msgstr "هذه الشركة ليست ضمن شركاتك المسموح بها."
 
 #. module: attendance_location_portal
 #. odoo-python
@@ -3549,6 +3595,7 @@ msgstr "حاول مرة أخرى"
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_attendance_adjustment_form
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_attendance_adjustments
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
 msgid "Type"
 msgstr "النوع"
 
@@ -3766,6 +3813,7 @@ msgstr "السنة"
 
 #. module: attendance_location_portal
 #: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
 msgid "Yes"
 msgstr "نعم"
 
@@ -4179,3 +4227,708 @@ msgstr "تم تحميل %s صف من ملف إكسل."
 msgid "Could not import the Excel file."
 msgstr "تعذر استيراد ملف إكسل."
 
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Search in Student Name"
+msgstr "البحث باسم الطالب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Search in Student ID"
+msgstr "البحث برقم الطالب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Search in Attendance"
+msgstr "البحث في الحضور"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Search in Exam"
+msgstr "البحث في الامتحان"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Search in Result"
+msgstr "البحث في النتيجة"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Search in Academic Year"
+msgstr "البحث في العام الدراسي"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "New Result"
+msgstr "نتيجة جديدة"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Create Result"
+msgstr "إنشاء نتيجة"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Load students after create"
+msgstr "تحميل الطلاب بعد الإنشاء"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Result created."
+msgstr "تم إنشاء النتيجة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_fee_plans
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+msgid "Student ID"
+msgstr "رقم الطالب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Could not create the result."
+msgstr "تعذر إنشاء النتيجة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Invalid result values."
+msgstr "قيم النتيجة غير صالحة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_common.py:0
+msgid "Please select a valid term and specialization."
+msgstr "يرجى اختيار صف وتخصص صالحين."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Invoice"
+msgstr "فوترة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_fee_plan
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Pay"
+msgstr "سداد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_installment_table
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "Actions"
+msgstr "الإجراءات"
+
+#. module: attendance_location_portal
+msgid "Invoice created and posted. Click Pay to register the payment."
+msgstr "تم إنشاء الفاتورة وترحيلها. اضغط سداد لتسجيل الدفع."
+
+#. module: attendance_location_portal
+msgid "Payment registered."
+msgstr "تم تسجيل السداد."
+
+#. module: attendance_location_portal
+msgid "Create an invoice first."
+msgstr "أنشئ فاتورة أولاً."
+
+#. module: attendance_location_portal
+msgid "This installment is already paid."
+msgstr "هذا القسط مدفوع بالفعل."
+
+#. module: attendance_location_portal
+msgid "Installment line not found."
+msgstr "سطر القسط غير موجود."
+
+#. module: attendance_location_portal
+msgid "Accounting is not available for fee plans."
+msgstr "المحاسبة غير متاحة لخطط الرسوم."
+
+#. module: attendance_location_portal
+msgid "Could not process the installment payment."
+msgstr "تعذر معالجة سداد القسط."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Journal"
+msgstr "اليومية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Memo"
+msgstr "المذكرة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Create Payment"
+msgstr "إنشاء دفعة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_pay
+msgid "Discard"
+msgstr "تجاهل"
+
+#. module: attendance_location_portal
+msgid "Please select a valid payment journal."
+msgstr "يرجى اختيار يومية دفع صالحة."
+
+#. module: attendance_location_portal
+msgid "Payment amount must be greater than zero."
+msgstr "يجب أن يكون مبلغ الدفع أكبر من صفر."
+
+#. module: attendance_location_portal
+msgid "Invoice created and posted."
+msgstr "تم إنشاء الفاتورة وترحيلها."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "New line added."
+msgstr "تمت إضافة سطر جديد."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "Fill the new row then click Add Line (or Save)."
+msgstr "املأ السطر الجديد ثم اضغط إضافة سطر (أو حفظ)."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_fee_other_table
+msgid "New"
+msgstr "جديد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_fee_plan
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Exception"
+msgstr "استثناء"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Exception Type"
+msgstr "نوع الاستثناء"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Increase Installment Count"
+msgstr "زيادة عدد الأقساط"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Change Due Date"
+msgstr "تعديل موعد الاستحقاق"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Apply On"
+msgstr "التطبيق على"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Basic Tuition Installments"
+msgstr "أقساط المصاريف الدراسية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Current Count"
+msgstr "عدد الأقساط الحالي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Discount Type"
+msgstr "نوع الخصم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Percentage"
+msgstr "نسبة مئوية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Discount Value"
+msgstr "قيمة الخصم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Unpaid Installments"
+msgstr "الأقساط غير المسددة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "No unpaid installments available."
+msgstr "لا توجد أقساط غير مسددة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "New Due Date"
+msgstr "موعد الاستحقاق الجديد"
+
+#. module: attendance_location_portal
+msgid "Supporting Document & Notes"
+msgstr "المستند والملاحظات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Supporting Document"
+msgstr "المستند الداعم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Apply Exception"
+msgstr "تطبيق الاستثناء"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Exception applied."
+msgstr "تم تطبيق الاستثناء."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Please upload a supporting document."
+msgstr "يرجى رفع مستند داعم."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Invalid exception type."
+msgstr "نوع الاستثناء غير صالح."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Could not apply the exception."
+msgstr "تعذر تطبيق الاستثناء."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Fee exceptions are not available on this database."
+msgstr "استثناءات الرسوم غير متاحة على هذه القاعدة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "You cannot create an exception on a closed fee plan."
+msgstr "لا يمكن إنشاء استثناء على خطة رسوم مغلقة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_detail
+msgid ""
+"No exceptions recorded yet. Use the Exception button to apply one "
+"(supporting document required)."
+msgstr ""
+"لا توجد استثناءات بعد. استخدم زر استثناء لتطبيق واحد (يلزم مستند داعم)."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_fee_plan_exception
+msgid "Supporting Document and Notes"
+msgstr "المستند والملاحظات"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Could not open the payment form."
+msgstr "تعذر فتح نموذج السداد."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "No bank/cash journal is configured for this company."
+msgstr "لا توجد يومية بنك/نقدية مُعدة لهذه الشركة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Post the invoice before registering a payment."
+msgstr "يرجى ترحيل الفاتورة قبل تسجيل السداد."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_fee_plan.py:0
+msgid "Save Data"
+msgstr "حفظ البيانات"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_misconduct
+msgid "Student Violations"
+msgstr "مخالفات الطلاب"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_misconduct
+msgid "Case Studies"
+msgstr "دراسات الحالة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_misconduct
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+msgid "New Violation"
+msgstr "مخالفة جديدة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_misconduct
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+msgid "Violation"
+msgstr "المخالفة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_misconduct
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "New Case Study"
+msgstr "دراسة حالة جديدة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_home_menu_student_misconduct
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Case Study"
+msgstr "دراسة حالة"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Manage student violations for your allowed companies"
+msgstr "إدارة مخالفات الطلاب للشركات المسموح بها"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Manage clinical case studies for your allowed companies"
+msgstr "إدارة دراسات الحالة الإكلينيكية للشركات المسموح بها"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+msgid "No student violations found for your companies."
+msgstr "لا توجد مخالفات طلاب لشركاتك."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+msgid "No case studies found for your companies."
+msgstr "لا توجد دراسات حالة لشركاتك."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_student_violations
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+msgid "Action Taken"
+msgstr "الإجراء المتخذ"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_violation_form
+msgid "Problem Description"
+msgstr "وصف المشكلة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_my_case_studies
+msgid "Psychologist"
+msgstr "الأخصائي النفسي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Print Case Study"
+msgstr "طباعة دراسة الحالة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Demographic"
+msgstr "بيانات ديموجرافية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Childhood"
+msgstr "تاريخ الطفولة والمراهقة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Interests and Symptoms"
+msgstr "الاهتمامات والأعراض"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Additional Questions"
+msgstr "أسئلة إضافية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Psychologist Assessment"
+msgstr "تقييم الأخصائي النفسي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Birthdate"
+msgstr "تاريخ الميلاد"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Residence"
+msgstr "أين تعيش؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Live With"
+msgstr "مع من تعيش؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Referral Reason"
+msgstr "سبب الإحالة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Family Composition"
+msgstr "التكوين الأسري"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Relation"
+msgstr "الصلة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Education"
+msgstr "التعليم"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Economic Level"
+msgstr "المستوى الاقتصادي"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Has Siblings"
+msgstr "هل لديك أخوات؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Siblings Count"
+msgstr "كم عددهم؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Sibling Order"
+msgstr "ما ترتيبك بينهم؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Grew Up With"
+msgstr "مع من نشأت؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Visited Psychiatrist"
+msgstr "هل سبق وزرت طبيب أو معالج نفسي من قبل؟"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Violence Types"
+msgstr "أنواع العنف"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Current Symptoms"
+msgstr "الأعراض الحالية"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "This section is for the psychologist only."
+msgstr "هذا الجزء خاص بالأخصائي النفسي فقط."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Smile"
+msgstr "الابتسامة"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Sitting Posture"
+msgstr "وضعية الجلوس"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Eye Contact"
+msgstr "التواصل البصري"
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Voice Tone"
+msgstr "نبرة الصوت"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+#: model:res.groups,name:attendance_location_portal.group_portal_misconduct_admin
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_misconduct_admin
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_misconduct
+msgid "Admin Student Misconduct Portal"
+msgstr "مسؤول بوابة مخالفات الطلاب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_misconduct
+#: model:res.groups,name:attendance_location_portal.group_portal_misconduct_admin
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_misconduct_admin
+msgid "Portal Student Misconduct"
+msgstr "بوابة مخالفات الطلاب"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "You are not allowed to manage student misconduct."
+msgstr "غير مسموح لك بإدارة مخالفات الطلاب."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Violation created."
+msgstr "تم إنشاء المخالفة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Violation saved."
+msgstr "تم حفظ المخالفة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Violation deleted."
+msgstr "تم حذف المخالفة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Case study created."
+msgstr "تم إنشاء دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Case study saved."
+msgstr "تم حفظ دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Case study deleted."
+msgstr "تم حذف دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not create the violation."
+msgstr "تعذر إنشاء المخالفة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not save the violation."
+msgstr "تعذر حفظ المخالفة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not delete the violation."
+msgstr "تعذر حذف المخالفة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not create the case study."
+msgstr "تعذر إنشاء دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not save the case study."
+msgstr "تعذر حفظ دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not delete the case study."
+msgstr "تعذر حذف دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Could not print the case study."
+msgstr "تعذر طباعة دراسة الحالة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "This violation does not exist or is not accessible."
+msgstr "هذه المخالفة غير موجودة أو غير متاحة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "This case study does not exist or is not accessible."
+msgstr "دراسة الحالة غير موجودة أو غير متاحة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Student, date and violation type are required."
+msgstr "الطالب والتاريخ ونوع المخالفة مطلوبة."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Company and student are required."
+msgstr "الشركة والطالب مطلوبان."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+#: model:res.groups,comment:attendance_location_portal.group_portal_misconduct_admin
+msgid ""
+"Admin student misconduct portal users can manage student violations\n"
+"            and case studies for their allowed companies only."
+msgstr ""
+"يمكن لمسؤولي بوابة مخالفات الطلاب إدارة المخالفات ودراسات الحالة للشركات "
+"المسموح بها فقط."
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_misconduct_admin
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid ""
+"Admin student misconduct portal users can manage student violations and case"
+" studies for their allowed companies from the portal."
+msgstr ""
+"يمكن لمسؤولي بوابة مخالفات الطلاب إدارة المخالفات ودراسات الحالة للشركات "
+"المسموح بها من البوابة."
+
+#. module: attendance_location_portal
+#: model_terms:ir.ui.view,arch_db:attendance_location_portal.portal_student_case_study_form
+msgid "Age"
+msgstr "العمر"
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Case study report is not available."
+msgstr "تقرير دراسة الحالة غير متاح."
+
+#. module: attendance_location_portal
+#: code:addons/attendance_location_portal/controllers/portal_student_violation.py:0
+msgid "Invalid form values."
+msgstr "قيم النموذج غير صالحة."
+
+#. module: attendance_location_portal
+#: model:res.groups,comment:attendance_location_portal.group_portal_misconduct_admin
+msgid ""
+"Admin student misconduct portal users can manage student violations\n"
+"and case studies for their allowed companies only."
+msgstr ""
+"يمكن لمسؤولي بوابة مخالفات الطلاب إدارة المخالفات ودراسات الحالة للشركات "
+"المسموح بها فقط."
