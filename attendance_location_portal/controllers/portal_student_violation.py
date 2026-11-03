@@ -41,12 +41,36 @@ class PortalStudentViolationController(PortalHrMixin, http.Controller):
     def _divisions(self):
         return request.env["standard.division"].sudo().search([], order="name, id")
 
-    def _selection_options(self, model, field_name):
-        field = request.env[model]._fields[field_name]
+    def _resolve_selection(self, model, field_name):
+        """Resolve Selection values (list, method, or method-name string)."""
+        Model = request.env[model]
+        field = Model._fields[field_name]
+        # Preferred Odoo API: handles list / callable / method-name string.
+        if hasattr(field, "_description_selection"):
+            return list(field._description_selection(Model.env) or [])
+        selection = field.selection
+        if isinstance(selection, str):
+            selection = getattr(Model, selection)()
+        elif callable(selection):
+            selection = selection(Model)
+        return list(selection or [])
+
+    def _selection_options(self, model, field_name, company=None):
+        Violation = request.env["student.violation"].sudo()
+        if model == "student.violation" and field_name == "violation_type":
+            selection = Violation._get_violation_type_selection_for_company(company)
+        elif model == "student.violation" and field_name == "action_taken":
+            selection = Violation._get_action_taken_selection_for_company(company)
+        else:
+            selection = self._resolve_selection(model, field_name)
         return [
             {"value": key, "label": request.env._(label)}
-            for key, label in field.selection
+            for key, label in selection
         ]
+
+    def _selection_labels(self, field_name):
+        # Full label map so list views work across companies.
+        return dict(self._resolve_selection("student.violation", field_name))
 
     def _get_violation(self, violation_id):
         self._require_misconduct_admin()
@@ -61,9 +85,14 @@ class PortalStudentViolationController(PortalHrMixin, http.Controller):
         return violation
 
     def _form_values(self, **extra):
+        company = extra.get("company")
         return {
-            "violation_types": self._selection_options("student.violation", "violation_type"),
-            "action_options": self._selection_options("student.violation", "action_taken"),
+            "violation_types": self._selection_options(
+                "student.violation", "violation_type", company=company
+            ),
+            "action_options": self._selection_options(
+                "student.violation", "action_taken", company=company
+            ),
             "classes": self._classes(),
             "divisions": self._divisions(),
             **extra,
@@ -150,8 +179,8 @@ class PortalStudentViolationController(PortalHrMixin, http.Controller):
                 "violations": records,
                 "pager": pager,
                 "show_company": len(companies) > 1,
-                "violation_labels": dict(Violation._fields["violation_type"].selection),
-                "action_labels": dict(Violation._fields["action_taken"].selection),
+                "violation_labels": self._selection_labels("violation_type"),
+                "action_labels": self._selection_labels("action_taken"),
                 "default_url": "/my/student_violations",
                 "searchbar_filters": searchbar["searchbar_filters"],
                 "filterby": searchbar["filterby"],
@@ -247,16 +276,38 @@ class PortalStudentViolationController(PortalHrMixin, http.Controller):
                     }
                 )
             )
+        Violation = request.env["student.violation"].sudo()
+        allowed_violations = {
+            key for key, _label in Violation._get_violation_type_selection_for_company(company)
+        }
+        allowed_actions = {
+            key for key, _label in Violation._get_action_taken_selection_for_company(company)
+        }
+        violation_type = post.get("violation_type")
+        action_taken = post.get("action_taken") or False
+        if violation_type not in allowed_violations or (
+            action_taken and action_taken not in allowed_actions
+        ):
+            return request.redirect(
+                "/my/student_violations/new?%s"
+                % urlencode(
+                    {
+                        "error": _("Selected violation or action is not valid for this company."),
+                        "company_id": company_id,
+                        "student_id": student_id or "",
+                    }
+                )
+            )
         try:
-            violation = request.env["student.violation"].sudo().create(
+            violation = Violation.create(
                 {
                     "company_id": company.id,
                     "student_id": student_id,
                     "class_id": class_id,
                     "div_id": div_id,
                     "date": post.get("date"),
-                    "violation_type": post.get("violation_type"),
-                    "action_taken": post.get("action_taken") or False,
+                    "violation_type": violation_type,
+                    "action_taken": action_taken,
                     "description": post.get("description") or False,
                     "notes": post.get("notes") or False,
                 }
@@ -330,14 +381,29 @@ class PortalStudentViolationController(PortalHrMixin, http.Controller):
             class_id = int(post.get("class_id") or 0) or False
             div_id = int(post.get("div_id") or 0) or False
             student_id = int(post.get("student_id") or 0) or violation.student_id.id
+            company = violation.company_id
+            allowed_violations = {
+                key
+                for key, _label in violation._get_violation_type_selection_for_company(company)
+            }
+            allowed_actions = {
+                key
+                for key, _label in violation._get_action_taken_selection_for_company(company)
+            }
+            violation_type = post.get("violation_type") or violation.violation_type
+            action_taken = post.get("action_taken") or False
+            if violation_type not in allowed_violations or (
+                action_taken and action_taken not in allowed_actions
+            ):
+                raise UserError(_("Selected violation or action is not valid for this company."))
             violation.write(
                 {
                     "student_id": student_id,
                     "class_id": class_id,
                     "div_id": div_id,
                     "date": post.get("date") or violation.date,
-                    "violation_type": post.get("violation_type") or violation.violation_type,
-                    "action_taken": post.get("action_taken") or False,
+                    "violation_type": violation_type,
+                    "action_taken": action_taken,
                     "description": post.get("description") or False,
                     "notes": post.get("notes") or False,
                 }
