@@ -47,6 +47,11 @@ class PortalHrMixin:
             "attendance_location_portal.group_portal_misconduct_admin"
         )
 
+    def _is_portal_job_description_admin(self):
+        return request.env.user.has_group(
+            "attendance_location_portal.group_portal_job_description_admin"
+        )
+
     def _portal_user_company_ids(self):
         """Companies allowed for the current portal user."""
         return request.env.user.company_ids.ids

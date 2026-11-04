@@ -1,263 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
+        <!--
+            Shared HTML used on BOTH Employee Feedback and Manager Feedback.
+            Matches the Performance Appraisal spreadsheet for School Principal.
+        -->
         <record id="hr_appraisal_template_school_principal" model="hr.appraisal.template">
             <field name="description">تقييم أداء - مدير المدرسة</field>
             <field name="sequence">20</field>
             <field name="company_id" eval="False"/>
             <field name="appraisal_employee_feedback_template" type="html">
-                <div style="direction: rtl; text-align: right; font-family: Arial, Tahoma, sans-serif;">
-                    <h2 style="text-align: center; text-decoration: underline; margin-bottom: 16px;">
-                        تقييم أداء - مدير المدرسة
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px;">
+                    <h2 style="text-align: center; text-decoration: underline; margin: 0 0 12px 0; font-size: 16px;">
+                        Performance Appraisal
                     </h2>
-                    <p style="text-align: center; color: #666; margin-bottom: 24px;">
-                        Performance Appraisal - School Principal (Employee Self Assessment)
-                    </p>
 
-                    <table class="table table-bordered o_table" style="width: 100%; margin-bottom: 20px;">
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
                         <tbody>
                             <tr>
-                                <td style="width: 30%; background-color: #1a365d; color: #ffffff; font-weight: bold; padding: 8px;">
-                                    Employee name / اسم الموظف
-                                </td>
-                                <td style="padding: 8px;">مديرة المدرسة (مدير الفرع)</td>
+                                <td style="width: 32%; background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Employee name</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">مديرة المدرسة (مدير الفرع)</td>
                             </tr>
                             <tr>
-                                <td style="background-color: #1a365d; color: #ffffff; font-weight: bold; padding: 8px;">
-                                    Department / القسم
-                                </td>
-                                <td style="padding: 8px;">الإدارة العليا للفرع</td>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Department</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الإدارة العليا للفرع</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Direct Manager Evaluator</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الإدارة العليا للمؤسسة / المدير التنفيذي (Executive Director)</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <h3 style="margin-top: 24px;">التقييم الذاتي / Self Assessment</h3>
-                    <p>
-                        <em>
-                            يرجى تقييم أدائك على مؤشرات الأداء الرئيسية أدناه، وكتابة ملاحظاتك حول الإنجازات والتحديات.
-                            Please rate your performance on the KPIs below and write notes about achievements and challenges.
-                        </em>
-                    </p>
-
-                    <table class="table table-bordered o_table" style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
                         <thead>
                             <tr>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 22%;">KPIs</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 38%;">Definition</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 10%; text-align: center;">Weight</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 10%; text-align: center;">Target</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 20%; text-align: center;">Self Assessment / التقييم الذاتي</th>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: left;">Performance</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Needs Improvement (C)</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Meet Expectation (B)</th>
+                                <th style="width: 28%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Exceed Expectation (A)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top;">تحقيق مؤشرات الأداء الأكاديمي للفرع</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة تحقيق معدلات النجاح والتحصيل الدراسي المستهدفة على مستوى الفرع</td>
-                                <td style="padding: 8px; text-align: center;">20%</td>
-                                <td style="padding: 8px; text-align: center;">85%</td>
-                                <td style="padding: 8px;"><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; vertical-align: top;">نتائج التفتيش والاعتماد الحكومي والجودة</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة الالتزام بمعايير الاعتماد دون ملاحظات جوهرية في تقارير التفتيش</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">100%</td>
-                                <td style="padding: 8px;"><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; vertical-align: top;">الالتزام بالموازنة التشغيلية للفرع</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة الالتزام بالموازنة المعتمدة للفرع دون تجاوز</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">95%</td>
-                                <td style="padding: 8px;"><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; vertical-align: top;">رضا أولياء الأمور والمجتمع</td>
-                                <td style="padding: 8px; vertical-align: top;">نتيجة استطلاعات رضا أولياء الأمور الدورية عن أداء الفرع</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">85%</td>
-                                <td style="padding: 8px;"><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; vertical-align: top;">كفاءة التنسيق بين الإدارات</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة إنجاز الخطط التشغيلية المشتركة بين الإدارات الأكاديمية</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">90%</td>
-                                <td style="padding: 8px;"><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; vertical-align: top;">تطوير مديري الإدارات ومعدل الاحتفاظ بالطلاب والموظفين</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة خطط التطوير المهني المنفذة لمديري الإدارات + نسبة استمرار الطلاب والموظفين مقارنة بالعام السابق</td>
-                                <td style="padding: 8px; text-align: center;">20%</td>
-                                <td style="padding: 8px; text-align: center;">90%</td>
-                                <td style="padding: 8px;"><br/><br/></td>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px; border: 1px solid #1f3864;">Percentage</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">65% - 80%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">80% - 90%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 100%</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <h3 style="margin-top: 24px;">الإنجازات الرئيسية / Key Achievements</h3>
-                    <p><em>اذكر أهم إنجازاتك خلال فترة التقييم. List your main achievements during the appraisal period.</em></p>
-                    <p><br/><br/><br/></p>
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">KPIs</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Definition</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Weight</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Target</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Actual Performance</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Final Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تحقيق مؤشرات الأداء الأكاديمي للفرع</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة تحقيق معدلات النجاح والتحصيل الدراسي المستهدفة على مستوى الفرع</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">85%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">نتائج التفتيش والاعتماد الحكومي والجودة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الالتزام بمعايير الاعتماد دون ملاحظات جوهرية في تقارير التفتيش</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">الالتزام بالموازنة التشغيلية للفرع</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الالتزام بالموازنة المعتمدة للفرع دون تجاوز</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">رضا أولياء الأمور والمجتمع</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نتيجة استطلاعات رضا أولياء الأمور الدورية عن أداء الفرع</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">85%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">كفاءة التنسيق بين الإدارات</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة إنجاز الخطط التشغيلية المشتركة بين الإدارات الأكاديمية</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">90%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تطوير مديري الإدارات ومعدل الاحتفاظ بالطلاب والموظفين</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة خطط التطوير المهني المنفذة لمديري الإدارات + نسبة استمرار الطلاب والموظفين مقارنة بالعام السابق</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">90%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; text-align: right;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">Final Score</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700;">Rate</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;">D</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <h3>التحديات والدعم المطلوب / Challenges &amp; Support Needed</h3>
-                    <p><em>ما التحديات التي واجهتها، وما الدعم الذي تحتاجه؟ What challenges did you face, and what support do you need?</em></p>
-                    <p><br/><br/><br/></p>
-
-                    <p style="margin-top: 24px;"><strong>Employee Signature / توقيع الموظف:</strong> ______________________</p>
+                    <p style="margin: 16px 0 4px 0;"><strong>Employee Signature:</strong> ______________</p>
+                    <p style="margin: 8px 0 0 0;"><strong>Direct Manager Evaluator:</strong> ______________</p>
                 </div>
             </field>
             <field name="appraisal_manager_feedback_template" type="html">
-                <div style="direction: rtl; text-align: right; font-family: Arial, Tahoma, sans-serif;">
-                    <h2 style="text-align: center; text-decoration: underline; margin-bottom: 8px;">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px;">
+                    <h2 style="text-align: center; text-decoration: underline; margin: 0 0 12px 0; font-size: 16px;">
                         Performance Appraisal
                     </h2>
-                    <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">
-                        تقييم أداء - مدير المدرسة
-                    </p>
 
-                    <table class="table table-bordered o_table" style="width: 100%; margin-bottom: 16px;">
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
                         <tbody>
                             <tr>
-                                <td style="width: 28%; background-color: #1a365d; color: #ffffff; font-weight: bold; padding: 8px;">
-                                    Employee name
-                                </td>
-                                <td style="padding: 8px;">مديرة المدرسة (مدير الفرع)</td>
+                                <td style="width: 32%; background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Employee name</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">مديرة المدرسة (مدير الفرع)</td>
                             </tr>
                             <tr>
-                                <td style="background-color: #1a365d; color: #ffffff; font-weight: bold; padding: 8px;">
-                                    Department
-                                </td>
-                                <td style="padding: 8px;">الإدارة العليا للفرع</td>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Department</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الإدارة العليا للفرع</td>
                             </tr>
                             <tr>
-                                <td style="background-color: #1a365d; color: #ffffff; font-weight: bold; padding: 8px;">
-                                    Direct Manager Evaluator
-                                </td>
-                                <td style="padding: 8px;">الإدارة العليا للمؤسسة / المدير التنفيذي (Executive Director)</td>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Direct Manager Evaluator</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الإدارة العليا للمؤسسة / المدير التنفيذي (Executive Director)</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <table class="table table-bordered o_table" style="width: 100%; margin-bottom: 20px; border-collapse: collapse;">
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
                         <thead>
                             <tr>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 20%;">Performance</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; text-align: center;">Needs Improvement (C)</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; text-align: center;">Meet Expectation (B)</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; text-align: center;">Exceed Expectation (A)</th>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: left;">Performance</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Needs Improvement (C)</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Meet Expectation (B)</th>
+                                <th style="width: 28%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Exceed Expectation (A)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="background-color: #1a365d; color: #ffffff; font-weight: bold; padding: 8px;">Percentage</td>
-                                <td style="padding: 8px; text-align: center;">65% - 80%</td>
-                                <td style="padding: 8px; text-align: center;">80% - 90%</td>
-                                <td style="padding: 8px; text-align: center;">90% - 100%</td>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px; border: 1px solid #1f3864;">Percentage</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">65% - 80%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">80% - 90%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 100%</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <p style="font-size: 12px; color: #555; margin-bottom: 12px;">
-                        <em>
-                            Final Score = (Actual Performance ÷ Target) × Weight —
-                            الدرجة النهائية = (الأداء الفعلي ÷ المستهدف) × الوزن
-                        </em>
-                    </p>
-
-                    <table class="table table-bordered o_table" style="width: 100%; border-collapse: collapse;">
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed;">
                         <thead>
                             <tr>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 18%;">KPIs</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 32%;">Definition</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 10%; text-align: center;">Weight</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 10%; text-align: center;">Target</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 15%; text-align: center;">Actual Performance</th>
-                                <th style="background-color: #1a365d; color: #ffffff; padding: 8px; width: 15%; text-align: center;">Final Score</th>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">KPIs</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Definition</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Weight</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Target</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Actual Performance</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Final Score</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top; font-weight: bold;">تحقيق مؤشرات الأداء الأكاديمي للفرع</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة تحقيق معدلات النجاح والتحصيل الدراسي المستهدفة على مستوى الفرع</td>
-                                <td style="padding: 8px; text-align: center;">20%</td>
-                                <td style="padding: 8px; text-align: center;">85%</td>
-                                <td style="padding: 8px; text-align: center;"><br/></td>
-                                <td style="padding: 8px; text-align: center;">0.0%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تحقيق مؤشرات الأداء الأكاديمي للفرع</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة تحقيق معدلات النجاح والتحصيل الدراسي المستهدفة على مستوى الفرع</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">85%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top; font-weight: bold;">نتائج التفتيش والاعتماد الحكومي والجودة</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة الالتزام بمعايير الاعتماد دون ملاحظات جوهرية في تقارير التفتيش</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">100%</td>
-                                <td style="padding: 8px; text-align: center;"><br/></td>
-                                <td style="padding: 8px; text-align: center;">0.0%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">نتائج التفتيش والاعتماد الحكومي والجودة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الالتزام بمعايير الاعتماد دون ملاحظات جوهرية في تقارير التفتيش</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top; font-weight: bold;">الالتزام بالموازنة التشغيلية للفرع</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة الالتزام بالموازنة المعتمدة للفرع دون تجاوز</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">95%</td>
-                                <td style="padding: 8px; text-align: center;"><br/></td>
-                                <td style="padding: 8px; text-align: center;">0.0%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">الالتزام بالموازنة التشغيلية للفرع</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الالتزام بالموازنة المعتمدة للفرع دون تجاوز</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top; font-weight: bold;">رضا أولياء الأمور والمجتمع</td>
-                                <td style="padding: 8px; vertical-align: top;">نتيجة استطلاعات رضا أولياء الأمور الدورية عن أداء الفرع</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">85%</td>
-                                <td style="padding: 8px; text-align: center;"><br/></td>
-                                <td style="padding: 8px; text-align: center;">0.0%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">رضا أولياء الأمور والمجتمع</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نتيجة استطلاعات رضا أولياء الأمور الدورية عن أداء الفرع</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">85%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top; font-weight: bold;">كفاءة التنسيق بين الإدارات</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة إنجاز الخطط التشغيلية المشتركة بين الإدارات الأكاديمية</td>
-                                <td style="padding: 8px; text-align: center;">15%</td>
-                                <td style="padding: 8px; text-align: center;">90%</td>
-                                <td style="padding: 8px; text-align: center;"><br/></td>
-                                <td style="padding: 8px; text-align: center;">0.0%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">كفاءة التنسيق بين الإدارات</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة إنجاز الخطط التشغيلية المشتركة بين الإدارات الأكاديمية</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">90%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
                             </tr>
                             <tr>
-                                <td style="padding: 8px; vertical-align: top; font-weight: bold;">تطوير مديري الإدارات ومعدل الاحتفاظ بالطلاب والموظفين</td>
-                                <td style="padding: 8px; vertical-align: top;">نسبة خطط التطوير المهني المنفذة لمديري الإدارات + نسبة استمرار الطلاب والموظفين مقارنة بالعام السابق</td>
-                                <td style="padding: 8px; text-align: center;">20%</td>
-                                <td style="padding: 8px; text-align: center;">90%</td>
-                                <td style="padding: 8px; text-align: center;"><br/></td>
-                                <td style="padding: 8px; text-align: center;">0.0%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تطوير مديري الإدارات ومعدل الاحتفاظ بالطلاب والموظفين</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة خطط التطوير المهني المنفذة لمديري الإدارات + نسبة استمرار الطلاب والموظفين مقارنة بالعام السابق</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">90%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">Total Weight / إجمالي الوزن</td>
-                                <td style="padding: 8px; text-align: center; font-weight: bold; background-color: #f0f4f8;">100%</td>
-                                <td style="padding: 8px; background-color: #f0f4f8;"/>
-                                <td style="padding: 8px; text-align: center; font-weight: bold; background-color: #f0f4f8;">Final Score</td>
-                                <td style="padding: 8px; text-align: center; font-weight: bold; background-color: #f0f4f8;">0%</td>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; text-align: right;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">Final Score</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">0%</td>
                             </tr>
                             <tr>
-                                <td colspan="5" style="padding: 8px; text-align: left; font-weight: bold;">Rate / التقييم</td>
-                                <td style="padding: 8px; text-align: center; font-weight: bold;">D</td>
+                                <td colspan="5" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700;">Rate</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;">D</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <h3 style="margin-top: 24px;">ملاحظات المقيّم / Evaluator Comments</h3>
-                    <p><em>اكتب ملاحظاتك العامة حول أداء مدير المدرسة. Write your overall comments on the school principal's performance.</em></p>
-                    <p><br/><br/><br/></p>
-
-                    <table class="table table-bordered o_table" style="width: 100%; margin-top: 32px;">
-                        <tbody>
-                            <tr>
-                                <td style="width: 50%; padding: 16px; vertical-align: top;">
-                                    <strong>Employee Signature / توقيع الموظف</strong>
-                                    <p><br/><br/></p>
-                                    <p>______________________</p>
-                                </td>
-                                <td style="width: 50%; padding: 16px; vertical-align: top;">
-                                    <strong>Direct Manager Evaluator / توقيع المدير المباشر</strong>
-                                    <p><br/><br/></p>
-                                    <p>______________________</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p style="margin: 16px 0 4px 0;"><strong>Employee Signature:</strong> ______________</p>
+                    <p style="margin: 8px 0 0 0;"><strong>Direct Manager Evaluator:</strong> ______________</p>
                 </div>
             </field>
         </record>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="hr_appraisal_template_psychologist" model="hr.appraisal.template">
+            <field name="description">تقييم أداء - الأخصائي النفسي</field>
+            <field name="sequence">60</field>
+            <field name="company_id" eval="False"/>
+            <field name="appraisal_employee_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px;">
+                    <h2 style="text-align: center; text-decoration: underline; margin: 0 0 12px 0; font-size: 16px;">
+                        Performance Appraisal
+                    </h2>
+
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 32%; background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Employee name</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الأخصائي النفسي</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Department</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الإدارة النفسية والاجتماعية</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Direct Manager Evaluator</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">مدير شئون الطلاب / مدير المدرسة (مدير الفرع)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: left;">Performance</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Needs Improvement (C)</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Meet Expectation (B)</th>
+                                <th style="width: 28%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Exceed Expectation (A)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px; border: 1px solid #1f3864;">Percentage</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">65% - 80%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">80% - 90%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">KPIs</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Definition</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Weight</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Target</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Actual Performance</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Final Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">اكتمال وسرية الملفات النفسية للحالات</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الملفات النفسية الموثقة والمكتملة لجميع الحالات المحولة دون إخلال بالسرية</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">سرعة التدخل في الأزمات النفسية الطارئة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة حالات الأزمات النفسية التي تم التدخل فيها خلال ساعة واحدة من الإبلاغ</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">فعالية خطط الدعم والمتابعة النفسية</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الحالات المتابعة التي أظهرت تحسناً ملحوظاً في التقييم الدوري</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">60%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تنفيذ الجلسات الإرشادية المخططة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الجلسات الإرشادية الفردية والجماعية المنفذة فعلياً من إجمالي الجلسات المخططة</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">90%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تنفيذ برامج التوعية النفسية</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة برامج التوعية النفسية الجماعية المنفذة فعلياً من البرامج المخططة بالخطة الفصلية</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">رضا أولياء الأمور والمعلمين عن الدعم النفسي</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة رضا أولياء الأمور والمعلمين عن جودة الدعم النفسي المقدم وفق استبيان دوري</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">85%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; text-align: right;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">Final Score</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700;">Rate</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;">D</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin: 16px 0 4px 0;"><strong>Employee Signature:</strong> ______________</p>
+                    <p style="margin: 8px 0 0 0;"><strong>Direct Manager Evaluator:</strong> ______________</p>
+                </div>
+            </field>
+            <field name="appraisal_manager_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px;">
+                    <h2 style="text-align: center; text-decoration: underline; margin: 0 0 12px 0; font-size: 16px;">
+                        Performance Appraisal
+                    </h2>
+
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 32%; background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Employee name</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الأخصائي النفسي</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Department</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الإدارة النفسية والاجتماعية</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px 8px; border: 1px solid #1f3864;">Direct Manager Evaluator</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">مدير شئون الطلاب / مدير المدرسة (مدير الفرع)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: left;">Performance</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Needs Improvement (C)</th>
+                                <th style="width: 27%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Meet Expectation (B)</th>
+                                <th style="width: 28%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">Exceed Expectation (A)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="background: #1f3864; color: #fff; font-weight: 700; padding: 6px; border: 1px solid #1f3864;">Percentage</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">65% - 80%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">80% - 90%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">KPIs</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Definition</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Weight</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Target</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Actual Performance</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">Final Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">اكتمال وسرية الملفات النفسية للحالات</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الملفات النفسية الموثقة والمكتملة لجميع الحالات المحولة دون إخلال بالسرية</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">سرعة التدخل في الأزمات النفسية الطارئة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة حالات الأزمات النفسية التي تم التدخل فيها خلال ساعة واحدة من الإبلاغ</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">فعالية خطط الدعم والمتابعة النفسية</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الحالات المتابعة التي أظهرت تحسناً ملحوظاً في التقييم الدوري</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">60%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تنفيذ الجلسات الإرشادية المخططة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة الجلسات الإرشادية الفردية والجماعية المنفذة فعلياً من إجمالي الجلسات المخططة</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">90%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تنفيذ برامج التوعية النفسية</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة برامج التوعية النفسية الجماعية المنفذة فعلياً من البرامج المخططة بالخطة الفصلية</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">رضا أولياء الأمور والمعلمين عن الدعم النفسي</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نسبة رضا أولياء الأمور والمعلمين عن جودة الدعم النفسي المقدم وفق استبيان دوري</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">85%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">0.0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; text-align: right;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">Final Score</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">0%</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700;">Rate</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;">D</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin: 16px 0 4px 0;"><strong>Employee Signature:</strong> ______________</p>
+                    <p style="margin: 8px 0 0 0;"><strong>Direct Manager Evaluator:</strong> ______________</p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

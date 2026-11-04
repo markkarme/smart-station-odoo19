@@ -35,6 +35,119 @@
         });
     }
 
+    const RATING_CHECKED = "☑";
+    const RATING_UNCHECKED = "☐";
+
+    function setRatingChecked(el, checked) {
+        el.textContent = checked ? RATING_CHECKED : RATING_UNCHECKED;
+        el.classList.toggle("ss-rating-checked", checked);
+        el.setAttribute(
+            "title",
+            checked ? "محدد — اضغط لإلغاء التحديد" : "اضغط للاختيار"
+        );
+    }
+
+    function isRatingChecked(el) {
+        return (
+            el.classList.contains("ss-rating-checked") ||
+            (el.textContent || "").indexOf(RATING_CHECKED) !== -1
+        );
+    }
+
+    function findRatingCheck(target) {
+        if (!(target instanceof Element)) {
+            return null;
+        }
+        return (
+            target.closest(".ss-rating-check") ||
+            (target.closest("td.ss-rating-cell") &&
+                target.closest("td.ss-rating-cell").querySelector(".ss-rating-check"))
+        );
+    }
+
+    function ensureRatingNonEditable(root) {
+        if (!root || !root.querySelectorAll) {
+            return;
+        }
+        Array.prototype.forEach.call(root.querySelectorAll(".ss-rating-check"), function (el) {
+            el.classList.add("o-contenteditable-false");
+            el.setAttribute("contenteditable", "false");
+        });
+    }
+
+    function clearSelectionCaret() {
+        const sel = window.getSelection && window.getSelection();
+        if (sel && sel.rangeCount) {
+            sel.removeAllRanges();
+        }
+    }
+
+    function initRatingChecks(root) {
+        ensureRatingNonEditable(root);
+
+        function onRatingDown(event) {
+            if (event.type === "mousedown" && typeof window.PointerEvent !== "undefined") {
+                return;
+            }
+            const el = findRatingCheck(event.target);
+            if (!el || !root.contains(el)) {
+                return;
+            }
+            // Only toggle inside editable feedback panes (or the whole sheet form)
+            const editor = el.closest(
+                ".portal-appraisal-feedback-editor, [contenteditable='true'], .ss-appraisal-sheet"
+            );
+            if (!editor) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            if (event.stopImmediatePropagation) {
+                event.stopImmediatePropagation();
+            }
+
+            const row = el.closest("tr");
+            const wasChecked = isRatingChecked(el);
+            if (row) {
+                Array.prototype.forEach.call(row.querySelectorAll(".ss-rating-check"), function (box) {
+                    setRatingChecked(box, false);
+                });
+            }
+            if (!wasChecked) {
+                setRatingChecked(el, true);
+            }
+            clearSelectionCaret();
+
+            // Keep hidden inputs in sync for next save without waiting for submit
+            syncEditorToInput(
+                document.getElementById("portal_appraisal_employee_editor"),
+                document.getElementById("employee_feedback_input")
+            );
+            syncEditorToInput(
+                document.getElementById("portal_appraisal_manager_editor"),
+                document.getElementById("manager_feedback_input")
+            );
+        }
+
+        function blockEditorCaret(event) {
+            const el = findRatingCheck(event.target);
+            if (!el || !root.contains(el)) {
+                return;
+            }
+            event.preventDefault();
+            event.stopPropagation();
+            if (event.stopImmediatePropagation) {
+                event.stopImmediatePropagation();
+            }
+        }
+
+        root.addEventListener("pointerdown", onRatingDown, true);
+        root.addEventListener("mousedown", onRatingDown, true);
+        root.addEventListener("click", blockEditorCaret, true);
+        root.addEventListener("mouseup", blockEditorCaret, true);
+    }
+
     function parseEmployeesJson() {
         const node = document.getElementById("portal_appraisal_employees_json");
         if (!node) {
@@ -129,11 +242,14 @@
         const managerPreview = document.getElementById("portal_appraisal_manager_preview");
         if (employeeEditor && data.employee_feedback) {
             employeeEditor.innerHTML = data.employee_feedback;
+            ensureRatingNonEditable(employeeEditor);
         }
         if (managerEditor && data.manager_feedback) {
             managerEditor.innerHTML = data.manager_feedback;
+            ensureRatingNonEditable(managerEditor);
         } else if (managerPreview && data.manager_feedback) {
             managerPreview.innerHTML = data.manager_feedback;
+            ensureRatingNonEditable(managerPreview);
         }
     }
 
@@ -232,6 +348,7 @@
         }
 
         initStars(form);
+        initRatingChecks(form);
         const employeeSelect = initEmployeeAndAppraisers();
         initTemplateSwitch(employeeSelect);
         parseEmployeesJson();

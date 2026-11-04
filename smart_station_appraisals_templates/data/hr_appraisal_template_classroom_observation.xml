@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="hr_appraisal_template_classroom_observation" model="hr.appraisal.template">
+            <field name="description">نموذج الملاحظة الصفية وتقييم أداء المعلم</field>
+            <field name="sequence">100</field>
+            <field name="company_id" eval="False"/>
+            <field name="appraisal_employee_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 11px; line-height: 1.4; min-width: 920px; direction: rtl;">
+                    <h2 style="text-align: center; margin: 0 0 4px 0; font-size: 15px; color: #1f3864;">
+                        مدرسة سمارت للحاسبات والإلكترونيات
+                    </h2>
+                    <h3 style="text-align: center; margin: 0 0 12px 0; font-size: 14px;">
+                        نموذج الملاحظة الصفية وتقييم أداء المعلم (Classroom Observation)
+                    </h3>
+
+                    <table class="ss-meta-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 16%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">تاريخ الزيارة</td>
+                                <td style="width: 17%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 16%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">الصف / الفصل</td>
+                                <td style="width: 17%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 16%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">المادة / التخصص</td>
+                                <td style="width: 18%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم المعلم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">عنوان الدرس</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">زمن الحصة</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">نوع الزيارة</td>
+                                <td colspan="2" style="padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">
+                                    <span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 18px;">
+                                        <span class="o-contenteditable-false ss-rating-check" data-rating="announced" data-row="visit_type" title="اضغط للاختيار">☐</span>
+                                        <span>معلنة</span>
+                                    </span>
+                                    <span style="display: inline-flex; align-items: center; gap: 4px;">
+                                        <span class="o-contenteditable-false ss-rating-check" data-rating="unannounced" data-row="visit_type" title="اضغط للاختيار">☐</span>
+                                        <span>غير معلنة</span>
+                                    </span>
+                                </td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم الملاحظ</td>
+                                <td colspan="2" style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="background: #1f3864; color: #fff; padding: 6px 8px; border: 1px solid #1f3864; text-align: center;">مقياس التقدير</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 18%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">جيد جداً</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">أداء واضح ومتقن وبشكل ثابت.</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">جيد</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">أداء مناسب مع ملاحظات محدودة.</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">مقبول</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">أداء جزئي يحتاج إلى تحسين.</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">دون المستوى</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">غير متحقق أو يحتاج تدخلاً واضحاً.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 14px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المحور / مؤشر الملاحظة</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">البند</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">جيد جداً</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">جيد</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">مقبول</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">دون المستوى</th>
+                                <th style="width: 16%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">ملاحظات مختصرة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">1) التخطيط والتحضير للدرس</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نواتج التعلم واضحة ومحددة وقابلة للقياس.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="1" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="1" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="1" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="1" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">التمهيد مناسب ويربط الدرس بخبرات الطلاب أو التعلم السابق.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="2" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="2" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="2" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="2" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تسلسل خطوات الدرس منظم وملائم لزمن الحصة ومستوى الطلاب.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="3" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="3" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="3" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="3" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الوسائل والأنشطة وأدوات التقويم مُعدّة مسبقاً ومرتبطة بنواتج التعلم.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="4" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="4" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="4" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="4" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">2) تنفيذ الحصة وإدارة الوقت</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يبدأ الحصة بسرعة ويعرض عنوان الدرس / النواتج بوضوح.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="5" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="5" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="5" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="5" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الشرح واضح ومنظم ومناسب لمستوى الطلاب مع أمثلة مناسبة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="6" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="6" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="6" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="6" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يوزع الوقت بين التمهيد والشرح والتطبيق والتقويم بشكل متوازن.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="7" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="7" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="7" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="7" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يختم الحصة بتلخيص أو التحقق من التعلم في الوقت المحدد.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="8" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="8" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="8" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="8" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">3) إدارة الصف والانضباط</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يحافظ على النظام دون إعاقة سير التعلم أو رفع التوتر داخل الصف.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="9" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="9" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="9" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="9" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يطبق القواعد بعدالة وبشكل متسق على جميع الطلاب.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="10" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="10" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="10" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="10" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتعامل تربوياً وبهدوء مع السلوكيات غير المرغوبة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="11" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="11" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="11" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="11" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يبقي أغلب الطلاب منخرطين ويقلل أوقات الفراغ والفوضى.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="12" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="12" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="12" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="12" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">4) طرق التدريس والأنشطة والوسائل</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يستخدم طريقة/استراتيجية تدريس ملائمة لهدف الدرس ولا يعتمد على الإلقاء فقط.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="13" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="13" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="13" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="13" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يوظف أنشطة تجعل الطالب مشاركاً نشطاً في التعلم.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="14" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="14" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="14" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="14" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يستخدم السبورة أو الوسائل أو التقنية بوضوح وتضيف قيمة للتعلم.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="15" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="15" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="15" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="15" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يربط المحتوى بالتطبيق العملي أو بمواقف حياتية/تخصصية كلما أمكن.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="16" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="16" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="16" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="16" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">5) التواصل ومراعاة الفروق الفردية</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتواصل باحترام ونبرة واضحة ويستخدم لغة مناسبة للطلاب.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="17" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="17" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="17" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="17" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يوزع الأسئلة وفرص المشاركة على الطلاب ولا يقتصر على مجموعة محددة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="18" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="18" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="18" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="18" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يراعي تفاوت مستويات الطلاب في الشرح والأسئلة والمهام.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="19" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="19" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="19" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="19" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يقدم دعماً للمتعثرين وتحدياً مناسباً للمتفوقين.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="20" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="20" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="20" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="20" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">6) التقويم والتغذية الراجعة</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يستخدم التقويم أثناء الحصة للتأكد من فهم الطلاب وتحديد ما يحتاج إلى توضيح.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="21" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="21" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="21" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="21" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">ينفذ التقييم الأسبوعي في موعده وفق النظام المعتمد، ويصححه ويرصد نتائجه بدقة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="22" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="22" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="22" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="22" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">ينفذ التقييم الشهري في موعده وفق النظام المعتمد، ويصححه ويرصد نتائجه بدقة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="23" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="23" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="23" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="23" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يقدم تغذية راجعة واضحة ومحددة تساعد على معرفة نقاط القوة وما يحتاج إلى تحسين.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="24" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="24" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="24" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="24" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">7) الاحترافية والحضور المهني داخل الحصة</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يلتزم بموعد الحصة ويظهر استعداداً وتنظيماً واضحين.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="25" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="25" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="25" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="25" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتعامل باحترام ومهنية ويحافظ على بيئة تعليمية آمنة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="26" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="26" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="26" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="26" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يظهر ثقة وتمكناً من المحتوى ويستجيب لأسئلة الطلاب بصورة مناسبة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="27" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="27" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="27" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="27" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتقبل الملاحظة المهنية ويظهر استعداداً للتحسين والتطوير.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="28" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="28" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="28" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="28" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">8) للمواد العملية / المعملية (عند التطبيق)</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يجهز الأجهزة والأدوات والخامات قبل بدء التطبيق.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="29" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="29" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="29" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="29" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يشرح خطوات العمل وإجراءات الأمن والسلامة بوضوح.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="30" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="30" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="30" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="30" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتابع الطلاب أثناء التنفيذ ويتأكد من مشاركتهم الفعلية.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="31" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="31" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="31" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="31" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يقيم المهارة العملية وفق معايير واضحة ويربط النظرية بالتطبيق.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="32" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="32" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="32" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="32" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="text-align: center; margin: 8px 0 10px 0; font-size: 13px; color: #1f3864;">
+                        ملخص الزيارة الصفية وخطة التحسين
+                    </h3>
+
+                    <table class="ss-meta-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 28%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">أبرز نقاط القوة</td>
+                                <td style="width: 72%; padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">أهم نقطة تحتاج إلى تحسين</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">توصية عملية متفق عليها للزيارة القادمة</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">دعم يحتاجه المعلم من رئيس القسم / الإدارة الأكاديمية</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right;">موعد المتابعة المقترح</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right;">التقدير العام للزيارة</td>
+                                <td style="padding: 10px 8px; border: 1px solid #9fb3c8; text-align: right;">
+                                    <span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="33" title="اضغط للاختيار">☐</span><span>جيد جداً</span></span><span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="33" title="اضغط للاختيار">☐</span><span>جيد</span></span><span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="33" title="اضغط للاختيار">☐</span><span>مقبول</span></span><span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="33" title="اضغط للاختيار">☐</span><span>دون المستوى</span></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-meta-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 8px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 33.33%; background: #d6e3f0; color: #1f3864; padding: 8px; border: 1px solid #9fb3c8; text-align: center;">المدير الأكاديمي</th>
+                                <th style="width: 33.33%; background: #d6e3f0; color: #1f3864; padding: 8px; border: 1px solid #9fb3c8; text-align: center;">الملاحظ / رئيس القسم</th>
+                                <th style="width: 33.33%; background: #d6e3f0; color: #1f3864; padding: 8px; border: 1px solid #9fb3c8; text-align: center;">المعلم</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 18px 8px 8px 8px; border: 1px solid #9fb3c8; text-align: center; height: 70px; vertical-align: bottom;">الاسم والتوقيع: ____________________</td>
+                                <td style="padding: 18px 8px 8px 8px; border: 1px solid #9fb3c8; text-align: center; height: 70px; vertical-align: bottom;">الاسم والتوقيع: ____________________</td>
+                                <td style="padding: 18px 8px 8px 8px; border: 1px solid #9fb3c8; text-align: center; height: 70px; vertical-align: bottom;">الاسم والتوقيع: ____________________</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="text-align: center; margin: 4px 0 2px 0; font-size: 12px; color: #1f3864; font-weight: 700;">
+                        المدير الأكاديمي / شريف رمضان
+                    </p>
+                    <p style="text-align: center; margin: 0; font-size: 10px; color: #666;">
+                        مدرسة سمارت للحاسبات والإلكترونيات - نموذج ملاحظة صفية للمعلم
+                    </p>
+                </div>
+            </field>
+            <field name="appraisal_manager_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 11px; line-height: 1.4; min-width: 920px; direction: rtl;">
+                    <h2 style="text-align: center; margin: 0 0 4px 0; font-size: 15px; color: #1f3864;">
+                        مدرسة سمارت للحاسبات والإلكترونيات
+                    </h2>
+                    <h3 style="text-align: center; margin: 0 0 12px 0; font-size: 14px;">
+                        نموذج الملاحظة الصفية وتقييم أداء المعلم (Classroom Observation)
+                    </h3>
+
+                    <table class="ss-meta-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 16%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">تاريخ الزيارة</td>
+                                <td style="width: 17%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 16%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">الصف / الفصل</td>
+                                <td style="width: 17%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 16%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">المادة / التخصص</td>
+                                <td style="width: 18%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم المعلم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">عنوان الدرس</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">زمن الحصة</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">نوع الزيارة</td>
+                                <td colspan="2" style="padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">
+                                    <span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 18px;">
+                                        <span class="o-contenteditable-false ss-rating-check" data-rating="announced" data-row="visit_type" title="اضغط للاختيار">☐</span>
+                                        <span>معلنة</span>
+                                    </span>
+                                    <span style="display: inline-flex; align-items: center; gap: 4px;">
+                                        <span class="o-contenteditable-false ss-rating-check" data-rating="unannounced" data-row="visit_type" title="اضغط للاختيار">☐</span>
+                                        <span>غير معلنة</span>
+                                    </span>
+                                </td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم الملاحظ</td>
+                                <td colspan="2" style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="background: #1f3864; color: #fff; padding: 6px 8px; border: 1px solid #1f3864; text-align: center;">مقياس التقدير</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 18%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">جيد جداً</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">أداء واضح ومتقن وبشكل ثابت.</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">جيد</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">أداء مناسب مع ملاحظات محدودة.</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">مقبول</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">أداء جزئي يحتاج إلى تحسين.</td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">دون المستوى</td>
+                                <td class="ss-ar" style="padding: 6px 8px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">غير متحقق أو يحتاج تدخلاً واضحاً.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 14px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المحور / مؤشر الملاحظة</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">البند</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">جيد جداً</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">جيد</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">مقبول</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">دون المستوى</th>
+                                <th style="width: 16%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">ملاحظات مختصرة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">1) التخطيط والتحضير للدرس</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">نواتج التعلم واضحة ومحددة وقابلة للقياس.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="1" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="1" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="1" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="1" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">التمهيد مناسب ويربط الدرس بخبرات الطلاب أو التعلم السابق.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="2" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="2" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="2" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="2" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تسلسل خطوات الدرس منظم وملائم لزمن الحصة ومستوى الطلاب.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="3" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="3" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="3" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="3" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الوسائل والأنشطة وأدوات التقويم مُعدّة مسبقاً ومرتبطة بنواتج التعلم.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="4" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="4" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="4" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="4" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">2) تنفيذ الحصة وإدارة الوقت</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يبدأ الحصة بسرعة ويعرض عنوان الدرس / النواتج بوضوح.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="5" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="5" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="5" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="5" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الشرح واضح ومنظم ومناسب لمستوى الطلاب مع أمثلة مناسبة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="6" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="6" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="6" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="6" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يوزع الوقت بين التمهيد والشرح والتطبيق والتقويم بشكل متوازن.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="7" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="7" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="7" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="7" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يختم الحصة بتلخيص أو التحقق من التعلم في الوقت المحدد.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="8" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="8" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="8" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="8" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">3) إدارة الصف والانضباط</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يحافظ على النظام دون إعاقة سير التعلم أو رفع التوتر داخل الصف.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="9" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="9" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="9" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="9" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يطبق القواعد بعدالة وبشكل متسق على جميع الطلاب.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="10" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="10" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="10" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="10" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتعامل تربوياً وبهدوء مع السلوكيات غير المرغوبة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="11" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="11" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="11" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="11" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يبقي أغلب الطلاب منخرطين ويقلل أوقات الفراغ والفوضى.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="12" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="12" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="12" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="12" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">4) طرق التدريس والأنشطة والوسائل</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يستخدم طريقة/استراتيجية تدريس ملائمة لهدف الدرس ولا يعتمد على الإلقاء فقط.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="13" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="13" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="13" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="13" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يوظف أنشطة تجعل الطالب مشاركاً نشطاً في التعلم.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="14" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="14" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="14" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="14" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يستخدم السبورة أو الوسائل أو التقنية بوضوح وتضيف قيمة للتعلم.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="15" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="15" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="15" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="15" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يربط المحتوى بالتطبيق العملي أو بمواقف حياتية/تخصصية كلما أمكن.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="16" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="16" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="16" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="16" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">5) التواصل ومراعاة الفروق الفردية</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتواصل باحترام ونبرة واضحة ويستخدم لغة مناسبة للطلاب.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="17" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="17" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="17" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="17" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يوزع الأسئلة وفرص المشاركة على الطلاب ولا يقتصر على مجموعة محددة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="18" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="18" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="18" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="18" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يراعي تفاوت مستويات الطلاب في الشرح والأسئلة والمهام.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="19" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="19" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="19" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="19" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يقدم دعماً للمتعثرين وتحدياً مناسباً للمتفوقين.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="20" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="20" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="20" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="20" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">6) التقويم والتغذية الراجعة</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يستخدم التقويم أثناء الحصة للتأكد من فهم الطلاب وتحديد ما يحتاج إلى توضيح.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="21" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="21" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="21" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="21" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">ينفذ التقييم الأسبوعي في موعده وفق النظام المعتمد، ويصححه ويرصد نتائجه بدقة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="22" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="22" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="22" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="22" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">ينفذ التقييم الشهري في موعده وفق النظام المعتمد، ويصححه ويرصد نتائجه بدقة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="23" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="23" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="23" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="23" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يقدم تغذية راجعة واضحة ومحددة تساعد على معرفة نقاط القوة وما يحتاج إلى تحسين.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="24" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="24" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="24" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="24" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">7) الاحترافية والحضور المهني داخل الحصة</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يلتزم بموعد الحصة ويظهر استعداداً وتنظيماً واضحين.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="25" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="25" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="25" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="25" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتعامل باحترام ومهنية ويحافظ على بيئة تعليمية آمنة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="26" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="26" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="26" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="26" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يظهر ثقة وتمكناً من المحتوى ويستجيب لأسئلة الطلاب بصورة مناسبة.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="27" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="27" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="27" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="27" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتقبل الملاحظة المهنية ويظهر استعداداً للتحسين والتطوير.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="28" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="28" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="28" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="28" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" rowspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700; vertical-align: middle; background: #f8fafc;">8) للمواد العملية / المعملية (عند التطبيق)</td>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يجهز الأجهزة والأدوات والخامات قبل بدء التطبيق.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="29" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="29" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="29" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="29" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يشرح خطوات العمل وإجراءات الأمن والسلامة بوضوح.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="30" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="30" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="30" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="30" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يتابع الطلاب أثناء التنفيذ ويتأكد من مشاركتهم الفعلية.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="31" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="31" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="31" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="31" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+<tr>
+<td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">يقيم المهارة العملية وفق معايير واضحة ويربط النظرية بالتطبيق.</td>
+<td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="32" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="32" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="32" title="اضغط للاختيار">☐</span></td><td class="ss-rating-cell" style="padding: 4px; border: 1px solid #9fb3c8; text-align: center; width: 8%;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="32" title="اضغط للاختيار">☐</span></td>
+<td style="padding: 6px 4px; border: 1px solid #9fb3c8;"><br/></td>
+</tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="text-align: center; margin: 8px 0 10px 0; font-size: 13px; color: #1f3864;">
+                        ملخص الزيارة الصفية وخطة التحسين
+                    </h3>
+
+                    <table class="ss-meta-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 28%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">أبرز نقاط القوة</td>
+                                <td style="width: 72%; padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">أهم نقطة تحتاج إلى تحسين</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">توصية عملية متفق عليها للزيارة القادمة</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right; vertical-align: top;">دعم يحتاجه المعلم من رئيس القسم / الإدارة الأكاديمية</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8; height: 56px;"><br/><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right;">موعد المتابعة المقترح</td>
+                                <td style="padding: 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 8px; border: 1px solid #9fb3c8; text-align: right;">التقدير العام للزيارة</td>
+                                <td style="padding: 10px 8px; border: 1px solid #9fb3c8; text-align: right;">
+                                    <span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="excellent" data-row="33" title="اضغط للاختيار">☐</span><span>جيد جداً</span></span><span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="good" data-row="33" title="اضغط للاختيار">☐</span><span>جيد</span></span><span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="acceptable" data-row="33" title="اضغط للاختيار">☐</span><span>مقبول</span></span><span style="display: inline-flex; align-items: center; gap: 4px; margin-left: 14px;"><span class="o-contenteditable-false ss-rating-check" data-rating="below" data-row="33" title="اضغط للاختيار">☐</span><span>دون المستوى</span></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-meta-table" style="width: 920px; min-width: 920px; border-collapse: collapse; table-layout: fixed; margin-bottom: 8px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 33.33%; background: #d6e3f0; color: #1f3864; padding: 8px; border: 1px solid #9fb3c8; text-align: center;">المدير الأكاديمي</th>
+                                <th style="width: 33.33%; background: #d6e3f0; color: #1f3864; padding: 8px; border: 1px solid #9fb3c8; text-align: center;">الملاحظ / رئيس القسم</th>
+                                <th style="width: 33.33%; background: #d6e3f0; color: #1f3864; padding: 8px; border: 1px solid #9fb3c8; text-align: center;">المعلم</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 18px 8px 8px 8px; border: 1px solid #9fb3c8; text-align: center; height: 70px; vertical-align: bottom;">الاسم والتوقيع: ____________________</td>
+                                <td style="padding: 18px 8px 8px 8px; border: 1px solid #9fb3c8; text-align: center; height: 70px; vertical-align: bottom;">الاسم والتوقيع: ____________________</td>
+                                <td style="padding: 18px 8px 8px 8px; border: 1px solid #9fb3c8; text-align: center; height: 70px; vertical-align: bottom;">الاسم والتوقيع: ____________________</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="text-align: center; margin: 4px 0 2px 0; font-size: 12px; color: #1f3864; font-weight: 700;">
+                        المدير الأكاديمي / شريف رمضان
+                    </p>
+                    <p style="text-align: center; margin: 0; font-size: 10px; color: #666;">
+                        مدرسة سمارت للحاسبات والإلكترونيات - نموذج ملاحظة صفية للمعلم
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

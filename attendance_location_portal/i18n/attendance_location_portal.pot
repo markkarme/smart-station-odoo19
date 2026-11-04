@@ -4742,3 +4742,34 @@ msgid ""
 "Admin student misconduct portal users can manage student violations\n"
 "and case studies for their allowed companies only."
 msgstr ""
+
+#. module: attendance_location_portal
+#: model:res.groups,name:attendance_location_portal.group_portal_job_description_admin
+#: model:ir.model.fields,field_description:attendance_location_portal.field_hr_employee__is_portal_job_description_admin
+msgid "Admin Job Description Portal"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:res.groups.privilege,name:attendance_location_portal.privilege_portal_job_description
+msgid "Portal Job Description"
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.model.fields,help:attendance_location_portal.field_hr_employee__is_portal_job_description_admin
+msgid ""
+"Admin job description portal users can view job descriptions and KPIs for "
+"their allowed companies from the portal (no create/edit/delete)."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:res.groups,comment:attendance_location_portal.group_portal_job_description_admin
+msgid ""
+"Admin job description portal users can view job descriptions\n"
+"            and KPIs for their allowed companies only.\n"
+"            They cannot create, update, or delete records."
+msgstr ""
+
+#. module: attendance_location_portal
+#: model:ir.rule,name:attendance_location_portal.hr_appraisal_job_description_portal_company_rule
+msgid "Job Description Portal: allowed companies"
+msgstr ""
