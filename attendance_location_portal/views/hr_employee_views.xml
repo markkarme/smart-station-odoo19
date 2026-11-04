@@ -68,6 +68,11 @@
                     invisible="not user_id"
                     groups="hr.group_hr_user"
                 />
+                <field
+                    name="is_portal_job_description_admin"
+                    invisible="not user_id"
+                    groups="hr.group_hr_user"
+                />
             </xpath>
         </field>
     </record>

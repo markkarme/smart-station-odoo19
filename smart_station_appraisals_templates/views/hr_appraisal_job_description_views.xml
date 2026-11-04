@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_appraisal_job_description_list" model="ir.ui.view">
+        <field name="name">hr.appraisal.job.description.list</field>
+        <field name="model">hr.appraisal.job.description</field>
+        <field name="arch" type="xml">
+            <list string="الوصف الوظيفي ومؤشرات الأداء">
+                <field name="name"/>
+                <field name="file_name" string="الملف"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <button name="action_view_file"
+                        type="object"
+                        string="عرض الملف"
+                        icon="fa-eye"
+                        title="عرض الملف"
+                        invisible="not file_name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_hr_appraisal_job_description_form" model="ir.ui.view">
+        <field name="name">hr.appraisal.job.description.form</field>
+        <field name="model">hr.appraisal.job.description</field>
+        <field name="arch" type="xml">
+            <form string="الوصف الوظيفي ومؤشرات الأداء">
+                <header>
+                    <button name="action_view_file"
+                            type="object"
+                            string="عرض الملف"
+                            class="btn-primary"
+                            icon="fa-eye"
+                            invisible="not id or not file_name"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="مثال: الوصف الوظيفي للمعلم"/>
+                            <field name="file" filename="file_name" widget="binary"/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="file_mimetype" invisible="1"/>
+                            <field name="is_pdf" invisible="1"/>
+                            <field name="is_image" invisible="1"/>
+                            <field name="is_docx" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_appraisal_job_description" model="ir.actions.act_window">
+        <field name="name">الوصف الوظيفي ومؤشرات الأداء</field>
+        <field name="res_model">hr.appraisal.job.description</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                ارفع ملف الوصف الوظيفي ومؤشرات الأداء
+            </p>
+            <p>
+                أضف اسماً وارفع المستند المتعلق به.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_hr_appraisal_job_description"
+        name="الوصف الوظيفي ومؤشرات الأداء"
+        parent="hr_appraisal.menu_hr_appraisal_root"
+        action="action_hr_appraisal_job_description"
+        sequence="25"
+        groups="hr_appraisal.group_hr_appraisal_user"/>
+</odoo>

@@ -96,6 +96,14 @@ class HrEmployee(models.Model):
         help="Admin student misconduct portal users can manage student violations "
         "and case studies for their allowed companies from the portal.",
     )
+    is_portal_job_description_admin = fields.Boolean(
+        string="Admin Job Description Portal",
+        compute="_compute_is_portal_job_description_admin",
+        inverse="_inverse_is_portal_job_description_admin",
+        help="Admin job description portal users can view job descriptions "
+        "and KPIs for their allowed companies from the portal "
+        "(no create/edit/delete).",
+    )
 
     # Standard single approver fields grant Internal User groups on write
     # (e.g. leave_manager_id -> Time Off Responsible). Portal users must not
@@ -378,6 +386,34 @@ class HrEmployee(models.Model):
             if not user:
                 continue
             if employee.is_portal_misconduct_admin:
+                user.sudo().write({"group_ids": [(4, admin_group.id)]})
+            else:
+                user.sudo().write({"group_ids": [(3, admin_group.id)]})
+
+    def _get_portal_job_description_admin_group(self):
+        return self.env.ref(
+            "attendance_location_portal.group_portal_job_description_admin",
+            raise_if_not_found=False,
+        )
+
+    def _compute_is_portal_job_description_admin(self):
+        admin_group = self._get_portal_job_description_admin_group()
+        for employee in self:
+            employee.is_portal_job_description_admin = bool(
+                admin_group
+                and employee.user_id
+                and admin_group in employee.user_id.sudo().all_group_ids
+            )
+
+    def _inverse_is_portal_job_description_admin(self):
+        admin_group = self._get_portal_job_description_admin_group()
+        if not admin_group:
+            return
+        for employee in self:
+            user = employee.user_id
+            if not user:
+                continue
+            if employee.is_portal_job_description_admin:
                 user.sudo().write({"group_ids": [(4, admin_group.id)]})
             else:
                 user.sudo().write({"group_ids": [(3, admin_group.id)]})

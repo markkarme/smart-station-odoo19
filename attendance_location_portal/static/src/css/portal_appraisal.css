@@ -156,6 +156,49 @@
     cursor: pointer;
 }
 
+/* Clickable observation rating boxes (same UX as backend form) */
+.portal-appraisal-form .ss-appraisal-sheet {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+}
+
+.portal-appraisal-form td.ss-rating-cell {
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+}
+
+.portal-appraisal-form td.ss-rating-cell:hover {
+    background: rgba(31, 56, 100, 0.06);
+}
+
+.portal-appraisal-form .ss-rating-check {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    min-height: 28px;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    color: #1f3864;
+    border-radius: 4px;
+    -webkit-user-modify: read-only;
+}
+
+.portal-appraisal-form .ss-rating-check:hover {
+    background: rgba(31, 56, 100, 0.12);
+}
+
+.portal-appraisal-form .ss-rating-check.ss-rating-checked {
+    color: #0f766e;
+    font-weight: 700;
+}
+
 .portal-appraisal-blur {
     filter: blur(0.2rem);
     opacity: 0.35;

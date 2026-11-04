@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="hr_appraisal_template_hod_performance" model="hr.appraisal.template">
+            <field name="description">نموذج تقييم الأداء</field>
+            <field name="sequence">90</field>
+            <field name="company_id" eval="False"/>
+            <field name="appraisal_employee_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px; direction: rtl;">
+                    <h2 style="text-align: center; margin: 0 0 4px 0; font-size: 15px; color: #1f3864;">
+                        مدرسة سمارت للحاسبات والإلكترونيات
+                    </h2>
+                    <h3 style="text-align: center; margin: 0 0 4px 0; font-size: 14px;">
+                        رئيس القسم - نموذج تقييم الأداء (Appraisal)
+                    </h3>
+                    <p style="text-align: center; margin: 0 0 12px 0; font-size: 12px; color: #555;">
+                        للتقييم الدوري للأداء الأكاديمي والإشرافي
+                    </p>
+
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم رئيس القسم</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">القسم</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">فترة التقييم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">المقيّم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 16%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المحور / مؤشر الأداء</th>
+                                <th style="width: 28%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">التعريف</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الوزن</th>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المستهدف</th>
+                                <th style="width: 15%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الأداء الفعلي</th>
+                                <th style="width: 15%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الدرجة النهائية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التخطيط والتنظيم الأكاديمي</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تنفيذ ومتابعة الخطة الأكاديمية للقسم</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">الإشراف على أداء المعلمين</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تنفيذ خطة الزيارات الصفية والمتابعة</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">التزام لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">متابعة التحصيل ونتائج الطلاب</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">متابعة وتحليل النتائج وتنفيذ خطط التحسين</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">جودة التقييم والامتحانات</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الالتزام بنظام التقييم والامتحانات المعتمد</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">إدارة فريق القسم والعمل الجماعي</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">عقد اجتماعات القسم ومتابعة التكليفات</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التطوير المهني</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تنفيذ خطة التطوير المهني ومتابعة أثرها</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">الالتزام بالتقارير والتوثيق</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الالتزام بالتقارير والتوثيق والمواعيد</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التواصل والتنسيق</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تحقيق تواصل وتنسيق فعّال وتنفيذ التعليمات</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">5%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; direction: rtl; text-align: right;">الإجمالي</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 14px; font-size: 11px;">
+                        <thead>
+                            <tr>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">A ممتاز</th>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">B+</th>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">B</th>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">يحتاج تحسين</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">95% - 100%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 94%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">85% - 89%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">أقل من 85%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin: 0 0 6px 0; font-weight: 700; text-align: right;">أبرز نقاط القوة:</p>
+                    <p style="min-height: 36px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin: 0 0 10px 0;"><br/></p>
+                    <p style="margin: 0 0 6px 0; font-weight: 700; text-align: right;">أهم جوانب التحسين:</p>
+                    <p style="min-height: 36px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin: 0 0 10px 0;"><br/></p>
+                    <p style="margin: 0 0 6px 0; font-weight: 700; text-align: right;">الإجراءات المتفق عليها:</p>
+                    <p style="min-height: 36px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin: 0 0 16px 0;"><br/></p>
+
+                    <p style="margin: 16px 0 0 0; text-align: center; font-weight: 700;">المدير الأكاديمي / شريف رمضان</p>
+                </div>
+            </field>
+            <field name="appraisal_manager_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px; direction: rtl;">
+                    <h2 style="text-align: center; margin: 0 0 4px 0; font-size: 15px; color: #1f3864;">
+                        مدرسة سمارت للحاسبات والإلكترونيات
+                    </h2>
+                    <h3 style="text-align: center; margin: 0 0 4px 0; font-size: 14px;">
+                        رئيس القسم - نموذج تقييم الأداء (Appraisal)
+                    </h3>
+                    <p style="text-align: center; margin: 0 0 12px 0; font-size: 12px; color: #555;">
+                        للتقييم الدوري للأداء الأكاديمي والإشرافي
+                    </p>
+
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم رئيس القسم</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">القسم</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">فترة التقييم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">المقيّم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 16%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المحور / مؤشر الأداء</th>
+                                <th style="width: 28%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">التعريف</th>
+                                <th style="width: 8%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الوزن</th>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المستهدف</th>
+                                <th style="width: 15%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الأداء الفعلي</th>
+                                <th style="width: 15%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الدرجة النهائية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التخطيط والتنظيم الأكاديمي</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تنفيذ ومتابعة الخطة الأكاديمية للقسم</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">الإشراف على أداء المعلمين</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تنفيذ خطة الزيارات الصفية والمتابعة</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">التزام لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">متابعة التحصيل ونتائج الطلاب</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">متابعة وتحليل النتائج وتنفيذ خطط التحسين</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">جودة التقييم والامتحانات</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الالتزام بنظام التقييم والامتحانات المعتمد</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">إدارة فريق القسم والعمل الجماعي</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">عقد اجتماعات القسم ومتابعة التكليفات</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التطوير المهني</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تنفيذ خطة التطوير المهني ومتابعة أثرها</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">الالتزام بالتقارير والتوثيق</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">الالتزام بالتقارير والتوثيق والمواعيد</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التواصل والتنسيق</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">تحقيق تواصل وتنسيق فعّال وتنفيذ التعليمات</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">5%</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: center;">لا يقل عن 95%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; direction: rtl; text-align: right;">الإجمالي</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 14px; font-size: 11px;">
+                        <thead>
+                            <tr>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">A ممتاز</th>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">B+</th>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">B</th>
+                                <th style="background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">يحتاج تحسين</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">95% - 100%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 94%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">85% - 89%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">أقل من 85%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin: 0 0 6px 0; font-weight: 700; text-align: right;">أبرز نقاط القوة:</p>
+                    <p style="min-height: 36px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin: 0 0 10px 0;"><br/></p>
+                    <p style="margin: 0 0 6px 0; font-weight: 700; text-align: right;">أهم جوانب التحسين:</p>
+                    <p style="min-height: 36px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin: 0 0 10px 0;"><br/></p>
+                    <p style="margin: 0 0 6px 0; font-weight: 700; text-align: right;">الإجراءات المتفق عليها:</p>
+                    <p style="min-height: 36px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 8px; margin: 0 0 16px 0;"><br/></p>
+
+                    <p style="margin: 16px 0 0 0; text-align: center; font-weight: 700;">المدير الأكاديمي / شريف رمضان</p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

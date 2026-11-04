@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="hr_appraisal_template_semi_annual" model="hr.appraisal.template">
+            <field name="description">التقييم النصف سنوي</field>
+            <field name="sequence">80</field>
+            <field name="company_id" eval="False"/>
+            <field name="appraisal_employee_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px; direction: rtl;">
+                    <h2 style="text-align: center; margin: 0 0 4px 0; font-size: 15px; color: #1f3864;">
+                        مدرسة سمارت للحاسبات والإلكترونيات
+                    </h2>
+                    <h3 style="text-align: center; text-decoration: underline; margin: 0 0 12px 0; font-size: 14px;">
+                        نموذج تقييم الأداء الوظيفي للمعلم (Appraisal)
+                    </h3>
+                    <p style="text-align: center; margin: 0 0 12px 0; font-weight: 700; color: #1f3864;">التقييم النصف سنوي</p>
+
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم المعلم</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">الوظيفة / التخصص</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">القسم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">المقيم المباشر</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">A</th>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">B</th>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">C</th>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">D</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 100%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">80% - أقل من 90%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">65% - أقل من 80%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">أقل من 65%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المحور / مؤشر الأداء</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">التعريف</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الوزن</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المستهدف</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الأداء الفعلي</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الدرجة النهائية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التخطيط وإعداد الدرس</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس مستوى إعداد الدرس وتحديد نواتج التعلم مسبقاً</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تنفيذ الدرس وإدارة الوقت</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس كفاءة تنفيذ مراحل الدرس وتوازن توزيع الوقت</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">إدارة الصف والانضباط</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس القدرة على حفظ النظام داخل الصف والتفاعل الفعّال</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">أساليب التدريس والأنشطة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس استخدام الاستراتيجيات والأدوات التعليمية لجذب الطلاب</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التواصل ومراعاة الفروق الفردية</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس جودة التواصل ومراعاة مستويات الطلاب واحتياجاتهم</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التقييم والتغذية الراجعة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس كفاءة التقييم (أسبوعي/شهري) وتقديم التغذية الراجعة</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">المهنية والحضور المهني</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس الالتزام وأخلاقيات المهنة والاستعداد للتطوير</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; direction: rtl; text-align: right;">الإجمالي</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700; direction: rtl; text-align: right;">الدرجة النهائية</td>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700;">Rate / التقدير العام</td>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin: 20px 0 0 0; text-align: center; font-weight: 700;">المدير الأكاديمي / شريف رمضان</p>
+                </div>
+            </field>
+            <field name="appraisal_manager_feedback_template" type="html">
+                <div class="ss-appraisal-sheet" style="font-family: Tahoma, Arial, sans-serif; font-size: 12px; line-height: 1.4; min-width: 780px; direction: rtl;">
+                    <h2 style="text-align: center; margin: 0 0 4px 0; font-size: 15px; color: #1f3864;">
+                        مدرسة سمارت للحاسبات والإلكترونيات
+                    </h2>
+                    <h3 style="text-align: center; text-decoration: underline; margin: 0 0 12px 0; font-size: 14px;">
+                        نموذج تقييم الأداء الوظيفي للمعلم (Appraisal)
+                    </h3>
+                    <p style="text-align: center; margin: 0 0 12px 0; font-weight: 700; color: #1f3864;">التقييم النصف سنوي</p>
+
+                    <table class="ss-meta-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 10px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">اسم المعلم</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="width: 22%; background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">الوظيفة / التخصص</td>
+                                <td style="width: 28%; padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">القسم</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                                <td style="background: #d6e3f0; color: #1f3864; font-weight: 700; padding: 6px 8px; border: 1px solid #9fb3c8; text-align: right;">المقيم المباشر</td>
+                                <td style="padding: 6px 8px; border: 1px solid #9fb3c8;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-scale-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed; margin-bottom: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">A</th>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">B</th>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">C</th>
+                                <th style="width: 25%; background: #1f3864; color: #fff; padding: 6px; border: 1px solid #1f3864; text-align: center;">D</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">90% - 100%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">80% - أقل من 90%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">65% - أقل من 80%</td>
+                                <td style="padding: 6px; border: 1px solid #9fb3c8; text-align: center;">أقل من 65%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="ss-kpi-table" style="width: 780px; min-width: 780px; border-collapse: collapse; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المحور / مؤشر الأداء</th>
+                                <th style="width: 34%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">التعريف</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الوزن</th>
+                                <th style="width: 10%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">المستهدف</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الأداء الفعلي</th>
+                                <th style="width: 14%; background: #1f3864; color: #fff; padding: 6px 4px; border: 1px solid #1f3864; text-align: center;">الدرجة النهائية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التخطيط وإعداد الدرس</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس مستوى إعداد الدرس وتحديد نواتج التعلم مسبقاً</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">تنفيذ الدرس وإدارة الوقت</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس كفاءة تنفيذ مراحل الدرس وتوازن توزيع الوقت</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">إدارة الصف والانضباط</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس القدرة على حفظ النظام داخل الصف والتفاعل الفعّال</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">أساليب التدريس والأنشطة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس استخدام الاستراتيجيات والأدوات التعليمية لجذب الطلاب</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">15%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التواصل ومراعاة الفروق الفردية</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس جودة التواصل ومراعاة مستويات الطلاب واحتياجاتهم</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">التقييم والتغذية الراجعة</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس كفاءة التقييم (أسبوعي/شهري) وتقديم التغذية الراجعة</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">20%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right; font-weight: 700;">المهنية والحضور المهني</td>
+                                <td class="ss-ar" style="padding: 6px 4px; border: 1px solid #9fb3c8; direction: rtl; text-align: right;">قياس الالتزام وأخلاقيات المهنة والاستعداد للتطوير</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">10%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; font-weight: 700; direction: rtl; text-align: right;">الإجمالي</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7; text-align: center; font-weight: 700;">100%</td>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                                <td style="padding: 6px 4px; border: 1px solid #9fb3c8; background: #eef2f7;"/>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700; direction: rtl; text-align: right;">الدرجة النهائية</td>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;"><br/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 6px 4px; border: 1px solid #9fb3c8; font-weight: 700;">Rate / التقدير العام</td>
+                                <td colspan="2" style="padding: 6px 4px; border: 1px solid #9fb3c8; text-align: center; font-weight: 700;"><br/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin: 20px 0 0 0; text-align: center; font-weight: 700;">المدير الأكاديمي / شريف رمضان</p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

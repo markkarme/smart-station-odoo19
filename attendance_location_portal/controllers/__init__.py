@@ -12,3 +12,4 @@ from . import portal_school_mold
 from . import portal_student_fee_plan
 from . import portal_student_violation
 from . import portal_student_case_study
+from . import portal_job_description

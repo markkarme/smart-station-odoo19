@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portal_my_home_menu_job_description" inherit_id="portal.portal_breadcrumbs" priority="61">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name in ('portal_job_descriptions', 'portal_job_description_detail', 'portal_job_description_failed')"
+                t-attf-class="breadcrumb-item #{'active' if page_name == 'portal_job_descriptions' else ''}">
+                <a t-if="page_name != 'portal_job_descriptions'" href="/my/job_descriptions"><t>الوصف الوظيفي ومؤشرات الأداء</t></a>
+                <t t-else=""><t>الوصف الوظيفي ومؤشرات الأداء</t></t>
+            </li>
+            <li t-if="page_name == 'portal_job_description_detail'" class="breadcrumb-item active">
+                <t>الوصف الوظيفي</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_job_description_entry" inherit_id="portal.portal_my_home" priority="61">
+        <div id="portal_common_category" position="inside">
+            <t t-if="request.env.user.has_group('attendance_location_portal.group_portal_job_description_admin')" t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/hr_appraisal/static/description/icon.png'"/>
+                <t t-set="title"><t>الوصف الوظيفي ومؤشرات الأداء</t></t>
+                <t t-set="text"><t>عرض ملفات الوصف الوظيفي ومؤشرات الأداء للشركات المسموح بها</t></t>
+                <t t-set="url" t-value="'/my/job_descriptions'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="portal_job_description_failed_page" name="Job Description Failed">
+        <t t-call="portal.portal_layout">
+            <div class="container py-5">
+                <div class="alert alert-danger" t-out="error_message"/>
+                <a href="/my" class="btn btn-secondary"><t>العودة للبوابة</t></a>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_job_descriptions" name="Job Descriptions">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title"><t>الوصف الوظيفي ومؤشرات الأداء</t></t>
+            </t>
+            <div t-if="message" class="alert alert-success" t-out="message"/>
+            <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+            <div t-if="not records" class="alert alert-info">
+                <t>لا توجد ملفات وصف وظيفي لشركاتك.</t>
+            </div>
+            <t t-if="records">
+                <t t-call="portal.portal_table">
+                    <thead>
+                        <tr>
+                            <th><t>الاسم</t></th>
+                            <th><t>الملف</t></th>
+                            <th t-if="show_company"><t>الشركة</t></th>
+                            <th/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="records" t-as="record">
+                            <td>
+                                <a t-att-href="'/my/job_descriptions/%s' % record.id">
+                                    <span t-out="record.name"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-out="record.file_name or '-'"/>
+                            </td>
+                            <td t-if="show_company">
+                                <span t-out="record.company_id.name or '-'"/>
+                            </td>
+                            <td class="text-end text-nowrap">
+                                <a t-if="record.file_name"
+                                   t-att-href="'/my/job_descriptions/%s' % record.id"
+                                   class="btn btn-sm btn-outline-primary me-1">
+                                    <t>عرض</t>
+                                </a>
+                                <a t-if="record.file_name"
+                                   t-att-href="'/my/job_descriptions/%s/download' % record.id"
+                                   class="btn btn-sm btn-outline-secondary">
+                                    <t>تحميل</t>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_job_description_form" name="Job Description Form">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <div class="container py-3">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <h3 class="mb-0"><t>الوصف الوظيفي</t></h3>
+                    <a href="/my/job_descriptions" class="btn btn-outline-secondary"><t>رجوع</t></a>
+                </div>
+
+                <div t-if="message" class="alert alert-success" t-out="message"/>
+                <div t-if="error_message" class="alert alert-danger" t-out="error_message"/>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6" t-if="show_company">
+                                <div class="text-muted small"><t>الشركة</t></div>
+                                <div class="fw-semibold" t-out="record.company_id.name or '-'"/>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-muted small"><t>الاسم</t></div>
+                                <div class="fw-semibold" t-out="record.name"/>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-muted small"><t>الملف</t></div>
+                                <div class="fw-semibold" t-out="record.file_name or '-'"/>
+                            </div>
+                        </div>
+
+                        <div t-if="has_file_preview" class="mt-2">
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                                <h5 class="mb-0"><t>معاينة الملف</t></h5>
+                                <div class="d-flex gap-2">
+                                    <a t-att-href="file_preview_url" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <t>فتح في تبويب جديد</t>
+                                    </a>
+                                    <a t-att-href="'/my/job_descriptions/%s/download' % record.id" class="btn btn-sm btn-outline-secondary">
+                                        <t>تحميل</t>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div t-if="record.is_pdf" class="border rounded overflow-hidden bg-light">
+                                <iframe t-att-src="file_content_url"
+                                        title="PDF preview"
+                                        style="width:100%; min-height:70vh; border:0;"/>
+                            </div>
+
+                            <div t-elif="record.is_image" class="border rounded p-3 text-center bg-light">
+                                <img t-att-src="file_content_url"
+                                     t-att-alt="record.file_name or record.name"
+                                     class="img-fluid"
+                                     style="max-height:70vh;"/>
+                            </div>
+
+                            <div t-elif="record.is_docx" class="border rounded p-3 bg-white">
+                                <t t-if="docx_preview_html" t-out="docx_preview_html"/>
+                                <div t-else="" class="alert alert-info mb-0">
+                                    <t>لا توجد معاينة متاحة لهذا الملف.</t>
+                                    <a t-att-href="file_preview_url" class="ms-1"><t>فتح الملف</t></a>
+                                </div>
+                            </div>
+
+                            <div t-else="" class="alert alert-info mb-0">
+                                <t>لا يمكن عرض هذا النوع من الملفات داخل الصفحة.</t>
+                                <a t-att-href="'/my/job_descriptions/%s/download' % record.id" class="ms-1"><t>تحميل الملف</t></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-wrap gap-2">
+                        <a href="/my/job_descriptions" class="btn btn-outline-secondary"><t>رجوع</t></a>
+                        <a t-if="record and record.file_name"
+                           t-att-href="'/my/job_descriptions/%s/preview' % record.id"
+                           class="btn btn-outline-primary">
+                            <t>عرض الملف</t>
+                        </a>
+                        <a t-if="record and record.file_name"
+                           t-att-href="'/my/job_descriptions/%s/download' % record.id"
+                           class="btn btn-outline-secondary">
+                            <t>تحميل</t>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,110 @@
+.o_appraisal_form {
+    .o_appraisal_feedback {
+        min-width: 0; // allow flex child to shrink so overflow can scroll
+
+        .o_appraisal_input.o_height,
+        .o_appraisal_input {
+            max-width: 100%;
+            overflow-x: auto !important;
+            overflow-y: auto !important;
+        }
+
+        .o_field_html,
+        .note-editable,
+        .o_readonly {
+            max-width: none !important;
+            overflow-x: auto !important;
+            overflow-y: auto !important;
+        }
+
+        // Default Odoo appraisal CSS uses overflow:hidden here; override it.
+        .note-editable {
+            overflow: auto !important;
+        }
+
+        .ss-appraisal-sheet {
+            display: block;
+            width: max-content;
+            min-width: 100%;
+            max-width: none;
+            box-sizing: border-box;
+
+            table {
+                width: 100%;
+                border-collapse: collapse !important;
+                table-layout: fixed !important;
+            }
+
+            // Wide KPI grid: keep readable columns and enable horizontal scroll
+            table.ss-kpi-table {
+                min-width: 780px;
+                width: 780px;
+            }
+
+            // Observation sheets are wider (rating checkboxes)
+            &[style*="min-width: 900px"] table.ss-kpi-table,
+            table.ss-kpi-table[style*="900px"] {
+                min-width: 900px;
+                width: 900px;
+            }
+
+            table.ss-meta-table,
+            table.ss-scale-table {
+                min-width: 520px;
+                width: 520px;
+            }
+
+            th,
+            td {
+                white-space: normal !important;
+                overflow-wrap: anywhere !important;
+                word-break: break-word !important;
+                vertical-align: top !important;
+                box-sizing: border-box !important;
+            }
+
+            .ss-ar {
+                direction: rtl;
+                text-align: right;
+            }
+
+            td.ss-rating-cell {
+                cursor: pointer !important;
+                user-select: none !important;
+                -webkit-user-select: none !important;
+
+                &:hover {
+                    background: rgba(31, 56, 100, 0.06);
+                }
+            }
+
+            // o-contenteditable-false tells Odoo HTML editor to restore contenteditable=false
+            .ss-rating-check.o-contenteditable-false,
+            .ss-rating-check {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                min-width: 28px;
+                min-height: 28px;
+                font-size: 22px;
+                line-height: 1;
+                cursor: pointer !important;
+                user-select: none !important;
+                -webkit-user-select: none !important;
+                pointer-events: auto !important;
+                color: #1f3864;
+                border-radius: 4px;
+                -webkit-user-modify: read-only;
+
+                &:hover {
+                    background: rgba(31, 56, 100, 0.12);
+                }
+
+                &.ss-rating-checked {
+                    color: #0f766e;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
