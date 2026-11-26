@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Access Token List -->
+    <record id="view_api_access_token_list" model="ir.ui.view">
+        <field name="name">api.access.token.list</field>
+        <field name="model">api.access.token</field>
+        <field name="arch" type="xml">
+            <list string="Access Tokens" create="0">
+                <field name="name"/>
+                <field name="website_user_id"/>
+                <field name="token"/>
+                <field name="expires_at"/>
+                <field name="ip_address"/>
+                <field name="active" widget="boolean_toggle"/>
+                <field name="create_date"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Access Token Form -->
+    <record id="view_api_access_token_form" model="ir.ui.view">
+        <field name="name">api.access.token.form</field>
+        <field name="model">api.access.token</field>
+        <field name="arch" type="xml">
+            <form string="Access Token" create="0">
+                <header>
+                    <button name="invalidate" type="object" string="Invalidate"
+                            invisible="not active"
+                            confirm="Invalidate this access token?"/>
+                    <field name="active" widget="boolean_button" options="{'terminology': 'active'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="website_user_id"/>
+                            <field name="employee_id"/>
+                            <field name="refresh_token_id"/>
+                        </group>
+                        <group>
+                            <field name="token" widget="CopyClipboardChar"/>
+                            <field name="expires_at"/>
+                            <field name="ip_address"/>
+                            <field name="user_agent"/>
+                            <field name="create_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Access Token Search -->
+    <record id="view_api_access_token_search" model="ir.ui.view">
+        <field name="name">api.access.token.search</field>
+        <field name="model">api.access.token</field>
+        <field name="arch" type="xml">
+            <search string="Access Tokens">
+                <field name="name"/>
+                <field name="website_user_id"/>
+                <field name="token"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter string="User" name="group_user" context="{'group_by': 'website_user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Refresh Token List -->
+    <record id="view_api_refresh_token_list" model="ir.ui.view">
+        <field name="name">api.refresh.token.list</field>
+        <field name="model">api.refresh.token</field>
+        <field name="arch" type="xml">
+            <list string="Refresh Tokens" create="0">
+                <field name="name"/>
+                <field name="website_user_id"/>
+                <field name="token"/>
+                <field name="device_name"/>
+                <field name="expires_at"/>
+                <field name="last_used_at"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Refresh Token Form -->
+    <record id="view_api_refresh_token_form" model="ir.ui.view">
+        <field name="name">api.refresh.token.form</field>
+        <field name="model">api.refresh.token</field>
+        <field name="arch" type="xml">
+            <form string="Refresh Token" create="0">
+                <header>
+                    <button name="invalidate" type="object" string="Invalidate"
+                            invisible="not active"
+                            confirm="Invalidate this refresh token and its access tokens?"/>
+                    <field name="active" widget="boolean_button" options="{'terminology': 'active'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="website_user_id"/>
+                            <field name="employee_id"/>
+                            <field name="device_id"/>
+                            <field name="device_name"/>
+                        </group>
+                        <group>
+                            <field name="token" widget="CopyClipboardChar"/>
+                            <field name="expires_at"/>
+                            <field name="last_used_at"/>
+                            <field name="ip_address"/>
+                            <field name="user_agent"/>
+                            <field name="create_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Access Tokens" name="access_tokens">
+                            <field name="access_token_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="token"/>
+                                    <field name="expires_at"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

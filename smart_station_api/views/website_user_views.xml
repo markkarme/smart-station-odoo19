@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Website User List View -->
+    <record id="view_website_user_tree" model="ir.ui.view">
+        <field name="name">website.user.list</field>
+        <field name="model">website.user</field>
+        <field name="arch" type="xml">
+            <list string="Website Users" multi_edit="1">
+                <field name="name"/>
+                <field name="login"/>
+                <field name="employee_id"/>
+                <field name="company_id"/>
+                <field name="access_right_ids" widget="many2many_tags"/>
+                <field name="last_login"/>
+                <field name="active_token_count"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Website User Form View -->
+    <record id="view_website_user_form" model="ir.ui.view">
+        <field name="name">website.user.form</field>
+        <field name="model">website.user</field>
+        <field name="arch" type="xml">
+            <form string="Website User">
+                <header>
+                    <button name="action_generate_tokens" type="object"
+                            string="Generate Tokens" class="oe_highlight"/>
+                    <button name="action_reset_password" type="object"
+                            string="Reset Password"/>
+                    <button name="action_view_tokens" type="object"
+                            string="View Tokens"/>
+                    <button name="invalidate_all_tokens" type="object"
+                            string="Invalidate All Tokens"
+                            confirm="Are you sure you want to invalidate all tokens for this user?"/>
+                    <field name="active" widget="boolean_button" options="{'terminology': 'active'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_tokens" type="object"
+                                class="oe_stat_button" icon="fa-key">
+                            <field name="active_token_count" widget="statinfo" string="Active Tokens"/>
+                        </button>
+                    </div>
+                    <field name="avatar" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name" string="Name"/>
+                        <h1>
+                            <field name="name" placeholder="User Name" required="1"/>
+                        </h1>
+                        <label for="login" string="Login"/>
+                        <h3>
+                            <field name="login" placeholder="user@example.com" required="1"/>
+                        </h3>
+                    </div>
+                    <group>
+                        <group string="User Information">
+                            <field name="employee_id" required="1"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="last_login" readonly="1"/>
+                            <field name="password" password="True" invisible="id"/>
+                        </group>
+                        <group string="Company">
+                            <field name="company_id"/>
+                            <field name="company_ids" widget="many2many_tags"/>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Access Rights" name="access_rights">
+                            <field name="access_right_ids" widget="many2many_checkboxes"/>
+                        </page>
+                        <page string="Access Tokens" name="access_tokens">
+                            <field name="api_access_token_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="token"/>
+                                    <field name="expires_at"/>
+                                    <field name="active"/>
+                                    <field name="create_date"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Refresh Tokens" name="refresh_tokens">
+                            <field name="api_refresh_token_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="token"/>
+                                    <field name="device_name"/>
+                                    <field name="expires_at"/>
+                                    <field name="last_used_at"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Website User Kanban View -->
+    <record id="view_website_user_kanban" model="ir.ui.view">
+        <field name="name">website.user.kanban</field>
+        <field name="model">website.user</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside>
+                            <field name="avatar" widget="image" options="{'size': [64, 64], 'img_class': 'rounded'}"/>
+                        </aside>
+                        <main class="ms-2">
+                            <field class="fw-bold fs-5" name="name"/>
+                            <div class="text-muted">
+                                <field name="login"/>
+                            </div>
+                            <div>
+                                <field name="employee_id"/>
+                            </div>
+                            <footer class="mt-2">
+                                <field name="access_right_ids" widget="many2many_tags"/>
+                                <span class="badge text-bg-secondary ms-1">
+                                    <field name="active_token_count"/> tokens
+                                </span>
+                                <field name="active" widget="boolean_toggle" class="ms-auto"/>
+                            </footer>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Website User Search View -->
+    <record id="view_website_user_search" model="ir.ui.view">
+        <field name="name">website.user.search</field>
+        <field name="model">website.user</field>
+        <field name="arch" type="xml">
+            <search string="Website Users">
+                <field name="name"/>
+                <field name="login"/>
+                <field name="employee_id"/>
+                <field name="access_right_ids"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="Has Admin Rights" name="has_admin" domain="[('access_right_ids.is_admin', '=', True)]"/>
+                <filter string="Portal Users" name="portal_users" domain="[('access_right_ids.code', '=', 'portal_user')]"/>
+                <separator/>
+                <group>
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}"/>
+                    <filter string="Department" name="group_department" context="{'group_by': 'department_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Website User Action -->
+    <record id="action_website_user" model="ir.actions.act_window">
+        <field name="name">Website Users</field>
+        <field name="res_model">website.user</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="view_website_user_search"/>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Website User
+            </p>
+            <p>
+                Website users can log in to the external website and access their employee portal.
+                Access tokens are generated automatically when a user is created.
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Create Website User Wizard -->
+    <record id="view_website_user_create_wizard_form" model="ir.ui.view">
+        <field name="name">website.user.create.wizard.form</field>
+        <field name="model">website.user.create.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Website User">
+                <group>
+                    <group>
+                        <field name="employee_id" readonly="1"/>
+                        <field name="name"/>
+                        <field name="login"/>
+                    </group>
+                    <group>
+                        <field name="password" password="True"/>
+                        <field name="password_confirm" password="True"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="access_right_ids" widget="many2many_checkboxes">
+                        <list>
+                            <field name="name"/>
+                            <field name="category"/>
+                        </list>
+                    </field>
+                </group>
+                <footer>
+                    <button string="Create User" name="action_create_user" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Reset Password Wizard -->
+    <record id="view_website_user_password_wizard_form" model="ir.ui.view">
+        <field name="name">website.user.password.wizard.form</field>
+        <field name="model">website.user.password.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reset Password">
+                <group>
+                    <field name="user_id" readonly="1"/>
+                    <field name="new_password" password="True"/>
+                    <field name="confirm_password" password="True"/>
+                </group>
+                <footer>
+                    <button string="Reset Password" name="action_reset_password" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

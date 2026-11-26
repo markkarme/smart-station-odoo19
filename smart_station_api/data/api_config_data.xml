@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- System parameters for API configuration -->
+        <record id="api_token_expiry_hours" model="ir.config_parameter">
+            <field name="key">smart_station_api.access_token_expiry_hours</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="api_refresh_token_expiry_days" model="ir.config_parameter">
+            <field name="key">smart_station_api.refresh_token_expiry_days</field>
+            <field name="value">30</field>
+        </record>
+
+        <!-- Cron job to cleanup expired tokens -->
+        <record id="ir_cron_cleanup_expired_tokens" model="ir.cron">
+            <field name="name">Smart Station API: Cleanup Expired Tokens</field>
+            <field name="model_id" ref="model_api_access_token"/>
+            <field name="state">code</field>
+            <field name="code">model.cleanup_expired_tokens()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_cleanup_expired_refresh_tokens" model="ir.cron">
+            <field name="name">Smart Station API: Cleanup Expired Refresh Tokens</field>
+            <field name="model_id" ref="model_api_refresh_token"/>
+            <field name="state">code</field>
+            <field name="code">model.cleanup_expired_tokens()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

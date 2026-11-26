@@ -82,13 +82,6 @@ class HrEmployee(models.Model):
         help="Admin mold portal users can manage school molds / results "
         "for their allowed companies from the portal.",
     )
-    is_portal_fee_admin = fields.Boolean(
-        string="Admin Fee Plan Portal",
-        compute="_compute_is_portal_fee_admin",
-        inverse="_inverse_is_portal_fee_admin",
-        help="Admin fee plan portal users can manage student fee plans "
-        "for their allowed companies from the portal.",
-    )
     is_portal_misconduct_admin = fields.Boolean(
         string="Admin Student Misconduct Portal",
         compute="_compute_is_portal_misconduct_admin",
@@ -330,34 +323,6 @@ class HrEmployee(models.Model):
             if not user:
                 continue
             if employee.is_portal_mold_admin:
-                user.sudo().write({"group_ids": [(4, admin_group.id)]})
-            else:
-                user.sudo().write({"group_ids": [(3, admin_group.id)]})
-
-    def _get_portal_fee_admin_group(self):
-        return self.env.ref(
-            "attendance_location_portal.group_portal_fee_admin",
-            raise_if_not_found=False,
-        )
-
-    def _compute_is_portal_fee_admin(self):
-        admin_group = self._get_portal_fee_admin_group()
-        for employee in self:
-            employee.is_portal_fee_admin = bool(
-                admin_group
-                and employee.user_id
-                and admin_group in employee.user_id.sudo().all_group_ids
-            )
-
-    def _inverse_is_portal_fee_admin(self):
-        admin_group = self._get_portal_fee_admin_group()
-        if not admin_group:
-            return
-        for employee in self:
-            user = employee.user_id
-            if not user:
-                continue
-            if employee.is_portal_fee_admin:
                 user.sudo().write({"group_ids": [(4, admin_group.id)]})
             else:
                 user.sudo().write({"group_ids": [(3, admin_group.id)]})

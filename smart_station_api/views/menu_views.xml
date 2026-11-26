@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root app menu: Smart Station appears as its own module on the home screen -->
+    <menuitem id="menu_smart_station_root"
+              name="Smart Station"
+              sequence="100"
+              web_icon="smart_station_api,static/description/icon.png"
+              action="action_smart_station_dashboard"/>
+
+    <!-- Website Users -->
+    <menuitem id="menu_smart_station_website_users"
+              name="Website Users"
+              parent="menu_smart_station_root"
+              sequence="10"/>
+
+    <menuitem id="menu_website_users"
+              name="Users"
+              parent="menu_smart_station_website_users"
+              action="action_website_user"
+              sequence="10"/>
+
+    <menuitem id="menu_website_access_rights"
+              name="Access Rights"
+              parent="menu_smart_station_website_users"
+              action="action_website_access_right"
+              sequence="20"/>
+
+    <!-- Configuration -->
+    <menuitem id="menu_smart_station_configuration"
+              name="Configuration"
+              parent="menu_smart_station_root"
+              sequence="100"/>
+
+    <menuitem id="menu_smart_station_dashboard"
+              name="Dashboard"
+              parent="menu_smart_station_configuration"
+              action="action_smart_station_dashboard"
+              sequence="10"/>
+</odoo>

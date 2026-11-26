@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Smart Station API</title>
+</head>
+<body>
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">Smart Station REST API</h2>
+            <h3 class="oe_slogan">Comprehensive API for Smart Station Portal Features</h3>
+            <div class="oe_span12">
+                <p class="oe_mt32">
+                    This module provides REST API endpoints for external applications (React, Vue, Angular, Mobile apps) 
+                    to integrate with Smart Station portal features.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">Features</h2>
+            <div class="oe_span6">
+                <h3>Authentication</h3>
+                <ul>
+                    <li>JWT-based authentication</li>
+                    <li>Access tokens (1 hour)</li>
+                    <li>Refresh tokens (30 days)</li>
+                    <li>Device management</li>
+                </ul>
+            </div>
+            <div class="oe_span6">
+                <h3>Attendance Management</h3>
+                <ul>
+                    <li>GPS-based check-in/out</li>
+                    <li>Location validation</li>
+                    <li>Attendance history</li>
+                    <li>Statistics and reports</li>
+                </ul>
+            </div>
+        </div>
+        <div class="oe_row oe_spaced">
+            <div class="oe_span6">
+                <h3>HR Management</h3>
+                <ul>
+                    <li>Time off requests</li>
+                    <li>Leave allocations</li>
+                    <li>General requests</li>
+                    <li>Attendance adjustments</li>
+                </ul>
+            </div>
+            <div class="oe_span6">
+                <h3>Student Management</h3>
+                <ul>
+                    <li>Student attendance</li>
+                    <li>Exams and grades</li>
+                    <li>Fee plans</li>
+                    <li>Violations tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">API Endpoints</h2>
+            <div class="oe_span12">
+                <h3>Authentication</h3>
+                <ul>
+                    <li>POST /api/v1/auth/login - Login with credentials</li>
+                    <li>POST /api/v1/auth/refresh - Refresh access token</li>
+                    <li>POST /api/v1/auth/logout - Logout and invalidate tokens</li>
+                    <li>GET /api/v1/auth/me - Get current user info</li>
+                </ul>
+
+                <h3>Attendance</h3>
+                <ul>
+                    <li>POST /api/v1/attendance/check-location - Validate GPS location</li>
+                    <li>POST /api/v1/attendance/submit - Submit attendance</li>
+                    <li>GET /api/v1/attendance/me - Get my attendance</li>
+                    <li>GET /api/v1/attendance/stats - Get statistics</li>
+                </ul>
+
+                <h3>Leaves</h3>
+                <ul>
+                    <li>GET /api/v1/leaves/types - Get available leave types</li>
+                    <li>GET /api/v1/leaves/me - Get my leaves</li>
+                    <li>POST /api/v1/leaves - Create leave request</li>
+                    <li>POST /api/v1/leaves/{id}/cancel - Cancel leave</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">Usage</h2>
+            <div class="oe_span12">
+                <h3>1. Install the module</h3>
+                <p>Install this module along with attendance_location_portal</p>
+
+                <h3>2. Login from external app</h3>
+                <pre>
+POST /api/v1/auth/login
+Content-Type: application/json
+
+{
+  "login": "user@example.com",
+  "password": "password123"
+}
+                </pre>
+
+                <h3>3. Use access token</h3>
+                <pre>
+GET /api/v1/attendance/me
+Authorization: Bearer your_access_token_here
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">Support</h2>
+            <div class="oe_span12">
+                <p>For support and documentation, please contact Smart Station team.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

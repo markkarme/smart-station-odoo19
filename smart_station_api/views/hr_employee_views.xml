@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Employee Form View - Inherit -->
+    <record id="view_employee_form_inherit_website_user" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.website.user</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- Add button in header -->
+            <xpath expr="//header" position="inside">
+                <button name="action_create_website_user" type="object" 
+                        string="Create Website User" class="oe_highlight"
+                        invisible="has_website_user"/>
+                <button name="action_view_website_user" type="object" 
+                        string="View Website User"
+                        invisible="not has_website_user"/>
+            </xpath>
+            
+            <!-- Add stat button -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_website_user" type="object" 
+                        class="oe_stat_button" icon="fa-globe"
+                        invisible="not has_website_user">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text">Website</span>
+                        <span class="o_stat_text">User</span>
+                    </div>
+                </button>
+            </xpath>
+            
+            <!-- Add fields in form -->
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="website_user_id" readonly="1"/>
+                <field name="has_website_user" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

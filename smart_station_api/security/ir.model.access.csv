@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_user_manager,website.user manager,model_website_user,base.group_system,1,1,1,1
+access_website_user_user,website.user user,model_website_user,base.group_user,1,0,0,0
+access_website_access_right_manager,website.access.right manager,model_website_access_right,base.group_system,1,1,1,1
+access_website_access_right_user,website.access.right user,model_website_access_right,base.group_user,1,0,0,0
+access_api_access_token_manager,api.access.token manager,model_api_access_token,base.group_system,1,1,1,1
+access_api_refresh_token_manager,api.refresh.token manager,model_api_refresh_token,base.group_system,1,1,1,1
+access_website_user_create_wizard,website.user.create.wizard,model_website_user_create_wizard,base.group_user,1,1,1,1
+access_website_user_password_wizard,website.user.password.wizard,model_website_user_password_wizard,base.group_user,1,1,1,1

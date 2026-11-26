@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Access Right Tree View -->
+    <record id="view_website_access_right_tree" model="ir.ui.view">
+        <field name="name">website.access.right.tree</field>
+        <field name="model">website.access.right</field>
+        <field name="arch" type="xml">
+            <list string="Access Rights">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="category"/>
+                <field name="user_count"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Access Right Form View -->
+    <record id="view_website_access_right_form" model="ir.ui.view">
+        <field name="name">website.access.right.form</field>
+        <field name="model">website.access.right</field>
+        <field name="arch" type="xml">
+            <form string="Access Right">
+                <header>
+                    <button name="action_view_users" type="object" 
+                            string="View Users" class="oe_highlight" 
+                            invisible="user_count == 0"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_users" icon="fa-users">
+                            <field string="Users" name="user_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group string="Basic Information">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="category"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Description">
+                            <field name="description" nolabel="1"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Employee Self-Service" name="self_service">
+                            <group>
+                                <group string="Attendance">
+                                    <field name="can_submit_attendance"/>
+                                    <field name="can_view_attendance"/>
+                                    <field name="can_create_adjustment"/>
+                                </group>
+                                <group string="Time Off">
+                                    <field name="can_view_leave"/>
+                                    <field name="can_create_leave"/>
+                                    <field name="can_cancel_leave"/>
+                                    <field name="can_view_allocation"/>
+                                    <field name="can_create_allocation"/>
+                                </group>
+                                <group string="Requests &amp; HR">
+                                    <field name="can_create_request"/>
+                                    <field name="can_view_payslips"/>
+                                    <field name="can_view_appraisals"/>
+                                    <field name="can_manage_appraisals"/>
+                                </group>
+                                <group string="Profile &amp; Security">
+                                    <field name="can_view_profile"/>
+                                    <field name="can_update_profile"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Portal Admin" name="portal_admin">
+                            <div class="text-muted mb-2">
+                                Admins only see records of the companies allowed on the employee, and can only approve
+                                requests where they are the assigned approver (or when no approver is configured).
+                            </div>
+                            <group>
+                                <group>
+                                    <field name="is_admin"/>
+                                </group>
+                                <group>
+                                    <field name="can_view_all_attendance"/>
+                                    <field name="can_approve_leave"/>
+                                    <field name="can_approve_request"/>
+                                    <field name="can_view_all_payslips"/>
+                                    <field name="can_view_absent_employees"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Education Admins" name="education">
+                            <group>
+                                <group>
+                                    <field name="can_manage_student_attendance"/>
+                                    <field name="can_manage_student_exams"/>
+                                    <field name="can_manage_school_molds"/>
+                                </group>
+                                <group>
+                                    <field name="can_manage_violations"/>
+                                    <field name="can_view_job_descriptions"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Users" name="users">
+                            <field name="user_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="login"/>
+                                    <field name="employee_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Access Right Search View -->
+    <record id="view_website_access_right_search" model="ir.ui.view">
+        <field name="name">website.access.right.search</field>
+        <field name="model">website.access.right</field>
+        <field name="arch" type="xml">
+            <search string="Access Rights">
+                <field name="name"/>
+                <field name="code"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="Attendance" name="attendance" domain="[('category', '=', 'attendance')]"/>
+                <filter string="Leave" name="leave" domain="[('category', '=', 'leave')]"/>
+                <filter string="Request" name="request" domain="[('category', '=', 'request')]"/>
+                <filter string="Employee" name="employee" domain="[('category', '=', 'employee')]"/>
+                <filter string="Student" name="student" domain="[('category', '=', 'student')]"/>
+                <filter string="Admin" name="admin" domain="[('category', '=', 'admin')]"/>
+                <separator/>
+                <group>
+                    <filter string="Category" name="group_category" context="{'group_by': 'category'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Access Right Action -->
+    <record id="action_website_access_right" model="ir.actions.act_window">
+        <field name="name">Access Rights</field>
+        <field name="res_model">website.access.right</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_website_access_right_search"/>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Access Right
+            </p>
+            <p>
+                Access rights define what website users can do in the external portal.
+            </p>
+        </field>
+    </record>
+
+</odoo>

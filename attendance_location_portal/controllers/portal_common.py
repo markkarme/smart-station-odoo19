@@ -37,11 +37,6 @@ class PortalHrMixin:
             "attendance_location_portal.group_portal_mold_admin"
         )
 
-    def _is_portal_fee_admin(self):
-        return request.env.user.has_group(
-            "attendance_location_portal.group_portal_fee_admin"
-        )
-
     def _is_portal_misconduct_admin(self):
         return request.env.user.has_group(
             "attendance_location_portal.group_portal_misconduct_admin"
