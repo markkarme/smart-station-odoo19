@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Odoo 19 no longer supports the <dashboard> view type.
+        Keep a simple window action that opens website users.
+    -->
+    <record id="action_smart_station_dashboard" model="ir.actions.act_window">
+        <field name="name">Smart Station Dashboard</field>
+        <field name="res_model">website.user</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Welcome to Smart Station!
+            </p>
+            <p>
+                Manage your website users and their access rights here.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Runs on install and every upgrade; only creates missing rights, never overwrites existing ones. -->
+    <function model="website.access.right" name="_create_default_access_rights"/>
+</odoo>
